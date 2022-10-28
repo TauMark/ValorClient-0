@@ -1,0 +1,167 @@
+class
+ refid "com.company.assembleegameclient.account.ui.components:SelectionGroup"
+ instance QName(PackageNamespace("com.company.assembleegameclient.account.ui.components"), "SelectionGroup")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  iinit
+   name "SelectionGroup"
+   refid "com.company.assembleegameclient.account.ui.components:SelectionGroup/instance/init"
+   param TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("com.company.assembleegameclient.account.ui.components"), "Selectable")>)
+   flag HAS_PARAM_NAMES
+   paramname "_arg1"
+   body
+    maxstack 2
+    localcount 2
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     getlocal1
+     setproperty         QName(PrivateNamespace("com.company.assembleegameclient.account.ui.components:SelectionGroup"), "selectables")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.account.ui.components:SelectionGroup"), "selectables") type TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("com.company.assembleegameclient.account.ui.components"), "Selectable")>) end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.account.ui.components:SelectionGroup"), "selected") type QName(PackageNamespace("com.company.assembleegameclient.account.ui.components"), "Selectable") end
+  trait method QName(PackageNamespace(""), "setSelected")
+   method
+    name "setSelected"
+    refid "com.company.assembleegameclient.account.ui.components:SelectionGroup/instance/setSelected"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 5
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      setlocal2
+
+      pushbyte            0
+      setlocal            4
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.account.ui.components:SelectionGroup"), "selectables")
+      setlocal3
+
+      jump                L24
+
+L10:
+      label
+      getlocal3
+      getlocal            4
+      nextvalue
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.account.ui.components"), "Selectable")
+      setlocal2
+
+      getlocal2
+      callproperty        QName(Namespace("com.company.assembleegameclient.account.ui.components:Selectable"), "getValue"), 0
+      getlocal1
+      ifne                L24
+
+      getlocal0
+      getlocal2
+      callpropvoid        QName(PrivateNamespace("com.company.assembleegameclient.account.ui.components:SelectionGroup"), "replaceSelected"), 1
+
+      returnvoid
+
+L24:
+      hasnext2            3, 4
+      iftrue              L10
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getSelected")
+   method
+    name "getSelected"
+    refid "com.company.assembleegameclient.account.ui.components:SelectionGroup/instance/getSelected"
+    returns QName(PackageNamespace("com.company.assembleegameclient.account.ui.components"), "Selectable")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.account.ui.components:SelectionGroup"), "selected")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.account.ui.components:SelectionGroup"), "replaceSelected")
+   method
+    name "replaceSelected"
+    refid "com.company.assembleegameclient.account.ui.components:SelectionGroup/instance/com.company.assembleegameclient.account.ui.components:SelectionGroup/instance/replaceSelected"
+    param QName(PackageNamespace("com.company.assembleegameclient.account.ui.components"), "Selectable")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.account.ui.components:SelectionGroup"), "selected")
+      pushnull
+      ifeq                L10
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.account.ui.components:SelectionGroup"), "selected")
+      pushfalse
+      callpropvoid        QName(Namespace("com.company.assembleegameclient.account.ui.components:Selectable"), "setSelected"), 1
+
+L10:
+      getlocal0
+      getlocal1
+      setproperty         QName(PrivateNamespace("com.company.assembleegameclient.account.ui.components:SelectionGroup"), "selected")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.account.ui.components:SelectionGroup"), "selected")
+      pushtrue
+      callpropvoid        QName(Namespace("com.company.assembleegameclient.account.ui.components:Selectable"), "setSelected"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.account.ui.components:SelectionGroup/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

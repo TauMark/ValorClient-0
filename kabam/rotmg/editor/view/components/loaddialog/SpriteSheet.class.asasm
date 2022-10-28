@@ -1,0 +1,197 @@
+class
+ refid "kabam.rotmg.editor.view.components.loaddialog:SpriteSheet"
+ instance QName(PackageNamespace("kabam.rotmg.editor.view.components.loaddialog"), "SpriteSheet")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  iinit
+   name "SpriteSheet"
+   refid "kabam.rotmg.editor.view.components.loaddialog:SpriteSheet/instance/init"
+   body
+    maxstack 3
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     getlex              QName(PackageNamespace("__AS3__.vec"), "Vector")
+     getlex              QName(PackageNamespace("flash.display"), "BitmapData")
+     applytype           1
+     construct           0
+     setproperty         QName(PackageNamespace(""), "bitmapDatas_")
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "bitmapDatas_") type TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("flash.display"), "BitmapData")>) end
+  trait method QName(PackageNamespace(""), "addBitmapData")
+   method
+    name "addBitmapData"
+    refid "kabam.rotmg.editor.view.components.loaddialog:SpriteSheet/instance/addBitmapData"
+    param QName(PackageNamespace("flash.display"), "BitmapData")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg_1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "bitmapDatas_")
+      getlocal1
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "generatePNG")
+   method
+    name "generatePNG"
+    refid "kabam.rotmg.editor.view.components.loaddialog:SpriteSheet/instance/generatePNG"
+    returns QName(PackageNamespace("flash.utils"), "ByteArray")
+    body
+     maxstack 5
+     localcount 7
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      setlocal3
+
+      pushbyte            0
+      setlocal            4
+
+      findpropstrict      QName(PackageNamespace(""), "BitmapDataSpy")
+      pushshort           128
+      pushshort           256
+      pushtrue
+      pushbyte            0
+      constructprop       QName(PackageNamespace(""), "BitmapDataSpy"), 4
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      setlocal2
+
+      findpropstrict      QName(PackageNamespace("flash.geom"), "Point")
+      pushbyte            0
+      pushbyte            0
+      constructprop       QName(PackageNamespace("flash.geom"), "Point"), 2
+      coerce              QName(PackageNamespace("flash.geom"), "Point")
+      setlocal1
+
+      pushbyte            0
+      setlocal            6
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "bitmapDatas_")
+      setlocal            5
+
+      jump                L78
+
+L26:
+      label
+      getlocal            5
+      getlocal            6
+      nextvalue
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      setlocal3
+
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "x")
+      getlocal3
+      getproperty         QName(PackageNamespace(""), "width")
+      add
+      pushshort           128
+      ifngt               L50
+
+      getlocal1
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "y")
+      getlocal            4
+      add
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal1
+      pushbyte            0
+      setproperty         QName(PackageNamespace(""), "x")
+
+      pushbyte            0
+      setlocal            4
+
+L50:
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "y")
+      getlocal3
+      getproperty         QName(PackageNamespace(""), "height")
+      add
+      pushshort           256
+      ifgt                L80
+
+      getlocal2
+      getlocal3
+      getlocal3
+      getproperty         QName(PackageNamespace(""), "rect")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "copyPixels"), 3
+
+      getlocal1
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "x")
+      getlocal3
+      getproperty         QName(PackageNamespace(""), "width")
+      add
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal3
+      getproperty         QName(PackageNamespace(""), "height")
+      getlocal            4
+      ifngt               L78
+
+      getlocal3
+      getproperty         QName(PackageNamespace(""), "height")
+      convert_i
+      setlocal            4
+
+L78:
+      hasnext2            5, 6
+      iftrue              L26
+
+L80:
+      getlex              QName(PackageNamespace("com.adobe.images"), "PNGEncoder")
+      getlocal2
+      callproperty        QName(PackageNamespace(""), "encode"), 1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.editor.view.components.loaddialog:SpriteSheet/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PrivateNamespace("kabam.rotmg.editor.view.components.loaddialog:SpriteSheet"), "WIDTH") type QName(PackageNamespace(""), "int") value Integer(128) end
+ trait const QName(PrivateNamespace("kabam.rotmg.editor.view.components.loaddialog:SpriteSheet"), "HEIGHT") type QName(PackageNamespace(""), "int") value Integer(256) end
+end ; class

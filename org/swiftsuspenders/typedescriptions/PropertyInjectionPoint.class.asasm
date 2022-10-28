@@ -1,0 +1,156 @@
+class
+ refid "org.swiftsuspenders.typedescriptions:PropertyInjectionPoint"
+ instance QName(PackageNamespace("org.swiftsuspenders.typedescriptions"), "PropertyInjectionPoint")
+  extends QName(PackageNamespace("org.swiftsuspenders.typedescriptions"), "InjectionPoint")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("org.swiftsuspenders.typedescriptions:PropertyInjectionPoint")
+  iinit
+   name "org.swiftsuspenders.typedescriptions:PropertyInjectionPoint/PropertyInjectionPoint"
+   refid "org.swiftsuspenders.typedescriptions:PropertyInjectionPoint/instance/init"
+   param QName(PackageNamespace(""), "String")
+   param QName(PackageNamespace(""), "String")
+   param QName(PackageNamespace(""), "Boolean")
+   param QName(PackageNamespace("flash.utils"), "Dictionary")
+   flag HAS_PARAM_NAMES
+   paramname "mappingId"
+   paramname "propertyName"
+   paramname "optional"
+   paramname "injectParameters"
+   body
+    maxstack 2
+    localcount 5
+    initscopedepth 5
+    maxscopedepth 6
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     getlocal2
+     initproperty        QName(PrivateNamespace("org.swiftsuspenders.typedescriptions:PropertyInjectionPoint"), "_propertyName")
+
+     getlocal0
+     getlocal1
+     initproperty        QName(PrivateNamespace("org.swiftsuspenders.typedescriptions:PropertyInjectionPoint"), "_mappingId")
+
+     getlocal0
+     getlocal3
+     initproperty        QName(PrivateNamespace("org.swiftsuspenders.typedescriptions:PropertyInjectionPoint"), "_optional")
+
+     getlocal0
+     getlocal            4
+     initproperty        QName(PackageNamespace(""), "injectParameters")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace("org.swiftsuspenders.typedescriptions:PropertyInjectionPoint"), "_propertyName") type QName(PackageNamespace(""), "String") end
+  trait slot QName(PrivateNamespace("org.swiftsuspenders.typedescriptions:PropertyInjectionPoint"), "_mappingId") type QName(PackageNamespace(""), "String") end
+  trait slot QName(PrivateNamespace("org.swiftsuspenders.typedescriptions:PropertyInjectionPoint"), "_optional") type QName(PackageNamespace(""), "Boolean") end
+  trait method QName(PackageNamespace(""), "applyInjection") flag OVERRIDE
+   method
+    name "org.swiftsuspenders.typedescriptions:PropertyInjectionPoint/applyInjection"
+    refid "org.swiftsuspenders.typedescriptions:PropertyInjectionPoint/instance/applyInjection"
+    param QName(PackageNamespace(""), "Object")
+    param QName(PackageNamespace(""), "Class")
+    param QName(PackageNamespace("org.swiftsuspenders"), "Injector")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "target"
+    paramname "targetType"
+    paramname "injector"
+    body
+     maxstack 6
+     localcount 6
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal3
+      dup
+      setlocal            5
+
+      getlex              QName(PackageNamespace("org.swiftsuspenders.utils"), "SsInternal")
+      coerce              QName(PackageNamespace(""), "Namespace")
+      getproperty         RTQName("getProvider")
+      getlocal            5
+      getlocal0
+      getproperty         QName(PrivateNamespace("org.swiftsuspenders.typedescriptions:PropertyInjectionPoint"), "_mappingId")
+      call                1
+      kill                5
+      coerce              QName(PackageNamespace("org.swiftsuspenders.dependencyproviders"), "DependencyProvider")
+      dup
+      setlocal            4
+
+      iftrue              L45
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("org.swiftsuspenders.typedescriptions:PropertyInjectionPoint"), "_optional")
+      iffalse             L21
+
+      returnvoid
+
+L21:
+      findpropstrict      QName(PackageNamespace("org.swiftsuspenders"), "InjectorError")
+      pushstring          "Injector is missing a mapping to handle injection into property \""
+      getlocal0
+      getproperty         QName(PrivateNamespace("org.swiftsuspenders.typedescriptions:PropertyInjectionPoint"), "_propertyName")
+      add
+      pushstring          "\" of object \""
+      add
+      getlocal1
+      add
+      pushstring          "\" with type \""
+      add
+      findpropstrict      QName(PackageNamespace("flash.utils"), "getQualifiedClassName")
+      getlocal2
+      callproperty        QName(PackageNamespace("flash.utils"), "getQualifiedClassName"), 1
+      add
+      pushstring          "\". Target dependency: \""
+      add
+      getlocal0
+      getproperty         QName(PrivateNamespace("org.swiftsuspenders.typedescriptions:PropertyInjectionPoint"), "_mappingId")
+      add
+      pushstring          "\""
+      add
+      constructprop       QName(PackageNamespace("org.swiftsuspenders"), "InjectorError"), 1
+      throw
+
+L45:
+      getlocal1
+      getlocal0
+      getproperty         QName(PrivateNamespace("org.swiftsuspenders.typedescriptions:PropertyInjectionPoint"), "_propertyName")
+      getlocal            4
+      getlocal2
+      getlocal3
+      getlex              QName(PackageNamespace(""), "injectParameters")
+      callproperty        QName(Namespace("org.swiftsuspenders.dependencyproviders:DependencyProvider"), "apply"), 3
+      setproperty         MultinameL([PrivateNamespace("org.swiftsuspenders.typedescriptions:PropertyInjectionPoint"), PackageNamespace(""), PrivateNamespace("PropertyInjectionPoint.as$23"), PackageNamespace("org.swiftsuspenders.typedescriptions"), PackageInternalNs("org.swiftsuspenders.typedescriptions"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("org.swiftsuspenders.typedescriptions:PropertyInjectionPoint"), StaticProtectedNs("org.swiftsuspenders.typedescriptions:PropertyInjectionPoint"), StaticProtectedNs("org.swiftsuspenders.typedescriptions:InjectionPoint")])
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  name ""
+  refid "org.swiftsuspenders.typedescriptions:PropertyInjectionPoint/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 4
+   maxscopedepth 5
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

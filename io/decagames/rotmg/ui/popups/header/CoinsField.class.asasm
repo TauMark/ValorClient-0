@@ -1,0 +1,222 @@
+class
+ refid "io.decagames.rotmg.ui.popups.header:CoinsField"
+ instance QName(PackageNamespace("io.decagames.rotmg.ui.popups.header"), "CoinsField")
+  extends QName(PackageNamespace("flash.display"), "Sprite")
+  flag SEALED
+  iinit
+   name "CoinsField"
+   refid "io.decagames.rotmg.ui.popups.header:CoinsField/instance/init"
+   param QName(PackageNamespace(""), "int")
+   flag HAS_PARAM_NAMES
+   paramname "_arg_1"
+   body
+    maxstack 8
+    localcount 3
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     getlex              QName(PackageNamespace("io.decagames.rotmg.ui.texture"), "TextureParser")
+     getproperty         QName(PackageNamespace(""), "instance")
+     pushstring          "UI"
+     pushstring          "bordered_field"
+     getlocal1
+     callproperty        QName(PackageNamespace(""), "getSliceScalingBitmap"), 3
+     setproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.popups.header:CoinsField"), "coinsFieldBackground")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("io.decagames.rotmg.ui.labels"), "UILabel")
+     constructprop       QName(PackageNamespace("io.decagames.rotmg.ui.labels"), "UILabel"), 0
+     setproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.popups.header:CoinsField"), "_label")
+
+     getlex              QName(PackageNamespace("io.decagames.rotmg.ui.defaults"), "DefaultLabelFormat")
+     getlocal0
+     getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.popups.header:CoinsField"), "_label")
+     callpropvoid        QName(PackageNamespace(""), "coinsFieldLabel"), 1
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.popups.header:CoinsField"), "coinsFieldBackground")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.popups.header:CoinsField"), "_label")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     getlex              QName(PackageNamespace("com.company.util"), "AssetLibrary")
+     pushstring          "lofiObj3"
+     pushshort           225
+     callproperty        QName(PackageNamespace(""), "getImageFromSet"), 2
+     coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+     setlocal2
+
+     getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "TextureRedrawer")
+     getlocal2
+     pushnull
+     pushbyte            34
+     pushtrue
+     pushbyte            0
+     pushbyte            0
+     pushbyte            5
+     callproperty        QName(PackageNamespace(""), "resize"), 7
+     coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+     setlocal2
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("flash.display"), "Bitmap")
+     getlocal2
+     constructprop       QName(PackageNamespace("flash.display"), "Bitmap"), 1
+     setproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.popups.header:CoinsField"), "coinBitmap")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.popups.header:CoinsField"), "coinBitmap")
+     pushbyte            -4
+     setproperty         QName(PackageNamespace(""), "y")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.popups.header:CoinsField"), "coinBitmap")
+     getlocal1
+     pushbyte            40
+     subtract
+     setproperty         QName(PackageNamespace(""), "x")
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.popups.header:CoinsField"), "coinBitmap")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace("io.decagames.rotmg.ui.popups.header:CoinsField"), "coinsFieldBackground") type QName(PackageNamespace("io.decagames.rotmg.ui.sliceScaling"), "SliceScalingBitmap") end
+  trait slot QName(PrivateNamespace("io.decagames.rotmg.ui.popups.header:CoinsField"), "_label") type QName(PackageNamespace("io.decagames.rotmg.ui.labels"), "UILabel") end
+  trait slot QName(PrivateNamespace("io.decagames.rotmg.ui.popups.header:CoinsField"), "coinBitmap") type QName(PackageNamespace("flash.display"), "Bitmap") end
+  trait setter QName(PackageNamespace(""), "coinsAmount")
+   method
+    name "coinsAmount"
+    refid "io.decagames.rotmg.ui.popups.header:CoinsField/instance/coinsAmount/setter"
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg_1"
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.popups.header:CoinsField"), "_label")
+      getlocal1
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "toString"), 0
+      setproperty         QName(PackageNamespace(""), "text")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.popups.header:CoinsField"), "_label")
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.popups.header:CoinsField"), "coinsFieldBackground")
+      getproperty         QName(PackageNamespace(""), "width")
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.popups.header:CoinsField"), "_label")
+      getproperty         QName(PackageNamespace(""), "textWidth")
+      subtract
+      pushbyte            2
+      divide
+      pushbyte            5
+      subtract
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.popups.header:CoinsField"), "_label")
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.popups.header:CoinsField"), "coinsFieldBackground")
+      getproperty         QName(PackageNamespace(""), "height")
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.popups.header:CoinsField"), "_label")
+      getproperty         QName(PackageNamespace(""), "height")
+      subtract
+      pushbyte            2
+      divide
+      pushbyte            2
+      add
+      setproperty         QName(PackageNamespace(""), "y")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait getter QName(PackageNamespace(""), "label")
+   method
+    name "label"
+    refid "io.decagames.rotmg.ui.popups.header:CoinsField/instance/label/getter"
+    returns QName(PackageNamespace("io.decagames.rotmg.ui.labels"), "UILabel")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.popups.header:CoinsField"), "_label")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "dispose")
+   method
+    name "dispose"
+    refid "io.decagames.rotmg.ui.popups.header:CoinsField/instance/dispose"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.popups.header:CoinsField"), "coinsFieldBackground")
+      callpropvoid        QName(PackageNamespace(""), "dispose"), 0
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.popups.header:CoinsField"), "coinBitmap")
+      getproperty         QName(PackageNamespace(""), "bitmapData")
+      callpropvoid        QName(PackageNamespace(""), "dispose"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "io.decagames.rotmg.ui.popups.header:CoinsField/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

@@ -1,0 +1,128 @@
+class
+ refid "kabam.rotmg.game.view:CooldownTimerMediator"
+ instance QName(PackageNamespace("kabam.rotmg.game.view"), "CooldownTimerMediator")
+  extends QName(PackageNamespace("robotlegs.bender.bundles.mvcs"), "Mediator")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.game.view:CooldownTimerMediator")
+  iinit
+   refid "kabam.rotmg.game.view:CooldownTimerMediator/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "view") flag METADATA type QName(PackageNamespace("kabam.rotmg.game.view"), "CooldownTimer")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "hudModel") flag METADATA type QName(PackageNamespace("kabam.rotmg.ui.model"), "HUDModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "updateHUD") flag METADATA type QName(PackageNamespace("kabam.rotmg.ui.signals"), "UpdateHUDSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PackageNamespace(""), "initialize") flag OVERRIDE
+   method
+    name "initialize"
+    refid "kabam.rotmg.game.view:CooldownTimerMediator/instance/initialize"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "updateHUD")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:CooldownTimerMediator"), "onUpdateHUD")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "destroy") flag OVERRIDE
+   method
+    name "destroy"
+    refid "kabam.rotmg.game.view:CooldownTimerMediator/instance/destroy"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "updateHUD")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:CooldownTimerMediator"), "onUpdateHUD")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.game.view:CooldownTimerMediator"), "onUpdateHUD")
+   method
+    name "onUpdateHUD"
+    refid "kabam.rotmg.game.view:CooldownTimerMediator/instance/kabam.rotmg.game.view:CooldownTimerMediator/instance/onUpdateHUD"
+    param QName(PackageNamespace("com.company.assembleegameclient.objects"), "Player")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg_1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "update"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.game.view:CooldownTimerMediator/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

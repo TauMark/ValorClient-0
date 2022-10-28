@@ -1,0 +1,849 @@
+class
+ refid "io.decagames.rotmg.ui.popups.modal:ModalPopup"
+ instance QName(PackageNamespace("io.decagames.rotmg.ui.popups.modal"), "ModalPopup")
+  extends QName(PackageNamespace("io.decagames.rotmg.ui.popups"), "BasePopup")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("io.decagames.rotmg.ui.popups.modal:ModalPopup")
+  iinit
+   name "ModalPopup"
+   refid "io.decagames.rotmg.ui.popups.modal:ModalPopup/instance/init"
+   param QName(PackageNamespace(""), "int")
+   param QName(PackageNamespace(""), "int")
+   param QName(PackageNamespace(""), "String")
+   param QName(PackageNamespace(""), "Function")
+   param QName(PackageNamespace("flash.geom"), "Rectangle")
+   flag HAS_OPTIONAL
+   flag HAS_PARAM_NAMES
+   optional Utf8("")
+   optional Null()
+   optional Null()
+   paramname "_arg_1"
+   paramname "_arg_2"
+   paramname "_arg_3"
+   paramname "_arg_4"
+   paramname "_arg_5"
+   body
+    maxstack 5
+    localcount 7
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     pushbyte            0
+     setlocal            6
+
+     getlocal0
+     getlocal1
+     pushbyte            2
+     getlocal0
+     getproperty         QName(ProtectedNamespace("io.decagames.rotmg.ui.popups.modal:ModalPopup"), "contentMargin")
+     multiply
+     add
+     getlocal2
+     pushbyte            2
+     getlocal0
+     getproperty         QName(ProtectedNamespace("io.decagames.rotmg.ui.popups.modal:ModalPopup"), "contentMargin")
+     multiply
+     ifnle               L24
+
+     pushbyte            2
+     getlocal0
+     getproperty         QName(ProtectedNamespace("io.decagames.rotmg.ui.popups.modal:ModalPopup"), "contentMargin")
+     multiply
+     pushbyte            1
+     add
+     jump                L31
+
+L24:
+     getlocal2
+     pushbyte            2
+     getlocal0
+     getproperty         QName(ProtectedNamespace("io.decagames.rotmg.ui.popups.modal:ModalPopup"), "contentMargin")
+     multiply
+     add
+     convert_d
+L31:
+     getlocal            5
+     constructsuper      3
+
+     getlocal0
+     getlocal1
+     setproperty         QName(ProtectedNamespace("io.decagames.rotmg.ui.popups:BasePopup"), "_contentWidth")
+
+     getlocal0
+     getlocal2
+     setproperty         QName(ProtectedNamespace("io.decagames.rotmg.ui.popups:BasePopup"), "_contentHeight")
+
+     getlocal0
+     getlex              QName(PackageNamespace("__AS3__.vec"), "Vector")
+     getlex              QName(PackageNamespace("io.decagames.rotmg.ui.buttons"), "BaseButton")
+     applytype           1
+     construct           0
+     setproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.popups.modal:ModalPopup"), "buttonsList")
+
+     getlocal0
+     getlocal2
+     pushbyte            0
+     equals
+     setproperty         QName(ProtectedNamespace("io.decagames.rotmg.ui.popups.modal:ModalPopup"), "_autoSize")
+
+     pushbyte            0
+     findproperty        QName(ProtectedNamespace("io.decagames.rotmg.ui.popups:BasePopup"), "_popupFadeColor")
+     swap
+     setproperty         QName(ProtectedNamespace("io.decagames.rotmg.ui.popups:BasePopup"), "_popupFadeColor")
+
+     pushdouble          0.8
+     findproperty        QName(ProtectedNamespace("io.decagames.rotmg.ui.popups:BasePopup"), "_popupFadeAlpha")
+     swap
+     setproperty         QName(ProtectedNamespace("io.decagames.rotmg.ui.popups:BasePopup"), "_popupFadeAlpha")
+
+     pushtrue
+     findproperty        QName(ProtectedNamespace("io.decagames.rotmg.ui.popups:BasePopup"), "_showOnFullScreen")
+     swap
+     setproperty         QName(ProtectedNamespace("io.decagames.rotmg.ui.popups:BasePopup"), "_showOnFullScreen")
+
+     getlocal0
+     pushstring          "popup_background_simple"
+     callpropvoid        QName(PrivateNamespace("io.decagames.rotmg.ui.popups.modal:ModalPopup"), "setBackground"), 1
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("flash.display"), "Sprite")
+     constructprop       QName(PackageNamespace("flash.display"), "Sprite"), 0
+     setproperty         QName(ProtectedNamespace("io.decagames.rotmg.ui.popups.modal:ModalPopup"), "_contentContainer")
+
+     getlocal0
+     getproperty         QName(ProtectedNamespace("io.decagames.rotmg.ui.popups.modal:ModalPopup"), "_contentContainer")
+     getlocal0
+     getproperty         QName(ProtectedNamespace("io.decagames.rotmg.ui.popups.modal:ModalPopup"), "contentMargin")
+     setproperty         QName(PackageNamespace(""), "x")
+
+     getlocal0
+     getproperty         QName(ProtectedNamespace("io.decagames.rotmg.ui.popups.modal:ModalPopup"), "_contentContainer")
+     getlocal0
+     getproperty         QName(ProtectedNamespace("io.decagames.rotmg.ui.popups.modal:ModalPopup"), "contentMargin")
+     setproperty         QName(PackageNamespace(""), "y")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("flash.display"), "Sprite")
+     constructprop       QName(PackageNamespace("flash.display"), "Sprite"), 0
+     setproperty         QName(ProtectedNamespace("io.decagames.rotmg.ui.popups.modal:ModalPopup"), "contentMask")
+
+     getlocal0
+     getlocal2
+     callpropvoid        QName(PrivateNamespace("io.decagames.rotmg.ui.popups.modal:ModalPopup"), "drawContentMask"), 1
+
+     getlocal0
+     getproperty         QName(ProtectedNamespace("io.decagames.rotmg.ui.popups.modal:ModalPopup"), "_contentContainer")
+     getlocal0
+     getproperty         QName(ProtectedNamespace("io.decagames.rotmg.ui.popups.modal:ModalPopup"), "contentMask")
+     setproperty         QName(PackageNamespace(""), "mask")
+
+     getlocal0
+     getproperty         QName(ProtectedNamespace("io.decagames.rotmg.ui.popups.modal:ModalPopup"), "contentMask")
+     getlocal0
+     getproperty         QName(ProtectedNamespace("io.decagames.rotmg.ui.popups.modal:ModalPopup"), "_contentContainer")
+     getproperty         QName(PackageNamespace(""), "x")
+     setproperty         QName(PackageNamespace(""), "x")
+
+     getlocal0
+     getproperty         QName(ProtectedNamespace("io.decagames.rotmg.ui.popups.modal:ModalPopup"), "contentMask")
+     getlocal0
+     getproperty         QName(ProtectedNamespace("io.decagames.rotmg.ui.popups.modal:ModalPopup"), "_contentContainer")
+     getproperty         QName(PackageNamespace(""), "y")
+     setproperty         QName(PackageNamespace(""), "y")
+
+     getlocal0
+     getlocal0
+     getproperty         QName(ProtectedNamespace("io.decagames.rotmg.ui.popups.modal:ModalPopup"), "contentMask")
+     callsupervoid       QName(PackageNamespace(""), "addChild"), 1
+     getlocal0
+     getlocal0
+     getproperty         QName(ProtectedNamespace("io.decagames.rotmg.ui.popups.modal:ModalPopup"), "_contentContainer")
+     callsupervoid       QName(PackageNamespace(""), "addChild"), 1
+     getlocal3
+     pushstring          ""
+     ifeq                L185
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("io.decagames.rotmg.ui.popups.header"), "PopupHeader")
+     getlex              QName(PackageNamespace(""), "width")
+     getlex              QName(PackageNamespace("io.decagames.rotmg.ui.popups.header"), "PopupHeader")
+     getproperty         QName(PackageNamespace(""), "TYPE_MODAL")
+     constructprop       QName(PackageNamespace("io.decagames.rotmg.ui.popups.header"), "PopupHeader"), 2
+     setproperty         QName(ProtectedNamespace("io.decagames.rotmg.ui.popups.modal:ModalPopup"), "_header")
+
+     getlocal0
+     getproperty         QName(ProtectedNamespace("io.decagames.rotmg.ui.popups.modal:ModalPopup"), "_header")
+     getlocal3
+     getlex              QName(PackageNamespace(""), "popupWidth")
+     pushbyte            18
+     subtract
+     getlocal            4
+     pushnull
+     ifne                L133
+
+     getlex              QName(PackageNamespace("io.decagames.rotmg.ui.defaults"), "DefaultLabelFormat")
+     getproperty         QName(PackageNamespace(""), "defaultModalTitle")
+     jump                L135
+
+L133:
+     getlocal            4
+     coerce              QName(PackageNamespace(""), "Function")
+L135:
+     callpropvoid        QName(PackageNamespace(""), "setTitle"), 3
+
+     getlocal0
+     getlocal0
+     getproperty         QName(ProtectedNamespace("io.decagames.rotmg.ui.popups.modal:ModalPopup"), "_header")
+     callsupervoid       QName(PackageNamespace(""), "addChild"), 1
+     getlocal0
+     getproperty         QName(ProtectedNamespace("io.decagames.rotmg.ui.popups.modal:ModalPopup"), "_header")
+     getproperty         QName(PackageNamespace(""), "height")
+     pushbyte            2
+     divide
+     pushbyte            1
+     subtract
+     convert_i
+     setlocal            6
+
+     getlocal0
+     getproperty         QName(ProtectedNamespace("io.decagames.rotmg.ui.popups.modal:ModalPopup"), "_contentContainer")
+     getlocal0
+     getproperty         QName(ProtectedNamespace("io.decagames.rotmg.ui.popups.modal:ModalPopup"), "_contentContainer")
+     getproperty         QName(PackageNamespace(""), "y")
+     getlocal            6
+     pushbyte            15
+     add
+     add
+     setproperty         QName(PackageNamespace(""), "y")
+
+     getlocal0
+     getproperty         QName(ProtectedNamespace("io.decagames.rotmg.ui.popups.modal:ModalPopup"), "contentMask")
+     getlocal0
+     getproperty         QName(ProtectedNamespace("io.decagames.rotmg.ui.popups.modal:ModalPopup"), "contentMask")
+     getproperty         QName(PackageNamespace(""), "y")
+     getlocal            6
+     pushbyte            15
+     add
+     add
+     setproperty         QName(PackageNamespace(""), "y")
+
+     getlocal0
+     getproperty         QName(ProtectedNamespace("io.decagames.rotmg.ui.popups.modal:ModalPopup"), "background")
+     getlocal0
+     getproperty         QName(ProtectedNamespace("io.decagames.rotmg.ui.popups.modal:ModalPopup"), "background")
+     getproperty         QName(PackageNamespace(""), "y")
+     getlocal            6
+     add
+     setproperty         QName(PackageNamespace(""), "y")
+
+     getlocal0
+     getproperty         QName(ProtectedNamespace("io.decagames.rotmg.ui.popups.modal:ModalPopup"), "background")
+     getlocal0
+     getproperty         QName(ProtectedNamespace("io.decagames.rotmg.ui.popups.modal:ModalPopup"), "background")
+     getproperty         QName(PackageNamespace(""), "height")
+     pushbyte            15
+     add
+     setproperty         QName(PackageNamespace(""), "height")
+
+L185:
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(ProtectedNamespace("io.decagames.rotmg.ui.popups.modal:ModalPopup"), "_contentContainer") type QName(PackageNamespace("flash.display"), "Sprite") end
+  trait slot QName(ProtectedNamespace("io.decagames.rotmg.ui.popups.modal:ModalPopup"), "contentMask") type QName(PackageNamespace("flash.display"), "Sprite") end
+  trait slot QName(ProtectedNamespace("io.decagames.rotmg.ui.popups.modal:ModalPopup"), "background") type QName(PackageNamespace("io.decagames.rotmg.ui.sliceScaling"), "SliceScalingBitmap") end
+  trait slot QName(ProtectedNamespace("io.decagames.rotmg.ui.popups.modal:ModalPopup"), "contentMargin") type QName(PackageNamespace(""), "int") value Integer(11) end
+  trait slot QName(ProtectedNamespace("io.decagames.rotmg.ui.popups.modal:ModalPopup"), "maxHeight") type QName(PackageNamespace(""), "int") value Integer(520) end
+  trait slot QName(ProtectedNamespace("io.decagames.rotmg.ui.popups.modal:ModalPopup"), "_header") type QName(PackageNamespace("io.decagames.rotmg.ui.popups.header"), "PopupHeader") end
+  trait slot QName(ProtectedNamespace("io.decagames.rotmg.ui.popups.modal:ModalPopup"), "_autoSize") type QName(PackageNamespace(""), "Boolean") end
+  trait slot QName(ProtectedNamespace("io.decagames.rotmg.ui.popups.modal:ModalPopup"), "scroll") type QName(PackageNamespace("io.decagames.rotmg.ui.scroll"), "UIScrollbar") end
+  trait slot QName(PrivateNamespace("io.decagames.rotmg.ui.popups.modal:ModalPopup"), "buttonsList") type TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("io.decagames.rotmg.ui.buttons"), "BaseButton")>) end
+  trait method QName(PrivateNamespace("io.decagames.rotmg.ui.popups.modal:ModalPopup"), "drawContentMask")
+   method
+    name "drawContentMask"
+    refid "io.decagames.rotmg.ui.popups.modal:ModalPopup/instance/io.decagames.rotmg.ui.popups.modal:ModalPopup/instance/drawContentMask"
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg_1"
+    body
+     maxstack 6
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("io.decagames.rotmg.ui.popups.modal:ModalPopup"), "contentMask")
+      getproperty         QName(PackageNamespace(""), "graphics")
+      callpropvoid        QName(PackageNamespace(""), "clear"), 0
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("io.decagames.rotmg.ui.popups.modal:ModalPopup"), "contentMask")
+      getproperty         QName(PackageNamespace(""), "graphics")
+      pushint             16711680
+      pushdouble          0.2
+      callpropvoid        QName(PackageNamespace(""), "beginFill"), 2
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("io.decagames.rotmg.ui.popups.modal:ModalPopup"), "contentMask")
+      getproperty         QName(PackageNamespace(""), "graphics")
+      pushbyte            0
+      pushbyte            0
+      getlex              QName(ProtectedNamespace("io.decagames.rotmg.ui.popups:BasePopup"), "_contentWidth")
+      getlocal1
+      pushbyte            10
+      add
+      callpropvoid        QName(PackageNamespace(""), "drawRect"), 4
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("io.decagames.rotmg.ui.popups.modal:ModalPopup"), "contentMask")
+      getproperty         QName(PackageNamespace(""), "graphics")
+      callpropvoid        QName(PackageNamespace(""), "endFill"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "addChildAt") flag OVERRIDE
+   method
+    name "addChildAt"
+    refid "io.decagames.rotmg.ui.popups.modal:ModalPopup/instance/addChildAt"
+    param QName(PackageNamespace("flash.display"), "DisplayObject")
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace("flash.display"), "DisplayObject")
+    flag HAS_PARAM_NAMES
+    paramname "_arg_1"
+    paramname "_arg_2"
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("io.decagames.rotmg.ui.popups.modal:ModalPopup"), "_contentContainer")
+      getlocal1
+      getlocal2
+      callproperty        QName(PackageNamespace(""), "addChildAt"), 2
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "addChild") flag OVERRIDE
+   method
+    name "addChild"
+    refid "io.decagames.rotmg.ui.popups.modal:ModalPopup/instance/addChild"
+    param QName(PackageNamespace("flash.display"), "DisplayObject")
+    returns QName(PackageNamespace("flash.display"), "DisplayObject")
+    flag HAS_PARAM_NAMES
+    paramname "_arg_1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("io.decagames.rotmg.ui.popups.modal:ModalPopup"), "_contentContainer")
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "addChild"), 1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "removeChild") flag OVERRIDE
+   method
+    name "removeChild"
+    refid "io.decagames.rotmg.ui.popups.modal:ModalPopup/instance/removeChild"
+    param QName(PackageNamespace("flash.display"), "DisplayObject")
+    returns QName(PackageNamespace("flash.display"), "DisplayObject")
+    flag HAS_PARAM_NAMES
+    paramname "_arg_1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("io.decagames.rotmg.ui.popups.modal:ModalPopup"), "_contentContainer")
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "removeChild"), 1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "removeChildAt") flag OVERRIDE
+   method
+    name "removeChildAt"
+    refid "io.decagames.rotmg.ui.popups.modal:ModalPopup/instance/removeChildAt"
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace("flash.display"), "DisplayObject")
+    flag HAS_PARAM_NAMES
+    paramname "_arg_1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("io.decagames.rotmg.ui.popups.modal:ModalPopup"), "_contentContainer")
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "removeChildAt"), 1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait getter QName(PackageNamespace(""), "height") flag OVERRIDE
+   method
+    name "height"
+    refid "io.decagames.rotmg.ui.popups.modal:ModalPopup/instance/height/getter"
+    returns QName(PackageNamespace(""), "Number")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("io.decagames.rotmg.ui.popups.modal:ModalPopup"), "_contentContainer")
+      getproperty         QName(PackageNamespace(""), "height")
+      getlocal0
+      getproperty         QName(ProtectedNamespace("io.decagames.rotmg.ui.popups.modal:ModalPopup"), "maxHeight")
+      ifngt               L29
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("io.decagames.rotmg.ui.popups.modal:ModalPopup"), "maxHeight")
+      pushbyte            2
+      getlocal0
+      getproperty         QName(ProtectedNamespace("io.decagames.rotmg.ui.popups.modal:ModalPopup"), "contentMargin")
+      multiply
+      add
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "header")
+      iffalse             L26
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("io.decagames.rotmg.ui.popups.modal:ModalPopup"), "_header")
+      getproperty         QName(PackageNamespace(""), "height")
+      pushbyte            2
+      divide
+      pushbyte            14
+      add
+      jump                L27
+
+L26:
+      pushdouble          0
+L27:
+      add
+      returnvalue
+
+L29:
+      findpropstrict      QName(PackageNamespace(""), "height")
+      getsuper            QName(PackageNamespace(""), "height")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "resize")
+   method
+    name "resize"
+    refid "io.decagames.rotmg.ui.popups.modal:ModalPopup/instance/resize"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("io.decagames.rotmg.ui.popups.modal:ModalPopup"), "_contentContainer")
+      getproperty         QName(PackageNamespace(""), "height")
+      convert_i
+      setlocal1
+
+      getlocal1
+      getlocal0
+      getproperty         QName(ProtectedNamespace("io.decagames.rotmg.ui.popups.modal:ModalPopup"), "maxHeight")
+      ifngt               L15
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("io.decagames.rotmg.ui.popups.modal:ModalPopup"), "maxHeight")
+      convert_i
+      setlocal1
+
+L15:
+      getlocal0
+      getlocal1
+      callpropvoid        QName(PrivateNamespace("io.decagames.rotmg.ui.popups.modal:ModalPopup"), "drawContentMask"), 1
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("io.decagames.rotmg.ui.popups.modal:ModalPopup"), "background")
+      getlocal1
+      pushbyte            2
+      getlocal0
+      getproperty         QName(ProtectedNamespace("io.decagames.rotmg.ui.popups.modal:ModalPopup"), "contentMargin")
+      multiply
+      add
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "header")
+      iffalse             L31
+
+      pushbyte            25
+      jump                L32
+
+L31:
+      pushdouble          0
+L32:
+      add
+      setproperty         QName(PackageNamespace(""), "height")
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("io.decagames.rotmg.ui.popups.modal:ModalPopup"), "_contentContainer")
+      getproperty         QName(PackageNamespace(""), "height")
+      getlocal0
+      getproperty         QName(ProtectedNamespace("io.decagames.rotmg.ui.popups.modal:ModalPopup"), "maxHeight")
+      greaterthan
+      dup
+      iffalse             L46
+
+      pop
+      getlocal0
+      getproperty         QName(ProtectedNamespace("io.decagames.rotmg.ui.popups.modal:ModalPopup"), "scroll")
+      not
+L46:
+      iffalse             L77
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("io.decagames.rotmg.ui.scroll"), "UIScrollbar")
+      getlocal1
+      constructprop       QName(PackageNamespace("io.decagames.rotmg.ui.scroll"), "UIScrollbar"), 1
+      setproperty         QName(ProtectedNamespace("io.decagames.rotmg.ui.popups.modal:ModalPopup"), "scroll")
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("io.decagames.rotmg.ui.popups.modal:ModalPopup"), "scroll")
+      getlex              QName(PackageNamespace(""), "popupWidth")
+      pushbyte            18
+      subtract
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("io.decagames.rotmg.ui.popups.modal:ModalPopup"), "scroll")
+      getlocal0
+      getproperty         QName(ProtectedNamespace("io.decagames.rotmg.ui.popups.modal:ModalPopup"), "_contentContainer")
+      getproperty         QName(PackageNamespace(""), "y")
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal0
+      getlocal0
+      getproperty         QName(ProtectedNamespace("io.decagames.rotmg.ui.popups.modal:ModalPopup"), "scroll")
+      callsupervoid       QName(PackageNamespace(""), "addChild"), 1
+      getlocal0
+      getproperty         QName(ProtectedNamespace("io.decagames.rotmg.ui.popups.modal:ModalPopup"), "scroll")
+      getlocal0
+      setproperty         QName(PackageNamespace(""), "scrollObject")
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("io.decagames.rotmg.ui.popups.modal:ModalPopup"), "scroll")
+      getlocal0
+      getproperty         QName(ProtectedNamespace("io.decagames.rotmg.ui.popups.modal:ModalPopup"), "_contentContainer")
+      setproperty         QName(PackageNamespace(""), "content")
+
+L77:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "addDisplayObject")
+   method
+    name "addDisplayObject"
+    refid "io.decagames.rotmg.ui.popups.modal:ModalPopup/instance/addDisplayObject"
+    param QName(PackageNamespace("flash.display"), "DisplayObject")
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_OPTIONAL
+    flag HAS_PARAM_NAMES
+    optional Integer(8)
+    paramname "_arg1"
+    paramname "_arg2"
+    body
+     maxstack 2
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      getlocal1
+      pushbyte            10
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal1
+      getlocal2
+      setproperty         QName(PackageNamespace(""), "x")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait getter QName(PackageNamespace(""), "header")
+   method
+    name "header"
+    refid "io.decagames.rotmg.ui.popups.modal:ModalPopup/instance/header/getter"
+    returns QName(PackageNamespace("io.decagames.rotmg.ui.popups.header"), "PopupHeader")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("io.decagames.rotmg.ui.popups.modal:ModalPopup"), "_header")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("io.decagames.rotmg.ui.popups.modal:ModalPopup"), "setBackground")
+   method
+    name "setBackground"
+    refid "io.decagames.rotmg.ui.popups.modal:ModalPopup/instance/io.decagames.rotmg.ui.popups.modal:ModalPopup/instance/setBackground"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg_1"
+    body
+     maxstack 4
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlex              QName(PackageNamespace("io.decagames.rotmg.ui.texture"), "TextureParser")
+      getproperty         QName(PackageNamespace(""), "instance")
+      pushstring          "UI"
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "getSliceScalingBitmap"), 2
+      setproperty         QName(ProtectedNamespace("io.decagames.rotmg.ui.popups.modal:ModalPopup"), "background")
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("io.decagames.rotmg.ui.popups.modal:ModalPopup"), "background")
+      getlex              QName(PackageNamespace(""), "popupWidth")
+      setproperty         QName(PackageNamespace(""), "width")
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("io.decagames.rotmg.ui.popups.modal:ModalPopup"), "background")
+      getlex              QName(PackageNamespace(""), "popupHeight")
+      setproperty         QName(PackageNamespace(""), "height")
+
+      getlocal0
+      getlocal0
+      getproperty         QName(ProtectedNamespace("io.decagames.rotmg.ui.popups.modal:ModalPopup"), "background")
+      pushbyte            0
+      callsupervoid       QName(PackageNamespace(""), "addChildAt"), 2
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "dispose")
+   method
+    name "dispose"
+    refid "io.decagames.rotmg.ui.popups.modal:ModalPopup/instance/dispose"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 4
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      setlocal1
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("io.decagames.rotmg.ui.popups.modal:ModalPopup"), "background")
+      iffalse             L13
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("io.decagames.rotmg.ui.popups.modal:ModalPopup"), "background")
+      callpropvoid        QName(PackageNamespace(""), "dispose"), 0
+
+      getlocal0
+      pushnull
+      setproperty         QName(ProtectedNamespace("io.decagames.rotmg.ui.popups.modal:ModalPopup"), "background")
+
+L13:
+      getlocal0
+      getproperty         QName(ProtectedNamespace("io.decagames.rotmg.ui.popups.modal:ModalPopup"), "_header")
+      iffalse             L19
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("io.decagames.rotmg.ui.popups.modal:ModalPopup"), "_header")
+      callpropvoid        QName(PackageNamespace(""), "dispose"), 0
+
+L19:
+      pushbyte            0
+      setlocal3
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.popups.modal:ModalPopup"), "buttonsList")
+      setlocal2
+
+      jump                L33
+
+L25:
+      label
+      getlocal2
+      getlocal3
+      nextvalue
+      coerce              QName(PackageNamespace("io.decagames.rotmg.ui.buttons"), "BaseButton")
+      setlocal1
+
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "dispose"), 0
+
+L33:
+      hasnext2            2, 3
+      iftrue              L25
+
+      getlocal0
+      pushnull
+      setproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.popups.modal:ModalPopup"), "buttonsList")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(ProtectedNamespace("io.decagames.rotmg.ui.popups.modal:ModalPopup"), "registerButton")
+   method
+    name "registerButton"
+    refid "io.decagames.rotmg.ui.popups.modal:ModalPopup/instance/io.decagames.rotmg.ui.popups.modal:ModalPopup:registerButton"
+    param QName(PackageNamespace("io.decagames.rotmg.ui.buttons"), "BaseButton")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg_1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.popups.modal:ModalPopup"), "buttonsList")
+      getlocal1
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait getter QName(PackageNamespace(""), "contentContainer")
+   method
+    name "contentContainer"
+    refid "io.decagames.rotmg.ui.popups.modal:ModalPopup/instance/contentContainer/getter"
+    returns QName(PackageNamespace("flash.display"), "Sprite")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("io.decagames.rotmg.ui.popups.modal:ModalPopup"), "_contentContainer")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait getter QName(PackageNamespace(""), "autoSize")
+   method
+    name "autoSize"
+    refid "io.decagames.rotmg.ui.popups.modal:ModalPopup/instance/autoSize/getter"
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("io.decagames.rotmg.ui.popups.modal:ModalPopup"), "_autoSize")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "io.decagames.rotmg.ui.popups.modal:ModalPopup/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

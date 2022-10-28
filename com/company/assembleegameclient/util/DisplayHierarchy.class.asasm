@@ -1,0 +1,153 @@
+class
+ refid "com.company.assembleegameclient.util:DisplayHierarchy"
+ instance QName(PackageNamespace("com.company.assembleegameclient.util"), "DisplayHierarchy")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  iinit
+   refid "com.company.assembleegameclient.util:DisplayHierarchy/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.util:DisplayHierarchy/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait method QName(PackageNamespace(""), "getParentWithType")
+  method
+   name "getParentWithType"
+   refid "com.company.assembleegameclient.util:DisplayHierarchy/class/getParentWithType"
+   param QName(PackageNamespace("flash.display"), "DisplayObject")
+   param QName(PackageNamespace(""), "Class")
+   returns QName(PackageNamespace("flash.display"), "DisplayObject")
+   flag HAS_PARAM_NAMES
+   paramname "_arg1"
+   paramname "_arg2"
+   body
+    maxstack 2
+    localcount 3
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     jump                L8
+
+L3:
+     label
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "parent")
+     coerce              QName(PackageNamespace("flash.display"), "DisplayObject")
+     setlocal1
+
+L8:
+     getlocal1
+     dup
+     iffalse             L17
+
+     pop
+     getlocal1
+     getlocal2
+     istypelate
+     not
+     coerce_a
+L17:
+     iftrue              L3
+
+     getlocal1
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "getParentWithTypeArray")
+  method
+   name "getParentWithTypeArray"
+   refid "com.company.assembleegameclient.util:DisplayHierarchy/class/getParentWithTypeArray"
+   param QName(PackageNamespace("flash.display"), "DisplayObject")
+   returns QName(PackageNamespace("flash.display"), "DisplayObject")
+   flag NEED_REST
+   flag HAS_PARAM_NAMES
+   paramname "_arg1"
+   body
+    maxstack 2
+    localcount 6
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     pushnull
+     setlocal3
+
+     jump                L29
+
+L5:
+     label
+     pushbyte            0
+     setlocal            5
+
+     getlocal2
+     setlocal            4
+
+     jump                L23
+
+L11:
+     label
+     getlocal            4
+     getlocal            5
+     nextvalue
+     coerce              QName(PackageNamespace(""), "Class")
+     setlocal3
+
+     getlocal1
+     getlocal3
+     istypelate
+     iffalse             L23
+
+     getlocal1
+     returnvalue
+
+L23:
+     hasnext2            4, 5
+     iftrue              L11
+
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "parent")
+     coerce              QName(PackageNamespace("flash.display"), "DisplayObject")
+     setlocal1
+
+L29:
+     getlocal1
+     iftrue              L5
+
+     getlocal1
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+end ; class

@@ -1,0 +1,115 @@
+class
+ refid "kabam.rotmg.application.impl:LocalhostSetup"
+ instance QName(PackageNamespace("kabam.rotmg.application.impl"), "LocalhostSetup")
+  extends QName(PackageNamespace(""), "Object")
+  implements QName(PackageNamespace("kabam.rotmg.application.api"), "ApplicationSetup")
+  flag SEALED
+  iinit
+   name "LocalhostSetup"
+   refid "kabam.rotmg.application.impl:LocalhostSetup/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait const QName(PrivateNamespace("kabam.rotmg.application.impl:LocalhostSetup"), "HOST_DOMAIN") type QName(PackageNamespace(""), "String") value Utf8("localhost") end
+  trait const QName(PrivateNamespace("kabam.rotmg.application.impl:LocalhostSetup"), "HOST_PORT") type QName(PackageNamespace(""), "Number") value Integer(8080) end
+  trait const QName(PrivateNamespace("kabam.rotmg.application.impl:LocalhostSetup"), "HOST_PROTOCOL") type QName(PackageNamespace(""), "String") value Utf8("http") end
+  trait const QName(PrivateNamespace("kabam.rotmg.application.impl:LocalhostSetup"), "BUILD_LABEL") type QName(PackageNamespace(""), "String") value Utf8("<font color='#FFEE00'>LOCALHOST</font> #{VERSION}") end
+  trait getter QName(PackageNamespace(""), "getDomain")
+   method
+    name "getDomain"
+    refid "kabam.rotmg.application.impl:LocalhostSetup/instance/getDomain/getter"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushstring          "localhost"
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getAppEngineUrl")
+   method
+    name "getAppEngineUrl"
+    refid "kabam.rotmg.application.impl:LocalhostSetup/instance/getAppEngineUrl"
+    param QName(PackageNamespace(""), "Boolean")
+    returns QName(PackageNamespace(""), "String")
+    flag HAS_OPTIONAL
+    flag HAS_PARAM_NAMES
+    optional False()
+    paramname "encrypted"
+    body
+     maxstack 4
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace("kabam.rotmg.application"), "DynamicSettings")
+      pushstring          "http"
+      pushstring          "localhost"
+      pushshort           8080
+      callproperty        QName(PackageNamespace(""), "buildURI"), 3
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getBuildLabel")
+   method
+    name "getBuildLabel"
+    refid "kabam.rotmg.application.impl:LocalhostSetup/instance/getBuildLabel"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushstring          "<font color='#FFEE00'>LOCALHOST</font> #{VERSION}"
+      pushstring          "{VERSION}"
+      pushstring          "4.3.1"
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "replace"), 2
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.application.impl:LocalhostSetup/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

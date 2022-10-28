@@ -1,0 +1,186 @@
+class
+ refid "com.company.assembleegameclient.objects.particles:ParticleField/Square"
+ instance QName(PrivateNamespace("FilePrivateNS:ParticleField"), "Square")
+  extends QName(PackageNamespace("flash.display"), "Shape")
+  flag SEALED
+  iinit
+   name "Square"
+   refid "com.company.assembleegameclient.objects.particles:ParticleField/Square/instance/init"
+   param QName(PackageNamespace("flash.geom"), "Point")
+   param QName(PackageNamespace("flash.geom"), "Point")
+   param QName(PackageNamespace(""), "uint")
+   flag HAS_PARAM_NAMES
+   paramname "_arg1"
+   paramname "_arg2"
+   paramname "_arg3"
+   body
+    maxstack 5
+    localcount 4
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("org.osflash.signals"), "Signal")
+     constructprop       QName(PackageNamespace("org.osflash.signals"), "Signal"), 0
+     setproperty         QName(PackageNamespace(""), "complete")
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     getlocal1
+     setproperty         QName(PackageNamespace(""), "start")
+
+     getlocal0
+     getlocal2
+     setproperty         QName(PackageNamespace(""), "end")
+
+     getlocal0
+     getlocal3
+     setproperty         QName(PrivateNamespace("FilePrivateNS:ParticleField:Square"), "lifespan")
+
+     getlocal0
+     getlocal2
+     getproperty         QName(PackageNamespace(""), "x")
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "x")
+     subtract
+     getlocal3
+     divide
+     setproperty         QName(PrivateNamespace("FilePrivateNS:ParticleField:Square"), "moveX")
+
+     getlocal0
+     getlocal2
+     getproperty         QName(PackageNamespace(""), "y")
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "y")
+     subtract
+     getlocal3
+     divide
+     setproperty         QName(PrivateNamespace("FilePrivateNS:ParticleField:Square"), "moveY")
+
+     getlex              QName(PackageNamespace(""), "graphics")
+     pushint             16777215
+     callpropvoid        QName(PackageNamespace(""), "beginFill"), 1
+
+     getlex              QName(PackageNamespace(""), "graphics")
+     pushbyte            -2
+     pushbyte            -2
+     pushbyte            4
+     pushbyte            4
+     callpropvoid        QName(PackageNamespace(""), "drawRect"), 4
+
+     getlocal0
+     callpropvoid        QName(PrivateNamespace("FilePrivateNS:ParticleField:Square"), "position"), 0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "start") type QName(PackageNamespace("flash.geom"), "Point") end
+  trait slot QName(PackageNamespace(""), "end") type QName(PackageNamespace("flash.geom"), "Point") end
+  trait slot QName(PrivateNamespace("FilePrivateNS:ParticleField:Square"), "lifespan") type QName(PackageNamespace(""), "uint") end
+  trait slot QName(PrivateNamespace("FilePrivateNS:ParticleField:Square"), "moveX") type QName(PackageNamespace(""), "Number") end
+  trait slot QName(PrivateNamespace("FilePrivateNS:ParticleField:Square"), "moveY") type QName(PackageNamespace(""), "Number") end
+  trait slot QName(PrivateNamespace("FilePrivateNS:ParticleField:Square"), "angle") type QName(PackageNamespace(""), "Number") end
+  trait slot QName(PackageNamespace(""), "complete") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait method QName(PrivateNamespace("FilePrivateNS:ParticleField:Square"), "position")
+   method
+    name "position"
+    refid "com.company.assembleegameclient.objects.particles:ParticleField/Square/instance/com.company.assembleegameclient.objects.particles:ParticleField/Square/instance/position"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "start")
+      getproperty         QName(PackageNamespace(""), "x")
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "start")
+      getproperty         QName(PackageNamespace(""), "y")
+      setproperty         QName(PackageNamespace(""), "y")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "move")
+   method
+    name "move"
+    refid "com.company.assembleegameclient.objects.particles:ParticleField/Square/instance/move"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "x")
+      getlocal0
+      getproperty         QName(PrivateNamespace("FilePrivateNS:ParticleField:Square"), "moveX")
+      add
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "y")
+      getlocal0
+      getproperty         QName(PrivateNamespace("FilePrivateNS:ParticleField:Square"), "moveY")
+      add
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal0
+      dup
+      getproperty         QName(PrivateNamespace("FilePrivateNS:ParticleField:Square"), "lifespan")
+      convert_d
+      decrement
+      setproperty         QName(PrivateNamespace("FilePrivateNS:ParticleField:Square"), "lifespan")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("FilePrivateNS:ParticleField:Square"), "lifespan")
+      iftrue              L29
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "complete")
+      getlocal0
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+L29:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.objects.particles:ParticleField/Square/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

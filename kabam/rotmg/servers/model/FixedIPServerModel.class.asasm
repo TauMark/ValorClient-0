@@ -1,0 +1,167 @@
+class
+ refid "kabam.rotmg.servers.model:FixedIPServerModel"
+ instance QName(PackageNamespace("kabam.rotmg.servers.model"), "FixedIPServerModel")
+  extends QName(PackageNamespace(""), "Object")
+  implements QName(PackageNamespace("kabam.rotmg.servers.api"), "ServerModel")
+  flag SEALED
+  iinit
+   name "FixedIPServerModel"
+   refid "kabam.rotmg.servers.model:FixedIPServerModel/instance/init"
+   body
+    maxstack 3
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.servers.api"), "Server")
+     constructprop       QName(PackageNamespace("kabam.rotmg.servers.api"), "Server"), 0
+     pushstring          "localhost"
+     callproperty        QName(PackageNamespace(""), "setName"), 1
+     pushshort           2050
+     callproperty        QName(PackageNamespace(""), "setPort"), 1
+     setproperty         QName(PrivateNamespace("kabam.rotmg.servers.model:FixedIPServerModel"), "localhost")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace("kabam.rotmg.servers.model:FixedIPServerModel"), "localhost") type QName(PackageNamespace("kabam.rotmg.servers.api"), "Server") end
+  trait method QName(PackageNamespace(""), "setIP")
+   method
+    name "setIP"
+    refid "kabam.rotmg.servers.model:FixedIPServerModel/instance/setIP"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace("kabam.rotmg.servers.model"), "FixedIPServerModel")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.servers.model:FixedIPServerModel"), "localhost")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "setAddress"), 1
+
+      getlocal0
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getServers")
+   method
+    name "getServers"
+    refid "kabam.rotmg.servers.model:FixedIPServerModel/instance/getServers"
+    returns TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("kabam.rotmg.servers.api"), "Server")>)
+    body
+     maxstack 4
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace("__AS3__.vec"), "Vector")
+      getlex              QName(PackageNamespace("kabam.rotmg.servers.api"), "Server")
+      applytype           1
+      pushbyte            1
+      construct           1
+      dup
+      pushbyte            0
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.servers.model:FixedIPServerModel"), "localhost")
+      setproperty         MultinameL([PrivateNamespace("kabam.rotmg.servers.model:FixedIPServerModel"), ProtectedNamespace("kabam.rotmg.servers.model:FixedIPServerModel"), StaticProtectedNs("kabam.rotmg.servers.model:FixedIPServerModel"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.servers.model"), PackageInternalNs("kabam.rotmg.servers.model"), PrivateNamespace("FilePrivateNS:FixedIPServerModel"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getServer")
+   method
+    name "getServer"
+    refid "kabam.rotmg.servers.model:FixedIPServerModel/instance/getServer"
+    returns QName(PackageNamespace("kabam.rotmg.servers.api"), "Server")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.servers.model:FixedIPServerModel"), "localhost")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "isServerAvailable")
+   method
+    name "isServerAvailable"
+    refid "kabam.rotmg.servers.model:FixedIPServerModel/instance/isServerAvailable"
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushtrue
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setServers")
+   method
+    name "setServers"
+    refid "kabam.rotmg.servers.model:FixedIPServerModel/instance/setServers"
+    param TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("kabam.rotmg.servers.api"), "Server")>)
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 1
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.servers.model:FixedIPServerModel/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

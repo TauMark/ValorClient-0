@@ -1,0 +1,153 @@
+class
+ refid "com.company.assembleegameclient.game.events:ReconnectEvent"
+ instance QName(PackageNamespace("com.company.assembleegameclient.game.events"), "ReconnectEvent")
+  extends QName(PackageNamespace("flash.events"), "Event")
+  flag SEALED
+  iinit
+   name "ReconnectEvent"
+   refid "com.company.assembleegameclient.game.events:ReconnectEvent/instance/init"
+   param QName(PackageNamespace("kabam.rotmg.servers.api"), "Server")
+   param QName(PackageNamespace(""), "int")
+   param QName(PackageNamespace(""), "Boolean")
+   param QName(PackageNamespace(""), "int")
+   param QName(PackageNamespace(""), "int")
+   param QName(PackageNamespace("flash.utils"), "ByteArray")
+   param QName(PackageNamespace(""), "Boolean")
+   flag HAS_PARAM_NAMES
+   paramname "svr"
+   paramname "gameId"
+   paramname "createCharacter"
+   paramname "charId"
+   paramname "keyTime"
+   paramname "key"
+   paramname "fromArena"
+   body
+    maxstack 2
+    localcount 8
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     pushstring          "RECONNECT_EVENT"
+     constructsuper      1
+
+     getlocal0
+     getlocal1
+     setproperty         QName(PackageNamespace(""), "server_")
+
+     getlocal0
+     getlocal2
+     setproperty         QName(PackageNamespace(""), "gameId_")
+
+     getlocal0
+     getlocal3
+     setproperty         QName(PackageNamespace(""), "createCharacter_")
+
+     getlocal0
+     getlocal            4
+     setproperty         QName(PackageNamespace(""), "charId_")
+
+     getlocal0
+     getlocal            5
+     setproperty         QName(PackageNamespace(""), "keyTime_")
+
+     getlocal0
+     getlocal            6
+     setproperty         QName(PackageNamespace(""), "key_")
+
+     getlocal0
+     getlocal            7
+     setproperty         QName(PackageNamespace(""), "isFromArena_")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "server_") type QName(PackageNamespace("kabam.rotmg.servers.api"), "Server") end
+  trait slot QName(PackageNamespace(""), "gameId_") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PackageNamespace(""), "createCharacter_") type QName(PackageNamespace(""), "Boolean") end
+  trait slot QName(PackageNamespace(""), "charId_") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PackageNamespace(""), "keyTime_") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PackageNamespace(""), "key_") type QName(PackageNamespace("flash.utils"), "ByteArray") end
+  trait slot QName(PackageNamespace(""), "isFromArena_") type QName(PackageNamespace(""), "Boolean") end
+  trait method QName(PackageNamespace(""), "clone") flag OVERRIDE
+   method
+    name "clone"
+    refid "com.company.assembleegameclient.game.events:ReconnectEvent/instance/clone"
+    returns QName(PackageNamespace("flash.events"), "Event")
+    body
+     maxstack 8
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.game.events"), "ReconnectEvent")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "server_")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "gameId_")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "createCharacter_")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "charId_")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "keyTime_")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "key_")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "isFromArena_")
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.game.events"), "ReconnectEvent"), 7
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "toString") flag OVERRIDE
+   method
+    name "toString"
+    refid "com.company.assembleegameclient.game.events:ReconnectEvent/instance/toString"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 8
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace(""), "formatToString")
+      pushstring          "RECONNECT_EVENT"
+      pushstring          "server_"
+      pushstring          "gameId_"
+      pushstring          "charId_"
+      pushstring          "keyTime_"
+      pushstring          "key_"
+      pushstring          "isFromArena_"
+      callproperty        QName(PackageNamespace(""), "formatToString"), 7
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.game.events:ReconnectEvent/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PackageNamespace(""), "RECONNECT") type QName(PackageNamespace(""), "String") value Utf8("RECONNECT_EVENT") end
+end ; class

@@ -1,0 +1,2587 @@
+class
+ refid "kabam.rotmg.market.ui:MarketAllOffersScreen"
+ instance QName(PackageNamespace("kabam.rotmg.market.ui"), "MarketAllOffersScreen")
+  extends QName(PackageNamespace("flash.display"), "Sprite")
+  flag SEALED
+  iinit
+   name "MarketAllOffersScreen"
+   refid "kabam.rotmg.market.ui:MarketAllOffersScreen/instance/init"
+   body
+    maxstack 4
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     findpropstrict      QName(PackageNamespace("flash.display"), "Sprite")
+     constructprop       QName(PackageNamespace("flash.display"), "Sprite"), 0
+     findproperty        QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "topBar")
+     swap
+     setproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "topBar")
+
+     findpropstrict      QName(PackageNamespace("flash.utils"), "Dictionary")
+     constructprop       QName(PackageNamespace("flash.utils"), "Dictionary"), 0
+     findproperty        QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "count")
+     swap
+     setproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "count")
+
+     findpropstrict      QName(PackageNamespace("flash.utils"), "Dictionary")
+     constructprop       QName(PackageNamespace("flash.utils"), "Dictionary"), 0
+     findproperty        QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "added")
+     swap
+     setproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "added")
+
+     findpropstrict      QName(PackageNamespace("flash.utils"), "Dictionary")
+     constructprop       QName(PackageNamespace("flash.utils"), "Dictionary"), 0
+     findproperty        QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "prices")
+     swap
+     setproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "prices")
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("org.osflash.signals.natives"), "NativeMappedSignal")
+     getlocal0
+     pushstring          "removedFromStage"
+     constructprop       QName(PackageNamespace("org.osflash.signals.natives"), "NativeMappedSignal"), 2
+     setproperty         QName(PackageNamespace(""), "removed")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete")
+     constructprop       QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete"), 0
+     pushbyte            46
+     callproperty        QName(PackageNamespace(""), "setSize"), 1
+     pushtrue
+     callproperty        QName(PackageNamespace(""), "setBold"), 1
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "StaticStringBuilder")
+     pushstring          "Loading..."
+     constructprop       QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "StaticStringBuilder"), 1
+     callproperty        QName(PackageNamespace(""), "setStringBuilder"), 1
+     pushstring          "center"
+     callproperty        QName(PackageNamespace(""), "setAutoSize"), 1
+     pushshort           600
+     callproperty        QName(PackageNamespace(""), "setTextWidth"), 1
+     pushstring          "middle"
+     callproperty        QName(PackageNamespace(""), "setVerticalAlign"), 1
+     pushbyte            0
+     pushshort           250
+     callproperty        QName(PackageNamespace(""), "setPosition"), 2
+     pushint             16777215
+     callproperty        QName(PackageNamespace(""), "setColor"), 1
+     setproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "status")
+
+     getlex              QName(PackageNamespace("kabam.rotmg.core"), "StaticInjectorContext")
+     callproperty        QName(PackageNamespace(""), "getInjector"), 0
+     getlex              QName(PackageNamespace("kabam.rotmg.market"), "MarketItemsResultSignal")
+     callproperty        QName(PackageNamespace(""), "getInstance"), 1
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "onOffersGet")
+     callpropvoid        Multiname("add", [PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), ProtectedNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 1
+
+     getlex              QName(PackageNamespace("kabam.rotmg.messaging.impl"), "GameServerConnectionConcrete")
+     getproperty         QName(PackageNamespace(""), "instance")
+     callpropvoid        QName(PackageNamespace(""), "requestAllMarketOffers"), 0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "status") type QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "searchItems") type TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "PlayerShopItem")>) end
+  trait slot QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "allItems") type TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "PlayerShopItem")>) end
+  trait slot QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "scrollBar") type QName(PackageNamespace("com.company.assembleegameclient.ui"), "Scrollbar") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "filterChooser") type QName(PackageNamespace("com.company.assembleegameclient.ui.dropdown"), "DropDown") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "itemChooser") type QName(PackageNamespace("com.company.assembleegameclient.ui.dropdown"), "DropDown") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "filterOptions") type TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace(""), "String")>) end
+  trait slot QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "searchBar") type QName(PackageNamespace("com.company.assembleegameclient.account.ui"), "TextInputField") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "FilterUsable") type QName(PackageNamespace("com.company.assembleegameclient.account.ui"), "CheckBoxField") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "offerHolder") type QName(PackageNamespace("flash.display"), "Sprite") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "topBar") type QName(PackageNamespace("flash.display"), "Sprite") end
+  trait slot QName(PackageNamespace(""), "removed") type QName(PackageNamespace("org.osflash.signals.natives"), "NativeMappedSignal") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "currentItemFilter") type QName(PackageNamespace(""), "int") value Integer(0) end
+  trait slot QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "count") type QName(PackageNamespace("flash.utils"), "Dictionary") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "added") type QName(PackageNamespace("flash.utils"), "Dictionary") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "prices") type QName(PackageNamespace("flash.utils"), "Dictionary") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "callback") type QName(PackageNamespace(""), "Function") end
+  trait method QName(PackageNamespace(""), "Update")
+   method
+    name "Update"
+    refid "kabam.rotmg.market.ui:MarketAllOffersScreen/instance/Update"
+    param QName(PackageNamespace(""), "Function")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_OPTIONAL
+    flag HAS_PARAM_NAMES
+    optional Null()
+    paramname "callback"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      pushnull
+      setproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "callback")
+
+      getlocal1
+      pushnull
+      ifeq                L11
+
+      getlocal0
+      getlocal1
+      setproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "callback")
+
+L11:
+      getlex              QName(PackageNamespace("kabam.rotmg.core"), "StaticInjectorContext")
+      callproperty        QName(PackageNamespace(""), "getInjector"), 0
+      getlex              QName(PackageNamespace("kabam.rotmg.market"), "MarketItemsResultSignal")
+      callproperty        QName(PackageNamespace(""), "getInstance"), 1
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "onUpdateGet")
+      callpropvoid        Multiname("add", [PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), ProtectedNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 1
+
+      getlex              QName(PackageNamespace("kabam.rotmg.messaging.impl"), "GameServerConnectionConcrete")
+      getproperty         QName(PackageNamespace(""), "instance")
+      callpropvoid        QName(PackageNamespace(""), "requestAllMarketOffers"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getCheapest")
+   method
+    name "getCheapest"
+    refid "kabam.rotmg.market.ui:MarketAllOffersScreen/instance/getCheapest"
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "PlayerShopItem")
+    flag HAS_PARAM_NAMES
+    paramname "id"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "prices")
+      getlocal1
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), ProtectedNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getlex              QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "PlayerShopItem")
+      astypelate
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "onUpdateGet")
+   method
+    name "onUpdateGet"
+    refid "kabam.rotmg.market.ui:MarketAllOffersScreen/instance/kabam.rotmg.market.ui:MarketAllOffersScreen/instance/onUpdateGet"
+    param TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "PlayerShopItem")>)
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "param1"
+    body
+     maxstack 3
+     localcount 5
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      setlocal2
+
+      getlocal1
+      findproperty        QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "allItems")
+      swap
+      setproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "allItems")
+
+      getlocal1
+      findproperty        QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "searchItems")
+      swap
+      setproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "searchItems")
+
+      getlex              QName(PackageNamespace("kabam.rotmg.core"), "StaticInjectorContext")
+      callproperty        QName(PackageNamespace(""), "getInjector"), 0
+      getlex              QName(PackageNamespace("kabam.rotmg.market"), "MarketItemsResultSignal")
+      callproperty        QName(PackageNamespace(""), "getInstance"), 1
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "onUpdateGet")
+      callpropvoid        Multiname("remove", [PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), ProtectedNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 1
+
+      pushbyte            0
+      setlocal            4
+
+      getlex              QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "allItems")
+      setlocal3
+
+      jump                L53
+
+L24:
+      label
+      getlocal3
+      getlocal            4
+      nextvalue
+      coerce              QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "PlayerShopItem")
+      setlocal2
+
+      getlex              QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "prices")
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "itemId")
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), ProtectedNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      pushnull
+      ifne                L41
+
+      getlex              QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "prices")
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "itemId")
+      getlocal2
+      setproperty         MultinameL([PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), ProtectedNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+L41:
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "price")
+      getlex              QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "prices")
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "itemId")
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), ProtectedNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      ifnlt               L53
+
+      getlex              QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "prices")
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "itemId")
+      getlocal2
+      setproperty         MultinameL([PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), ProtectedNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+L53:
+      hasnext2            3, 4
+      iftrue              L24
+
+      getlex              QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "callback")
+      pushnull
+      ifeq                L62
+
+      getlex              QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "callback")
+      getglobalscope
+      call                0
+      pop
+L62:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "onOffersGet")
+   method
+    name "onOffersGet"
+    refid "kabam.rotmg.market.ui:MarketAllOffersScreen/instance/kabam.rotmg.market.ui:MarketAllOffersScreen/instance/onOffersGet"
+    param TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "PlayerShopItem")>)
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "param1"
+    body
+     maxstack 7
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      findproperty        QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "allItems")
+      swap
+      setproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "allItems")
+
+      getlocal1
+      findproperty        QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "searchItems")
+      swap
+      setproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "searchItems")
+
+      getlex              QName(PackageNamespace("kabam.rotmg.core"), "StaticInjectorContext")
+      callproperty        QName(PackageNamespace(""), "getInjector"), 0
+      getlex              QName(PackageNamespace("kabam.rotmg.market"), "MarketItemsResultSignal")
+      callproperty        QName(PackageNamespace(""), "getInstance"), 1
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "onOffersGet")
+      callpropvoid        Multiname("remove", [PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), ProtectedNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 1
+
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "length")
+      pushbyte            0
+      ifne                L28
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "status")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "StaticStringBuilder")
+      pushstring          "Market is empty"
+      constructprop       QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "StaticStringBuilder"), 1
+      callpropvoid        QName(PackageNamespace(""), "setStringBuilder"), 1
+
+      jump                L32
+
+L28:
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "status")
+      pushfalse
+      setproperty         QName(PackageNamespace(""), "visible")
+
+L32:
+      findpropstrict      QName(PackageNamespace("flash.display"), "Shape")
+      constructprop       QName(PackageNamespace("flash.display"), "Shape"), 0
+      coerce              QName(PackageNamespace("flash.display"), "Shape")
+      setlocal2
+
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "graphics")
+      pushbyte            0
+      pushbyte            0
+      callpropvoid        QName(PackageNamespace(""), "beginFill"), 2
+
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "graphics")
+      pushbyte            0
+      pushbyte            0
+      pushshort           600
+      pushshort           500
+      callpropvoid        QName(PackageNamespace(""), "drawRect"), 4
+
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "graphics")
+      callpropvoid        QName(PackageNamespace(""), "endFill"), 0
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal2
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      getlex              QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "topBar")
+      getproperty         QName(PackageNamespace(""), "graphics")
+      pushbyte            0
+      pushbyte            1
+      callpropvoid        QName(PackageNamespace(""), "beginFill"), 2
+
+      getlex              QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "topBar")
+      getproperty         QName(PackageNamespace(""), "graphics")
+      pushbyte            0
+      pushbyte            0
+      pushshort           600
+      pushbyte            70
+      callpropvoid        QName(PackageNamespace(""), "drawRect"), 4
+
+      getlex              QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "topBar")
+      getproperty         QName(PackageNamespace(""), "graphics")
+      callpropvoid        QName(PackageNamespace(""), "endFill"), 0
+
+      getlex              QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "topBar")
+      getproperty         QName(PackageNamespace(""), "graphics")
+      pushbyte            1
+      pushint             16777215
+      pushbyte            1
+      callpropvoid        QName(PackageNamespace(""), "lineStyle"), 3
+
+      getlex              QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "topBar")
+      getproperty         QName(PackageNamespace(""), "graphics")
+      pushbyte            2
+      pushbyte            0
+      pushshort           598
+      pushbyte            70
+      callpropvoid        QName(PackageNamespace(""), "drawRect"), 4
+
+      getlex              QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "topBar")
+      getproperty         QName(PackageNamespace(""), "graphics")
+      callpropvoid        QName(PackageNamespace(""), "lineStyle"), 0
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("flash.display"), "Sprite")
+      constructprop       QName(PackageNamespace("flash.display"), "Sprite"), 0
+      setproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "offerHolder")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "offerHolder")
+      getlocal2
+      setproperty         QName(PackageNamespace(""), "mask")
+
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.account.ui"), "TextInputField")
+      pushstring          "Search"
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.account.ui"), "TextInputField"), 1
+      findproperty        QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "searchBar")
+      swap
+      setproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "searchBar")
+
+      getlex              QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "searchBar")
+      pushbyte            5
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlex              QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "searchBar")
+      pushbyte            3
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlex              QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "searchBar")
+      pushstring          "change"
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "Search")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      getlex              QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "topBar")
+      getlex              QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "searchBar")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      getlocal0
+      getlex              QName(PackageNamespace("__AS3__.vec"), "Vector")
+      getlex              QName(PackageNamespace(""), "String")
+      applytype           1
+      pushbyte            4
+      construct           1
+      dup
+      pushbyte            0
+      pushstring          "Rarity"
+      setproperty         MultinameL([PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), ProtectedNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      dup
+      pushbyte            1
+      pushstring          "A-Z"
+      setproperty         MultinameL([PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), ProtectedNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      dup
+      pushbyte            2
+      pushstring          "Price"
+      setproperty         MultinameL([PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), ProtectedNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      dup
+      pushbyte            3
+      pushstring          "Amount"
+      setproperty         MultinameL([PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), ProtectedNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      setproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "filterOptions")
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.ui.dropdown"), "DropDown")
+      getlex              QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "filterOptions")
+      pushbyte            100
+      pushbyte            25
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.ui.dropdown"), "DropDown"), 3
+      setproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "filterChooser")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "filterChooser")
+      pushshort           600
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "filterChooser")
+      getproperty         QName(PackageNamespace(""), "width")
+      subtract
+      pushbyte            10
+      subtract
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "filterChooser")
+      pushbyte            70
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "filterChooser")
+      getproperty         QName(PackageNamespace(""), "height")
+      subtract
+      pushbyte            5
+      subtract
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "filterChooser")
+      pushstring          "change"
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "Filter")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.ui.dropdown"), "DropDown")
+      getlex              QName(PackageNamespace("__AS3__.vec"), "Vector")
+      getlex              QName(PackageNamespace(""), "String")
+      applytype           1
+      pushbyte            37
+      construct           1
+      dup
+      pushbyte            0
+      pushstring          "All"
+      setproperty         MultinameL([PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), ProtectedNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      dup
+      pushbyte            1
+      pushstring          "Staffs"
+      setproperty         MultinameL([PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), ProtectedNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      dup
+      pushbyte            2
+      pushstring          "Swords"
+      setproperty         MultinameL([PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), ProtectedNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      dup
+      pushbyte            3
+      pushstring          "Bows"
+      setproperty         MultinameL([PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), ProtectedNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      dup
+      pushbyte            4
+      pushstring          "Lances"
+      setproperty         MultinameL([PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), ProtectedNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      dup
+      pushbyte            5
+      pushstring          "Daggers"
+      setproperty         MultinameL([PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), ProtectedNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      dup
+      pushbyte            6
+      pushstring          "Wands"
+      setproperty         MultinameL([PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), ProtectedNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      dup
+      pushbyte            7
+      pushstring          "Dual Blades"
+      setproperty         MultinameL([PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), ProtectedNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      dup
+      pushbyte            8
+      pushstring          "Katanas"
+      setproperty         MultinameL([PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), ProtectedNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      dup
+      pushbyte            9
+      pushstring          "Spells"
+      setproperty         MultinameL([PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), ProtectedNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      dup
+      pushbyte            10
+      pushstring          "Jackets"
+      setproperty         MultinameL([PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), ProtectedNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      dup
+      pushbyte            11
+      pushstring          "Cloaks"
+      setproperty         MultinameL([PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), ProtectedNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      dup
+      pushbyte            12
+      pushstring          "Quivers"
+      setproperty         MultinameL([PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), ProtectedNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      dup
+      pushbyte            13
+      pushstring          "Orbs"
+      setproperty         MultinameL([PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), ProtectedNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      dup
+      pushbyte            14
+      pushstring          "Siphons"
+      setproperty         MultinameL([PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), ProtectedNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      dup
+      pushbyte            15
+      pushstring          "Turrets"
+      setproperty         MultinameL([PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), ProtectedNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      dup
+      pushbyte            16
+      pushstring          "Prisms"
+      setproperty         MultinameL([PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), ProtectedNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      dup
+      pushbyte            17
+      pushstring          "Shurikens"
+      setproperty         MultinameL([PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), ProtectedNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      dup
+      pushbyte            18
+      pushstring          "Talismans"
+      setproperty         MultinameL([PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), ProtectedNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      dup
+      pushbyte            19
+      pushstring          "Seals"
+      setproperty         MultinameL([PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), ProtectedNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      dup
+      pushbyte            20
+      pushstring          "Poisons"
+      setproperty         MultinameL([PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), ProtectedNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      dup
+      pushbyte            21
+      pushstring          "Dices"
+      setproperty         MultinameL([PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), ProtectedNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      dup
+      pushbyte            22
+      pushstring          "Traps"
+      setproperty         MultinameL([PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), ProtectedNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      dup
+      pushbyte            23
+      pushstring          "Skulls"
+      setproperty         MultinameL([PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), ProtectedNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      dup
+      pushbyte            24
+      pushstring          "Shields"
+      setproperty         MultinameL([PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), ProtectedNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      dup
+      pushbyte            25
+      pushstring          "Helmets"
+      setproperty         MultinameL([PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), ProtectedNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      dup
+      pushbyte            26
+      pushstring          "Tomes"
+      setproperty         MultinameL([PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), ProtectedNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      dup
+      pushbyte            27
+      pushstring          "Scepters"
+      setproperty         MultinameL([PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), ProtectedNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      dup
+      pushbyte            28
+      pushstring          "Sheaths"
+      setproperty         MultinameL([PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), ProtectedNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      dup
+      pushbyte            29
+      pushstring          "Banners"
+      setproperty         MultinameL([PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), ProtectedNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      dup
+      pushbyte            30
+      pushstring          "Anchors"
+      setproperty         MultinameL([PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), ProtectedNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      dup
+      pushbyte            31
+      pushstring          "Charms"
+      setproperty         MultinameL([PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), ProtectedNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      dup
+      pushbyte            32
+      pushstring          "Rings"
+      setproperty         MultinameL([PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), ProtectedNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      dup
+      pushbyte            33
+      pushstring          "Plate Armor"
+      setproperty         MultinameL([PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), ProtectedNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      dup
+      pushbyte            34
+      pushstring          "Leather Armor"
+      setproperty         MultinameL([PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), ProtectedNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      dup
+      pushbyte            35
+      pushstring          "Robes"
+      setproperty         MultinameL([PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), ProtectedNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      dup
+      pushbyte            36
+      pushstring          "Misc"
+      setproperty         MultinameL([PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), ProtectedNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      pushbyte            100
+      pushbyte            25
+      pushnull
+      pushbyte            0
+      pushbyte            8
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.ui.dropdown"), "DropDown"), 6
+      findproperty        QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "itemChooser")
+      swap
+      setproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "itemChooser")
+
+      getlex              QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "itemChooser")
+      pushshort           600
+      getlex              QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "itemChooser")
+      getproperty         QName(PackageNamespace(""), "width")
+      subtract
+      pushbyte            10
+      subtract
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlex              QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "itemChooser")
+      pushbyte            40
+      getlex              QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "itemChooser")
+      getproperty         QName(PackageNamespace(""), "height")
+      subtract
+      pushbyte            5
+      subtract
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlex              QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "itemChooser")
+      pushstring          "change"
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "ItemFilter")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.account.ui"), "CheckBoxField")
+      pushstring          "Only show usable"
+      pushfalse
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.account.ui"), "CheckBoxField"), 2
+      findproperty        QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "FilterUsable")
+      swap
+      setproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "FilterUsable")
+
+      getlex              QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "FilterUsable")
+      pushshort           300
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlex              QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "FilterUsable")
+      pushbyte            53
+      getlex              QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "FilterUsable")
+      getproperty         QName(PackageNamespace(""), "height")
+      pushbyte            2
+      divide
+      subtract
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlex              QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "FilterUsable")
+      pushstring          "click"
+      getlex              QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "filterUsableClicked")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      getlex              QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "topBar")
+      getlex              QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "FilterUsable")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      getlex              QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "topBar")
+      getlex              QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "filterChooser")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      getlex              QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "topBar")
+      getlex              QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "itemChooser")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlex              QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "topBar")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      findpropstrict      QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "SetCheapest")
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "SetCheapest"), 0
+
+      findpropstrict      QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "SetCount")
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "SetCount"), 0
+
+      findpropstrict      QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "FilterByRarity")
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "FilterByRarity"), 0
+
+      findpropstrict      QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "onScroll")
+      pushnull
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "onScroll"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "filterUsableClicked")
+   method
+    name "filterUsableClicked"
+    refid "kabam.rotmg.market.ui:MarketAllOffersScreen/instance/kabam.rotmg.market.ui:MarketAllOffersScreen/instance/filterUsableClicked"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "event"
+    body
+     maxstack 1
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "draw")
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "draw"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "draw")
+   method
+    name "draw"
+    refid "kabam.rotmg.market.ui:MarketAllOffersScreen/instance/kabam.rotmg.market.ui:MarketAllOffersScreen/instance/draw"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 5
+     localcount 7
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushbyte            0
+      setlocal            6
+
+      pushnull
+      setlocal            5
+
+      pushbyte            0
+      setlocal            4
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("flash.utils"), "Dictionary")
+      constructprop       QName(PackageNamespace("flash.utils"), "Dictionary"), 0
+      setproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "added")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "offerHolder")
+      callpropvoid        QName(PackageNamespace(""), "removeChildren"), 0
+
+      pushnull
+      coerce              QName(PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), "ItemOffer")
+      setlocal1
+
+      pushbyte            75
+      setlocal2
+
+      pushbyte            10
+      setlocal3
+
+      pushbyte            0
+      setlocal            6
+
+      jump                L140
+
+L25:
+      label
+      getlex              QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "added")
+      getlex              QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "searchItems")
+      getlocal            6
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), ProtectedNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getproperty         QName(PackageNamespace(""), "itemId")
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), ProtectedNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      pushnull
+      ifne                L139
+
+      getlex              QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "FilterUsable")
+      callproperty        QName(PackageNamespace(""), "isChecked"), 0
+      dup
+      iffalse             L50
+
+      pop
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.objects"), "ObjectLibrary")
+      getlex              QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "searchItems")
+      getlocal            6
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), ProtectedNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getproperty         QName(PackageNamespace(""), "itemId")
+      getlex              QName(PackageNamespace("kabam.rotmg.messaging.impl"), "GameServerConnectionConcrete")
+      getproperty         QName(PackageNamespace(""), "instance")
+      getproperty         QName(PackageNamespace(""), "player")
+      pushtrue
+      callproperty        QName(PackageNamespace(""), "isUsableByPlayer"), 3
+      not
+L50:
+      iftrue              L139
+
+      getlex              QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "currentItemFilter")
+      pushbyte            0
+      ifeq                L81
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.objects"), "ObjectLibrary")
+      getproperty         QName(PackageNamespace(""), "xmlLibrary_")
+      getlex              QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "searchItems")
+      getlocal            6
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), ProtectedNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getproperty         QName(PackageNamespace(""), "itemId")
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), ProtectedNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      coerce              QName(PackageNamespace(""), "XML")
+      dup
+      setlocal            5
+
+      pushnull
+      equals
+      dup
+      iftrue              L73
+
+      pop
+      getlocal            5
+      pushstring          "SlotType"
+      callproperty        Multiname("hasOwnProperty", [PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), ProtectedNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 1
+      not
+L73:
+      iftrue              L139
+
+      getlocal            5
+      getproperty         Multiname("SlotType", [PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), ProtectedNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      convert_i
+      dup
+      setlocal            4
+
+      getlex              QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "currentItemFilter")
+      ifne                L139
+
+L81:
+      getlocal3
+      pushbyte            50
+      add
+      pushbyte            10
+      add
+      pushshort           600
+      ifngt               L97
+
+      getlocal2
+      pushbyte            15
+      pushbyte            60
+      add
+      add
+      convert_i
+      setlocal2
+
+      pushbyte            10
+      setlocal3
+
+L97:
+      findpropstrict      QName(PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), "ItemOffer")
+      getlex              QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "prices")
+      getlex              QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "searchItems")
+      getlocal            6
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), ProtectedNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getproperty         QName(PackageNamespace(""), "itemId")
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), ProtectedNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getlex              QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "PlayerShopItem")
+      astypelate
+      getlex              QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "count")
+      getlex              QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "searchItems")
+      getlocal            6
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), ProtectedNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getproperty         QName(PackageNamespace(""), "itemId")
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), ProtectedNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      constructprop       QName(PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), "ItemOffer"), 2
+      coerce              QName(PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), "ItemOffer")
+      setlocal1
+
+      getlocal1
+      getlocal2
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal1
+      getlocal3
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal3
+      pushbyte            5
+      pushbyte            50
+      add
+      add
+      convert_i
+      setlocal3
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "offerHolder")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      getlex              QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "added")
+      getlex              QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "searchItems")
+      getlocal            6
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), ProtectedNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getproperty         QName(PackageNamespace(""), "itemId")
+      pushbyte            1
+      setproperty         MultinameL([PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), ProtectedNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+L139:
+      inclocal_i          6
+L140:
+      getlocal            6
+      getlex              QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "searchItems")
+      getproperty         QName(PackageNamespace(""), "length")
+      iflt                L25
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "offerHolder")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.ui"), "Scrollbar")
+      pushbyte            16
+      pushshort           400
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.ui"), "Scrollbar"), 2
+      setproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "scrollBar")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "scrollBar")
+      pushbyte            90
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "scrollBar")
+      pushshort           578
+      setproperty         QName(PackageNamespace(""), "x")
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "scrollBar")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "scrollBar")
+      pushshort           500
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "offerHolder")
+      getproperty         QName(PackageNamespace(""), "height")
+      callpropvoid        QName(PackageNamespace(""), "setIndicatorSize"), 2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "scrollBar")
+      pushstring          "change"
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "onScroll")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      getlex              QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "searchItems")
+      getproperty         QName(PackageNamespace(""), "length")
+      pushbyte            0
+      ifne                L194
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "status")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "StaticStringBuilder")
+      pushstring          "No item found!"
+      constructprop       QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "StaticStringBuilder"), 1
+      callpropvoid        QName(PackageNamespace(""), "setStringBuilder"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "status")
+      pushtrue
+      setproperty         QName(PackageNamespace(""), "visible")
+
+      jump                L198
+
+L194:
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "status")
+      pushfalse
+      setproperty         QName(PackageNamespace(""), "visible")
+
+L198:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "onScroll")
+   method
+    name "onScroll"
+    refid "kabam.rotmg.market.ui:MarketAllOffersScreen/instance/kabam.rotmg.market.ui:MarketAllOffersScreen/instance/onScroll"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "param1"
+    body
+     maxstack 4
+     localcount 4
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushbyte            0
+      setlocal3
+
+      pushundefined
+      setlocal2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "offerHolder")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "scrollBar")
+      callproperty        QName(PackageNamespace(""), "pos"), 0
+      negate
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "offerHolder")
+      getproperty         QName(PackageNamespace(""), "height")
+      pushshort           400
+      subtract
+      multiply
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "topBar")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "scrollBar")
+      callproperty        QName(PackageNamespace(""), "pos"), 0
+      pushbyte            0
+      equals
+      dup
+      iftrue              L36
+
+      pop
+      getlex              QName(PackageNamespace(""), "isNaN")
+      getglobalscope
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "scrollBar")
+      callproperty        QName(PackageNamespace(""), "pos"), 0
+      call                1
+      convert_b
+L36:
+      setproperty         QName(PackageNamespace(""), "visible")
+
+      pushbyte            0
+      setlocal3
+
+      jump                L67
+
+L40:
+      label
+      getlex              QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "offerHolder")
+      getlocal3
+      callproperty        QName(PackageNamespace(""), "getChildAt"), 1
+      setlocal2
+
+      getlocal2
+      getlocal2
+      getproperty         Multiname("y", [PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), ProtectedNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      negate
+      getlex              QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "offerHolder")
+      getproperty         QName(PackageNamespace(""), "y")
+      pushbyte            50
+      add
+      lessthan
+      dup
+      iffalse             L65
+
+      pop
+      getlocal2
+      getproperty         Multiname("y", [PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), ProtectedNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      negate
+      getlex              QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "offerHolder")
+      getproperty         QName(PackageNamespace(""), "y")
+      pushshort           450
+      subtract
+      greaterthan
+L65:
+      setproperty         Multiname("visible", [PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), ProtectedNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      inclocal_i          3
+L67:
+      getlocal3
+      getlex              QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "offerHolder")
+      getproperty         QName(PackageNamespace(""), "numChildren")
+      iflt                L40
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "Search")
+   method
+    name "Search"
+    refid "kabam.rotmg.market.ui:MarketAllOffersScreen/instance/kabam.rotmg.market.ui:MarketAllOffersScreen/instance/Search"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "arg1"
+    body
+     maxstack 2
+     localcount 7
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      setlocal2
+
+      pushnull
+      setlocal3
+
+      getlex              QName(PackageNamespace("__AS3__.vec"), "Vector")
+      getlex              QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "PlayerShopItem")
+      applytype           1
+      pushbyte            0
+      construct           1
+      findproperty        QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "searchItems")
+      swap
+      setproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "searchItems")
+
+      getlex              QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "searchBar")
+      callproperty        QName(PackageNamespace(""), "text"), 0
+      getproperty         QName(PackageNamespace(""), "length")
+      pushbyte            0
+      ifne                L27
+
+      getlex              QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "allItems")
+      findproperty        QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "searchItems")
+      swap
+      setproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "searchItems")
+
+      findpropstrict      QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "Filter")
+      pushnull
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "Filter"), 1
+
+      returnvoid
+
+L27:
+      pushbyte            0
+      setlocal            6
+
+      getlex              QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "allItems")
+      setlocal            5
+
+      jump                L71
+
+L32:
+      label
+      getlocal            5
+      getlocal            6
+      nextvalue
+      coerce              QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "PlayerShopItem")
+      setlocal            4
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.objects"), "ObjectLibrary")
+      getproperty         QName(PackageNamespace(""), "xmlLibrary_")
+      getlocal            4
+      getproperty         QName(PackageNamespace(""), "itemId")
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), ProtectedNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      coerce              QName(PackageNamespace(""), "XML")
+      setlocal2
+
+      getlocal2
+      pushnull
+      ifeq                L71
+
+      getlocal2
+      pushstring          "DisplayId"
+      callproperty        Multiname("hasOwnProperty", [PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), ProtectedNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 1
+      iffalse             L55
+
+      getlocal2
+      getproperty         Multiname("DisplayId", [PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), ProtectedNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      jump                L58
+
+L55:
+      getlocal2
+      getproperty         MultinameA("id", [PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), ProtectedNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      coerce_a
+L58:
+      coerce_s
+      setlocal3
+
+      getlocal3
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "toUpperCase"), 0
+      getlex              QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "searchBar")
+      callproperty        QName(PackageNamespace(""), "text"), 0
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "toUpperCase"), 0
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "indexOf"), 1
+      pushbyte            -1
+      ifngt               L71
+
+      getlex              QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "searchItems")
+      getlocal            4
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+
+L71:
+      hasnext2            5, 6
+      iftrue              L32
+
+      findpropstrict      QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "Filter")
+      pushnull
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "Filter"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "Filter")
+   method
+    name "Filter"
+    refid "kabam.rotmg.market.ui:MarketAllOffersScreen/instance/kabam.rotmg.market.ui:MarketAllOffersScreen/instance/Filter"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "arg1"
+    body
+     maxstack 2
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "filterChooser")
+      callproperty        QName(PackageNamespace(""), "getValue"), 0
+      setlocal2
+
+      jump                L23
+
+L7:
+      label
+      findpropstrict      QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "FilterByRarity")
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "FilterByRarity"), 0
+
+      jump                L35
+
+L11:
+      label
+      findpropstrict      QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "FilterByAZ")
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "FilterByAZ"), 0
+
+      jump                L35
+
+L15:
+      label
+      findpropstrict      QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "FilterByAmount")
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "FilterByAmount"), 0
+
+      jump                L35
+
+L19:
+      label
+      findpropstrict      QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "FilterByPrice")
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "FilterByPrice"), 0
+
+      jump                L35
+
+L23:
+      pushstring          "Rarity"
+      getlocal2
+      ifstricteq          L7
+
+      pushstring          "A-Z"
+      getlocal2
+      ifstricteq          L11
+
+      pushstring          "Amount"
+      getlocal2
+      ifstricteq          L15
+
+      pushstring          "Price"
+      getlocal2
+      ifstricteq          L19
+
+L35:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "ItemFilter")
+   method
+    name "ItemFilter"
+    refid "kabam.rotmg.market.ui:MarketAllOffersScreen/instance/kabam.rotmg.market.ui:MarketAllOffersScreen/instance/ItemFilter"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "itemChooser")
+      callproperty        QName(PackageNamespace(""), "getValue"), 0
+      pushstring          "All"
+      ifne                L13
+
+      pushbyte            0
+      findproperty        QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "currentItemFilter")
+      swap
+      setproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "currentItemFilter")
+
+      findpropstrict      QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "draw")
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "draw"), 0
+
+      returnvoid
+
+L13:
+      findpropstrict      QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "GetSlotType")
+      callproperty        QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "GetSlotType"), 0
+      findproperty        QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "currentItemFilter")
+      swap
+      setproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "currentItemFilter")
+
+      findpropstrict      QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "draw")
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "draw"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "GetSlotType")
+   method
+    name "GetSlotType"
+    refid "kabam.rotmg.market.ui:MarketAllOffersScreen/instance/kabam.rotmg.market.ui:MarketAllOffersScreen/instance/GetSlotType"
+    returns QName(PackageNamespace(""), "int")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "itemChooser")
+      callproperty        QName(PackageNamespace(""), "getValue"), 0
+      setlocal1
+
+      jump                L117
+
+L6:
+      label
+      pushbyte            17
+      returnvalue
+
+L9:
+      label
+      pushbyte            1
+      returnvalue
+
+L12:
+      label
+      pushbyte            3
+      returnvalue
+
+L15:
+      label
+      pushbyte            29
+      returnvalue
+
+L18:
+      label
+      pushbyte            2
+      returnvalue
+
+L21:
+      label
+      pushbyte            8
+      returnvalue
+
+L24:
+      label
+      pushbyte            34
+      returnvalue
+
+L27:
+      label
+      pushbyte            11
+      returnvalue
+
+L30:
+      label
+      pushbyte            35
+      returnvalue
+
+L33:
+      label
+      pushbyte            13
+      returnvalue
+
+L36:
+      label
+      pushbyte            15
+      returnvalue
+
+L39:
+      label
+      pushbyte            21
+      returnvalue
+
+L42:
+      label
+      pushbyte            30
+      returnvalue
+
+L45:
+      label
+      pushbyte            31
+      returnvalue
+
+L48:
+      label
+      pushbyte            22
+      returnvalue
+
+L51:
+      label
+      pushbyte            25
+      returnvalue
+
+L54:
+      label
+      pushbyte            36
+      returnvalue
+
+L57:
+      label
+      pushbyte            12
+      returnvalue
+
+L60:
+      label
+      pushbyte            18
+      returnvalue
+
+L63:
+      label
+      pushbyte            33
+      returnvalue
+
+L66:
+      label
+      pushbyte            20
+      returnvalue
+
+L69:
+      label
+      pushbyte            19
+      returnvalue
+
+L72:
+      label
+      pushbyte            5
+      returnvalue
+
+L75:
+      label
+      pushbyte            16
+      returnvalue
+
+L78:
+      label
+      pushbyte            4
+      returnvalue
+
+L81:
+      label
+      pushbyte            23
+      returnvalue
+
+L84:
+      label
+      pushbyte            27
+      returnvalue
+
+L87:
+      label
+      pushbyte            28
+      returnvalue
+
+L90:
+      label
+      pushbyte            38
+      returnvalue
+
+L93:
+      label
+      pushbyte            32
+      returnvalue
+
+L96:
+      label
+      pushbyte            14
+      returnvalue
+
+L99:
+      label
+      pushbyte            7
+      returnvalue
+
+L102:
+      label
+      pushbyte            6
+      returnvalue
+
+L105:
+      label
+      pushbyte            9
+      returnvalue
+
+L108:
+      label
+      pushbyte            10
+      returnvalue
+
+L111:
+      label
+      pushbyte            24
+      returnvalue
+
+L114:
+      label
+      pushbyte            0
+      returnvalue
+
+L117:
+      pushstring          "Staffs"
+      getlocal1
+      ifstricteq          L6
+
+      pushstring          "Swords"
+      getlocal1
+      ifstricteq          L9
+
+      pushstring          "Bows"
+      getlocal1
+      ifstricteq          L12
+
+      pushstring          "Lances"
+      getlocal1
+      ifstricteq          L15
+
+      pushstring          "Daggers"
+      getlocal1
+      ifstricteq          L18
+
+      pushstring          "Wands"
+      getlocal1
+      ifstricteq          L21
+
+      pushstring          "Dual Blades"
+      getlocal1
+      ifstricteq          L24
+
+      pushstring          "Spells"
+      getlocal1
+      ifstricteq          L27
+
+      pushstring          "Jackets"
+      getlocal1
+      ifstricteq          L30
+
+      pushstring          "Cloaks"
+      getlocal1
+      ifstricteq          L33
+
+      pushstring          "Quivers"
+      getlocal1
+      ifstricteq          L36
+
+      pushstring          "Orbs"
+      getlocal1
+      ifstricteq          L39
+
+      pushstring          "Siphons"
+      getlocal1
+      ifstricteq          L42
+
+      pushstring          "Turrets"
+      getlocal1
+      ifstricteq          L45
+
+      pushstring          "Prisms"
+      getlocal1
+      ifstricteq          L48
+
+      pushstring          "Shurikens"
+      getlocal1
+      ifstricteq          L51
+
+      pushstring          "Talismans"
+      getlocal1
+      ifstricteq          L54
+
+      pushstring          "Seals"
+      getlocal1
+      ifstricteq          L57
+
+      pushstring          "Poisons"
+      getlocal1
+      ifstricteq          L60
+
+      pushstring          "Dices"
+      getlocal1
+      ifstricteq          L63
+
+      pushstring          "Traps"
+      getlocal1
+      ifstricteq          L66
+
+      pushstring          "Skulls"
+      getlocal1
+      ifstricteq          L69
+
+      pushstring          "Shields"
+      getlocal1
+      ifstricteq          L72
+
+      pushstring          "Helmets"
+      getlocal1
+      ifstricteq          L75
+
+      pushstring          "Tomes"
+      getlocal1
+      ifstricteq          L78
+
+      pushstring          "Scepters"
+      getlocal1
+      ifstricteq          L81
+
+      pushstring          "Sheaths"
+      getlocal1
+      ifstricteq          L84
+
+      pushstring          "Banners"
+      getlocal1
+      ifstricteq          L87
+
+      pushstring          "Anchors"
+      getlocal1
+      ifstricteq          L90
+
+      pushstring          "Charms"
+      getlocal1
+      ifstricteq          L93
+
+      pushstring          "Robes"
+      getlocal1
+      ifstricteq          L96
+
+      pushstring          "Plate Armor"
+      getlocal1
+      ifstricteq          L99
+
+      pushstring          "Leather Armor"
+      getlocal1
+      ifstricteq          L102
+
+      pushstring          "Rings"
+      getlocal1
+      ifstricteq          L105
+
+      pushstring          "Misc"
+      getlocal1
+      ifstricteq          L108
+
+      pushstring          "Katanas"
+      getlocal1
+      ifstricteq          L111
+
+      jump                L114
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "FilterByRarity")
+   method
+    name "FilterByRarity"
+    refid "kabam.rotmg.market.ui:MarketAllOffersScreen/instance/kabam.rotmg.market.ui:MarketAllOffersScreen/instance/FilterByRarity"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 11
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      setlocal            4
+
+      pushbyte            0
+      setlocal            6
+
+      getlex              QName(PackageNamespace("__AS3__.vec"), "Vector")
+      getlex              QName(PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), "RaritySort")
+      applytype           1
+      pushbyte            0
+      construct           1
+      coerce              TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), "RaritySort")>)
+      setlocal1
+
+      pushbyte            0
+      setlocal            8
+
+      getlex              QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "searchItems")
+      setlocal            7
+
+      jump                L101
+
+L18:
+      label
+      getlocal            7
+      getlocal            8
+      nextvalue
+      setlocal            5
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.objects"), "ObjectLibrary")
+      getproperty         QName(PackageNamespace(""), "xmlLibrary_")
+      getlocal            5
+      getproperty         Multiname("itemId", [PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), ProtectedNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), ProtectedNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      coerce              QName(PackageNamespace(""), "XML")
+      setlocal            4
+
+      pushbyte            0
+      setlocal            6
+
+      getlocal            4
+      dup
+      iffalse             L40
+
+      pop
+      getlocal            4
+      pushstring          "Legendary"
+      callproperty        Multiname("hasOwnProperty", [PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), ProtectedNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 1
+      coerce_a
+L40:
+      iffalse             L44
+
+      pushbyte            4
+      setlocal            6
+
+      jump                L95
+
+L44:
+      getlocal            4
+      dup
+      iffalse             L52
+
+      pop
+      getlocal            4
+      pushstring          "Fabled"
+      callproperty        Multiname("hasOwnProperty", [PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), ProtectedNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 1
+      coerce_a
+L52:
+      iffalse             L56
+
+      pushbyte            2
+      setlocal            6
+
+      jump                L95
+
+L56:
+      getlocal            4
+      dup
+      iffalse             L64
+
+      pop
+      getlocal            4
+      pushstring          "@setType"
+      callproperty        Multiname("hasOwnProperty", [PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), ProtectedNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 1
+      coerce_a
+L64:
+      iffalse             L68
+
+      pushbyte            3
+      setlocal            6
+
+      jump                L95
+
+L68:
+      getlocal            4
+      dup
+      iffalse             L76
+
+      pop
+      getlocal            4
+      pushstring          "Relic"
+      callproperty        Multiname("hasOwnProperty", [PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), ProtectedNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 1
+      coerce_a
+L76:
+      iffalse             L80
+
+      pushbyte            5
+      setlocal            6
+
+      jump                L95
+
+L80:
+      getlocal            4
+      dup
+      iffalse             L89
+
+      pop
+      getlocal            4
+      pushstring          "Tier"
+      callproperty        Multiname("hasOwnProperty", [PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), ProtectedNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 1
+      not
+      coerce_a
+L89:
+      iffalse             L93
+
+      pushbyte            1
+      setlocal            6
+
+      jump                L95
+
+L93:
+      pushbyte            0
+      setlocal            6
+
+L95:
+      getlocal1
+      findpropstrict      QName(PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), "RaritySort")
+      getlocal            5
+      getlocal            6
+      constructprop       QName(PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), "RaritySort"), 2
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+
+L101:
+      hasnext2            7, 8
+      iftrue              L18
+
+      newarray            0
+      coerce              QName(PackageNamespace(""), "Array")
+      setlocal3
+
+      jump                L112
+
+L107:
+      label
+      getlocal3
+      getlocal1
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "pop"), 0
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+
+L112:
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "length")
+      pushbyte            0
+      ifgt                L107
+
+      getlocal3
+      pushstring          "rarity"
+      pushbyte            16
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "sortOn"), 2
+
+      jump                L126
+
+L121:
+      label
+      getlocal1
+      getlocal3
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "pop"), 0
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+
+L126:
+      getlocal3
+      getproperty         QName(PackageNamespace(""), "length")
+      pushbyte            0
+      ifgt                L121
+
+      getlex              QName(PackageNamespace("__AS3__.vec"), "Vector")
+      getlex              QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "PlayerShopItem")
+      applytype           1
+      pushbyte            0
+      construct           1
+      findproperty        QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "searchItems")
+      swap
+      setproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "searchItems")
+
+      pushbyte            0
+      setlocal            10
+
+      getlocal1
+      setlocal            9
+
+      jump                L152
+
+L143:
+      label
+      getlocal            9
+      getlocal            10
+      nextvalue
+      setlocal2
+
+      getlex              QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "searchItems")
+      getlocal2
+      getproperty         Multiname("item", [PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), ProtectedNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+
+L152:
+      hasnext2            9, 10
+      iftrue              L143
+
+      findpropstrict      QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "draw")
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "draw"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "FilterByPrice")
+   method
+    name "FilterByPrice"
+    refid "kabam.rotmg.market.ui:MarketAllOffersScreen/instance/kabam.rotmg.market.ui:MarketAllOffersScreen/instance/FilterByPrice"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 5
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      setlocal1
+
+      getlex              QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "searchItems")
+      coerce              TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "PlayerShopItem")>)
+      setlocal3
+
+      getlex              QName(PackageNamespace("__AS3__.vec"), "Vector")
+      getlex              QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "PlayerShopItem")
+      applytype           1
+      construct           0
+      coerce              TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "PlayerShopItem")>)
+      setlocal            4
+
+      newarray            0
+      coerce              QName(PackageNamespace(""), "Array")
+      setlocal2
+
+      jump                L33
+
+L17:
+      label
+      getlocal3
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "pop"), 0
+      coerce              QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "PlayerShopItem")
+      setlocal1
+
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "id")
+      findpropstrict      QName(PackageNamespace(""), "getCheapest")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "itemId")
+      callproperty        QName(PackageNamespace(""), "getCheapest"), 1
+      getproperty         QName(PackageNamespace(""), "id")
+      ifne                L33
+
+      getlocal            4
+      getlocal1
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+
+L33:
+      getlocal3
+      getproperty         QName(PackageNamespace(""), "length")
+      pushbyte            0
+      ifgt                L17
+
+      jump                L43
+
+L38:
+      label
+      getlocal2
+      getlocal            4
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "pop"), 0
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+
+L43:
+      getlocal            4
+      getproperty         QName(PackageNamespace(""), "length")
+      pushbyte            0
+      ifgt                L38
+
+      getlocal2
+      pushstring          "price"
+      pushbyte            16
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "sortOn"), 2
+
+      jump                L57
+
+L52:
+      label
+      getlocal            4
+      getlocal2
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "pop"), 0
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+
+L57:
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "length")
+      pushbyte            0
+      ifgt                L52
+
+      getlocal            4
+      findproperty        QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "searchItems")
+      swap
+      setproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "searchItems")
+
+      findpropstrict      QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "draw")
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "draw"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "SetCheapest")
+   method
+    name "SetCheapest"
+    refid "kabam.rotmg.market.ui:MarketAllOffersScreen/instance/kabam.rotmg.market.ui:MarketAllOffersScreen/instance/SetCheapest"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 4
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushbyte            0
+      setlocal3
+
+      getlex              QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "allItems")
+      setlocal2
+
+      jump                L40
+
+L7:
+      label
+      getlocal2
+      getlocal3
+      nextvalue
+      coerce              QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "PlayerShopItem")
+      setlocal1
+
+      getlex              QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "prices")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "itemId")
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), ProtectedNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      pushnull
+      ifne                L25
+
+      getlex              QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "prices")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "itemId")
+      getlocal1
+      setproperty         MultinameL([PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), ProtectedNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      jump                L40
+
+L25:
+      getlex              QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "prices")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "itemId")
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), ProtectedNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getlex              QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "PlayerShopItem")
+      astypelate
+      getproperty         QName(PackageNamespace(""), "price")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "price")
+      ifngt               L40
+
+      getlex              QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "prices")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "itemId")
+      getlocal1
+      setproperty         MultinameL([PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), ProtectedNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+L40:
+      hasnext2            2, 3
+      iftrue              L7
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "SetCount")
+   method
+    name "SetCount"
+    refid "kabam.rotmg.market.ui:MarketAllOffersScreen/instance/kabam.rotmg.market.ui:MarketAllOffersScreen/instance/SetCount"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 4
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushbyte            0
+      setlocal1
+
+      pushbyte            0
+      setlocal1
+
+      jump                L40
+
+L7:
+      label
+      getlex              QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "count")
+      getlex              QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "allItems")
+      getlocal1
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), ProtectedNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getproperty         QName(PackageNamespace(""), "itemId")
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), ProtectedNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      pushnull
+      ifeq                L32
+
+      getlex              QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "allItems")
+      getlocal1
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), ProtectedNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getproperty         QName(PackageNamespace(""), "itemId")
+      setlocal2
+
+      getlex              QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "count")
+      getlocal2
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), ProtectedNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      pushbyte            1
+      add
+      setlocal3
+
+      getlex              QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "count")
+      getlocal2
+      getlocal3
+      setproperty         MultinameL([PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), ProtectedNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      jump                L39
+
+L32:
+      getlex              QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "count")
+      getlex              QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "allItems")
+      getlocal1
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), ProtectedNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getproperty         QName(PackageNamespace(""), "itemId")
+      pushbyte            1
+      setproperty         MultinameL([PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), ProtectedNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+L39:
+      inclocal_i          1
+L40:
+      getlocal1
+      getlex              QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "allItems")
+      getproperty         QName(PackageNamespace(""), "length")
+      iflt                L7
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "FilterByAmount")
+   method
+    name "FilterByAmount"
+    refid "kabam.rotmg.market.ui:MarketAllOffersScreen/instance/kabam.rotmg.market.ui:MarketAllOffersScreen/instance/FilterByAmount"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 5
+     localcount 9
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace("__AS3__.vec"), "Vector")
+      getlex              QName(PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), "AmountSort")
+      applytype           1
+      pushbyte            0
+      construct           1
+      coerce              TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), "AmountSort")>)
+      setlocal1
+
+      pushbyte            0
+      setlocal            6
+
+      getlex              QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "searchItems")
+      setlocal            5
+
+      jump                L28
+
+L14:
+      label
+      getlocal            5
+      getlocal            6
+      nextvalue
+      setlocal            4
+
+      getlocal1
+      findpropstrict      QName(PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), "AmountSort")
+      getlocal            4
+      getlex              QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "count")
+      getlocal            4
+      getproperty         Multiname("itemId", [PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), ProtectedNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), ProtectedNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      constructprop       QName(PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), "AmountSort"), 2
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+
+L28:
+      hasnext2            5, 6
+      iftrue              L14
+
+      newarray            0
+      coerce              QName(PackageNamespace(""), "Array")
+      setlocal3
+
+      jump                L39
+
+L34:
+      label
+      getlocal3
+      getlocal1
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "pop"), 0
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+
+L39:
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "length")
+      pushbyte            0
+      ifgt                L34
+
+      getlocal3
+      pushstring          "amount"
+      pushbyte            16
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "sortOn"), 2
+
+      jump                L53
+
+L48:
+      label
+      getlocal1
+      getlocal3
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "pop"), 0
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+
+L53:
+      getlocal3
+      getproperty         QName(PackageNamespace(""), "length")
+      pushbyte            0
+      ifgt                L48
+
+      getlex              QName(PackageNamespace("__AS3__.vec"), "Vector")
+      getlex              QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "PlayerShopItem")
+      applytype           1
+      pushbyte            0
+      construct           1
+      findproperty        QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "searchItems")
+      swap
+      setproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "searchItems")
+
+      pushbyte            0
+      setlocal            8
+
+      getlocal1
+      setlocal            7
+
+      jump                L79
+
+L70:
+      label
+      getlocal            7
+      getlocal            8
+      nextvalue
+      setlocal2
+
+      getlex              QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "searchItems")
+      getlocal2
+      getproperty         Multiname("item", [PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), ProtectedNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+
+L79:
+      hasnext2            7, 8
+      iftrue              L70
+
+      findpropstrict      QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "draw")
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "draw"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "FilterByAZ")
+   method
+    name "FilterByAZ"
+    refid "kabam.rotmg.market.ui:MarketAllOffersScreen/instance/kabam.rotmg.market.ui:MarketAllOffersScreen/instance/FilterByAZ"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 11
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushundefined
+      setlocal            4
+
+      pushnull
+      setlocal            5
+
+      getlex              QName(PackageNamespace("__AS3__.vec"), "Vector")
+      getlex              QName(PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), "AZSort")
+      applytype           1
+      pushbyte            0
+      construct           1
+      coerce              TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), "AZSort")>)
+      setlocal1
+
+      pushbyte            0
+      setlocal            8
+
+      getlex              QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "searchItems")
+      setlocal            7
+
+      jump                L50
+
+L18:
+      label
+      getlocal            7
+      getlocal            8
+      nextvalue
+      setlocal            6
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.objects"), "ObjectLibrary")
+      getproperty         QName(PackageNamespace(""), "xmlLibrary_")
+      getlocal            6
+      getproperty         Multiname("itemId", [PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), ProtectedNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), ProtectedNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      dup
+      setlocal            4
+
+      pushnull
+      ifeq                L50
+
+      getlocal            4
+      pushstring          "DisplayId"
+      callproperty        Multiname("hasOwnProperty", [PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), ProtectedNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 1
+      iffalse             L39
+
+      getlocal            4
+      getproperty         Multiname("DisplayId", [PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), ProtectedNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      jump                L42
+
+L39:
+      getlocal            4
+      getproperty         MultinameA("id", [PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), ProtectedNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      coerce_a
+L42:
+      coerce_s
+      setlocal            5
+
+      getlocal1
+      findpropstrict      QName(PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), "AZSort")
+      getlocal            6
+      getlocal            5
+      constructprop       QName(PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), "AZSort"), 2
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+
+L50:
+      hasnext2            7, 8
+      iftrue              L18
+
+      newarray            0
+      coerce              QName(PackageNamespace(""), "Array")
+      setlocal3
+
+      jump                L61
+
+L56:
+      label
+      getlocal3
+      getlocal1
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "pop"), 0
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+
+L61:
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "length")
+      pushbyte            0
+      ifgt                L56
+
+      getlocal3
+      pushstring          "name"
+      pushbyte            2
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "sortOn"), 2
+
+      jump                L75
+
+L70:
+      label
+      getlocal1
+      getlocal3
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "pop"), 0
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+
+L75:
+      getlocal3
+      getproperty         QName(PackageNamespace(""), "length")
+      pushbyte            0
+      ifgt                L70
+
+      getlex              QName(PackageNamespace("__AS3__.vec"), "Vector")
+      getlex              QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "PlayerShopItem")
+      applytype           1
+      pushbyte            0
+      construct           1
+      findproperty        QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "searchItems")
+      swap
+      setproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "searchItems")
+
+      pushbyte            0
+      setlocal            10
+
+      getlocal1
+      setlocal            9
+
+      jump                L101
+
+L92:
+      label
+      getlocal            9
+      getlocal            10
+      nextvalue
+      setlocal2
+
+      getlex              QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "searchItems")
+      getlocal2
+      getproperty         Multiname("item", [PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), ProtectedNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("kabam.rotmg.market.ui:MarketAllOffersScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketAllOffersScreen"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+
+L101:
+      hasnext2            9, 10
+      iftrue              L92
+
+      findpropstrict      QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "draw")
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.market.ui:MarketAllOffersScreen"), "draw"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.market.ui:MarketAllOffersScreen/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PackageNamespace(""), "WIDTH") type QName(PackageNamespace(""), "int") value Integer(600) end
+ trait const QName(PackageNamespace(""), "HEIGHT") type QName(PackageNamespace(""), "int") value Integer(600) end
+end ; class

@@ -1,0 +1,438 @@
+class
+ refid "com.company.assembleegameclient.objects.particles:LevelUpEffect"
+ instance QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "LevelUpEffect")
+  extends QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "ParticleEffect")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.company.assembleegameclient.objects.particles:LevelUpEffect")
+  iinit
+   name "LevelUpEffect"
+   refid "com.company.assembleegameclient.objects.particles:LevelUpEffect/instance/init"
+   param QName(PackageNamespace("com.company.assembleegameclient.objects"), "GameObject")
+   param QName(PackageNamespace(""), "uint")
+   param QName(PackageNamespace(""), "int")
+   flag HAS_PARAM_NAMES
+   paramname "_arg1"
+   paramname "_arg2"
+   paramname "_arg3"
+   body
+    maxstack 3
+    localcount 6
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     pushnull
+     setlocal            4
+
+     pushbyte            0
+     setlocal            5
+
+     getlocal0
+     getlex              QName(PackageNamespace("__AS3__.vec"), "Vector")
+     getlex              QName(PrivateNamespace("FilePrivateNS:LevelUpEffect"), "LevelUpParticle")
+     applytype           1
+     construct           0
+     setproperty         QName(PackageNamespace(""), "parts1_")
+
+     getlocal0
+     getlex              QName(PackageNamespace("__AS3__.vec"), "Vector")
+     getlex              QName(PrivateNamespace("FilePrivateNS:LevelUpEffect"), "LevelUpParticle")
+     applytype           1
+     construct           0
+     setproperty         QName(PackageNamespace(""), "parts2_")
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     getlocal1
+     setproperty         QName(PackageNamespace(""), "go_")
+
+     jump                L46
+
+L24:
+     label
+     findpropstrict      QName(PrivateNamespace("FilePrivateNS:LevelUpEffect"), "LevelUpParticle")
+     getlocal2
+     pushbyte            100
+     constructprop       QName(PrivateNamespace("FilePrivateNS:LevelUpEffect"), "LevelUpParticle"), 2
+     coerce              QName(PrivateNamespace("FilePrivateNS:LevelUpEffect"), "LevelUpParticle")
+     setlocal            4
+
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "parts1_")
+     getlocal            4
+     callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+
+     findpropstrict      QName(PrivateNamespace("FilePrivateNS:LevelUpEffect"), "LevelUpParticle")
+     getlocal2
+     pushbyte            100
+     constructprop       QName(PrivateNamespace("FilePrivateNS:LevelUpEffect"), "LevelUpParticle"), 2
+     coerce              QName(PrivateNamespace("FilePrivateNS:LevelUpEffect"), "LevelUpParticle")
+     setlocal            4
+
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "parts2_")
+     getlocal            4
+     callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+
+     inclocal_i          5
+L46:
+     getlocal            5
+     getlocal3
+     iflt                L24
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "go_") type QName(PackageNamespace("com.company.assembleegameclient.objects"), "GameObject") end
+  trait slot QName(PackageNamespace(""), "parts1_") type TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PrivateNamespace("FilePrivateNS:LevelUpEffect"), "LevelUpParticle")>) end
+  trait slot QName(PackageNamespace(""), "parts2_") type TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PrivateNamespace("FilePrivateNS:LevelUpEffect"), "LevelUpParticle")>) end
+  trait slot QName(PackageNamespace(""), "startTime_") type QName(PackageNamespace(""), "int") value Integer(-1) end
+  trait method QName(PackageNamespace(""), "update") flag OVERRIDE
+   method
+    name "update"
+    refid "com.company.assembleegameclient.objects.particles:LevelUpEffect/instance/update"
+    param QName(PackageNamespace(""), "int")
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "Boolean")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    paramname "_arg2"
+    body
+     maxstack 5
+     localcount 4
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "go_")
+      getproperty         QName(PackageNamespace(""), "map_")
+      pushnull
+      ifne                L11
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:LevelUpEffect"), "endEffect"), 0
+
+      pushfalse
+      returnvalue
+
+L11:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "go_")
+      getproperty         QName(PackageNamespace(""), "x_")
+      findproperty        QName(PackageNamespace(""), "x_")
+      swap
+      setproperty         QName(PackageNamespace(""), "x_")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "go_")
+      getproperty         QName(PackageNamespace(""), "y_")
+      findproperty        QName(PackageNamespace(""), "y_")
+      swap
+      setproperty         QName(PackageNamespace(""), "y_")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "startTime_")
+      pushbyte            0
+      ifnlt               L30
+
+      getlocal0
+      getlocal1
+      setproperty         QName(PackageNamespace(""), "startTime_")
+
+L30:
+      getlocal1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "startTime_")
+      subtract
+      pushshort           2000
+      divide
+      convert_d
+      setlocal3
+
+      getlocal3
+      pushbyte            1
+      ifnge               L45
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:LevelUpEffect"), "endEffect"), 0
+
+      pushfalse
+      returnvalue
+
+L45:
+      getlocal0
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "parts1_")
+      pushbyte            1
+      pushbyte            0
+      getlocal3
+      callpropvoid        QName(PackageNamespace(""), "updateSwirl"), 4
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "parts2_")
+      pushbyte            1
+      pushdouble          3.141592653589793
+      getlocal3
+      callpropvoid        QName(PackageNamespace(""), "updateSwirl"), 4
+
+      pushtrue
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:LevelUpEffect"), "endEffect")
+   method
+    name "endEffect"
+    refid "com.company.assembleegameclient.objects.particles:LevelUpEffect/instance/com.company.assembleegameclient.objects.particles:LevelUpEffect/instance/endEffect"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 6
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      setlocal1
+
+      pushbyte            0
+      setlocal3
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "parts1_")
+      setlocal2
+
+      jump                L19
+
+L10:
+      label
+      getlocal2
+      getlocal3
+      nextvalue
+      coerce              QName(PrivateNamespace("FilePrivateNS:LevelUpEffect"), "LevelUpParticle")
+      setlocal1
+
+      getlocal1
+      pushfalse
+      setproperty         QName(PackageNamespace(""), "alive_")
+
+L19:
+      hasnext2            2, 3
+      iftrue              L10
+
+      pushbyte            0
+      setlocal            5
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "parts2_")
+      setlocal            4
+
+      jump                L36
+
+L27:
+      label
+      getlocal            4
+      getlocal            5
+      nextvalue
+      coerce              QName(PrivateNamespace("FilePrivateNS:LevelUpEffect"), "LevelUpParticle")
+      setlocal1
+
+      getlocal1
+      pushfalse
+      setproperty         QName(PackageNamespace(""), "alive_")
+
+L36:
+      hasnext2            4, 5
+      iftrue              L27
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "updateSwirl")
+   method
+    name "updateSwirl"
+    refid "com.company.assembleegameclient.objects.particles:LevelUpEffect/instance/updateSwirl"
+    param TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PrivateNamespace("FilePrivateNS:LevelUpEffect"), "LevelUpParticle")>)
+    param QName(PackageNamespace(""), "Number")
+    param QName(PackageNamespace(""), "Number")
+    param QName(PackageNamespace(""), "Number")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    paramname "_arg2"
+    paramname "_arg3"
+    paramname "_arg4"
+    body
+     maxstack 4
+     localcount 10
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushbyte            0
+      setlocal            9
+
+      pushnull
+      setlocal            7
+
+      pushnan
+      setlocal            8
+
+      pushnan
+      setlocal            5
+
+      pushnan
+      setlocal            6
+
+      pushbyte            0
+      setlocal            9
+
+      jump                L102
+
+L15:
+      label
+      getlocal1
+      getlocal            9
+      getproperty         MultinameL([PrivateNamespace("com.company.assembleegameclient.objects.particles:LevelUpEffect"), ProtectedNamespace("com.company.assembleegameclient.objects.particles:LevelUpEffect"), StaticProtectedNs("com.company.assembleegameclient.objects.particles:LevelUpEffect"), StaticProtectedNs("com.company.assembleegameclient.objects.particles:ParticleEffect"), StaticProtectedNs("com.company.assembleegameclient.objects:GameObject"), StaticProtectedNs("com.company.assembleegameclient.objects:BasicObject"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.objects.particles"), PackageInternalNs("com.company.assembleegameclient.objects.particles"), PrivateNamespace("FilePrivateNS:LevelUpEffect"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      coerce              QName(PrivateNamespace("FilePrivateNS:LevelUpEffect"), "LevelUpParticle")
+      dup
+      setlocal            7
+
+      getlocal            4
+      pushbyte            2
+      multiply
+      pushbyte            1
+      subtract
+      getlocal            9
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "length")
+      divide
+      add
+      setproperty         QName(PackageNamespace(""), "z_")
+
+      getlocal            7
+      getproperty         QName(PackageNamespace(""), "z_")
+      pushbyte            0
+      ifnge               L101
+
+      getlocal            7
+      getproperty         QName(PackageNamespace(""), "z_")
+      pushbyte            1
+      ifngt               L45
+
+      getlocal            7
+      pushfalse
+      setproperty         QName(PackageNamespace(""), "alive_")
+
+      jump                L101
+
+L45:
+      getlocal2
+      pushbyte            2
+      pushdouble          3.141592653589793
+      multiply
+      getlocal            9
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "length")
+      divide
+      multiply
+      pushbyte            2
+      pushdouble          3.141592653589793
+      multiply
+      getlocal            4
+      multiply
+      add
+      getlocal3
+      add
+      multiply
+      convert_d
+      setlocal            8
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "go_")
+      getproperty         QName(PackageNamespace(""), "x_")
+      pushdouble          0.5
+      getlex              QName(PackageNamespace(""), "Math")
+      getlocal            8
+      callproperty        QName(PackageNamespace(""), "cos"), 1
+      multiply
+      add
+      convert_d
+      setlocal            5
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "go_")
+      getproperty         QName(PackageNamespace(""), "y_")
+      pushdouble          0.5
+      getlex              QName(PackageNamespace(""), "Math")
+      getlocal            8
+      callproperty        QName(PackageNamespace(""), "sin"), 1
+      multiply
+      add
+      convert_d
+      setlocal            6
+
+      getlocal            7
+      getproperty         QName(PackageNamespace(""), "map_")
+      pushnull
+      ifne                L97
+
+      getlex              QName(PackageNamespace(""), "map_")
+      getlocal            7
+      getlocal            5
+      getlocal            6
+      callpropvoid        QName(PackageNamespace(""), "addObj"), 3
+
+      jump                L101
+
+L97:
+      getlocal            7
+      getlocal            5
+      getlocal            6
+      callpropvoid        QName(PackageNamespace(""), "moveTo"), 2
+
+L101:
+      inclocal_i          9
+L102:
+      getlocal            9
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "length")
+      iflt                L15
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.objects.particles:LevelUpEffect/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:LevelUpEffect"), "LIFETIME") type QName(PackageNamespace(""), "int") value Integer(2000) end
+end ; class

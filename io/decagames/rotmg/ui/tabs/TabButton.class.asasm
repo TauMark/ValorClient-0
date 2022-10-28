@@ -1,0 +1,499 @@
+class
+ refid "io.decagames.rotmg.ui.tabs:TabButton"
+ instance QName(PackageNamespace("io.decagames.rotmg.ui.tabs"), "TabButton")
+  extends QName(PackageNamespace("io.decagames.rotmg.ui.buttons"), "SliceScalingButton")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("io.decagames.rotmg.ui.tabs:TabButton")
+  iinit
+   name "TabButton"
+   refid "io.decagames.rotmg.ui.tabs:TabButton/instance/init"
+   param QName(PackageNamespace(""), "String")
+   flag HAS_PARAM_NAMES
+   paramname "_arg_1"
+   body
+    maxstack 4
+    localcount 4
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     getlocal1
+     setproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:TabButton"), "buttonType")
+
+     getlocal1
+     setlocal3
+
+     jump                L40
+
+L8:
+     label
+     getlocal0
+     pushstring          "tab_button_left_idle"
+     setproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:TabButton"), "defaultBitmap")
+
+     getlocal0
+     pushstring          "tab_button_center_open"
+     setproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:TabButton"), "selectedBitmap")
+
+     jump                L52
+
+L16:
+     label
+     getlocal0
+     pushstring          "tab_button_right_idle"
+     setproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:TabButton"), "defaultBitmap")
+
+     getlocal0
+     pushstring          "tab_button_right_open"
+     setproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:TabButton"), "selectedBitmap")
+
+     jump                L52
+
+L24:
+     label
+     getlocal0
+     pushstring          "tab_button_center_idle"
+     setproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:TabButton"), "defaultBitmap")
+
+     getlocal0
+     pushstring          "tab_button_center_open"
+     setproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:TabButton"), "selectedBitmap")
+
+     jump                L52
+
+L32:
+     label
+     getlocal0
+     pushstring          "tab_button_borderless_idle"
+     setproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:TabButton"), "defaultBitmap")
+
+     getlocal0
+     pushstring          "tab_button_borderless"
+     setproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:TabButton"), "selectedBitmap")
+
+     jump                L52
+
+L40:
+     pushstring          "left"
+     getlocal3
+     ifstricteq          L8
+
+     pushstring          "right"
+     getlocal3
+     ifstricteq          L16
+
+     pushstring          "center"
+     getlocal3
+     ifstricteq          L24
+
+     pushstring          "borderless"
+     getlocal3
+     ifstricteq          L32
+
+L52:
+     getlocal0
+     getlocal0
+     getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:TabButton"), "defaultBitmap")
+     setproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:TabButton"), "defaultBitmap")
+
+     getlocal0
+     getlocal0
+     getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:TabButton"), "selectedBitmap")
+     setproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:TabButton"), "selectedBitmap")
+
+     getlex              QName(PackageNamespace("io.decagames.rotmg.ui.texture"), "TextureParser")
+     getproperty         QName(PackageNamespace(""), "instance")
+     pushstring          "UI"
+     getlocal0
+     getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:TabButton"), "defaultBitmap")
+     callproperty        QName(PackageNamespace(""), "getSliceScalingBitmap"), 2
+     coerce              QName(PackageNamespace("io.decagames.rotmg.ui.sliceScaling"), "SliceScalingBitmap")
+     setlocal2
+
+     getlocal0
+     getlocal2
+     constructsuper      1
+
+     getlex              QName(PackageNamespace(""), "bitmap")
+     pushstring          "TabButton"
+     setproperty         QName(PackageNamespace(""), "name")
+
+     getlocal2
+     pushbyte            0
+     getlocal0
+     getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:TabButton"), "buttonType")
+     pushstring          "borderless"
+     ifne                L82
+
+     pushbyte            0
+     jump                L84
+
+L82:
+     pushbyte            3
+     coerce_a
+L84:
+     callpropvoid        QName(PackageNamespace(""), "addMargin"), 2
+
+     pushfalse
+     findproperty        QName(ProtectedNamespace("io.decagames.rotmg.ui.buttons:SliceScalingButton"), "_interactionEffects")
+     swap
+     setproperty         QName(ProtectedNamespace("io.decagames.rotmg.ui.buttons:SliceScalingButton"), "_interactionEffects")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:TabButton"), "_selected") type QName(PackageNamespace(""), "Boolean") end
+  trait slot QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:TabButton"), "selectedBitmap") type QName(PackageNamespace(""), "String") end
+  trait slot QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:TabButton"), "defaultBitmap") type QName(PackageNamespace(""), "String") end
+  trait slot QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:TabButton"), "buttonType") type QName(PackageNamespace(""), "String") end
+  trait slot QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:TabButton"), "indicator") type QName(PackageNamespace("flash.display"), "Sprite") end
+  trait getter QName(PackageNamespace(""), "hasIndicator")
+   method
+    name "hasIndicator"
+    refid "io.decagames.rotmg.ui.tabs:TabButton/instance/hasIndicator/getter"
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:TabButton"), "indicator")
+      dup
+      iffalse             L11
+
+      pop
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:TabButton"), "indicator")
+      getproperty         QName(PackageNamespace(""), "parent")
+      coerce_a
+L11:
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait setter QName(PackageNamespace(""), "showIndicator")
+   method
+    name "showIndicator"
+    refid "io.decagames.rotmg.ui.tabs:TabButton/instance/showIndicator/setter"
+    param QName(PackageNamespace(""), "Boolean")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg_1"
+    body
+     maxstack 4
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      iffalse             L38
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:TabButton"), "indicator")
+      iftrue              L11
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("flash.display"), "Sprite")
+      constructprop       QName(PackageNamespace("flash.display"), "Sprite"), 0
+      setproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:TabButton"), "indicator")
+
+L11:
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:TabButton"), "indicator")
+      getproperty         QName(PackageNamespace(""), "graphics")
+      callpropvoid        QName(PackageNamespace(""), "clear"), 0
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:TabButton"), "indicator")
+      getproperty         QName(PackageNamespace(""), "graphics")
+      pushint             823807
+      callpropvoid        QName(PackageNamespace(""), "beginFill"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:TabButton"), "indicator")
+      getproperty         QName(PackageNamespace(""), "graphics")
+      pushbyte            0
+      pushbyte            0
+      pushbyte            4
+      callpropvoid        QName(PackageNamespace(""), "drawCircle"), 3
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:TabButton"), "indicator")
+      getproperty         QName(PackageNamespace(""), "graphics")
+      callpropvoid        QName(PackageNamespace(""), "endFill"), 0
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:TabButton"), "indicator")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:TabButton"), "updateIndicatorPosition"), 0
+
+      jump                L52
+
+L38:
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:TabButton"), "indicator")
+      dup
+      iffalse             L47
+
+      pop
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:TabButton"), "indicator")
+      getproperty         QName(PackageNamespace(""), "parent")
+      coerce_a
+L47:
+      iffalse             L52
+
+      findpropstrict      QName(PackageNamespace(""), "removeChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:TabButton"), "indicator")
+      callpropvoid        QName(PackageNamespace(""), "removeChild"), 1
+
+L52:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:TabButton"), "updateIndicatorPosition")
+   method
+    name "updateIndicatorPosition"
+    refid "io.decagames.rotmg.ui.tabs:TabButton/instance/io.decagames.rotmg.ui.tabs:TabButton/instance/updateIndicatorPosition"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:TabButton"), "indicator")
+      iffalse             L25
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:TabButton"), "indicator")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "label")
+      getproperty         QName(PackageNamespace(""), "x")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "label")
+      getproperty         QName(PackageNamespace(""), "width")
+      add
+      pushbyte            7
+      add
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:TabButton"), "indicator")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "label")
+      getproperty         QName(PackageNamespace(""), "y")
+      pushbyte            8
+      add
+      setproperty         QName(PackageNamespace(""), "y")
+
+L25:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait setter QName(PackageNamespace(""), "selected")
+   method
+    name "selected"
+    refid "io.decagames.rotmg.ui.tabs:TabButton/instance/selected/setter"
+    param QName(PackageNamespace(""), "Boolean")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg_1"
+    body
+     maxstack 6
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      setproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:TabButton"), "_selected")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:TabButton"), "_selected")
+      iftrue              L35
+
+      findpropstrict      QName(PackageNamespace(""), "setLabelMargin")
+      pushbyte            0
+      pushbyte            0
+      callpropvoid        QName(PackageNamespace(""), "setLabelMargin"), 2
+
+      getlex              QName(PackageNamespace("io.decagames.rotmg.ui.defaults"), "DefaultLabelFormat")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "label")
+      callpropvoid        QName(PackageNamespace(""), "defaultInactiveTab"), 1
+
+      findpropstrict      QName(PackageNamespace(""), "changeBitmap")
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:TabButton"), "defaultBitmap")
+      findpropstrict      QName(PackageNamespace("flash.geom"), "Point")
+      pushbyte            0
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:TabButton"), "buttonType")
+      pushstring          "borderless"
+      ifne                L27
+
+      pushbyte            0
+      jump                L29
+
+L27:
+      pushbyte            3
+      coerce_a
+L29:
+      constructprop       QName(PackageNamespace("flash.geom"), "Point"), 2
+      callpropvoid        QName(PackageNamespace(""), "changeBitmap"), 2
+
+      getlex              QName(PackageNamespace(""), "bitmap")
+      pushbyte            0
+      setproperty         QName(PackageNamespace(""), "alpha")
+
+      jump                L67
+
+L35:
+      findpropstrict      QName(PackageNamespace(""), "setLabelMargin")
+      pushbyte            0
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:TabButton"), "buttonType")
+      pushstring          "borderless"
+      ifne                L43
+
+      pushbyte            0
+      jump                L44
+
+L43:
+      pushdouble          2
+L44:
+      callpropvoid        QName(PackageNamespace(""), "setLabelMargin"), 2
+
+      getlex              QName(PackageNamespace("io.decagames.rotmg.ui.defaults"), "DefaultLabelFormat")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "label")
+      callpropvoid        QName(PackageNamespace(""), "defaultActiveTab"), 1
+
+      findpropstrict      QName(PackageNamespace(""), "changeBitmap")
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:TabButton"), "selectedBitmap")
+      findpropstrict      QName(PackageNamespace("flash.geom"), "Point")
+      pushbyte            0
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:TabButton"), "buttonType")
+      pushstring          "borderless"
+      ifne                L60
+
+      pushbyte            0
+      jump                L62
+
+L60:
+      pushbyte            3
+      coerce_a
+L62:
+      constructprop       QName(PackageNamespace("flash.geom"), "Point"), 2
+      callpropvoid        QName(PackageNamespace(""), "changeBitmap"), 2
+
+      getlex              QName(PackageNamespace(""), "bitmap")
+      pushbyte            1
+      setproperty         QName(PackageNamespace(""), "alpha")
+
+L67:
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:TabButton"), "updateIndicatorPosition"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(ProtectedNamespace("io.decagames.rotmg.ui.tabs:TabButton"), "onClickHandler") flag OVERRIDE
+   method
+    name "onClickHandler"
+    refid "io.decagames.rotmg.ui.tabs:TabButton/instance/io.decagames.rotmg.ui.tabs:TabButton:onClickHandler"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg_1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      callsupervoid       QName(ProtectedNamespace("io.decagames.rotmg.ui.buttons:SliceScalingButton"), "onClickHandler"), 1
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait getter QName(PackageNamespace(""), "selected")
+   method
+    name "selected"
+    refid "io.decagames.rotmg.ui.tabs:TabButton/instance/selected/getter"
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:TabButton"), "_selected")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "io.decagames.rotmg.ui.tabs:TabButton/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PackageNamespace(""), "SELECTED_MARGIN") type QName(PackageNamespace(""), "int") value Integer(3) end
+ trait const QName(PackageNamespace(""), "LEFT") type QName(PackageNamespace(""), "String") value Utf8("left") end
+ trait const QName(PackageNamespace(""), "RIGHT") type QName(PackageNamespace(""), "String") value Utf8("right") end
+ trait const QName(PackageNamespace(""), "CENTER") type QName(PackageNamespace(""), "String") value Utf8("center") end
+ trait const QName(PackageNamespace(""), "BORDERLESS") type QName(PackageNamespace(""), "String") value Utf8("borderless") end
+end ; class

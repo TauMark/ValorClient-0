@@ -1,0 +1,160 @@
+class
+ refid "com.company.assembleegameclient.objects.particles:SparkParticle"
+ instance QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "SparkParticle")
+  extends QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "Particle")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.company.assembleegameclient.objects.particles:SparkParticle")
+  iinit
+   name "SparkParticle"
+   refid "com.company.assembleegameclient.objects.particles:SparkParticle/instance/init"
+   param QName(PackageNamespace(""), "int")
+   param QName(PackageNamespace(""), "int")
+   param QName(PackageNamespace(""), "int")
+   param QName(PackageNamespace(""), "Number")
+   param QName(PackageNamespace(""), "Number")
+   param QName(PackageNamespace(""), "Number")
+   flag HAS_PARAM_NAMES
+   paramname "_arg1"
+   paramname "_arg2"
+   paramname "_arg3"
+   paramname "_arg4"
+   paramname "_arg5"
+   paramname "_arg6"
+   body
+    maxstack 4
+    localcount 8
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     getlocal2
+     getlocal            4
+     getlocal1
+     constructsuper      3
+
+     getlocal0
+     getlocal1
+     setproperty         QName(PackageNamespace(""), "initialSize_")
+
+     getlocal0
+     getlocal0
+     getlocal3
+     dup
+     setlocal            7
+
+     setproperty         QName(PackageNamespace(""), "timeLeft_")
+
+     getlocal            7
+     setproperty         QName(PackageNamespace(""), "lifetime_")
+
+     getlocal0
+     getlocal            5
+     setproperty         QName(PackageNamespace(""), "dx_")
+
+     getlocal0
+     getlocal            6
+     setproperty         QName(PackageNamespace(""), "dy_")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "lifetime_") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PackageNamespace(""), "timeLeft_") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PackageNamespace(""), "initialSize_") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PackageNamespace(""), "dx_") type QName(PackageNamespace(""), "Number") end
+  trait slot QName(PackageNamespace(""), "dy_") type QName(PackageNamespace(""), "Number") end
+  trait method QName(PackageNamespace(""), "update") flag OVERRIDE
+   method
+    name "update"
+    refid "com.company.assembleegameclient.objects.particles:SparkParticle/instance/update"
+    param QName(PackageNamespace(""), "int")
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "Boolean")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    paramname "_arg2"
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "timeLeft_")
+      getlocal2
+      subtract
+      setproperty         QName(PackageNamespace(""), "timeLeft_")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "timeLeft_")
+      pushbyte            0
+      ifnle               L14
+
+      pushfalse
+      returnvalue
+
+L14:
+      getlex              QName(PackageNamespace(""), "x_")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "dx_")
+      getlocal2
+      multiply
+      pushshort           1000
+      divide
+      add
+      findproperty        QName(PackageNamespace(""), "x_")
+      swap
+      setproperty         QName(PackageNamespace(""), "x_")
+
+      getlex              QName(PackageNamespace(""), "y_")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "dy_")
+      getlocal2
+      multiply
+      pushshort           1000
+      divide
+      add
+      findproperty        QName(PackageNamespace(""), "y_")
+      swap
+      setproperty         QName(PackageNamespace(""), "y_")
+
+      findpropstrict      QName(PackageNamespace(""), "setSize")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "timeLeft_")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "lifetime_")
+      divide
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "initialSize_")
+      multiply
+      callpropvoid        QName(PackageNamespace(""), "setSize"), 1
+
+      pushtrue
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.objects.particles:SparkParticle/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

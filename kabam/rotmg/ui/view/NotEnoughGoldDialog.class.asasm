@@ -1,0 +1,62 @@
+class
+ refid "kabam.rotmg.ui.view:NotEnoughGoldDialog"
+ instance QName(PackageNamespace("kabam.rotmg.ui.view"), "NotEnoughGoldDialog")
+  extends QName(PackageNamespace("com.company.assembleegameclient.ui.dialogs"), "Dialog")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.ui.view:NotEnoughGoldDialog")
+  iinit
+   name "NotEnoughGoldDialog"
+   refid "kabam.rotmg.ui.view:NotEnoughGoldDialog/instance/init"
+   body
+    maxstack 6
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     pushstring          "Not Enough"
+     pushstring          "Gold.notEnoughForItem"
+     pushstring          "Cancel"
+     pushstring          "Buy"
+     pushstring          "/notEnoughGold"
+     constructsuper      5
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("org.osflash.signals.natives"), "NativeMappedSignal")
+     getlocal0
+     pushstring          "dialogLeftButton"
+     constructprop       QName(PackageNamespace("org.osflash.signals.natives"), "NativeMappedSignal"), 2
+     setproperty         QName(PackageNamespace(""), "cancel")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("org.osflash.signals.natives"), "NativeMappedSignal")
+     getlocal0
+     pushstring          "dialogRightButton"
+     constructprop       QName(PackageNamespace("org.osflash.signals.natives"), "NativeMappedSignal"), 2
+     setproperty         QName(PackageNamespace(""), "buyGold")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "cancel") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait slot QName(PackageNamespace(""), "buyGold") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+ end ; instance
+ cinit
+  refid "kabam.rotmg.ui.view:NotEnoughGoldDialog/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PrivateNamespace("kabam.rotmg.ui.view:NotEnoughGoldDialog"), "TRACKING_TAG") type QName(PackageNamespace(""), "String") value Utf8("/notEnoughGold") end
+end ; class

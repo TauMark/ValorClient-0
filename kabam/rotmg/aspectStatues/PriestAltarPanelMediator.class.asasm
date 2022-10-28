@@ -1,0 +1,140 @@
+class
+ refid "kabam.rotmg.aspectStatues:PriestAltarPanelMediator"
+ instance QName(PackageNamespace("kabam.rotmg.aspectStatues"), "PriestAltarPanelMediator")
+  extends QName(PackageNamespace("robotlegs.bender.bundles.mvcs"), "Mediator")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.aspectStatues:PriestAltarPanelMediator")
+  iinit
+   refid "kabam.rotmg.aspectStatues:PriestAltarPanelMediator/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "view") flag METADATA type QName(PackageNamespace("kabam.rotmg.aspectStatues"), "PriestAltarPanel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "gameSprite") flag METADATA type QName(PackageNamespace("com.company.assembleegameclient.game"), "AGameSprite")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "openNoModalDialog") flag METADATA type QName(PackageNamespace("kabam.rotmg.dialogs.control"), "OpenDialogNoModalSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "hudModel") flag METADATA type QName(PackageNamespace("kabam.rotmg.ui.model"), "HUDModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PackageNamespace(""), "initialize") flag OVERRIDE
+   method
+    name "initialize"
+    refid "kabam.rotmg.aspectStatues:PriestAltarPanelMediator/instance/initialize"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      callpropvoid        QName(PackageNamespace(""), "init"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageInternalNs("kabam.rotmg.aspectStatues"), "forgeButton")
+      pushstring          "click"
+      getlocal0
+      getproperty         QName(ProtectedNamespace("kabam.rotmg.aspectStatues:PriestAltarPanelMediator"), "onButtonLeftClick")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "destroy") flag OVERRIDE
+   method
+    name "destroy"
+    refid "kabam.rotmg.aspectStatues:PriestAltarPanelMediator/instance/destroy"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      callsupervoid       QName(PackageNamespace(""), "destroy"), 0
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(ProtectedNamespace("kabam.rotmg.aspectStatues:PriestAltarPanelMediator"), "onButtonLeftClick")
+   method
+    name "onButtonLeftClick"
+    refid "kabam.rotmg.aspectStatues:PriestAltarPanelMediator/instance/kabam.rotmg.aspectStatues:PriestAltarPanelMediator:onButtonLeftClick"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg_1"
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hudModel")
+      getproperty         QName(PackageNamespace(""), "gameSprite")
+      getproperty         QName(PackageNamespace(""), "gsc_")
+      pushstring          "/swapa "
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageInternalNs("kabam.rotmg.aspectStatues"), "aspectType")
+      add
+      callpropvoid        QName(PackageNamespace(""), "playerText"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.aspectStatues:PriestAltarPanelMediator/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

@@ -1,0 +1,63 @@
+class
+ refid "com.company.assembleegameclient.game.events:DeathEvent"
+ instance QName(PackageNamespace("com.company.assembleegameclient.game.events"), "DeathEvent")
+  extends QName(PackageNamespace("flash.events"), "Event")
+  flag SEALED
+  iinit
+   name "DeathEvent"
+   refid "com.company.assembleegameclient.game.events:DeathEvent/instance/init"
+   param QName(PackageNamespace("flash.display"), "BitmapData")
+   param QName(PackageNamespace(""), "int")
+   param QName(PackageNamespace(""), "int")
+   flag HAS_PARAM_NAMES
+   paramname "_arg1"
+   paramname "_arg2"
+   paramname "_arg3"
+   body
+    maxstack 2
+    localcount 4
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     pushstring          "DEATH"
+     constructsuper      1
+
+     getlocal0
+     getlocal1
+     setproperty         QName(PackageNamespace(""), "background_")
+
+     getlocal0
+     getlocal2
+     setproperty         QName(PackageNamespace(""), "accountId_")
+
+     getlocal0
+     getlocal3
+     setproperty         QName(PackageNamespace(""), "charId_")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "background_") type QName(PackageNamespace("flash.display"), "BitmapData") end
+  trait slot QName(PackageNamespace(""), "player_") type QName(PackageNamespace("com.company.assembleegameclient.objects"), "Player") end
+  trait slot QName(PackageNamespace(""), "accountId_") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PackageNamespace(""), "charId_") type QName(PackageNamespace(""), "int") end
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.game.events:DeathEvent/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PackageNamespace(""), "DEATH") type QName(PackageNamespace(""), "String") value Utf8("DEATH") end
+end ; class

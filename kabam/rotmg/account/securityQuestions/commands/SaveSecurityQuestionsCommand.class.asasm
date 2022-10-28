@@ -1,0 +1,152 @@
+class
+ refid "kabam.rotmg.account.securityQuestions.commands:SaveSecurityQuestionsCommand"
+ instance QName(PackageNamespace("kabam.rotmg.account.securityQuestions.commands"), "SaveSecurityQuestionsCommand")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  iinit
+   refid "kabam.rotmg.account.securityQuestions.commands:SaveSecurityQuestionsCommand/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "task") flag METADATA type QName(PackageNamespace("kabam.rotmg.account.securityQuestions.tasks"), "SaveSecurityQuestionsTask")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "monitor") flag METADATA type QName(PackageNamespace("kabam.lib.tasks"), "TaskMonitor")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "taskError") flag METADATA type QName(PackageNamespace("kabam.rotmg.core.signals"), "TaskErrorSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "closeDialogs") flag METADATA type QName(PackageNamespace("kabam.rotmg.dialogs.control"), "CloseDialogsSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "securityQuestionsModel") flag METADATA type QName(PackageNamespace("kabam.rotmg.account.securityQuestions.data"), "SecurityQuestionsModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PackageNamespace(""), "execute")
+   method
+    name "execute"
+    refid "kabam.rotmg.account.securityQuestions.commands:SaveSecurityQuestionsCommand/instance/execute"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("kabam.lib.tasks"), "BranchingTask")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "task")
+      getlocal0
+      callproperty        QName(PrivateNamespace("kabam.rotmg.account.securityQuestions.commands:SaveSecurityQuestionsCommand"), "makeSuccess"), 0
+      getlocal0
+      callproperty        QName(PrivateNamespace("kabam.rotmg.account.securityQuestions.commands:SaveSecurityQuestionsCommand"), "makeFailure"), 0
+      constructprop       QName(PackageNamespace("kabam.lib.tasks"), "BranchingTask"), 3
+      coerce              QName(PackageNamespace("kabam.lib.tasks"), "BranchingTask")
+      setlocal1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "monitor")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "start"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.account.securityQuestions.commands:SaveSecurityQuestionsCommand"), "makeSuccess")
+   method
+    name "makeSuccess"
+    refid "kabam.rotmg.account.securityQuestions.commands:SaveSecurityQuestionsCommand/instance/kabam.rotmg.account.securityQuestions.commands:SaveSecurityQuestionsCommand/instance/execute/makeSuccess"
+    returns QName(PackageNamespace("kabam.lib.tasks"), "Task")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("kabam.lib.tasks"), "DispatchSignalTask")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "closeDialogs")
+      constructprop       QName(PackageNamespace("kabam.lib.tasks"), "DispatchSignalTask"), 1
+      coerce              QName(PackageNamespace("kabam.lib.tasks"), "Task")
+      setlocal1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "securityQuestionsModel")
+      pushfalse
+      setproperty         QName(PackageNamespace(""), "showSecurityQuestionsOnStartup")
+
+      getlocal1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.account.securityQuestions.commands:SaveSecurityQuestionsCommand"), "makeFailure")
+   method
+    name "makeFailure"
+    refid "kabam.rotmg.account.securityQuestions.commands:SaveSecurityQuestionsCommand/instance/kabam.rotmg.account.securityQuestions.commands:SaveSecurityQuestionsCommand/instance/execute/makeFailure"
+    returns QName(PackageNamespace("kabam.lib.tasks"), "DispatchSignalTask")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("kabam.lib.tasks"), "DispatchSignalTask")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "taskError")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "task")
+      constructprop       QName(PackageNamespace("kabam.lib.tasks"), "DispatchSignalTask"), 2
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.account.securityQuestions.commands:SaveSecurityQuestionsCommand/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

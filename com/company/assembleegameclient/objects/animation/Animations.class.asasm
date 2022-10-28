@@ -1,0 +1,223 @@
+class
+ refid "com.company.assembleegameclient.objects.animation:Animations"
+ instance QName(PackageNamespace("com.company.assembleegameclient.objects.animation"), "Animations")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  iinit
+   name "Animations"
+   refid "com.company.assembleegameclient.objects.animation:Animations/instance/init"
+   param QName(PackageNamespace("com.company.assembleegameclient.objects.animation"), "AnimationsData")
+   flag HAS_PARAM_NAMES
+   paramname "_arg1"
+   body
+    maxstack 2
+    localcount 2
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     getlocal1
+     setproperty         QName(PackageNamespace(""), "animationsData_")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "animationsData_") type QName(PackageNamespace("com.company.assembleegameclient.objects.animation"), "AnimationsData") end
+  trait slot QName(PackageNamespace(""), "nextRun_") type TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace(""), "int")>) value Null() end
+  trait slot QName(PackageNamespace(""), "running_") type QName(PrivateNamespace("FilePrivateNS:Animations"), "RunningAnimation") value Null() end
+  trait method QName(PackageNamespace(""), "getTexture")
+   method
+    name "getTexture"
+    refid "com.company.assembleegameclient.objects.animation:Animations/instance/getTexture"
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace("flash.display"), "BitmapData")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 4
+     localcount 8
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      setlocal2
+
+      pushnull
+      setlocal            4
+
+      pushbyte            0
+      setlocal            5
+
+      pushbyte            0
+      setlocal3
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "nextRun_")
+      pushnull
+      ifne                L41
+
+      getlocal0
+      getlex              QName(PackageNamespace("__AS3__.vec"), "Vector")
+      getlex              QName(PackageNamespace(""), "int")
+      applytype           1
+      construct           0
+      setproperty         QName(PackageNamespace(""), "nextRun_")
+
+      pushbyte            0
+      setlocal            7
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "animationsData_")
+      getproperty         QName(PackageNamespace(""), "animations")
+      setlocal            6
+
+      jump                L39
+
+L27:
+      label
+      getlocal            6
+      getlocal            7
+      nextvalue
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.objects.animation"), "AnimationData")
+      setlocal2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "nextRun_")
+      getlocal2
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "getLastRun"), 1
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+
+L39:
+      hasnext2            6, 7
+      iftrue              L27
+
+L41:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "running_")
+      pushnull
+      ifeq                L59
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "running_")
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "getTexture"), 1
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      dup
+      setlocal            4
+
+      pushnull
+      ifeq                L56
+
+      getlocal            4
+      returnvalue
+
+L56:
+      getlocal0
+      pushnull
+      setproperty         QName(PackageNamespace(""), "running_")
+
+L59:
+      jump                L113
+
+L60:
+      label
+      getlocal1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "nextRun_")
+      getlocal3
+      getproperty         MultinameL([PrivateNamespace("com.company.assembleegameclient.objects.animation:Animations"), ProtectedNamespace("com.company.assembleegameclient.objects.animation:Animations"), StaticProtectedNs("com.company.assembleegameclient.objects.animation:Animations"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.objects.animation"), PackageInternalNs("com.company.assembleegameclient.objects.animation"), PrivateNamespace("FilePrivateNS:Animations"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      ifngt               L112
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "nextRun_")
+      getlocal3
+      getproperty         MultinameL([PrivateNamespace("com.company.assembleegameclient.objects.animation:Animations"), ProtectedNamespace("com.company.assembleegameclient.objects.animation:Animations"), StaticProtectedNs("com.company.assembleegameclient.objects.animation:Animations"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.objects.animation"), PackageInternalNs("com.company.assembleegameclient.objects.animation"), PrivateNamespace("FilePrivateNS:Animations"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      convert_i
+      setlocal            5
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "animationsData_")
+      getproperty         QName(PackageNamespace(""), "animations")
+      getlocal3
+      getproperty         MultinameL([PrivateNamespace("com.company.assembleegameclient.objects.animation:Animations"), ProtectedNamespace("com.company.assembleegameclient.objects.animation:Animations"), StaticProtectedNs("com.company.assembleegameclient.objects.animation:Animations"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.objects.animation"), PackageInternalNs("com.company.assembleegameclient.objects.animation"), PrivateNamespace("FilePrivateNS:Animations"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.objects.animation"), "AnimationData")
+      setlocal2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "nextRun_")
+      getlocal3
+      getlocal2
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "getNextRun"), 1
+      setproperty         MultinameL([PrivateNamespace("com.company.assembleegameclient.objects.animation:Animations"), ProtectedNamespace("com.company.assembleegameclient.objects.animation:Animations"), StaticProtectedNs("com.company.assembleegameclient.objects.animation:Animations"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.objects.animation"), PackageInternalNs("com.company.assembleegameclient.objects.animation"), PrivateNamespace("FilePrivateNS:Animations"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "prob_")
+      pushbyte            1
+      equals
+      not
+      dup
+      iffalse             L100
+
+      pop
+      getlex              QName(PackageNamespace(""), "Math")
+      callproperty        QName(PackageNamespace(""), "random"), 0
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "prob_")
+      greaterthan
+L100:
+      iftrue              L112
+
+      getlocal0
+      findpropstrict      QName(PrivateNamespace("FilePrivateNS:Animations"), "RunningAnimation")
+      getlocal2
+      getlocal            5
+      constructprop       QName(PrivateNamespace("FilePrivateNS:Animations"), "RunningAnimation"), 2
+      setproperty         QName(PackageNamespace(""), "running_")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "running_")
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "getTexture"), 1
+      returnvalue
+
+L112:
+      inclocal_i          3
+L113:
+      getlocal3
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "nextRun_")
+      getproperty         QName(PackageNamespace(""), "length")
+      iflt                L60
+
+      pushnull
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.objects.animation:Animations/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

@@ -1,0 +1,195 @@
+class
+ refid "com.company.assembleegameclient.appengine:SavedNewsItem"
+ instance QName(PackageNamespace("com.company.assembleegameclient.appengine"), "SavedNewsItem")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  iinit
+   name "SavedNewsItem"
+   refid "com.company.assembleegameclient.appengine:SavedNewsItem/instance/init"
+   param QName(PackageNamespace(""), "String")
+   param QName(PackageNamespace(""), "String")
+   param QName(PackageNamespace(""), "String")
+   param QName(PackageNamespace(""), "String")
+   param QName(PackageNamespace(""), "int")
+   flag HAS_PARAM_NAMES
+   paramname "_arg1"
+   paramname "_arg2"
+   paramname "_arg3"
+   paramname "_arg4"
+   paramname "_arg5"
+   body
+    maxstack 2
+    localcount 6
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     getlocal1
+     setproperty         QName(PrivateNamespace("com.company.assembleegameclient.appengine:SavedNewsItem"), "iconName")
+
+     getlocal0
+     getlocal2
+     setproperty         QName(PackageNamespace(""), "title_")
+
+     getlocal0
+     getlocal3
+     setproperty         QName(PackageNamespace(""), "tagline_")
+
+     getlocal0
+     getlocal            4
+     setproperty         QName(PackageNamespace(""), "link_")
+
+     getlocal0
+     getlocal            5
+     setproperty         QName(PackageNamespace(""), "date_")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.appengine:SavedNewsItem"), "iconName") type QName(PackageNamespace(""), "String") end
+  trait slot QName(PackageNamespace(""), "title_") type QName(PackageNamespace(""), "String") end
+  trait slot QName(PackageNamespace(""), "tagline_") type QName(PackageNamespace(""), "String") end
+  trait slot QName(PackageNamespace(""), "link_") type QName(PackageNamespace(""), "String") end
+  trait slot QName(PackageNamespace(""), "date_") type QName(PackageNamespace(""), "int") end
+  trait method QName(PackageNamespace(""), "getIcon")
+   method
+    name "getIcon"
+    refid "com.company.assembleegameclient.appengine:SavedNewsItem/instance/getIcon"
+    returns QName(PackageNamespace("flash.display"), "BitmapData")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.appengine:SavedNewsItem"), "iconName")
+      pushstring          "fame"
+      ifne                L9
+
+      findpropstrict      QName(PrivateNamespace("com.company.assembleegameclient.appengine:SavedNewsItem"), "fameIcon")
+      callproperty        QName(PrivateNamespace("com.company.assembleegameclient.appengine:SavedNewsItem"), "fameIcon"), 0
+      jump                L12
+
+L9:
+      findpropstrict      QName(PrivateNamespace("com.company.assembleegameclient.appengine:SavedNewsItem"), "forumIcon")
+      callproperty        QName(PrivateNamespace("com.company.assembleegameclient.appengine:SavedNewsItem"), "forumIcon"), 0
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+L12:
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "isCharDeath")
+   method
+    name "isCharDeath"
+    refid "com.company.assembleegameclient.appengine:SavedNewsItem/instance/isCharDeath"
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.appengine:SavedNewsItem"), "iconName")
+      pushstring          "fame"
+      equals
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.appengine:SavedNewsItem/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PrivateNamespace("com.company.assembleegameclient.appengine:SavedNewsItem"), "FAME") type QName(PackageNamespace(""), "String") value Utf8("fame") end
+ trait method QName(PrivateNamespace("com.company.assembleegameclient.appengine:SavedNewsItem"), "forumIcon")
+  method
+   name "forumIcon"
+   refid "com.company.assembleegameclient.appengine:SavedNewsItem/class/com.company.assembleegameclient.appengine:SavedNewsItem/instance/forumIcon"
+   returns QName(PackageNamespace("flash.display"), "BitmapData")
+   body
+    maxstack 5
+    localcount 2
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PackageNamespace("com.company.util"), "AssetLibrary")
+     pushstring          "lofiInterface2"
+     pushbyte            4
+     callproperty        QName(PackageNamespace(""), "getImageFromSet"), 2
+     coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+     setlocal1
+
+     getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "TextureRedrawer")
+     getlocal1
+     pushbyte            80
+     pushtrue
+     pushbyte            0
+     callproperty        QName(PackageNamespace(""), "redraw"), 4
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PrivateNamespace("com.company.assembleegameclient.appengine:SavedNewsItem"), "fameIcon")
+  method
+   name "fameIcon"
+   refid "com.company.assembleegameclient.appengine:SavedNewsItem/class/com.company.assembleegameclient.appengine:SavedNewsItem/instance/fameIcon"
+   returns QName(PackageNamespace("flash.display"), "BitmapData")
+   body
+    maxstack 5
+    localcount 2
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PackageNamespace("com.company.util"), "AssetLibrary")
+     pushstring          "lofiObj3"
+     pushshort           224
+     callproperty        QName(PackageNamespace(""), "getImageFromSet"), 2
+     coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+     setlocal1
+
+     getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "TextureRedrawer")
+     getlocal1
+     pushbyte            80
+     pushtrue
+     pushbyte            0
+     callproperty        QName(PackageNamespace(""), "redraw"), 4
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+end ; class

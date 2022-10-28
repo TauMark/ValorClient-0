@@ -1,0 +1,205 @@
+class
+ refid "com.company.assembleegameclient.screens.charrects:CreateNewCharacterRect"
+ instance QName(PackageNamespace("com.company.assembleegameclient.screens.charrects"), "CreateNewCharacterRect")
+  extends QName(PackageNamespace("com.company.assembleegameclient.screens.charrects"), "CharacterRect")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.company.assembleegameclient.screens.charrects:CreateNewCharacterRect")
+  iinit
+   name "CreateNewCharacterRect"
+   refid "com.company.assembleegameclient.screens.charrects:CreateNewCharacterRect/instance/init"
+   param QName(PackageNamespace("kabam.rotmg.core.model"), "PlayerModel")
+   flag HAS_PARAM_NAMES
+   paramname "_arg1"
+   body
+    maxstack 5
+    localcount 3
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     pushbyte            0
+     setlocal2
+
+     getlocal0
+     constructsuper      0
+
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder")
+     constructprop       QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder"), 0
+     pushstring          "CreateNewCharacterRect.newCharacter"
+     callproperty        QName(PackageNamespace(""), "setParams"), 1
+     findproperty        QName(ProtectedNamespace("com.company.assembleegameclient.screens.charrects:CharacterRect"), "className")
+     swap
+     setsuper            QName(ProtectedNamespace("com.company.assembleegameclient.screens.charrects:CharacterRect"), "className")
+
+     pushint             5526612
+     findproperty        QName(PackageNamespace(""), "color")
+     swap
+     setsuper            QName(PackageNamespace(""), "color")
+
+     pushint             7829367
+     findproperty        QName(PackageNamespace(""), "overColor")
+     swap
+     setsuper            QName(PackageNamespace(""), "overColor")
+
+     getlocal0
+     callsupervoid       QName(PackageNamespace(""), "init"), 0
+     getlocal0
+     callpropvoid        QName(PackageNamespace(""), "makeBitmap"), 0
+
+     getlocal1
+     callproperty        QName(PackageNamespace(""), "getNumStars"), 0
+     getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "FameUtil")
+     callproperty        QName(PackageNamespace(""), "maxStars"), 0
+     ifeq                L53
+
+     getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "FameUtil")
+     callproperty        QName(PackageNamespace(""), "maxStars"), 0
+     getlocal1
+     callproperty        QName(PackageNamespace(""), "getNumStars"), 0
+     subtract
+     convert_i
+     setlocal2
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder")
+     constructprop       QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder"), 0
+     pushstring          "CreateNewCharacterRect.tagline"
+     pushstring          "remainingStars"
+     getlocal2
+     newobject           1
+     callproperty        QName(PackageNamespace(""), "setParams"), 2
+     callsupervoid       QName(ProtectedNamespace("com.company.assembleegameclient.screens.charrects:CharacterRect"), "makeTagline"), 1
+     getlex              QName(ProtectedNamespace("com.company.assembleegameclient.screens.charrects:CharacterRect"), "taglineClassText")
+     getlex              QName(ProtectedNamespace("com.company.assembleegameclient.screens.charrects:CharacterRect"), "taglineClassText")
+     getproperty         QName(PackageNamespace(""), "x")
+     getlex              QName(ProtectedNamespace("com.company.assembleegameclient.screens.charrects:CharacterRect"), "taglineClassIcon")
+     getproperty         QName(PackageNamespace(""), "width")
+     add
+     setproperty         QName(PackageNamespace(""), "x")
+
+L53:
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.screens.charrects:CreateNewCharacterRect"), "bitmap_") type QName(PackageNamespace("flash.display"), "Bitmap") end
+  trait method QName(PackageNamespace(""), "makeBitmap")
+   method
+    name "makeBitmap"
+    refid "com.company.assembleegameclient.screens.charrects:CreateNewCharacterRect/instance/makeBitmap"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 8
+     localcount 4
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.objects"), "ObjectLibrary")
+      getproperty         QName(PackageNamespace(""), "playerChars_")
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.objects"), "ObjectLibrary")
+      getproperty         QName(PackageNamespace(""), "playerChars_")
+      getproperty         QName(PackageNamespace(""), "length")
+      getlex              QName(PackageNamespace(""), "Math")
+      callproperty        QName(PackageNamespace(""), "random"), 0
+      multiply
+      convert_i
+      getproperty         MultinameL([PrivateNamespace("com.company.assembleegameclient.screens.charrects:CreateNewCharacterRect"), ProtectedNamespace("com.company.assembleegameclient.screens.charrects:CreateNewCharacterRect"), StaticProtectedNs("com.company.assembleegameclient.screens.charrects:CreateNewCharacterRect"), StaticProtectedNs("com.company.assembleegameclient.screens.charrects:CharacterRect"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.screens.charrects"), PackageInternalNs("com.company.assembleegameclient.screens.charrects"), PrivateNamespace("FilePrivateNS:CreateNewCharacterRect"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      coerce              QName(PackageNamespace(""), "XML")
+      setlocal2
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.appengine"), "SavedCharacter")
+      pushnull
+      getlocal2
+      pushbyte            0
+      pushbyte            0
+      pushbyte            0
+      pushfalse
+      pushfalse
+      callproperty        QName(PackageNamespace(""), "getImage"), 7
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      setlocal1
+
+      getlex              QName(PackageNamespace("com.company.util"), "BitmapUtil")
+      getlocal1
+      pushbyte            6
+      pushbyte            6
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "width")
+      pushbyte            12
+      subtract
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "height")
+      pushbyte            6
+      subtract
+      callproperty        QName(PackageNamespace(""), "cropToBitmapData"), 5
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      setlocal1
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("flash.display"), "Bitmap")
+      constructprop       QName(PackageNamespace("flash.display"), "Bitmap"), 0
+      setproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens.charrects:CreateNewCharacterRect"), "bitmap_")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens.charrects:CreateNewCharacterRect"), "bitmap_")
+      getlocal1
+      setproperty         QName(PackageNamespace(""), "bitmapData")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens.charrects:CreateNewCharacterRect"), "bitmap_")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens.charrects:CreateNewCharacterRect"), "bitmap_")
+      pushdouble          0.8
+      dup
+      setlocal3
+
+      setproperty         QName(PackageNamespace(""), "scaleY")
+
+      getlocal3
+      setproperty         QName(PackageNamespace(""), "scaleX")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens.charrects:CreateNewCharacterRect"), "bitmap_")
+      pushbyte            3
+      setproperty         QName(PackageNamespace(""), "alpha")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens.charrects:CreateNewCharacterRect"), "bitmap_")
+      pushbyte            100
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens.charrects:CreateNewCharacterRect"), "bitmap_")
+      pushbyte            15
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlex              QName(PackageNamespace(""), "selectContainer")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens.charrects:CreateNewCharacterRect"), "bitmap_")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.screens.charrects:CreateNewCharacterRect/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

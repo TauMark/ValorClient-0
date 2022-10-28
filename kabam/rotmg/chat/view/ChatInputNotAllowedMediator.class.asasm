@@ -1,0 +1,197 @@
+class
+ refid "kabam.rotmg.chat.view:ChatInputNotAllowedMediator"
+ instance QName(PackageNamespace("kabam.rotmg.chat.view"), "ChatInputNotAllowedMediator")
+  extends QName(PackageNamespace("robotlegs.bender.bundles.mvcs"), "Mediator")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.chat.view:ChatInputNotAllowedMediator")
+  iinit
+   refid "kabam.rotmg.chat.view:ChatInputNotAllowedMediator/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "view") flag METADATA type QName(PackageNamespace("kabam.rotmg.chat.view"), "ChatInputNotAllowed")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "model") flag METADATA type QName(PackageNamespace("kabam.rotmg.chat.model"), "ChatModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "openAccountManagement") flag METADATA type QName(PackageNamespace("kabam.rotmg.account.core.signals"), "OpenAccountInfoSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "hudModel") flag METADATA type QName(PackageNamespace("kabam.rotmg.ui.model"), "HUDModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "hudModelInitialized") flag METADATA type QName(PackageNamespace("kabam.rotmg.ui.signals"), "HUDModelInitialized")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PackageNamespace(""), "initialize") flag OVERRIDE
+   method
+    name "initialize"
+    refid "kabam.rotmg.chat.view:ChatInputNotAllowedMediator/instance/initialize"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "model")
+      callpropvoid        QName(PackageNamespace(""), "setup"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hudModelInitialized")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatInputNotAllowedMediator"), "onHUDModelInitialized")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.chat.view:ChatInputNotAllowedMediator"), "onHUDModelInitialized")
+   method
+    name "onHUDModelInitialized"
+    refid "kabam.rotmg.chat.view:ChatInputNotAllowedMediator/instance/kabam.rotmg.chat.view:ChatInputNotAllowedMediator/instance/onHUDModelInitialized"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hudModel")
+      getproperty         QName(PackageNamespace(""), "gameSprite")
+      dup
+      iffalse             L13
+
+      pop
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hudModel")
+      getproperty         QName(PackageNamespace(""), "gameSprite")
+      callproperty        QName(PackageNamespace(""), "evalIsNotInCombatMapArea"), 0
+      coerce_a
+L13:
+      iffalse             L21
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      pushstring          "click"
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatInputNotAllowedMediator"), "onClick")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      jump                L29
+
+L21:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      pushfalse
+      setproperty         QName(PackageNamespace(""), "mouseEnabled")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      pushfalse
+      setproperty         QName(PackageNamespace(""), "mouseChildren")
+
+L29:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "destroy") flag OVERRIDE
+   method
+    name "destroy"
+    refid "kabam.rotmg.chat.view:ChatInputNotAllowedMediator/instance/destroy"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      pushstring          "click"
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatInputNotAllowedMediator"), "onClick")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.chat.view:ChatInputNotAllowedMediator"), "onClick")
+   method
+    name "onClick"
+    refid "kabam.rotmg.chat.view:ChatInputNotAllowedMediator/instance/kabam.rotmg.chat.view:ChatInputNotAllowedMediator/instance/onClick"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 1
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "openAccountManagement")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.chat.view:ChatInputNotAllowedMediator/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

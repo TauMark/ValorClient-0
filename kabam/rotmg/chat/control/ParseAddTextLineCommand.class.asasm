@@ -1,0 +1,349 @@
+class
+ refid "kabam.rotmg.chat.control:ParseAddTextLineCommand"
+ instance QName(PackageNamespace("kabam.rotmg.chat.control"), "ParseAddTextLineCommand")
+  extends QName(PackageNamespace("robotlegs.bender.bundles.mvcs"), "Command")
+  flag SEALED
+  iinit
+   refid "kabam.rotmg.chat.control:ParseAddTextLineCommand/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "chatMessage") flag METADATA type QName(PackageNamespace("kabam.rotmg.chat.model"), "ChatMessage")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "textStringMap") flag METADATA type QName(PackageNamespace("kabam.rotmg.text.model"), "TextAndMapProvider")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "addChat") flag METADATA type QName(PackageNamespace("kabam.rotmg.chat.control"), "AddChatSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "model") flag METADATA type QName(PackageNamespace("kabam.rotmg.chat.model"), "ChatModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PackageNamespace(""), "execute") flag OVERRIDE
+   method
+    name "execute"
+    refid "kabam.rotmg.chat.control:ParseAddTextLineCommand/instance/execute"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.chat.control:ParseAddTextLineCommand"), "translateMessage"), 0
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.chat.control:ParseAddTextLineCommand"), "translateName"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "model")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "chatMessage")
+      callpropvoid        QName(PackageNamespace(""), "pushMessage"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "addChat")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "chatMessage")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "chatMessage")
+      getproperty         QName(PackageNamespace(""), "name")
+      pushstring          "*Error*"
+      equals
+      dup
+      iffalse             L33
+
+      pop
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "chatMessage")
+      getproperty         QName(PackageNamespace(""), "text")
+      pushstring          " "
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "split"), 1
+      pushbyte            0
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.chat.control:ParseAddTextLineCommand"), ProtectedNamespace("kabam.rotmg.chat.control:ParseAddTextLineCommand"), StaticProtectedNs("kabam.rotmg.chat.control:ParseAddTextLineCommand"), StaticProtectedNs("robotlegs.bender.bundles.mvcs:Command"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.chat.control"), PackageInternalNs("kabam.rotmg.chat.control"), PrivateNamespace("FilePrivateNS:ParseAddTextLineCommand"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      pushstring          "Discord"
+      equals
+L33:
+      iffalse             L45
+
+      getlex              QName(PackageNamespace("flash.desktop"), "Clipboard")
+      getproperty         QName(PackageNamespace(""), "generalClipboard")
+      pushstring          "air:text"
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "chatMessage")
+      getproperty         QName(PackageNamespace(""), "text")
+      pushstring          " "
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "split"), 1
+      pushbyte            2
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.chat.control:ParseAddTextLineCommand"), ProtectedNamespace("kabam.rotmg.chat.control:ParseAddTextLineCommand"), StaticProtectedNs("kabam.rotmg.chat.control:ParseAddTextLineCommand"), StaticProtectedNs("robotlegs.bender.bundles.mvcs:Command"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.chat.control"), PackageInternalNs("kabam.rotmg.chat.control"), PrivateNamespace("FilePrivateNS:ParseAddTextLineCommand"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      callpropvoid        QName(PackageNamespace(""), "setData"), 2
+
+L45:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.chat.control:ParseAddTextLineCommand"), "translateName")
+   method
+    name "translateName"
+    refid "kabam.rotmg.chat.control:ParseAddTextLineCommand/instance/kabam.rotmg.chat.control:ParseAddTextLineCommand/instance/execute/translateName"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 5
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      setlocal2
+
+      pushnull
+      setlocal1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "chatMessage")
+      getproperty         QName(PackageNamespace(""), "name")
+      getproperty         QName(PackageNamespace(""), "length")
+      pushbyte            0
+      greaterthan
+      dup
+      iffalse             L22
+
+      pop
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "chatMessage")
+      getproperty         QName(PackageNamespace(""), "name")
+      pushbyte            0
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "charAt"), 1
+      pushstring          "#"
+      equals
+L22:
+      iffalse             L64
+
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder")
+      constructprop       QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder"), 0
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "chatMessage")
+      getproperty         QName(PackageNamespace(""), "name")
+      pushbyte            1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "chatMessage")
+      getproperty         QName(PackageNamespace(""), "name")
+      getproperty         QName(PackageNamespace(""), "length")
+      pushbyte            1
+      subtract
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "substr"), 2
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "chatMessage")
+      getproperty         QName(PackageNamespace(""), "tokens")
+      callproperty        QName(PackageNamespace(""), "setParams"), 2
+      coerce              QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder")
+      setlocal2
+
+      getlocal2
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "textStringMap")
+      callproperty        QName(Namespace("kabam.rotmg.text.model:TextAndMapProvider"), "getStringMap"), 0
+      callpropvoid        QName(PackageNamespace(""), "setStringMap"), 1
+
+      getlocal2
+      callproperty        QName(PackageNamespace(""), "getString"), 0
+      coerce_s
+      setlocal1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "chatMessage")
+      getlocal1
+      iffalse             L59
+
+      pushstring          "#"
+      getlocal1
+      add
+      jump                L63
+
+L59:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "chatMessage")
+      getproperty         QName(PackageNamespace(""), "name")
+      coerce_s
+L63:
+      setproperty         QName(PackageNamespace(""), "name")
+
+L64:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.chat.control:ParseAddTextLineCommand"), "translateMessage")
+   method
+    name "translateMessage"
+    refid "kabam.rotmg.chat.control:ParseAddTextLineCommand/instance/kabam.rotmg.chat.control:ParseAddTextLineCommand/instance/execute/translateMessage"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "chatMessage")
+      getproperty         QName(PackageNamespace(""), "name")
+      pushstring          "*Client*"
+      equals
+      dup
+      iftrue              L15
+
+      pop
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "chatMessage")
+      getproperty         QName(PackageNamespace(""), "name")
+      pushstring          ""
+      equals
+L15:
+      dup
+      iftrue              L23
+
+      pop
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "chatMessage")
+      getproperty         QName(PackageNamespace(""), "name")
+      pushstring          "*Error*"
+      equals
+L23:
+      dup
+      iftrue              L31
+
+      pop
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "chatMessage")
+      getproperty         QName(PackageNamespace(""), "name")
+      pushstring          "*Help*"
+      equals
+L31:
+      dup
+      iftrue              L41
+
+      pop
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "chatMessage")
+      getproperty         QName(PackageNamespace(""), "name")
+      pushbyte            0
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "charAt"), 1
+      pushstring          "#"
+      equals
+L41:
+      iffalse             L44
+
+      getlocal0
+      callpropvoid        QName(PackageNamespace(""), "translateChatMessage"), 0
+
+L44:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "translateChatMessage")
+   method
+    name "translateChatMessage"
+    refid "kabam.rotmg.chat.control:ParseAddTextLineCommand/instance/translateChatMessage"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder")
+      constructprop       QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder"), 0
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "chatMessage")
+      getproperty         QName(PackageNamespace(""), "text")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "chatMessage")
+      getproperty         QName(PackageNamespace(""), "tokens")
+      callproperty        QName(PackageNamespace(""), "setParams"), 2
+      coerce              QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder")
+      setlocal2
+
+      getlocal2
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "textStringMap")
+      callproperty        QName(Namespace("kabam.rotmg.text.model:TextAndMapProvider"), "getStringMap"), 0
+      callpropvoid        QName(PackageNamespace(""), "setStringMap"), 1
+
+      getlocal2
+      callproperty        QName(PackageNamespace(""), "getString"), 0
+      coerce_s
+      setlocal1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "chatMessage")
+      getlocal1
+      iffalse             L28
+
+      getlocal1
+      jump                L32
+
+L28:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "chatMessage")
+      getproperty         QName(PackageNamespace(""), "text")
+      coerce_s
+L32:
+      setproperty         QName(PackageNamespace(""), "text")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.chat.control:ParseAddTextLineCommand/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

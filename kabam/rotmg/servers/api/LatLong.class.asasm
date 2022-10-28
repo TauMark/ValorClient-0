@@ -1,0 +1,168 @@
+class
+ refid "kabam.rotmg.servers.api:LatLong"
+ instance QName(PackageNamespace("kabam.rotmg.servers.api"), "LatLong")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  flag FINAL
+  iinit
+   name "LatLong"
+   refid "kabam.rotmg.servers.api:LatLong/instance/init"
+   param QName(PackageNamespace(""), "Number")
+   param QName(PackageNamespace(""), "Number")
+   flag HAS_PARAM_NAMES
+   paramname "_arg1"
+   paramname "_arg2"
+   body
+    maxstack 2
+    localcount 3
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     getlocal1
+     setproperty         QName(PackageNamespace(""), "latitude")
+
+     getlocal0
+     getlocal2
+     setproperty         QName(PackageNamespace(""), "longitude")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "latitude") type QName(PackageNamespace(""), "Number") end
+  trait slot QName(PackageNamespace(""), "longitude") type QName(PackageNamespace(""), "Number") end
+  trait method QName(PackageNamespace(""), "toString")
+   method
+    name "toString"
+    refid "kabam.rotmg.servers.api:LatLong/instance/toString"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushstring          "("
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "latitude")
+      add
+      pushstring          ", "
+      add
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "longitude")
+      add
+      pushstring          ")"
+      add
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.servers.api:LatLong/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PrivateNamespace("kabam.rotmg.servers.api:LatLong"), "TO_DEGREES") type QName(PackageNamespace(""), "Number") value Double(57.29577951308232) end
+ trait const QName(PrivateNamespace("kabam.rotmg.servers.api:LatLong"), "TO_RADIANS") type QName(PackageNamespace(""), "Number") value Double(0.017453292519943296) end
+ trait const QName(PrivateNamespace("kabam.rotmg.servers.api:LatLong"), "DISTANCE_SCALAR") type QName(PackageNamespace(""), "Number") value Double(111189.57696) end
+ trait method QName(PackageNamespace(""), "distance")
+  method
+   name "distance"
+   refid "kabam.rotmg.servers.api:LatLong/class/distance"
+   param QName(PackageNamespace("kabam.rotmg.servers.api"), "LatLong")
+   param QName(PackageNamespace("kabam.rotmg.servers.api"), "LatLong")
+   returns QName(PackageNamespace(""), "Number")
+   flag HAS_PARAM_NAMES
+   paramname "_arg1"
+   paramname "_arg2"
+   body
+    maxstack 4
+    localcount 7
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     pushdouble          0.017453292519943296
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "longitude")
+     getlocal2
+     getproperty         QName(PackageNamespace(""), "longitude")
+     subtract
+     multiply
+     convert_d
+     setlocal3
+
+     pushdouble          0.017453292519943296
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "latitude")
+     multiply
+     convert_d
+     setlocal            5
+
+     pushdouble          0.017453292519943296
+     getlocal2
+     getproperty         QName(PackageNamespace(""), "latitude")
+     multiply
+     convert_d
+     setlocal            6
+
+     getlex              QName(PackageNamespace(""), "Math")
+     getlocal            5
+     callproperty        QName(PackageNamespace(""), "sin"), 1
+     getlex              QName(PackageNamespace(""), "Math")
+     getlocal            6
+     callproperty        QName(PackageNamespace(""), "sin"), 1
+     multiply
+     getlex              QName(PackageNamespace(""), "Math")
+     getlocal            5
+     callproperty        QName(PackageNamespace(""), "cos"), 1
+     getlex              QName(PackageNamespace(""), "Math")
+     getlocal            6
+     callproperty        QName(PackageNamespace(""), "cos"), 1
+     multiply
+     getlex              QName(PackageNamespace(""), "Math")
+     getlocal3
+     callproperty        QName(PackageNamespace(""), "cos"), 1
+     multiply
+     add
+     convert_d
+     setlocal            4
+
+     pushdouble          57.29577951308232
+     getlex              QName(PackageNamespace(""), "Math")
+     getlocal            4
+     callproperty        QName(PackageNamespace(""), "acos"), 1
+     multiply
+     pushdouble          111189.57696
+     multiply
+     convert_d
+     dup
+     setlocal            4
+
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+end ; class

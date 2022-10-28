@@ -1,0 +1,415 @@
+class
+ refid "kabam.rotmg.editor.view.components.drawer:FrameButton"
+ instance QName(PackageNamespace("kabam.rotmg.editor.view.components.drawer"), "FrameButton")
+  extends QName(PackageNamespace("flash.display"), "Sprite")
+  flag SEALED
+  iinit
+   name "FrameButton"
+   refid "kabam.rotmg.editor.view.components.drawer:FrameButton/instance/init"
+   param QName(PackageNamespace(""), "String")
+   flag HAS_PARAM_NAMES
+   paramname "_arg_1"
+   body
+    maxstack 7
+    localcount 2
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     getlocal1
+     setproperty         QName(PackageNamespace(""), "label_")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("com.company.ui"), "BaseSimpleText")
+     pushbyte            14
+     pushint             16777215
+     pushfalse
+     pushbyte            0
+     pushbyte            0
+     constructprop       QName(PackageNamespace("com.company.ui"), "BaseSimpleText"), 5
+     setproperty         QName(PrivateNamespace("kabam.rotmg.editor.view.components.drawer:FrameButton"), "text_")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.editor.view.components.drawer:FrameButton"), "text_")
+     pushtrue
+     callpropvoid        QName(PackageNamespace(""), "setBold"), 1
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.editor.view.components.drawer:FrameButton"), "text_")
+     getlocal1
+     setproperty         QName(PackageNamespace(""), "text")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.editor.view.components.drawer:FrameButton"), "text_")
+     callpropvoid        QName(PackageNamespace(""), "updateMetrics"), 0
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.editor.view.components.drawer:FrameButton"), "text_")
+     pushbyte            60
+     pushbyte            2
+     divide
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.editor.view.components.drawer:FrameButton"), "text_")
+     getproperty         QName(PackageNamespace(""), "width")
+     pushbyte            2
+     divide
+     subtract
+     setproperty         QName(PackageNamespace(""), "x")
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.editor.view.components.drawer:FrameButton"), "text_")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     getlocal0
+     callpropvoid        QName(PrivateNamespace("kabam.rotmg.editor.view.components.drawer:FrameButton"), "redraw"), 0
+
+     findpropstrict      QName(PackageNamespace(""), "addEventListener")
+     pushstring          "mouseOver"
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.editor.view.components.drawer:FrameButton"), "onMouseOver")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     findpropstrict      QName(PackageNamespace(""), "addEventListener")
+     pushstring          "mouseOut"
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.editor.view.components.drawer:FrameButton"), "onMouseOut")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     findpropstrict      QName(PackageNamespace(""), "addEventListener")
+     pushstring          "mouseDown"
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.editor.view.components.drawer:FrameButton"), "onMouseDown")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     findpropstrict      QName(PackageNamespace(""), "addEventListener")
+     pushstring          "mouseUp"
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.editor.view.components.drawer:FrameButton"), "onMouseUp")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "label_") type QName(PackageNamespace(""), "String") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.editor.view.components.drawer:FrameButton"), "over_") type QName(PackageNamespace(""), "Boolean") value False() end
+  trait slot QName(PrivateNamespace("kabam.rotmg.editor.view.components.drawer:FrameButton"), "down_") type QName(PackageNamespace(""), "Boolean") value False() end
+  trait slot QName(PrivateNamespace("kabam.rotmg.editor.view.components.drawer:FrameButton"), "selected_") type QName(PackageNamespace(""), "Boolean") value False() end
+  trait slot QName(PrivateNamespace("kabam.rotmg.editor.view.components.drawer:FrameButton"), "text_") type QName(PackageNamespace("com.company.ui"), "BaseSimpleText") end
+  trait method QName(PackageNamespace(""), "setSelected")
+   method
+    name "setSelected"
+    refid "kabam.rotmg.editor.view.components.drawer:FrameButton/instance/setSelected"
+    param QName(PackageNamespace(""), "Boolean")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg_1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      setproperty         QName(PrivateNamespace("kabam.rotmg.editor.view.components.drawer:FrameButton"), "selected_")
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.editor.view.components.drawer:FrameButton"), "redraw"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setLabel")
+   method
+    name "setLabel"
+    refid "kabam.rotmg.editor.view.components.drawer:FrameButton/instance/setLabel"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg_1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.editor.view.components.drawer:FrameButton"), "text_")
+      getlocal1
+      setproperty         QName(PackageNamespace(""), "text")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.editor.view.components.drawer:FrameButton"), "text_")
+      callpropvoid        QName(PackageNamespace(""), "updateMetrics"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.editor.view.components.drawer:FrameButton"), "redraw")
+   method
+    name "redraw"
+    refid "kabam.rotmg.editor.view.components.drawer:FrameButton/instance/kabam.rotmg.editor.view.components.drawer:FrameButton/instance/redraw"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 5
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace(""), "graphics")
+      callpropvoid        QName(PackageNamespace(""), "clear"), 0
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.editor.view.components.drawer:FrameButton"), "selected_")
+      dup
+      iftrue              L12
+
+      pop
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.editor.view.components.drawer:FrameButton"), "down_")
+      convert_b
+L12:
+      iffalse             L32
+
+      getlex              QName(PackageNamespace(""), "graphics")
+      pushbyte            2
+      pushint             16777215
+      callpropvoid        QName(PackageNamespace(""), "lineStyle"), 2
+
+      getlex              QName(PackageNamespace(""), "graphics")
+      pushint             8355711
+      pushbyte            1
+      callpropvoid        QName(PackageNamespace(""), "beginFill"), 2
+
+      getlex              QName(PackageNamespace(""), "graphics")
+      pushbyte            0
+      pushbyte            0
+      pushbyte            60
+      pushbyte            22
+      callpropvoid        QName(PackageNamespace(""), "drawRect"), 4
+
+      getlex              QName(PackageNamespace(""), "graphics")
+      callpropvoid        QName(PackageNamespace(""), "endFill"), 0
+
+      getlex              QName(PackageNamespace(""), "graphics")
+      callpropvoid        QName(PackageNamespace(""), "lineStyle"), 0
+
+      jump                L72
+
+L32:
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.editor.view.components.drawer:FrameButton"), "over_")
+      iffalse             L54
+
+      getlex              QName(PackageNamespace(""), "graphics")
+      pushbyte            2
+      pushint             16777215
+      callpropvoid        QName(PackageNamespace(""), "lineStyle"), 2
+
+      getlex              QName(PackageNamespace(""), "graphics")
+      pushbyte            0
+      pushbyte            0
+      callpropvoid        QName(PackageNamespace(""), "beginFill"), 2
+
+      getlex              QName(PackageNamespace(""), "graphics")
+      pushbyte            0
+      pushbyte            0
+      pushbyte            60
+      pushbyte            22
+      callpropvoid        QName(PackageNamespace(""), "drawRect"), 4
+
+      getlex              QName(PackageNamespace(""), "graphics")
+      callpropvoid        QName(PackageNamespace(""), "endFill"), 0
+
+      getlex              QName(PackageNamespace(""), "graphics")
+      callpropvoid        QName(PackageNamespace(""), "lineStyle"), 0
+
+      jump                L72
+
+L54:
+      getlex              QName(PackageNamespace(""), "graphics")
+      pushbyte            1
+      pushint             16777215
+      callpropvoid        QName(PackageNamespace(""), "lineStyle"), 2
+
+      getlex              QName(PackageNamespace(""), "graphics")
+      pushbyte            0
+      pushbyte            0
+      callpropvoid        QName(PackageNamespace(""), "beginFill"), 2
+
+      getlex              QName(PackageNamespace(""), "graphics")
+      pushbyte            0
+      pushbyte            0
+      pushbyte            60
+      pushbyte            22
+      callpropvoid        QName(PackageNamespace(""), "drawRect"), 4
+
+      getlex              QName(PackageNamespace(""), "graphics")
+      callpropvoid        QName(PackageNamespace(""), "endFill"), 0
+
+      getlex              QName(PackageNamespace(""), "graphics")
+      callpropvoid        QName(PackageNamespace(""), "lineStyle"), 0
+
+L72:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.editor.view.components.drawer:FrameButton"), "onMouseOver")
+   method
+    name "onMouseOver"
+    refid "kabam.rotmg.editor.view.components.drawer:FrameButton/instance/kabam.rotmg.editor.view.components.drawer:FrameButton/instance/onMouseOver"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg_1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      pushtrue
+      setproperty         QName(PrivateNamespace("kabam.rotmg.editor.view.components.drawer:FrameButton"), "over_")
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.editor.view.components.drawer:FrameButton"), "redraw"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.editor.view.components.drawer:FrameButton"), "onMouseOut")
+   method
+    name "onMouseOut"
+    refid "kabam.rotmg.editor.view.components.drawer:FrameButton/instance/kabam.rotmg.editor.view.components.drawer:FrameButton/instance/onMouseOut"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg_1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      pushfalse
+      setproperty         QName(PrivateNamespace("kabam.rotmg.editor.view.components.drawer:FrameButton"), "over_")
+
+      getlocal0
+      pushfalse
+      setproperty         QName(PrivateNamespace("kabam.rotmg.editor.view.components.drawer:FrameButton"), "down_")
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.editor.view.components.drawer:FrameButton"), "redraw"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.editor.view.components.drawer:FrameButton"), "onMouseDown")
+   method
+    name "onMouseDown"
+    refid "kabam.rotmg.editor.view.components.drawer:FrameButton/instance/kabam.rotmg.editor.view.components.drawer:FrameButton/instance/onMouseDown"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg_1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      pushtrue
+      setproperty         QName(PrivateNamespace("kabam.rotmg.editor.view.components.drawer:FrameButton"), "down_")
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.editor.view.components.drawer:FrameButton"), "redraw"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.editor.view.components.drawer:FrameButton"), "onMouseUp")
+   method
+    name "onMouseUp"
+    refid "kabam.rotmg.editor.view.components.drawer:FrameButton/instance/kabam.rotmg.editor.view.components.drawer:FrameButton/instance/onMouseUp"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg_1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      pushfalse
+      setproperty         QName(PrivateNamespace("kabam.rotmg.editor.view.components.drawer:FrameButton"), "down_")
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.editor.view.components.drawer:FrameButton"), "redraw"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.editor.view.components.drawer:FrameButton/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PrivateNamespace("kabam.rotmg.editor.view.components.drawer:FrameButton"), "WIDTH") type QName(PackageNamespace(""), "int") value Integer(60) end
+ trait const QName(PrivateNamespace("kabam.rotmg.editor.view.components.drawer:FrameButton"), "HEIGHT") type QName(PackageNamespace(""), "int") value Integer(22) end
+end ; class

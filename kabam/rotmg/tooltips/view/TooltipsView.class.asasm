@@ -1,0 +1,119 @@
+class
+ refid "kabam.rotmg.tooltips.view:TooltipsView"
+ instance QName(PackageNamespace("kabam.rotmg.tooltips.view"), "TooltipsView")
+  extends QName(PackageNamespace("flash.display"), "Sprite")
+  flag SEALED
+  iinit
+   refid "kabam.rotmg.tooltips.view:TooltipsView/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace("kabam.rotmg.tooltips.view:TooltipsView"), "toolTip") type QName(PackageNamespace("flash.display"), "DisplayObject") end
+  trait method QName(PackageNamespace(""), "show")
+   method
+    name "show"
+    refid "kabam.rotmg.tooltips.view:TooltipsView/instance/show"
+    param QName(PackageNamespace("flash.display"), "DisplayObject")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      callpropvoid        QName(PackageNamespace(""), "hide"), 0
+
+      getlocal0
+      getlocal1
+      setproperty         QName(PrivateNamespace("kabam.rotmg.tooltips.view:TooltipsView"), "toolTip")
+
+      getlocal1
+      iffalse             L12
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+L12:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "hide")
+   method
+    name "hide"
+    refid "kabam.rotmg.tooltips.view:TooltipsView/instance/hide"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.tooltips.view:TooltipsView"), "toolTip")
+      dup
+      iffalse             L11
+
+      pop
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.tooltips.view:TooltipsView"), "toolTip")
+      getproperty         QName(PackageNamespace(""), "parent")
+      coerce_a
+L11:
+      iffalse             L18
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.tooltips.view:TooltipsView"), "toolTip")
+      getproperty         QName(PackageNamespace(""), "parent")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.tooltips.view:TooltipsView"), "toolTip")
+      callpropvoid        QName(PackageNamespace(""), "removeChild"), 1
+
+L18:
+      getlocal0
+      pushnull
+      setproperty         QName(PrivateNamespace("kabam.rotmg.tooltips.view:TooltipsView"), "toolTip")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.tooltips.view:TooltipsView/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

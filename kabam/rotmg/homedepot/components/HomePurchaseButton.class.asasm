@@ -1,0 +1,362 @@
+class
+ refid "kabam.rotmg.homedepot.components:HomePurchaseButton"
+ instance QName(PackageNamespace("kabam.rotmg.homedepot.components"), "HomePurchaseButton")
+  extends QName(PackageNamespace("io.decagames.rotmg.ui.buttons"), "SliceScalingButton")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.homedepot.components:HomePurchaseButton")
+  iinit
+   name "HomePurchaseButton"
+   refid "kabam.rotmg.homedepot.components:HomePurchaseButton/instance/init"
+   param QName(PackageNamespace(""), "int")
+   param QName(PackageNamespace(""), "int")
+   flag HAS_OPTIONAL
+   flag HAS_PARAM_NAMES
+   optional Integer(0)
+   paramname "_arg1"
+   paramname "value_type"
+   body
+    maxstack 4
+    localcount 4
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     pushnull
+     setlocal3
+
+     getlocal0
+     getlex              QName(PackageNamespace("io.decagames.rotmg.ui.texture"), "TextureParser")
+     getproperty         QName(PackageNamespace(""), "instance")
+     pushstring          "UI"
+     pushstring          "generic_green_button"
+     callproperty        QName(PackageNamespace(""), "getSliceScalingBitmap"), 2
+     constructsuper      1
+
+     getlocal0
+     getlocal1
+     setproperty         QName(PrivateNamespace("kabam.rotmg.homedepot.components:HomePurchaseButton"), "_price")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("io.decagames.rotmg.ui.labels"), "UILabel")
+     constructprop       QName(PackageNamespace("io.decagames.rotmg.ui.labels"), "UILabel"), 0
+     setproperty         QName(PrivateNamespace("kabam.rotmg.homedepot.components:HomePurchaseButton"), "_priceLabel")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot.components:HomePurchaseButton"), "_priceLabel")
+     getlocal1
+     callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "toString"), 0
+     setproperty         QName(PackageNamespace(""), "text")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot.components:HomePurchaseButton"), "_priceLabel")
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot.components:HomePurchaseButton"), "_priceLabel")
+     getproperty         QName(PackageNamespace(""), "length")
+     pushbyte            6
+     ifngt               L32
+
+     pushbyte            10
+     jump                L33
+
+L32:
+     pushdouble          7
+L33:
+     setproperty         QName(PackageNamespace(""), "y")
+
+     getlex              QName(PackageNamespace("io.decagames.rotmg.ui.defaults"), "DefaultLabelFormat")
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot.components:HomePurchaseButton"), "_priceLabel")
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot.components:HomePurchaseButton"), "_priceLabel")
+     getproperty         QName(PackageNamespace(""), "length")
+     pushbyte            6
+     ifngt               L44
+
+     pushbyte            14
+     jump                L45
+
+L44:
+     pushdouble          18
+L45:
+     callpropvoid        QName(PackageNamespace(""), "priceButtonLabel"), 2
+
+     getlocal2
+     pushbyte            -1
+     ifeq                L98
+
+     getlocal2
+     pushbyte            1
+     ifne                L57
+
+     getlex              QName(PackageNamespace("kabam.rotmg.assets.services"), "IconFactory")
+     callproperty        QName(PackageNamespace(""), "makeFame"), 0
+     coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+     setlocal3
+
+     jump                L77
+
+L57:
+     getlocal2
+     pushbyte            5
+     ifne                L65
+
+     getlex              QName(PackageNamespace("kabam.rotmg.assets.services"), "IconFactory")
+     callproperty        QName(PackageNamespace(""), "makeKantos"), 0
+     coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+     setlocal3
+
+     jump                L77
+
+L65:
+     getlocal2
+     pushbyte            4
+     ifne                L73
+
+     getlex              QName(PackageNamespace("kabam.rotmg.assets.services"), "IconFactory")
+     callproperty        QName(PackageNamespace(""), "makeOnrane"), 0
+     coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+     setlocal3
+
+     jump                L77
+
+L73:
+     getlex              QName(PackageNamespace("kabam.rotmg.assets.services"), "IconFactory")
+     callproperty        QName(PackageNamespace(""), "makeCoin"), 0
+     coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+     setlocal3
+
+L77:
+     getlocal0
+     findpropstrict      QName(PackageNamespace("flash.display"), "Bitmap")
+     getlocal3
+     constructprop       QName(PackageNamespace("flash.display"), "Bitmap"), 1
+     setproperty         QName(PrivateNamespace("kabam.rotmg.homedepot.components:HomePurchaseButton"), "_credentialIcon")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot.components:HomePurchaseButton"), "_credentialIcon")
+     getlex              QName(PackageNamespace(""), "Math")
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot.components:HomePurchaseButton"), "_credentialIcon")
+     getproperty         QName(PackageNamespace(""), "height")
+     pushbyte            2
+     divide
+     callproperty        QName(PackageNamespace(""), "round"), 1
+     pushbyte            3
+     subtract
+     setproperty         QName(PackageNamespace(""), "y")
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot.components:HomePurchaseButton"), "_credentialIcon")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+L98:
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot.components:HomePurchaseButton"), "_priceLabel")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace("kabam.rotmg.homedepot.components:HomePurchaseButton"), "_priceLabel") type QName(PackageNamespace("io.decagames.rotmg.ui.labels"), "UILabel") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.homedepot.components:HomePurchaseButton"), "_credentialIcon") type QName(PackageNamespace("flash.display"), "Bitmap") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.homedepot.components:HomePurchaseButton"), "_price") type QName(PackageNamespace(""), "int") end
+  trait method QName(PackageNamespace(""), "dispose") flag OVERRIDE
+   method
+    name "dispose"
+    refid "kabam.rotmg.homedepot.components:HomePurchaseButton/instance/dispose"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot.components:HomePurchaseButton"), "_credentialIcon")
+      getproperty         QName(PackageNamespace(""), "bitmapData")
+      callpropvoid        QName(PackageNamespace(""), "dispose"), 0
+
+      getlocal0
+      callsupervoid       QName(PackageNamespace(""), "dispose"), 0
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait setter QName(PackageNamespace(""), "width") flag OVERRIDE
+   method
+    name "width"
+    refid "kabam.rotmg.homedepot.components:HomePurchaseButton/instance/width/setter"
+    param QName(PackageNamespace(""), "Number")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      findproperty        QName(PackageNamespace(""), "width")
+      swap
+      setsuper            QName(PackageNamespace(""), "width")
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.homedepot.components:HomePurchaseButton"), "updateLabelPosition"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.homedepot.components:HomePurchaseButton"), "updateLabelPosition")
+   method
+    name "updateLabelPosition"
+    refid "kabam.rotmg.homedepot.components:HomePurchaseButton/instance/kabam.rotmg.homedepot.components:HomePurchaseButton/instance/updateLabelPosition"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot.components:HomePurchaseButton"), "_credentialIcon")
+      dup
+      iffalse             L11
+
+      pop
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot.components:HomePurchaseButton"), "_credentialIcon")
+      getproperty         QName(PackageNamespace(""), "parent")
+      coerce_a
+L11:
+      iffalse             L24
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot.components:HomePurchaseButton"), "_priceLabel")
+      getlex              QName(PackageNamespace(""), "bitmap")
+      getproperty         QName(PackageNamespace(""), "width")
+      pushbyte            38
+      subtract
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot.components:HomePurchaseButton"), "_priceLabel")
+      getproperty         QName(PackageNamespace(""), "textWidth")
+      subtract
+      setproperty         QName(PackageNamespace(""), "x")
+
+      jump                L35
+
+L24:
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot.components:HomePurchaseButton"), "_priceLabel")
+      getlex              QName(PackageNamespace(""), "bitmap")
+      getproperty         QName(PackageNamespace(""), "width")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot.components:HomePurchaseButton"), "_priceLabel")
+      getproperty         QName(PackageNamespace(""), "textWidth")
+      subtract
+      pushbyte            2
+      divide
+      setproperty         QName(PackageNamespace(""), "x")
+
+L35:
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot.components:HomePurchaseButton"), "_credentialIcon")
+      iffalse             L49
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot.components:HomePurchaseButton"), "_credentialIcon")
+      getlex              QName(PackageNamespace(""), "bitmap")
+      getproperty         QName(PackageNamespace(""), "width")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot.components:HomePurchaseButton"), "_credentialIcon")
+      getproperty         QName(PackageNamespace(""), "width")
+      subtract
+      pushbyte            15
+      subtract
+      setproperty         QName(PackageNamespace(""), "x")
+
+L49:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait setter QName(PackageNamespace(""), "price")
+   method
+    name "price"
+    refid "kabam.rotmg.homedepot.components:HomePurchaseButton/instance/price/setter"
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      setproperty         QName(PrivateNamespace("kabam.rotmg.homedepot.components:HomePurchaseButton"), "_price")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait getter QName(PackageNamespace(""), "price")
+   method
+    name "price"
+    refid "kabam.rotmg.homedepot.components:HomePurchaseButton/instance/price/getter"
+    returns QName(PackageNamespace(""), "int")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot.components:HomePurchaseButton"), "_price")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.homedepot.components:HomePurchaseButton/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

@@ -1,0 +1,293 @@
+class
+ refid "kabam.rotmg.homedepot.tabs:TilesTab"
+ instance QName(PackageNamespace("kabam.rotmg.homedepot.tabs"), "TilesTab")
+  extends QName(PackageNamespace("io.decagames.rotmg.ui.tabs"), "UITab")
+  flag SEALED
+  iinit
+   name "TilesTab"
+   refid "kabam.rotmg.homedepot.tabs:TilesTab/instance/init"
+   param QName(PackageNamespace(""), "int")
+   flag HAS_PARAM_NAMES
+   paramname "popupWidth"
+   body
+    maxstack 8
+    localcount 2
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     pushstring          "Tiles"
+     pushtrue
+     constructsuper      2
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("io.decagames.rotmg.ui.gird"), "UIGrid")
+     pushshort           550
+     pushbyte            4
+     pushbyte            6
+     pushshort           384
+     pushbyte            4
+     getlocal0
+     constructprop       QName(PackageNamespace("io.decagames.rotmg.ui.gird"), "UIGrid"), 6
+     setproperty         QName(PrivateNamespace("kabam.rotmg.homedepot.tabs:TilesTab"), "grid")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot.tabs:TilesTab"), "grid")
+     pushstring          "tabs_tile_decor"
+     setproperty         QName(PackageNamespace(""), "decorBitmap")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot.tabs:TilesTab"), "grid")
+     pushbyte            10
+     setproperty         QName(PackageNamespace(""), "x")
+
+     getlocal0
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot.tabs:TilesTab"), "grid")
+     callpropvoid        QName(PackageNamespace(""), "addContent"), 1
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace("kabam.rotmg.homedepot.tabs:TilesTab"), "grid") type QName(PackageNamespace("io.decagames.rotmg.ui.gird"), "UIGrid") end
+  trait method QName(PackageNamespace(""), "addBox")
+   method
+    name "addBox"
+    refid "kabam.rotmg.homedepot.tabs:TilesTab/instance/addBox"
+    param QName(PackageNamespace(""), "String")
+    param QName(PackageNamespace(""), "String")
+    param QName(PackageNamespace(""), "int")
+    param QName(PackageNamespace(""), "int")
+    param QName(PackageNamespace("kabam.rotmg.homedepot"), "HomeDepotPurchaseDialog")
+    returns QName(PackageNamespace(""), "Boolean")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    paramname "_arg2"
+    paramname "_arg3"
+    paramname "_arg4"
+    paramname "_arg5"
+    body
+     maxstack 10
+     localcount 14
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      setlocal            8
+
+      pushnull
+      setlocal            11
+
+      pushnull
+      setlocal            10
+
+      pushnull
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      setlocal            9
+
+      pushfalse
+      setlocal            6
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.map"), "GroundLibrary")
+      getproperty         QName(PackageNamespace(""), "propsLibrary_")
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.map"), "GroundLibrary")
+      getproperty         QName(PackageNamespace(""), "idToType_")
+      getlocal1
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.homedepot.tabs:TilesTab"), ProtectedNamespace("kabam.rotmg.homedepot.tabs:TilesTab"), StaticProtectedNs("kabam.rotmg.homedepot.tabs:TilesTab"), StaticProtectedNs("io.decagames.rotmg.ui.tabs:UITab"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.homedepot.tabs"), PackageInternalNs("kabam.rotmg.homedepot.tabs"), PrivateNamespace("FilePrivateNS:TilesTab"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.homedepot.tabs:TilesTab"), ProtectedNamespace("kabam.rotmg.homedepot.tabs:TilesTab"), StaticProtectedNs("kabam.rotmg.homedepot.tabs:TilesTab"), StaticProtectedNs("io.decagames.rotmg.ui.tabs:UITab"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.homedepot.tabs"), PackageInternalNs("kabam.rotmg.homedepot.tabs"), PrivateNamespace("FilePrivateNS:TilesTab"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.map"), "GroundProperties")
+      dup
+      setlocal            7
+
+      pushnull
+      ifeq                L50
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.map"), "GroundLibrary")
+      getlocal            7
+      getproperty         QName(PackageNamespace(""), "type_")
+      callproperty        QName(PackageNamespace(""), "getBitmapData"), 1
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      dup
+      setlocal            8
+
+      getproperty         QName(PackageNamespace(""), "width")
+      pushbyte            8
+      greaterthan
+      setlocal            6
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.util.redrawers"), "GlowRedrawer")
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "TextureRedrawer")
+      getlocal            8
+      pushnull
+      pushbyte            100
+      pushtrue
+      pushbyte            0
+      pushbyte            0
+      callproperty        QName(PackageNamespace(""), "resize"), 6
+      pushbyte            0
+      callproperty        QName(PackageNamespace(""), "outlineGlow"), 2
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      setlocal            9
+
+      jump                L89
+
+L50:
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.objects"), "ObjectLibrary")
+      getproperty         QName(PackageNamespace(""), "propsLibrary_")
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.objects"), "ObjectLibrary")
+      getproperty         QName(PackageNamespace(""), "idToType_")
+      getlocal1
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.homedepot.tabs:TilesTab"), ProtectedNamespace("kabam.rotmg.homedepot.tabs:TilesTab"), StaticProtectedNs("kabam.rotmg.homedepot.tabs:TilesTab"), StaticProtectedNs("io.decagames.rotmg.ui.tabs:UITab"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.homedepot.tabs"), PackageInternalNs("kabam.rotmg.homedepot.tabs"), PrivateNamespace("FilePrivateNS:TilesTab"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.homedepot.tabs:TilesTab"), ProtectedNamespace("kabam.rotmg.homedepot.tabs:TilesTab"), StaticProtectedNs("kabam.rotmg.homedepot.tabs:TilesTab"), StaticProtectedNs("io.decagames.rotmg.ui.tabs:UITab"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.homedepot.tabs"), PackageInternalNs("kabam.rotmg.homedepot.tabs"), PrivateNamespace("FilePrivateNS:TilesTab"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.objects"), "ObjectProperties")
+      dup
+      setlocal            11
+
+      pushnull
+      ifeq                L87
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.objects"), "ObjectLibrary")
+      getlocal            11
+      getproperty         QName(PackageNamespace(""), "type_")
+      callproperty        QName(PackageNamespace(""), "getBitmapData"), 1
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      dup
+      setlocal            10
+
+      getproperty         QName(PackageNamespace(""), "width")
+      pushbyte            8
+      greaterthan
+      setlocal            6
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.util.redrawers"), "GlowRedrawer")
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "TextureRedrawer")
+      getlocal            10
+      pushnull
+      pushbyte            100
+      pushtrue
+      pushbyte            0
+      pushbyte            0
+      callproperty        QName(PackageNamespace(""), "resize"), 6
+      pushbyte            0
+      callproperty        QName(PackageNamespace(""), "outlineGlow"), 2
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      setlocal            9
+
+      jump                L89
+
+L87:
+      pushfalse
+      returnvalue
+
+L89:
+      pushbyte            -1
+      setlocal            12
+
+      getlocal2
+      setlocal            13
+
+      jump                L110
+
+L94:
+      label
+      pushbyte            1
+      setlocal            12
+
+      jump                L122
+
+L98:
+      label
+      pushbyte            5
+      setlocal            12
+
+      jump                L122
+
+L102:
+      label
+      pushbyte            4
+      setlocal            12
+
+      jump                L122
+
+L106:
+      label
+      pushbyte            0
+      setlocal            12
+
+      jump                L122
+
+L110:
+      pushstring          "Fame"
+      getlocal            13
+      ifstricteq          L94
+
+      pushstring          "Kantos"
+      getlocal            13
+      ifstricteq          L98
+
+      pushstring          "Onrane"
+      getlocal            13
+      ifstricteq          L102
+
+      pushstring          "Gold"
+      getlocal            13
+      ifstricteq          L106
+
+L122:
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot.tabs:TilesTab"), "grid")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.homedepot.tabs"), "SaleContainerBox")
+      getlocal1
+      getlocal3
+      getlocal            4
+      getlocal            9
+      getlocal            12
+      pushfalse
+      getlocal            6
+      getlocal            5
+      constructprop       QName(PackageNamespace("kabam.rotmg.homedepot.tabs"), "SaleContainerBox"), 8
+      callpropvoid        QName(PackageNamespace(""), "addGridElement"), 1
+
+      pushtrue
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "destroy")
+   method
+    name "destroy"
+    refid "kabam.rotmg.homedepot.tabs:TilesTab/instance/destroy"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.homedepot.tabs:TilesTab/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

@@ -1,0 +1,594 @@
+class
+ refid "kabam.rotmg.chat.view:ChatListItem"
+ instance QName(PackageNamespace("kabam.rotmg.chat.view"), "ChatListItem")
+  extends QName(PackageNamespace("flash.display"), "Sprite")
+  flag SEALED
+  iinit
+   name "ChatListItem"
+   refid "kabam.rotmg.chat.view:ChatListItem/instance/init"
+   param TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("flash.display"), "DisplayObject")>)
+   param QName(PackageNamespace(""), "int")
+   param QName(PackageNamespace(""), "int")
+   param QName(PackageNamespace(""), "Boolean")
+   param QName(PackageNamespace(""), "int")
+   param QName(PackageNamespace(""), "String")
+   param QName(PackageNamespace(""), "Boolean")
+   param QName(PackageNamespace(""), "Boolean")
+   flag HAS_PARAM_NAMES
+   paramname "_arg1"
+   paramname "_arg2"
+   paramname "_arg3"
+   paramname "_arg4"
+   paramname "_arg5"
+   paramname "_arg6"
+   paramname "_arg7"
+   paramname "_arg8"
+   body
+    maxstack 3
+    localcount 9
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     pushtrue
+     findproperty        QName(PackageNamespace(""), "mouseEnabled")
+     swap
+     setproperty         QName(PackageNamespace(""), "mouseEnabled")
+
+     getlocal0
+     getlocal2
+     setproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatListItem"), "itemWidth")
+
+     getlocal0
+     getlocal3
+     setproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatListItem"), "layoutHeight")
+
+     getlocal0
+     getlocal1
+     setproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatListItem"), "list")
+
+     getlocal0
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "length")
+     setproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatListItem"), "count")
+
+     getlocal0
+     getlex              QName(PackageNamespace("flash.utils"), "getTimer")
+     getglobalscope
+     call                0
+     setproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatListItem"), "creationTime")
+
+     getlocal0
+     getlocal            4
+     setproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatListItem"), "timedOutOverride")
+
+     getlocal0
+     getlocal            5
+     setproperty         QName(PackageNamespace(""), "playerObjectId")
+
+     getlocal0
+     getlocal            6
+     setproperty         QName(PackageNamespace(""), "playerName")
+
+     getlocal0
+     getlocal            7
+     setproperty         QName(PackageNamespace(""), "fromGuild")
+
+     getlocal0
+     getlocal            8
+     setproperty         QName(PackageNamespace(""), "isTrade")
+
+     getlocal0
+     callpropvoid        QName(PrivateNamespace("kabam.rotmg.chat.view:ChatListItem"), "layoutItems"), 0
+
+     getlocal0
+     callpropvoid        QName(PrivateNamespace("kabam.rotmg.chat.view:ChatListItem"), "addItems"), 0
+
+     findpropstrict      QName(PackageNamespace(""), "addEventListener")
+     pushstring          "rightMouseDown"
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "onRightMouseDown")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace("kabam.rotmg.chat.view:ChatListItem"), "itemWidth") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.chat.view:ChatListItem"), "list") type TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("flash.display"), "DisplayObject")>) end
+  trait slot QName(PrivateNamespace("kabam.rotmg.chat.view:ChatListItem"), "count") type QName(PackageNamespace(""), "uint") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.chat.view:ChatListItem"), "layoutHeight") type QName(PackageNamespace(""), "uint") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.chat.view:ChatListItem"), "creationTime") type QName(PackageNamespace(""), "uint") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.chat.view:ChatListItem"), "timedOutOverride") type QName(PackageNamespace(""), "Boolean") end
+  trait slot QName(PackageNamespace(""), "playerObjectId") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PackageNamespace(""), "playerName") type QName(PackageNamespace(""), "String") value Utf8("") end
+  trait slot QName(PackageNamespace(""), "fromGuild") type QName(PackageNamespace(""), "Boolean") value False() end
+  trait slot QName(PackageNamespace(""), "isTrade") type QName(PackageNamespace(""), "Boolean") value False() end
+  trait method QName(PackageNamespace(""), "onRightMouseDown")
+   method
+    name "onRightMouseDown"
+    refid "kabam.rotmg.chat.view:ChatListItem/instance/onRightMouseDown"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "e"
+    body
+     maxstack 7
+     localcount 8
+     initscopedepth 0
+     maxscopedepth 2
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      setlocal            4
+
+      pushnull
+      setlocal            5
+
+      getlex              QName(PackageNamespace(""), "WebMain")
+      getproperty         QName(PackageNamespace(""), "STAGE")
+      getproperty         QName(PackageNamespace(""), "stageWidth")
+      pushshort           800
+      subtract
+      pushbyte            2
+      divide
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "stageX")
+      add
+      pushshort           800
+      getlex              QName(PackageNamespace(""), "WebMain")
+      getproperty         QName(PackageNamespace(""), "STAGE")
+      getproperty         QName(PackageNamespace(""), "stageWidth")
+      divide
+      multiply
+      convert_i
+      setlocal2
+
+      getlex              QName(PackageNamespace(""), "WebMain")
+      getproperty         QName(PackageNamespace(""), "STAGE")
+      getproperty         QName(PackageNamespace(""), "stageHeight")
+      pushshort           600
+      subtract
+      pushbyte            2
+      divide
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "stageY")
+      add
+      pushshort           600
+      getlex              QName(PackageNamespace(""), "WebMain")
+      getproperty         QName(PackageNamespace(""), "STAGE")
+      getproperty         QName(PackageNamespace(""), "stageHeight")
+      divide
+      multiply
+      convert_i
+      setlocal3
+
+L42:
+      getlex              QName(PackageNamespace("kabam.rotmg.core"), "StaticInjectorContext")
+      callproperty        QName(PackageNamespace(""), "getInjector"), 0
+      getlex              QName(PackageNamespace("kabam.rotmg.ui.model"), "HUDModel")
+      callproperty        QName(PackageNamespace(""), "getInstance"), 1
+      coerce              QName(PackageNamespace("kabam.rotmg.ui.model"), "HUDModel")
+      dup
+      setlocal            4
+
+      getproperty         QName(PackageNamespace(""), "gameSprite")
+      getproperty         QName(PackageNamespace(""), "map")
+      getproperty         QName(PackageNamespace(""), "goDict")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "playerObjectId")
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.chat.view:ChatListItem"), ProtectedNamespace("kabam.rotmg.chat.view:ChatListItem"), StaticProtectedNs("kabam.rotmg.chat.view:ChatListItem"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.chat.view"), PackageInternalNs("kabam.rotmg.chat.view"), PrivateNamespace("FilePrivateNS:ChatListItem"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      pushnull
+      equals
+      not
+      dup
+      iffalse             L70
+
+      pop
+      getlocal            4
+      getproperty         QName(PackageNamespace(""), "gameSprite")
+      getproperty         QName(PackageNamespace(""), "map")
+      getproperty         QName(PackageNamespace(""), "goDict")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "playerObjectId")
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.chat.view:ChatListItem"), ProtectedNamespace("kabam.rotmg.chat.view:ChatListItem"), StaticProtectedNs("kabam.rotmg.chat.view:ChatListItem"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.chat.view"), PackageInternalNs("kabam.rotmg.chat.view"), PrivateNamespace("FilePrivateNS:ChatListItem"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.objects"), "Player")
+      istypelate
+L70:
+      dup
+      iffalse             L82
+
+      pop
+      getlocal            4
+      getproperty         QName(PackageNamespace(""), "gameSprite")
+      getproperty         QName(PackageNamespace(""), "map")
+      getproperty         QName(PackageNamespace(""), "player")
+      getproperty         QName(PackageNamespace(""), "objectId")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "playerObjectId")
+      equals
+      not
+L82:
+      iffalse             L101
+
+      getlocal            4
+      getproperty         QName(PackageNamespace(""), "gameSprite")
+      getproperty         QName(PackageNamespace(""), "map")
+      getproperty         QName(PackageNamespace(""), "goDict")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "playerObjectId")
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.chat.view:ChatListItem"), ProtectedNamespace("kabam.rotmg.chat.view:ChatListItem"), StaticProtectedNs("kabam.rotmg.chat.view:ChatListItem"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.chat.view"), PackageInternalNs("kabam.rotmg.chat.view"), PrivateNamespace("FilePrivateNS:ChatListItem"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.objects"), "Player")
+      astypelate
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.objects"), "Player")
+      setlocal            5
+
+      getlocal            4
+      getproperty         QName(PackageNamespace(""), "gameSprite")
+      getlocal            5
+      getlocal2
+      getlocal3
+      callpropvoid        QName(PackageNamespace(""), "addChatPlayerMenu"), 3
+
+      jump                L185
+
+L101:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "isTrade")
+      not
+      dup
+      iffalse             L112
+
+      pop
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "playerName")
+      pushnull
+      equals
+      not
+L112:
+      dup
+      iffalse             L120
+
+      pop
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "playerName")
+      pushstring          ""
+      equals
+      not
+L120:
+      dup
+      iffalse             L132
+
+      pop
+      getlocal            4
+      getproperty         QName(PackageNamespace(""), "gameSprite")
+      getproperty         QName(PackageNamespace(""), "map")
+      getproperty         QName(PackageNamespace(""), "player")
+      getproperty         QName(PackageNamespace(""), "name_")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "playerName")
+      equals
+      not
+L132:
+      iffalse             L144
+
+      getlocal            4
+      getproperty         QName(PackageNamespace(""), "gameSprite")
+      pushnull
+      getlocal2
+      getlocal3
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "playerName")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "fromGuild")
+      callpropvoid        QName(PackageNamespace(""), "addChatPlayerMenu"), 5
+
+      jump                L185
+
+L144:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "isTrade")
+      dup
+      iffalse             L154
+
+      pop
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "playerName")
+      pushnull
+      equals
+      not
+L154:
+      dup
+      iffalse             L162
+
+      pop
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "playerName")
+      pushstring          ""
+      equals
+      not
+L162:
+      dup
+      iffalse             L174
+
+      pop
+      getlocal            4
+      getproperty         QName(PackageNamespace(""), "gameSprite")
+      getproperty         QName(PackageNamespace(""), "map")
+      getproperty         QName(PackageNamespace(""), "player")
+      getproperty         QName(PackageNamespace(""), "name_")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "playerName")
+      equals
+      not
+L174:
+      iffalse             L185
+
+      getlocal            4
+      getproperty         QName(PackageNamespace(""), "gameSprite")
+      pushnull
+      getlocal2
+      getlocal3
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "playerName")
+      pushfalse
+      pushtrue
+      callpropvoid        QName(PackageNamespace(""), "addChatPlayerMenu"), 6
+
+L185:
+      jump                L196
+
+L186:
+      getlocal0
+      pushscope
+
+      newcatch            0
+      dup
+      setlocal            7
+
+      dup
+      pushscope
+
+      swap
+      setslot             1
+
+      popscope
+L196:
+      returnvoid
+     end ; code
+     try from L42 to L185 target L186 type QName(PackageNamespace(""), "Error") name QName(PackageInternalNs("kabam.rotmg.chat.view"), "e") end
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "isTimedOut")
+   method
+    name "isTimedOut"
+    refid "kabam.rotmg.chat.view:ChatListItem/instance/isTimedOut"
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace("flash.utils"), "getTimer")
+      getglobalscope
+      call                0
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatListItem"), "creationTime")
+      pushshort           20000
+      add
+      greaterthan
+      dup
+      iftrue              L16
+
+      pop
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatListItem"), "timedOutOverride")
+      convert_b
+L16:
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.chat.view:ChatListItem"), "layoutItems")
+   method
+    name "layoutItems"
+    refid "kabam.rotmg.chat.view:ChatListItem/instance/kabam.rotmg.chat.view:ChatListItem/instance/layoutItems"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 6
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushbyte            0
+      setlocal3
+
+      pushnull
+      setlocal2
+
+      pushnull
+      setlocal            4
+
+      pushbyte            0
+      setlocal            5
+
+      pushbyte            0
+      setlocal1
+
+      pushbyte            0
+      setlocal3
+
+      jump                L82
+
+L15:
+      label
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatListItem"), "list")
+      getlocal1
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.chat.view:ChatListItem"), ProtectedNamespace("kabam.rotmg.chat.view:ChatListItem"), StaticProtectedNs("kabam.rotmg.chat.view:ChatListItem"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.chat.view"), PackageInternalNs("kabam.rotmg.chat.view"), PrivateNamespace("FilePrivateNS:ChatListItem"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      coerce              QName(PackageNamespace("flash.display"), "DisplayObject")
+      setlocal2
+
+      getlocal2
+      getlocal2
+      callproperty        QName(PackageNamespace(""), "getRect"), 1
+      coerce              QName(PackageNamespace("flash.geom"), "Rectangle")
+      setlocal            4
+
+      getlocal2
+      getlocal3
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal2
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatListItem"), "layoutHeight")
+      getlocal            4
+      getproperty         QName(PackageNamespace(""), "height")
+      subtract
+      pushdouble          0.5
+      multiply
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatListItem"), "layoutHeight")
+      subtract
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal3
+      getlocal            4
+      getproperty         QName(PackageNamespace(""), "width")
+      add
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatListItem"), "itemWidth")
+      ifngt               L75
+
+      getlocal2
+      pushbyte            0
+      setproperty         QName(PackageNamespace(""), "x")
+
+      pushbyte            0
+      setlocal3
+
+      pushbyte            0
+      setlocal            5
+
+      jump                L72
+
+L57:
+      label
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatListItem"), "list")
+      getlocal            5
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.chat.view:ChatListItem"), ProtectedNamespace("kabam.rotmg.chat.view:ChatListItem"), StaticProtectedNs("kabam.rotmg.chat.view:ChatListItem"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.chat.view"), PackageInternalNs("kabam.rotmg.chat.view"), PrivateNamespace("FilePrivateNS:ChatListItem"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatListItem"), "list")
+      getlocal            5
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.chat.view:ChatListItem"), ProtectedNamespace("kabam.rotmg.chat.view:ChatListItem"), StaticProtectedNs("kabam.rotmg.chat.view:ChatListItem"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.chat.view"), PackageInternalNs("kabam.rotmg.chat.view"), PrivateNamespace("FilePrivateNS:ChatListItem"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getproperty         QName(PackageNamespace(""), "y")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatListItem"), "layoutHeight")
+      subtract
+      setproperty         QName(PackageNamespace(""), "y")
+
+      inclocal_i          5
+L72:
+      getlocal            5
+      getlocal1
+      iflt                L57
+
+L75:
+      getlocal3
+      getlocal            4
+      getproperty         QName(PackageNamespace(""), "width")
+      add
+      convert_i
+      setlocal3
+
+      inclocal_i          1
+L82:
+      getlocal1
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatListItem"), "count")
+      iflt                L15
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.chat.view:ChatListItem"), "addItems")
+   method
+    name "addItems"
+    refid "kabam.rotmg.chat.view:ChatListItem/instance/kabam.rotmg.chat.view:ChatListItem/instance/addItems"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 4
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      setlocal1
+
+      pushbyte            0
+      setlocal3
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatListItem"), "list")
+      setlocal2
+
+      jump                L19
+
+L10:
+      label
+      getlocal2
+      getlocal3
+      nextvalue
+      coerce              QName(PackageNamespace("flash.display"), "DisplayObject")
+      setlocal1
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+L19:
+      hasnext2            2, 3
+      iftrue              L10
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.chat.view:ChatListItem/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PrivateNamespace("kabam.rotmg.chat.view:ChatListItem"), "CHAT_ITEM_TIMEOUT") type QName(PackageNamespace(""), "uint") value Integer(20000) end
+end ; class

@@ -1,0 +1,1037 @@
+class
+ refid "io.decagames.rotmg.ui.gird:UIGrid"
+ instance QName(PackageNamespace("io.decagames.rotmg.ui.gird"), "UIGrid")
+  extends QName(PackageNamespace("flash.display"), "Sprite")
+  flag SEALED
+  iinit
+   name "UIGrid"
+   refid "io.decagames.rotmg.ui.gird:UIGrid/instance/init"
+   param QName(PackageNamespace(""), "int")
+   param QName(PackageNamespace(""), "int")
+   param QName(PackageNamespace(""), "int")
+   param QName(PackageNamespace(""), "int")
+   param QName(PackageNamespace(""), "int")
+   param QName(PackageNamespace("flash.display"), "DisplayObject")
+   flag HAS_OPTIONAL
+   flag HAS_PARAM_NAMES
+   optional Integer(-1)
+   optional Integer(0)
+   optional Null()
+   paramname "param1"
+   paramname "param2"
+   paramname "param3"
+   paramname "param4"
+   paramname "param5"
+   paramname "param6"
+   body
+    maxstack 6
+    localcount 7
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     getlex              QName(PackageNamespace("__AS3__.vec"), "Vector")
+     getlex              QName(PackageNamespace("io.decagames.rotmg.ui.gird"), "UIGridElement")
+     applytype           1
+     construct           0
+     setproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.gird:UIGrid"), "elements")
+
+     getlocal0
+     getlex              QName(PackageNamespace("__AS3__.vec"), "Vector")
+     getlex              QName(PackageNamespace("io.decagames.rotmg.ui.sliceScaling"), "SliceScalingBitmap")
+     applytype           1
+     construct           0
+     setproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.gird:UIGrid"), "decors")
+
+     getlocal0
+     getlocal3
+     setproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.gird:UIGrid"), "gridMargin")
+
+     getlocal0
+     getlocal1
+     setproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.gird:UIGrid"), "gridWidth")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("flash.display"), "Sprite")
+     constructprop       QName(PackageNamespace("flash.display"), "Sprite"), 0
+     setproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.gird:UIGrid"), "gridContent")
+
+     getlocal0
+     getlocal0
+     getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.gird:UIGrid"), "gridContent")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     getlocal0
+     getlocal            4
+     setproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.gird:UIGrid"), "scrollHeight")
+
+     getlocal            4
+     pushbyte            0
+     ifngt               L64
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("io.decagames.rotmg.ui.scroll"), "UIScrollbar")
+     getlocal            4
+     constructprop       QName(PackageNamespace("io.decagames.rotmg.ui.scroll"), "UIScrollbar"), 1
+     setproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.gird:UIGrid"), "scroll")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.gird:UIGrid"), "scroll")
+     getlocal1
+     getlocal            5
+     add
+     setproperty         QName(PackageNamespace(""), "x")
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.gird:UIGrid"), "scroll")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.gird:UIGrid"), "scroll")
+     getlocal0
+     getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.gird:UIGrid"), "gridContent")
+     setproperty         QName(PackageNamespace(""), "content")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.gird:UIGrid"), "scroll")
+     getlocal            6
+     setproperty         QName(PackageNamespace(""), "scrollObject")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("flash.display"), "Sprite")
+     constructprop       QName(PackageNamespace("flash.display"), "Sprite"), 0
+     setproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.gird:UIGrid"), "gridMask")
+
+L64:
+     getlocal0
+     getlocal2
+     setproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.gird:UIGrid"), "numberOfColumns")
+
+     getlocal0
+     pushstring          "addedToStage"
+     getlocal0
+     getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.gird:UIGrid"), "onAddedHandler")
+     pushfalse
+     pushbyte            0
+     pushtrue
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 5
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace("io.decagames.rotmg.ui.gird:UIGrid"), "elements") type TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("io.decagames.rotmg.ui.gird"), "UIGridElement")>) end
+  trait slot QName(PrivateNamespace("io.decagames.rotmg.ui.gird:UIGrid"), "decors") type TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("io.decagames.rotmg.ui.sliceScaling"), "SliceScalingBitmap")>) end
+  trait slot QName(PrivateNamespace("io.decagames.rotmg.ui.gird:UIGrid"), "gridMargin") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PrivateNamespace("io.decagames.rotmg.ui.gird:UIGrid"), "gridWidth") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PrivateNamespace("io.decagames.rotmg.ui.gird:UIGrid"), "numberOfColumns") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PrivateNamespace("io.decagames.rotmg.ui.gird:UIGrid"), "scrollHeight") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PrivateNamespace("io.decagames.rotmg.ui.gird:UIGrid"), "scroll") type QName(PackageNamespace("io.decagames.rotmg.ui.scroll"), "UIScrollbar") end
+  trait slot QName(PrivateNamespace("io.decagames.rotmg.ui.gird:UIGrid"), "gridContent") type QName(PackageNamespace("flash.display"), "Sprite") end
+  trait slot QName(PrivateNamespace("io.decagames.rotmg.ui.gird:UIGrid"), "gridMask") type QName(PackageNamespace("flash.display"), "Sprite") end
+  trait slot QName(PrivateNamespace("io.decagames.rotmg.ui.gird:UIGrid"), "_centerLastRow") type QName(PackageNamespace(""), "Boolean") end
+  trait slot QName(PrivateNamespace("io.decagames.rotmg.ui.gird:UIGrid"), "lastRenderedItemsNumber") type QName(PackageNamespace(""), "int") value Integer(0) end
+  trait slot QName(PrivateNamespace("io.decagames.rotmg.ui.gird:UIGrid"), "elementWidth") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PrivateNamespace("io.decagames.rotmg.ui.gird:UIGrid"), "_decorBitmap") type QName(PackageNamespace(""), "String") value Utf8("") end
+  trait setter QName(PackageNamespace(""), "width") flag OVERRIDE
+   method
+    name "width"
+    refid "io.decagames.rotmg.ui.gird:UIGrid/instance/width/setter"
+    param QName(PackageNamespace(""), "Number")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "param1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      setproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.gird:UIGrid"), "gridWidth")
+
+      getlocal0
+      callpropvoid        QName(PackageNamespace(""), "render"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait getter QName(PackageNamespace(""), "numberOfElements")
+   method
+    name "numberOfElements"
+    refid "io.decagames.rotmg.ui.gird:UIGrid/instance/numberOfElements/getter"
+    returns QName(PackageNamespace(""), "int")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.gird:UIGrid"), "elements")
+      getproperty         QName(PackageNamespace(""), "length")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("io.decagames.rotmg.ui.gird:UIGrid"), "onAddedHandler")
+   method
+    name "onAddedHandler"
+    refid "io.decagames.rotmg.ui.gird:UIGrid/instance/io.decagames.rotmg.ui.gird:UIGrid/instance/onAddedHandler"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "param1"
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      pushstring          "addedToStage"
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.gird:UIGrid"), "onAddedHandler")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      getlocal0
+      pushstring          "enterFrame"
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.gird:UIGrid"), "onUpdate")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      getlocal0
+      callpropvoid        QName(PackageNamespace(""), "render"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "addGridElement")
+   method
+    name "addGridElement"
+    refid "io.decagames.rotmg.ui.gird:UIGrid/instance/addGridElement"
+    param QName(PackageNamespace("io.decagames.rotmg.ui.gird"), "UIGridElement")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "param1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.gird:UIGrid"), "elements")
+      iffalse             L18
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.gird:UIGrid"), "elements")
+      getlocal1
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.gird:UIGrid"), "gridContent")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "stage")
+      iffalse             L18
+
+      getlocal0
+      callpropvoid        QName(PackageNamespace(""), "render"), 0
+
+L18:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("io.decagames.rotmg.ui.gird:UIGrid"), "addDecorToRow")
+   method
+    name "addDecorToRow"
+    refid "io.decagames.rotmg.ui.gird:UIGrid/instance/io.decagames.rotmg.ui.gird:UIGrid/instance/addDecorToRow"
+    param QName(PackageNamespace(""), "int")
+    param QName(PackageNamespace(""), "int")
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "param1"
+    paramname "param2"
+    paramname "param3"
+    body
+     maxstack 7
+     localcount 6
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      coerce              QName(PackageNamespace("io.decagames.rotmg.ui.sliceScaling"), "SliceScalingBitmap")
+      setlocal            4
+
+      declocal_i          3
+      getlocal3
+      pushbyte            0
+      ifne                L11
+
+      pushbyte            1
+      setlocal3
+
+L11:
+      pushbyte            0
+      setlocal            5
+
+      jump                L76
+
+L14:
+      label
+      getlex              QName(PackageNamespace("io.decagames.rotmg.ui.texture"), "TextureParser")
+      getproperty         QName(PackageNamespace(""), "instance")
+      pushstring          "UI"
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.gird:UIGrid"), "_decorBitmap")
+      callproperty        QName(PackageNamespace(""), "getSliceScalingBitmap"), 2
+      coerce              QName(PackageNamespace("io.decagames.rotmg.ui.sliceScaling"), "SliceScalingBitmap")
+      dup
+      setlocal            4
+
+      getlex              QName(PackageNamespace(""), "Math")
+      getlocal            5
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.gird:UIGrid"), "gridMargin")
+      pushbyte            2
+      divide
+      multiply
+      getlocal            5
+      pushbyte            1
+      add
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.gird:UIGrid"), "elementWidth")
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.gird:UIGrid"), "gridMargin")
+      pushbyte            2
+      divide
+      add
+      multiply
+      add
+      getlocal            4
+      getproperty         QName(PackageNamespace(""), "width")
+      pushbyte            2
+      divide
+      subtract
+      callproperty        QName(PackageNamespace(""), "round"), 1
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal            4
+      getlex              QName(PackageNamespace(""), "Math")
+      getlocal1
+      getlocal2
+      add
+      getlocal            4
+      getproperty         QName(PackageNamespace(""), "height")
+      pushbyte            2
+      divide
+      subtract
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.gird:UIGrid"), "gridMargin")
+      pushbyte            2
+      divide
+      add
+      callproperty        QName(PackageNamespace(""), "round"), 1
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.gird:UIGrid"), "gridContent")
+      getlocal            4
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.gird:UIGrid"), "decors")
+      getlocal            4
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+
+      inclocal_i          5
+L76:
+      getlocal            5
+      getlocal3
+      iflt                L14
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "clearGrid")
+   method
+    name "clearGrid"
+    refid "io.decagames.rotmg.ui.gird:UIGrid/instance/clearGrid"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 7
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      coerce              QName(PackageNamespace("io.decagames.rotmg.ui.gird"), "UIGridElement")
+      setlocal2
+
+      pushnull
+      coerce              QName(PackageNamespace("io.decagames.rotmg.ui.sliceScaling"), "SliceScalingBitmap")
+      setlocal1
+
+      pushbyte            0
+      setlocal            4
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.gird:UIGrid"), "elements")
+      setlocal3
+
+      jump                L26
+
+L14:
+      label
+      getlocal3
+      getlocal            4
+      nextvalue
+      coerce              QName(PackageNamespace("io.decagames.rotmg.ui.gird"), "UIGridElement")
+      setlocal2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.gird:UIGrid"), "gridContent")
+      getlocal2
+      callpropvoid        QName(PackageNamespace(""), "removeChild"), 1
+
+      getlocal2
+      callpropvoid        QName(PackageNamespace(""), "dispose"), 0
+
+L26:
+      hasnext2            3, 4
+      iftrue              L14
+
+      pushbyte            0
+      setlocal            6
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.gird:UIGrid"), "decors")
+      setlocal            5
+
+      jump                L46
+
+L34:
+      label
+      getlocal            5
+      getlocal            6
+      nextvalue
+      coerce              QName(PackageNamespace("io.decagames.rotmg.ui.sliceScaling"), "SliceScalingBitmap")
+      setlocal1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.gird:UIGrid"), "gridContent")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "removeChild"), 1
+
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "dispose"), 0
+
+L46:
+      hasnext2            5, 6
+      iftrue              L34
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.gird:UIGrid"), "elements")
+      iffalse             L55
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.gird:UIGrid"), "elements")
+      pushbyte            0
+      setproperty         QName(PackageNamespace(""), "length")
+
+L55:
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.gird:UIGrid"), "decors")
+      iffalse             L62
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.gird:UIGrid"), "decors")
+      pushbyte            0
+      setproperty         QName(PackageNamespace(""), "length")
+
+L62:
+      getlocal0
+      pushbyte            0
+      setproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.gird:UIGrid"), "lastRenderedItemsNumber")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "render")
+   method
+    name "render"
+    refid "io.decagames.rotmg.ui.gird:UIGrid/instance/render"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 5
+     localcount 12
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      coerce              QName(PackageNamespace("io.decagames.rotmg.ui.gird"), "UIGridElement")
+      setlocal            4
+
+      pushbyte            0
+      setlocal1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.gird:UIGrid"), "lastRenderedItemsNumber")
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.gird:UIGrid"), "elements")
+      getproperty         QName(PackageNamespace(""), "length")
+      ifne                L14
+
+      returnvoid
+
+L14:
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.gird:UIGrid"), "gridWidth")
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.gird:UIGrid"), "numberOfColumns")
+      pushbyte            1
+      subtract
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.gird:UIGrid"), "gridMargin")
+      multiply
+      subtract
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.gird:UIGrid"), "numberOfColumns")
+      divide
+      setproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.gird:UIGrid"), "elementWidth")
+
+      pushbyte            1
+      setlocal            7
+
+      pushbyte            0
+      setlocal            6
+
+      pushbyte            0
+      setlocal            9
+
+      pushbyte            0
+      setlocal            8
+
+      getlex              QName(PackageNamespace(""), "Math")
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.gird:UIGrid"), "elements")
+      getproperty         QName(PackageNamespace(""), "length")
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.gird:UIGrid"), "numberOfColumns")
+      divide
+      callproperty        QName(PackageNamespace(""), "ceil"), 1
+      convert_i
+      setlocal3
+
+      pushbyte            1
+      setlocal2
+
+      pushbyte            0
+      setlocal            5
+
+      pushbyte            0
+      setlocal            11
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.gird:UIGrid"), "elements")
+      setlocal            10
+
+      jump                L161
+
+L57:
+      label
+      getlocal            10
+      getlocal            11
+      nextvalue
+      coerce              QName(PackageNamespace("io.decagames.rotmg.ui.gird"), "UIGridElement")
+      dup
+      setlocal            4
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.gird:UIGrid"), "elementWidth")
+      callpropvoid        QName(PackageNamespace(""), "resize"), 1
+
+      getlocal            4
+      getproperty         QName(PackageNamespace(""), "height")
+      getlocal            8
+      ifngt               L75
+
+      getlocal            4
+      getproperty         QName(PackageNamespace(""), "height")
+      convert_i
+      setlocal            8
+
+L75:
+      getlocal            4
+      getlocal            6
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal            4
+      getlocal            9
+      setproperty         QName(PackageNamespace(""), "y")
+
+      inclocal_i          7
+      getlocal            7
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.gird:UIGrid"), "numberOfColumns")
+      ifngt               L152
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.gird:UIGrid"), "_decorBitmap")
+      pushstring          ""
+      ifeq                L99
+
+      getlocal2
+      setlocal            5
+
+      getlocal0
+      getlocal            9
+      getlocal            8
+      getlocal            7
+      pushbyte            1
+      subtract
+      callpropvoid        QName(PrivateNamespace("io.decagames.rotmg.ui.gird:UIGrid"), "addDecorToRow"), 3
+
+L99:
+      inclocal_i          2
+      pushbyte            0
+      setlocal            6
+
+      getlocal2
+      getlocal3
+      equals
+      dup
+      iffalse             L111
+
+      pop
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.gird:UIGrid"), "_centerLastRow")
+      convert_b
+L111:
+      iffalse             L139
+
+      getlocal2
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.gird:UIGrid"), "numberOfColumns")
+      multiply
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.gird:UIGrid"), "elements")
+      getproperty         QName(PackageNamespace(""), "length")
+      subtract
+      convert_i
+      setlocal1
+
+      getlex              QName(PackageNamespace(""), "Math")
+      getlocal1
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.gird:UIGrid"), "elementWidth")
+      multiply
+      getlocal1
+      pushbyte            1
+      subtract
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.gird:UIGrid"), "gridMargin")
+      multiply
+      add
+      pushbyte            2
+      divide
+      callproperty        QName(PackageNamespace(""), "round"), 1
+      convert_i
+      setlocal            6
+
+L139:
+      getlocal            9
+      getlocal            8
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.gird:UIGrid"), "gridMargin")
+      add
+      add
+      convert_i
+      setlocal            9
+
+      pushbyte            0
+      setlocal            8
+
+      pushbyte            1
+      setlocal            7
+
+      jump                L161
+
+L152:
+      getlocal            6
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.gird:UIGrid"), "elementWidth")
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.gird:UIGrid"), "gridMargin")
+      add
+      add
+      convert_i
+      setlocal            6
+
+L161:
+      hasnext2            10, 11
+      iftrue              L57
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.gird:UIGrid"), "_decorBitmap")
+      pushstring          ""
+      equals
+      not
+      dup
+      iffalse             L175
+
+      pop
+      getlocal            5
+      getlocal2
+      equals
+      not
+L175:
+      iffalse             L183
+
+      getlocal0
+      getlocal            9
+      getlocal            8
+      getlocal            7
+      pushbyte            1
+      subtract
+      callpropvoid        QName(PrivateNamespace("io.decagames.rotmg.ui.gird:UIGrid"), "addDecorToRow"), 3
+
+L183:
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.gird:UIGrid"), "scrollHeight")
+      pushbyte            -1
+      ifeq                L215
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.gird:UIGrid"), "gridMask")
+      getproperty         QName(PackageNamespace(""), "graphics")
+      callpropvoid        QName(PackageNamespace(""), "clear"), 0
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.gird:UIGrid"), "gridMask")
+      getproperty         QName(PackageNamespace(""), "graphics")
+      pushint             16711680
+      callpropvoid        QName(PackageNamespace(""), "beginFill"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.gird:UIGrid"), "gridMask")
+      getproperty         QName(PackageNamespace(""), "graphics")
+      pushbyte            0
+      pushbyte            0
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.gird:UIGrid"), "gridWidth")
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.gird:UIGrid"), "scrollHeight")
+      callpropvoid        QName(PackageNamespace(""), "drawRect"), 4
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.gird:UIGrid"), "gridContent")
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.gird:UIGrid"), "gridMask")
+      setproperty         QName(PackageNamespace(""), "mask")
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.gird:UIGrid"), "gridMask")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+L215:
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.gird:UIGrid"), "elements")
+      getproperty         QName(PackageNamespace(""), "length")
+      setproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.gird:UIGrid"), "lastRenderedItemsNumber")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "dispose")
+   method
+    name "dispose"
+    refid "io.decagames.rotmg.ui.gird:UIGrid/instance/dispose"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 7
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      coerce              QName(PackageNamespace("io.decagames.rotmg.ui.gird"), "UIGridElement")
+      setlocal2
+
+      pushnull
+      coerce              QName(PackageNamespace("io.decagames.rotmg.ui.sliceScaling"), "SliceScalingBitmap")
+      setlocal1
+
+      getlocal0
+      pushstring          "enterFrame"
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.gird:UIGrid"), "onUpdate")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      pushbyte            0
+      setlocal            4
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.gird:UIGrid"), "elements")
+      setlocal3
+
+      jump                L27
+
+L19:
+      label
+      getlocal3
+      getlocal            4
+      nextvalue
+      coerce              QName(PackageNamespace("io.decagames.rotmg.ui.gird"), "UIGridElement")
+      setlocal2
+
+      getlocal2
+      callpropvoid        QName(PackageNamespace(""), "dispose"), 0
+
+L27:
+      hasnext2            3, 4
+      iftrue              L19
+
+      pushbyte            0
+      setlocal            6
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.gird:UIGrid"), "decors")
+      setlocal            5
+
+      jump                L43
+
+L35:
+      label
+      getlocal            5
+      getlocal            6
+      nextvalue
+      coerce              QName(PackageNamespace("io.decagames.rotmg.ui.sliceScaling"), "SliceScalingBitmap")
+      setlocal1
+
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "dispose"), 0
+
+L43:
+      hasnext2            5, 6
+      iftrue              L35
+
+      getlocal0
+      pushnull
+      setproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.gird:UIGrid"), "elements")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("io.decagames.rotmg.ui.gird:UIGrid"), "onUpdate")
+   method
+    name "onUpdate"
+    refid "io.decagames.rotmg.ui.gird:UIGrid/instance/io.decagames.rotmg.ui.gird:UIGrid/instance/onUpdate"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "param1"
+    body
+     maxstack 2
+     localcount 5
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      coerce              QName(PackageNamespace("io.decagames.rotmg.ui.gird"), "UIGridElement")
+      setlocal2
+
+      pushbyte            0
+      setlocal            4
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.gird:UIGrid"), "elements")
+      setlocal3
+
+      jump                L19
+
+L11:
+      label
+      getlocal3
+      getlocal            4
+      nextvalue
+      coerce              QName(PackageNamespace("io.decagames.rotmg.ui.gird"), "UIGridElement")
+      setlocal2
+
+      getlocal2
+      callpropvoid        QName(PackageNamespace(""), "update"), 0
+
+L19:
+      hasnext2            3, 4
+      iftrue              L11
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait getter QName(PackageNamespace(""), "centerLastRow")
+   method
+    name "centerLastRow"
+    refid "io.decagames.rotmg.ui.gird:UIGrid/instance/centerLastRow/getter"
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.gird:UIGrid"), "_centerLastRow")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait setter QName(PackageNamespace(""), "centerLastRow")
+   method
+    name "centerLastRow"
+    refid "io.decagames.rotmg.ui.gird:UIGrid/instance/centerLastRow/setter"
+    param QName(PackageNamespace(""), "Boolean")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "param1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      setproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.gird:UIGrid"), "_centerLastRow")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait getter QName(PackageNamespace(""), "decorBitmap")
+   method
+    name "decorBitmap"
+    refid "io.decagames.rotmg.ui.gird:UIGrid/instance/decorBitmap/getter"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.gird:UIGrid"), "_decorBitmap")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait setter QName(PackageNamespace(""), "decorBitmap")
+   method
+    name "decorBitmap"
+    refid "io.decagames.rotmg.ui.gird:UIGrid/instance/decorBitmap/setter"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "param1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      setproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.gird:UIGrid"), "_decorBitmap")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "io.decagames.rotmg.ui.gird:UIGrid/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

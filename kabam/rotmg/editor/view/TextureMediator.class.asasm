@@ -1,0 +1,263 @@
+class
+ refid "kabam.rotmg.editor.view:TextureMediator"
+ instance QName(PackageNamespace("kabam.rotmg.editor.view"), "TextureMediator")
+  extends QName(PackageNamespace("robotlegs.bender.bundles.mvcs"), "Mediator")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.editor.view:TextureMediator")
+  iinit
+   refid "kabam.rotmg.editor.view:TextureMediator/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "view") flag METADATA type QName(PackageNamespace("kabam.rotmg.editor.view"), "TextureView")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "model") flag METADATA type QName(PackageNamespace("kabam.rotmg.core.model"), "PlayerModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "openDialog") flag METADATA type QName(PackageNamespace("kabam.rotmg.dialogs.control"), "OpenDialogSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "setTexture") flag METADATA type QName(PackageNamespace("kabam.rotmg.editor.signals"), "SetTextureSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "searchModel") flag METADATA type QName(PackageNamespace("kabam.rotmg.editor.model"), "SearchModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "setScreen") flag METADATA type QName(PackageNamespace("kabam.rotmg.core.signals"), "SetScreenSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PackageNamespace(""), "initialize") flag OVERRIDE
+   method
+    name "initialize"
+    refid "kabam.rotmg.editor.view:TextureMediator/instance/initialize"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "saveDialog")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.editor.view:TextureMediator"), "onSave")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "loadDialog")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.editor.view:TextureMediator"), "onLoad")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "gotoTitle")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.editor.view:TextureMediator"), "onGotoTitle")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "setTexture")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.editor.view:TextureMediator"), "onSetTexture")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "destroy") flag OVERRIDE
+   method
+    name "destroy"
+    refid "kabam.rotmg.editor.view:TextureMediator/instance/destroy"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "loadDialog")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.editor.view:TextureMediator"), "onLoad")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "saveDialog")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.editor.view:TextureMediator"), "onSave")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "gotoTitle")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.editor.view:TextureMediator"), "onGotoTitle")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "setTexture")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.editor.view:TextureMediator"), "onSetTexture")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.editor.view:TextureMediator"), "onSetTexture")
+   method
+    name "onSetTexture"
+    refid "kabam.rotmg.editor.view:TextureMediator/instance/kabam.rotmg.editor.view:TextureMediator/instance/onSetTexture"
+    param QName(PackageNamespace("kabam.rotmg.editor.model"), "TextureData")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg_1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "setTexture"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.editor.view:TextureMediator"), "onLoad")
+   method
+    name "onLoad"
+    refid "kabam.rotmg.editor.view:TextureMediator/instance/kabam.rotmg.editor.view:TextureMediator/instance/onLoad"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "openDialog")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.editor.view"), "LoadTextureDialog")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "searchModel")
+      constructprop       QName(PackageNamespace("kabam.rotmg.editor.view"), "LoadTextureDialog"), 1
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.editor.view:TextureMediator"), "onSave")
+   method
+    name "onSave"
+    refid "kabam.rotmg.editor.view:TextureMediator/instance/kabam.rotmg.editor.view:TextureMediator/instance/onSave"
+    param QName(PackageNamespace("kabam.rotmg.editor.model"), "TextureData")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg_1"
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "openDialog")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.editor.view"), "SaveTextureDialog")
+      getlocal1
+      constructprop       QName(PackageNamespace("kabam.rotmg.editor.view"), "SaveTextureDialog"), 1
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.editor.view:TextureMediator"), "onGotoTitle")
+   method
+    name "onGotoTitle"
+    refid "kabam.rotmg.editor.view:TextureMediator/instance/kabam.rotmg.editor.view:TextureMediator/instance/onGotoTitle"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "setScreen")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.ui.view"), "TitleView")
+      constructprop       QName(PackageNamespace("kabam.rotmg.ui.view"), "TitleView"), 0
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.editor.view:TextureMediator/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

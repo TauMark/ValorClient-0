@@ -1,0 +1,448 @@
+class
+ refid "com.company.assembleegameclient.editor:CommandMenuItem"
+ instance QName(PackageNamespace("com.company.assembleegameclient.editor"), "CommandMenuItem")
+  extends QName(PackageNamespace("flash.display"), "Sprite")
+  flag SEALED
+  iinit
+   name "CommandMenuItem"
+   refid "com.company.assembleegameclient.editor:CommandMenuItem/instance/init"
+   param QName(PackageNamespace(""), "String")
+   param QName(PackageNamespace(""), "Function")
+   param QName(PackageNamespace(""), "int")
+   flag HAS_PARAM_NAMES
+   paramname "_arg1"
+   paramname "_arg2"
+   paramname "_arg3"
+   body
+    maxstack 7
+    localcount 4
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     getlocal2
+     setproperty         QName(PackageNamespace(""), "callback_")
+
+     getlocal0
+     getlocal3
+     setproperty         QName(PackageNamespace(""), "command_")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("com.company.ui"), "BaseSimpleText")
+     pushbyte            16
+     pushint             16777215
+     pushfalse
+     pushbyte            0
+     pushbyte            0
+     constructprop       QName(PackageNamespace("com.company.ui"), "BaseSimpleText"), 5
+     setproperty         QName(PrivateNamespace("com.company.assembleegameclient.editor:CommandMenuItem"), "text_")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.editor:CommandMenuItem"), "text_")
+     pushtrue
+     callpropvoid        QName(PackageNamespace(""), "setBold"), 1
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.editor:CommandMenuItem"), "text_")
+     getlocal1
+     setproperty         QName(PackageNamespace(""), "text")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.editor:CommandMenuItem"), "text_")
+     callpropvoid        QName(PackageNamespace(""), "updateMetrics"), 0
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.editor:CommandMenuItem"), "text_")
+     pushbyte            2
+     setproperty         QName(PackageNamespace(""), "x")
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.editor:CommandMenuItem"), "text_")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     getlocal0
+     callpropvoid        QName(PrivateNamespace("com.company.assembleegameclient.editor:CommandMenuItem"), "redraw"), 0
+
+     findpropstrict      QName(PackageNamespace(""), "addEventListener")
+     pushstring          "mouseOver"
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.editor:CommandMenuItem"), "onMouseOver")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     findpropstrict      QName(PackageNamespace(""), "addEventListener")
+     pushstring          "mouseOut"
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.editor:CommandMenuItem"), "onMouseOut")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     findpropstrict      QName(PackageNamespace(""), "addEventListener")
+     pushstring          "mouseDown"
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.editor:CommandMenuItem"), "onMouseDown")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     findpropstrict      QName(PackageNamespace(""), "addEventListener")
+     pushstring          "mouseUp"
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.editor:CommandMenuItem"), "onMouseUp")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     findpropstrict      QName(PackageNamespace(""), "addEventListener")
+     pushstring          "click"
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.editor:CommandMenuItem"), "onClick")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "callback_") type QName(PackageNamespace(""), "Function") end
+  trait slot QName(PackageNamespace(""), "command_") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.editor:CommandMenuItem"), "over_") type QName(PackageNamespace(""), "Boolean") value False() end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.editor:CommandMenuItem"), "down_") type QName(PackageNamespace(""), "Boolean") value False() end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.editor:CommandMenuItem"), "selected_") type QName(PackageNamespace(""), "Boolean") value False() end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.editor:CommandMenuItem"), "text_") type QName(PackageNamespace("com.company.ui"), "BaseSimpleText") end
+  trait method QName(PackageNamespace(""), "setSelected")
+   method
+    name "setSelected"
+    refid "com.company.assembleegameclient.editor:CommandMenuItem/instance/setSelected"
+    param QName(PackageNamespace(""), "Boolean")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      setproperty         QName(PrivateNamespace("com.company.assembleegameclient.editor:CommandMenuItem"), "selected_")
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("com.company.assembleegameclient.editor:CommandMenuItem"), "redraw"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setLabel")
+   method
+    name "setLabel"
+    refid "com.company.assembleegameclient.editor:CommandMenuItem/instance/setLabel"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.editor:CommandMenuItem"), "text_")
+      getlocal1
+      setproperty         QName(PackageNamespace(""), "text")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.editor:CommandMenuItem"), "text_")
+      callpropvoid        QName(PackageNamespace(""), "updateMetrics"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.editor:CommandMenuItem"), "redraw")
+   method
+    name "redraw"
+    refid "com.company.assembleegameclient.editor:CommandMenuItem/instance/com.company.assembleegameclient.editor:CommandMenuItem/instance/redraw"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 5
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace(""), "graphics")
+      callpropvoid        QName(PackageNamespace(""), "clear"), 0
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.editor:CommandMenuItem"), "selected_")
+      dup
+      iftrue              L12
+
+      pop
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.editor:CommandMenuItem"), "down_")
+      convert_b
+L12:
+      iffalse             L32
+
+      getlex              QName(PackageNamespace(""), "graphics")
+      pushbyte            2
+      pushint             16777215
+      callpropvoid        QName(PackageNamespace(""), "lineStyle"), 2
+
+      getlex              QName(PackageNamespace(""), "graphics")
+      pushint             8355711
+      pushbyte            1
+      callpropvoid        QName(PackageNamespace(""), "beginFill"), 2
+
+      getlex              QName(PackageNamespace(""), "graphics")
+      pushbyte            0
+      pushbyte            0
+      pushbyte            80
+      pushbyte            25
+      callpropvoid        QName(PackageNamespace(""), "drawRect"), 4
+
+      getlex              QName(PackageNamespace(""), "graphics")
+      callpropvoid        QName(PackageNamespace(""), "endFill"), 0
+
+      getlex              QName(PackageNamespace(""), "graphics")
+      callpropvoid        QName(PackageNamespace(""), "lineStyle"), 0
+
+      jump                L72
+
+L32:
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.editor:CommandMenuItem"), "over_")
+      iffalse             L54
+
+      getlex              QName(PackageNamespace(""), "graphics")
+      pushbyte            2
+      pushint             16777215
+      callpropvoid        QName(PackageNamespace(""), "lineStyle"), 2
+
+      getlex              QName(PackageNamespace(""), "graphics")
+      pushbyte            0
+      pushbyte            0
+      callpropvoid        QName(PackageNamespace(""), "beginFill"), 2
+
+      getlex              QName(PackageNamespace(""), "graphics")
+      pushbyte            0
+      pushbyte            0
+      pushbyte            80
+      pushbyte            25
+      callpropvoid        QName(PackageNamespace(""), "drawRect"), 4
+
+      getlex              QName(PackageNamespace(""), "graphics")
+      callpropvoid        QName(PackageNamespace(""), "endFill"), 0
+
+      getlex              QName(PackageNamespace(""), "graphics")
+      callpropvoid        QName(PackageNamespace(""), "lineStyle"), 0
+
+      jump                L72
+
+L54:
+      getlex              QName(PackageNamespace(""), "graphics")
+      pushbyte            1
+      pushint             16777215
+      callpropvoid        QName(PackageNamespace(""), "lineStyle"), 2
+
+      getlex              QName(PackageNamespace(""), "graphics")
+      pushbyte            0
+      pushbyte            0
+      callpropvoid        QName(PackageNamespace(""), "beginFill"), 2
+
+      getlex              QName(PackageNamespace(""), "graphics")
+      pushbyte            0
+      pushbyte            0
+      pushbyte            80
+      pushbyte            25
+      callpropvoid        QName(PackageNamespace(""), "drawRect"), 4
+
+      getlex              QName(PackageNamespace(""), "graphics")
+      callpropvoid        QName(PackageNamespace(""), "endFill"), 0
+
+      getlex              QName(PackageNamespace(""), "graphics")
+      callpropvoid        QName(PackageNamespace(""), "lineStyle"), 0
+
+L72:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.editor:CommandMenuItem"), "onMouseOver")
+   method
+    name "onMouseOver"
+    refid "com.company.assembleegameclient.editor:CommandMenuItem/instance/com.company.assembleegameclient.editor:CommandMenuItem/instance/onMouseOver"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      pushtrue
+      setproperty         QName(PrivateNamespace("com.company.assembleegameclient.editor:CommandMenuItem"), "over_")
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("com.company.assembleegameclient.editor:CommandMenuItem"), "redraw"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.editor:CommandMenuItem"), "onMouseOut")
+   method
+    name "onMouseOut"
+    refid "com.company.assembleegameclient.editor:CommandMenuItem/instance/com.company.assembleegameclient.editor:CommandMenuItem/instance/onMouseOut"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      pushfalse
+      setproperty         QName(PrivateNamespace("com.company.assembleegameclient.editor:CommandMenuItem"), "over_")
+
+      getlocal0
+      pushfalse
+      setproperty         QName(PrivateNamespace("com.company.assembleegameclient.editor:CommandMenuItem"), "down_")
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("com.company.assembleegameclient.editor:CommandMenuItem"), "redraw"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.editor:CommandMenuItem"), "onMouseDown")
+   method
+    name "onMouseDown"
+    refid "com.company.assembleegameclient.editor:CommandMenuItem/instance/com.company.assembleegameclient.editor:CommandMenuItem/instance/onMouseDown"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      pushtrue
+      setproperty         QName(PrivateNamespace("com.company.assembleegameclient.editor:CommandMenuItem"), "down_")
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("com.company.assembleegameclient.editor:CommandMenuItem"), "redraw"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.editor:CommandMenuItem"), "onMouseUp")
+   method
+    name "onMouseUp"
+    refid "com.company.assembleegameclient.editor:CommandMenuItem/instance/com.company.assembleegameclient.editor:CommandMenuItem/instance/onMouseUp"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      pushfalse
+      setproperty         QName(PrivateNamespace("com.company.assembleegameclient.editor:CommandMenuItem"), "down_")
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("com.company.assembleegameclient.editor:CommandMenuItem"), "redraw"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.editor:CommandMenuItem"), "onClick")
+   method
+    name "onClick"
+    refid "com.company.assembleegameclient.editor:CommandMenuItem/instance/com.company.assembleegameclient.editor:CommandMenuItem/instance/onClick"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal0
+      callpropvoid        QName(PackageNamespace(""), "callback_"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.editor:CommandMenuItem/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PrivateNamespace("com.company.assembleegameclient.editor:CommandMenuItem"), "WIDTH") type QName(PackageNamespace(""), "int") value Integer(80) end
+ trait const QName(PrivateNamespace("com.company.assembleegameclient.editor:CommandMenuItem"), "HEIGHT") type QName(PackageNamespace(""), "int") value Integer(25) end
+end ; class

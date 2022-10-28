@@ -1,0 +1,130 @@
+class
+ refid "kabam.rotmg.editor.view.components.loaddialog:ResultsBoxMediator"
+ instance QName(PackageNamespace("kabam.rotmg.editor.view.components.loaddialog"), "ResultsBoxMediator")
+  extends QName(PackageNamespace("robotlegs.bender.bundles.mvcs"), "Mediator")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.editor.view.components.loaddialog:ResultsBoxMediator")
+  iinit
+   refid "kabam.rotmg.editor.view.components.loaddialog:ResultsBoxMediator/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "view") flag METADATA type QName(PackageNamespace("kabam.rotmg.editor.view.components.loaddialog"), "ResultsBox")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "client") flag METADATA type QName(PackageNamespace("kabam.rotmg.appengine.api"), "AppEngineClient")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PackageNamespace(""), "initialize") flag OVERRIDE
+   method
+    name "initialize"
+    refid "kabam.rotmg.editor.view.components.loaddialog:ResultsBoxMediator/instance/initialize"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "client")
+      pushfalse
+      callpropvoid        QName(Namespace("kabam.rotmg.appengine.api:AppEngineClient"), "setSendEncrypted"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "client")
+      pushstring          "binary"
+      callpropvoid        QName(Namespace("kabam.rotmg.appengine.api:AppEngineClient"), "setDataFormat"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "client")
+      getproperty         QName(Namespace("kabam.rotmg.appengine.api:AppEngineClient"), "complete")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.editor.view.components.loaddialog:ResultsBoxMediator"), "onURLLoadComplete")
+      callpropvoid        QName(PackageNamespace(""), "addOnce"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "client")
+      pushstring          "/picture/get"
+      pushstring          "id"
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "id_")
+      newobject           1
+      callpropvoid        QName(Namespace("kabam.rotmg.appengine.api:AppEngineClient"), "sendRequest"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.editor.view.components.loaddialog:ResultsBoxMediator"), "onURLLoadComplete")
+   method
+    name "onURLLoadComplete"
+    refid "kabam.rotmg.editor.view.components.loaddialog:ResultsBoxMediator/instance/kabam.rotmg.editor.view.components.loaddialog:ResultsBoxMediator/instance/initialize/onURLLoadComplete"
+    param QName(PackageNamespace(""), "Boolean")
+    param null
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg_1"
+    paramname "_arg_2"
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      dup
+      iffalse             L13
+
+      pop
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlocal2
+      getlex              QName(PackageNamespace("flash.utils"), "ByteArray")
+      astypelate
+      callproperty        QName(PackageNamespace(""), "makeBitmapData"), 1
+      coerce_a
+L13:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.editor.view.components.loaddialog:ResultsBoxMediator/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

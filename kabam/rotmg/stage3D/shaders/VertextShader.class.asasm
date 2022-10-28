@@ -1,0 +1,75 @@
+class
+ refid "kabam.rotmg.stage3D.shaders:VertextShader"
+ instance QName(PackageNamespace("kabam.rotmg.stage3D.shaders"), "VertextShader")
+  extends QName(PackageNamespace("kabam.rotmg.util"), "AGALMiniAssembler")
+  flag SEALED
+  iinit
+   name "VertextShader"
+   refid "kabam.rotmg.stage3D.shaders:VertextShader/instance/init"
+   body
+    maxstack 3
+    localcount 2
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.util"), "AGALMiniAssembler")
+     constructprop       QName(PackageNamespace("kabam.rotmg.util"), "AGALMiniAssembler"), 0
+     coerce              QName(PackageNamespace("kabam.rotmg.util"), "AGALMiniAssembler")
+     setlocal1
+
+     getlocal1
+     pushstring          "vertex"
+     pushstring          "m44 op, va0, vc0\nadd vt1, va1, vc4\nmov v0, vt1"
+     callpropvoid        QName(PackageNamespace(""), "assemble"), 2
+
+     getlocal0
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "agalcode")
+     setproperty         QName(PrivateNamespace("kabam.rotmg.stage3D.shaders:VertextShader"), "vertexProgram")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace("kabam.rotmg.stage3D.shaders:VertextShader"), "vertexProgram") type QName(PackageNamespace("flash.utils"), "ByteArray") end
+  trait method QName(PackageNamespace(""), "getVertexProgram")
+   method
+    name "getVertexProgram"
+    refid "kabam.rotmg.stage3D.shaders:VertextShader/instance/getVertexProgram"
+    returns QName(PackageNamespace("flash.utils"), "ByteArray")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.stage3D.shaders:VertextShader"), "vertexProgram")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.stage3D.shaders:VertextShader/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

@@ -1,0 +1,254 @@
+class
+ refid "com.company.assembleegameclient.objects.animation:AnimationData"
+ instance QName(PackageNamespace("com.company.assembleegameclient.objects.animation"), "AnimationData")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  iinit
+   name "AnimationData"
+   refid "com.company.assembleegameclient.objects.animation:AnimationData/instance/init"
+   param QName(PackageNamespace(""), "XML")
+   flag HAS_PARAM_NAMES
+   paramname "_arg1"
+   body
+    maxstack 3
+    localcount 5
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     pushnull
+     setlocal2
+
+     getlocal0
+     getlex              QName(PackageNamespace("__AS3__.vec"), "Vector")
+     getlex              QName(PackageNamespace("com.company.assembleegameclient.objects.animation"), "FrameData")
+     applytype           1
+     construct           0
+     setproperty         QName(PackageNamespace(""), "frames")
+
+     getlocal0
+     constructsuper      0
+
+     pushstring          "@prob"
+     getlocal1
+     in
+     iffalse             L21
+
+     getlocal0
+     getlocal1
+     getproperty         MultinameA("prob", [PrivateNamespace("com.company.assembleegameclient.objects.animation:AnimationData"), ProtectedNamespace("com.company.assembleegameclient.objects.animation:AnimationData"), StaticProtectedNs("com.company.assembleegameclient.objects.animation:AnimationData"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.objects.animation"), PackageInternalNs("com.company.assembleegameclient.objects.animation"), PrivateNamespace("FilePrivateNS:AnimationData"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     convert_d
+     setproperty         QName(PackageNamespace(""), "prob_")
+
+L21:
+     getlocal0
+     getlocal1
+     getproperty         MultinameA("period", [PrivateNamespace("com.company.assembleegameclient.objects.animation:AnimationData"), ProtectedNamespace("com.company.assembleegameclient.objects.animation:AnimationData"), StaticProtectedNs("com.company.assembleegameclient.objects.animation:AnimationData"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.objects.animation"), PackageInternalNs("com.company.assembleegameclient.objects.animation"), PrivateNamespace("FilePrivateNS:AnimationData"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     convert_d
+     pushshort           1000
+     multiply
+     convert_i
+     setproperty         QName(PackageNamespace(""), "period_")
+
+     getlocal0
+     getlocal1
+     getproperty         MultinameA("periodJitter", [PrivateNamespace("com.company.assembleegameclient.objects.animation:AnimationData"), ProtectedNamespace("com.company.assembleegameclient.objects.animation:AnimationData"), StaticProtectedNs("com.company.assembleegameclient.objects.animation:AnimationData"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.objects.animation"), PackageInternalNs("com.company.assembleegameclient.objects.animation"), PrivateNamespace("FilePrivateNS:AnimationData"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     convert_d
+     pushshort           1000
+     multiply
+     convert_i
+     setproperty         QName(PackageNamespace(""), "periodJitter_")
+
+     getlocal0
+     getlocal1
+     getproperty         MultinameA("sync", [PrivateNamespace("com.company.assembleegameclient.objects.animation:AnimationData"), ProtectedNamespace("com.company.assembleegameclient.objects.animation:AnimationData"), StaticProtectedNs("com.company.assembleegameclient.objects.animation:AnimationData"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.objects.animation"), PackageInternalNs("com.company.assembleegameclient.objects.animation"), PrivateNamespace("FilePrivateNS:AnimationData"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     convert_s
+     pushstring          "true"
+     equals
+     setproperty         QName(PackageNamespace(""), "sync_")
+
+     pushbyte            0
+     setlocal            4
+
+     getlocal1
+     getproperty         Multiname("Frame", [PrivateNamespace("com.company.assembleegameclient.objects.animation:AnimationData"), ProtectedNamespace("com.company.assembleegameclient.objects.animation:AnimationData"), StaticProtectedNs("com.company.assembleegameclient.objects.animation:AnimationData"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.objects.animation"), PackageInternalNs("com.company.assembleegameclient.objects.animation"), PrivateNamespace("FilePrivateNS:AnimationData"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     setlocal3
+
+     jump                L62
+
+L50:
+     label
+     getlocal3
+     getlocal            4
+     nextvalue
+     coerce              QName(PackageNamespace(""), "XML")
+     setlocal2
+
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "frames")
+     findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.objects.animation"), "FrameData")
+     getlocal2
+     constructprop       QName(PackageNamespace("com.company.assembleegameclient.objects.animation"), "FrameData"), 1
+     callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+
+L62:
+     hasnext2            3, 4
+     iftrue              L50
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "prob_") type QName(PackageNamespace(""), "Number") value Integer(1) end
+  trait slot QName(PackageNamespace(""), "period_") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PackageNamespace(""), "periodJitter_") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PackageNamespace(""), "sync_") type QName(PackageNamespace(""), "Boolean") value False() end
+  trait slot QName(PackageNamespace(""), "frames") type TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("com.company.assembleegameclient.objects.animation"), "FrameData")>) end
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.objects.animation:AnimationData"), "getPeriod")
+   method
+    name "getPeriod"
+    refid "com.company.assembleegameclient.objects.animation:AnimationData/instance/com.company.assembleegameclient.objects.animation:AnimationData/instance/getPeriod"
+    returns QName(PackageNamespace(""), "int")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "periodJitter_")
+      pushbyte            0
+      ifne                L9
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "period_")
+      returnvalue
+
+L9:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "period_")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "periodJitter_")
+      subtract
+      pushbyte            2
+      getlex              QName(PackageNamespace(""), "Math")
+      callproperty        QName(PackageNamespace(""), "random"), 0
+      multiply
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "periodJitter_")
+      multiply
+      add
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getLastRun")
+   method
+    name "getLastRun"
+    refid "com.company.assembleegameclient.objects.animation:AnimationData/instance/getLastRun"
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "int")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "sync_")
+      iffalse             L14
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "period_")
+      divide
+      convert_i
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "period_")
+      multiply
+      returnvalue
+
+L14:
+      getlocal1
+      getlocal0
+      callproperty        QName(PrivateNamespace("com.company.assembleegameclient.objects.animation:AnimationData"), "getPeriod"), 0
+      add
+      pushshort           200
+      getlex              QName(PackageNamespace(""), "Math")
+      callproperty        QName(PackageNamespace(""), "random"), 0
+      multiply
+      add
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getNextRun")
+   method
+    name "getNextRun"
+    refid "com.company.assembleegameclient.objects.animation:AnimationData/instance/getNextRun"
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "int")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "sync_")
+      iffalse             L17
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "period_")
+      divide
+      convert_i
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "period_")
+      multiply
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "period_")
+      add
+      returnvalue
+
+L17:
+      getlocal1
+      getlocal0
+      callproperty        QName(PrivateNamespace("com.company.assembleegameclient.objects.animation:AnimationData"), "getPeriod"), 0
+      add
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.objects.animation:AnimationData/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

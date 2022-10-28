@@ -1,0 +1,480 @@
+class
+ refid "com.company.assembleegameclient.ui.panels:ArenaPortalPanel"
+ instance QName(PackageNamespace("com.company.assembleegameclient.ui.panels"), "ArenaPortalPanel")
+  extends QName(PackageNamespace("com.company.assembleegameclient.ui.panels"), "Panel")
+  flag SEALED
+  iinit
+   name "ArenaPortalPanel"
+   refid "com.company.assembleegameclient.ui.panels:ArenaPortalPanel/instance/init"
+   param QName(PackageNamespace("com.company.assembleegameclient.game"), "AGameSprite")
+   param QName(PackageNamespace("com.company.assembleegameclient.objects"), "ArenaPortal")
+   flag HAS_PARAM_NAMES
+   paramname "_arg1"
+   paramname "_arg2"
+   body
+    maxstack 6
+    localcount 4
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     findpropstrict      QName(PackageNamespace("org.osflash.signals"), "Signal")
+     getlex              QName(PackageNamespace(""), "int")
+     constructprop       QName(PackageNamespace("org.osflash.signals"), "Signal"), 1
+     findproperty        QName(PackageNamespace(""), "purchase")
+     swap
+     initproperty        QName(PackageNamespace(""), "purchase")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("flash.display"), "Sprite")
+     constructprop       QName(PackageNamespace("flash.display"), "Sprite"), 0
+     setproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels:ArenaPortalPanel"), "openContainer")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("flash.display"), "Sprite")
+     constructprop       QName(PackageNamespace("flash.display"), "Sprite"), 0
+     setproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels:ArenaPortalPanel"), "closeContainer")
+
+     getlocal0
+     getlocal1
+     constructsuper      1
+
+     getlocal0
+     getlocal2
+     setproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels:ArenaPortalPanel"), "owner_")
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels:ArenaPortalPanel"), "openContainer")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels:ArenaPortalPanel"), "closeContainer")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     getlex              QName(PackageNamespace(""), "gs_")
+     getproperty         QName(PackageNamespace(""), "map")
+     pushnull
+     equals
+     dup
+     iftrue              L42
+
+     pop
+     getlex              QName(PackageNamespace(""), "gs_")
+     getproperty         QName(PackageNamespace(""), "map")
+     getproperty         QName(PackageNamespace(""), "player")
+     pushnull
+     equals
+L42:
+     iffalse             L44
+
+     returnvoid
+
+L44:
+     getlex              QName(PackageNamespace(""), "gs_")
+     getproperty         QName(PackageNamespace(""), "map")
+     getproperty         QName(PackageNamespace(""), "player")
+     coerce              QName(PackageNamespace("com.company.assembleegameclient.objects"), "Player")
+     setlocal3
+
+     getlocal0
+     getlocal0
+     callproperty        QName(PrivateNamespace("com.company.assembleegameclient.ui.panels:ArenaPortalPanel"), "makeTitle"), 0
+     setproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels:ArenaPortalPanel"), "nameText_")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels:ArenaPortalPanel"), "openContainer")
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels:ArenaPortalPanel"), "nameText_")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.util.components"), "LegacyBuyButton")
+     pushstring          ""
+     pushbyte            20
+     pushbyte            51
+     pushbyte            0
+     constructprop       QName(PackageNamespace("kabam.rotmg.util.components"), "LegacyBuyButton"), 4
+     setproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels:ArenaPortalPanel"), "goldButton")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels:ArenaPortalPanel"), "goldButton")
+     pushstring          "click"
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels:ArenaPortalPanel"), "onGoldClick")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels:ArenaPortalPanel"), "openContainer")
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels:ArenaPortalPanel"), "goldButton")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.util.components"), "LegacyBuyButton")
+     pushstring          ""
+     pushbyte            20
+     pushshort           250
+     pushbyte            1
+     constructprop       QName(PackageNamespace("kabam.rotmg.util.components"), "LegacyBuyButton"), 4
+     setproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels:ArenaPortalPanel"), "fameButton")
+
+     getlocal3
+     getproperty         QName(PackageNamespace(""), "fame_")
+     pushshort           250
+     ifnlt               L94
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels:ArenaPortalPanel"), "fameButton")
+     pushfalse
+     callpropvoid        QName(PackageNamespace(""), "setEnabled"), 1
+
+     jump                L100
+
+L94:
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels:ArenaPortalPanel"), "fameButton")
+     pushstring          "click"
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels:ArenaPortalPanel"), "onFameClick")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+L100:
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels:ArenaPortalPanel"), "openContainer")
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels:ArenaPortalPanel"), "fameButton")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels:ArenaPortalPanel"), "fameButton")
+     getproperty         QName(PackageNamespace(""), "readyForPlacement")
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels:ArenaPortalPanel"), "alignUI")
+     callpropvoid        QName(PackageNamespace(""), "addOnce"), 1
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view"), "StaticTextDisplay")
+     constructprop       QName(PackageNamespace("kabam.rotmg.text.view"), "StaticTextDisplay"), 0
+     setproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels:ArenaPortalPanel"), "closedText")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels:ArenaPortalPanel"), "closedText")
+     pushbyte            18
+     callproperty        QName(PackageNamespace(""), "setSize"), 1
+     pushint             16711680
+     callproperty        QName(PackageNamespace(""), "setColor"), 1
+     pushshort           188
+     callproperty        QName(PackageNamespace(""), "setTextWidth"), 1
+     pushtrue
+     callproperty        QName(PackageNamespace(""), "setWordWrap"), 1
+     pushtrue
+     callproperty        QName(PackageNamespace(""), "setMultiLine"), 1
+     pushstring          "center"
+     callproperty        QName(PackageNamespace(""), "setAutoSize"), 1
+     pushtrue
+     callproperty        QName(PackageNamespace(""), "setBold"), 1
+     pushtrue
+     callpropvoid        QName(PackageNamespace(""), "setHTML"), 1
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels:ArenaPortalPanel"), "closedText")
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder")
+     constructprop       QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder"), 0
+     pushstring          "PortalPanel.full"
+     callproperty        QName(PackageNamespace(""), "setParams"), 1
+     pushstring          "<p align=\"center\">"
+     callproperty        QName(PackageNamespace(""), "setPrefix"), 1
+     pushstring          "</p>"
+     callproperty        QName(PackageNamespace(""), "setPostfix"), 1
+     callpropvoid        QName(PackageNamespace(""), "setStringBuilder"), 1
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels:ArenaPortalPanel"), "closedText")
+     findpropstrict      QName(PackageNamespace("flash.filters"), "DropShadowFilter")
+     pushbyte            0
+     pushbyte            0
+     pushbyte            0
+     constructprop       QName(PackageNamespace("flash.filters"), "DropShadowFilter"), 3
+     newarray            1
+     setproperty         QName(PackageNamespace(""), "filters")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels:ArenaPortalPanel"), "closedText")
+     pushbyte            84
+     pushbyte            45
+     subtract
+     setproperty         QName(PackageNamespace(""), "y")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels:ArenaPortalPanel"), "closeContainer")
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels:ArenaPortalPanel"), "closedText")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     getlocal0
+     getlocal0
+     callproperty        QName(PrivateNamespace("com.company.assembleegameclient.ui.panels:ArenaPortalPanel"), "makeTitle"), 0
+     setproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels:ArenaPortalPanel"), "closeNameText")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels:ArenaPortalPanel"), "closeContainer")
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels:ArenaPortalPanel"), "closeNameText")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait const QName(PackageNamespace(""), "purchase") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.ui.panels:ArenaPortalPanel"), "owner_") type QName(PackageNamespace("com.company.assembleegameclient.objects"), "ArenaPortal") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.ui.panels:ArenaPortalPanel"), "openContainer") type QName(PackageNamespace("flash.display"), "Sprite") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.ui.panels:ArenaPortalPanel"), "nameText_") type QName(PackageNamespace("kabam.rotmg.text.view"), "StaticTextDisplay") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.ui.panels:ArenaPortalPanel"), "goldButton") type QName(PackageNamespace("kabam.rotmg.util.components"), "LegacyBuyButton") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.ui.panels:ArenaPortalPanel"), "fameButton") type QName(PackageNamespace("kabam.rotmg.util.components"), "LegacyBuyButton") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.ui.panels:ArenaPortalPanel"), "closeContainer") type QName(PackageNamespace("flash.display"), "Sprite") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.ui.panels:ArenaPortalPanel"), "closeNameText") type QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.ui.panels:ArenaPortalPanel"), "closedText") type QName(PackageNamespace("kabam.rotmg.text.view"), "StaticTextDisplay") end
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.ui.panels:ArenaPortalPanel"), "alignUI")
+   method
+    name "alignUI"
+    refid "com.company.assembleegameclient.ui.panels:ArenaPortalPanel/instance/com.company.assembleegameclient.ui.panels:ArenaPortalPanel/instance/alignUI"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels:ArenaPortalPanel"), "goldButton")
+      pushshort           188
+      pushdouble          0.25
+      multiply
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels:ArenaPortalPanel"), "goldButton")
+      getproperty         QName(PackageNamespace(""), "width")
+      pushbyte            2
+      divide
+      subtract
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels:ArenaPortalPanel"), "goldButton")
+      pushbyte            84
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels:ArenaPortalPanel"), "goldButton")
+      getproperty         QName(PackageNamespace(""), "height")
+      subtract
+      pushbyte            4
+      subtract
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels:ArenaPortalPanel"), "fameButton")
+      pushshort           188
+      pushdouble          0.75
+      multiply
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels:ArenaPortalPanel"), "fameButton")
+      getproperty         QName(PackageNamespace(""), "width")
+      pushbyte            2
+      divide
+      subtract
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels:ArenaPortalPanel"), "fameButton")
+      pushbyte            84
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels:ArenaPortalPanel"), "fameButton")
+      getproperty         QName(PackageNamespace(""), "height")
+      subtract
+      pushbyte            4
+      subtract
+      setproperty         QName(PackageNamespace(""), "y")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.ui.panels:ArenaPortalPanel"), "onGoldClick")
+   method
+    name "onGoldClick"
+    refid "com.company.assembleegameclient.ui.panels:ArenaPortalPanel/instance/com.company.assembleegameclient.ui.panels:ArenaPortalPanel/instance/onGoldClick"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "purchase")
+      pushbyte            0
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.ui.panels:ArenaPortalPanel"), "onFameClick")
+   method
+    name "onFameClick"
+    refid "com.company.assembleegameclient.ui.panels:ArenaPortalPanel/instance/com.company.assembleegameclient.ui.panels:ArenaPortalPanel/instance/onFameClick"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "purchase")
+      pushbyte            1
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "draw") flag OVERRIDE
+   method
+    name "draw"
+    refid "com.company.assembleegameclient.ui.panels:ArenaPortalPanel/instance/draw"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels:ArenaPortalPanel"), "openContainer")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels:ArenaPortalPanel"), "owner_")
+      getproperty         QName(PackageNamespace(""), "active_")
+      setproperty         QName(PackageNamespace(""), "visible")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels:ArenaPortalPanel"), "closeContainer")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels:ArenaPortalPanel"), "owner_")
+      getproperty         QName(PackageNamespace(""), "active_")
+      not
+      setproperty         QName(PackageNamespace(""), "visible")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.ui.panels:ArenaPortalPanel"), "makeTitle")
+   method
+    name "makeTitle"
+    refid "com.company.assembleegameclient.ui.panels:ArenaPortalPanel/instance/com.company.assembleegameclient.ui.panels:ArenaPortalPanel/instance/makeTitle"
+    returns QName(PackageNamespace("kabam.rotmg.text.view"), "StaticTextDisplay")
+    body
+     maxstack 5
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      setlocal1
+
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view"), "StaticTextDisplay")
+      constructprop       QName(PackageNamespace("kabam.rotmg.text.view"), "StaticTextDisplay"), 0
+      coerce              QName(PackageNamespace("kabam.rotmg.text.view"), "StaticTextDisplay")
+      setlocal1
+
+      getlocal1
+      pushbyte            18
+      callproperty        QName(PackageNamespace(""), "setSize"), 1
+      pushint             16777215
+      callproperty        QName(PackageNamespace(""), "setColor"), 1
+      pushshort           188
+      callproperty        QName(PackageNamespace(""), "setTextWidth"), 1
+      pushtrue
+      callproperty        QName(PackageNamespace(""), "setWordWrap"), 1
+      pushtrue
+      callproperty        QName(PackageNamespace(""), "setMultiLine"), 1
+      pushstring          "center"
+      callproperty        QName(PackageNamespace(""), "setAutoSize"), 1
+      pushtrue
+      callproperty        QName(PackageNamespace(""), "setBold"), 1
+      pushtrue
+      callpropvoid        QName(PackageNamespace(""), "setHTML"), 1
+
+      getlocal1
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder")
+      constructprop       QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder"), 0
+      pushstring          "ArenaPortalPanel.title"
+      callproperty        QName(PackageNamespace(""), "setParams"), 1
+      pushstring          "<p align=\"center\">"
+      callproperty        QName(PackageNamespace(""), "setPrefix"), 1
+      pushstring          "</p>"
+      callproperty        QName(PackageNamespace(""), "setPostfix"), 1
+      callpropvoid        QName(PackageNamespace(""), "setStringBuilder"), 1
+
+      getlocal1
+      findpropstrict      QName(PackageNamespace("flash.filters"), "DropShadowFilter")
+      pushbyte            0
+      pushbyte            0
+      pushbyte            0
+      constructprop       QName(PackageNamespace("flash.filters"), "DropShadowFilter"), 3
+      newarray            1
+      setproperty         QName(PackageNamespace(""), "filters")
+
+      getlocal1
+      pushbyte            6
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.ui.panels:ArenaPortalPanel/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

@@ -1,0 +1,169 @@
+class
+ refid "com.company.assembleegameclient.objects:Character"
+ instance QName(PackageNamespace("com.company.assembleegameclient.objects"), "Character")
+  extends QName(PackageNamespace("com.company.assembleegameclient.objects"), "GameObject")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.company.assembleegameclient.objects:Character")
+  iinit
+   name "Character"
+   refid "com.company.assembleegameclient.objects:Character/instance/init"
+   param QName(PackageNamespace(""), "XML")
+   flag HAS_PARAM_NAMES
+   paramname "_arg1"
+   body
+    maxstack 3
+    localcount 2
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     getlocal1
+     constructsuper      1
+
+     getlocal0
+     getlocal1
+     pushstring          "HitSound"
+     callproperty        Multiname("hasOwnProperty", [PrivateNamespace("com.company.assembleegameclient.objects:Character"), ProtectedNamespace("com.company.assembleegameclient.objects:Character"), StaticProtectedNs("com.company.assembleegameclient.objects:Character"), StaticProtectedNs("com.company.assembleegameclient.objects:GameObject"), StaticProtectedNs("com.company.assembleegameclient.objects:BasicObject"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.objects"), PackageInternalNs("com.company.assembleegameclient.objects"), PrivateNamespace("FilePrivateNS:Character"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 1
+     iffalse             L14
+
+     getlocal1
+     getproperty         Multiname("HitSound", [PrivateNamespace("com.company.assembleegameclient.objects:Character"), ProtectedNamespace("com.company.assembleegameclient.objects:Character"), StaticProtectedNs("com.company.assembleegameclient.objects:Character"), StaticProtectedNs("com.company.assembleegameclient.objects:GameObject"), StaticProtectedNs("com.company.assembleegameclient.objects:BasicObject"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.objects"), PackageInternalNs("com.company.assembleegameclient.objects"), PrivateNamespace("FilePrivateNS:Character"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     convert_s
+     jump                L16
+
+L14:
+     pushstring          "monster/default_hit"
+     coerce_s
+L16:
+     setproperty         QName(PackageNamespace(""), "hurtSound_")
+
+     getlex              QName(PackageNamespace("com.company.assembleegameclient.sound"), "SoundEffectLibrary")
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "hurtSound_")
+     callpropvoid        QName(PackageNamespace(""), "load"), 1
+
+     getlocal0
+     getlocal1
+     pushstring          "DeathSound"
+     callproperty        Multiname("hasOwnProperty", [PrivateNamespace("com.company.assembleegameclient.objects:Character"), ProtectedNamespace("com.company.assembleegameclient.objects:Character"), StaticProtectedNs("com.company.assembleegameclient.objects:Character"), StaticProtectedNs("com.company.assembleegameclient.objects:GameObject"), StaticProtectedNs("com.company.assembleegameclient.objects:BasicObject"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.objects"), PackageInternalNs("com.company.assembleegameclient.objects"), PrivateNamespace("FilePrivateNS:Character"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 1
+     iffalse             L30
+
+     getlocal1
+     getproperty         Multiname("DeathSound", [PrivateNamespace("com.company.assembleegameclient.objects:Character"), ProtectedNamespace("com.company.assembleegameclient.objects:Character"), StaticProtectedNs("com.company.assembleegameclient.objects:Character"), StaticProtectedNs("com.company.assembleegameclient.objects:GameObject"), StaticProtectedNs("com.company.assembleegameclient.objects:BasicObject"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.objects"), PackageInternalNs("com.company.assembleegameclient.objects"), PrivateNamespace("FilePrivateNS:Character"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     convert_s
+     jump                L32
+
+L30:
+     pushstring          "monster/default_death"
+     coerce_s
+L32:
+     setproperty         QName(PackageNamespace(""), "deathSound_")
+
+     getlex              QName(PackageNamespace("com.company.assembleegameclient.sound"), "SoundEffectLibrary")
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "deathSound_")
+     callpropvoid        QName(PackageNamespace(""), "load"), 1
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "hurtSound_") type QName(PackageNamespace(""), "String") end
+  trait slot QName(PackageNamespace(""), "deathSound_") type QName(PackageNamespace(""), "String") end
+  trait method QName(PackageNamespace(""), "damage") flag OVERRIDE
+   method
+    name "damage"
+    refid "com.company.assembleegameclient.objects:Character/instance/damage"
+    param QName(PackageNamespace(""), "int")
+    param QName(PackageNamespace(""), "int")
+    param TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace(""), "uint")>)
+    param QName(PackageNamespace(""), "Boolean")
+    param QName(PackageNamespace("com.company.assembleegameclient.objects"), "Projectile")
+    param QName(PackageNamespace(""), "Boolean")
+    param QName(PackageNamespace(""), "Number")
+    param QName(PackageNamespace(""), "Number")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_OPTIONAL
+    flag HAS_PARAM_NAMES
+    optional False()
+    optional Integer(0)
+    optional Integer(0)
+    paramname "_arg1"
+    paramname "dmg"
+    paramname "_arg3"
+    paramname "_arg4"
+    paramname "proj"
+    paramname "isCrit"
+    paramname "critMult"
+    paramname "critDefMult"
+    body
+     maxstack 9
+     localcount 9
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      getlocal2
+      getlocal3
+      getlocal            4
+      getlocal            5
+      getlocal            6
+      getlocal            7
+      getlocal            8
+      callsupervoid       QName(PackageNamespace(""), "damage"), 8
+      getlex              QName(PackageNamespace(""), "dead")
+      iffalse             L19
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.sound"), "SoundEffectLibrary")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "deathSound_")
+      callpropvoid        QName(PackageNamespace(""), "play"), 1
+
+      jump                L32
+
+L19:
+      getlocal            5
+      dup
+      iftrue              L27
+
+      pop
+      getlocal2
+      pushbyte            0
+      greaterthan
+      coerce_a
+L27:
+      iffalse             L32
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.sound"), "SoundEffectLibrary")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hurtSound_")
+      callpropvoid        QName(PackageNamespace(""), "play"), 1
+
+L32:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.objects:Character/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

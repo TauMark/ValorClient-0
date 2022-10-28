@@ -1,0 +1,210 @@
+class
+ refid "kabam.rotmg.emotes:Emote"
+ instance QName(PackageNamespace("kabam.rotmg.emotes"), "Emote")
+  extends QName(PackageNamespace("flash.display"), "Sprite")
+  flag SEALED
+  iinit
+   name "Emote"
+   refid "kabam.rotmg.emotes:Emote/instance/init"
+   param QName(PackageNamespace(""), "String")
+   param QName(PackageNamespace("flash.display"), "BitmapData")
+   param QName(PackageNamespace(""), "Number")
+   param QName(PackageNamespace(""), "Boolean")
+   flag HAS_PARAM_NAMES
+   paramname "param1"
+   paramname "param2"
+   paramname "param3"
+   paramname "param4"
+   body
+    maxstack 7
+    localcount 10
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     getlocal1
+     setproperty         QName(PrivateNamespace("kabam.rotmg.emotes:Emote"), "emoteName")
+
+     getlocal0
+     getlocal2
+     setproperty         QName(PrivateNamespace("kabam.rotmg.emotes:Emote"), "bitmapData")
+
+     getlocal0
+     getlocal3
+     setproperty         QName(PrivateNamespace("kabam.rotmg.emotes:Emote"), "scale")
+
+     getlocal0
+     getlocal            4
+     setproperty         QName(PrivateNamespace("kabam.rotmg.emotes:Emote"), "hq")
+
+     getlocal2
+     setlocal            7
+
+     findpropstrict      QName(PackageNamespace("flash.geom"), "Matrix")
+     constructprop       QName(PackageNamespace("flash.geom"), "Matrix"), 0
+     coerce              QName(PackageNamespace("flash.geom"), "Matrix")
+     dup
+     setlocal            6
+
+     getlocal3
+     getlocal3
+     callpropvoid        QName(PackageNamespace(""), "scale"), 2
+
+     findpropstrict      QName(PackageNamespace("flash.display"), "BitmapData")
+     getlex              QName(PackageNamespace(""), "Math")
+     getlocal            7
+     getproperty         QName(PackageNamespace(""), "width")
+     getlocal3
+     multiply
+     callproperty        QName(PackageNamespace(""), "floor"), 1
+     getlex              QName(PackageNamespace(""), "Math")
+     getlocal            7
+     getproperty         QName(PackageNamespace(""), "height")
+     getlocal3
+     multiply
+     callproperty        QName(PackageNamespace(""), "floor"), 1
+     pushtrue
+     pushbyte            0
+     constructprop       QName(PackageNamespace("flash.display"), "BitmapData"), 4
+     coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+     dup
+     setlocal            9
+
+     getlocal            7
+     getlocal            6
+     pushnull
+     pushnull
+     pushnull
+     getlocal            4
+     callpropvoid        QName(PackageNamespace(""), "draw"), 6
+
+     findpropstrict      QName(PackageNamespace("flash.display"), "Shape")
+     constructprop       QName(PackageNamespace("flash.display"), "Shape"), 0
+     coerce              QName(PackageNamespace("flash.display"), "Shape")
+     dup
+     setlocal            8
+
+     getproperty         QName(PackageNamespace(""), "graphics")
+     getlocal            7
+     getlocal            6
+     pushfalse
+     pushtrue
+     callpropvoid        QName(PackageNamespace(""), "beginBitmapFill"), 4
+
+     getlocal            8
+     getproperty         QName(PackageNamespace(""), "graphics")
+     pushbyte            0
+     pushbyte            0
+     pushbyte            0
+     callpropvoid        QName(PackageNamespace(""), "lineStyle"), 3
+
+     getlocal            8
+     getproperty         QName(PackageNamespace(""), "graphics")
+     pushbyte            0
+     pushbyte            0
+     getlocal            9
+     getproperty         QName(PackageNamespace(""), "width")
+     getlocal            9
+     getproperty         QName(PackageNamespace(""), "height")
+     callpropvoid        QName(PackageNamespace(""), "drawRect"), 4
+
+     getlocal            8
+     getproperty         QName(PackageNamespace(""), "graphics")
+     callpropvoid        QName(PackageNamespace(""), "endFill"), 0
+
+     getlocal            9
+     getlocal            8
+     callpropvoid        QName(PackageNamespace(""), "draw"), 1
+
+     findpropstrict      QName(PackageNamespace("flash.display"), "Bitmap")
+     getlocal            9
+     constructprop       QName(PackageNamespace("flash.display"), "Bitmap"), 1
+     coerce              QName(PackageNamespace("flash.display"), "Bitmap")
+     dup
+     setlocal            5
+
+     getlocal            4
+     not
+     iftrue              L95
+
+     newarray            0
+     jump                L104
+
+L95:
+     findpropstrict      QName(PackageNamespace("flash.filters"), "GlowFilter")
+     pushbyte            0
+     pushbyte            1
+     pushbyte            6
+     pushbyte            6
+     pushbyte            4
+     constructprop       QName(PackageNamespace("flash.filters"), "GlowFilter"), 5
+     newarray            1
+     coerce              QName(PackageNamespace(""), "Array")
+L104:
+     setproperty         QName(PackageNamespace(""), "filters")
+
+     getlocal            5
+     pushbyte            -2
+     setproperty         QName(PackageNamespace(""), "y")
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal            5
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace("kabam.rotmg.emotes:Emote"), "emoteName") type QName(PackageNamespace(""), "String") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.emotes:Emote"), "bitmapData") type QName(PackageNamespace("flash.display"), "BitmapData") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.emotes:Emote"), "scale") type QName(PackageNamespace(""), "Number") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.emotes:Emote"), "hq") type QName(PackageNamespace(""), "Boolean") end
+  trait method QName(PackageNamespace(""), "clone")
+   method
+    name "clone"
+    refid "kabam.rotmg.emotes:Emote/instance/clone"
+    returns QName(PackageNamespace("kabam.rotmg.emotes"), "Emote")
+    body
+     maxstack 5
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.emotes"), "Emote")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.emotes:Emote"), "emoteName")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.emotes:Emote"), "bitmapData")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.emotes:Emote"), "scale")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.emotes:Emote"), "hq")
+      constructprop       QName(PackageNamespace("kabam.rotmg.emotes"), "Emote"), 4
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.emotes:Emote/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

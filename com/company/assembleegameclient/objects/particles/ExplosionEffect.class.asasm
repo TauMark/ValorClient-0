@@ -1,0 +1,315 @@
+class
+ refid "com.company.assembleegameclient.objects.particles:ExplosionEffect"
+ instance QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "ExplosionEffect")
+  extends QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "ParticleEffect")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.company.assembleegameclient.objects.particles:ExplosionEffect")
+  iinit
+   name "ExplosionEffect"
+   refid "com.company.assembleegameclient.objects.particles:ExplosionEffect/instance/init"
+   param TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace(""), "uint")>)
+   param QName(PackageNamespace(""), "int")
+   param QName(PackageNamespace(""), "int")
+   flag HAS_PARAM_NAMES
+   paramname "_arg1"
+   paramname "_arg2"
+   paramname "_arg3"
+   body
+    maxstack 2
+    localcount 4
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     getlocal1
+     setproperty         QName(PackageNamespace(""), "colors_")
+
+     getlocal2
+     findproperty        QName(PackageNamespace(""), "size_")
+     swap
+     setproperty         QName(PackageNamespace(""), "size_")
+
+     getlex              QName(PrivateNamespace("FilePrivateNS:ExplosionEffect"), "ExplosionParticle")
+     getproperty         QName(PackageNamespace(""), "total_")
+     pushshort           250
+     ifnge               L19
+
+     getlocal0
+     pushbyte            2
+     setproperty         QName(PackageNamespace(""), "numParts_")
+
+     jump                L38
+
+L19:
+     getlex              QName(PrivateNamespace("FilePrivateNS:ExplosionEffect"), "ExplosionParticle")
+     getproperty         QName(PackageNamespace(""), "total_")
+     pushshort           150
+     ifnge               L27
+
+     getlocal0
+     pushbyte            4
+     setproperty         QName(PackageNamespace(""), "numParts_")
+
+     jump                L38
+
+L27:
+     getlex              QName(PrivateNamespace("FilePrivateNS:ExplosionEffect"), "ExplosionParticle")
+     getproperty         QName(PackageNamespace(""), "total_")
+     pushbyte            90
+     ifnge               L35
+
+     getlocal0
+     pushbyte            12
+     setproperty         QName(PackageNamespace(""), "numParts_")
+
+     jump                L38
+
+L35:
+     getlocal0
+     getlocal3
+     setproperty         QName(PackageNamespace(""), "numParts_")
+
+L38:
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "colors_") type TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace(""), "uint")>) end
+  trait slot QName(PackageNamespace(""), "numParts_") type QName(PackageNamespace(""), "int") end
+  trait method QName(PackageNamespace(""), "runNormalRendering") flag OVERRIDE
+   method
+    name "runNormalRendering"
+    refid "com.company.assembleegameclient.objects.particles:ExplosionEffect/instance/runNormalRendering"
+    param QName(PackageNamespace(""), "int")
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "Boolean")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    paramname "_arg2"
+    body
+     maxstack 8
+     localcount 6
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushbyte            0
+      setlocal            4
+
+      pushnull
+      setlocal            5
+
+      pushbyte            0
+      setlocal3
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "colors_")
+      getproperty         QName(PackageNamespace(""), "length")
+      pushbyte            0
+      ifne                L15
+
+      pushfalse
+      returnvalue
+
+L15:
+      getlex              QName(PrivateNamespace("FilePrivateNS:ExplosionEffect"), "ExplosionParticle")
+      getproperty         QName(PackageNamespace(""), "total_")
+      pushshort           400
+      ifngt               L21
+
+      pushfalse
+      returnvalue
+
+L21:
+      jump                L63
+
+L22:
+      label
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "colors_")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "colors_")
+      getproperty         QName(PackageNamespace(""), "length")
+      getlex              QName(PackageNamespace(""), "Math")
+      callproperty        QName(PackageNamespace(""), "random"), 0
+      multiply
+      convert_i
+      getproperty         MultinameL([PrivateNamespace("com.company.assembleegameclient.objects.particles:ExplosionEffect"), ProtectedNamespace("com.company.assembleegameclient.objects.particles:ExplosionEffect"), StaticProtectedNs("com.company.assembleegameclient.objects.particles:ExplosionEffect"), StaticProtectedNs("com.company.assembleegameclient.objects.particles:ParticleEffect"), StaticProtectedNs("com.company.assembleegameclient.objects:GameObject"), StaticProtectedNs("com.company.assembleegameclient.objects:BasicObject"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.objects.particles"), PackageInternalNs("com.company.assembleegameclient.objects.particles"), PrivateNamespace("FilePrivateNS:ExplosionEffect"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      convert_u
+      setlocal            4
+
+      findpropstrict      QName(PrivateNamespace("FilePrivateNS:ExplosionEffect"), "ExplosionParticle")
+      getlocal            4
+      pushdouble          0.5
+      getlex              QName(PackageNamespace(""), "size_")
+      pushshort           200
+      getlex              QName(PackageNamespace(""), "Math")
+      callproperty        QName(PackageNamespace(""), "random"), 0
+      pushbyte            100
+      multiply
+      add
+      getlex              QName(PackageNamespace(""), "Math")
+      callproperty        QName(PackageNamespace(""), "random"), 0
+      pushdouble          0.5
+      subtract
+      getlex              QName(PackageNamespace(""), "Math")
+      callproperty        QName(PackageNamespace(""), "random"), 0
+      pushdouble          0.5
+      subtract
+      pushbyte            0
+      constructprop       QName(PrivateNamespace("FilePrivateNS:ExplosionEffect"), "ExplosionParticle"), 7
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "Particle")
+      setlocal            5
+
+      getlex              QName(PackageNamespace(""), "map_")
+      getlocal            5
+      getlex              QName(PackageNamespace(""), "x_")
+      getlex              QName(PackageNamespace(""), "y_")
+      callpropvoid        QName(PackageNamespace(""), "addObj"), 3
+
+      inclocal_i          3
+L63:
+      getlocal3
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "numParts_")
+      iflt                L22
+
+      pushfalse
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "runEasyRendering") flag OVERRIDE
+   method
+    name "runEasyRendering"
+    refid "com.company.assembleegameclient.objects.particles:ExplosionEffect/instance/runEasyRendering"
+    param QName(PackageNamespace(""), "int")
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "Boolean")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    paramname "_arg2"
+    body
+     maxstack 8
+     localcount 6
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushbyte            0
+      setlocal            4
+
+      pushnull
+      setlocal            5
+
+      pushbyte            0
+      setlocal3
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "colors_")
+      getproperty         QName(PackageNamespace(""), "length")
+      pushbyte            0
+      ifne                L15
+
+      pushfalse
+      returnvalue
+
+L15:
+      getlex              QName(PrivateNamespace("FilePrivateNS:ExplosionEffect"), "ExplosionParticle")
+      getproperty         QName(PackageNamespace(""), "total_")
+      pushshort           400
+      ifngt               L21
+
+      pushfalse
+      returnvalue
+
+L21:
+      getlocal0
+      pushbyte            2
+      setproperty         QName(PackageNamespace(""), "numParts_")
+
+      jump                L66
+
+L25:
+      label
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "colors_")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "colors_")
+      getproperty         QName(PackageNamespace(""), "length")
+      getlex              QName(PackageNamespace(""), "Math")
+      callproperty        QName(PackageNamespace(""), "random"), 0
+      multiply
+      convert_i
+      getproperty         MultinameL([PrivateNamespace("com.company.assembleegameclient.objects.particles:ExplosionEffect"), ProtectedNamespace("com.company.assembleegameclient.objects.particles:ExplosionEffect"), StaticProtectedNs("com.company.assembleegameclient.objects.particles:ExplosionEffect"), StaticProtectedNs("com.company.assembleegameclient.objects.particles:ParticleEffect"), StaticProtectedNs("com.company.assembleegameclient.objects:GameObject"), StaticProtectedNs("com.company.assembleegameclient.objects:BasicObject"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.objects.particles"), PackageInternalNs("com.company.assembleegameclient.objects.particles"), PrivateNamespace("FilePrivateNS:ExplosionEffect"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      convert_u
+      setlocal            4
+
+      findpropstrict      QName(PrivateNamespace("FilePrivateNS:ExplosionEffect"), "ExplosionParticle")
+      getlocal            4
+      pushdouble          0.5
+      getlex              QName(PackageNamespace(""), "size_")
+      pushbyte            50
+      getlex              QName(PackageNamespace(""), "Math")
+      callproperty        QName(PackageNamespace(""), "random"), 0
+      pushbyte            100
+      multiply
+      add
+      getlex              QName(PackageNamespace(""), "Math")
+      callproperty        QName(PackageNamespace(""), "random"), 0
+      pushdouble          0.5
+      subtract
+      getlex              QName(PackageNamespace(""), "Math")
+      callproperty        QName(PackageNamespace(""), "random"), 0
+      pushdouble          0.5
+      subtract
+      pushbyte            0
+      constructprop       QName(PrivateNamespace("FilePrivateNS:ExplosionEffect"), "ExplosionParticle"), 7
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "Particle")
+      setlocal            5
+
+      getlex              QName(PackageNamespace(""), "map_")
+      getlocal            5
+      getlex              QName(PackageNamespace(""), "x_")
+      getlex              QName(PackageNamespace(""), "y_")
+      callpropvoid        QName(PackageNamespace(""), "addObj"), 3
+
+      inclocal_i          3
+L66:
+      getlocal3
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "numParts_")
+      iflt                L25
+
+      pushfalse
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.objects.particles:ExplosionEffect/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

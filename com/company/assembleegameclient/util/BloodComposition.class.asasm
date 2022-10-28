@@ -1,0 +1,275 @@
+class
+ refid "com.company.assembleegameclient.util:BloodComposition"
+ instance QName(PackageNamespace("com.company.assembleegameclient.util"), "BloodComposition")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  iinit
+   refid "com.company.assembleegameclient.util:BloodComposition/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.util:BloodComposition/class/init"
+  body
+   maxstack 2
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 1
+   code
+    getlocal0
+    pushscope
+
+    findpropstrict      QName(PackageNamespace("flash.utils"), "Dictionary")
+    constructprop       QName(PackageNamespace("flash.utils"), "Dictionary"), 0
+    findproperty        QName(PrivateNamespace("com.company.assembleegameclient.util:BloodComposition"), "idDict_")
+    swap
+    setproperty         QName(PrivateNamespace("com.company.assembleegameclient.util:BloodComposition"), "idDict_")
+
+    findpropstrict      QName(PackageNamespace("flash.utils"), "Dictionary")
+    constructprop       QName(PackageNamespace("flash.utils"), "Dictionary"), 0
+    findproperty        QName(PrivateNamespace("com.company.assembleegameclient.util:BloodComposition"), "imageDict_")
+    swap
+    setproperty         QName(PrivateNamespace("com.company.assembleegameclient.util:BloodComposition"), "imageDict_")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait slot QName(PrivateNamespace("com.company.assembleegameclient.util:BloodComposition"), "idDict_") type QName(PackageNamespace("flash.utils"), "Dictionary") end
+ trait slot QName(PrivateNamespace("com.company.assembleegameclient.util:BloodComposition"), "imageDict_") type QName(PackageNamespace("flash.utils"), "Dictionary") end
+ trait method QName(PackageNamespace(""), "getBloodComposition")
+  method
+   name "getBloodComposition"
+   refid "com.company.assembleegameclient.util:BloodComposition/class/getBloodComposition"
+   param QName(PackageNamespace(""), "int")
+   param QName(PackageNamespace("flash.display"), "BitmapData")
+   param QName(PackageNamespace(""), "Number")
+   param QName(PackageNamespace(""), "uint")
+   returns TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace(""), "uint")>)
+   flag HAS_PARAM_NAMES
+   paramname "_arg1"
+   paramname "_arg2"
+   paramname "_arg3"
+   paramname "_arg4"
+   body
+    maxstack 4
+    localcount 8
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     pushbyte            0
+     setlocal            6
+
+     getlex              QName(PrivateNamespace("com.company.assembleegameclient.util:BloodComposition"), "idDict_")
+     getlocal1
+     getproperty         MultinameL([PrivateNamespace("com.company.assembleegameclient.util:BloodComposition"), StaticProtectedNs("com.company.assembleegameclient.util:BloodComposition"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.util"), PackageInternalNs("com.company.assembleegameclient.util"), PrivateNamespace("FilePrivateNS:BloodComposition"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     coerce              TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace(""), "uint")>)
+     dup
+     setlocal            7
+
+     pushnull
+     ifeq                L14
+
+     getlocal            7
+     returnvalue
+
+L14:
+     getlex              QName(PackageNamespace("__AS3__.vec"), "Vector")
+     getlex              QName(PackageNamespace(""), "uint")
+     applytype           1
+     construct           0
+     coerce              TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace(""), "uint")>)
+     setlocal            7
+
+     findpropstrict      QName(PackageNamespace(""), "getColors")
+     getlocal2
+     callproperty        QName(PackageNamespace(""), "getColors"), 1
+     coerce              TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace(""), "uint")>)
+     setlocal            5
+
+     jump                L46
+
+L26:
+     label
+     getlex              QName(PackageNamespace(""), "Math")
+     callproperty        QName(PackageNamespace(""), "random"), 0
+     getlocal3
+     ifnlt               L35
+
+     getlocal            7
+     getlocal            4
+     callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+
+     jump                L45
+
+L35:
+     getlocal            7
+     getlocal            5
+     getlocal            5
+     getproperty         QName(PackageNamespace(""), "length")
+     getlex              QName(PackageNamespace(""), "Math")
+     callproperty        QName(PackageNamespace(""), "random"), 0
+     multiply
+     convert_i
+     getproperty         MultinameL([PrivateNamespace("com.company.assembleegameclient.util:BloodComposition"), StaticProtectedNs("com.company.assembleegameclient.util:BloodComposition"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.util"), PackageInternalNs("com.company.assembleegameclient.util"), PrivateNamespace("FilePrivateNS:BloodComposition"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+
+L45:
+     inclocal_i          6
+L46:
+     getlocal            6
+     getlocal            5
+     getproperty         QName(PackageNamespace(""), "length")
+     iflt                L26
+
+     getlocal            7
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "getColors")
+  method
+   name "getColors"
+   refid "com.company.assembleegameclient.util:BloodComposition/class/getColors"
+   param QName(PackageNamespace("flash.display"), "BitmapData")
+   returns TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace(""), "uint")>)
+   flag HAS_PARAM_NAMES
+   paramname "_arg1"
+   body
+    maxstack 3
+    localcount 3
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PrivateNamespace("com.company.assembleegameclient.util:BloodComposition"), "imageDict_")
+     getlocal1
+     getproperty         MultinameL([PrivateNamespace("com.company.assembleegameclient.util:BloodComposition"), StaticProtectedNs("com.company.assembleegameclient.util:BloodComposition"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.util"), PackageInternalNs("com.company.assembleegameclient.util"), PrivateNamespace("FilePrivateNS:BloodComposition"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     coerce              TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace(""), "uint")>)
+     setlocal2
+
+     getlocal2
+     pushnull
+     ifne                L19
+
+     findpropstrict      QName(PrivateNamespace("com.company.assembleegameclient.util:BloodComposition"), "buildColors")
+     getlocal1
+     callproperty        QName(PrivateNamespace("com.company.assembleegameclient.util:BloodComposition"), "buildColors"), 1
+     coerce              TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace(""), "uint")>)
+     setlocal2
+
+     getlex              QName(PrivateNamespace("com.company.assembleegameclient.util:BloodComposition"), "imageDict_")
+     getlocal1
+     getlocal2
+     setproperty         MultinameL([PrivateNamespace("com.company.assembleegameclient.util:BloodComposition"), StaticProtectedNs("com.company.assembleegameclient.util:BloodComposition"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.util"), PackageInternalNs("com.company.assembleegameclient.util"), PrivateNamespace("FilePrivateNS:BloodComposition"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+L19:
+     getlocal2
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PrivateNamespace("com.company.assembleegameclient.util:BloodComposition"), "buildColors")
+  method
+   name "buildColors"
+   refid "com.company.assembleegameclient.util:BloodComposition/class/com.company.assembleegameclient.util:BloodComposition/class/buildColors"
+   param QName(PackageNamespace("flash.display"), "BitmapData")
+   returns TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace(""), "uint")>)
+   flag HAS_PARAM_NAMES
+   paramname "_arg1"
+   body
+    maxstack 3
+    localcount 6
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     pushbyte            0
+     setlocal            4
+
+     pushbyte            0
+     setlocal            5
+
+     pushbyte            0
+     setlocal3
+
+     getlex              QName(PackageNamespace("__AS3__.vec"), "Vector")
+     getlex              QName(PackageNamespace(""), "uint")
+     applytype           1
+     construct           0
+     coerce              TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace(""), "uint")>)
+     setlocal2
+
+     jump                L40
+
+L15:
+     label
+     pushbyte            0
+     setlocal            4
+
+     jump                L35
+
+L19:
+     label
+     getlocal1
+     getlocal3
+     getlocal            4
+     callproperty        QName(PackageNamespace(""), "getPixel32"), 2
+     convert_u
+     dup
+     setlocal            5
+
+     pushdouble          4278190080
+     bitand
+     pushbyte            0
+     ifeq                L34
+
+     getlocal2
+     getlocal            5
+     callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+
+L34:
+     inclocal_i          4
+L35:
+     getlocal            4
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "height")
+     iflt                L19
+
+     inclocal_i          3
+L40:
+     getlocal3
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "width")
+     iflt                L15
+
+     getlocal2
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+end ; class

@@ -1,0 +1,198 @@
+class
+ refid "robotlegs.bender.extensions.viewManager:ViewManagerExtension"
+ instance QName(PackageNamespace("robotlegs.bender.extensions.viewManager"), "ViewManagerExtension")
+  extends QName(PackageNamespace(""), "Object")
+  implements Multiname("IExtension", [PackageNamespace("robotlegs.bender.framework.api")])
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("robotlegs.bender.extensions.viewManager:ViewManagerExtension")
+  iinit
+   name "robotlegs.bender.extensions.viewManager:ViewManagerExtension/ViewManagerExtension"
+   refid "robotlegs.bender.extensions.viewManager:ViewManagerExtension/instance/init"
+   body
+    maxstack 3
+    localcount 1
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     getlex              QName(PackageNamespace("robotlegs.bender.framework.impl"), "UID")
+     getlex              QName(PackageNamespace("robotlegs.bender.extensions.viewManager"), "ViewManagerExtension")
+     callproperty        QName(PackageNamespace(""), "create"), 1
+     initproperty        QName(PrivateNamespace("robotlegs.bender.extensions.viewManager:ViewManagerExtension"), "_uid")
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait const QName(PrivateNamespace("robotlegs.bender.extensions.viewManager:ViewManagerExtension"), "_uid") type QName(PackageNamespace(""), "String") end
+  trait slot QName(PrivateNamespace("robotlegs.bender.extensions.viewManager:ViewManagerExtension"), "_injector") type QName(PackageNamespace("org.swiftsuspenders"), "Injector") end
+  trait slot QName(PrivateNamespace("robotlegs.bender.extensions.viewManager:ViewManagerExtension"), "_viewManager") type QName(PackageNamespace("robotlegs.bender.extensions.viewManager.api"), "IViewManager") end
+  trait method QName(PackageNamespace(""), "extend")
+   method
+    name "robotlegs.bender.extensions.viewManager:ViewManagerExtension/extend"
+    refid "robotlegs.bender.extensions.viewManager:ViewManagerExtension/instance/extend"
+    param QName(PackageNamespace("robotlegs.bender.framework.api"), "IContext")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg_1"
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      getproperty         QName(Namespace("robotlegs.bender.framework.api:IContext"), "injector")
+      setproperty         QName(PrivateNamespace("robotlegs.bender.extensions.viewManager:ViewManagerExtension"), "_injector")
+
+      findproperty        QName(PrivateNamespace("robotlegs.bender.extensions.viewManager:ViewManagerExtension"), "_containerRegistry")
+      getlex              QName(PrivateNamespace("robotlegs.bender.extensions.viewManager:ViewManagerExtension"), "_containerRegistry")
+      coerce              QName(PackageNamespace("robotlegs.bender.extensions.viewManager.impl"), "ContainerRegistry")
+      dup
+      iftrue              L15
+
+      pop
+      findpropstrict      QName(PackageNamespace("robotlegs.bender.extensions.viewManager.impl"), "ContainerRegistry")
+      constructprop       QName(PackageNamespace("robotlegs.bender.extensions.viewManager.impl"), "ContainerRegistry"), 0
+      coerce              QName(PackageNamespace("robotlegs.bender.extensions.viewManager.impl"), "ContainerRegistry")
+L15:
+      setproperty         QName(PrivateNamespace("robotlegs.bender.extensions.viewManager:ViewManagerExtension"), "_containerRegistry")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("robotlegs.bender.extensions.viewManager:ViewManagerExtension"), "_injector")
+      getlex              QName(PackageNamespace("robotlegs.bender.extensions.viewManager.impl"), "ContainerRegistry")
+      callproperty        QName(PackageNamespace(""), "map"), 1
+      getlex              QName(PrivateNamespace("robotlegs.bender.extensions.viewManager:ViewManagerExtension"), "_containerRegistry")
+      callpropvoid        QName(PackageNamespace(""), "toValue"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("robotlegs.bender.extensions.viewManager:ViewManagerExtension"), "_injector")
+      getlex              QName(PackageNamespace("robotlegs.bender.extensions.viewManager.api"), "IViewManager")
+      callproperty        QName(PackageNamespace(""), "map"), 1
+      getlex              QName(PackageNamespace("robotlegs.bender.extensions.viewManager.impl"), "ViewManager")
+      callpropvoid        QName(PackageNamespace(""), "toSingleton"), 1
+
+      getlocal1
+      getproperty         QName(Namespace("robotlegs.bender.framework.api:IContext"), "lifecycle")
+      getlocal0
+      getproperty         QName(PrivateNamespace("robotlegs.bender.extensions.viewManager:ViewManagerExtension"), "whenInitializing")
+      callpropvoid        QName(Namespace("robotlegs.bender.framework.api:ILifecycle"), "whenInitializing"), 1
+
+      getlocal1
+      getproperty         QName(Namespace("robotlegs.bender.framework.api:IContext"), "lifecycle")
+      getlocal0
+      getproperty         QName(PrivateNamespace("robotlegs.bender.extensions.viewManager:ViewManagerExtension"), "whenDestroying")
+      callpropvoid        QName(Namespace("robotlegs.bender.framework.api:ILifecycle"), "whenDestroying"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "toString")
+   method
+    name "robotlegs.bender.extensions.viewManager:ViewManagerExtension/toString"
+    refid "robotlegs.bender.extensions.viewManager:ViewManagerExtension/instance/toString"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("robotlegs.bender.extensions.viewManager:ViewManagerExtension"), "_uid")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("robotlegs.bender.extensions.viewManager:ViewManagerExtension"), "whenInitializing")
+   method
+    name "robotlegs.bender.extensions.viewManager:ViewManagerExtension/private:whenInitializing"
+    refid "robotlegs.bender.extensions.viewManager:ViewManagerExtension/instance/robotlegs.bender.extensions.viewManager:ViewManagerExtension/instance/whenInitializing"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace("robotlegs.bender.extensions.viewManager:ViewManagerExtension"), "_injector")
+      getlex              QName(PackageNamespace("robotlegs.bender.extensions.viewManager.api"), "IViewManager")
+      callproperty        QName(PackageNamespace(""), "getInstance"), 1
+      setproperty         QName(PrivateNamespace("robotlegs.bender.extensions.viewManager:ViewManagerExtension"), "_viewManager")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("robotlegs.bender.extensions.viewManager:ViewManagerExtension"), "whenDestroying")
+   method
+    name "robotlegs.bender.extensions.viewManager:ViewManagerExtension/private:whenDestroying"
+    refid "robotlegs.bender.extensions.viewManager:ViewManagerExtension/instance/robotlegs.bender.extensions.viewManager:ViewManagerExtension/instance/whenDestroying"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("robotlegs.bender.extensions.viewManager:ViewManagerExtension"), "_viewManager")
+      callpropvoid        QName(Namespace("robotlegs.bender.extensions.viewManager.api:IViewManager"), "removeAllHandlers"), 0
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("robotlegs.bender.extensions.viewManager:ViewManagerExtension"), "_injector")
+      getlex              QName(PackageNamespace("robotlegs.bender.extensions.viewManager.api"), "IViewManager")
+      callpropvoid        QName(PackageNamespace(""), "unmap"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("robotlegs.bender.extensions.viewManager:ViewManagerExtension"), "_injector")
+      getlex              QName(PackageNamespace("robotlegs.bender.extensions.viewManager.impl"), "ContainerRegistry")
+      callpropvoid        QName(PackageNamespace(""), "unmap"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  name ""
+  refid "robotlegs.bender.extensions.viewManager:ViewManagerExtension/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait slot QName(PrivateNamespace("robotlegs.bender.extensions.viewManager:ViewManagerExtension"), "_containerRegistry") slotid 1 type QName(PackageNamespace("robotlegs.bender.extensions.viewManager.impl"), "ContainerRegistry") end
+end ; class

@@ -1,0 +1,125 @@
+class
+ refid "com.company.assembleegameclient.ui.options:MultiChoiceOption"
+ instance QName(PackageNamespace("com.company.assembleegameclient.ui.options"), "MultiChoiceOption")
+  extends QName(PackageNamespace("com.company.assembleegameclient.ui.options"), "BaseOption")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.company.assembleegameclient.ui.options:MultiChoiceOption")
+  iinit
+   name "MultiChoiceOption"
+   refid "com.company.assembleegameclient.ui.options:MultiChoiceOption/instance/init"
+   param QName(PackageNamespace(""), "String")
+   param QName(PackageNamespace(""), "String")
+   param TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "StringBuilder")>)
+   param QName(PackageNamespace(""), "String")
+   param QName(PackageNamespace(""), "String")
+   param QName(PackageNamespace(""), "Number")
+   flag HAS_OPTIONAL
+   flag HAS_PARAM_NAMES
+   optional Integer(16777215)
+   paramname "paramName"
+   paramname "Label"
+   paramname "ValueNames"
+   paramname "Name"
+   paramname "Desc"
+   paramname "color"
+   body
+    maxstack 6
+    localcount 7
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     getlocal1
+     getlocal            4
+     getlocal            5
+     constructsuper      3
+
+     getlex              QName(ProtectedNamespace("com.company.assembleegameclient.ui.options:BaseOption"), "desc_")
+     getlocal            6
+     callpropvoid        QName(PackageNamespace(""), "setColor"), 1
+
+     getlex              QName(ProtectedNamespace("com.company.assembleegameclient.ui.options:BaseOption"), "tooltip_")
+     getproperty         QName(PackageNamespace(""), "tipText_")
+     getlocal            6
+     callpropvoid        QName(PackageNamespace(""), "setColor"), 1
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.ui.options"), "MultiChoiceBox")
+     getlocal2
+     getlocal3
+     getlex              QName(PackageNamespace("com.company.assembleegameclient.parameters"), "Parameters")
+     getproperty         QName(PackageNamespace(""), "data")
+     getlocal1
+     getproperty         MultinameL([PrivateNamespace("com.company.assembleegameclient.ui.options:MultiChoiceOption"), ProtectedNamespace("com.company.assembleegameclient.ui.options:MultiChoiceOption"), StaticProtectedNs("com.company.assembleegameclient.ui.options:MultiChoiceOption"), StaticProtectedNs("com.company.assembleegameclient.ui.options:BaseOption"), StaticProtectedNs("com.company.assembleegameclient.ui.options:Option"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.ui.options"), PackageInternalNs("com.company.assembleegameclient.ui.options"), PrivateNamespace("FilePrivateNS:MultiChoiceOption"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     getlocal            6
+     constructprop       QName(PackageNamespace("com.company.assembleegameclient.ui.options"), "MultiChoiceBox"), 4
+     setproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.options:MultiChoiceOption"), "multiChoiceBox")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.options:MultiChoiceOption"), "multiChoiceBox")
+     pushstring          "change"
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.options:MultiChoiceOption"), "onChange")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.options:MultiChoiceOption"), "multiChoiceBox")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.ui.options:MultiChoiceOption"), "multiChoiceBox") type QName(PackageNamespace("com.company.assembleegameclient.ui.options"), "MultiChoiceBox") end
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.ui.options:MultiChoiceOption"), "onChange")
+   method
+    name "onChange"
+    refid "com.company.assembleegameclient.ui.options:MultiChoiceOption/instance/com.company.assembleegameclient.ui.options:MultiChoiceOption/instance/onChange"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.parameters"), "Parameters")
+      getproperty         QName(PackageNamespace(""), "data")
+      getlex              QName(PackageNamespace(""), "paramName_")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.options:MultiChoiceOption"), "multiChoiceBox")
+      getproperty         QName(PackageNamespace(""), "selectedBoxes")
+      setproperty         MultinameL([PrivateNamespace("com.company.assembleegameclient.ui.options:MultiChoiceOption"), ProtectedNamespace("com.company.assembleegameclient.ui.options:MultiChoiceOption"), StaticProtectedNs("com.company.assembleegameclient.ui.options:MultiChoiceOption"), StaticProtectedNs("com.company.assembleegameclient.ui.options:BaseOption"), StaticProtectedNs("com.company.assembleegameclient.ui.options:Option"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.ui.options"), PackageInternalNs("com.company.assembleegameclient.ui.options"), PrivateNamespace("FilePrivateNS:MultiChoiceOption"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.parameters"), "Parameters")
+      callpropvoid        QName(PackageNamespace(""), "save"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.ui.options:MultiChoiceOption/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

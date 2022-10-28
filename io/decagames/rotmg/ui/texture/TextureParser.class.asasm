@@ -1,0 +1,587 @@
+class
+ refid "io.decagames.rotmg.ui.texture:TextureParser"
+ instance QName(PackageNamespace("io.decagames.rotmg.ui.texture"), "TextureParser")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  iinit
+   name "TextureParser"
+   refid "io.decagames.rotmg.ui.texture:TextureParser/instance/init"
+   body
+    maxstack 5
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("flash.utils"), "Dictionary")
+     constructprop       QName(PackageNamespace("flash.utils"), "Dictionary"), 0
+     setproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.texture:TextureParser"), "textures")
+
+     getlocal0
+     getlex              QName(PackageNamespace("kabam.rotmg.core"), "StaticInjectorContext")
+     callproperty        QName(PackageNamespace(""), "getInjector"), 0
+     getlex              QName(PackageNamespace("kabam.lib.json"), "JsonParser")
+     callproperty        QName(PackageNamespace(""), "getInstance"), 1
+     setproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.texture:TextureParser"), "json")
+
+     getlocal0
+     getlex              QName(PackageNamespace("io.decagames.rotmg.ui.assets"), "UIAssets")
+     constructprop       QName(PackageNamespace(""), "UI"), 0
+     getlex              QName(PackageNamespace("io.decagames.rotmg.ui.assets"), "UIAssets")
+     constructprop       QName(PackageNamespace(""), "UI_CONFIG"), 0
+     getlex              QName(PackageNamespace("io.decagames.rotmg.ui.assets"), "UIAssets")
+     constructprop       QName(PackageNamespace(""), "UI_SLICE_CONFIG"), 0
+     pushstring          "UI"
+     callpropvoid        QName(PackageNamespace(""), "registerTexture"), 4
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace("io.decagames.rotmg.ui.texture:TextureParser"), "textures") type QName(PackageNamespace("flash.utils"), "Dictionary") end
+  trait slot QName(PrivateNamespace("io.decagames.rotmg.ui.texture:TextureParser"), "json") type QName(PackageNamespace("kabam.lib.json"), "JsonParser") end
+  trait method QName(PackageNamespace(""), "registerTexture")
+   method
+    name "registerTexture"
+    refid "io.decagames.rotmg.ui.texture:TextureParser/instance/registerTexture"
+    param QName(PackageNamespace("flash.display"), "Bitmap")
+    param QName(PackageNamespace(""), "String")
+    param QName(PackageNamespace(""), "String")
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg_1"
+    paramname "_arg_2"
+    paramname "_arg_3"
+    paramname "_arg_4"
+    body
+     maxstack 9
+     localcount 5
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.texture:TextureParser"), "textures")
+      getlocal            4
+      pushstring          "texture"
+      getlocal1
+      pushstring          "configuration"
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.texture:TextureParser"), "json")
+      getlocal2
+      callproperty        QName(Namespace("kabam.lib.json:JsonParser"), "parse"), 1
+      pushstring          "sliceRectangles"
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.texture:TextureParser"), "json")
+      getlocal3
+      callproperty        QName(Namespace("kabam.lib.json:JsonParser"), "parse"), 1
+      newobject           3
+      setproperty         MultinameL([PrivateNamespace("io.decagames.rotmg.ui.texture:TextureParser"), ProtectedNamespace("io.decagames.rotmg.ui.texture:TextureParser"), StaticProtectedNs("io.decagames.rotmg.ui.texture:TextureParser"), StaticProtectedNs("Object"), PackageNamespace("io.decagames.rotmg.ui.texture"), PackageInternalNs("io.decagames.rotmg.ui.texture"), PrivateNamespace("FilePrivateNS:TextureParser"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("io.decagames.rotmg.ui.texture:TextureParser"), "getConfiguration")
+   method
+    name "getConfiguration"
+    refid "io.decagames.rotmg.ui.texture:TextureParser/instance/io.decagames.rotmg.ui.texture:TextureParser/getConfiguration"
+    param QName(PackageNamespace(""), "String")
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "Object")
+    flag HAS_PARAM_NAMES
+    paramname "_arg_1"
+    paramname "_arg_2"
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.texture:TextureParser"), "textures")
+      getlocal1
+      getproperty         MultinameL([PrivateNamespace("io.decagames.rotmg.ui.texture:TextureParser"), ProtectedNamespace("io.decagames.rotmg.ui.texture:TextureParser"), StaticProtectedNs("io.decagames.rotmg.ui.texture:TextureParser"), StaticProtectedNs("Object"), PackageNamespace("io.decagames.rotmg.ui.texture"), PackageInternalNs("io.decagames.rotmg.ui.texture"), PrivateNamespace("FilePrivateNS:TextureParser"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      iftrue              L13
+
+      findpropstrict      QName(PackageNamespace(""), "Error")
+      pushstring          "Can't find set name "
+      getlocal1
+      add
+      constructprop       QName(PackageNamespace(""), "Error"), 1
+      throw
+
+L13:
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.texture:TextureParser"), "textures")
+      getlocal1
+      getproperty         MultinameL([PrivateNamespace("io.decagames.rotmg.ui.texture:TextureParser"), ProtectedNamespace("io.decagames.rotmg.ui.texture:TextureParser"), StaticProtectedNs("io.decagames.rotmg.ui.texture:TextureParser"), StaticProtectedNs("Object"), PackageNamespace("io.decagames.rotmg.ui.texture"), PackageInternalNs("io.decagames.rotmg.ui.texture"), PrivateNamespace("FilePrivateNS:TextureParser"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getproperty         Multiname("configuration", [PrivateNamespace("io.decagames.rotmg.ui.texture:TextureParser"), ProtectedNamespace("io.decagames.rotmg.ui.texture:TextureParser"), StaticProtectedNs("io.decagames.rotmg.ui.texture:TextureParser"), StaticProtectedNs("Object"), PackageNamespace("io.decagames.rotmg.ui.texture"), PackageInternalNs("io.decagames.rotmg.ui.texture"), PrivateNamespace("FilePrivateNS:TextureParser"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getproperty         Multiname("frames", [PrivateNamespace("io.decagames.rotmg.ui.texture:TextureParser"), ProtectedNamespace("io.decagames.rotmg.ui.texture:TextureParser"), StaticProtectedNs("io.decagames.rotmg.ui.texture:TextureParser"), StaticProtectedNs("Object"), PackageNamespace("io.decagames.rotmg.ui.texture"), PackageInternalNs("io.decagames.rotmg.ui.texture"), PrivateNamespace("FilePrivateNS:TextureParser"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getlocal2
+      pushstring          ".png"
+      add
+      getproperty         MultinameL([PrivateNamespace("io.decagames.rotmg.ui.texture:TextureParser"), ProtectedNamespace("io.decagames.rotmg.ui.texture:TextureParser"), StaticProtectedNs("io.decagames.rotmg.ui.texture:TextureParser"), StaticProtectedNs("Object"), PackageNamespace("io.decagames.rotmg.ui.texture"), PackageInternalNs("io.decagames.rotmg.ui.texture"), PrivateNamespace("FilePrivateNS:TextureParser"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      iftrue              L30
+
+      findpropstrict      QName(PackageNamespace(""), "Error")
+      pushstring          "Can't find config for "
+      getlocal2
+      add
+      constructprop       QName(PackageNamespace(""), "Error"), 1
+      throw
+
+L30:
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.texture:TextureParser"), "textures")
+      getlocal1
+      getproperty         MultinameL([PrivateNamespace("io.decagames.rotmg.ui.texture:TextureParser"), ProtectedNamespace("io.decagames.rotmg.ui.texture:TextureParser"), StaticProtectedNs("io.decagames.rotmg.ui.texture:TextureParser"), StaticProtectedNs("Object"), PackageNamespace("io.decagames.rotmg.ui.texture"), PackageInternalNs("io.decagames.rotmg.ui.texture"), PrivateNamespace("FilePrivateNS:TextureParser"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getproperty         Multiname("configuration", [PrivateNamespace("io.decagames.rotmg.ui.texture:TextureParser"), ProtectedNamespace("io.decagames.rotmg.ui.texture:TextureParser"), StaticProtectedNs("io.decagames.rotmg.ui.texture:TextureParser"), StaticProtectedNs("Object"), PackageNamespace("io.decagames.rotmg.ui.texture"), PackageInternalNs("io.decagames.rotmg.ui.texture"), PrivateNamespace("FilePrivateNS:TextureParser"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getproperty         Multiname("frames", [PrivateNamespace("io.decagames.rotmg.ui.texture:TextureParser"), ProtectedNamespace("io.decagames.rotmg.ui.texture:TextureParser"), StaticProtectedNs("io.decagames.rotmg.ui.texture:TextureParser"), StaticProtectedNs("Object"), PackageNamespace("io.decagames.rotmg.ui.texture"), PackageInternalNs("io.decagames.rotmg.ui.texture"), PrivateNamespace("FilePrivateNS:TextureParser"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getlocal2
+      pushstring          ".png"
+      add
+      getproperty         MultinameL([PrivateNamespace("io.decagames.rotmg.ui.texture:TextureParser"), ProtectedNamespace("io.decagames.rotmg.ui.texture:TextureParser"), StaticProtectedNs("io.decagames.rotmg.ui.texture:TextureParser"), StaticProtectedNs("Object"), PackageNamespace("io.decagames.rotmg.ui.texture"), PackageInternalNs("io.decagames.rotmg.ui.texture"), PrivateNamespace("FilePrivateNS:TextureParser"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("io.decagames.rotmg.ui.texture:TextureParser"), "getBitmapUsingConfig")
+   method
+    name "getBitmapUsingConfig"
+    refid "io.decagames.rotmg.ui.texture:TextureParser/instance/io.decagames.rotmg.ui.texture:TextureParser/getBitmapUsingConfig"
+    param QName(PackageNamespace(""), "String")
+    param QName(PackageNamespace(""), "Object")
+    returns QName(PackageNamespace("flash.display"), "Bitmap")
+    flag HAS_PARAM_NAMES
+    paramname "_arg_1"
+    paramname "_arg_2"
+    body
+     maxstack 6
+     localcount 6
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.texture:TextureParser"), "textures")
+      getlocal1
+      getproperty         MultinameL([PrivateNamespace("io.decagames.rotmg.ui.texture:TextureParser"), ProtectedNamespace("io.decagames.rotmg.ui.texture:TextureParser"), StaticProtectedNs("io.decagames.rotmg.ui.texture:TextureParser"), StaticProtectedNs("Object"), PackageNamespace("io.decagames.rotmg.ui.texture"), PackageInternalNs("io.decagames.rotmg.ui.texture"), PrivateNamespace("FilePrivateNS:TextureParser"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getproperty         Multiname("texture", [PrivateNamespace("io.decagames.rotmg.ui.texture:TextureParser"), ProtectedNamespace("io.decagames.rotmg.ui.texture:TextureParser"), StaticProtectedNs("io.decagames.rotmg.ui.texture:TextureParser"), StaticProtectedNs("Object"), PackageNamespace("io.decagames.rotmg.ui.texture"), PackageInternalNs("io.decagames.rotmg.ui.texture"), PrivateNamespace("FilePrivateNS:TextureParser"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      coerce              QName(PackageNamespace("flash.display"), "Bitmap")
+      dup
+      setlocal            5
+
+      getproperty         QName(PackageNamespace(""), "bitmapData")
+      findpropstrict      QName(PackageNamespace("flash.geom"), "Rectangle")
+      getlocal2
+      getproperty         Multiname("frame", [PrivateNamespace("io.decagames.rotmg.ui.texture:TextureParser"), ProtectedNamespace("io.decagames.rotmg.ui.texture:TextureParser"), StaticProtectedNs("io.decagames.rotmg.ui.texture:TextureParser"), StaticProtectedNs("Object"), PackageNamespace("io.decagames.rotmg.ui.texture"), PackageInternalNs("io.decagames.rotmg.ui.texture"), PrivateNamespace("FilePrivateNS:TextureParser"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getproperty         Multiname("x", [PrivateNamespace("io.decagames.rotmg.ui.texture:TextureParser"), ProtectedNamespace("io.decagames.rotmg.ui.texture:TextureParser"), StaticProtectedNs("io.decagames.rotmg.ui.texture:TextureParser"), StaticProtectedNs("Object"), PackageNamespace("io.decagames.rotmg.ui.texture"), PackageInternalNs("io.decagames.rotmg.ui.texture"), PrivateNamespace("FilePrivateNS:TextureParser"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getlocal2
+      getproperty         Multiname("frame", [PrivateNamespace("io.decagames.rotmg.ui.texture:TextureParser"), ProtectedNamespace("io.decagames.rotmg.ui.texture:TextureParser"), StaticProtectedNs("io.decagames.rotmg.ui.texture:TextureParser"), StaticProtectedNs("Object"), PackageNamespace("io.decagames.rotmg.ui.texture"), PackageInternalNs("io.decagames.rotmg.ui.texture"), PrivateNamespace("FilePrivateNS:TextureParser"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getproperty         Multiname("y", [PrivateNamespace("io.decagames.rotmg.ui.texture:TextureParser"), ProtectedNamespace("io.decagames.rotmg.ui.texture:TextureParser"), StaticProtectedNs("io.decagames.rotmg.ui.texture:TextureParser"), StaticProtectedNs("Object"), PackageNamespace("io.decagames.rotmg.ui.texture"), PackageInternalNs("io.decagames.rotmg.ui.texture"), PrivateNamespace("FilePrivateNS:TextureParser"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getlocal2
+      getproperty         Multiname("frame", [PrivateNamespace("io.decagames.rotmg.ui.texture:TextureParser"), ProtectedNamespace("io.decagames.rotmg.ui.texture:TextureParser"), StaticProtectedNs("io.decagames.rotmg.ui.texture:TextureParser"), StaticProtectedNs("Object"), PackageNamespace("io.decagames.rotmg.ui.texture"), PackageInternalNs("io.decagames.rotmg.ui.texture"), PrivateNamespace("FilePrivateNS:TextureParser"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getproperty         Multiname("w", [PrivateNamespace("io.decagames.rotmg.ui.texture:TextureParser"), ProtectedNamespace("io.decagames.rotmg.ui.texture:TextureParser"), StaticProtectedNs("io.decagames.rotmg.ui.texture:TextureParser"), StaticProtectedNs("Object"), PackageNamespace("io.decagames.rotmg.ui.texture"), PackageInternalNs("io.decagames.rotmg.ui.texture"), PrivateNamespace("FilePrivateNS:TextureParser"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getlocal2
+      getproperty         Multiname("frame", [PrivateNamespace("io.decagames.rotmg.ui.texture:TextureParser"), ProtectedNamespace("io.decagames.rotmg.ui.texture:TextureParser"), StaticProtectedNs("io.decagames.rotmg.ui.texture:TextureParser"), StaticProtectedNs("Object"), PackageNamespace("io.decagames.rotmg.ui.texture"), PackageInternalNs("io.decagames.rotmg.ui.texture"), PrivateNamespace("FilePrivateNS:TextureParser"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getproperty         Multiname("h", [PrivateNamespace("io.decagames.rotmg.ui.texture:TextureParser"), ProtectedNamespace("io.decagames.rotmg.ui.texture:TextureParser"), StaticProtectedNs("io.decagames.rotmg.ui.texture:TextureParser"), StaticProtectedNs("Object"), PackageNamespace("io.decagames.rotmg.ui.texture"), PackageInternalNs("io.decagames.rotmg.ui.texture"), PrivateNamespace("FilePrivateNS:TextureParser"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      constructprop       QName(PackageNamespace("flash.geom"), "Rectangle"), 4
+      callproperty        QName(PackageNamespace(""), "getPixels"), 1
+      coerce              QName(PackageNamespace("flash.utils"), "ByteArray")
+      dup
+      setlocal            4
+
+      pushbyte            0
+      setproperty         QName(PackageNamespace(""), "position")
+
+      findpropstrict      QName(PackageNamespace("flash.display"), "BitmapData")
+      getlocal2
+      getproperty         Multiname("frame", [PrivateNamespace("io.decagames.rotmg.ui.texture:TextureParser"), ProtectedNamespace("io.decagames.rotmg.ui.texture:TextureParser"), StaticProtectedNs("io.decagames.rotmg.ui.texture:TextureParser"), StaticProtectedNs("Object"), PackageNamespace("io.decagames.rotmg.ui.texture"), PackageInternalNs("io.decagames.rotmg.ui.texture"), PrivateNamespace("FilePrivateNS:TextureParser"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getproperty         Multiname("w", [PrivateNamespace("io.decagames.rotmg.ui.texture:TextureParser"), ProtectedNamespace("io.decagames.rotmg.ui.texture:TextureParser"), StaticProtectedNs("io.decagames.rotmg.ui.texture:TextureParser"), StaticProtectedNs("Object"), PackageNamespace("io.decagames.rotmg.ui.texture"), PackageInternalNs("io.decagames.rotmg.ui.texture"), PrivateNamespace("FilePrivateNS:TextureParser"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getlocal2
+      getproperty         Multiname("frame", [PrivateNamespace("io.decagames.rotmg.ui.texture:TextureParser"), ProtectedNamespace("io.decagames.rotmg.ui.texture:TextureParser"), StaticProtectedNs("io.decagames.rotmg.ui.texture:TextureParser"), StaticProtectedNs("Object"), PackageNamespace("io.decagames.rotmg.ui.texture"), PackageInternalNs("io.decagames.rotmg.ui.texture"), PrivateNamespace("FilePrivateNS:TextureParser"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getproperty         Multiname("h", [PrivateNamespace("io.decagames.rotmg.ui.texture:TextureParser"), ProtectedNamespace("io.decagames.rotmg.ui.texture:TextureParser"), StaticProtectedNs("io.decagames.rotmg.ui.texture:TextureParser"), StaticProtectedNs("Object"), PackageNamespace("io.decagames.rotmg.ui.texture"), PackageInternalNs("io.decagames.rotmg.ui.texture"), PrivateNamespace("FilePrivateNS:TextureParser"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      constructprop       QName(PackageNamespace("flash.display"), "BitmapData"), 2
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      setlocal3
+
+      getlocal3
+      findpropstrict      QName(PackageNamespace("flash.geom"), "Rectangle")
+      pushbyte            0
+      pushbyte            0
+      getlocal2
+      getproperty         Multiname("frame", [PrivateNamespace("io.decagames.rotmg.ui.texture:TextureParser"), ProtectedNamespace("io.decagames.rotmg.ui.texture:TextureParser"), StaticProtectedNs("io.decagames.rotmg.ui.texture:TextureParser"), StaticProtectedNs("Object"), PackageNamespace("io.decagames.rotmg.ui.texture"), PackageInternalNs("io.decagames.rotmg.ui.texture"), PrivateNamespace("FilePrivateNS:TextureParser"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getproperty         Multiname("w", [PrivateNamespace("io.decagames.rotmg.ui.texture:TextureParser"), ProtectedNamespace("io.decagames.rotmg.ui.texture:TextureParser"), StaticProtectedNs("io.decagames.rotmg.ui.texture:TextureParser"), StaticProtectedNs("Object"), PackageNamespace("io.decagames.rotmg.ui.texture"), PackageInternalNs("io.decagames.rotmg.ui.texture"), PrivateNamespace("FilePrivateNS:TextureParser"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getlocal2
+      getproperty         Multiname("frame", [PrivateNamespace("io.decagames.rotmg.ui.texture:TextureParser"), ProtectedNamespace("io.decagames.rotmg.ui.texture:TextureParser"), StaticProtectedNs("io.decagames.rotmg.ui.texture:TextureParser"), StaticProtectedNs("Object"), PackageNamespace("io.decagames.rotmg.ui.texture"), PackageInternalNs("io.decagames.rotmg.ui.texture"), PrivateNamespace("FilePrivateNS:TextureParser"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getproperty         Multiname("h", [PrivateNamespace("io.decagames.rotmg.ui.texture:TextureParser"), ProtectedNamespace("io.decagames.rotmg.ui.texture:TextureParser"), StaticProtectedNs("io.decagames.rotmg.ui.texture:TextureParser"), StaticProtectedNs("Object"), PackageNamespace("io.decagames.rotmg.ui.texture"), PackageInternalNs("io.decagames.rotmg.ui.texture"), PrivateNamespace("FilePrivateNS:TextureParser"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      constructprop       QName(PackageNamespace("flash.geom"), "Rectangle"), 4
+      getlocal            4
+      callpropvoid        QName(PackageNamespace(""), "setPixels"), 2
+
+      findpropstrict      QName(PackageNamespace("flash.display"), "Bitmap")
+      getlocal3
+      constructprop       QName(PackageNamespace("flash.display"), "Bitmap"), 1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getTexture")
+   method
+    name "getTexture"
+    refid "io.decagames.rotmg.ui.texture:TextureParser/instance/getTexture"
+    param QName(PackageNamespace(""), "String")
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace("flash.display"), "Bitmap")
+    flag HAS_PARAM_NAMES
+    paramname "_arg_1"
+    paramname "_arg_2"
+    body
+     maxstack 3
+     localcount 4
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      getlocal2
+      callproperty        QName(PrivateNamespace("io.decagames.rotmg.ui.texture:TextureParser"), "getConfiguration"), 2
+      coerce              QName(PackageNamespace(""), "Object")
+      setlocal3
+
+      getlocal0
+      getlocal1
+      getlocal3
+      callproperty        QName(PrivateNamespace("io.decagames.rotmg.ui.texture:TextureParser"), "getBitmapUsingConfig"), 2
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getSliceScalingBitmap")
+   method
+    name "getSliceScalingBitmap"
+    refid "io.decagames.rotmg.ui.texture:TextureParser/instance/getSliceScalingBitmap"
+    param QName(PackageNamespace(""), "String")
+    param QName(PackageNamespace(""), "String")
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace("io.decagames.rotmg.ui.sliceScaling"), "SliceScalingBitmap")
+    flag HAS_OPTIONAL
+    flag HAS_PARAM_NAMES
+    optional Integer(0)
+    paramname "_arg_1"
+    paramname "_arg_2"
+    paramname "_arg_3"
+    body
+     maxstack 5
+     localcount 9
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      setlocal            4
+
+      getlocal0
+      getlocal1
+      getlocal2
+      callproperty        QName(PackageNamespace(""), "getTexture"), 2
+      coerce              QName(PackageNamespace("flash.display"), "Bitmap")
+      setlocal            6
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.texture:TextureParser"), "textures")
+      getlocal1
+      getproperty         MultinameL([PrivateNamespace("io.decagames.rotmg.ui.texture:TextureParser"), ProtectedNamespace("io.decagames.rotmg.ui.texture:TextureParser"), StaticProtectedNs("io.decagames.rotmg.ui.texture:TextureParser"), StaticProtectedNs("Object"), PackageNamespace("io.decagames.rotmg.ui.texture"), PackageInternalNs("io.decagames.rotmg.ui.texture"), PrivateNamespace("FilePrivateNS:TextureParser"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getproperty         Multiname("sliceRectangles", [PrivateNamespace("io.decagames.rotmg.ui.texture:TextureParser"), ProtectedNamespace("io.decagames.rotmg.ui.texture:TextureParser"), StaticProtectedNs("io.decagames.rotmg.ui.texture:TextureParser"), StaticProtectedNs("Object"), PackageNamespace("io.decagames.rotmg.ui.texture"), PackageInternalNs("io.decagames.rotmg.ui.texture"), PrivateNamespace("FilePrivateNS:TextureParser"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getproperty         Multiname("slices", [PrivateNamespace("io.decagames.rotmg.ui.texture:TextureParser"), ProtectedNamespace("io.decagames.rotmg.ui.texture:TextureParser"), StaticProtectedNs("io.decagames.rotmg.ui.texture:TextureParser"), StaticProtectedNs("Object"), PackageNamespace("io.decagames.rotmg.ui.texture"), PackageInternalNs("io.decagames.rotmg.ui.texture"), PrivateNamespace("FilePrivateNS:TextureParser"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getlocal2
+      pushstring          ".png"
+      add
+      getproperty         MultinameL([PrivateNamespace("io.decagames.rotmg.ui.texture:TextureParser"), ProtectedNamespace("io.decagames.rotmg.ui.texture:TextureParser"), StaticProtectedNs("io.decagames.rotmg.ui.texture:TextureParser"), StaticProtectedNs("Object"), PackageNamespace("io.decagames.rotmg.ui.texture"), PackageInternalNs("io.decagames.rotmg.ui.texture"), PrivateNamespace("FilePrivateNS:TextureParser"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      coerce              QName(PackageNamespace(""), "Object")
+      setlocal            5
+
+      getlex              QName(PackageNamespace("io.decagames.rotmg.ui.sliceScaling"), "SliceScalingBitmap")
+      getproperty         QName(PackageNamespace(""), "SCALE_TYPE_NONE")
+      coerce_s
+      setlocal            8
+
+      getlocal            5
+      iffalse             L48
+
+      findpropstrict      QName(PackageNamespace("flash.geom"), "Rectangle")
+      getlocal            5
+      getproperty         Multiname("rectangle", [PrivateNamespace("io.decagames.rotmg.ui.texture:TextureParser"), ProtectedNamespace("io.decagames.rotmg.ui.texture:TextureParser"), StaticProtectedNs("io.decagames.rotmg.ui.texture:TextureParser"), StaticProtectedNs("Object"), PackageNamespace("io.decagames.rotmg.ui.texture"), PackageInternalNs("io.decagames.rotmg.ui.texture"), PrivateNamespace("FilePrivateNS:TextureParser"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getproperty         Multiname("x", [PrivateNamespace("io.decagames.rotmg.ui.texture:TextureParser"), ProtectedNamespace("io.decagames.rotmg.ui.texture:TextureParser"), StaticProtectedNs("io.decagames.rotmg.ui.texture:TextureParser"), StaticProtectedNs("Object"), PackageNamespace("io.decagames.rotmg.ui.texture"), PackageInternalNs("io.decagames.rotmg.ui.texture"), PrivateNamespace("FilePrivateNS:TextureParser"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getlocal            5
+      getproperty         Multiname("rectangle", [PrivateNamespace("io.decagames.rotmg.ui.texture:TextureParser"), ProtectedNamespace("io.decagames.rotmg.ui.texture:TextureParser"), StaticProtectedNs("io.decagames.rotmg.ui.texture:TextureParser"), StaticProtectedNs("Object"), PackageNamespace("io.decagames.rotmg.ui.texture"), PackageInternalNs("io.decagames.rotmg.ui.texture"), PrivateNamespace("FilePrivateNS:TextureParser"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getproperty         Multiname("y", [PrivateNamespace("io.decagames.rotmg.ui.texture:TextureParser"), ProtectedNamespace("io.decagames.rotmg.ui.texture:TextureParser"), StaticProtectedNs("io.decagames.rotmg.ui.texture:TextureParser"), StaticProtectedNs("Object"), PackageNamespace("io.decagames.rotmg.ui.texture"), PackageInternalNs("io.decagames.rotmg.ui.texture"), PrivateNamespace("FilePrivateNS:TextureParser"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getlocal            5
+      getproperty         Multiname("rectangle", [PrivateNamespace("io.decagames.rotmg.ui.texture:TextureParser"), ProtectedNamespace("io.decagames.rotmg.ui.texture:TextureParser"), StaticProtectedNs("io.decagames.rotmg.ui.texture:TextureParser"), StaticProtectedNs("Object"), PackageNamespace("io.decagames.rotmg.ui.texture"), PackageInternalNs("io.decagames.rotmg.ui.texture"), PrivateNamespace("FilePrivateNS:TextureParser"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getproperty         Multiname("w", [PrivateNamespace("io.decagames.rotmg.ui.texture:TextureParser"), ProtectedNamespace("io.decagames.rotmg.ui.texture:TextureParser"), StaticProtectedNs("io.decagames.rotmg.ui.texture:TextureParser"), StaticProtectedNs("Object"), PackageNamespace("io.decagames.rotmg.ui.texture"), PackageInternalNs("io.decagames.rotmg.ui.texture"), PrivateNamespace("FilePrivateNS:TextureParser"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getlocal            5
+      getproperty         Multiname("rectangle", [PrivateNamespace("io.decagames.rotmg.ui.texture:TextureParser"), ProtectedNamespace("io.decagames.rotmg.ui.texture:TextureParser"), StaticProtectedNs("io.decagames.rotmg.ui.texture:TextureParser"), StaticProtectedNs("Object"), PackageNamespace("io.decagames.rotmg.ui.texture"), PackageInternalNs("io.decagames.rotmg.ui.texture"), PrivateNamespace("FilePrivateNS:TextureParser"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getproperty         Multiname("h", [PrivateNamespace("io.decagames.rotmg.ui.texture:TextureParser"), ProtectedNamespace("io.decagames.rotmg.ui.texture:TextureParser"), StaticProtectedNs("io.decagames.rotmg.ui.texture:TextureParser"), StaticProtectedNs("Object"), PackageNamespace("io.decagames.rotmg.ui.texture"), PackageInternalNs("io.decagames.rotmg.ui.texture"), PrivateNamespace("FilePrivateNS:TextureParser"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      constructprop       QName(PackageNamespace("flash.geom"), "Rectangle"), 4
+      coerce              QName(PackageNamespace("flash.geom"), "Rectangle")
+      setlocal            4
+
+      getlocal            5
+      getproperty         Multiname("type", [PrivateNamespace("io.decagames.rotmg.ui.texture:TextureParser"), ProtectedNamespace("io.decagames.rotmg.ui.texture:TextureParser"), StaticProtectedNs("io.decagames.rotmg.ui.texture:TextureParser"), StaticProtectedNs("Object"), PackageNamespace("io.decagames.rotmg.ui.texture"), PackageInternalNs("io.decagames.rotmg.ui.texture"), PrivateNamespace("FilePrivateNS:TextureParser"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      coerce_s
+      setlocal            8
+
+L48:
+      findpropstrict      QName(PackageNamespace("io.decagames.rotmg.ui.sliceScaling"), "SliceScalingBitmap")
+      getlocal            6
+      getproperty         QName(PackageNamespace(""), "bitmapData")
+      getlocal            8
+      getlocal            4
+      constructprop       QName(PackageNamespace("io.decagames.rotmg.ui.sliceScaling"), "SliceScalingBitmap"), 3
+      coerce              QName(PackageNamespace("io.decagames.rotmg.ui.sliceScaling"), "SliceScalingBitmap")
+      dup
+      setlocal            7
+
+      getlocal2
+      setproperty         QName(PackageNamespace(""), "sourceBitmapName")
+
+      getlocal3
+      pushbyte            0
+      ifeq                L65
+
+      getlocal            7
+      getlocal3
+      setproperty         QName(PackageNamespace(""), "width")
+
+L65:
+      getlocal            7
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getSliceScalingBitmapRotated")
+   method
+    name "getSliceScalingBitmapRotated"
+    refid "io.decagames.rotmg.ui.texture:TextureParser/instance/getSliceScalingBitmapRotated"
+    param QName(PackageNamespace(""), "String")
+    param QName(PackageNamespace(""), "String")
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace("io.decagames.rotmg.ui.sliceScaling"), "SliceScalingBitmap")
+    flag HAS_OPTIONAL
+    flag HAS_PARAM_NAMES
+    optional Integer(0)
+    paramname "_arg_1"
+    paramname "_arg_2"
+    paramname "_arg_3"
+    body
+     maxstack 5
+     localcount 11
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      setlocal            4
+
+      getlocal0
+      getlocal1
+      getlocal2
+      callproperty        QName(PackageNamespace(""), "getTexture"), 2
+      coerce              QName(PackageNamespace("flash.display"), "Bitmap")
+      setlocal            6
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.texture:TextureParser"), "textures")
+      getlocal1
+      getproperty         MultinameL([PrivateNamespace("io.decagames.rotmg.ui.texture:TextureParser"), ProtectedNamespace("io.decagames.rotmg.ui.texture:TextureParser"), StaticProtectedNs("io.decagames.rotmg.ui.texture:TextureParser"), StaticProtectedNs("Object"), PackageNamespace("io.decagames.rotmg.ui.texture"), PackageInternalNs("io.decagames.rotmg.ui.texture"), PrivateNamespace("FilePrivateNS:TextureParser"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getproperty         Multiname("sliceRectangles", [PrivateNamespace("io.decagames.rotmg.ui.texture:TextureParser"), ProtectedNamespace("io.decagames.rotmg.ui.texture:TextureParser"), StaticProtectedNs("io.decagames.rotmg.ui.texture:TextureParser"), StaticProtectedNs("Object"), PackageNamespace("io.decagames.rotmg.ui.texture"), PackageInternalNs("io.decagames.rotmg.ui.texture"), PrivateNamespace("FilePrivateNS:TextureParser"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getproperty         Multiname("slices", [PrivateNamespace("io.decagames.rotmg.ui.texture:TextureParser"), ProtectedNamespace("io.decagames.rotmg.ui.texture:TextureParser"), StaticProtectedNs("io.decagames.rotmg.ui.texture:TextureParser"), StaticProtectedNs("Object"), PackageNamespace("io.decagames.rotmg.ui.texture"), PackageInternalNs("io.decagames.rotmg.ui.texture"), PrivateNamespace("FilePrivateNS:TextureParser"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getlocal2
+      pushstring          ".png"
+      add
+      getproperty         MultinameL([PrivateNamespace("io.decagames.rotmg.ui.texture:TextureParser"), ProtectedNamespace("io.decagames.rotmg.ui.texture:TextureParser"), StaticProtectedNs("io.decagames.rotmg.ui.texture:TextureParser"), StaticProtectedNs("Object"), PackageNamespace("io.decagames.rotmg.ui.texture"), PackageInternalNs("io.decagames.rotmg.ui.texture"), PrivateNamespace("FilePrivateNS:TextureParser"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      coerce              QName(PackageNamespace(""), "Object")
+      setlocal            5
+
+      getlex              QName(PackageNamespace("io.decagames.rotmg.ui.sliceScaling"), "SliceScalingBitmap")
+      getproperty         QName(PackageNamespace(""), "SCALE_TYPE_NONE")
+      coerce_s
+      setlocal            10
+
+      getlocal            5
+      iffalse             L48
+
+      findpropstrict      QName(PackageNamespace("flash.geom"), "Rectangle")
+      getlocal            5
+      getproperty         Multiname("rectangle", [PrivateNamespace("io.decagames.rotmg.ui.texture:TextureParser"), ProtectedNamespace("io.decagames.rotmg.ui.texture:TextureParser"), StaticProtectedNs("io.decagames.rotmg.ui.texture:TextureParser"), StaticProtectedNs("Object"), PackageNamespace("io.decagames.rotmg.ui.texture"), PackageInternalNs("io.decagames.rotmg.ui.texture"), PrivateNamespace("FilePrivateNS:TextureParser"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getproperty         Multiname("y", [PrivateNamespace("io.decagames.rotmg.ui.texture:TextureParser"), ProtectedNamespace("io.decagames.rotmg.ui.texture:TextureParser"), StaticProtectedNs("io.decagames.rotmg.ui.texture:TextureParser"), StaticProtectedNs("Object"), PackageNamespace("io.decagames.rotmg.ui.texture"), PackageInternalNs("io.decagames.rotmg.ui.texture"), PrivateNamespace("FilePrivateNS:TextureParser"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getlocal            5
+      getproperty         Multiname("rectangle", [PrivateNamespace("io.decagames.rotmg.ui.texture:TextureParser"), ProtectedNamespace("io.decagames.rotmg.ui.texture:TextureParser"), StaticProtectedNs("io.decagames.rotmg.ui.texture:TextureParser"), StaticProtectedNs("Object"), PackageNamespace("io.decagames.rotmg.ui.texture"), PackageInternalNs("io.decagames.rotmg.ui.texture"), PrivateNamespace("FilePrivateNS:TextureParser"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getproperty         Multiname("x", [PrivateNamespace("io.decagames.rotmg.ui.texture:TextureParser"), ProtectedNamespace("io.decagames.rotmg.ui.texture:TextureParser"), StaticProtectedNs("io.decagames.rotmg.ui.texture:TextureParser"), StaticProtectedNs("Object"), PackageNamespace("io.decagames.rotmg.ui.texture"), PackageInternalNs("io.decagames.rotmg.ui.texture"), PrivateNamespace("FilePrivateNS:TextureParser"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getlocal            5
+      getproperty         Multiname("rectangle", [PrivateNamespace("io.decagames.rotmg.ui.texture:TextureParser"), ProtectedNamespace("io.decagames.rotmg.ui.texture:TextureParser"), StaticProtectedNs("io.decagames.rotmg.ui.texture:TextureParser"), StaticProtectedNs("Object"), PackageNamespace("io.decagames.rotmg.ui.texture"), PackageInternalNs("io.decagames.rotmg.ui.texture"), PrivateNamespace("FilePrivateNS:TextureParser"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getproperty         Multiname("h", [PrivateNamespace("io.decagames.rotmg.ui.texture:TextureParser"), ProtectedNamespace("io.decagames.rotmg.ui.texture:TextureParser"), StaticProtectedNs("io.decagames.rotmg.ui.texture:TextureParser"), StaticProtectedNs("Object"), PackageNamespace("io.decagames.rotmg.ui.texture"), PackageInternalNs("io.decagames.rotmg.ui.texture"), PrivateNamespace("FilePrivateNS:TextureParser"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getlocal            5
+      getproperty         Multiname("rectangle", [PrivateNamespace("io.decagames.rotmg.ui.texture:TextureParser"), ProtectedNamespace("io.decagames.rotmg.ui.texture:TextureParser"), StaticProtectedNs("io.decagames.rotmg.ui.texture:TextureParser"), StaticProtectedNs("Object"), PackageNamespace("io.decagames.rotmg.ui.texture"), PackageInternalNs("io.decagames.rotmg.ui.texture"), PrivateNamespace("FilePrivateNS:TextureParser"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getproperty         Multiname("w", [PrivateNamespace("io.decagames.rotmg.ui.texture:TextureParser"), ProtectedNamespace("io.decagames.rotmg.ui.texture:TextureParser"), StaticProtectedNs("io.decagames.rotmg.ui.texture:TextureParser"), StaticProtectedNs("Object"), PackageNamespace("io.decagames.rotmg.ui.texture"), PackageInternalNs("io.decagames.rotmg.ui.texture"), PrivateNamespace("FilePrivateNS:TextureParser"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      constructprop       QName(PackageNamespace("flash.geom"), "Rectangle"), 4
+      coerce              QName(PackageNamespace("flash.geom"), "Rectangle")
+      setlocal            4
+
+      getlocal            5
+      getproperty         Multiname("type", [PrivateNamespace("io.decagames.rotmg.ui.texture:TextureParser"), ProtectedNamespace("io.decagames.rotmg.ui.texture:TextureParser"), StaticProtectedNs("io.decagames.rotmg.ui.texture:TextureParser"), StaticProtectedNs("Object"), PackageNamespace("io.decagames.rotmg.ui.texture"), PackageInternalNs("io.decagames.rotmg.ui.texture"), PrivateNamespace("FilePrivateNS:TextureParser"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      coerce_s
+      setlocal            10
+
+L48:
+      findpropstrict      QName(PackageNamespace("flash.geom"), "Matrix")
+      constructprop       QName(PackageNamespace("flash.geom"), "Matrix"), 0
+      coerce              QName(PackageNamespace("flash.geom"), "Matrix")
+      dup
+      setlocal            8
+
+      getlocal            6
+      getproperty         QName(PackageNamespace(""), "width")
+      negate
+      pushbyte            2
+      divide
+      getlocal            6
+      getproperty         QName(PackageNamespace(""), "height")
+      negate
+      pushbyte            2
+      divide
+      callpropvoid        QName(PackageNamespace(""), "translate"), 2
+
+      getlocal            8
+      pushdouble          3.141592653589793
+      pushbyte            2
+      divide
+      callpropvoid        QName(PackageNamespace(""), "rotate"), 1
+
+      getlocal            8
+      getlocal            6
+      getproperty         QName(PackageNamespace(""), "height")
+      pushbyte            2
+      divide
+      getlocal            6
+      getproperty         QName(PackageNamespace(""), "width")
+      pushbyte            2
+      divide
+      callpropvoid        QName(PackageNamespace(""), "translate"), 2
+
+      findpropstrict      QName(PackageNamespace("flash.display"), "BitmapData")
+      getlocal            6
+      getproperty         QName(PackageNamespace(""), "height")
+      getlocal            6
+      getproperty         QName(PackageNamespace(""), "width")
+      pushtrue
+      pushbyte            0
+      constructprop       QName(PackageNamespace("flash.display"), "BitmapData"), 4
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      dup
+      setlocal            7
+
+      getlocal            6
+      getlocal            8
+      callpropvoid        QName(PackageNamespace(""), "draw"), 2
+
+      findpropstrict      QName(PackageNamespace("io.decagames.rotmg.ui.sliceScaling"), "SliceScalingBitmap")
+      getlocal            7
+      getlocal            10
+      getlocal            4
+      constructprop       QName(PackageNamespace("io.decagames.rotmg.ui.sliceScaling"), "SliceScalingBitmap"), 3
+      coerce              QName(PackageNamespace("io.decagames.rotmg.ui.sliceScaling"), "SliceScalingBitmap")
+      dup
+      setlocal            9
+
+      getlocal2
+      setproperty         QName(PackageNamespace(""), "sourceBitmapName")
+
+      getlocal3
+      pushbyte            0
+      ifeq                L109
+
+      getlocal            9
+      getlocal3
+      setproperty         QName(PackageNamespace(""), "width")
+
+L109:
+      getlocal            9
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "io.decagames.rotmg.ui.texture:TextureParser/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait slot QName(PrivateNamespace("io.decagames.rotmg.ui.texture:TextureParser"), "_instance") type QName(PackageNamespace("io.decagames.rotmg.ui.texture"), "TextureParser") end
+ trait getter QName(PackageNamespace(""), "instance")
+  method
+   name "instance"
+   refid "io.decagames.rotmg.ui.texture:TextureParser/class/instance/getter"
+   returns QName(PackageNamespace("io.decagames.rotmg.ui.texture"), "TextureParser")
+   body
+    maxstack 2
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PrivateNamespace("io.decagames.rotmg.ui.texture:TextureParser"), "_instance")
+     pushnull
+     ifne                L10
+
+     getlocal0
+     construct           0
+     findproperty        QName(PrivateNamespace("io.decagames.rotmg.ui.texture:TextureParser"), "_instance")
+     swap
+     setproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.texture:TextureParser"), "_instance")
+
+L10:
+     getlex              QName(PrivateNamespace("io.decagames.rotmg.ui.texture:TextureParser"), "_instance")
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+end ; class

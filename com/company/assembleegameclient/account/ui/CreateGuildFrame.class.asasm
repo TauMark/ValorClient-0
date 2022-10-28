@@ -1,0 +1,254 @@
+class
+ refid "com.company.assembleegameclient.account.ui:CreateGuildFrame"
+ instance QName(PackageNamespace("com.company.assembleegameclient.account.ui"), "CreateGuildFrame")
+  extends QName(PackageNamespace("com.company.assembleegameclient.account.ui"), "Frame")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.company.assembleegameclient.account.ui:CreateGuildFrame")
+  iinit
+   name "CreateGuildFrame"
+   refid "com.company.assembleegameclient.account.ui:CreateGuildFrame/instance/init"
+   param QName(PackageNamespace("com.company.assembleegameclient.game"), "GameSprite")
+   flag HAS_PARAM_NAMES
+   paramname "_arg1"
+   body
+    maxstack 4
+    localcount 3
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     findpropstrict      QName(PackageNamespace("org.osflash.signals"), "Signal")
+     constructprop       QName(PackageNamespace("org.osflash.signals"), "Signal"), 0
+     findproperty        QName(PackageNamespace(""), "close")
+     swap
+     initproperty        QName(PackageNamespace(""), "close")
+
+     getlocal0
+     pushstring          "CreateGuildFrame.title"
+     pushstring          "Cancel"
+     pushstring          "CreateGuildFrame.rightButton"
+     constructsuper      3
+
+     getlocal0
+     getlocal1
+     setproperty         QName(PrivateNamespace("com.company.assembleegameclient.account.ui:CreateGuildFrame"), "gs_")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.account.ui"), "TextInputField")
+     pushstring          "CreateGuildFrame.name"
+     pushfalse
+     constructprop       QName(PackageNamespace("com.company.assembleegameclient.account.ui"), "TextInputField"), 2
+     setproperty         QName(PrivateNamespace("com.company.assembleegameclient.account.ui:CreateGuildFrame"), "name_")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.account.ui:CreateGuildFrame"), "name_")
+     getproperty         QName(PackageNamespace(""), "inputText_")
+     pushstring          "A-Za-z "
+     setproperty         QName(PackageNamespace(""), "restrict")
+
+     pushbyte            20
+     setlocal2
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.account.ui:CreateGuildFrame"), "name_")
+     getproperty         QName(PackageNamespace(""), "inputText_")
+     getlocal2
+     setproperty         QName(PackageNamespace(""), "maxChars")
+
+     findpropstrict      QName(PackageNamespace(""), "addTextInputField")
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.account.ui:CreateGuildFrame"), "name_")
+     callpropvoid        QName(PackageNamespace(""), "addTextInputField"), 1
+
+     findpropstrict      QName(PackageNamespace(""), "addPlainText")
+     pushstring          "Frame.maxChar"
+     pushstring          "maxChars"
+     getlocal2
+     newobject           1
+     callpropvoid        QName(PackageNamespace(""), "addPlainText"), 2
+
+     findpropstrict      QName(PackageNamespace(""), "addPlainText")
+     pushstring          "Frame.restrictChar"
+     callpropvoid        QName(PackageNamespace(""), "addPlainText"), 1
+
+     findpropstrict      QName(PackageNamespace(""), "addPlainText")
+     pushstring          "CreateGuildFrame.warning"
+     callpropvoid        QName(PackageNamespace(""), "addPlainText"), 1
+
+     getlex              QName(PackageNamespace(""), "leftButton_")
+     pushstring          "click"
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.account.ui:CreateGuildFrame"), "onCancel")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     getlex              QName(PackageNamespace(""), "rightButton_")
+     pushstring          "click"
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.account.ui:CreateGuildFrame"), "onCreate")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait const QName(PackageNamespace(""), "close") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.account.ui:CreateGuildFrame"), "name_") type QName(PackageNamespace("com.company.assembleegameclient.account.ui"), "TextInputField") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.account.ui:CreateGuildFrame"), "gs_") type QName(PackageNamespace("com.company.assembleegameclient.game"), "GameSprite") end
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.account.ui:CreateGuildFrame"), "onCancel")
+   method
+    name "onCancel"
+    refid "com.company.assembleegameclient.account.ui:CreateGuildFrame/instance/com.company.assembleegameclient.account.ui:CreateGuildFrame/instance/onCancel"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 1
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "close")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.account.ui:CreateGuildFrame"), "onCreate")
+   method
+    name "onCreate"
+    refid "com.company.assembleegameclient.account.ui:CreateGuildFrame/instance/com.company.assembleegameclient.account.ui:CreateGuildFrame/instance/onCreate"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.account.ui:CreateGuildFrame"), "gs_")
+      pushstring          "GUILDRESULTEVENT"
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.account.ui:CreateGuildFrame"), "onResult")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.account.ui:CreateGuildFrame"), "gs_")
+      getproperty         QName(PackageNamespace(""), "gsc_")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.account.ui:CreateGuildFrame"), "name_")
+      callproperty        QName(PackageNamespace(""), "text"), 0
+      callpropvoid        QName(PackageNamespace(""), "createGuild"), 1
+
+      findpropstrict      QName(PackageNamespace(""), "disable")
+      callpropvoid        QName(PackageNamespace(""), "disable"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.account.ui:CreateGuildFrame"), "onResult")
+   method
+    name "onResult"
+    refid "com.company.assembleegameclient.account.ui:CreateGuildFrame/instance/com.company.assembleegameclient.account.ui:CreateGuildFrame/instance/onResult"
+    param QName(PackageNamespace("com.company.assembleegameclient.game.events"), "GuildResultEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      setlocal2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.account.ui:CreateGuildFrame"), "gs_")
+      pushstring          "GUILDRESULTEVENT"
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.account.ui:CreateGuildFrame"), "onResult")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "success_")
+      iffalse             L33
+
+      getlex              QName(PackageNamespace("kabam.rotmg.core"), "StaticInjectorContext")
+      callproperty        QName(PackageNamespace(""), "getInjector"), 0
+      getlex              QName(PackageNamespace("kabam.rotmg.game.model"), "GameModel")
+      callproperty        QName(PackageNamespace(""), "getInstance"), 1
+      getproperty         Multiname("player", [PrivateNamespace("com.company.assembleegameclient.account.ui:CreateGuildFrame"), ProtectedNamespace("com.company.assembleegameclient.account.ui:CreateGuildFrame"), StaticProtectedNs("com.company.assembleegameclient.account.ui:CreateGuildFrame"), StaticProtectedNs("com.company.assembleegameclient.account.ui:Frame"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.account.ui"), PackageInternalNs("com.company.assembleegameclient.account.ui"), PrivateNamespace("FilePrivateNS:CreateGuildFrame"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.objects"), "Player")
+      setlocal2
+
+      getlocal2
+      pushnull
+      ifeq                L29
+
+      getlocal2
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "fame_")
+      pushshort           1000
+      subtract
+      setproperty         QName(PackageNamespace(""), "fame_")
+
+L29:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "close")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      jump                L42
+
+L33:
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.account.ui:CreateGuildFrame"), "name_")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "errorKey")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "errorTokens")
+      callpropvoid        QName(PackageNamespace(""), "setError"), 2
+
+      findpropstrict      QName(PackageNamespace(""), "enable")
+      callpropvoid        QName(PackageNamespace(""), "enable"), 0
+
+L42:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.account.ui:CreateGuildFrame/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

@@ -1,0 +1,518 @@
+class
+ refid "kabam.rotmg.arena.view:ArenaLeaderboardTab"
+ instance QName(PackageNamespace("kabam.rotmg.arena.view"), "ArenaLeaderboardTab")
+  extends QName(PackageNamespace("flash.display"), "Sprite")
+  flag SEALED
+  iinit
+   name "ArenaLeaderboardTab"
+   refid "kabam.rotmg.arena.view:ArenaLeaderboardTab/instance/init"
+   param QName(PackageNamespace("kabam.rotmg.arena.model"), "ArenaLeaderboardFilter")
+   flag HAS_PARAM_NAMES
+   paramname "_arg1"
+   body
+    maxstack 3
+    localcount 2
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     findpropstrict      QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaLeaderboardTab"), "makeLabel")
+     callproperty        QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaLeaderboardTab"), "makeLabel"), 0
+     findproperty        QName(PackageNamespace(""), "label")
+     swap
+     setproperty         QName(PackageNamespace(""), "label")
+
+     getlex              QName(PackageNamespace(""), "label")
+     getproperty         QName(PackageNamespace(""), "textChanged")
+     findproperty        QName(PackageNamespace(""), "readyToAlign")
+     swap
+     initproperty        QName(PackageNamespace(""), "readyToAlign")
+
+     findpropstrict      QName(PackageNamespace("org.osflash.signals"), "Signal")
+     getlex              QName(PackageNamespace("kabam.rotmg.arena.view"), "ArenaLeaderboardTab")
+     constructprop       QName(PackageNamespace("org.osflash.signals"), "Signal"), 1
+     findproperty        QName(PackageNamespace(""), "selected")
+     swap
+     initproperty        QName(PackageNamespace(""), "selected")
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     getlocal1
+     setproperty         QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaLeaderboardTab"), "filter")
+
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "label")
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder")
+     constructprop       QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder"), 0
+     getlocal1
+     callproperty        QName(PackageNamespace(""), "getName"), 0
+     callproperty        QName(PackageNamespace(""), "setParams"), 1
+     callpropvoid        QName(PackageNamespace(""), "setStringBuilder"), 1
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "label")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     getlocal0
+     callpropvoid        QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaLeaderboardTab"), "addMouseListeners"), 0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "label") type QName(PackageNamespace("kabam.rotmg.text.view"), "StaticTextDisplay") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaLeaderboardTab"), "filter") type QName(PackageNamespace("kabam.rotmg.arena.model"), "ArenaLeaderboardFilter") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaLeaderboardTab"), "isOver") type QName(PackageNamespace(""), "Boolean") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaLeaderboardTab"), "isDown") type QName(PackageNamespace(""), "Boolean") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaLeaderboardTab"), "isSelected") type QName(PackageNamespace(""), "Boolean") value False() end
+  trait const QName(PackageNamespace(""), "readyToAlign") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait const QName(PackageNamespace(""), "selected") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait method QName(PackageNamespace(""), "destroy")
+   method
+    name "destroy"
+    refid "kabam.rotmg.arena.view:ArenaLeaderboardTab/instance/destroy"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaLeaderboardTab"), "removeMouseListeners"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getFilter")
+   method
+    name "getFilter"
+    refid "kabam.rotmg.arena.view:ArenaLeaderboardTab/instance/getFilter"
+    returns QName(PackageNamespace("kabam.rotmg.arena.model"), "ArenaLeaderboardFilter")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaLeaderboardTab"), "filter")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setSelected")
+   method
+    name "setSelected"
+    refid "kabam.rotmg.arena.view:ArenaLeaderboardTab/instance/setSelected"
+    param QName(PackageNamespace(""), "Boolean")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      setproperty         QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaLeaderboardTab"), "isSelected")
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaLeaderboardTab"), "redraw"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaLeaderboardTab"), "addMouseListeners")
+   method
+    name "addMouseListeners"
+    refid "kabam.rotmg.arena.view:ArenaLeaderboardTab/instance/kabam.rotmg.arena.view:ArenaLeaderboardTab/instance/addMouseListeners"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace(""), "addEventListener")
+      pushstring          "mouseOver"
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaLeaderboardTab"), "onMouseOver")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      findpropstrict      QName(PackageNamespace(""), "addEventListener")
+      pushstring          "mouseOut"
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaLeaderboardTab"), "onMouseOut")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      findpropstrict      QName(PackageNamespace(""), "addEventListener")
+      pushstring          "mouseDown"
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaLeaderboardTab"), "onMouseDown")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      findpropstrict      QName(PackageNamespace(""), "addEventListener")
+      pushstring          "mouseUp"
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaLeaderboardTab"), "onMouseUp")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      findpropstrict      QName(PackageNamespace(""), "addEventListener")
+      pushstring          "click"
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaLeaderboardTab"), "onClick")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaLeaderboardTab"), "removeMouseListeners")
+   method
+    name "removeMouseListeners"
+    refid "kabam.rotmg.arena.view:ArenaLeaderboardTab/instance/kabam.rotmg.arena.view:ArenaLeaderboardTab/instance/removeMouseListeners"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace(""), "removeEventListener")
+      pushstring          "mouseOver"
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaLeaderboardTab"), "onMouseOver")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      findpropstrict      QName(PackageNamespace(""), "removeEventListener")
+      pushstring          "mouseOut"
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaLeaderboardTab"), "onMouseOut")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      findpropstrict      QName(PackageNamespace(""), "removeEventListener")
+      pushstring          "mouseDown"
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaLeaderboardTab"), "onMouseDown")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      findpropstrict      QName(PackageNamespace(""), "removeEventListener")
+      pushstring          "mouseUp"
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaLeaderboardTab"), "onMouseUp")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      findpropstrict      QName(PackageNamespace(""), "removeEventListener")
+      pushstring          "click"
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaLeaderboardTab"), "onClick")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaLeaderboardTab"), "onClick")
+   method
+    name "onClick"
+    refid "kabam.rotmg.arena.view:ArenaLeaderboardTab/instance/kabam.rotmg.arena.view:ArenaLeaderboardTab/instance/onClick"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaLeaderboardTab"), "isSelected")
+      iftrue              L9
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "selected")
+      getlocal0
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+L9:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaLeaderboardTab"), "redraw")
+   method
+    name "redraw"
+    refid "kabam.rotmg.arena.view:ArenaLeaderboardTab/instance/kabam.rotmg.arena.view:ArenaLeaderboardTab/instance/redraw"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaLeaderboardTab"), "isOver")
+      iffalse             L10
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "label")
+      pushint             16567065
+      callpropvoid        QName(PackageNamespace(""), "setColor"), 1
+
+      jump                L28
+
+L10:
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaLeaderboardTab"), "isSelected")
+      dup
+      iftrue              L18
+
+      pop
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaLeaderboardTab"), "isDown")
+      convert_b
+L18:
+      iffalse             L24
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "label")
+      pushint             16777215
+      callpropvoid        QName(PackageNamespace(""), "setColor"), 1
+
+      jump                L28
+
+L24:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "label")
+      pushint             11711154
+      callpropvoid        QName(PackageNamespace(""), "setColor"), 1
+
+L28:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaLeaderboardTab"), "onMouseUp")
+   method
+    name "onMouseUp"
+    refid "kabam.rotmg.arena.view:ArenaLeaderboardTab/instance/kabam.rotmg.arena.view:ArenaLeaderboardTab/instance/onMouseUp"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      pushfalse
+      setproperty         QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaLeaderboardTab"), "isDown")
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaLeaderboardTab"), "redraw"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaLeaderboardTab"), "onMouseDown")
+   method
+    name "onMouseDown"
+    refid "kabam.rotmg.arena.view:ArenaLeaderboardTab/instance/kabam.rotmg.arena.view:ArenaLeaderboardTab/instance/onMouseDown"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      pushtrue
+      setproperty         QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaLeaderboardTab"), "isDown")
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaLeaderboardTab"), "redraw"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaLeaderboardTab"), "onMouseOut")
+   method
+    name "onMouseOut"
+    refid "kabam.rotmg.arena.view:ArenaLeaderboardTab/instance/kabam.rotmg.arena.view:ArenaLeaderboardTab/instance/onMouseOut"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      pushfalse
+      setproperty         QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaLeaderboardTab"), "isOver")
+
+      getlocal0
+      pushfalse
+      setproperty         QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaLeaderboardTab"), "isDown")
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaLeaderboardTab"), "redraw"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaLeaderboardTab"), "onMouseOver")
+   method
+    name "onMouseOver"
+    refid "kabam.rotmg.arena.view:ArenaLeaderboardTab/instance/kabam.rotmg.arena.view:ArenaLeaderboardTab/instance/onMouseOver"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      pushtrue
+      setproperty         QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaLeaderboardTab"), "isOver")
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaLeaderboardTab"), "redraw"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaLeaderboardTab"), "makeLabel")
+   method
+    name "makeLabel"
+    refid "kabam.rotmg.arena.view:ArenaLeaderboardTab/instance/kabam.rotmg.arena.view:ArenaLeaderboardTab/instance/makeLabel"
+    returns QName(PackageNamespace("kabam.rotmg.text.view"), "StaticTextDisplay")
+    body
+     maxstack 8
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      setlocal1
+
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view"), "StaticTextDisplay")
+      constructprop       QName(PackageNamespace("kabam.rotmg.text.view"), "StaticTextDisplay"), 0
+      coerce              QName(PackageNamespace("kabam.rotmg.text.view"), "StaticTextDisplay")
+      setlocal1
+
+      getlocal1
+      pushtrue
+      callproperty        QName(PackageNamespace(""), "setBold"), 1
+      pushint             11776947
+      callproperty        QName(PackageNamespace(""), "setColor"), 1
+      pushbyte            20
+      callpropvoid        QName(PackageNamespace(""), "setSize"), 1
+
+      getlocal1
+      findpropstrict      QName(PackageNamespace("flash.filters"), "DropShadowFilter")
+      pushbyte            0
+      pushbyte            0
+      pushbyte            0
+      pushbyte            1
+      pushbyte            8
+      pushbyte            8
+      constructprop       QName(PackageNamespace("flash.filters"), "DropShadowFilter"), 6
+      newarray            1
+      setproperty         QName(PackageNamespace(""), "filters")
+
+      getlocal1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.arena.view:ArenaLeaderboardTab/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaLeaderboardTab"), "OVER_COLOR") type QName(PackageNamespace(""), "int") value Integer(16567065) end
+ trait const QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaLeaderboardTab"), "DOWN_COLOR") type QName(PackageNamespace(""), "int") value Integer(16777215) end
+ trait const QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaLeaderboardTab"), "OUT_COLOR") type QName(PackageNamespace(""), "int") value Integer(11711154) end
+end ; class

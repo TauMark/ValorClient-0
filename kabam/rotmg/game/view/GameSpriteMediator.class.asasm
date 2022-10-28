@@ -1,0 +1,542 @@
+class
+ refid "kabam.rotmg.game.view:GameSpriteMediator"
+ instance QName(PackageNamespace("kabam.rotmg.game.view"), "GameSpriteMediator")
+  extends QName(PackageNamespace("robotlegs.bender.bundles.mvcs"), "Mediator")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.game.view:GameSpriteMediator")
+  iinit
+   refid "kabam.rotmg.game.view:GameSpriteMediator/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "view") flag METADATA type QName(PackageNamespace("com.company.assembleegameclient.game"), "GameSprite")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "setWorldInteraction") flag METADATA type QName(PackageNamespace("kabam.rotmg.game.signals"), "SetWorldInteractionSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "setScreenWithValidData") flag METADATA type QName(PackageNamespace("kabam.rotmg.core.signals"), "SetScreenWithValidDataSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "setScreen") flag METADATA type QName(PackageNamespace("kabam.rotmg.core.signals"), "SetScreenSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "playGame") flag METADATA type QName(PackageNamespace("kabam.rotmg.game.signals"), "PlayGameSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "playerModel") flag METADATA type QName(PackageNamespace("kabam.rotmg.core.model"), "PlayerModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "gameClosed") flag METADATA type QName(PackageNamespace("kabam.rotmg.game.signals"), "GameClosedSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "mapModel") flag METADATA type QName(PackageNamespace("kabam.rotmg.core.model"), "MapModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "closeDialogs") flag METADATA type QName(PackageNamespace("kabam.rotmg.dialogs.control"), "CloseDialogsSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "hudSetupStarted") flag METADATA type QName(PackageNamespace("kabam.rotmg.ui.signals"), "HUDSetupStarted")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "updateHUDSignal") flag METADATA type QName(PackageNamespace("kabam.rotmg.ui.signals"), "UpdateHUDSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "hudModelInitialized") flag METADATA type QName(PackageNamespace("kabam.rotmg.ui.signals"), "HUDModelInitialized")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "showLoadingViewSignal") flag METADATA type QName(PackageNamespace("kabam.rotmg.maploading.signals"), "ShowLoadingViewSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "openDialog") flag METADATA type QName(PackageNamespace("kabam.rotmg.dialogs.control"), "OpenDialogSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "dialogsModel") flag METADATA type QName(PackageNamespace("kabam.rotmg.dialogs.model"), "DialogsModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "addToQueueSignal") flag METADATA type QName(PackageNamespace("kabam.rotmg.dialogs.control"), "AddPopupToStartupQueueSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "flushQueueSignal") flag METADATA type QName(PackageNamespace("kabam.rotmg.dialogs.control"), "FlushPopupStartupQueueSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "closeAllPopups") flag METADATA type QName(PackageNamespace("io.decagames.rotmg.ui.popups.signals"), "CloseAllPopupsSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PackageNamespace(""), "initialize") flag OVERRIDE
+   method
+    name "initialize"
+    refid "kabam.rotmg.game.view:GameSpriteMediator/instance/initialize"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "showLoadingViewSignal")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "setWorldInteraction")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "onSetWorldInteraction")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      findpropstrict      QName(ProtectedNamespace("robotlegs.bender.bundles.mvcs:Mediator"), "addViewListener")
+      pushstring          "RECONNECT_EVENT"
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:GameSpriteMediator"), "onReconnect")
+      callpropvoid        QName(ProtectedNamespace("robotlegs.bender.bundles.mvcs:Mediator"), "addViewListener"), 2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "modelInitialized")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:GameSpriteMediator"), "onGameSpriteModelInitialized")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "drawCharacterWindow")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:GameSpriteMediator"), "onStatusPanelDraw")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hudModelInitialized")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:GameSpriteMediator"), "onHUDModelInitialized")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "closed")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:GameSpriteMediator"), "onClosed")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "mapModel")
+      setproperty         QName(PackageNamespace(""), "mapModel")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "dialogsModel")
+      setproperty         QName(PackageNamespace(""), "dialogsModel")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "openDialog")
+      setproperty         QName(PackageNamespace(""), "openDialog")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "addToQueueSignal")
+      setproperty         QName(PackageNamespace(""), "addToQueueSignal")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "flushQueueSignal")
+      setproperty         QName(PackageNamespace(""), "flushQueueSignal")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      callpropvoid        QName(PackageNamespace(""), "connect"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "destroy") flag OVERRIDE
+   method
+    name "destroy"
+    refid "kabam.rotmg.game.view:GameSpriteMediator/instance/destroy"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "setWorldInteraction")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "onSetWorldInteraction")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      findpropstrict      QName(ProtectedNamespace("robotlegs.bender.bundles.mvcs:Mediator"), "removeViewListener")
+      pushstring          "RECONNECT_EVENT"
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:GameSpriteMediator"), "onReconnect")
+      callpropvoid        QName(ProtectedNamespace("robotlegs.bender.bundles.mvcs:Mediator"), "removeViewListener"), 2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "modelInitialized")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:GameSpriteMediator"), "onGameSpriteModelInitialized")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "drawCharacterWindow")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:GameSpriteMediator"), "onStatusPanelDraw")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hudModelInitialized")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:GameSpriteMediator"), "onHUDModelInitialized")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "closed")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:GameSpriteMediator"), "onClosed")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      callpropvoid        QName(PackageNamespace(""), "disconnect"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "onSetWorldInteraction")
+   method
+    name "onSetWorldInteraction"
+    refid "kabam.rotmg.game.view:GameSpriteMediator/instance/onSetWorldInteraction"
+    param QName(PackageNamespace(""), "Boolean")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "mui_")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "setEnablePlayerInput"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.game.view:GameSpriteMediator"), "onClosed")
+   method
+    name "onClosed"
+    refid "kabam.rotmg.game.view:GameSpriteMediator/instance/kabam.rotmg.game.view:GameSpriteMediator/instance/onClosed"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "isEditor")
+      iftrue              L9
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "gameClosed")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+L9:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "closeDialogs")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "closeAllPopups")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      getlex              QName(PackageNamespace("kabam.rotmg.core"), "StaticInjectorContext")
+      callproperty        QName(PackageNamespace(""), "getInjector"), 0
+      getlex              QName(PackageNamespace("kabam.rotmg.maploading.signals"), "HideMapLoadingSignal")
+      callproperty        QName(PackageNamespace(""), "getInstance"), 1
+      coerce              QName(PackageNamespace("kabam.rotmg.maploading.signals"), "HideMapLoadingSignal")
+      setlocal1
+
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      findpropstrict      QName(PackageNamespace(""), "sleepForMs")
+      pushbyte            100
+      callpropvoid        QName(PackageNamespace(""), "sleepForMs"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.game.view:GameSpriteMediator"), "onReconnect")
+   method
+    name "onReconnect"
+    refid "kabam.rotmg.game.view:GameSpriteMediator/instance/kabam.rotmg.game.view:GameSpriteMediator/instance/onReconnect"
+    param QName(PackageNamespace("com.company.assembleegameclient.game.events"), "ReconnectEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "isEditor")
+      iffalse             L7
+
+      returnvoid
+
+L7:
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.game.model"), "GameInitData")
+      constructprop       QName(PackageNamespace("kabam.rotmg.game.model"), "GameInitData"), 0
+      coerce              QName(PackageNamespace("kabam.rotmg.game.model"), "GameInitData")
+      setlocal2
+
+      getlocal2
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "server_")
+      setproperty         QName(PackageNamespace(""), "server")
+
+      getlocal2
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "gameId_")
+      setproperty         QName(PackageNamespace(""), "gameId")
+
+      getlocal2
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "createCharacter_")
+      setproperty         QName(PackageNamespace(""), "createCharacter")
+
+      getlocal2
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "charId_")
+      setproperty         QName(PackageNamespace(""), "charId")
+
+      getlocal2
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "keyTime_")
+      setproperty         QName(PackageNamespace(""), "keyTime")
+
+      getlocal2
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "key_")
+      setproperty         QName(PackageNamespace(""), "key")
+
+      getlocal2
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "isFromArena_")
+      setproperty         QName(PackageNamespace(""), "isFromArena")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "playGame")
+      getlocal2
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.game.view:GameSpriteMediator"), "onGameSpriteModelInitialized")
+   method
+    name "onGameSpriteModelInitialized"
+    refid "kabam.rotmg.game.view:GameSpriteMediator/instance/kabam.rotmg.game.view:GameSpriteMediator/instance/onGameSpriteModelInitialized"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hudSetupStarted")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.game.view:GameSpriteMediator"), "onStatusPanelDraw")
+   method
+    name "onStatusPanelDraw"
+    refid "kabam.rotmg.game.view:GameSpriteMediator/instance/kabam.rotmg.game.view:GameSpriteMediator/instance/onStatusPanelDraw"
+    param QName(PackageNamespace("com.company.assembleegameclient.objects"), "Player")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "updateHUDSignal")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.game.view:GameSpriteMediator"), "onHUDModelInitialized")
+   method
+    name "onHUDModelInitialized"
+    refid "kabam.rotmg.game.view:GameSpriteMediator/instance/kabam.rotmg.game.view:GameSpriteMediator/instance/onHUDModelInitialized"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      callpropvoid        QName(PackageNamespace(""), "hudModelInitialized"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.game.view:GameSpriteMediator/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait method QName(PackageNamespace(""), "sleepForMs")
+  method
+   name "sleepForMs"
+   refid "kabam.rotmg.game.view:GameSpriteMediator/class/sleepForMs"
+   param QName(PackageNamespace(""), "int")
+   returns QName(PackageNamespace(""), "void")
+   flag HAS_PARAM_NAMES
+   paramname "_arg1"
+   body
+    maxstack 2
+    localcount 3
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PackageNamespace("flash.utils"), "getTimer")
+     getglobalscope
+     call                0
+     convert_i
+     setlocal2
+
+     jump                L16
+
+L8:
+     label
+     getlex              QName(PackageNamespace("flash.utils"), "getTimer")
+     getglobalscope
+     call                0
+     getlocal2
+     subtract
+     getlocal1
+     ifge                L17
+
+L16:
+     jump                L8
+
+L17:
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+end ; class

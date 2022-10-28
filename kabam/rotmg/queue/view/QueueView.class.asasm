@@ -1,0 +1,264 @@
+class
+ refid "kabam.rotmg.queue.view:QueueView"
+ instance QName(PackageNamespace("kabam.rotmg.queue.view"), "QueueView")
+  extends QName(PackageNamespace("flash.display"), "Sprite")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.queue.view:QueueView")
+  iinit
+   name "QueueView"
+   refid "kabam.rotmg.queue.view:QueueView/instance/init"
+   body
+    maxstack 2
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     pushfalse
+     findproperty        QName(PackageNamespace(""), "mouseEnabled")
+     swap
+     setproperty         QName(PackageNamespace(""), "mouseEnabled")
+
+     pushfalse
+     findproperty        QName(PackageNamespace(""), "doubleClickEnabled")
+     swap
+     setproperty         QName(PackageNamespace(""), "doubleClickEnabled")
+
+     pushfalse
+     findproperty        QName(PackageNamespace(""), "mouseChildren")
+     swap
+     setproperty         QName(PackageNamespace(""), "mouseChildren")
+
+     findpropstrict      QName(PackageNamespace("flash.text"), "TextField")
+     constructprop       QName(PackageNamespace("flash.text"), "TextField"), 0
+     findproperty        QName(ProtectedNamespace("kabam.rotmg.queue.view:QueueView"), "queuePosition_")
+     swap
+     setproperty         QName(ProtectedNamespace("kabam.rotmg.queue.view:QueueView"), "queuePosition_")
+
+     getlex              QName(ProtectedNamespace("kabam.rotmg.queue.view:QueueView"), "queuePosition_")
+     getlex              QName(PrivateNamespace("kabam.rotmg.queue.view:QueueView"), "msgFormat")
+     setproperty         QName(PackageNamespace(""), "defaultTextFormat")
+
+     getlex              QName(ProtectedNamespace("kabam.rotmg.queue.view:QueueView"), "queuePosition_")
+     pushstring          "left"
+     setproperty         QName(PackageNamespace(""), "autoSize")
+
+     findpropstrict      QName(PackageNamespace("flash.text"), "TextField")
+     constructprop       QName(PackageNamespace("flash.text"), "TextField"), 0
+     findproperty        QName(ProtectedNamespace("kabam.rotmg.queue.view:QueueView"), "queueMessage_")
+     swap
+     setproperty         QName(ProtectedNamespace("kabam.rotmg.queue.view:QueueView"), "queueMessage_")
+
+     getlex              QName(ProtectedNamespace("kabam.rotmg.queue.view:QueueView"), "queueMessage_")
+     getlex              QName(PrivateNamespace("kabam.rotmg.queue.view:QueueView"), "msgFormat")
+     setproperty         QName(PackageNamespace(""), "defaultTextFormat")
+
+     getlex              QName(ProtectedNamespace("kabam.rotmg.queue.view:QueueView"), "queueMessage_")
+     pushstring          "left"
+     setproperty         QName(PackageNamespace(""), "autoSize")
+
+     getlex              QName(ProtectedNamespace("kabam.rotmg.queue.view:QueueView"), "queueMessage_")
+     pushbyte            30
+     setproperty         QName(PackageNamespace(""), "y")
+
+     getlex              QName(ProtectedNamespace("kabam.rotmg.queue.view:QueueView"), "queueMessage_")
+     pushstring          "Server is full. You have been queued.\nUsing your nexus hotkey will put you back in the queue.\nIf you want to avoid it use /nexus instead.\nPlease be patient and leave the client open."
+     setproperty         QName(PackageNamespace(""), "text")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait const QName(PrivateNamespace("kabam.rotmg.queue.view:QueueView"), "textPrefix") type QName(PackageNamespace(""), "String") value Utf8("Queue Position: ") end
+  trait const QName(PrivateNamespace("kabam.rotmg.queue.view:QueueView"), "infoText") type QName(PackageNamespace(""), "String") value Utf8("Server is full. You have been queued.\nUsing your nexus hotkey will put you back in the queue.\nIf you want to avoid it use /nexus instead.\nPlease be patient and leave the client open.") end
+  trait slot QName(ProtectedNamespace("kabam.rotmg.queue.view:QueueView"), "queuePosition_") type QName(PackageNamespace("flash.text"), "TextField") end
+  trait slot QName(ProtectedNamespace("kabam.rotmg.queue.view:QueueView"), "queueMessage_") type QName(PackageNamespace("flash.text"), "TextField") end
+  trait method QName(PackageNamespace(""), "update")
+   method
+    name "update"
+    refid "kabam.rotmg.queue.view:QueueView/instance/update"
+    param QName(PackageNamespace(""), "int")
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "pos"
+    paramname "cnt"
+    body
+     maxstack 4
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(ProtectedNamespace("kabam.rotmg.queue.view:QueueView"), "queuePosition_")
+      findpropstrict      QName(PrivateNamespace("kabam.rotmg.queue.view:QueueView"), "getPositionText")
+      getlocal1
+      getlocal2
+      callproperty        QName(PrivateNamespace("kabam.rotmg.queue.view:QueueView"), "getPositionText"), 2
+      setproperty         QName(PackageNamespace(""), "text")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.queue.view:QueueView"), "getPositionText")
+   method
+    name "getPositionText"
+    refid "kabam.rotmg.queue.view:QueueView/instance/kabam.rotmg.queue.view:QueueView/getPositionText"
+    param QName(PackageNamespace(""), "int")
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "String")
+    flag HAS_PARAM_NAMES
+    paramname "pos"
+    paramname "cnt"
+    body
+     maxstack 2
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushstring          "Queue Position: "
+      getlocal1
+      add
+      pushstring          "/"
+      add
+      getlocal2
+      add
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "show")
+   method
+    name "show"
+    refid "kabam.rotmg.queue.view:QueueView/instance/show"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlex              QName(ProtectedNamespace("kabam.rotmg.queue.view:QueueView"), "queuePosition_")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlex              QName(ProtectedNamespace("kabam.rotmg.queue.view:QueueView"), "queueMessage_")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "remove")
+   method
+    name "remove"
+    refid "kabam.rotmg.queue.view:QueueView/instance/remove"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace(""), "parent")
+      dup
+      iffalse             L10
+
+      pop
+      getlex              QName(PackageNamespace(""), "parent")
+      getlocal0
+      callproperty        QName(PackageNamespace(""), "removeChild"), 1
+      coerce_a
+L10:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.queue.view:QueueView/class/init"
+  body
+   maxstack 2
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 1
+   code
+    getlocal0
+    pushscope
+
+    findpropstrict      QName(PrivateNamespace("kabam.rotmg.queue.view:QueueView"), "defaultTextFormat")
+    callproperty        QName(PrivateNamespace("kabam.rotmg.queue.view:QueueView"), "defaultTextFormat"), 0
+    findproperty        QName(PrivateNamespace("kabam.rotmg.queue.view:QueueView"), "msgFormat")
+    swap
+    initproperty        QName(PrivateNamespace("kabam.rotmg.queue.view:QueueView"), "msgFormat")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PrivateNamespace("kabam.rotmg.queue.view:QueueView"), "msgFormat") type QName(PackageNamespace("flash.text"), "TextFormat") end
+ trait method QName(PrivateNamespace("kabam.rotmg.queue.view:QueueView"), "defaultTextFormat")
+  method
+   name "defaultTextFormat"
+   refid "kabam.rotmg.queue.view:QueueView/class/kabam.rotmg.queue.view:QueueView/defaultTextFormat"
+   returns QName(PackageNamespace("flash.text"), "TextFormat")
+   body
+    maxstack 2
+    localcount 2
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     findpropstrict      QName(PackageNamespace("flash.text"), "TextFormat")
+     constructprop       QName(PackageNamespace("flash.text"), "TextFormat"), 0
+     coerce              QName(PackageNamespace("flash.text"), "TextFormat")
+     setlocal1
+
+     getlocal1
+     pushint             16754688
+     setproperty         QName(PackageNamespace(""), "color")
+
+     getlocal1
+     pushbyte            14
+     setproperty         QName(PackageNamespace(""), "size")
+
+     getlocal1
+     pushtrue
+     setproperty         QName(PackageNamespace(""), "bold")
+
+     getlocal1
+     pushstring          "Myriad Pro"
+     setproperty         QName(PackageNamespace(""), "font")
+
+     getlocal1
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+end ; class

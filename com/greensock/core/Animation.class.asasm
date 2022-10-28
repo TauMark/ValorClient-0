@@ -1,0 +1,2039 @@
+class
+ refid "com.greensock.core:Animation"
+ instance QName(PackageNamespace("com.greensock.core"), "Animation")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.greensock.core:Animation")
+  iinit
+   name "Animation"
+   refid "com.greensock.core:Animation/instance/init"
+   param QName(PackageNamespace(""), "Number")
+   param QName(PackageNamespace(""), "Object")
+   flag HAS_OPTIONAL
+   flag HAS_PARAM_NAMES
+   optional Integer(0)
+   optional Null()
+   paramname "duration"
+   paramname "vars"
+   body
+    maxstack 6
+    localcount 5
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     getlocal2
+     dup
+     iftrue              L11
+
+     pop
+     newobject           0
+     coerce              QName(PackageNamespace(""), "Object")
+L11:
+     setproperty         QName(PackageNamespace(""), "vars")
+
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "vars")
+     getproperty         Multiname("_isGSVars", [PrivateNamespace("com.greensock.core:Animation"), ProtectedNamespace("com.greensock.core:Animation"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock.core"), PackageInternalNs("com.greensock.core"), PrivateNamespace("FilePrivateNS:Animation", "com.greensock.core:Animation/instance#1"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     iffalse             L21
+
+     getlocal0
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "vars")
+     getproperty         Multiname("vars", [PrivateNamespace("com.greensock.core:Animation"), ProtectedNamespace("com.greensock.core:Animation"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock.core"), PackageInternalNs("com.greensock.core"), PrivateNamespace("FilePrivateNS:Animation", "com.greensock.core:Animation/instance#1"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     setproperty         QName(PackageNamespace(""), "vars")
+
+L21:
+     getlocal1
+     dup
+     iftrue              L26
+
+     pop
+     pushdouble          0
+L26:
+     dup
+     findproperty        QName(PackageNamespace(""), "_totalDuration")
+     swap
+     setproperty         QName(PackageNamespace(""), "_totalDuration")
+
+     findproperty        QName(PackageNamespace(""), "_duration")
+     swap
+     setproperty         QName(PackageNamespace(""), "_duration")
+
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "vars")
+     getproperty         Multiname("delay", [PrivateNamespace("com.greensock.core:Animation"), ProtectedNamespace("com.greensock.core:Animation"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock.core"), PackageInternalNs("com.greensock.core"), PrivateNamespace("FilePrivateNS:Animation", "com.greensock.core:Animation/instance#1"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     convert_d
+     dup
+     iftrue              L41
+
+     pop
+     pushdouble          0
+L41:
+     findproperty        QName(PackageNamespace(""), "_delay")
+     swap
+     setproperty         QName(PackageNamespace(""), "_delay")
+
+     pushbyte            1
+     findproperty        QName(PackageNamespace(""), "_timeScale")
+     swap
+     setproperty         QName(PackageNamespace(""), "_timeScale")
+
+     pushbyte            0
+     dup
+     findproperty        QName(PackageNamespace(""), "_time")
+     swap
+     setproperty         QName(PackageNamespace(""), "_time")
+
+     findproperty        QName(PackageNamespace(""), "_totalTime")
+     swap
+     setproperty         QName(PackageNamespace(""), "_totalTime")
+
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "vars")
+     getproperty         Multiname("data", [PrivateNamespace("com.greensock.core:Animation"), ProtectedNamespace("com.greensock.core:Animation"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock.core"), PackageInternalNs("com.greensock.core"), PrivateNamespace("FilePrivateNS:Animation", "com.greensock.core:Animation/instance#1"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     findproperty        QName(PackageNamespace(""), "data")
+     swap
+     setproperty         QName(PackageNamespace(""), "data")
+
+     pushbyte            -1
+     findproperty        QName(PackageNamespace(""), "_rawPrevTime")
+     swap
+     setproperty         QName(PackageNamespace(""), "_rawPrevTime")
+
+     getlex              QName(PackageNamespace(""), "_rootTimeline")
+     pushnull
+     ifne                L113
+
+     getlex              QName(StaticProtectedNs("com.greensock.core:Animation"), "_rootFrame")
+     pushbyte            -1
+     ifne                L112
+
+     pushbyte            0
+     findproperty        QName(StaticProtectedNs("com.greensock.core:Animation"), "_rootFrame")
+     swap
+     setproperty         QName(StaticProtectedNs("com.greensock.core:Animation"), "_rootFrame")
+
+     findpropstrict      QName(PackageNamespace("com.greensock.core"), "SimpleTimeline")
+     constructprop       QName(PackageNamespace("com.greensock.core"), "SimpleTimeline"), 0
+     findproperty        QName(PackageNamespace(""), "_rootFramesTimeline")
+     swap
+     setproperty         QName(PackageNamespace(""), "_rootFramesTimeline")
+
+     findpropstrict      QName(PackageNamespace("com.greensock.core"), "SimpleTimeline")
+     constructprop       QName(PackageNamespace("com.greensock.core"), "SimpleTimeline"), 0
+     findproperty        QName(PackageNamespace(""), "_rootTimeline")
+     swap
+     setproperty         QName(PackageNamespace(""), "_rootTimeline")
+
+     getlex              QName(PackageNamespace(""), "_rootTimeline")
+     getlex              QName(PackageNamespace("flash.utils"), "getTimer")
+     getglobalscope
+     call                0
+     pushshort           1000
+     divide
+     setproperty         QName(PackageNamespace(""), "_startTime")
+
+     getlex              QName(PackageNamespace(""), "_rootFramesTimeline")
+     pushbyte            0
+     setproperty         QName(PackageNamespace(""), "_startTime")
+
+     getlex              QName(PackageNamespace(""), "_rootTimeline")
+     getlex              QName(PackageNamespace(""), "_rootFramesTimeline")
+     pushtrue
+     dup
+     setlocal            4
+
+     setproperty         QName(PackageNamespace(""), "_active")
+
+     getlocal            4
+     setproperty         QName(PackageNamespace(""), "_active")
+
+     getlex              QName(PackageNamespace(""), "ticker")
+     pushstring          "enterFrame"
+     getlex              QName(PackageNamespace(""), "_updateRoot")
+     pushfalse
+     pushbyte            0
+     pushtrue
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 5
+
+     jump                L113
+
+L112:
+     returnvoid
+
+L113:
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "vars")
+     getproperty         Multiname("useFrames", [PrivateNamespace("com.greensock.core:Animation"), ProtectedNamespace("com.greensock.core:Animation"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock.core"), PackageInternalNs("com.greensock.core"), PrivateNamespace("FilePrivateNS:Animation", "com.greensock.core:Animation/instance#1"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     iffalse             L119
+
+     getlex              QName(PackageNamespace(""), "_rootFramesTimeline")
+     jump                L121
+
+L119:
+     getlex              QName(PackageNamespace(""), "_rootTimeline")
+     coerce              QName(PackageNamespace("com.greensock.core"), "SimpleTimeline")
+L121:
+     coerce              QName(PackageNamespace("com.greensock.core"), "SimpleTimeline")
+     setlocal3
+
+     getlocal3
+     getlocal0
+     getlocal3
+     getproperty         QName(PackageNamespace(""), "_time")
+     callpropvoid        QName(PackageNamespace(""), "add"), 2
+
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "vars")
+     getproperty         Multiname("reversed", [PrivateNamespace("com.greensock.core:Animation"), ProtectedNamespace("com.greensock.core:Animation"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock.core"), PackageInternalNs("com.greensock.core"), PrivateNamespace("FilePrivateNS:Animation", "com.greensock.core:Animation/instance#1"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     pushtrue
+     equals
+     findproperty        QName(PackageNamespace(""), "_reversed")
+     swap
+     setproperty         QName(PackageNamespace(""), "_reversed")
+
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "vars")
+     getproperty         Multiname("paused", [PrivateNamespace("com.greensock.core:Animation"), ProtectedNamespace("com.greensock.core:Animation"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock.core"), PackageInternalNs("com.greensock.core"), PrivateNamespace("FilePrivateNS:Animation", "com.greensock.core:Animation/instance#1"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     iffalse             L143
+
+     findpropstrict      QName(PackageNamespace(""), "paused")
+     pushtrue
+     callpropvoid        QName(PackageNamespace(""), "paused"), 1
+
+L143:
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(ProtectedNamespace("com.greensock.core:Animation"), "_onUpdate") type QName(PackageNamespace(""), "Function") end
+  trait slot QName(PackageNamespace(""), "_delay") type QName(PackageNamespace(""), "Number") end
+  trait slot QName(PackageNamespace(""), "_rawPrevTime") type QName(PackageNamespace(""), "Number") end
+  trait slot QName(PackageNamespace(""), "_active") type QName(PackageNamespace(""), "Boolean") end
+  trait slot QName(PackageNamespace(""), "_gc") type QName(PackageNamespace(""), "Boolean") end
+  trait slot QName(PackageNamespace(""), "_initted") type QName(PackageNamespace(""), "Boolean") end
+  trait slot QName(PackageNamespace(""), "_startTime") type QName(PackageNamespace(""), "Number") end
+  trait slot QName(PackageNamespace(""), "_time") type QName(PackageNamespace(""), "Number") end
+  trait slot QName(PackageNamespace(""), "_totalTime") type QName(PackageNamespace(""), "Number") end
+  trait slot QName(PackageNamespace(""), "_duration") type QName(PackageNamespace(""), "Number") end
+  trait slot QName(PackageNamespace(""), "_totalDuration") type QName(PackageNamespace(""), "Number") end
+  trait slot QName(PackageNamespace(""), "_pauseTime") type QName(PackageNamespace(""), "Number") end
+  trait slot QName(PackageNamespace(""), "_timeScale") type QName(PackageNamespace(""), "Number") end
+  trait slot QName(PackageNamespace(""), "_reversed") type QName(PackageNamespace(""), "Boolean") end
+  trait slot QName(PackageNamespace(""), "_timeline") type QName(PackageNamespace("com.greensock.core"), "SimpleTimeline") end
+  trait slot QName(PackageNamespace(""), "_dirty") type QName(PackageNamespace(""), "Boolean") end
+  trait slot QName(PackageNamespace(""), "_paused") type QName(PackageNamespace(""), "Boolean") end
+  trait slot QName(PackageNamespace(""), "_next") type QName(PackageNamespace("com.greensock.core"), "Animation") end
+  trait slot QName(PackageNamespace(""), "_prev") type QName(PackageNamespace("com.greensock.core"), "Animation") end
+  trait slot QName(PackageNamespace(""), "vars") type QName(PackageNamespace(""), "Object") end
+  trait slot QName(PackageNamespace(""), "timeline") type QName(PackageNamespace("com.greensock.core"), "SimpleTimeline") end
+  trait slot QName(PackageNamespace(""), "data") end
+  trait method QName(PackageNamespace(""), "play")
+   method
+    name "play"
+    refid "com.greensock.core:Animation/instance/play"
+    param null
+    param QName(PackageNamespace(""), "Boolean")
+    flag HAS_OPTIONAL
+    flag HAS_PARAM_NAMES
+    optional Null()
+    optional True()
+    paramname "from"
+    paramname "suppressEvents"
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      pushnull
+      ifeq                L9
+
+      findpropstrict      QName(PackageNamespace(""), "seek")
+      getlocal1
+      getlocal2
+      callpropvoid        QName(PackageNamespace(""), "seek"), 2
+
+L9:
+      findpropstrict      QName(PackageNamespace(""), "reversed")
+      pushfalse
+      callpropvoid        QName(PackageNamespace(""), "reversed"), 1
+
+      findpropstrict      QName(PackageNamespace(""), "paused")
+      pushfalse
+      callproperty        QName(PackageNamespace(""), "paused"), 1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "pause")
+   method
+    name "pause"
+    refid "com.greensock.core:Animation/instance/pause"
+    param null
+    param QName(PackageNamespace(""), "Boolean")
+    flag HAS_OPTIONAL
+    flag HAS_PARAM_NAMES
+    optional Null()
+    optional True()
+    paramname "atTime"
+    paramname "suppressEvents"
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      pushnull
+      ifeq                L9
+
+      findpropstrict      QName(PackageNamespace(""), "seek")
+      getlocal1
+      getlocal2
+      callpropvoid        QName(PackageNamespace(""), "seek"), 2
+
+L9:
+      findpropstrict      QName(PackageNamespace(""), "paused")
+      pushtrue
+      callproperty        QName(PackageNamespace(""), "paused"), 1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "resume")
+   method
+    name "resume"
+    refid "com.greensock.core:Animation/instance/resume"
+    param null
+    param QName(PackageNamespace(""), "Boolean")
+    flag HAS_OPTIONAL
+    flag HAS_PARAM_NAMES
+    optional Null()
+    optional True()
+    paramname "from"
+    paramname "suppressEvents"
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      pushnull
+      ifeq                L9
+
+      findpropstrict      QName(PackageNamespace(""), "seek")
+      getlocal1
+      getlocal2
+      callpropvoid        QName(PackageNamespace(""), "seek"), 2
+
+L9:
+      findpropstrict      QName(PackageNamespace(""), "paused")
+      pushfalse
+      callproperty        QName(PackageNamespace(""), "paused"), 1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "seek")
+   method
+    name "seek"
+    refid "com.greensock.core:Animation/instance/seek"
+    param null
+    param QName(PackageNamespace(""), "Boolean")
+    flag HAS_OPTIONAL
+    flag HAS_PARAM_NAMES
+    optional True()
+    paramname "time"
+    paramname "suppressEvents"
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace(""), "totalTime")
+      getlocal1
+      convert_d
+      getlocal2
+      callproperty        QName(PackageNamespace(""), "totalTime"), 2
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "restart")
+   method
+    name "restart"
+    refid "com.greensock.core:Animation/instance/restart"
+    param QName(PackageNamespace(""), "Boolean")
+    param QName(PackageNamespace(""), "Boolean")
+    flag HAS_OPTIONAL
+    flag HAS_PARAM_NAMES
+    optional False()
+    optional True()
+    paramname "includeDelay"
+    paramname "suppressEvents"
+    body
+     maxstack 4
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace(""), "reversed")
+      pushfalse
+      callpropvoid        QName(PackageNamespace(""), "reversed"), 1
+
+      findpropstrict      QName(PackageNamespace(""), "paused")
+      pushfalse
+      callpropvoid        QName(PackageNamespace(""), "paused"), 1
+
+      findpropstrict      QName(PackageNamespace(""), "totalTime")
+      getlocal1
+      iffalse             L14
+
+      getlex              QName(PackageNamespace(""), "_delay")
+      negate
+      jump                L15
+
+L14:
+      pushdouble          0
+L15:
+      getlocal2
+      pushtrue
+      callproperty        QName(PackageNamespace(""), "totalTime"), 3
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "reverse")
+   method
+    name "reverse"
+    refid "com.greensock.core:Animation/instance/reverse"
+    param null
+    param QName(PackageNamespace(""), "Boolean")
+    flag HAS_OPTIONAL
+    flag HAS_PARAM_NAMES
+    optional Null()
+    optional True()
+    paramname "from"
+    paramname "suppressEvents"
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      pushnull
+      ifeq                L15
+
+      findpropstrict      QName(PackageNamespace(""), "seek")
+      getlocal1
+      dup
+      iftrue              L13
+
+      pop
+      findpropstrict      QName(PackageNamespace(""), "totalDuration")
+      callproperty        QName(PackageNamespace(""), "totalDuration"), 0
+      coerce_a
+L13:
+      getlocal2
+      callpropvoid        QName(PackageNamespace(""), "seek"), 2
+
+L15:
+      findpropstrict      QName(PackageNamespace(""), "reversed")
+      pushtrue
+      callpropvoid        QName(PackageNamespace(""), "reversed"), 1
+
+      findpropstrict      QName(PackageNamespace(""), "paused")
+      pushfalse
+      callproperty        QName(PackageNamespace(""), "paused"), 1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "render")
+   method
+    name "render"
+    refid "com.greensock.core:Animation/instance/render"
+    param QName(PackageNamespace(""), "Number")
+    param QName(PackageNamespace(""), "Boolean")
+    param QName(PackageNamespace(""), "Boolean")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_OPTIONAL
+    flag HAS_PARAM_NAMES
+    optional False()
+    optional False()
+    paramname "time"
+    paramname "suppressEvents"
+    paramname "force"
+    body
+     maxstack 1
+     localcount 4
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "invalidate")
+   method
+    name "invalidate"
+    refid "com.greensock.core:Animation/instance/invalidate"
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "isActive")
+   method
+    name "isActive"
+    refid "com.greensock.core:Animation/instance/isActive"
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 4
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnan
+      setlocal1
+
+      getlex              QName(PackageNamespace(""), "_timeline")
+      coerce              QName(PackageNamespace("com.greensock.core"), "SimpleTimeline")
+      setlocal2
+
+      getlocal2
+      pushnull
+      equals
+      dup
+      iftrue              L48
+
+      pop
+      getlex              QName(PackageNamespace(""), "_gc")
+      not
+      dup
+      iffalse             L20
+
+      pop
+      getlex              QName(PackageNamespace(""), "_paused")
+      not
+L20:
+      dup
+      iffalse             L26
+
+      pop
+      getlocal2
+      callproperty        QName(PackageNamespace(""), "isActive"), 0
+      convert_b
+L26:
+      dup
+      iffalse             L36
+
+      pop
+      getlocal2
+      callproperty        QName(PackageNamespace(""), "rawTime"), 0
+      dup
+      convert_d
+      setlocal1
+
+      getlex              QName(PackageNamespace(""), "_startTime")
+      greaterequals
+L36:
+      dup
+      iffalse             L47
+
+      pop
+      getlocal1
+      getlex              QName(PackageNamespace(""), "_startTime")
+      findpropstrict      QName(PackageNamespace(""), "totalDuration")
+      callproperty        QName(PackageNamespace(""), "totalDuration"), 0
+      getlex              QName(PackageNamespace(""), "_timeScale")
+      divide
+      add
+      lessthan
+L47:
+      convert_b
+L48:
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "_enabled")
+   method
+    name "_enabled"
+    refid "com.greensock.core:Animation/instance/_enabled"
+    param QName(PackageNamespace(""), "Boolean")
+    param QName(PackageNamespace(""), "Boolean")
+    returns QName(PackageNamespace(""), "Boolean")
+    flag HAS_OPTIONAL
+    flag HAS_PARAM_NAMES
+    optional False()
+    paramname "enabled"
+    paramname "ignoreTimeline"
+    body
+     maxstack 4
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      not
+      findproperty        QName(PackageNamespace(""), "_gc")
+      swap
+      setproperty         QName(PackageNamespace(""), "_gc")
+
+      getlocal1
+      dup
+      iffalse             L13
+
+      pop
+      getlex              QName(PackageNamespace(""), "_paused")
+      not
+L13:
+      dup
+      iffalse             L19
+
+      pop
+      getlex              QName(PackageNamespace(""), "_totalTime")
+      pushbyte            0
+      greaterthan
+L19:
+      dup
+      iffalse             L25
+
+      pop
+      getlex              QName(PackageNamespace(""), "_totalTime")
+      getlex              QName(PackageNamespace(""), "_totalDuration")
+      lessthan
+L25:
+      convert_b
+      findproperty        QName(PackageNamespace(""), "_active")
+      swap
+      setproperty         QName(PackageNamespace(""), "_active")
+
+      getlocal2
+      iftrue              L60
+
+      getlocal1
+      dup
+      iffalse             L38
+
+      pop
+      getlex              QName(PackageNamespace(""), "timeline")
+      pushnull
+      equals
+L38:
+      iffalse             L46
+
+      getlex              QName(PackageNamespace(""), "_timeline")
+      getlocal0
+      getlex              QName(PackageNamespace(""), "_startTime")
+      getlex              QName(PackageNamespace(""), "_delay")
+      subtract
+      callpropvoid        QName(PackageNamespace(""), "add"), 2
+
+      jump                L60
+
+L46:
+      getlocal1
+      not
+      dup
+      iffalse             L55
+
+      pop
+      getlex              QName(PackageNamespace(""), "timeline")
+      pushnull
+      equals
+      not
+L55:
+      iffalse             L60
+
+      getlex              QName(PackageNamespace(""), "_timeline")
+      getlocal0
+      pushtrue
+      callpropvoid        QName(PackageNamespace(""), "_remove"), 2
+
+L60:
+      pushfalse
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "_kill")
+   method
+    name "_kill"
+    refid "com.greensock.core:Animation/instance/_kill"
+    param QName(PackageNamespace(""), "Object")
+    param QName(PackageNamespace(""), "Object")
+    returns QName(PackageNamespace(""), "Boolean")
+    flag HAS_OPTIONAL
+    flag HAS_PARAM_NAMES
+    optional Null()
+    optional Null()
+    paramname "vars"
+    paramname "target"
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace(""), "_enabled")
+      pushfalse
+      pushfalse
+      callproperty        QName(PackageNamespace(""), "_enabled"), 2
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "kill")
+   method
+    name "kill"
+    refid "com.greensock.core:Animation/instance/kill"
+    param QName(PackageNamespace(""), "Object")
+    param QName(PackageNamespace(""), "Object")
+    flag HAS_OPTIONAL
+    flag HAS_PARAM_NAMES
+    optional Null()
+    optional Null()
+    paramname "vars"
+    paramname "target"
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace(""), "_kill")
+      getlocal1
+      getlocal2
+      callpropvoid        QName(PackageNamespace(""), "_kill"), 2
+
+      getlocal0
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(ProtectedNamespace("com.greensock.core:Animation"), "_uncache")
+   method
+    name "_uncache"
+    refid "com.greensock.core:Animation/instance/com.greensock.core:Animation:_uncache"
+    param QName(PackageNamespace(""), "Boolean")
+    flag HAS_PARAM_NAMES
+    paramname "includeSelf"
+    body
+     maxstack 2
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      iffalse             L6
+
+      getlocal0
+      jump                L8
+
+L6:
+      getlex              QName(PackageNamespace(""), "timeline")
+      coerce_a
+L8:
+      coerce              QName(PackageNamespace("com.greensock.core"), "Animation")
+      setlocal2
+
+      jump                L19
+
+L11:
+      label
+      getlocal2
+      pushtrue
+      setproperty         QName(PackageNamespace(""), "_dirty")
+
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "timeline")
+      coerce              QName(PackageNamespace("com.greensock.core"), "Animation")
+      setlocal2
+
+L19:
+      getlocal2
+      iftrue              L11
+
+      getlocal0
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(ProtectedNamespace("com.greensock.core:Animation"), "_swapSelfInParams")
+   method
+    name "_swapSelfInParams"
+    refid "com.greensock.core:Animation/instance/com.greensock.core:Animation:_swapSelfInParams"
+    param QName(PackageNamespace(""), "Array")
+    returns QName(PackageNamespace(""), "Array")
+    flag HAS_PARAM_NAMES
+    paramname "params"
+    body
+     maxstack 3
+     localcount 4
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "length")
+      convert_i
+      setlocal2
+
+      getlocal1
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "concat"), 0
+      coerce              QName(PackageNamespace(""), "Array")
+      setlocal3
+
+      jump                L21
+
+L11:
+      label
+      getlocal1
+      getlocal2
+      getproperty         MultinameL([PrivateNamespace("com.greensock.core:Animation"), ProtectedNamespace("com.greensock.core:Animation"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock.core"), PackageInternalNs("com.greensock.core"), PrivateNamespace("FilePrivateNS:Animation", "com.greensock.core:Animation/instance#1"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      pushstring          "{self}"
+      ifstrictne          L21
+
+      getlocal3
+      getlocal2
+      getlocal0
+      setproperty         MultinameL([PrivateNamespace("com.greensock.core:Animation"), ProtectedNamespace("com.greensock.core:Animation"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock.core"), PackageInternalNs("com.greensock.core"), PrivateNamespace("FilePrivateNS:Animation", "com.greensock.core:Animation/instance#1"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+L21:
+      declocal_i          2
+      getlocal2
+      pushbyte            -1
+      ifgt                L11
+
+      getlocal3
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "eventCallback")
+   method
+    name "eventCallback"
+    refid "com.greensock.core:Animation/instance/eventCallback"
+    param QName(PackageNamespace(""), "String")
+    param QName(PackageNamespace(""), "Function")
+    param QName(PackageNamespace(""), "Array")
+    flag NEED_ARGUMENTS
+    flag HAS_OPTIONAL
+    flag HAS_PARAM_NAMES
+    optional Null()
+    optional Null()
+    paramname "type"
+    paramname "callback"
+    paramname "params"
+    body
+     maxstack 4
+     localcount 5
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      pushnull
+      ifne                L7
+
+      pushnull
+      returnvalue
+
+L7:
+      getlocal1
+      pushbyte            0
+      pushbyte            2
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "substr"), 2
+      pushstring          "on"
+      ifne                L66
+
+      getlocal            4
+      getproperty         QName(PackageNamespace(""), "length")
+      pushbyte            1
+      ifne                L21
+
+      getlex              QName(PackageNamespace(""), "vars")
+      getlocal1
+      getproperty         MultinameL([PrivateNamespace("com.greensock.core:Animation"), ProtectedNamespace("com.greensock.core:Animation"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock.core"), PackageInternalNs("com.greensock.core"), PrivateNamespace("FilePrivateNS:Animation", "com.greensock.core:Animation/instance#1"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      returnvalue
+
+L21:
+      getlocal2
+      pushnull
+      ifne                L29
+
+      getlex              QName(PackageNamespace(""), "vars")
+      getlocal1
+      deleteproperty      MultinameL([PrivateNamespace("com.greensock.core:Animation"), ProtectedNamespace("com.greensock.core:Animation"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock.core"), PackageInternalNs("com.greensock.core"), PrivateNamespace("FilePrivateNS:Animation", "com.greensock.core:Animation/instance#1"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      pop
+      jump                L59
+
+L29:
+      getlex              QName(PackageNamespace(""), "vars")
+      getlocal1
+      getlocal2
+      setproperty         MultinameL([PrivateNamespace("com.greensock.core:Animation"), ProtectedNamespace("com.greensock.core:Animation"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock.core"), PackageInternalNs("com.greensock.core"), PrivateNamespace("FilePrivateNS:Animation", "com.greensock.core:Animation/instance#1"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      getlex              QName(PackageNamespace(""), "vars")
+      getlocal1
+      pushstring          "Params"
+      add
+      getlocal3
+      getlex              QName(PackageNamespace(""), "Array")
+      istypelate
+      dup
+      iffalse             L51
+
+      pop
+      getlocal3
+      pushstring          ""
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "join"), 1
+      pushstring          "{self}"
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "indexOf"), 1
+      pushbyte            -1
+      strictequals
+      not
+L51:
+      iffalse             L56
+
+      findpropstrict      QName(ProtectedNamespace("com.greensock.core:Animation"), "_swapSelfInParams")
+      getlocal3
+      callproperty        QName(ProtectedNamespace("com.greensock.core:Animation"), "_swapSelfInParams"), 1
+      jump                L58
+
+L56:
+      getlocal3
+      coerce              QName(PackageNamespace(""), "Array")
+L58:
+      setproperty         MultinameL([PrivateNamespace("com.greensock.core:Animation"), ProtectedNamespace("com.greensock.core:Animation"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock.core"), PackageInternalNs("com.greensock.core"), PrivateNamespace("FilePrivateNS:Animation", "com.greensock.core:Animation/instance#1"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+L59:
+      getlocal1
+      pushstring          "onUpdate"
+      ifne                L66
+
+      getlocal2
+      findproperty        QName(ProtectedNamespace("com.greensock.core:Animation"), "_onUpdate")
+      swap
+      setproperty         QName(ProtectedNamespace("com.greensock.core:Animation"), "_onUpdate")
+
+L66:
+      getlocal0
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "delay")
+   method
+    name "delay"
+    refid "com.greensock.core:Animation/instance/delay"
+    param QName(PackageNamespace(""), "Number")
+    flag NEED_ARGUMENTS
+    flag HAS_OPTIONAL
+    flag HAS_PARAM_NAMES
+    optional Double(nan)
+    paramname "value"
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "length")
+      iftrue              L7
+
+      getlex              QName(PackageNamespace(""), "_delay")
+      returnvalue
+
+L7:
+      getlex              QName(PackageNamespace(""), "_timeline")
+      getproperty         QName(PackageNamespace(""), "smoothChildTiming")
+      iffalse             L17
+
+      findpropstrict      QName(PackageNamespace(""), "startTime")
+      getlex              QName(PackageNamespace(""), "_startTime")
+      getlocal1
+      add
+      getlex              QName(PackageNamespace(""), "_delay")
+      subtract
+      callpropvoid        QName(PackageNamespace(""), "startTime"), 1
+
+L17:
+      getlocal1
+      findproperty        QName(PackageNamespace(""), "_delay")
+      swap
+      setproperty         QName(PackageNamespace(""), "_delay")
+
+      getlocal0
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "duration")
+   method
+    name "duration"
+    refid "com.greensock.core:Animation/instance/duration"
+    param QName(PackageNamespace(""), "Number")
+    flag NEED_ARGUMENTS
+    flag HAS_OPTIONAL
+    flag HAS_PARAM_NAMES
+    optional Double(nan)
+    paramname "value"
+    body
+     maxstack 4
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "length")
+      iftrue              L11
+
+      pushfalse
+      findproperty        QName(PackageNamespace(""), "_dirty")
+      swap
+      setproperty         QName(PackageNamespace(""), "_dirty")
+
+      getlex              QName(PackageNamespace(""), "_duration")
+      returnvalue
+
+L11:
+      getlocal1
+      dup
+      findproperty        QName(PackageNamespace(""), "_totalDuration")
+      swap
+      setproperty         QName(PackageNamespace(""), "_totalDuration")
+
+      findproperty        QName(PackageNamespace(""), "_duration")
+      swap
+      setproperty         QName(PackageNamespace(""), "_duration")
+
+      findpropstrict      QName(ProtectedNamespace("com.greensock.core:Animation"), "_uncache")
+      pushtrue
+      callpropvoid        QName(ProtectedNamespace("com.greensock.core:Animation"), "_uncache"), 1
+
+      getlex              QName(PackageNamespace(""), "_timeline")
+      getproperty         QName(PackageNamespace(""), "smoothChildTiming")
+      iffalse             L42
+
+      getlex              QName(PackageNamespace(""), "_time")
+      pushbyte            0
+      ifngt               L42
+
+      getlex              QName(PackageNamespace(""), "_time")
+      getlex              QName(PackageNamespace(""), "_duration")
+      ifnlt               L42
+
+      getlocal1
+      pushbyte            0
+      ifeq                L42
+
+      findpropstrict      QName(PackageNamespace(""), "totalTime")
+      getlex              QName(PackageNamespace(""), "_totalTime")
+      getlocal1
+      getlex              QName(PackageNamespace(""), "_duration")
+      divide
+      multiply
+      pushtrue
+      callpropvoid        QName(PackageNamespace(""), "totalTime"), 2
+
+L42:
+      getlocal0
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "totalDuration")
+   method
+    name "totalDuration"
+    refid "com.greensock.core:Animation/instance/totalDuration"
+    param QName(PackageNamespace(""), "Number")
+    flag NEED_ARGUMENTS
+    flag HAS_OPTIONAL
+    flag HAS_PARAM_NAMES
+    optional Double(nan)
+    paramname "value"
+    body
+     maxstack 2
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushfalse
+      findproperty        QName(PackageNamespace(""), "_dirty")
+      swap
+      setproperty         QName(PackageNamespace(""), "_dirty")
+
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "length")
+      iftrue              L11
+
+      getlex              QName(PackageNamespace(""), "_totalDuration")
+      jump                L15
+
+L11:
+      findpropstrict      QName(PackageNamespace(""), "duration")
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "duration"), 1
+      coerce_a
+L15:
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "time")
+   method
+    name "time"
+    refid "com.greensock.core:Animation/instance/time"
+    param QName(PackageNamespace(""), "Number")
+    param QName(PackageNamespace(""), "Boolean")
+    flag NEED_ARGUMENTS
+    flag HAS_OPTIONAL
+    flag HAS_PARAM_NAMES
+    optional Double(nan)
+    optional False()
+    paramname "value"
+    paramname "suppressEvents"
+    body
+     maxstack 3
+     localcount 4
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal3
+      getproperty         QName(PackageNamespace(""), "length")
+      iftrue              L7
+
+      getlex              QName(PackageNamespace(""), "_time")
+      returnvalue
+
+L7:
+      getlex              QName(PackageNamespace(""), "_dirty")
+      iffalse             L11
+
+      findpropstrict      QName(PackageNamespace(""), "totalDuration")
+      callpropvoid        QName(PackageNamespace(""), "totalDuration"), 0
+
+L11:
+      getlocal1
+      getlex              QName(PackageNamespace(""), "_duration")
+      ifngt               L17
+
+      getlex              QName(PackageNamespace(""), "_duration")
+      convert_d
+      setlocal1
+
+L17:
+      findpropstrict      QName(PackageNamespace(""), "totalTime")
+      getlocal1
+      getlocal2
+      callproperty        QName(PackageNamespace(""), "totalTime"), 2
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "totalTime")
+   method
+    name "totalTime"
+    refid "com.greensock.core:Animation/instance/totalTime"
+    param QName(PackageNamespace(""), "Number")
+    param QName(PackageNamespace(""), "Boolean")
+    param QName(PackageNamespace(""), "Boolean")
+    flag NEED_ARGUMENTS
+    flag HAS_OPTIONAL
+    flag HAS_PARAM_NAMES
+    optional Double(nan)
+    optional False()
+    optional False()
+    paramname "time"
+    paramname "suppressEvents"
+    paramname "uncapped"
+    body
+     maxstack 4
+     localcount 6
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      setlocal            5
+
+      getlocal            4
+      getproperty         QName(PackageNamespace(""), "length")
+      iftrue              L9
+
+      getlex              QName(PackageNamespace(""), "_totalTime")
+      returnvalue
+
+L9:
+      getlex              QName(PackageNamespace(""), "_timeline")
+      iffalse             L127
+
+      getlocal1
+      pushbyte            0
+      lessthan
+      dup
+      iffalse             L19
+
+      pop
+      getlocal3
+      not
+L19:
+      iffalse             L26
+
+      getlocal1
+      findpropstrict      QName(PackageNamespace(""), "totalDuration")
+      callproperty        QName(PackageNamespace(""), "totalDuration"), 0
+      add
+      convert_d
+      setlocal1
+
+L26:
+      getlex              QName(PackageNamespace(""), "_timeline")
+      getproperty         QName(PackageNamespace(""), "smoothChildTiming")
+      iffalse             L105
+
+      getlex              QName(PackageNamespace(""), "_dirty")
+      iffalse             L33
+
+      findpropstrict      QName(PackageNamespace(""), "totalDuration")
+      callpropvoid        QName(PackageNamespace(""), "totalDuration"), 0
+
+L33:
+      getlocal1
+      getlex              QName(PackageNamespace(""), "_totalDuration")
+      greaterthan
+      dup
+      iffalse             L41
+
+      pop
+      getlocal3
+      not
+L41:
+      iffalse             L45
+
+      getlex              QName(PackageNamespace(""), "_totalDuration")
+      convert_d
+      setlocal1
+
+L45:
+      getlex              QName(PackageNamespace(""), "_timeline")
+      coerce              QName(PackageNamespace("com.greensock.core"), "SimpleTimeline")
+      setlocal            5
+
+      getlex              QName(PackageNamespace(""), "_paused")
+      iffalse             L52
+
+      getlex              QName(PackageNamespace(""), "_pauseTime")
+      jump                L55
+
+L52:
+      getlocal            5
+      getproperty         QName(PackageNamespace(""), "_time")
+      convert_d
+L55:
+      getlex              QName(PackageNamespace(""), "_reversed")
+      iftrue              L59
+
+      getlocal1
+      jump                L63
+
+L59:
+      getlex              QName(PackageNamespace(""), "_totalDuration")
+      getlocal1
+      subtract
+      convert_d
+L63:
+      getlex              QName(PackageNamespace(""), "_timeScale")
+      divide
+      subtract
+      findproperty        QName(PackageNamespace(""), "_startTime")
+      swap
+      setproperty         QName(PackageNamespace(""), "_startTime")
+
+      getlex              QName(PackageNamespace(""), "_timeline")
+      getproperty         QName(PackageNamespace(""), "_dirty")
+      iftrue              L75
+
+      findpropstrict      QName(ProtectedNamespace("com.greensock.core:Animation"), "_uncache")
+      pushfalse
+      callpropvoid        QName(ProtectedNamespace("com.greensock.core:Animation"), "_uncache"), 1
+
+L75:
+      getlocal            5
+      getproperty         QName(PackageNamespace(""), "_timeline")
+      pushnull
+      ifeq                L105
+
+      jump                L102
+
+L80:
+      label
+      getlocal            5
+      getproperty         QName(PackageNamespace(""), "_timeline")
+      getproperty         QName(PackageNamespace(""), "_time")
+      getlocal            5
+      getproperty         QName(PackageNamespace(""), "_startTime")
+      getlocal            5
+      getproperty         QName(PackageNamespace(""), "_totalTime")
+      add
+      getlocal            5
+      getproperty         QName(PackageNamespace(""), "_timeScale")
+      divide
+      ifstricteq          L98
+
+      getlocal            5
+      getlocal            5
+      getproperty         QName(PackageNamespace(""), "_totalTime")
+      pushtrue
+      callpropvoid        QName(PackageNamespace(""), "totalTime"), 2
+
+L98:
+      getlocal            5
+      getproperty         QName(PackageNamespace(""), "_timeline")
+      coerce              QName(PackageNamespace("com.greensock.core"), "SimpleTimeline")
+      setlocal            5
+
+L102:
+      getlocal            5
+      getproperty         QName(PackageNamespace(""), "_timeline")
+      iftrue              L80
+
+L105:
+      getlex              QName(PackageNamespace(""), "_gc")
+      iffalse             L111
+
+      findpropstrict      QName(PackageNamespace(""), "_enabled")
+      pushtrue
+      pushfalse
+      callpropvoid        QName(PackageNamespace(""), "_enabled"), 2
+
+L111:
+      getlex              QName(PackageNamespace(""), "_totalTime")
+      getlocal1
+      equals
+      not
+      dup
+      iftrue              L121
+
+      pop
+      getlex              QName(PackageNamespace(""), "_duration")
+      pushbyte            0
+      strictequals
+L121:
+      iffalse             L127
+
+      findpropstrict      QName(PackageNamespace(""), "render")
+      getlocal1
+      getlocal2
+      pushfalse
+      callpropvoid        QName(PackageNamespace(""), "render"), 3
+
+L127:
+      getlocal0
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "progress")
+   method
+    name "progress"
+    refid "com.greensock.core:Animation/instance/progress"
+    param QName(PackageNamespace(""), "Number")
+    param QName(PackageNamespace(""), "Boolean")
+    flag NEED_ARGUMENTS
+    flag HAS_OPTIONAL
+    flag HAS_PARAM_NAMES
+    optional Double(nan)
+    optional False()
+    paramname "value"
+    paramname "suppressEvents"
+    body
+     maxstack 3
+     localcount 4
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal3
+      getproperty         QName(PackageNamespace(""), "length")
+      iftrue              L10
+
+      getlex              QName(PackageNamespace(""), "_time")
+      findpropstrict      QName(PackageNamespace(""), "duration")
+      callproperty        QName(PackageNamespace(""), "duration"), 0
+      divide
+      jump                L18
+
+L10:
+      findpropstrict      QName(PackageNamespace(""), "totalTime")
+      findpropstrict      QName(PackageNamespace(""), "duration")
+      callproperty        QName(PackageNamespace(""), "duration"), 0
+      getlocal1
+      multiply
+      getlocal2
+      callproperty        QName(PackageNamespace(""), "totalTime"), 2
+      coerce_a
+L18:
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "totalProgress")
+   method
+    name "totalProgress"
+    refid "com.greensock.core:Animation/instance/totalProgress"
+    param QName(PackageNamespace(""), "Number")
+    param QName(PackageNamespace(""), "Boolean")
+    flag NEED_ARGUMENTS
+    flag HAS_OPTIONAL
+    flag HAS_PARAM_NAMES
+    optional Double(nan)
+    optional False()
+    paramname "value"
+    paramname "suppressEvents"
+    body
+     maxstack 3
+     localcount 4
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal3
+      getproperty         QName(PackageNamespace(""), "length")
+      iftrue              L10
+
+      getlex              QName(PackageNamespace(""), "_time")
+      findpropstrict      QName(PackageNamespace(""), "duration")
+      callproperty        QName(PackageNamespace(""), "duration"), 0
+      divide
+      jump                L18
+
+L10:
+      findpropstrict      QName(PackageNamespace(""), "totalTime")
+      findpropstrict      QName(PackageNamespace(""), "duration")
+      callproperty        QName(PackageNamespace(""), "duration"), 0
+      getlocal1
+      multiply
+      getlocal2
+      callproperty        QName(PackageNamespace(""), "totalTime"), 2
+      coerce_a
+L18:
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "startTime")
+   method
+    name "startTime"
+    refid "com.greensock.core:Animation/instance/startTime"
+    param QName(PackageNamespace(""), "Number")
+    flag NEED_ARGUMENTS
+    flag HAS_OPTIONAL
+    flag HAS_PARAM_NAMES
+    optional Double(nan)
+    paramname "value"
+    body
+     maxstack 4
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "length")
+      iftrue              L7
+
+      getlex              QName(PackageNamespace(""), "_startTime")
+      returnvalue
+
+L7:
+      getlocal1
+      getlex              QName(PackageNamespace(""), "_startTime")
+      ifeq                L25
+
+      getlocal1
+      findproperty        QName(PackageNamespace(""), "_startTime")
+      swap
+      setproperty         QName(PackageNamespace(""), "_startTime")
+
+      getlex              QName(PackageNamespace(""), "timeline")
+      iffalse             L25
+
+      getlex              QName(PackageNamespace(""), "timeline")
+      getproperty         QName(PackageNamespace(""), "_sortChildren")
+      iffalse             L25
+
+      getlex              QName(PackageNamespace(""), "timeline")
+      getlocal0
+      getlocal1
+      getlex              QName(PackageNamespace(""), "_delay")
+      subtract
+      callpropvoid        QName(PackageNamespace(""), "add"), 2
+
+L25:
+      getlocal0
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "timeScale")
+   method
+    name "timeScale"
+    refid "com.greensock.core:Animation/instance/timeScale"
+    param QName(PackageNamespace(""), "Number")
+    flag NEED_ARGUMENTS
+    flag HAS_OPTIONAL
+    flag HAS_PARAM_NAMES
+    optional Double(nan)
+    paramname "value"
+    body
+     maxstack 3
+     localcount 4
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnan
+      setlocal3
+
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "length")
+      iftrue              L9
+
+      getlex              QName(PackageNamespace(""), "_timeScale")
+      returnvalue
+
+L9:
+      getlocal1
+      dup
+      iftrue              L14
+
+      pop
+      pushdouble          9.99999999999999955e-07
+L14:
+      convert_d
+      setlocal1
+
+      getlex              QName(PackageNamespace(""), "_timeline")
+      dup
+      iffalse             L23
+
+      pop
+      getlex              QName(PackageNamespace(""), "_timeline")
+      getproperty         QName(PackageNamespace(""), "smoothChildTiming")
+      coerce_a
+L23:
+      iffalse             L52
+
+      getlex              QName(PackageNamespace(""), "_pauseTime")
+      dup
+      iftrue              L32
+
+      pop
+      getlex              QName(PackageNamespace(""), "_pauseTime")
+      pushbyte            0
+      equals
+      coerce_a
+L32:
+      iffalse             L35
+
+      getlex              QName(PackageNamespace(""), "_pauseTime")
+      jump                L38
+
+L35:
+      getlex              QName(PackageNamespace(""), "_timeline")
+      getproperty         QName(PackageNamespace(""), "_totalTime")
+      convert_d
+L38:
+      convert_d
+      setlocal3
+
+      getlocal3
+      getlocal3
+      getlex              QName(PackageNamespace(""), "_startTime")
+      subtract
+      getlex              QName(PackageNamespace(""), "_timeScale")
+      multiply
+      getlocal1
+      divide
+      subtract
+      findproperty        QName(PackageNamespace(""), "_startTime")
+      swap
+      setproperty         QName(PackageNamespace(""), "_startTime")
+
+L52:
+      getlocal1
+      findproperty        QName(PackageNamespace(""), "_timeScale")
+      swap
+      setproperty         QName(PackageNamespace(""), "_timeScale")
+
+      findpropstrict      QName(ProtectedNamespace("com.greensock.core:Animation"), "_uncache")
+      pushfalse
+      callproperty        QName(ProtectedNamespace("com.greensock.core:Animation"), "_uncache"), 1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "reversed")
+   method
+    name "reversed"
+    refid "com.greensock.core:Animation/instance/reversed"
+    param QName(PackageNamespace(""), "Boolean")
+    flag NEED_ARGUMENTS
+    flag HAS_OPTIONAL
+    flag HAS_PARAM_NAMES
+    optional False()
+    paramname "value"
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "length")
+      iftrue              L7
+
+      getlex              QName(PackageNamespace(""), "_reversed")
+      returnvalue
+
+L7:
+      getlocal1
+      getlex              QName(PackageNamespace(""), "_reversed")
+      ifeq                L33
+
+      getlocal1
+      findproperty        QName(PackageNamespace(""), "_reversed")
+      swap
+      setproperty         QName(PackageNamespace(""), "_reversed")
+
+      findpropstrict      QName(PackageNamespace(""), "totalTime")
+      getlex              QName(PackageNamespace(""), "_timeline")
+      dup
+      iffalse             L23
+
+      pop
+      getlex              QName(PackageNamespace(""), "_timeline")
+      getproperty         QName(PackageNamespace(""), "smoothChildTiming")
+      not
+      coerce_a
+L23:
+      iffalse             L29
+
+      findpropstrict      QName(PackageNamespace(""), "totalDuration")
+      callproperty        QName(PackageNamespace(""), "totalDuration"), 0
+      getlex              QName(PackageNamespace(""), "_totalTime")
+      subtract
+      jump                L31
+
+L29:
+      getlex              QName(PackageNamespace(""), "_totalTime")
+      convert_d
+L31:
+      pushtrue
+      callpropvoid        QName(PackageNamespace(""), "totalTime"), 2
+
+L33:
+      getlocal0
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "paused")
+   method
+    name "paused"
+    refid "com.greensock.core:Animation/instance/paused"
+    param QName(PackageNamespace(""), "Boolean")
+    flag NEED_ARGUMENTS
+    flag HAS_OPTIONAL
+    flag HAS_PARAM_NAMES
+    optional False()
+    paramname "value"
+    body
+     maxstack 4
+     localcount 5
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnan
+      setlocal            4
+
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "length")
+      iftrue              L9
+
+      getlex              QName(PackageNamespace(""), "_paused")
+      returnvalue
+
+L9:
+      getlocal1
+      getlex              QName(PackageNamespace(""), "_paused")
+      ifeq                L108
+
+      getlex              QName(PackageNamespace(""), "_timeline")
+      iffalse             L108
+
+      getlex              QName(PackageNamespace(""), "_timeline")
+      callproperty        QName(PackageNamespace(""), "rawTime"), 0
+      convert_d
+      dup
+      setlocal            4
+
+      getlex              QName(PackageNamespace(""), "_pauseTime")
+      subtract
+      convert_d
+      setlocal3
+
+      getlocal1
+      not
+      dup
+      iffalse             L31
+
+      pop
+      getlex              QName(PackageNamespace(""), "_timeline")
+      getproperty         QName(PackageNamespace(""), "smoothChildTiming")
+      convert_b
+L31:
+      iffalse             L41
+
+      findpropstrict      QName(PackageNamespace(""), "_startTime")
+      dup
+      getproperty         QName(PackageNamespace(""), "_startTime")
+      getlocal3
+      add
+      setproperty         QName(PackageNamespace(""), "_startTime")
+
+      findpropstrict      QName(ProtectedNamespace("com.greensock.core:Animation"), "_uncache")
+      pushfalse
+      callpropvoid        QName(ProtectedNamespace("com.greensock.core:Animation"), "_uncache"), 1
+
+L41:
+      getlocal1
+      iffalse             L45
+
+      getlocal            4
+      jump                L46
+
+L45:
+      pushnan
+L46:
+      findproperty        QName(PackageNamespace(""), "_pauseTime")
+      swap
+      setproperty         QName(PackageNamespace(""), "_pauseTime")
+
+      getlocal1
+      findproperty        QName(PackageNamespace(""), "_paused")
+      swap
+      setproperty         QName(PackageNamespace(""), "_paused")
+
+      getlocal1
+      not
+      dup
+      iffalse             L61
+
+      pop
+      getlex              QName(PackageNamespace(""), "_totalTime")
+      pushbyte            0
+      greaterthan
+L61:
+      dup
+      iffalse             L67
+
+      pop
+      getlex              QName(PackageNamespace(""), "_totalTime")
+      getlex              QName(PackageNamespace(""), "_totalDuration")
+      lessthan
+L67:
+      findproperty        QName(PackageNamespace(""), "_active")
+      swap
+      setproperty         QName(PackageNamespace(""), "_active")
+
+      getlocal1
+      not
+      dup
+      iffalse             L79
+
+      pop
+      getlocal3
+      pushbyte            0
+      equals
+      not
+L79:
+      dup
+      iffalse             L84
+
+      pop
+      getlex              QName(PackageNamespace(""), "_initted")
+      convert_b
+L84:
+      dup
+      iffalse             L92
+
+      pop
+      findpropstrict      QName(PackageNamespace(""), "duration")
+      callproperty        QName(PackageNamespace(""), "duration"), 0
+      pushbyte            0
+      strictequals
+      not
+L92:
+      iffalse             L108
+
+      findpropstrict      QName(PackageNamespace(""), "render")
+      getlex              QName(PackageNamespace(""), "_timeline")
+      getproperty         QName(PackageNamespace(""), "smoothChildTiming")
+      iffalse             L99
+
+      getlex              QName(PackageNamespace(""), "_totalTime")
+      jump                L105
+
+L99:
+      getlocal            4
+      getlex              QName(PackageNamespace(""), "_startTime")
+      subtract
+      getlex              QName(PackageNamespace(""), "_timeScale")
+      divide
+      convert_d
+L105:
+      pushtrue
+      pushtrue
+      callpropvoid        QName(PackageNamespace(""), "render"), 3
+
+L108:
+      getlex              QName(PackageNamespace(""), "_gc")
+      dup
+      iffalse             L114
+
+      pop
+      getlocal1
+      not
+L114:
+      iffalse             L119
+
+      findpropstrict      QName(PackageNamespace(""), "_enabled")
+      pushtrue
+      pushfalse
+      callpropvoid        QName(PackageNamespace(""), "_enabled"), 2
+
+L119:
+      getlocal0
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.greensock.core:Animation/class/init"
+  body
+   maxstack 2
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 1
+   code
+    getlocal0
+    pushscope
+
+    findpropstrict      QName(PackageNamespace("flash.display"), "Shape")
+    constructprop       QName(PackageNamespace("flash.display"), "Shape"), 0
+    findproperty        QName(PackageNamespace(""), "ticker")
+    swap
+    setproperty         QName(PackageNamespace(""), "ticker")
+
+    findpropstrict      QName(PackageNamespace("flash.events"), "Event")
+    pushstring          "tick"
+    constructprop       QName(PackageNamespace("flash.events"), "Event"), 1
+    findproperty        QName(StaticProtectedNs("com.greensock.core:Animation"), "_tickEvent")
+    swap
+    setproperty         QName(StaticProtectedNs("com.greensock.core:Animation"), "_tickEvent")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PackageNamespace(""), "version") type QName(PackageNamespace(""), "String") value Utf8("12.1.1") end
+ trait slot QName(PackageNamespace(""), "ticker") type QName(PackageNamespace("flash.display"), "Shape") end
+ trait slot QName(PackageNamespace(""), "_rootTimeline") type QName(PackageNamespace("com.greensock.core"), "SimpleTimeline") end
+ trait slot QName(PackageNamespace(""), "_rootFramesTimeline") type QName(PackageNamespace("com.greensock.core"), "SimpleTimeline") end
+ trait slot QName(StaticProtectedNs("com.greensock.core:Animation"), "_rootFrame") type QName(PackageNamespace(""), "Number") value Integer(-1) end
+ trait slot QName(StaticProtectedNs("com.greensock.core:Animation"), "_tickEvent") type QName(PackageNamespace("flash.events"), "Event") end
+ trait slot QName(StaticProtectedNs("com.greensock.core:Animation"), "_tinyNum") type QName(PackageNamespace(""), "Number") value Double(1.00000000000000004e-10) end
+ trait method QName(PackageNamespace(""), "_updateRoot")
+  method
+   name "_updateRoot"
+   refid "com.greensock.core:Animation/class/_updateRoot"
+   param QName(PackageNamespace("flash.events"), "Event")
+   returns QName(PackageNamespace(""), "void")
+   flag HAS_OPTIONAL
+   flag HAS_PARAM_NAMES
+   optional Null()
+   paramname "event"
+   body
+    maxstack 4
+    localcount 2
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(StaticProtectedNs("com.greensock.core:Animation"), "_rootFrame")
+     convert_d
+     increment
+     findpropstrict      QName(StaticProtectedNs("com.greensock.core:Animation"), "_rootFrame")
+     swap
+     setproperty         QName(StaticProtectedNs("com.greensock.core:Animation"), "_rootFrame")
+
+     getlex              QName(PackageNamespace(""), "_rootTimeline")
+     getlex              QName(PackageNamespace("flash.utils"), "getTimer")
+     getglobalscope
+     call                0
+     pushshort           1000
+     divide
+     getlex              QName(PackageNamespace(""), "_rootTimeline")
+     getproperty         QName(PackageNamespace(""), "_startTime")
+     subtract
+     getlex              QName(PackageNamespace(""), "_rootTimeline")
+     getproperty         QName(PackageNamespace(""), "_timeScale")
+     multiply
+     pushfalse
+     pushfalse
+     callpropvoid        QName(PackageNamespace(""), "render"), 3
+
+     getlex              QName(PackageNamespace(""), "_rootFramesTimeline")
+     getlex              QName(StaticProtectedNs("com.greensock.core:Animation"), "_rootFrame")
+     getlex              QName(PackageNamespace(""), "_rootFramesTimeline")
+     getproperty         QName(PackageNamespace(""), "_startTime")
+     subtract
+     getlex              QName(PackageNamespace(""), "_rootFramesTimeline")
+     getproperty         QName(PackageNamespace(""), "_timeScale")
+     multiply
+     pushfalse
+     pushfalse
+     callpropvoid        QName(PackageNamespace(""), "render"), 3
+
+     getlex              QName(PackageNamespace(""), "ticker")
+     getlex              QName(StaticProtectedNs("com.greensock.core:Animation"), "_tickEvent")
+     callpropvoid        QName(PackageNamespace(""), "dispatchEvent"), 1
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+end ; class

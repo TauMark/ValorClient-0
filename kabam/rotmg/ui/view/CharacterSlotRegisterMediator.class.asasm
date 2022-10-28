@@ -1,0 +1,163 @@
+class
+ refid "kabam.rotmg.ui.view:CharacterSlotRegisterMediator"
+ instance QName(PackageNamespace("kabam.rotmg.ui.view"), "CharacterSlotRegisterMediator")
+  extends QName(PackageNamespace("robotlegs.bender.bundles.mvcs"), "Mediator")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.ui.view:CharacterSlotRegisterMediator")
+  iinit
+   refid "kabam.rotmg.ui.view:CharacterSlotRegisterMediator/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "view") flag METADATA type QName(PackageNamespace("kabam.rotmg.ui.view"), "CharacterSlotRegisterDialog")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "openAccountManagement") flag METADATA type QName(PackageNamespace("kabam.rotmg.account.core.signals"), "OpenAccountInfoSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "close") flag METADATA type QName(PackageNamespace("kabam.rotmg.dialogs.control"), "CloseDialogsSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PackageNamespace(""), "initialize") flag OVERRIDE
+   method
+    name "initialize"
+    refid "kabam.rotmg.ui.view:CharacterSlotRegisterMediator/instance/initialize"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "cancel")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.ui.view:CharacterSlotRegisterMediator"), "onCancel")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "register")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.ui.view:CharacterSlotRegisterMediator"), "onRegister")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "destroy") flag OVERRIDE
+   method
+    name "destroy"
+    refid "kabam.rotmg.ui.view:CharacterSlotRegisterMediator/instance/destroy"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "cancel")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.ui.view:CharacterSlotRegisterMediator"), "onCancel")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "register")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.ui.view:CharacterSlotRegisterMediator"), "onRegister")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.ui.view:CharacterSlotRegisterMediator"), "onRegister")
+   method
+    name "onRegister"
+    refid "kabam.rotmg.ui.view:CharacterSlotRegisterMediator/instance/kabam.rotmg.ui.view:CharacterSlotRegisterMediator/instance/onRegister"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "openAccountManagement")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.ui.view:CharacterSlotRegisterMediator"), "onCancel")
+   method
+    name "onCancel"
+    refid "kabam.rotmg.ui.view:CharacterSlotRegisterMediator/instance/kabam.rotmg.ui.view:CharacterSlotRegisterMediator/instance/onCancel"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "close")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.ui.view:CharacterSlotRegisterMediator/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

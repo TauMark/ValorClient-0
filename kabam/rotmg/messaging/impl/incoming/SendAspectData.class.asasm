@@ -1,0 +1,95 @@
+class
+ refid "kabam.rotmg.messaging.impl.incoming:SendAspectData"
+ instance QName(PackageNamespace("kabam.rotmg.messaging.impl.incoming"), "SendAspectData")
+  extends QName(PackageNamespace("kabam.rotmg.messaging.impl.incoming"), "IncomingMessage")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.messaging.impl.incoming:SendAspectData")
+  iinit
+   name "SendAspectData"
+   refid "kabam.rotmg.messaging.impl.incoming:SendAspectData/instance/init"
+   param QName(PackageNamespace(""), "uint")
+   param QName(PackageNamespace(""), "Function")
+   flag HAS_PARAM_NAMES
+   paramname "_arg1"
+   paramname "_arg2"
+   body
+    maxstack 3
+    localcount 3
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     getlocal1
+     getlocal2
+     constructsuper      2
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "anubisStacks") type QName(PackageNamespace(""), "int") end
+  trait method QName(PackageNamespace(""), "parseFromInput") flag OVERRIDE
+   method
+    name "parseFromInput"
+    refid "kabam.rotmg.messaging.impl.incoming:SendAspectData/instance/parseFromInput"
+    param QName(PackageNamespace("flash.utils"), "IDataInput")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      callproperty        QName(Namespace("flash.utils:IDataInput"), "readInt"), 0
+      setproperty         QName(PackageNamespace(""), "anubisStacks")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "toString") flag OVERRIDE
+   method
+    name "toString"
+    refid "kabam.rotmg.messaging.impl.incoming:SendAspectData/instance/toString"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushstring          ""
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.messaging.impl.incoming:SendAspectData/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

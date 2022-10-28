@@ -1,0 +1,166 @@
+class
+ refid "kabam.lib.net.impl:ClassHandlerProxy"
+ instance QName(PackageNamespace("kabam.lib.net.impl"), "ClassHandlerProxy")
+  extends QName(PackageNamespace(""), "Object")
+  implements QName(PackageNamespace("kabam.lib.net.api"), "MessageHandlerProxy")
+  flag SEALED
+  iinit
+   refid "kabam.lib.net.impl:ClassHandlerProxy/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace("kabam.lib.net.impl:ClassHandlerProxy"), "injector") type QName(PackageNamespace("org.swiftsuspenders"), "Injector") end
+  trait slot QName(PrivateNamespace("kabam.lib.net.impl:ClassHandlerProxy"), "handlerType") type QName(PackageNamespace(""), "Class") end
+  trait slot QName(PrivateNamespace("kabam.lib.net.impl:ClassHandlerProxy"), "handler") type QName(PackageNamespace(""), "Object") end
+  trait method QName(PackageNamespace(""), "setType")
+   method
+    name "setType"
+    refid "kabam.lib.net.impl:ClassHandlerProxy/instance/setType"
+    param QName(PackageNamespace(""), "Class")
+    returns QName(PackageNamespace("kabam.lib.net.impl"), "ClassHandlerProxy")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      setproperty         QName(PrivateNamespace("kabam.lib.net.impl:ClassHandlerProxy"), "handlerType")
+
+      getlocal0
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setInjector")
+   method
+    name "setInjector"
+    refid "kabam.lib.net.impl:ClassHandlerProxy/instance/setInjector"
+    param QName(PackageNamespace("org.swiftsuspenders"), "Injector")
+    returns QName(PackageNamespace("kabam.lib.net.impl"), "ClassHandlerProxy")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      setproperty         QName(PrivateNamespace("kabam.lib.net.impl:ClassHandlerProxy"), "injector")
+
+      getlocal0
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getMethod")
+   method
+    name "getMethod"
+    refid "kabam.lib.net.impl:ClassHandlerProxy/instance/getMethod"
+    returns QName(PackageNamespace(""), "Function")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.lib.net.impl:ClassHandlerProxy"), "handler")
+      iffalse             L9
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.lib.net.impl:ClassHandlerProxy"), "handler")
+      getproperty         Multiname("execute", [PrivateNamespace("kabam.lib.net.impl:ClassHandlerProxy"), ProtectedNamespace("kabam.lib.net.impl:ClassHandlerProxy"), StaticProtectedNs("kabam.lib.net.impl:ClassHandlerProxy"), StaticProtectedNs("Object"), PackageNamespace("kabam.lib.net.impl"), PackageInternalNs("kabam.lib.net.impl"), PrivateNamespace("FilePrivateNS:ClassHandlerProxy"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      jump                L12
+
+L9:
+      getlocal0
+      callproperty        QName(PrivateNamespace("kabam.lib.net.impl:ClassHandlerProxy"), "makeHandlerAndReturnExecute"), 0
+      coerce_a
+L12:
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.lib.net.impl:ClassHandlerProxy"), "makeHandlerAndReturnExecute")
+   method
+    name "makeHandlerAndReturnExecute"
+    refid "kabam.lib.net.impl:ClassHandlerProxy/instance/kabam.lib.net.impl:ClassHandlerProxy/instance/makeHandlerAndReturnExecute"
+    returns QName(PackageNamespace(""), "Function")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.lib.net.impl:ClassHandlerProxy"), "handlerType")
+      iftrue              L7
+
+      pushnull
+      returnvalue
+
+L7:
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.lib.net.impl:ClassHandlerProxy"), "injector")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.lib.net.impl:ClassHandlerProxy"), "handlerType")
+      callproperty        QName(PackageNamespace(""), "getInstance"), 1
+      setproperty         QName(PrivateNamespace("kabam.lib.net.impl:ClassHandlerProxy"), "handler")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.lib.net.impl:ClassHandlerProxy"), "handler")
+      getproperty         Multiname("execute", [PrivateNamespace("kabam.lib.net.impl:ClassHandlerProxy"), ProtectedNamespace("kabam.lib.net.impl:ClassHandlerProxy"), StaticProtectedNs("kabam.lib.net.impl:ClassHandlerProxy"), StaticProtectedNs("Object"), PackageNamespace("kabam.lib.net.impl"), PackageInternalNs("kabam.lib.net.impl"), PrivateNamespace("FilePrivateNS:ClassHandlerProxy"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.lib.net.impl:ClassHandlerProxy/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

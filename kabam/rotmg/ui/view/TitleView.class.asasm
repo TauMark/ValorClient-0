@@ -1,0 +1,493 @@
+class
+ refid "kabam.rotmg.ui.view:TitleView"
+ instance QName(PackageNamespace("kabam.rotmg.ui.view"), "TitleView")
+  extends QName(PackageNamespace("flash.display"), "Sprite")
+  flag SEALED
+  iinit
+   name "TitleView"
+   refid "kabam.rotmg.ui.view:TitleView/instance/init"
+   body
+    maxstack 5
+    localcount 2
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     getlocal0
+     callproperty        QName(PrivateNamespace("kabam.rotmg.ui.view:TitleView"), "makeMenuOptionsBar"), 0
+     setproperty         QName(PrivateNamespace("kabam.rotmg.ui.view:TitleView"), "menuOptionsBar")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("org.osflash.signals"), "Signal")
+     constructprop       QName(PackageNamespace("org.osflash.signals"), "Signal"), 0
+     setproperty         QName(PackageNamespace(""), "optionalButtonsAdded")
+
+     getlocal0
+     getlex              QName(PackageNamespace("io.decagames.rotmg.ui.texture"), "TextureParser")
+     getproperty         QName(PackageNamespace(""), "instance")
+     pushstring          "UI"
+     pushstring          "popup_header_title"
+     pushshort           800
+     callproperty        QName(PackageNamespace(""), "getSliceScalingBitmap"), 3
+     setproperty         QName(PrivateNamespace("kabam.rotmg.ui.view:TitleView"), "buttonsBackground")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.ui.view:TitleView"), "buttonsBackground")
+     pushdouble          502.5
+     setproperty         QName(PackageNamespace(""), "y")
+
+     getlocal0
+     constructsuper      0
+
+     findpropstrict      QName(PackageInternalNs("kabam.rotmg.ui.view"), "TitleScreenGraphic")
+     constructprop       QName(PackageInternalNs("kabam.rotmg.ui.view"), "TitleScreenGraphic"), 0
+     coerce              QName(PackageNamespace("kabam.rotmg.ui.view"), "GetTitleScreenGraphic")
+     setlocal1
+
+     getlocal1
+     pushshort           800
+     setproperty         QName(PackageNamespace(""), "width")
+
+     getlocal1
+     pushshort           600
+     setproperty         QName(PackageNamespace(""), "height")
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal1
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.ui.view:TitleView"), "buttonsBackground")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.ui.view:TitleView"), "menuOptionsBar")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.screens"), "AccountScreen")
+     constructprop       QName(PackageNamespace("com.company.assembleegameclient.screens"), "AccountScreen"), 0
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     getlocal0
+     callpropvoid        QName(PrivateNamespace("kabam.rotmg.ui.view:TitleView"), "makeChildren"), 0
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.ui"), "SoundIcon")
+     constructprop       QName(PackageNamespace("com.company.assembleegameclient.ui"), "SoundIcon"), 0
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     getlex              QName(PackageNamespace(""), "WebMain")
+     getproperty         QName(PackageNamespace(""), "RPC")
+     pushstring          "Main Menu"
+     setproperty         QName(PackageNamespace(""), "details")
+
+     getlex              QName(PackageNamespace(""), "WebMain")
+     getproperty         QName(PackageNamespace(""), "RPC")
+     callpropvoid        QName(PackageNamespace(""), "updatePresence"), 0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace("kabam.rotmg.ui.view:TitleView"), "versionText") type QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.ui.view:TitleView"), "copyrightText") type QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.ui.view:TitleView"), "menuOptionsBar") type QName(PackageNamespace("kabam.rotmg.ui.view.components"), "MenuOptionsBar") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.ui.view:TitleView"), "data") type QName(PackageNamespace("kabam.rotmg.ui.model"), "EnvironmentData") end
+  trait slot QName(PackageNamespace(""), "playClicked") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait slot QName(PackageNamespace(""), "serversClicked") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait slot QName(PackageNamespace(""), "accountClicked") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait slot QName(PackageNamespace(""), "legendsClicked") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait slot QName(PackageNamespace(""), "supportClicked") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait slot QName(PackageNamespace(""), "editorClicked") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait slot QName(PackageNamespace(""), "textureEditorClicked") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait slot QName(PackageNamespace(""), "optionalButtonsAdded") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.ui.view:TitleView"), "buttonsBackground") type QName(PackageNamespace("io.decagames.rotmg.ui.sliceScaling"), "SliceScalingBitmap") end
+  trait method QName(PrivateNamespace("kabam.rotmg.ui.view:TitleView"), "makeMenuOptionsBar")
+   method
+    name "makeMenuOptionsBar"
+    refid "kabam.rotmg.ui.view:TitleView/instance/kabam.rotmg.ui.view:TitleView/instance/makeMenuOptionsBar"
+    returns QName(PackageNamespace("kabam.rotmg.ui.view.components"), "MenuOptionsBar")
+    body
+     maxstack 3
+     localcount 8
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace("kabam.rotmg.ui.view"), "ButtonFactory")
+      callproperty        QName(PackageNamespace(""), "getPlayButton"), 0
+      coerce              QName(PackageNamespace("io.decagames.rotmg.ui.buttons"), "SliceScalingButton")
+      setlocal3
+
+      getlex              QName(PackageNamespace("kabam.rotmg.ui.view"), "ButtonFactory")
+      callproperty        QName(PackageNamespace(""), "getServersButton"), 0
+      coerce              QName(PackageNamespace("io.decagames.rotmg.ui.buttons"), "SliceScalingButton")
+      setlocal1
+
+      getlex              QName(PackageNamespace("kabam.rotmg.ui.view"), "ButtonFactory")
+      callproperty        QName(PackageNamespace(""), "getAccountButton"), 0
+      coerce              QName(PackageNamespace("io.decagames.rotmg.ui.buttons"), "SliceScalingButton")
+      setlocal2
+
+      getlex              QName(PackageNamespace("kabam.rotmg.ui.view"), "ButtonFactory")
+      callproperty        QName(PackageNamespace(""), "getLegendsButton"), 0
+      coerce              QName(PackageNamespace("io.decagames.rotmg.ui.buttons"), "SliceScalingButton")
+      setlocal            6
+
+      getlex              QName(PackageNamespace("kabam.rotmg.ui.view"), "ButtonFactory")
+      callproperty        QName(PackageNamespace(""), "getSupportButton"), 0
+      coerce              QName(PackageNamespace("io.decagames.rotmg.ui.buttons"), "SliceScalingButton")
+      setlocal            7
+
+      getlex              QName(PackageNamespace("kabam.rotmg.ui.view"), "ButtonFactory")
+      callproperty        QName(PackageNamespace(""), "getTextureEditorButton"), 0
+      coerce              QName(PackageNamespace("io.decagames.rotmg.ui.buttons"), "SliceScalingButton")
+      setlocal            4
+
+      getlocal0
+      getlocal3
+      getproperty         QName(PackageNamespace(""), "clicked")
+      setproperty         QName(PackageNamespace(""), "playClicked")
+
+      getlocal0
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "clicked")
+      setproperty         QName(PackageNamespace(""), "serversClicked")
+
+      getlocal0
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "clicked")
+      setproperty         QName(PackageNamespace(""), "accountClicked")
+
+      getlocal0
+      getlocal            6
+      getproperty         QName(PackageNamespace(""), "clicked")
+      setproperty         QName(PackageNamespace(""), "legendsClicked")
+
+      getlocal0
+      getlocal            7
+      getproperty         QName(PackageNamespace(""), "clicked")
+      setproperty         QName(PackageNamespace(""), "supportClicked")
+
+      getlocal0
+      getlocal            4
+      getproperty         QName(PackageNamespace(""), "clicked")
+      setproperty         QName(PackageNamespace(""), "textureEditorClicked")
+
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.ui.view.components"), "MenuOptionsBar")
+      constructprop       QName(PackageNamespace("kabam.rotmg.ui.view.components"), "MenuOptionsBar"), 0
+      coerce              QName(PackageNamespace("kabam.rotmg.ui.view.components"), "MenuOptionsBar")
+      dup
+      setlocal            5
+
+      getlocal3
+      pushstring          "CENTER"
+      callpropvoid        QName(PackageNamespace(""), "addButton"), 2
+
+      getlocal            5
+      getlocal1
+      pushstring          "LEFT"
+      callpropvoid        QName(PackageNamespace(""), "addButton"), 2
+
+      getlocal            5
+      getlocal2
+      pushstring          "RIGHT"
+      callpropvoid        QName(PackageNamespace(""), "addButton"), 2
+
+      getlocal            5
+      getlocal            6
+      pushstring          "RIGHT"
+      callpropvoid        QName(PackageNamespace(""), "addButton"), 2
+
+      getlocal            5
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.ui.view:TitleView"), "makeChildren")
+   method
+    name "makeChildren"
+    refid "kabam.rotmg.ui.view:TitleView/instance/kabam.rotmg.ui.view:TitleView/instance/makeChildren"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 5
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal0
+      callproperty        QName(PackageNamespace(""), "makeText"), 0
+      pushtrue
+      callproperty        QName(PackageNamespace(""), "setHTML"), 1
+      pushstring          "left"
+      callproperty        QName(PackageNamespace(""), "setAutoSize"), 1
+      pushstring          "middle"
+      callproperty        QName(PackageNamespace(""), "setVerticalAlign"), 1
+      setproperty         QName(PrivateNamespace("kabam.rotmg.ui.view:TitleView"), "versionText")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.ui.view:TitleView"), "versionText")
+      pushdouble          589.45
+      setproperty         QName(PackageNamespace(""), "y")
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.ui.view:TitleView"), "versionText")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      getlocal0
+      getlocal0
+      callproperty        QName(PackageNamespace(""), "makeText"), 0
+      pushstring          "right"
+      callproperty        QName(PackageNamespace(""), "setAutoSize"), 1
+      pushstring          "middle"
+      callproperty        QName(PackageNamespace(""), "setVerticalAlign"), 1
+      setproperty         QName(PrivateNamespace("kabam.rotmg.ui.view:TitleView"), "copyrightText")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.ui.view:TitleView"), "copyrightText")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder")
+      constructprop       QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder"), 0
+      pushstring          "TitleView.Copyright"
+      callproperty        QName(PackageNamespace(""), "setParams"), 1
+      callpropvoid        QName(PackageNamespace(""), "setStringBuilder"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.ui.view:TitleView"), "copyrightText")
+      findpropstrict      QName(PackageNamespace("flash.filters"), "DropShadowFilter")
+      pushbyte            0
+      pushbyte            0
+      pushbyte            0
+      constructprop       QName(PackageNamespace("flash.filters"), "DropShadowFilter"), 3
+      newarray            1
+      setproperty         QName(PackageNamespace(""), "filters")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.ui.view:TitleView"), "copyrightText")
+      pushshort           800
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.ui.view:TitleView"), "copyrightText")
+      pushdouble          589.45
+      setproperty         QName(PackageNamespace(""), "y")
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.ui.view:TitleView"), "copyrightText")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "makeText")
+   method
+    name "makeText"
+    refid "kabam.rotmg.ui.view:TitleView/instance/makeText"
+    returns QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete")
+    body
+     maxstack 5
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete")
+      constructprop       QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete"), 0
+      pushbyte            12
+      callproperty        QName(PackageNamespace(""), "setSize"), 1
+      pushint             8355711
+      callproperty        QName(PackageNamespace(""), "setColor"), 1
+      coerce              QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete")
+      setlocal1
+
+      getlocal1
+      findpropstrict      QName(PackageNamespace("flash.filters"), "DropShadowFilter")
+      pushbyte            0
+      pushbyte            0
+      pushbyte            0
+      constructprop       QName(PackageNamespace("flash.filters"), "DropShadowFilter"), 3
+      newarray            1
+      setproperty         QName(PackageNamespace(""), "filters")
+
+      getlocal1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "initialize")
+   method
+    name "initialize"
+    refid "kabam.rotmg.ui.view:TitleView/instance/initialize"
+    param QName(PackageNamespace("kabam.rotmg.ui.model"), "EnvironmentData")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      setproperty         QName(PrivateNamespace("kabam.rotmg.ui.view:TitleView"), "data")
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.ui.view:TitleView"), "updateVersionText"), 0
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.ui.view:TitleView"), "handleOptionalButtons"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.ui.view:TitleView"), "updateVersionText")
+   method
+    name "updateVersionText"
+    refid "kabam.rotmg.ui.view:TitleView/instance/kabam.rotmg.ui.view:TitleView/instance/updateVersionText"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.ui.view:TitleView"), "versionText")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "StaticStringBuilder")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.ui.view:TitleView"), "data")
+      getproperty         QName(PackageNamespace(""), "buildLabel")
+      constructprop       QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "StaticStringBuilder"), 1
+      callpropvoid        QName(PackageNamespace(""), "setStringBuilder"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.ui.view:TitleView"), "handleOptionalButtons")
+   method
+    name "handleOptionalButtons"
+    refid "kabam.rotmg.ui.view:TitleView/instance/kabam.rotmg.ui.view:TitleView/instance/handleOptionalButtons"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.ui.view:TitleView"), "data")
+      getproperty         QName(PackageNamespace(""), "canMapEdit")
+      dup
+      iffalse             L11
+
+      pop
+      getlocal0
+      callproperty        QName(PrivateNamespace("kabam.rotmg.ui.view:TitleView"), "createEditorButton"), 0
+      coerce_a
+L11:
+      pop
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "optionalButtonsAdded")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.ui.view:TitleView"), "createEditorButton")
+   method
+    name "createEditorButton"
+    refid "kabam.rotmg.ui.view:TitleView/instance/kabam.rotmg.ui.view:TitleView/instance/createEditorButton"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace("kabam.rotmg.ui.view"), "ButtonFactory")
+      callproperty        QName(PackageNamespace(""), "getEditorButton"), 0
+      coerce              QName(PackageNamespace("io.decagames.rotmg.ui.buttons"), "SliceScalingButton")
+      setlocal1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.ui.view:TitleView"), "menuOptionsBar")
+      getlocal1
+      pushstring          "LEFT"
+      callpropvoid        QName(PackageNamespace(""), "addButton"), 2
+
+      getlocal0
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "clicked")
+      setproperty         QName(PackageNamespace(""), "editorClicked")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.ui.view:TitleView/class/init"
+  body
+   maxstack 2
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 1
+   code
+    getlocal0
+    pushscope
+
+    getlex              QName(PackageNamespace("kabam.rotmg.ui.view"), "GetTitleScreenGraphic")
+    findproperty        QName(PackageInternalNs("kabam.rotmg.ui.view"), "TitleScreenGraphic")
+    swap
+    setproperty         QName(PackageInternalNs("kabam.rotmg.ui.view"), "TitleScreenGraphic")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PackageNamespace(""), "MIDDLE_OF_BOTTOM_BAND") type QName(PackageNamespace(""), "Number") value Double(589.45) end
+ trait slot QName(PackageInternalNs("kabam.rotmg.ui.view"), "TitleScreenGraphic") type QName(PackageNamespace(""), "Class") end
+ trait slot QName(PackageNamespace(""), "queueEmailConfirmation") type QName(PackageNamespace(""), "Boolean") value False() end
+ trait slot QName(PackageNamespace(""), "queuePasswordPrompt") type QName(PackageNamespace(""), "Boolean") value False() end
+ trait slot QName(PackageNamespace(""), "queuePasswordPromptFull") type QName(PackageNamespace(""), "Boolean") value False() end
+ trait slot QName(PackageNamespace(""), "queueRegistrationPrompt") type QName(PackageNamespace(""), "Boolean") value False() end
+end ; class

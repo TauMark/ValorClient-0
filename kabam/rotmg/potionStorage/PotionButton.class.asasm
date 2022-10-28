@@ -1,0 +1,353 @@
+class
+ refid "kabam.rotmg.potionStorage:PotionButton"
+ instance QName(PackageNamespace("kabam.rotmg.potionStorage"), "PotionButton")
+  extends QName(PackageNamespace("flash.display"), "Sprite")
+  implements QName(PackageNamespace("kabam.rotmg.tooltips"), "TooltipAble")
+  flag SEALED
+  iinit
+   name "PotionButton"
+   refid "kabam.rotmg.potionStorage:PotionButton/instance/init"
+   param QName(PackageNamespace("com.company.assembleegameclient.game"), "GameSprite")
+   flag HAS_PARAM_NAMES
+   paramname "gs"
+   body
+    maxstack 7
+    localcount 2
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.tooltips"), "HoverTooltipDelegate")
+     constructprop       QName(PackageNamespace("kabam.rotmg.tooltips"), "HoverTooltipDelegate"), 0
+     setproperty         QName(PackageNamespace(""), "hoverTooltipDelegate")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.ui.tooltip"), "TextToolTip")
+     pushint             16764107
+     pushint             16711680
+     pushnull
+     pushstring          "This button will open your potion storage."
+     pushshort           200
+     constructprop       QName(PackageNamespace("com.company.assembleegameclient.ui.tooltip"), "TextToolTip"), 5
+     setproperty         QName(PrivateNamespace("kabam.rotmg.potionStorage:PotionButton"), "tooltip")
+
+     getlocal0
+     constructsuper      0
+
+     pushfalse
+     findproperty        QName(PackageNamespace(""), "mouseChildren")
+     swap
+     setproperty         QName(PackageNamespace(""), "mouseChildren")
+
+     getlocal0
+     getlocal1
+     setproperty         QName(PackageNamespace(""), "gs_")
+
+     getlocal0
+     getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "TextureRedrawer")
+     getlex              QName(PackageNamespace("com.company.util"), "AssetLibrary")
+     pushstring          "d3LofiObjEmbed"
+     pushshort           1084
+     callproperty        QName(PackageNamespace(""), "getImageFromSet"), 2
+     pushbyte            56
+     pushtrue
+     pushint             65280
+     callproperty        QName(PackageNamespace(""), "redraw"), 4
+     setproperty         QName(PrivateNamespace("kabam.rotmg.potionStorage:PotionButton"), "bitmapData")
+
+     getlocal0
+     getlex              QName(PackageNamespace("kabam.rotmg.ui"), "UIUtils")
+     pushbyte            28
+     pushbyte            27
+     callproperty        QName(PackageNamespace(""), "makeHUDBackground"), 2
+     setproperty         QName(PrivateNamespace("kabam.rotmg.potionStorage:PotionButton"), "background")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("flash.display"), "Bitmap")
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.potionStorage:PotionButton"), "bitmapData")
+     constructprop       QName(PackageNamespace("flash.display"), "Bitmap"), 1
+     setproperty         QName(PrivateNamespace("kabam.rotmg.potionStorage:PotionButton"), "bitmap")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.potionStorage:PotionButton"), "bitmap")
+     pushbyte            -9
+     setproperty         QName(PackageNamespace(""), "x")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.potionStorage:PotionButton"), "bitmap")
+     pushbyte            -11
+     setproperty         QName(PackageNamespace(""), "y")
+
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "hoverTooltipDelegate")
+     getlocal0
+     callpropvoid        QName(PackageNamespace(""), "setDisplayObject"), 1
+
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "hoverTooltipDelegate")
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.potionStorage:PotionButton"), "tooltip")
+     setproperty         QName(PackageNamespace(""), "tooltip")
+
+     getlocal0
+     callpropvoid        QName(PackageNamespace(""), "drawAsOpen"), 0
+
+     findpropstrict      QName(PackageNamespace(""), "addEventListener")
+     pushstring          "click"
+     getlex              QName(PackageNamespace(""), "onClick")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "hoverTooltipDelegate") type QName(PackageNamespace("kabam.rotmg.tooltips"), "HoverTooltipDelegate") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.potionStorage:PotionButton"), "bitmap") type QName(PackageNamespace("flash.display"), "Bitmap") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.potionStorage:PotionButton"), "background") type QName(PackageNamespace("flash.display"), "Sprite") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.potionStorage:PotionButton"), "bitmapData") type QName(PackageNamespace("flash.display"), "BitmapData") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.potionStorage:PotionButton"), "tooltip") type QName(PackageNamespace("com.company.assembleegameclient.ui.tooltip"), "TextToolTip") end
+  trait slot QName(PackageNamespace(""), "gs_") type QName(PackageNamespace("com.company.assembleegameclient.game"), "GameSprite") end
+  trait method QName(PackageNamespace(""), "setShowToolTipSignal")
+   method
+    name "setShowToolTipSignal"
+    refid "kabam.rotmg.potionStorage:PotionButton/instance/setShowToolTipSignal"
+    param QName(PackageNamespace("kabam.rotmg.core.signals"), "ShowTooltipSignal")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "signal"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hoverTooltipDelegate")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "setShowToolTipSignal"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getShowToolTip")
+   method
+    name "getShowToolTip"
+    refid "kabam.rotmg.potionStorage:PotionButton/instance/getShowToolTip"
+    returns QName(PackageNamespace("kabam.rotmg.core.signals"), "ShowTooltipSignal")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hoverTooltipDelegate")
+      callproperty        QName(PackageNamespace(""), "getShowToolTip"), 0
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setHideToolTipsSignal")
+   method
+    name "setHideToolTipsSignal"
+    refid "kabam.rotmg.potionStorage:PotionButton/instance/setHideToolTipsSignal"
+    param QName(PackageNamespace("kabam.rotmg.core.signals"), "HideTooltipsSignal")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "signal"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hoverTooltipDelegate")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "setHideToolTipsSignal"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getHideToolTips")
+   method
+    name "getHideToolTips"
+    refid "kabam.rotmg.potionStorage:PotionButton/instance/getHideToolTips"
+    returns QName(PackageNamespace("kabam.rotmg.core.signals"), "HideTooltipsSignal")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hoverTooltipDelegate")
+      callproperty        QName(PackageNamespace(""), "getHideToolTips"), 0
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "drawAsOpen")
+   method
+    name "drawAsOpen"
+    refid "kabam.rotmg.potionStorage:PotionButton/instance/drawAsOpen"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.potionStorage:PotionButton"), "background")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.potionStorage:PotionButton"), "bitmap")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "onClick")
+   method
+    name "onClick"
+    refid "kabam.rotmg.potionStorage:PotionButton/instance/onClick"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "e"
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "gs_")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.potionStorage"), "PotionStorageModel")
+      getlex              QName(PackageNamespace(""), "gs_")
+      constructprop       QName(PackageNamespace("kabam.rotmg.potionStorage"), "PotionStorageModel"), 1
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.sound"), "SoundEffectLibrary")
+      pushstring          "button_click"
+      callpropvoid        QName(PackageNamespace(""), "play"), 1
+
+      findpropstrict      QName(PackageNamespace(""), "removeEventListener")
+      pushstring          "click"
+      getlex              QName(PackageNamespace(""), "onClick")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "drawAsClosed")
+   method
+    name "drawAsClosed"
+    refid "kabam.rotmg.potionStorage:PotionButton/instance/drawAsClosed"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.potionStorage:PotionButton"), "background")
+      dup
+      iffalse             L13
+
+      pop
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.potionStorage:PotionButton"), "background")
+      getproperty         QName(PackageNamespace(""), "parent")
+      getlocal0
+      equals
+      coerce_a
+L13:
+      iffalse             L18
+
+      findpropstrict      QName(PackageNamespace(""), "removeChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.potionStorage:PotionButton"), "background")
+      callpropvoid        QName(PackageNamespace(""), "removeChild"), 1
+
+L18:
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.potionStorage:PotionButton"), "bitmap")
+      dup
+      iffalse             L29
+
+      pop
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.potionStorage:PotionButton"), "bitmap")
+      getproperty         QName(PackageNamespace(""), "parent")
+      getlocal0
+      equals
+      coerce_a
+L29:
+      iffalse             L34
+
+      findpropstrict      QName(PackageNamespace(""), "removeChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.potionStorage:PotionButton"), "bitmap")
+      callpropvoid        QName(PackageNamespace(""), "removeChild"), 1
+
+L34:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.potionStorage:PotionButton/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

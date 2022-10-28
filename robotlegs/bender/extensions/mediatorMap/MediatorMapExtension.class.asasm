@@ -1,0 +1,282 @@
+class
+ refid "robotlegs.bender.extensions.mediatorMap:MediatorMapExtension"
+ instance QName(PackageNamespace("robotlegs.bender.extensions.mediatorMap"), "MediatorMapExtension")
+  extends QName(PackageNamespace(""), "Object")
+  implements Multiname("IExtension", [PackageNamespace("robotlegs.bender.framework.api")])
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("robotlegs.bender.extensions.mediatorMap:MediatorMapExtension")
+  iinit
+   name "robotlegs.bender.extensions.mediatorMap:MediatorMapExtension/MediatorMapExtension"
+   refid "robotlegs.bender.extensions.mediatorMap:MediatorMapExtension/instance/init"
+   body
+    maxstack 3
+    localcount 1
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     getlex              QName(PackageNamespace("robotlegs.bender.framework.impl"), "UID")
+     getlex              QName(PackageNamespace("robotlegs.bender.extensions.mediatorMap"), "MediatorMapExtension")
+     callproperty        QName(PackageNamespace(""), "create"), 1
+     initproperty        QName(PrivateNamespace("robotlegs.bender.extensions.mediatorMap:MediatorMapExtension"), "_uid")
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait const QName(PrivateNamespace("robotlegs.bender.extensions.mediatorMap:MediatorMapExtension"), "_uid") type QName(PackageNamespace(""), "String") end
+  trait slot QName(PrivateNamespace("robotlegs.bender.extensions.mediatorMap:MediatorMapExtension"), "_injector") type QName(PackageNamespace("org.swiftsuspenders"), "Injector") end
+  trait slot QName(PrivateNamespace("robotlegs.bender.extensions.mediatorMap:MediatorMapExtension"), "_mediatorMap") type QName(PackageNamespace("robotlegs.bender.extensions.mediatorMap.api"), "IMediatorMap") end
+  trait slot QName(PrivateNamespace("robotlegs.bender.extensions.mediatorMap:MediatorMapExtension"), "_viewManager") type QName(PackageNamespace("robotlegs.bender.extensions.viewManager.api"), "IViewManager") end
+  trait slot QName(PrivateNamespace("robotlegs.bender.extensions.mediatorMap:MediatorMapExtension"), "_mediatorManager") type QName(PackageNamespace("robotlegs.bender.extensions.mediatorMap.impl"), "DefaultMediatorManager") end
+  trait method QName(PackageNamespace(""), "extend")
+   method
+    name "robotlegs.bender.extensions.mediatorMap:MediatorMapExtension/extend"
+    refid "robotlegs.bender.extensions.mediatorMap:MediatorMapExtension/instance/extend"
+    param QName(PackageNamespace("robotlegs.bender.framework.api"), "IContext")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg_1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      getproperty         QName(Namespace("robotlegs.bender.framework.api:IContext"), "injector")
+      setproperty         QName(PrivateNamespace("robotlegs.bender.extensions.mediatorMap:MediatorMapExtension"), "_injector")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("robotlegs.bender.extensions.mediatorMap:MediatorMapExtension"), "_injector")
+      getlex              QName(PackageNamespace("robotlegs.bender.extensions.mediatorMap.api"), "IMediatorFactory")
+      callproperty        QName(PackageNamespace(""), "map"), 1
+      getlex              QName(PackageNamespace("robotlegs.bender.extensions.mediatorMap.impl"), "MediatorFactory")
+      callpropvoid        QName(PackageNamespace(""), "toSingleton"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("robotlegs.bender.extensions.mediatorMap:MediatorMapExtension"), "_injector")
+      getlex              QName(PackageNamespace("robotlegs.bender.extensions.mediatorMap.api"), "IMediatorMap")
+      callproperty        QName(PackageNamespace(""), "map"), 1
+      getlex              QName(PackageNamespace("robotlegs.bender.extensions.mediatorMap.impl"), "MediatorMap")
+      callpropvoid        QName(PackageNamespace(""), "toSingleton"), 1
+
+      getlocal1
+      getproperty         QName(Namespace("robotlegs.bender.framework.api:IContext"), "lifecycle")
+      getlocal0
+      getproperty         QName(PrivateNamespace("robotlegs.bender.extensions.mediatorMap:MediatorMapExtension"), "beforeInitializing")
+      callpropvoid        QName(Namespace("robotlegs.bender.framework.api:ILifecycle"), "beforeInitializing"), 1
+
+      getlocal1
+      getproperty         QName(Namespace("robotlegs.bender.framework.api:IContext"), "lifecycle")
+      getlocal0
+      getproperty         QName(PrivateNamespace("robotlegs.bender.extensions.mediatorMap:MediatorMapExtension"), "beforeDestroying")
+      callpropvoid        QName(Namespace("robotlegs.bender.framework.api:ILifecycle"), "beforeDestroying"), 1
+
+      getlocal1
+      getproperty         QName(Namespace("robotlegs.bender.framework.api:IContext"), "lifecycle")
+      getlocal0
+      getproperty         QName(PrivateNamespace("robotlegs.bender.extensions.mediatorMap:MediatorMapExtension"), "whenDestroying")
+      callpropvoid        QName(Namespace("robotlegs.bender.framework.api:ILifecycle"), "whenDestroying"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "toString")
+   method
+    name "robotlegs.bender.extensions.mediatorMap:MediatorMapExtension/toString"
+    refid "robotlegs.bender.extensions.mediatorMap:MediatorMapExtension/instance/toString"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("robotlegs.bender.extensions.mediatorMap:MediatorMapExtension"), "_uid")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("robotlegs.bender.extensions.mediatorMap:MediatorMapExtension"), "beforeInitializing")
+   method
+    name "robotlegs.bender.extensions.mediatorMap:MediatorMapExtension/private:beforeInitializing"
+    refid "robotlegs.bender.extensions.mediatorMap:MediatorMapExtension/instance/robotlegs.bender.extensions.mediatorMap:MediatorMapExtension/instance/beforeInitializing"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace("robotlegs.bender.extensions.mediatorMap:MediatorMapExtension"), "_injector")
+      getlex              QName(PackageNamespace("robotlegs.bender.extensions.mediatorMap.api"), "IMediatorMap")
+      callproperty        QName(PackageNamespace(""), "getInstance"), 1
+      setproperty         QName(PrivateNamespace("robotlegs.bender.extensions.mediatorMap:MediatorMapExtension"), "_mediatorMap")
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace("robotlegs.bender.extensions.mediatorMap:MediatorMapExtension"), "_injector")
+      getlex              QName(PackageNamespace("robotlegs.bender.extensions.mediatorMap.impl"), "DefaultMediatorManager")
+      callproperty        QName(PackageNamespace(""), "getInstance"), 1
+      setproperty         QName(PrivateNamespace("robotlegs.bender.extensions.mediatorMap:MediatorMapExtension"), "_mediatorManager")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("robotlegs.bender.extensions.mediatorMap:MediatorMapExtension"), "_injector")
+      getlex              QName(PackageNamespace("robotlegs.bender.extensions.viewManager.api"), "IViewManager")
+      callproperty        QName(PackageNamespace(""), "satisfiesDirectly"), 1
+      iffalse             L32
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace("robotlegs.bender.extensions.mediatorMap:MediatorMapExtension"), "_injector")
+      getlex              QName(PackageNamespace("robotlegs.bender.extensions.viewManager.api"), "IViewManager")
+      callproperty        QName(PackageNamespace(""), "getInstance"), 1
+      setproperty         QName(PrivateNamespace("robotlegs.bender.extensions.mediatorMap:MediatorMapExtension"), "_viewManager")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("robotlegs.bender.extensions.mediatorMap:MediatorMapExtension"), "_viewManager")
+      getlocal0
+      getproperty         QName(PrivateNamespace("robotlegs.bender.extensions.mediatorMap:MediatorMapExtension"), "_mediatorMap")
+      getlex              QName(PackageNamespace("robotlegs.bender.extensions.viewManager.api"), "IViewHandler")
+      astypelate
+      callpropvoid        QName(Namespace("robotlegs.bender.extensions.viewManager.api:IViewManager"), "addViewHandler"), 1
+
+L32:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("robotlegs.bender.extensions.mediatorMap:MediatorMapExtension"), "beforeDestroying")
+   method
+    name "robotlegs.bender.extensions.mediatorMap:MediatorMapExtension/private:beforeDestroying"
+    refid "robotlegs.bender.extensions.mediatorMap:MediatorMapExtension/instance/robotlegs.bender.extensions.mediatorMap:MediatorMapExtension/instance/beforeDestroying"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("robotlegs.bender.extensions.mediatorMap:MediatorMapExtension"), "_injector")
+      getlex              QName(PackageNamespace("robotlegs.bender.extensions.mediatorMap.api"), "IMediatorFactory")
+      callproperty        QName(PackageNamespace(""), "getInstance"), 1
+      coerce              QName(PackageNamespace("robotlegs.bender.extensions.mediatorMap.api"), "IMediatorFactory")
+      setlocal1
+
+      getlocal1
+      callpropvoid        QName(Namespace("robotlegs.bender.extensions.mediatorMap.api:IMediatorFactory"), "removeAllMediators"), 0
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("robotlegs.bender.extensions.mediatorMap:MediatorMapExtension"), "_injector")
+      getlex              QName(PackageNamespace("robotlegs.bender.extensions.viewManager.api"), "IViewManager")
+      callproperty        QName(PackageNamespace(""), "satisfiesDirectly"), 1
+      iffalse             L28
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace("robotlegs.bender.extensions.mediatorMap:MediatorMapExtension"), "_injector")
+      getlex              QName(PackageNamespace("robotlegs.bender.extensions.viewManager.api"), "IViewManager")
+      callproperty        QName(PackageNamespace(""), "getInstance"), 1
+      setproperty         QName(PrivateNamespace("robotlegs.bender.extensions.mediatorMap:MediatorMapExtension"), "_viewManager")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("robotlegs.bender.extensions.mediatorMap:MediatorMapExtension"), "_viewManager")
+      getlocal0
+      getproperty         QName(PrivateNamespace("robotlegs.bender.extensions.mediatorMap:MediatorMapExtension"), "_mediatorMap")
+      getlex              QName(PackageNamespace("robotlegs.bender.extensions.viewManager.api"), "IViewHandler")
+      astypelate
+      callpropvoid        QName(Namespace("robotlegs.bender.extensions.viewManager.api:IViewManager"), "removeViewHandler"), 1
+
+L28:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("robotlegs.bender.extensions.mediatorMap:MediatorMapExtension"), "whenDestroying")
+   method
+    name "robotlegs.bender.extensions.mediatorMap:MediatorMapExtension/private:whenDestroying"
+    refid "robotlegs.bender.extensions.mediatorMap:MediatorMapExtension/instance/robotlegs.bender.extensions.mediatorMap:MediatorMapExtension/instance/whenDestroying"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("robotlegs.bender.extensions.mediatorMap:MediatorMapExtension"), "_injector")
+      getlex              QName(PackageNamespace("robotlegs.bender.extensions.mediatorMap.api"), "IMediatorMap")
+      callproperty        QName(PackageNamespace(""), "satisfiesDirectly"), 1
+      iffalse             L11
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("robotlegs.bender.extensions.mediatorMap:MediatorMapExtension"), "_injector")
+      getlex              QName(PackageNamespace("robotlegs.bender.extensions.mediatorMap.api"), "IMediatorMap")
+      callpropvoid        QName(PackageNamespace(""), "unmap"), 1
+
+L11:
+      getlocal0
+      getproperty         QName(PrivateNamespace("robotlegs.bender.extensions.mediatorMap:MediatorMapExtension"), "_injector")
+      getlex              QName(PackageNamespace("robotlegs.bender.extensions.mediatorMap.api"), "IMediatorFactory")
+      callproperty        QName(PackageNamespace(""), "satisfiesDirectly"), 1
+      iffalse             L20
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("robotlegs.bender.extensions.mediatorMap:MediatorMapExtension"), "_injector")
+      getlex              QName(PackageNamespace("robotlegs.bender.extensions.mediatorMap.api"), "IMediatorFactory")
+      callpropvoid        QName(PackageNamespace(""), "unmap"), 1
+
+L20:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  name ""
+  refid "robotlegs.bender.extensions.mediatorMap:MediatorMapExtension/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

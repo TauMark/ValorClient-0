@@ -1,0 +1,179 @@
+class
+ refid "kabam.rotmg.editor.services:SaveTextureTask"
+ instance QName(PackageNamespace("kabam.rotmg.editor.services"), "SaveTextureTask")
+  extends QName(PackageNamespace("kabam.lib.tasks"), "BaseTask")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.editor.services:SaveTextureTask")
+  iinit
+   refid "kabam.rotmg.editor.services:SaveTextureTask/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "account") flag METADATA type QName(PackageNamespace("kabam.rotmg.account.core"), "Account")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "data") flag METADATA type QName(PackageNamespace("kabam.rotmg.editor.model"), "TextureData")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "setup") flag METADATA type QName(PackageNamespace("kabam.rotmg.application.api"), "ApplicationSetup")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(ProtectedNamespace("kabam.rotmg.editor.services:SaveTextureTask"), "startTask") flag OVERRIDE
+   method
+    name "startTask"
+    refid "kabam.rotmg.editor.services:SaveTextureTask/instance/kabam.rotmg.editor.services:SaveTextureTask:startTask"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 4
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("ru.inspirit.net"), "MultipartURLLoader")
+      constructprop       QName(PackageNamespace("ru.inspirit.net"), "MultipartURLLoader"), 0
+      coerce              QName(PackageNamespace("ru.inspirit.net"), "MultipartURLLoader")
+      setlocal2
+
+      getlocal2
+      pushstring          "guid"
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "account")
+      callproperty        QName(Namespace("kabam.rotmg.account.core:Account"), "getUserId"), 0
+      callpropvoid        QName(PackageNamespace(""), "addVariable"), 2
+
+      getlocal2
+      pushstring          "password"
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "account")
+      callproperty        QName(Namespace("kabam.rotmg.account.core:Account"), "getPassword"), 0
+      callpropvoid        QName(PackageNamespace(""), "addVariable"), 2
+
+      getlocal2
+      pushstring          "secret"
+      pushstring          ""
+      callpropvoid        QName(PackageNamespace(""), "addVariable"), 2
+
+      getlocal2
+      pushstring          "name"
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "data")
+      getproperty         QName(PackageNamespace(""), "name")
+      callpropvoid        QName(PackageNamespace(""), "addVariable"), 2
+
+      getlocal2
+      pushstring          "dataType"
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "data")
+      getproperty         QName(PackageNamespace(""), "type")
+      callpropvoid        QName(PackageNamespace(""), "addVariable"), 2
+
+      getlocal2
+      pushstring          "tags"
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "data")
+      getproperty         QName(PackageNamespace(""), "tags")
+      callpropvoid        QName(PackageNamespace(""), "addVariable"), 2
+
+      getlocal2
+      pushstring          "overwrite"
+      pushstring          "on"
+      callpropvoid        QName(PackageNamespace(""), "addVariable"), 2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "setup")
+      pushtrue
+      callproperty        QName(Namespace("kabam.rotmg.application.api:ApplicationSetup"), "getAppEngineUrl"), 1
+      pushstring          "/picture/save"
+      add
+      coerce_s
+      setlocal1
+
+      getlex              QName(PackageNamespace("com.adobe.images"), "PNGEncoder")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "data")
+      getproperty         QName(PackageNamespace(""), "bitmapData")
+      callproperty        QName(PackageNamespace(""), "encode"), 1
+      coerce              QName(PackageNamespace("flash.utils"), "ByteArray")
+      setlocal3
+
+      getlocal2
+      getlocal3
+      pushstring          "Foo.png"
+      pushstring          "data"
+      callpropvoid        QName(PackageNamespace(""), "addFile"), 3
+
+      getlocal2
+      pushstring          "complete"
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.editor.services:SaveTextureTask"), "onSaveComplete")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      getlocal2
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "load"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.editor.services:SaveTextureTask"), "onSaveComplete")
+   method
+    name "onSaveComplete"
+    refid "kabam.rotmg.editor.services:SaveTextureTask/instance/kabam.rotmg.editor.services:SaveTextureTask/instance/kabam.rotmg.editor.services:SaveTextureTask:startTask/onSaveComplete"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg_1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(ProtectedNamespace("kabam.lib.tasks:BaseTask"), "completeTask")
+      pushtrue
+      callpropvoid        QName(ProtectedNamespace("kabam.lib.tasks:BaseTask"), "completeTask"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.editor.services:SaveTextureTask/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

@@ -1,0 +1,160 @@
+class
+ refid "kabam.rotmg.protip.view:ProTipView"
+ instance QName(PackageNamespace("kabam.rotmg.protip.view"), "ProTipView")
+  extends QName(PackageNamespace("flash.display"), "Sprite")
+  flag SEALED
+  iinit
+   name "ProTipView"
+   refid "kabam.rotmg.protip.view:ProTipView/instance/init"
+   body
+    maxstack 7
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.protip.view"), "ProTipText")
+     constructprop       QName(PackageNamespace("kabam.rotmg.protip.view"), "ProTipText"), 0
+     setproperty         QName(PrivateNamespace("kabam.rotmg.protip.view:ProTipView"), "text")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.protip.view:ProTipView"), "text")
+     pushshort           300
+     setproperty         QName(PackageNamespace(""), "x")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.protip.view:ProTipView"), "text")
+     pushbyte            125
+     setproperty         QName(PackageNamespace(""), "y")
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.protip.view:ProTipView"), "text")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     findpropstrict      QName(PackageNamespace("flash.filters"), "GlowFilter")
+     pushbyte            0
+     pushbyte            1
+     pushbyte            3
+     pushbyte            3
+     pushbyte            2
+     pushbyte            1
+     constructprop       QName(PackageNamespace("flash.filters"), "GlowFilter"), 6
+     newarray            1
+     findproperty        QName(PackageNamespace(""), "filters")
+     swap
+     setproperty         QName(PackageNamespace(""), "filters")
+
+     pushfalse
+     findproperty        QName(PackageNamespace(""), "mouseEnabled")
+     swap
+     setproperty         QName(PackageNamespace(""), "mouseEnabled")
+
+     pushfalse
+     findproperty        QName(PackageNamespace(""), "mouseChildren")
+     swap
+     setproperty         QName(PackageNamespace(""), "mouseChildren")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace("kabam.rotmg.protip.view:ProTipView"), "text") type QName(PackageNamespace("kabam.rotmg.protip.view"), "ProTipText") end
+  trait method QName(PackageNamespace(""), "setTip")
+   method
+    name "setTip"
+    refid "kabam.rotmg.protip.view:ProTipView/instance/setTip"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 5
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.protip.view:ProTipView"), "text")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "setTip"), 1
+
+      findpropstrict      QName(PackageNamespace("com.gskinner.motion"), "GTween")
+      getlocal0
+      pushbyte            5
+      pushstring          "alpha"
+      pushbyte            0
+      newobject           1
+      constructprop       QName(PackageNamespace("com.gskinner.motion"), "GTween"), 3
+      coerce              QName(PackageNamespace("com.gskinner.motion"), "GTween")
+      setlocal2
+
+      getlocal2
+      pushbyte            5
+      setproperty         QName(PackageNamespace(""), "delay")
+
+      getlocal2
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.protip.view:ProTipView"), "removeSelf")
+      setproperty         QName(PackageNamespace(""), "onComplete")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.protip.view:ProTipView"), "removeSelf")
+   method
+    name "removeSelf"
+    refid "kabam.rotmg.protip.view:ProTipView/instance/kabam.rotmg.protip.view:ProTipView/instance/removeSelf"
+    param QName(PackageNamespace("com.gskinner.motion"), "GTween")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace(""), "parent")
+      dup
+      iffalse             L10
+
+      pop
+      getlex              QName(PackageNamespace(""), "parent")
+      getlocal0
+      callproperty        QName(PackageNamespace(""), "removeChild"), 1
+      coerce_a
+L10:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.protip.view:ProTipView/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

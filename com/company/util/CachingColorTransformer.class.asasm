@@ -1,0 +1,350 @@
+class
+ refid "com.company.util:CachingColorTransformer"
+ instance QName(PackageNamespace("com.company.util"), "CachingColorTransformer")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  iinit
+   refid "com.company.util:CachingColorTransformer/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; instance
+ cinit
+  refid "com.company.util:CachingColorTransformer/class/init"
+  body
+   maxstack 2
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 1
+   code
+    getlocal0
+    pushscope
+
+    findpropstrict      QName(PackageNamespace("flash.utils"), "Dictionary")
+    constructprop       QName(PackageNamespace("flash.utils"), "Dictionary"), 0
+    findproperty        QName(PrivateNamespace("com.company.util:CachingColorTransformer"), "bds_")
+    swap
+    setproperty         QName(PrivateNamespace("com.company.util:CachingColorTransformer"), "bds_")
+
+    findpropstrict      QName(PackageNamespace("flash.utils"), "Dictionary")
+    constructprop       QName(PackageNamespace("flash.utils"), "Dictionary"), 0
+    findproperty        QName(PrivateNamespace("com.company.util:CachingColorTransformer"), "alphas_")
+    swap
+    setproperty         QName(PrivateNamespace("com.company.util:CachingColorTransformer"), "alphas_")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait slot QName(PrivateNamespace("com.company.util:CachingColorTransformer"), "bds_") type QName(PackageNamespace("flash.utils"), "Dictionary") end
+ trait slot QName(PrivateNamespace("com.company.util:CachingColorTransformer"), "alphas_") type QName(PackageNamespace("flash.utils"), "Dictionary") end
+ trait method QName(PackageNamespace(""), "transformBitmapData")
+  method
+   name "transformBitmapData"
+   refid "com.company.util:CachingColorTransformer/class/transformBitmapData"
+   param QName(PackageNamespace("flash.display"), "BitmapData")
+   param QName(PackageNamespace("flash.geom"), "ColorTransform")
+   returns QName(PackageNamespace("flash.display"), "BitmapData")
+   flag HAS_PARAM_NAMES
+   paramname "tex"
+   paramname "transform"
+   body
+    maxstack 3
+    localcount 5
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     pushnull
+     setlocal3
+
+     getlex              QName(PrivateNamespace("com.company.util:CachingColorTransformer"), "bds_")
+     getlocal1
+     getproperty         MultinameL([PrivateNamespace("com.company.util:CachingColorTransformer"), StaticProtectedNs("com.company.util:CachingColorTransformer"), StaticProtectedNs("Object"), PackageNamespace("com.company.util"), PackageInternalNs("com.company.util"), PrivateNamespace("FilePrivateNS:CachingColorTransformer"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     coerce              QName(PackageNamespace("flash.utils"), "Dictionary")
+     dup
+     setlocal            4
+
+     pushnull
+     ifeq                L18
+
+     getlocal            4
+     getlocal2
+     getproperty         MultinameL([PrivateNamespace("com.company.util:CachingColorTransformer"), StaticProtectedNs("com.company.util:CachingColorTransformer"), StaticProtectedNs("Object"), PackageNamespace("com.company.util"), PackageInternalNs("com.company.util"), PrivateNamespace("FilePrivateNS:CachingColorTransformer"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+     setlocal3
+
+     jump                L26
+
+L18:
+     findpropstrict      QName(PackageNamespace("flash.utils"), "Dictionary")
+     constructprop       QName(PackageNamespace("flash.utils"), "Dictionary"), 0
+     coerce              QName(PackageNamespace("flash.utils"), "Dictionary")
+     setlocal            4
+
+     getlex              QName(PrivateNamespace("com.company.util:CachingColorTransformer"), "bds_")
+     getlocal1
+     getlocal            4
+     setproperty         MultinameL([PrivateNamespace("com.company.util:CachingColorTransformer"), StaticProtectedNs("com.company.util:CachingColorTransformer"), StaticProtectedNs("Object"), PackageNamespace("com.company.util"), PackageInternalNs("com.company.util"), PrivateNamespace("FilePrivateNS:CachingColorTransformer"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+L26:
+     getlocal3
+     pushnull
+     ifne                L42
+
+     getlocal1
+     callproperty        QName(PackageNamespace(""), "clone"), 0
+     coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+     setlocal3
+
+     getlocal3
+     getlocal3
+     getproperty         QName(PackageNamespace(""), "rect")
+     getlocal2
+     callpropvoid        QName(PackageNamespace(""), "colorTransform"), 2
+
+     getlocal            4
+     getlocal2
+     getlocal3
+     setproperty         MultinameL([PrivateNamespace("com.company.util:CachingColorTransformer"), StaticProtectedNs("com.company.util:CachingColorTransformer"), StaticProtectedNs("Object"), PackageNamespace("com.company.util"), PackageInternalNs("com.company.util"), PrivateNamespace("FilePrivateNS:CachingColorTransformer"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+L42:
+     getlocal3
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "filterBitmapData")
+  method
+   name "filterBitmapData"
+   refid "com.company.util:CachingColorTransformer/class/filterBitmapData"
+   param QName(PackageNamespace("flash.display"), "BitmapData")
+   param QName(PackageNamespace("flash.filters"), "BitmapFilter")
+   returns QName(PackageNamespace("flash.display"), "BitmapData")
+   flag HAS_PARAM_NAMES
+   paramname "tex"
+   paramname "filter"
+   body
+    maxstack 5
+    localcount 5
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     pushnull
+     setlocal3
+
+     getlex              QName(PrivateNamespace("com.company.util:CachingColorTransformer"), "bds_")
+     getlocal1
+     getproperty         MultinameL([PrivateNamespace("com.company.util:CachingColorTransformer"), StaticProtectedNs("com.company.util:CachingColorTransformer"), StaticProtectedNs("Object"), PackageNamespace("com.company.util"), PackageInternalNs("com.company.util"), PrivateNamespace("FilePrivateNS:CachingColorTransformer"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     coerce              QName(PackageNamespace("flash.utils"), "Dictionary")
+     dup
+     setlocal            4
+
+     pushnull
+     ifeq                L18
+
+     getlocal            4
+     getlocal2
+     getproperty         MultinameL([PrivateNamespace("com.company.util:CachingColorTransformer"), StaticProtectedNs("com.company.util:CachingColorTransformer"), StaticProtectedNs("Object"), PackageNamespace("com.company.util"), PackageInternalNs("com.company.util"), PrivateNamespace("FilePrivateNS:CachingColorTransformer"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+     setlocal3
+
+     jump                L26
+
+L18:
+     findpropstrict      QName(PackageNamespace("flash.utils"), "Dictionary")
+     constructprop       QName(PackageNamespace("flash.utils"), "Dictionary"), 0
+     coerce              QName(PackageNamespace("flash.utils"), "Dictionary")
+     setlocal            4
+
+     getlex              QName(PrivateNamespace("com.company.util:CachingColorTransformer"), "bds_")
+     getlocal1
+     getlocal            4
+     setproperty         MultinameL([PrivateNamespace("com.company.util:CachingColorTransformer"), StaticProtectedNs("com.company.util:CachingColorTransformer"), StaticProtectedNs("Object"), PackageNamespace("com.company.util"), PackageInternalNs("com.company.util"), PrivateNamespace("FilePrivateNS:CachingColorTransformer"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+L26:
+     getlocal3
+     pushnull
+     ifne                L45
+
+     getlocal1
+     callproperty        QName(PackageNamespace(""), "clone"), 0
+     coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+     setlocal3
+
+     getlocal3
+     getlocal3
+     getlocal3
+     getproperty         QName(PackageNamespace(""), "rect")
+     findpropstrict      QName(PackageNamespace("flash.geom"), "Point")
+     constructprop       QName(PackageNamespace("flash.geom"), "Point"), 0
+     getlocal2
+     callpropvoid        QName(PackageNamespace(""), "applyFilter"), 4
+
+     getlocal            4
+     getlocal2
+     getlocal3
+     setproperty         MultinameL([PrivateNamespace("com.company.util:CachingColorTransformer"), StaticProtectedNs("com.company.util:CachingColorTransformer"), StaticProtectedNs("Object"), PackageNamespace("com.company.util"), PackageInternalNs("com.company.util"), PrivateNamespace("FilePrivateNS:CachingColorTransformer"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+L45:
+     getlocal3
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "alphaBitmapData")
+  method
+   name "alphaBitmapData"
+   refid "com.company.util:CachingColorTransformer/class/alphaBitmapData"
+   param QName(PackageNamespace("flash.display"), "BitmapData")
+   param QName(PackageNamespace(""), "int")
+   returns QName(PackageNamespace("flash.display"), "BitmapData")
+   flag HAS_PARAM_NAMES
+   paramname "tex"
+   paramname "alphaPercent"
+   body
+    maxstack 6
+    localcount 4
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PrivateNamespace("com.company.util:CachingColorTransformer"), "alphas_")
+     getlocal2
+     getproperty         MultinameL([PrivateNamespace("com.company.util:CachingColorTransformer"), StaticProtectedNs("com.company.util:CachingColorTransformer"), StaticProtectedNs("Object"), PackageNamespace("com.company.util"), PackageInternalNs("com.company.util"), PrivateNamespace("FilePrivateNS:CachingColorTransformer"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     coerce              QName(PackageNamespace("flash.geom"), "ColorTransform")
+     setlocal3
+
+     getlocal3
+     pushnull
+     ifne                L24
+
+     findpropstrict      QName(PackageNamespace("flash.geom"), "ColorTransform")
+     pushbyte            1
+     pushbyte            1
+     pushbyte            1
+     getlocal2
+     pushbyte            100
+     divide
+     constructprop       QName(PackageNamespace("flash.geom"), "ColorTransform"), 4
+     coerce              QName(PackageNamespace("flash.geom"), "ColorTransform")
+     setlocal3
+
+     getlex              QName(PrivateNamespace("com.company.util:CachingColorTransformer"), "alphas_")
+     getlocal2
+     getlocal3
+     setproperty         MultinameL([PrivateNamespace("com.company.util:CachingColorTransformer"), StaticProtectedNs("com.company.util:CachingColorTransformer"), StaticProtectedNs("Object"), PackageNamespace("com.company.util"), PackageInternalNs("com.company.util"), PrivateNamespace("FilePrivateNS:CachingColorTransformer"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+L24:
+     findpropstrict      QName(PackageNamespace(""), "transformBitmapData")
+     getlocal1
+     getlocal3
+     callproperty        QName(PackageNamespace(""), "transformBitmapData"), 2
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "clear")
+  method
+   name "clear"
+   refid "com.company.util:CachingColorTransformer/class/clear"
+   returns QName(PackageNamespace(""), "void")
+   body
+    maxstack 2
+    localcount 7
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     pushnull
+     setlocal2
+
+     pushnull
+     setlocal1
+
+     pushbyte            0
+     setlocal            6
+
+     getlex              QName(PrivateNamespace("com.company.util:CachingColorTransformer"), "bds_")
+     setlocal            5
+
+     jump                L32
+
+L11:
+     label
+     getlocal            5
+     getlocal            6
+     nextvalue
+     coerce              QName(PackageNamespace("flash.utils"), "Dictionary")
+     setlocal2
+
+     pushbyte            0
+     setlocal            4
+
+     getlocal2
+     setlocal3
+
+     jump                L30
+
+L22:
+     label
+     getlocal3
+     getlocal            4
+     nextvalue
+     coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+     setlocal1
+
+     getlocal1
+     callpropvoid        QName(PackageNamespace(""), "dispose"), 0
+
+L30:
+     hasnext2            3, 4
+     iftrue              L22
+
+L32:
+     hasnext2            5, 6
+     iftrue              L11
+
+     findpropstrict      QName(PackageNamespace("flash.utils"), "Dictionary")
+     constructprop       QName(PackageNamespace("flash.utils"), "Dictionary"), 0
+     findproperty        QName(PrivateNamespace("com.company.util:CachingColorTransformer"), "bds_")
+     swap
+     setproperty         QName(PrivateNamespace("com.company.util:CachingColorTransformer"), "bds_")
+
+     findpropstrict      QName(PackageNamespace("flash.utils"), "Dictionary")
+     constructprop       QName(PackageNamespace("flash.utils"), "Dictionary"), 0
+     findproperty        QName(PrivateNamespace("com.company.util:CachingColorTransformer"), "alphas_")
+     swap
+     setproperty         QName(PrivateNamespace("com.company.util:CachingColorTransformer"), "alphas_")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+end ; class

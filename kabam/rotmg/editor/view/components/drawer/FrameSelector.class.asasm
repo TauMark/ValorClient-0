@@ -1,0 +1,263 @@
+class
+ refid "kabam.rotmg.editor.view.components.drawer:FrameSelector"
+ instance QName(PackageNamespace("kabam.rotmg.editor.view.components.drawer"), "FrameSelector")
+  extends QName(PackageNamespace("flash.display"), "Sprite")
+  flag SEALED
+  iinit
+   name "FrameSelector"
+   refid "kabam.rotmg.editor.view.components.drawer:FrameSelector/instance/init"
+   body
+    maxstack 3
+    localcount 6
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     pushnull
+     setlocal1
+
+     pushnull
+     setlocal3
+
+     pushbyte            0
+     setlocal2
+
+     getlocal0
+     getlex              QName(PackageNamespace("__AS3__.vec"), "Vector")
+     getlex              QName(PackageNamespace("kabam.rotmg.editor.view.components.drawer"), "FrameButton")
+     applytype           1
+     construct           0
+     setproperty         QName(PackageNamespace(""), "buttons_")
+
+     getlocal0
+     constructsuper      0
+
+     pushbyte            0
+     setlocal            5
+
+     getlex              QName(PackageNamespace(""), "FRAMES")
+     setlocal            4
+
+     jump                L55
+
+L21:
+     label
+     getlocal            4
+     getlocal            5
+     nextvalue
+     coerce_s
+     setlocal1
+
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.editor.view.components.drawer"), "FrameButton")
+     getlocal1
+     constructprop       QName(PackageNamespace("kabam.rotmg.editor.view.components.drawer"), "FrameButton"), 1
+     coerce              QName(PackageNamespace("kabam.rotmg.editor.view.components.drawer"), "FrameButton")
+     setlocal3
+
+     getlocal3
+     pushstring          "click"
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.editor.view.components.drawer:FrameSelector"), "onClick")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     getlocal3
+     getlocal2
+     setproperty         QName(PackageNamespace(""), "x")
+
+     getlocal2
+     getlocal3
+     getproperty         QName(PackageNamespace(""), "width")
+     pushbyte            5
+     add
+     add
+     convert_i
+     setlocal2
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal3
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "buttons_")
+     getlocal3
+     callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+
+L55:
+     hasnext2            4, 5
+     iftrue              L21
+
+     getlocal0
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "buttons_")
+     pushbyte            0
+     getproperty         MultinameL([PrivateNamespace("kabam.rotmg.editor.view.components.drawer:FrameSelector"), ProtectedNamespace("kabam.rotmg.editor.view.components.drawer:FrameSelector"), StaticProtectedNs("kabam.rotmg.editor.view.components.drawer:FrameSelector"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.editor.view.components.drawer"), PackageInternalNs("kabam.rotmg.editor.view.components.drawer"), PrivateNamespace("FilePrivateNS:FrameSelector"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     callpropvoid        QName(PrivateNamespace("kabam.rotmg.editor.view.components.drawer:FrameSelector"), "setSelected"), 1
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "buttons_") type TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("kabam.rotmg.editor.view.components.drawer"), "FrameButton")>) end
+  trait slot QName(PackageNamespace(""), "selected_") type QName(PackageNamespace("kabam.rotmg.editor.view.components.drawer"), "FrameButton") value Null() end
+  trait method QName(PackageNamespace(""), "getSelected")
+   method
+    name "getSelected"
+    refid "kabam.rotmg.editor.view.components.drawer:FrameSelector/instance/getSelected"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "selected_")
+      getproperty         QName(PackageNamespace(""), "label_")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.editor.view.components.drawer:FrameSelector"), "setSelected")
+   method
+    name "setSelected"
+    refid "kabam.rotmg.editor.view.components.drawer:FrameSelector/instance/kabam.rotmg.editor.view.components.drawer:FrameSelector/setSelected"
+    param QName(PackageNamespace("kabam.rotmg.editor.view.components.drawer"), "FrameButton")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg_1"
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "selected_")
+      pushnull
+      ifeq                L10
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "selected_")
+      pushfalse
+      callpropvoid        QName(PackageNamespace(""), "setSelected"), 1
+
+L10:
+      getlocal0
+      getlocal1
+      setproperty         QName(PackageNamespace(""), "selected_")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "selected_")
+      pushtrue
+      callpropvoid        QName(PackageNamespace(""), "setSelected"), 1
+
+      findpropstrict      QName(PackageNamespace(""), "dispatchEvent")
+      findpropstrict      QName(PackageNamespace("flash.events"), "Event")
+      pushstring          "change"
+      constructprop       QName(PackageNamespace("flash.events"), "Event"), 1
+      callpropvoid        QName(PackageNamespace(""), "dispatchEvent"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.editor.view.components.drawer:FrameSelector"), "onClick")
+   method
+    name "onClick"
+    refid "kabam.rotmg.editor.view.components.drawer:FrameSelector/instance/kabam.rotmg.editor.view.components.drawer:FrameSelector/onClick"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg_1"
+    body
+     maxstack 2
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "target")
+      getlex              QName(PackageNamespace("kabam.rotmg.editor.view.components.drawer"), "FrameButton")
+      astypelate
+      coerce              QName(PackageNamespace("kabam.rotmg.editor.view.components.drawer"), "FrameButton")
+      setlocal2
+
+      getlocal0
+      getlocal2
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.editor.view.components.drawer:FrameSelector"), "setSelected"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.editor.view.components.drawer:FrameSelector/class/init"
+  body
+   maxstack 4
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 1
+   code
+    getlocal0
+    pushscope
+
+    getlex              QName(PackageNamespace("__AS3__.vec"), "Vector")
+    getlex              QName(PackageNamespace(""), "String")
+    applytype           1
+    pushbyte            5
+    construct           1
+    dup
+    pushbyte            0
+    pushstring          "Stand"
+    setproperty         MultinameL([PrivateNamespace("kabam.rotmg.editor.view.components.drawer:FrameSelector"), StaticProtectedNs("kabam.rotmg.editor.view.components.drawer:FrameSelector"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.editor.view.components.drawer"), PackageInternalNs("kabam.rotmg.editor.view.components.drawer"), PrivateNamespace("FilePrivateNS:FrameSelector"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+    dup
+    pushbyte            1
+    pushstring          "Walk 1"
+    setproperty         MultinameL([PrivateNamespace("kabam.rotmg.editor.view.components.drawer:FrameSelector"), StaticProtectedNs("kabam.rotmg.editor.view.components.drawer:FrameSelector"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.editor.view.components.drawer"), PackageInternalNs("kabam.rotmg.editor.view.components.drawer"), PrivateNamespace("FilePrivateNS:FrameSelector"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+    dup
+    pushbyte            2
+    pushstring          "Walk 2"
+    setproperty         MultinameL([PrivateNamespace("kabam.rotmg.editor.view.components.drawer:FrameSelector"), StaticProtectedNs("kabam.rotmg.editor.view.components.drawer:FrameSelector"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.editor.view.components.drawer"), PackageInternalNs("kabam.rotmg.editor.view.components.drawer"), PrivateNamespace("FilePrivateNS:FrameSelector"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+    dup
+    pushbyte            3
+    pushstring          "Attack 1"
+    setproperty         MultinameL([PrivateNamespace("kabam.rotmg.editor.view.components.drawer:FrameSelector"), StaticProtectedNs("kabam.rotmg.editor.view.components.drawer:FrameSelector"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.editor.view.components.drawer"), PackageInternalNs("kabam.rotmg.editor.view.components.drawer"), PrivateNamespace("FilePrivateNS:FrameSelector"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+    dup
+    pushbyte            4
+    pushstring          "Attack 2"
+    setproperty         MultinameL([PrivateNamespace("kabam.rotmg.editor.view.components.drawer:FrameSelector"), StaticProtectedNs("kabam.rotmg.editor.view.components.drawer:FrameSelector"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.editor.view.components.drawer"), PackageInternalNs("kabam.rotmg.editor.view.components.drawer"), PrivateNamespace("FilePrivateNS:FrameSelector"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+    findproperty        QName(PackageNamespace(""), "FRAMES")
+    swap
+    initproperty        QName(PackageNamespace(""), "FRAMES")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PackageNamespace(""), "STAND") type QName(PackageNamespace(""), "String") value Utf8("Stand") end
+ trait const QName(PackageNamespace(""), "WALK1") type QName(PackageNamespace(""), "String") value Utf8("Walk 1") end
+ trait const QName(PackageNamespace(""), "WALK2") type QName(PackageNamespace(""), "String") value Utf8("Walk 2") end
+ trait const QName(PackageNamespace(""), "ATTACK1") type QName(PackageNamespace(""), "String") value Utf8("Attack 1") end
+ trait const QName(PackageNamespace(""), "ATTACK2") type QName(PackageNamespace(""), "String") value Utf8("Attack 2") end
+ trait const QName(PackageNamespace(""), "FRAMES") type TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace(""), "String")>) end
+end ; class

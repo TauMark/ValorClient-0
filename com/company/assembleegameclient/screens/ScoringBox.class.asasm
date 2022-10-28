@@ -1,0 +1,869 @@
+class
+ refid "com.company.assembleegameclient.screens:ScoringBox"
+ instance QName(PackageNamespace("com.company.assembleegameclient.screens"), "ScoringBox")
+  extends QName(PackageNamespace("flash.display"), "Sprite")
+  flag SEALED
+  iinit
+   name "ScoringBox"
+   refid "com.company.assembleegameclient.screens:ScoringBox/instance/init"
+   param QName(PackageNamespace("flash.geom"), "Rectangle")
+   param QName(PackageNamespace(""), "XML")
+   flag HAS_PARAM_NAMES
+   paramname "_arg1"
+   paramname "_arg2"
+   body
+    maxstack 11
+    localcount 7
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     pushnull
+     setlocal            4
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("flash.display"), "Shape")
+     constructprop       QName(PackageNamespace("flash.display"), "Shape"), 0
+     setproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), "mask_")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("flash.display"), "Sprite")
+     constructprop       QName(PackageNamespace("flash.display"), "Sprite"), 0
+     setproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), "linesSprite_")
+
+     getlocal0
+     getlex              QName(PackageNamespace("__AS3__.vec"), "Vector")
+     getlex              QName(PackageNamespace("com.company.assembleegameclient.screens"), "ScoreTextLine")
+     applytype           1
+     construct           0
+     setproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), "scoreTextLines_")
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     getlocal1
+     setproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), "rect_")
+
+     getlex              QName(PackageNamespace(""), "graphics")
+     pushbyte            1
+     pushint             4802889
+     pushbyte            2
+     callpropvoid        QName(PackageNamespace(""), "lineStyle"), 3
+
+     getlex              QName(PackageNamespace(""), "graphics")
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), "rect_")
+     getproperty         QName(PackageNamespace(""), "x")
+     pushbyte            1
+     add
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), "rect_")
+     getproperty         QName(PackageNamespace(""), "y")
+     pushbyte            1
+     add
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), "rect_")
+     getproperty         QName(PackageNamespace(""), "width")
+     pushbyte            2
+     subtract
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), "rect_")
+     getproperty         QName(PackageNamespace(""), "height")
+     pushbyte            2
+     subtract
+     callpropvoid        QName(PackageNamespace(""), "drawRect"), 4
+
+     getlex              QName(PackageNamespace(""), "graphics")
+     callpropvoid        QName(PackageNamespace(""), "lineStyle"), 0
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.ui"), "Scrollbar")
+     pushbyte            16
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), "rect_")
+     getproperty         QName(PackageNamespace(""), "height")
+     constructprop       QName(PackageNamespace("com.company.assembleegameclient.ui"), "Scrollbar"), 2
+     setproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), "scrollbar_")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), "scrollbar_")
+     pushstring          "change"
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), "onScroll")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), "mask_")
+     getproperty         QName(PackageNamespace(""), "graphics")
+     pushint             16777215
+     pushbyte            1
+     callpropvoid        QName(PackageNamespace(""), "beginFill"), 2
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), "mask_")
+     getproperty         QName(PackageNamespace(""), "graphics")
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), "rect_")
+     getproperty         QName(PackageNamespace(""), "x")
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), "rect_")
+     getproperty         QName(PackageNamespace(""), "y")
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), "rect_")
+     getproperty         QName(PackageNamespace(""), "width")
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), "rect_")
+     getproperty         QName(PackageNamespace(""), "height")
+     callpropvoid        QName(PackageNamespace(""), "drawRect"), 4
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), "mask_")
+     getproperty         QName(PackageNamespace(""), "graphics")
+     callpropvoid        QName(PackageNamespace(""), "endFill"), 0
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), "mask_")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), "mask_")
+     findproperty        QName(PackageNamespace(""), "mask")
+     swap
+     setproperty         QName(PackageNamespace(""), "mask")
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), "linesSprite_")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     getlocal0
+     pushstring          "FameView.Shots"
+     pushnull
+     pushbyte            0
+     getlocal2
+     getproperty         Multiname("Shots", [PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), ProtectedNamespace("com.company.assembleegameclient.screens:ScoringBox"), StaticProtectedNs("com.company.assembleegameclient.screens:ScoringBox"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.screens"), PackageInternalNs("com.company.assembleegameclient.screens"), PrivateNamespace("FilePrivateNS:ScoringBox"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     pushfalse
+     pushint             5746018
+     callpropvoid        QName(PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), "addLine"), 6
+
+     getlocal2
+     getproperty         Multiname("Shots", [PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), ProtectedNamespace("com.company.assembleegameclient.screens:ScoringBox"), StaticProtectedNs("com.company.assembleegameclient.screens:ScoringBox"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.screens"), PackageInternalNs("com.company.assembleegameclient.screens"), PrivateNamespace("FilePrivateNS:ScoringBox"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     convert_i
+     pushbyte            0
+     ifeq                L137
+
+     getlocal0
+     pushstring          "FameView.Accuracy"
+     pushnull
+     pushbyte            0
+     pushbyte            100
+     getlocal2
+     getproperty         Multiname("ShotsThatDamage", [PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), ProtectedNamespace("com.company.assembleegameclient.screens:ScoringBox"), StaticProtectedNs("com.company.assembleegameclient.screens:ScoringBox"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.screens"), PackageInternalNs("com.company.assembleegameclient.screens"), PrivateNamespace("FilePrivateNS:ScoringBox"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     convert_d
+     multiply
+     getlocal2
+     getproperty         Multiname("Shots", [PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), ProtectedNamespace("com.company.assembleegameclient.screens:ScoringBox"), StaticProtectedNs("com.company.assembleegameclient.screens:ScoringBox"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.screens"), PackageInternalNs("com.company.assembleegameclient.screens"), PrivateNamespace("FilePrivateNS:ScoringBox"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     convert_d
+     divide
+     pushtrue
+     pushint             5746018
+     pushstring          ""
+     pushstring          "%"
+     callpropvoid        QName(PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), "addLine"), 8
+
+L137:
+     getlocal0
+     pushstring          "FameView.TilesSeen"
+     pushnull
+     pushbyte            0
+     getlocal2
+     getproperty         Multiname("TilesUncovered", [PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), ProtectedNamespace("com.company.assembleegameclient.screens:ScoringBox"), StaticProtectedNs("com.company.assembleegameclient.screens:ScoringBox"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.screens"), PackageInternalNs("com.company.assembleegameclient.screens"), PrivateNamespace("FilePrivateNS:ScoringBox"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     pushfalse
+     pushint             5746018
+     callpropvoid        QName(PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), "addLine"), 6
+
+     getlocal0
+     pushstring          "FameView.MonsterKills"
+     pushnull
+     pushbyte            0
+     getlocal2
+     getproperty         Multiname("MonsterKills", [PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), ProtectedNamespace("com.company.assembleegameclient.screens:ScoringBox"), StaticProtectedNs("com.company.assembleegameclient.screens:ScoringBox"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.screens"), PackageInternalNs("com.company.assembleegameclient.screens"), PrivateNamespace("FilePrivateNS:ScoringBox"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     pushfalse
+     pushint             5746018
+     callpropvoid        QName(PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), "addLine"), 6
+
+     getlocal0
+     pushstring          "FameView.GodKills"
+     pushnull
+     pushbyte            0
+     getlocal2
+     getproperty         Multiname("GodKills", [PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), ProtectedNamespace("com.company.assembleegameclient.screens:ScoringBox"), StaticProtectedNs("com.company.assembleegameclient.screens:ScoringBox"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.screens"), PackageInternalNs("com.company.assembleegameclient.screens"), PrivateNamespace("FilePrivateNS:ScoringBox"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     pushfalse
+     pushint             5746018
+     callpropvoid        QName(PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), "addLine"), 6
+
+     getlocal0
+     pushstring          "FameView.OryxKills"
+     pushnull
+     pushbyte            0
+     getlocal2
+     getproperty         Multiname("OryxKills", [PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), ProtectedNamespace("com.company.assembleegameclient.screens:ScoringBox"), StaticProtectedNs("com.company.assembleegameclient.screens:ScoringBox"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.screens"), PackageInternalNs("com.company.assembleegameclient.screens"), PrivateNamespace("FilePrivateNS:ScoringBox"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     pushfalse
+     pushint             5746018
+     callpropvoid        QName(PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), "addLine"), 6
+
+     getlocal0
+     pushstring          "FameView.QuestsCompleted"
+     pushnull
+     pushbyte            0
+     getlocal2
+     getproperty         Multiname("QuestsCompleted", [PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), ProtectedNamespace("com.company.assembleegameclient.screens:ScoringBox"), StaticProtectedNs("com.company.assembleegameclient.screens:ScoringBox"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.screens"), PackageInternalNs("com.company.assembleegameclient.screens"), PrivateNamespace("FilePrivateNS:ScoringBox"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     pushfalse
+     pushint             5746018
+     callpropvoid        QName(PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), "addLine"), 6
+
+     getlocal0
+     pushstring          "FameView.DungeonsCompleted"
+     pushnull
+     pushbyte            0
+     getlocal2
+     getproperty         Multiname("PirateCavesCompleted", [PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), ProtectedNamespace("com.company.assembleegameclient.screens:ScoringBox"), StaticProtectedNs("com.company.assembleegameclient.screens:ScoringBox"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.screens"), PackageInternalNs("com.company.assembleegameclient.screens"), PrivateNamespace("FilePrivateNS:ScoringBox"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     convert_i
+     getlocal2
+     getproperty         Multiname("UndeadLairsCompleted", [PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), ProtectedNamespace("com.company.assembleegameclient.screens:ScoringBox"), StaticProtectedNs("com.company.assembleegameclient.screens:ScoringBox"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.screens"), PackageInternalNs("com.company.assembleegameclient.screens"), PrivateNamespace("FilePrivateNS:ScoringBox"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     convert_i
+     add
+     getlocal2
+     getproperty         Multiname("AbyssOfDemonsCompleted", [PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), ProtectedNamespace("com.company.assembleegameclient.screens:ScoringBox"), StaticProtectedNs("com.company.assembleegameclient.screens:ScoringBox"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.screens"), PackageInternalNs("com.company.assembleegameclient.screens"), PrivateNamespace("FilePrivateNS:ScoringBox"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     convert_i
+     add
+     getlocal2
+     getproperty         Multiname("SnakePitsCompleted", [PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), ProtectedNamespace("com.company.assembleegameclient.screens:ScoringBox"), StaticProtectedNs("com.company.assembleegameclient.screens:ScoringBox"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.screens"), PackageInternalNs("com.company.assembleegameclient.screens"), PrivateNamespace("FilePrivateNS:ScoringBox"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     convert_i
+     add
+     getlocal2
+     getproperty         Multiname("SpiderDensCompleted", [PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), ProtectedNamespace("com.company.assembleegameclient.screens:ScoringBox"), StaticProtectedNs("com.company.assembleegameclient.screens:ScoringBox"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.screens"), PackageInternalNs("com.company.assembleegameclient.screens"), PrivateNamespace("FilePrivateNS:ScoringBox"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     convert_i
+     add
+     getlocal2
+     getproperty         Multiname("SpriteWorldsCompleted", [PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), ProtectedNamespace("com.company.assembleegameclient.screens:ScoringBox"), StaticProtectedNs("com.company.assembleegameclient.screens:ScoringBox"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.screens"), PackageInternalNs("com.company.assembleegameclient.screens"), PrivateNamespace("FilePrivateNS:ScoringBox"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     convert_i
+     add
+     getlocal2
+     getproperty         Multiname("TombsCompleted", [PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), ProtectedNamespace("com.company.assembleegameclient.screens:ScoringBox"), StaticProtectedNs("com.company.assembleegameclient.screens:ScoringBox"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.screens"), PackageInternalNs("com.company.assembleegameclient.screens"), PrivateNamespace("FilePrivateNS:ScoringBox"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     convert_i
+     add
+     getlocal2
+     getproperty         Multiname("ForestMazeCompleted", [PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), ProtectedNamespace("com.company.assembleegameclient.screens:ScoringBox"), StaticProtectedNs("com.company.assembleegameclient.screens:ScoringBox"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.screens"), PackageInternalNs("com.company.assembleegameclient.screens"), PrivateNamespace("FilePrivateNS:ScoringBox"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     convert_i
+     add
+     getlocal2
+     getproperty         Multiname("LairOfDraconisCompleted", [PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), ProtectedNamespace("com.company.assembleegameclient.screens:ScoringBox"), StaticProtectedNs("com.company.assembleegameclient.screens:ScoringBox"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.screens"), PackageInternalNs("com.company.assembleegameclient.screens"), PrivateNamespace("FilePrivateNS:ScoringBox"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     convert_i
+     add
+     getlocal2
+     getproperty         Multiname("CandyLandCompleted", [PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), ProtectedNamespace("com.company.assembleegameclient.screens:ScoringBox"), StaticProtectedNs("com.company.assembleegameclient.screens:ScoringBox"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.screens"), PackageInternalNs("com.company.assembleegameclient.screens"), PrivateNamespace("FilePrivateNS:ScoringBox"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     convert_i
+     add
+     getlocal2
+     getproperty         Multiname("HauntedCemeteryCompleted", [PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), ProtectedNamespace("com.company.assembleegameclient.screens:ScoringBox"), StaticProtectedNs("com.company.assembleegameclient.screens:ScoringBox"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.screens"), PackageInternalNs("com.company.assembleegameclient.screens"), PrivateNamespace("FilePrivateNS:ScoringBox"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     convert_i
+     add
+     getlocal2
+     getproperty         Multiname("CaveOfAThousandTreasuresCompleted", [PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), ProtectedNamespace("com.company.assembleegameclient.screens:ScoringBox"), StaticProtectedNs("com.company.assembleegameclient.screens:ScoringBox"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.screens"), PackageInternalNs("com.company.assembleegameclient.screens"), PrivateNamespace("FilePrivateNS:ScoringBox"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     convert_i
+     add
+     getlocal2
+     getproperty         Multiname("MadLabCompleted", [PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), ProtectedNamespace("com.company.assembleegameclient.screens:ScoringBox"), StaticProtectedNs("com.company.assembleegameclient.screens:ScoringBox"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.screens"), PackageInternalNs("com.company.assembleegameclient.screens"), PrivateNamespace("FilePrivateNS:ScoringBox"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     convert_i
+     add
+     getlocal2
+     getproperty         Multiname("DavyJonesCompleted", [PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), ProtectedNamespace("com.company.assembleegameclient.screens:ScoringBox"), StaticProtectedNs("com.company.assembleegameclient.screens:ScoringBox"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.screens"), PackageInternalNs("com.company.assembleegameclient.screens"), PrivateNamespace("FilePrivateNS:ScoringBox"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     convert_i
+     add
+     getlocal2
+     getproperty         Multiname("TombHeroicCompleted", [PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), ProtectedNamespace("com.company.assembleegameclient.screens:ScoringBox"), StaticProtectedNs("com.company.assembleegameclient.screens:ScoringBox"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.screens"), PackageInternalNs("com.company.assembleegameclient.screens"), PrivateNamespace("FilePrivateNS:ScoringBox"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     convert_i
+     add
+     getlocal2
+     getproperty         Multiname("DreamscapeCompleted", [PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), ProtectedNamespace("com.company.assembleegameclient.screens:ScoringBox"), StaticProtectedNs("com.company.assembleegameclient.screens:ScoringBox"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.screens"), PackageInternalNs("com.company.assembleegameclient.screens"), PrivateNamespace("FilePrivateNS:ScoringBox"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     convert_i
+     add
+     getlocal2
+     getproperty         Multiname("IceCaveCompleted", [PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), ProtectedNamespace("com.company.assembleegameclient.screens:ScoringBox"), StaticProtectedNs("com.company.assembleegameclient.screens:ScoringBox"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.screens"), PackageInternalNs("com.company.assembleegameclient.screens"), PrivateNamespace("FilePrivateNS:ScoringBox"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     convert_i
+     add
+     getlocal2
+     getproperty         Multiname("DeadWaterDocksCompleted", [PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), ProtectedNamespace("com.company.assembleegameclient.screens:ScoringBox"), StaticProtectedNs("com.company.assembleegameclient.screens:ScoringBox"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.screens"), PackageInternalNs("com.company.assembleegameclient.screens"), PrivateNamespace("FilePrivateNS:ScoringBox"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     convert_i
+     add
+     getlocal2
+     getproperty         Multiname("CrawlingDepthCompleted", [PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), ProtectedNamespace("com.company.assembleegameclient.screens:ScoringBox"), StaticProtectedNs("com.company.assembleegameclient.screens:ScoringBox"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.screens"), PackageInternalNs("com.company.assembleegameclient.screens"), PrivateNamespace("FilePrivateNS:ScoringBox"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     convert_i
+     add
+     getlocal2
+     getproperty         Multiname("WoodLandCompleted", [PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), ProtectedNamespace("com.company.assembleegameclient.screens:ScoringBox"), StaticProtectedNs("com.company.assembleegameclient.screens:ScoringBox"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.screens"), PackageInternalNs("com.company.assembleegameclient.screens"), PrivateNamespace("FilePrivateNS:ScoringBox"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     convert_i
+     add
+     getlocal2
+     getproperty         Multiname("BattleNexusCompleted", [PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), ProtectedNamespace("com.company.assembleegameclient.screens:ScoringBox"), StaticProtectedNs("com.company.assembleegameclient.screens:ScoringBox"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.screens"), PackageInternalNs("com.company.assembleegameclient.screens"), PrivateNamespace("FilePrivateNS:ScoringBox"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     convert_i
+     add
+     getlocal2
+     getproperty         Multiname("TheShattersCompleted", [PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), ProtectedNamespace("com.company.assembleegameclient.screens:ScoringBox"), StaticProtectedNs("com.company.assembleegameclient.screens:ScoringBox"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.screens"), PackageInternalNs("com.company.assembleegameclient.screens"), PrivateNamespace("FilePrivateNS:ScoringBox"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     convert_i
+     add
+     getlocal2
+     getproperty         Multiname("BelladonnaCompleted", [PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), ProtectedNamespace("com.company.assembleegameclient.screens:ScoringBox"), StaticProtectedNs("com.company.assembleegameclient.screens:ScoringBox"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.screens"), PackageInternalNs("com.company.assembleegameclient.screens"), PrivateNamespace("FilePrivateNS:ScoringBox"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     convert_i
+     add
+     getlocal2
+     getproperty         Multiname("PuppetMasterCompleted", [PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), ProtectedNamespace("com.company.assembleegameclient.screens:ScoringBox"), StaticProtectedNs("com.company.assembleegameclient.screens:ScoringBox"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.screens"), PackageInternalNs("com.company.assembleegameclient.screens"), PrivateNamespace("FilePrivateNS:ScoringBox"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     convert_i
+     add
+     getlocal2
+     getproperty         Multiname("ToxicSewersCompleted", [PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), ProtectedNamespace("com.company.assembleegameclient.screens:ScoringBox"), StaticProtectedNs("com.company.assembleegameclient.screens:ScoringBox"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.screens"), PackageInternalNs("com.company.assembleegameclient.screens"), PrivateNamespace("FilePrivateNS:ScoringBox"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     convert_i
+     add
+     getlocal2
+     getproperty         Multiname("TheHiveCompleted", [PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), ProtectedNamespace("com.company.assembleegameclient.screens:ScoringBox"), StaticProtectedNs("com.company.assembleegameclient.screens:ScoringBox"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.screens"), PackageInternalNs("com.company.assembleegameclient.screens"), PrivateNamespace("FilePrivateNS:ScoringBox"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     convert_i
+     add
+     pushfalse
+     pushint             5746018
+     callpropvoid        QName(PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), "addLine"), 6
+
+     getlocal0
+     pushstring          "FameView.PartyMemberLevelUps"
+     pushnull
+     pushbyte            0
+     getlocal2
+     getproperty         Multiname("LevelUpAssists", [PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), ProtectedNamespace("com.company.assembleegameclient.screens:ScoringBox"), StaticProtectedNs("com.company.assembleegameclient.screens:ScoringBox"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.screens"), PackageInternalNs("com.company.assembleegameclient.screens"), PrivateNamespace("FilePrivateNS:ScoringBox"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     pushfalse
+     pushint             5746018
+     callpropvoid        QName(PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), "addLine"), 6
+
+     getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "FameUtil")
+     callproperty        QName(PackageNamespace(""), "getFameIcon"), 0
+     coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+     setlocal3
+
+     getlex              QName(PackageNamespace("com.company.util"), "BitmapUtil")
+     getlocal3
+     pushbyte            6
+     pushbyte            6
+     getlocal3
+     getproperty         QName(PackageNamespace(""), "width")
+     pushbyte            12
+     subtract
+     getlocal3
+     getproperty         QName(PackageNamespace(""), "height")
+     pushbyte            12
+     subtract
+     callproperty        QName(PackageNamespace(""), "cropToBitmapData"), 5
+     coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+     setlocal3
+
+     getlocal0
+     pushstring          "FameView.BaseFameEarned"
+     pushnull
+     pushbyte            0
+     getlocal2
+     getproperty         Multiname("BaseFame", [PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), ProtectedNamespace("com.company.assembleegameclient.screens:ScoringBox"), StaticProtectedNs("com.company.assembleegameclient.screens:ScoringBox"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.screens"), PackageInternalNs("com.company.assembleegameclient.screens"), PrivateNamespace("FilePrivateNS:ScoringBox"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     pushtrue
+     pushint             16762880
+     pushstring          ""
+     pushstring          ""
+     findpropstrict      QName(PackageNamespace("flash.display"), "Bitmap")
+     getlocal3
+     constructprop       QName(PackageNamespace("flash.display"), "Bitmap"), 1
+     callpropvoid        QName(PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), "addLine"), 9
+
+     pushbyte            0
+     setlocal            6
+
+     getlocal2
+     getproperty         Multiname("Bonus", [PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), ProtectedNamespace("com.company.assembleegameclient.screens:ScoringBox"), StaticProtectedNs("com.company.assembleegameclient.screens:ScoringBox"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.screens"), PackageInternalNs("com.company.assembleegameclient.screens"), PrivateNamespace("FilePrivateNS:ScoringBox"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     setlocal            5
+
+     jump                L363
+
+L340:
+     label
+     getlocal            5
+     getlocal            6
+     nextvalue
+     coerce              QName(PackageNamespace(""), "XML")
+     setlocal            4
+
+     getlocal0
+     getlocal            4
+     getproperty         MultinameA("id", [PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), ProtectedNamespace("com.company.assembleegameclient.screens:ScoringBox"), StaticProtectedNs("com.company.assembleegameclient.screens:ScoringBox"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.screens"), PackageInternalNs("com.company.assembleegameclient.screens"), PrivateNamespace("FilePrivateNS:ScoringBox"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     getlocal            4
+     getproperty         MultinameA("desc", [PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), ProtectedNamespace("com.company.assembleegameclient.screens:ScoringBox"), StaticProtectedNs("com.company.assembleegameclient.screens:ScoringBox"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.screens"), PackageInternalNs("com.company.assembleegameclient.screens"), PrivateNamespace("FilePrivateNS:ScoringBox"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     getlocal            4
+     getproperty         MultinameA("level", [PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), ProtectedNamespace("com.company.assembleegameclient.screens:ScoringBox"), StaticProtectedNs("com.company.assembleegameclient.screens:ScoringBox"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.screens"), PackageInternalNs("com.company.assembleegameclient.screens"), PrivateNamespace("FilePrivateNS:ScoringBox"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     getlocal            4
+     convert_i
+     pushtrue
+     pushint             16762880
+     pushstring          "+"
+     pushstring          ""
+     findpropstrict      QName(PackageNamespace("flash.display"), "Bitmap")
+     getlocal3
+     constructprop       QName(PackageNamespace("flash.display"), "Bitmap"), 1
+     callpropvoid        QName(PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), "addLine"), 9
+
+L363:
+     hasnext2            5, 6
+     iftrue              L340
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), "rect_") type QName(PackageNamespace("flash.geom"), "Rectangle") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), "mask_") type QName(PackageNamespace("flash.display"), "Shape") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), "linesSprite_") type QName(PackageNamespace("flash.display"), "Sprite") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), "scoreTextLines_") type TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("com.company.assembleegameclient.screens"), "ScoreTextLine")>) end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), "scrollbar_") type QName(PackageNamespace("com.company.assembleegameclient.ui"), "Scrollbar") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), "startTime_") type QName(PackageNamespace(""), "int") end
+  trait method QName(PackageNamespace(""), "showScore")
+   method
+    name "showScore"
+    refid "com.company.assembleegameclient.screens:ScoringBox/instance/showScore"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 4
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      setlocal1
+
+      getlocal0
+      callpropvoid        QName(PackageNamespace(""), "animateScore"), 0
+
+      getlocal0
+      pushint             2147483647
+      negate
+      setproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), "startTime_")
+
+      pushbyte            0
+      setlocal3
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), "scoreTextLines_")
+      setlocal2
+
+      jump                L24
+
+L16:
+      label
+      getlocal2
+      getlocal3
+      nextvalue
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.screens"), "ScoreTextLine")
+      setlocal1
+
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "skip"), 0
+
+L24:
+      hasnext2            2, 3
+      iftrue              L16
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "animateScore")
+   method
+    name "animateScore"
+    refid "com.company.assembleegameclient.screens:ScoringBox/instance/animateScore"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlex              QName(PackageNamespace("flash.utils"), "getTimer")
+      getglobalscope
+      call                0
+      setproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), "startTime_")
+
+      findpropstrict      QName(PackageNamespace(""), "addEventListener")
+      pushstring          "enterFrame"
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), "onEnterFrame")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), "onScroll")
+   method
+    name "onScroll"
+    refid "com.company.assembleegameclient.screens:ScoringBox/instance/com.company.assembleegameclient.screens:ScoringBox/instance/onScroll"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 4
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), "scrollbar_")
+      callproperty        QName(PackageNamespace(""), "pos"), 0
+      convert_d
+      setlocal2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), "linesSprite_")
+      getlocal2
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), "rect_")
+      getproperty         QName(PackageNamespace(""), "height")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), "linesSprite_")
+      getproperty         QName(PackageNamespace(""), "height")
+      subtract
+      pushbyte            15
+      subtract
+      multiply
+      pushbyte            5
+      add
+      setproperty         QName(PackageNamespace(""), "y")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), "addLine")
+   method
+    name "addLine"
+    refid "com.company.assembleegameclient.screens:ScoringBox/instance/com.company.assembleegameclient.screens:ScoringBox/instance/addLine"
+    param QName(PackageNamespace(""), "String")
+    param QName(PackageNamespace(""), "String")
+    param QName(PackageNamespace(""), "int")
+    param QName(PackageNamespace(""), "int")
+    param QName(PackageNamespace(""), "Boolean")
+    param QName(PackageNamespace(""), "uint")
+    param QName(PackageNamespace(""), "String")
+    param QName(PackageNamespace(""), "String")
+    param QName(PackageNamespace("flash.display"), "DisplayObject")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_OPTIONAL
+    flag HAS_PARAM_NAMES
+    optional Utf8("")
+    optional Utf8("")
+    optional Null()
+    paramname "_arg1"
+    paramname "_arg2"
+    paramname "_arg3"
+    paramname "_arg4"
+    paramname "_arg5"
+    paramname "_arg6"
+    paramname "_arg7"
+    paramname "_arg8"
+    paramname "_arg9"
+    body
+     maxstack 12
+     localcount 10
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal            4
+      pushbyte            0
+      equals
+      dup
+      iffalse             L10
+
+      pop
+      getlocal            5
+      not
+L10:
+      iffalse             L12
+
+      returnvoid
+
+L12:
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), "scoreTextLines_")
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.screens"), "ScoreTextLine")
+      pushbyte            20
+      pushint             11776947
+      getlocal            6
+      getlocal1
+      getlocal2
+      getlocal3
+      getlocal            4
+      getlocal            7
+      getlocal            8
+      getlocal            9
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.screens"), "ScoreTextLine"), 10
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), "onEnterFrame")
+   method
+    name "onEnterFrame"
+    refid "com.company.assembleegameclient.screens:ScoringBox/instance/com.company.assembleegameclient.screens:ScoringBox/instance/onEnterFrame"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 5
+     localcount 7
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnan
+      setlocal3
+
+      pushnull
+      setlocal            4
+
+      pushbyte            0
+      setlocal            6
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), "startTime_")
+      pushshort           2000
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), "scoreTextLines_")
+      getproperty         QName(PackageNamespace(""), "length")
+      pushbyte            1
+      subtract
+      multiply
+      pushbyte            2
+      divide
+      add
+      convert_d
+      setlocal2
+
+      getlex              QName(PackageNamespace("flash.utils"), "getTimer")
+      getglobalscope
+      call                0
+      convert_d
+      setlocal3
+
+      getlex              QName(PackageNamespace(""), "Math")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), "scoreTextLines_")
+      getproperty         QName(PackageNamespace(""), "length")
+      pushbyte            2
+      getlex              QName(PackageNamespace("flash.utils"), "getTimer")
+      getglobalscope
+      call                0
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), "startTime_")
+      subtract
+      multiply
+      pushshort           2000
+      divide
+      pushbyte            1
+      add
+      callproperty        QName(PackageNamespace(""), "min"), 2
+      convert_i
+      setlocal            5
+
+      jump                L64
+
+L47:
+      label
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), "scoreTextLines_")
+      getlocal            6
+      getproperty         MultinameL([PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), ProtectedNamespace("com.company.assembleegameclient.screens:ScoringBox"), StaticProtectedNs("com.company.assembleegameclient.screens:ScoringBox"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.screens"), PackageInternalNs("com.company.assembleegameclient.screens"), PrivateNamespace("FilePrivateNS:ScoringBox"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.screens"), "ScoreTextLine")
+      dup
+      setlocal            4
+
+      pushbyte            28
+      getlocal            6
+      multiply
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), "linesSprite_")
+      getlocal            4
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      inclocal_i          6
+L64:
+      getlocal            6
+      getlocal            5
+      iflt                L47
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), "linesSprite_")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), "rect_")
+      getproperty         QName(PackageNamespace(""), "height")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), "linesSprite_")
+      getproperty         QName(PackageNamespace(""), "height")
+      subtract
+      pushbyte            10
+      subtract
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal3
+      getlocal2
+      pushshort           1000
+      add
+      ifngt               L96
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), "addScrollbar"), 0
+
+      findpropstrict      QName(PackageNamespace(""), "dispatchEvent")
+      findpropstrict      QName(PackageNamespace("flash.events"), "Event")
+      pushstring          "complete"
+      constructprop       QName(PackageNamespace("flash.events"), "Event"), 1
+      callpropvoid        QName(PackageNamespace(""), "dispatchEvent"), 1
+
+      findpropstrict      QName(PackageNamespace(""), "removeEventListener")
+      pushstring          "enterFrame"
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), "onEnterFrame")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+L96:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), "addScrollbar")
+   method
+    name "addScrollbar"
+    refid "com.company.assembleegameclient.screens:ScoringBox/instance/com.company.assembleegameclient.screens:ScoringBox/instance/addScrollbar"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 6
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace(""), "graphics")
+      callpropvoid        QName(PackageNamespace(""), "clear"), 0
+
+      getlex              QName(PackageNamespace(""), "graphics")
+      pushbyte            1
+      pushint             4802889
+      pushbyte            2
+      callpropvoid        QName(PackageNamespace(""), "lineStyle"), 3
+
+      getlex              QName(PackageNamespace(""), "graphics")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), "rect_")
+      getproperty         QName(PackageNamespace(""), "x")
+      pushbyte            1
+      add
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), "rect_")
+      getproperty         QName(PackageNamespace(""), "y")
+      pushbyte            1
+      add
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), "rect_")
+      getproperty         QName(PackageNamespace(""), "width")
+      pushbyte            26
+      subtract
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), "rect_")
+      getproperty         QName(PackageNamespace(""), "height")
+      pushbyte            2
+      subtract
+      callpropvoid        QName(PackageNamespace(""), "drawRect"), 4
+
+      getlex              QName(PackageNamespace(""), "graphics")
+      callpropvoid        QName(PackageNamespace(""), "lineStyle"), 0
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), "scrollbar_")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), "rect_")
+      getproperty         QName(PackageNamespace(""), "width")
+      pushbyte            16
+      subtract
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), "scrollbar_")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), "mask_")
+      getproperty         QName(PackageNamespace(""), "height")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), "linesSprite_")
+      getproperty         QName(PackageNamespace(""), "height")
+      callpropvoid        QName(PackageNamespace(""), "setIndicatorSize"), 2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), "scrollbar_")
+      pushbyte            1
+      callpropvoid        QName(PackageNamespace(""), "setPos"), 1
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:ScoringBox"), "scrollbar_")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.screens:ScoringBox/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

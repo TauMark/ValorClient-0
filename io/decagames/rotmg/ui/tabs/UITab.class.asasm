@@ -1,0 +1,308 @@
+class
+ refid "io.decagames.rotmg.ui.tabs:UITab"
+ instance QName(PackageNamespace("io.decagames.rotmg.ui.tabs"), "UITab")
+  extends QName(PackageNamespace("flash.display"), "Sprite")
+  flag SEALED
+  iinit
+   name "UITab"
+   refid "io.decagames.rotmg.ui.tabs:UITab/instance/init"
+   param QName(PackageNamespace(""), "String")
+   param QName(PackageNamespace(""), "Boolean")
+   flag HAS_OPTIONAL
+   flag HAS_PARAM_NAMES
+   optional False()
+   paramname "_arg1"
+   paramname "_arg2"
+   body
+    maxstack 4
+    localcount 3
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("flash.geom"), "Point")
+     pushbyte            0
+     pushbyte            0
+     constructprop       QName(PackageNamespace("flash.geom"), "Point"), 2
+     setproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:UITab"), "lastSize")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("org.osflash.signals"), "Signal")
+     getlex              QName(PackageNamespace(""), "Boolean")
+     constructprop       QName(PackageNamespace("org.osflash.signals"), "Signal"), 1
+     setproperty         QName(PackageNamespace(""), "displaySignal")
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     getlocal1
+     setproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:UITab"), "_tabName")
+
+     getlocal0
+     getlocal2
+     setproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:UITab"), "_transparentBackgroundFix")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:UITab"), "_tabName") type QName(PackageNamespace(""), "String") end
+  trait slot QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:UITab"), "_transparentBackgroundFix") type QName(PackageNamespace(""), "Boolean") end
+  trait slot QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:UITab"), "_content") type QName(PackageNamespace("flash.display"), "Sprite") end
+  trait slot QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:UITab"), "lastSize") type QName(PackageNamespace("flash.geom"), "Point") end
+  trait slot QName(PackageNamespace(""), "displaySignal") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait method QName(PackageNamespace(""), "addContent")
+   method
+    name "addContent"
+    refid "io.decagames.rotmg.ui.tabs:UITab/instance/addContent"
+    param QName(PackageNamespace("flash.display"), "Sprite")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:UITab"), "_content")
+      dup
+      iffalse             L11
+
+      pop
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:UITab"), "_content")
+      getproperty         QName(PackageNamespace(""), "parent")
+      coerce_a
+L11:
+      iffalse             L16
+
+      findpropstrict      QName(PackageNamespace(""), "removeChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:UITab"), "_content")
+      callpropvoid        QName(PackageNamespace(""), "removeChild"), 1
+
+L16:
+      getlocal0
+      getlocal1
+      setproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:UITab"), "_content")
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:UITab"), "_content")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "drawTransparentBackground")
+   method
+    name "drawTransparentBackground"
+    refid "io.decagames.rotmg.ui.tabs:UITab/instance/drawTransparentBackground"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 5
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:UITab"), "lastSize")
+      getproperty         QName(PackageNamespace(""), "x")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "content")
+      getproperty         QName(PackageNamespace(""), "width")
+      equals
+      not
+      dup
+      iftrue              L21
+
+      pop
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:UITab"), "lastSize")
+      getproperty         QName(PackageNamespace(""), "y")
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:UITab"), "_content")
+      getproperty         QName(PackageNamespace(""), "height")
+      equals
+      not
+L21:
+      iffalse             L56
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "content")
+      getproperty         QName(PackageNamespace(""), "graphics")
+      callpropvoid        QName(PackageNamespace(""), "clear"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "content")
+      getproperty         QName(PackageNamespace(""), "graphics")
+      pushint             16711680
+      pushbyte            0
+      callpropvoid        QName(PackageNamespace(""), "beginFill"), 2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "content")
+      getproperty         QName(PackageNamespace(""), "graphics")
+      pushbyte            0
+      pushbyte            0
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:UITab"), "_content")
+      getproperty         QName(PackageNamespace(""), "width")
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:UITab"), "_content")
+      getproperty         QName(PackageNamespace(""), "height")
+      callpropvoid        QName(PackageNamespace(""), "drawRect"), 4
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:UITab"), "lastSize")
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:UITab"), "_content")
+      getproperty         QName(PackageNamespace(""), "width")
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:UITab"), "lastSize")
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:UITab"), "_content")
+      getproperty         QName(PackageNamespace(""), "height")
+      setproperty         QName(PackageNamespace(""), "y")
+
+L56:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait getter QName(PackageNamespace(""), "tabName")
+   method
+    name "tabName"
+    refid "io.decagames.rotmg.ui.tabs:UITab/instance/tabName/getter"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:UITab"), "_tabName")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait setter QName(PackageNamespace(""), "tabName")
+   method
+    name "tabName"
+    refid "io.decagames.rotmg.ui.tabs:UITab/instance/tabName/setter"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      setproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:UITab"), "_tabName")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "dispose")
+   method
+    name "dispose"
+    refid "io.decagames.rotmg.ui.tabs:UITab/instance/dispose"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait getter QName(PackageNamespace(""), "transparentBackgroundFix")
+   method
+    name "transparentBackgroundFix"
+    refid "io.decagames.rotmg.ui.tabs:UITab/instance/transparentBackgroundFix/getter"
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:UITab"), "_transparentBackgroundFix")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait getter QName(PackageNamespace(""), "content")
+   method
+    name "content"
+    refid "io.decagames.rotmg.ui.tabs:UITab/instance/content/getter"
+    returns QName(PackageNamespace("flash.display"), "Sprite")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:UITab"), "_content")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "io.decagames.rotmg.ui.tabs:UITab/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

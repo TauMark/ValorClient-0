@@ -1,0 +1,419 @@
+class
+ refid "kabam.rotmg.servers.model:LiveServerModel"
+ instance QName(PackageNamespace("kabam.rotmg.servers.model"), "LiveServerModel")
+  extends QName(PackageNamespace(""), "Object")
+  implements QName(PackageNamespace("kabam.rotmg.servers.api"), "ServerModel")
+  flag SEALED
+  iinit
+   refid "kabam.rotmg.servers.model:LiveServerModel/instance/init"
+   body
+    maxstack 2
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PackageNamespace("__AS3__.vec"), "Vector")
+     getlex              QName(PackageNamespace("kabam.rotmg.servers.api"), "Server")
+     applytype           1
+     pushbyte            0
+     construct           1
+     findproperty        QName(PrivateNamespace("kabam.rotmg.servers.model:LiveServerModel"), "servers")
+     swap
+     initproperty        QName(PrivateNamespace("kabam.rotmg.servers.model:LiveServerModel"), "servers")
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait const QName(PrivateNamespace("kabam.rotmg.servers.model:LiveServerModel"), "servers") type TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("kabam.rotmg.servers.api"), "Server")>) end
+  trait slot QName(PackageNamespace(""), "model") flag METADATA type QName(PackageNamespace("kabam.rotmg.core.model"), "PlayerModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PrivateNamespace("kabam.rotmg.servers.model:LiveServerModel"), "_descendingFlag") type QName(PackageNamespace(""), "Boolean") end
+  trait method QName(PackageNamespace(""), "setServers")
+   method
+    name "setServers"
+    refid "kabam.rotmg.servers.model:LiveServerModel/instance/setServers"
+    param TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("kabam.rotmg.servers.api"), "Server")>)
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 5
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      setlocal2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.servers.model:LiveServerModel"), "servers")
+      pushbyte            0
+      setproperty         QName(PackageNamespace(""), "length")
+
+      pushbyte            0
+      setlocal            4
+
+      getlocal1
+      setlocal3
+
+      jump                L23
+
+L13:
+      label
+      getlocal3
+      getlocal            4
+      nextvalue
+      coerce              QName(PackageNamespace("kabam.rotmg.servers.api"), "Server")
+      setlocal2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.servers.model:LiveServerModel"), "servers")
+      getlocal2
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+
+L23:
+      hasnext2            3, 4
+      iftrue              L13
+
+      getlocal0
+      pushfalse
+      setproperty         QName(PrivateNamespace("kabam.rotmg.servers.model:LiveServerModel"), "_descendingFlag")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.servers.model:LiveServerModel"), "servers")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.servers.model:LiveServerModel"), "compareServerName")
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "sort"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getServers")
+   method
+    name "getServers"
+    refid "kabam.rotmg.servers.model:LiveServerModel/instance/getServers"
+    returns TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("kabam.rotmg.servers.api"), "Server")>)
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.servers.model:LiveServerModel"), "servers")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getServer")
+   method
+    name "getServer"
+    refid "kabam.rotmg.servers.model:LiveServerModel/instance/getServer"
+    returns QName(PackageNamespace("kabam.rotmg.servers.api"), "Server")
+    body
+     maxstack 3
+     localcount 11
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      setlocal            5
+
+      pushbyte            0
+      setlocal            6
+
+      pushnan
+      setlocal            4
+
+      pushnull
+      setlocal2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "model")
+      callproperty        QName(PackageNamespace(""), "isAdmin"), 0
+      convert_b
+      setlocal3
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "model")
+      callproperty        QName(PackageNamespace(""), "getMyPos"), 0
+      coerce              QName(PackageNamespace("kabam.rotmg.servers.api"), "LatLong")
+      setlocal1
+
+      pushdouble          1.79769313486231571e+308
+      setlocal            7
+
+      pushint             2147483647
+      setlocal            8
+
+      pushbyte            0
+      setlocal            10
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.servers.model:LiveServerModel"), "servers")
+      setlocal            9
+
+      jump                L86
+
+L30:
+      label
+      getlocal            9
+      getlocal            10
+      nextvalue
+      coerce              QName(PackageNamespace("kabam.rotmg.servers.api"), "Server")
+      dup
+      setlocal            5
+
+      callproperty        QName(PackageNamespace(""), "isFull"), 0
+      dup
+      iffalse             L43
+
+      pop
+      getlocal3
+      not
+L43:
+      iftrue              L86
+
+      getlocal            5
+      getproperty         QName(PackageNamespace(""), "name")
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.parameters"), "Parameters")
+      getproperty         QName(PackageNamespace(""), "data")
+      getproperty         Multiname("preferredServer", [PrivateNamespace("kabam.rotmg.servers.model:LiveServerModel"), ProtectedNamespace("kabam.rotmg.servers.model:LiveServerModel"), StaticProtectedNs("kabam.rotmg.servers.model:LiveServerModel"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.servers.model"), PackageInternalNs("kabam.rotmg.servers.model"), PrivateNamespace("FilePrivateNS:LiveServerModel"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      ifne                L52
+
+      getlocal            5
+      returnvalue
+
+L52:
+      getlocal            5
+      callproperty        QName(PackageNamespace(""), "priority"), 0
+      convert_i
+      setlocal            6
+
+      getlex              QName(PackageNamespace("kabam.rotmg.servers.api"), "LatLong")
+      getlocal1
+      getlocal            5
+      getproperty         QName(PackageNamespace(""), "latLong")
+      callproperty        QName(PackageNamespace(""), "distance"), 2
+      convert_d
+      setlocal            4
+
+      getlocal            6
+      getlocal            8
+      lessthan
+      dup
+      iftrue              L79
+
+      pop
+      getlocal            6
+      getlocal            8
+      equals
+      dup
+      iffalse             L78
+
+      pop
+      getlocal            4
+      getlocal            7
+      lessthan
+L78:
+      convert_b
+L79:
+      iffalse             L86
+
+      getlocal            5
+      setlocal2
+
+      getlocal            4
+      setlocal            7
+
+      getlocal            6
+      setlocal            8
+
+L86:
+      hasnext2            9, 10
+      iftrue              L30
+
+      getlocal2
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getServerNameByAddress")
+   method
+    name "getServerNameByAddress"
+    refid "kabam.rotmg.servers.model:LiveServerModel/instance/getServerNameByAddress"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "String")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 5
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      setlocal2
+
+      pushbyte            0
+      setlocal            4
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.servers.model:LiveServerModel"), "servers")
+      setlocal3
+
+      jump                L23
+
+L10:
+      label
+      getlocal3
+      getlocal            4
+      nextvalue
+      coerce              QName(PackageNamespace("kabam.rotmg.servers.api"), "Server")
+      setlocal2
+
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "address")
+      getlocal1
+      ifne                L23
+
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "name")
+      returnvalue
+
+L23:
+      hasnext2            3, 4
+      iftrue              L10
+
+      pushstring          ""
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "isServerAvailable")
+   method
+    name "isServerAvailable"
+    refid "kabam.rotmg.servers.model:LiveServerModel/instance/isServerAvailable"
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.servers.model:LiveServerModel"), "servers")
+      getproperty         QName(PackageNamespace(""), "length")
+      pushbyte            0
+      greaterthan
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.servers.model:LiveServerModel"), "compareServerName")
+   method
+    name "compareServerName"
+    refid "kabam.rotmg.servers.model:LiveServerModel/instance/kabam.rotmg.servers.model:LiveServerModel/instance/compareServerName"
+    param QName(PackageNamespace("kabam.rotmg.servers.api"), "Server")
+    param QName(PackageNamespace("kabam.rotmg.servers.api"), "Server")
+    returns QName(PackageNamespace(""), "int")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    paramname "_arg2"
+    body
+     maxstack 2
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "name")
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "name")
+      ifnlt               L14
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.servers.model:LiveServerModel"), "_descendingFlag")
+      iffalse             L12
+
+      pushbyte            -1
+      jump                L13
+
+L12:
+      pushdouble          1
+L13:
+      returnvalue
+
+L14:
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "name")
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "name")
+      ifngt               L26
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.servers.model:LiveServerModel"), "_descendingFlag")
+      iffalse             L24
+
+      pushbyte            1
+      jump                L25
+
+L24:
+      pushdouble          -1
+L25:
+      returnvalue
+
+L26:
+      pushbyte            0
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.servers.model:LiveServerModel/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

@@ -1,0 +1,1315 @@
+class
+ refid "com.company.util:RectangleUtil"
+ instance QName(PackageNamespace("com.company.util"), "RectangleUtil")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  iinit
+   refid "com.company.util:RectangleUtil/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; instance
+ cinit
+  refid "com.company.util:RectangleUtil/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait method QName(PackageNamespace(""), "pointDist")
+  method
+   name "pointDist"
+   refid "com.company.util:RectangleUtil/class/pointDist"
+   param QName(PackageNamespace("flash.geom"), "Rectangle")
+   param QName(PackageNamespace(""), "Number")
+   param QName(PackageNamespace(""), "Number")
+   returns QName(PackageNamespace(""), "Number")
+   flag HAS_PARAM_NAMES
+   paramname "_arg1"
+   paramname "_arg2"
+   paramname "_arg3"
+   body
+    maxstack 5
+    localcount 6
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal2
+     setlocal            4
+
+     getlocal3
+     setlocal            5
+
+     getlocal            4
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "x")
+     ifnlt               L15
+
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "x")
+     convert_d
+     setlocal            4
+
+     jump                L23
+
+L15:
+     getlocal            4
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "right")
+     ifngt               L23
+
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "right")
+     convert_d
+     setlocal            4
+
+L23:
+     getlocal            5
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "y")
+     ifnlt               L32
+
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "y")
+     convert_d
+     setlocal            5
+
+     jump                L40
+
+L32:
+     getlocal            5
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "bottom")
+     ifngt               L40
+
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "bottom")
+     convert_d
+     setlocal            5
+
+L40:
+     getlocal            4
+     getlocal2
+     equals
+     dup
+     iffalse             L49
+
+     pop
+     getlocal            5
+     getlocal3
+     equals
+L49:
+     iffalse             L52
+
+     pushbyte            0
+     returnvalue
+
+L52:
+     getlex              QName(PackageNamespace("com.company.util"), "PointUtil")
+     getlocal            4
+     getlocal            5
+     getlocal2
+     getlocal3
+     callproperty        QName(PackageNamespace(""), "distanceXY"), 4
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "closestPoint")
+  method
+   name "closestPoint"
+   refid "com.company.util:RectangleUtil/class/closestPoint"
+   param QName(PackageNamespace("flash.geom"), "Rectangle")
+   param QName(PackageNamespace(""), "Number")
+   param QName(PackageNamespace(""), "Number")
+   returns QName(PackageNamespace("flash.geom"), "Point")
+   flag HAS_PARAM_NAMES
+   paramname "_arg1"
+   paramname "_arg2"
+   paramname "_arg3"
+   body
+    maxstack 3
+    localcount 6
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal2
+     setlocal            4
+
+     getlocal3
+     setlocal            5
+
+     getlocal            4
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "x")
+     ifnlt               L15
+
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "x")
+     convert_d
+     setlocal            4
+
+     jump                L23
+
+L15:
+     getlocal            4
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "right")
+     ifngt               L23
+
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "right")
+     convert_d
+     setlocal            4
+
+L23:
+     getlocal            5
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "y")
+     ifnlt               L32
+
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "y")
+     convert_d
+     setlocal            5
+
+     jump                L40
+
+L32:
+     getlocal            5
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "bottom")
+     ifngt               L40
+
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "bottom")
+     convert_d
+     setlocal            5
+
+L40:
+     findpropstrict      QName(PackageNamespace("flash.geom"), "Point")
+     getlocal            4
+     getlocal            5
+     constructprop       QName(PackageNamespace("flash.geom"), "Point"), 2
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "lineSegmentIntersectsXY")
+  method
+   name "lineSegmentIntersectsXY"
+   refid "com.company.util:RectangleUtil/class/lineSegmentIntersectsXY"
+   param QName(PackageNamespace("flash.geom"), "Rectangle")
+   param QName(PackageNamespace(""), "Number")
+   param QName(PackageNamespace(""), "Number")
+   param QName(PackageNamespace(""), "Number")
+   param QName(PackageNamespace(""), "Number")
+   returns QName(PackageNamespace(""), "Boolean")
+   flag HAS_PARAM_NAMES
+   paramname "_arg1"
+   paramname "_arg2"
+   paramname "_arg3"
+   paramname "_arg4"
+   paramname "_arg5"
+   body
+    maxstack 3
+    localcount 14
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     pushnan
+     setlocal            6
+
+     pushnan
+     setlocal            7
+
+     pushnan
+     setlocal            10
+
+     pushnan
+     setlocal            13
+
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "left")
+     getlocal2
+     greaterthan
+     dup
+     iffalse             L21
+
+     pop
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "left")
+     getlocal            4
+     greaterthan
+L21:
+     dup
+     iftrue              L36
+
+     pop
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "right")
+     getlocal2
+     lessthan
+     dup
+     iffalse             L35
+
+     pop
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "right")
+     getlocal            4
+     lessthan
+L35:
+     convert_b
+L36:
+     dup
+     iftrue              L51
+
+     pop
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "top")
+     getlocal3
+     greaterthan
+     dup
+     iffalse             L50
+
+     pop
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "top")
+     getlocal            5
+     greaterthan
+L50:
+     convert_b
+L51:
+     dup
+     iftrue              L66
+
+     pop
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "bottom")
+     getlocal3
+     lessthan
+     dup
+     iffalse             L65
+
+     pop
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "bottom")
+     getlocal            5
+     lessthan
+L65:
+     convert_b
+L66:
+     iffalse             L69
+
+     pushfalse
+     returnvalue
+
+L69:
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "left")
+     getlocal2
+     lessthan
+     dup
+     iffalse             L80
+
+     pop
+     getlocal2
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "right")
+     lessthan
+L80:
+     dup
+     iffalse             L87
+
+     pop
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "top")
+     getlocal3
+     lessthan
+L87:
+     dup
+     iffalse             L94
+
+     pop
+     getlocal3
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "bottom")
+     lessthan
+L94:
+     dup
+     iftrue              L123
+
+     pop
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "left")
+     getlocal            4
+     lessthan
+     dup
+     iffalse             L108
+
+     pop
+     getlocal            4
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "right")
+     lessthan
+L108:
+     dup
+     iffalse             L115
+
+     pop
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "top")
+     getlocal            5
+     lessthan
+L115:
+     dup
+     iffalse             L122
+
+     pop
+     getlocal            5
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "bottom")
+     lessthan
+L122:
+     convert_b
+L123:
+     iffalse             L126
+
+     pushtrue
+     returnvalue
+
+L126:
+     getlocal            5
+     getlocal3
+     subtract
+     getlocal            4
+     getlocal2
+     subtract
+     divide
+     convert_d
+     setlocal            8
+
+     getlocal3
+     getlocal            8
+     getlocal2
+     multiply
+     subtract
+     convert_d
+     setlocal            9
+
+     getlocal            8
+     pushbyte            0
+     ifngt               L162
+
+     getlocal            8
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "left")
+     multiply
+     getlocal            9
+     add
+     convert_d
+     setlocal            6
+
+     getlocal            8
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "right")
+     multiply
+     getlocal            9
+     add
+     convert_d
+     setlocal            7
+
+     jump                L178
+
+L162:
+     getlocal            8
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "right")
+     multiply
+     getlocal            9
+     add
+     convert_d
+     setlocal            6
+
+     getlocal            8
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "left")
+     multiply
+     getlocal            9
+     add
+     convert_d
+     setlocal            7
+
+L178:
+     getlocal3
+     getlocal            5
+     ifnlt               L186
+
+     getlocal3
+     setlocal            13
+
+     getlocal            5
+     setlocal            10
+
+     jump                L190
+
+L186:
+     getlocal            5
+     setlocal            13
+
+     getlocal3
+     setlocal            10
+
+L190:
+     getlocal            6
+     getlocal            13
+     ifngt               L195
+
+     getlocal            6
+     jump                L197
+
+L195:
+     getlocal            13
+     convert_d
+L197:
+     convert_d
+     setlocal            12
+
+     getlocal            7
+     getlocal            10
+     ifnlt               L204
+
+     getlocal            7
+     jump                L206
+
+L204:
+     getlocal            10
+     convert_d
+L206:
+     convert_d
+     setlocal            11
+
+     getlocal            12
+     getlocal            11
+     lessthan
+     dup
+     iffalse             L226
+
+     pop
+     getlocal            11
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "top")
+     lessthan
+     dup
+     iftrue              L225
+
+     pop
+     getlocal            12
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "bottom")
+     greaterthan
+L225:
+     not
+L226:
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "lineSegmentIntersectXY")
+  method
+   name "lineSegmentIntersectXY"
+   refid "com.company.util:RectangleUtil/class/lineSegmentIntersectXY"
+   param QName(PackageNamespace("flash.geom"), "Rectangle")
+   param QName(PackageNamespace(""), "Number")
+   param QName(PackageNamespace(""), "Number")
+   param QName(PackageNamespace(""), "Number")
+   param QName(PackageNamespace(""), "Number")
+   param QName(PackageNamespace("flash.geom"), "Point")
+   returns QName(PackageNamespace(""), "Boolean")
+   flag HAS_PARAM_NAMES
+   paramname "_arg1"
+   paramname "_arg2"
+   paramname "_arg3"
+   paramname "_arg4"
+   paramname "_arg5"
+   paramname "_arg6"
+   body
+    maxstack 3
+    localcount 11
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     pushnan
+     setlocal            10
+
+     pushnan
+     setlocal            8
+
+     pushnan
+     setlocal            9
+
+     pushnan
+     setlocal            7
+
+     getlocal            4
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "x")
+     ifnle               L63
+
+     getlocal            5
+     getlocal3
+     subtract
+     getlocal            4
+     getlocal2
+     subtract
+     divide
+     convert_d
+     setlocal            10
+
+     getlocal3
+     getlocal2
+     getlocal            10
+     multiply
+     subtract
+     convert_d
+     setlocal            8
+
+     getlocal            10
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "x")
+     multiply
+     getlocal            8
+     add
+     convert_d
+     dup
+     setlocal            9
+
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "y")
+     greaterequals
+     dup
+     iffalse             L52
+
+     pop
+     getlocal            9
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "y")
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "height")
+     add
+     lessequals
+L52:
+     iffalse             L62
+
+     getlocal            6
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "x")
+     setproperty         QName(PackageNamespace(""), "x")
+
+     getlocal            6
+     getlocal            9
+     setproperty         QName(PackageNamespace(""), "y")
+
+     pushtrue
+     returnvalue
+
+L62:
+     jump                L124
+
+L63:
+     getlocal            4
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "x")
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "width")
+     add
+     ifnge               L124
+
+     getlocal            5
+     getlocal3
+     subtract
+     getlocal            4
+     getlocal2
+     subtract
+     divide
+     convert_d
+     setlocal            10
+
+     getlocal3
+     getlocal2
+     getlocal            10
+     multiply
+     subtract
+     convert_d
+     setlocal            8
+
+     getlocal            10
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "x")
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "width")
+     add
+     multiply
+     getlocal            8
+     add
+     convert_d
+     dup
+     setlocal            9
+
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "y")
+     greaterequals
+     dup
+     iffalse             L111
+
+     pop
+     getlocal            9
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "y")
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "height")
+     add
+     lessequals
+L111:
+     iffalse             L124
+
+     getlocal            6
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "x")
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "width")
+     add
+     setproperty         QName(PackageNamespace(""), "x")
+
+     getlocal            6
+     getlocal            9
+     setproperty         QName(PackageNamespace(""), "y")
+
+     pushtrue
+     returnvalue
+
+L124:
+     getlocal            5
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "y")
+     ifnle               L177
+
+     getlocal            4
+     getlocal2
+     subtract
+     getlocal            5
+     getlocal3
+     subtract
+     divide
+     convert_d
+     setlocal            10
+
+     getlocal2
+     getlocal3
+     getlocal            10
+     multiply
+     subtract
+     convert_d
+     setlocal            8
+
+     getlocal            10
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "y")
+     multiply
+     getlocal            8
+     add
+     convert_d
+     dup
+     setlocal            7
+
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "x")
+     greaterequals
+     dup
+     iffalse             L166
+
+     pop
+     getlocal            7
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "x")
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "width")
+     add
+     lessequals
+L166:
+     iffalse             L176
+
+     getlocal            6
+     getlocal            7
+     setproperty         QName(PackageNamespace(""), "x")
+
+     getlocal            6
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "y")
+     setproperty         QName(PackageNamespace(""), "y")
+
+     pushtrue
+     returnvalue
+
+L176:
+     jump                L238
+
+L177:
+     getlocal            5
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "y")
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "height")
+     add
+     ifnge               L238
+
+     getlocal            4
+     getlocal2
+     subtract
+     getlocal            5
+     getlocal3
+     subtract
+     divide
+     convert_d
+     setlocal            10
+
+     getlocal2
+     getlocal3
+     getlocal            10
+     multiply
+     subtract
+     convert_d
+     setlocal            8
+
+     getlocal            10
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "y")
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "height")
+     add
+     multiply
+     getlocal            8
+     add
+     convert_d
+     dup
+     setlocal            7
+
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "x")
+     greaterequals
+     dup
+     iffalse             L225
+
+     pop
+     getlocal            7
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "x")
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "width")
+     add
+     lessequals
+L225:
+     iffalse             L238
+
+     getlocal            6
+     getlocal            7
+     setproperty         QName(PackageNamespace(""), "x")
+
+     getlocal            6
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "y")
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "height")
+     add
+     setproperty         QName(PackageNamespace(""), "y")
+
+     pushtrue
+     returnvalue
+
+L238:
+     pushfalse
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "lineSegmentIntersect")
+  method
+   name "lineSegmentIntersect"
+   refid "com.company.util:RectangleUtil/class/lineSegmentIntersect"
+   param QName(PackageNamespace("flash.geom"), "Rectangle")
+   param QName(PackageNamespace("com.company.util"), "IntPoint")
+   param QName(PackageNamespace("com.company.util"), "IntPoint")
+   returns QName(PackageNamespace("flash.geom"), "Point")
+   flag HAS_PARAM_NAMES
+   paramname "_arg1"
+   paramname "_arg2"
+   paramname "_arg3"
+   body
+    maxstack 4
+    localcount 8
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     pushnan
+     setlocal            6
+
+     pushnan
+     setlocal            7
+
+     pushnan
+     setlocal            4
+
+     pushnan
+     setlocal            5
+
+     getlocal3
+     callproperty        QName(PackageNamespace(""), "x"), 0
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "x")
+     ifnle               L67
+
+     getlocal3
+     callproperty        QName(PackageNamespace(""), "y"), 0
+     getlocal2
+     callproperty        QName(PackageNamespace(""), "y"), 0
+     subtract
+     getlocal3
+     callproperty        QName(PackageNamespace(""), "x"), 0
+     getlocal2
+     callproperty        QName(PackageNamespace(""), "x"), 0
+     subtract
+     divide
+     convert_d
+     setlocal            6
+
+     getlocal2
+     callproperty        QName(PackageNamespace(""), "y"), 0
+     getlocal2
+     callproperty        QName(PackageNamespace(""), "x"), 0
+     getlocal            6
+     multiply
+     subtract
+     convert_d
+     setlocal            7
+
+     getlocal            6
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "x")
+     multiply
+     getlocal            7
+     add
+     convert_d
+     dup
+     setlocal            4
+
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "y")
+     greaterequals
+     dup
+     iffalse             L59
+
+     pop
+     getlocal            4
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "y")
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "height")
+     add
+     lessequals
+L59:
+     iffalse             L66
+
+     findpropstrict      QName(PackageNamespace("flash.geom"), "Point")
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "x")
+     getlocal            4
+     constructprop       QName(PackageNamespace("flash.geom"), "Point"), 2
+     returnvalue
+
+L66:
+     jump                L132
+
+L67:
+     getlocal3
+     callproperty        QName(PackageNamespace(""), "x"), 0
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "x")
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "width")
+     add
+     ifnge               L132
+
+     getlocal3
+     callproperty        QName(PackageNamespace(""), "y"), 0
+     getlocal2
+     callproperty        QName(PackageNamespace(""), "y"), 0
+     subtract
+     getlocal3
+     callproperty        QName(PackageNamespace(""), "x"), 0
+     getlocal2
+     callproperty        QName(PackageNamespace(""), "x"), 0
+     subtract
+     divide
+     convert_d
+     setlocal            6
+
+     getlocal2
+     callproperty        QName(PackageNamespace(""), "y"), 0
+     getlocal2
+     callproperty        QName(PackageNamespace(""), "x"), 0
+     getlocal            6
+     multiply
+     subtract
+     convert_d
+     setlocal            7
+
+     getlocal            6
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "x")
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "width")
+     add
+     multiply
+     getlocal            7
+     add
+     convert_d
+     dup
+     setlocal            4
+
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "y")
+     greaterequals
+     dup
+     iffalse             L122
+
+     pop
+     getlocal            4
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "y")
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "height")
+     add
+     lessequals
+L122:
+     iffalse             L132
+
+     findpropstrict      QName(PackageNamespace("flash.geom"), "Point")
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "x")
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "width")
+     add
+     getlocal            4
+     constructprop       QName(PackageNamespace("flash.geom"), "Point"), 2
+     returnvalue
+
+L132:
+     getlocal3
+     callproperty        QName(PackageNamespace(""), "y"), 0
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "y")
+     ifnle               L189
+
+     getlocal3
+     callproperty        QName(PackageNamespace(""), "x"), 0
+     getlocal2
+     callproperty        QName(PackageNamespace(""), "x"), 0
+     subtract
+     getlocal3
+     callproperty        QName(PackageNamespace(""), "y"), 0
+     getlocal2
+     callproperty        QName(PackageNamespace(""), "y"), 0
+     subtract
+     divide
+     convert_d
+     setlocal            6
+
+     getlocal2
+     callproperty        QName(PackageNamespace(""), "x"), 0
+     getlocal2
+     callproperty        QName(PackageNamespace(""), "y"), 0
+     getlocal            6
+     multiply
+     subtract
+     convert_d
+     setlocal            7
+
+     getlocal            6
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "y")
+     multiply
+     getlocal            7
+     add
+     convert_d
+     dup
+     setlocal            5
+
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "x")
+     greaterequals
+     dup
+     iffalse             L181
+
+     pop
+     getlocal            5
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "x")
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "width")
+     add
+     lessequals
+L181:
+     iffalse             L188
+
+     findpropstrict      QName(PackageNamespace("flash.geom"), "Point")
+     getlocal            5
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "y")
+     constructprop       QName(PackageNamespace("flash.geom"), "Point"), 2
+     returnvalue
+
+L188:
+     jump                L254
+
+L189:
+     getlocal3
+     callproperty        QName(PackageNamespace(""), "y"), 0
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "y")
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "height")
+     add
+     ifnge               L254
+
+     getlocal3
+     callproperty        QName(PackageNamespace(""), "x"), 0
+     getlocal2
+     callproperty        QName(PackageNamespace(""), "x"), 0
+     subtract
+     getlocal3
+     callproperty        QName(PackageNamespace(""), "y"), 0
+     getlocal2
+     callproperty        QName(PackageNamespace(""), "y"), 0
+     subtract
+     divide
+     convert_d
+     setlocal            6
+
+     getlocal2
+     callproperty        QName(PackageNamespace(""), "x"), 0
+     getlocal2
+     callproperty        QName(PackageNamespace(""), "y"), 0
+     getlocal            6
+     multiply
+     subtract
+     convert_d
+     setlocal            7
+
+     getlocal            6
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "y")
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "height")
+     add
+     multiply
+     getlocal            7
+     add
+     convert_d
+     dup
+     setlocal            5
+
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "x")
+     greaterequals
+     dup
+     iffalse             L244
+
+     pop
+     getlocal            5
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "x")
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "width")
+     add
+     lessequals
+L244:
+     iffalse             L254
+
+     findpropstrict      QName(PackageNamespace("flash.geom"), "Point")
+     getlocal            5
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "y")
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "height")
+     add
+     constructprop       QName(PackageNamespace("flash.geom"), "Point"), 2
+     returnvalue
+
+L254:
+     pushnull
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "getRotatedRectExtents2D")
+  method
+   name "getRotatedRectExtents2D"
+   refid "com.company.util:RectangleUtil/class/getRotatedRectExtents2D"
+   param QName(PackageNamespace(""), "Number")
+   param QName(PackageNamespace(""), "Number")
+   param QName(PackageNamespace(""), "Number")
+   param QName(PackageNamespace(""), "Number")
+   param QName(PackageNamespace(""), "Number")
+   returns QName(PackageNamespace("com.company.util"), "Extents2D")
+   flag HAS_PARAM_NAMES
+   paramname "_arg1"
+   paramname "_arg2"
+   paramname "_arg3"
+   paramname "_arg4"
+   paramname "_arg5"
+   body
+    maxstack 4
+    localcount 12
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     pushnull
+     setlocal            9
+
+     pushbyte            0
+     setlocal            7
+
+     pushbyte            0
+     setlocal            6
+
+     findpropstrict      QName(PackageNamespace("flash.geom"), "Matrix")
+     constructprop       QName(PackageNamespace("flash.geom"), "Matrix"), 0
+     coerce              QName(PackageNamespace("flash.geom"), "Matrix")
+     dup
+     setlocal            10
+
+     getlocal            4
+     negate
+     pushbyte            2
+     divide
+     getlocal            5
+     negate
+     pushbyte            2
+     divide
+     callpropvoid        QName(PackageNamespace(""), "translate"), 2
+
+     getlocal            10
+     getlocal3
+     callpropvoid        QName(PackageNamespace(""), "rotate"), 1
+
+     getlocal            10
+     getlocal1
+     getlocal2
+     callpropvoid        QName(PackageNamespace(""), "translate"), 2
+
+     findpropstrict      QName(PackageNamespace("com.company.util"), "Extents2D")
+     constructprop       QName(PackageNamespace("com.company.util"), "Extents2D"), 0
+     coerce              QName(PackageNamespace("com.company.util"), "Extents2D")
+     setlocal            11
+
+     findpropstrict      QName(PackageNamespace("flash.geom"), "Point")
+     constructprop       QName(PackageNamespace("flash.geom"), "Point"), 0
+     coerce              QName(PackageNamespace("flash.geom"), "Point")
+     setlocal            8
+
+     jump                L69
+
+L38:
+     label
+     pushbyte            0
+     setlocal            7
+
+     jump                L65
+
+L42:
+     label
+     getlocal            8
+     getlocal            6
+     getlocal            4
+     multiply
+     setproperty         QName(PackageNamespace(""), "x")
+
+     getlocal            8
+     getlocal            7
+     getlocal            5
+     multiply
+     setproperty         QName(PackageNamespace(""), "y")
+
+     getlocal            10
+     getlocal            8
+     callproperty        QName(PackageNamespace(""), "transformPoint"), 1
+     coerce              QName(PackageNamespace("flash.geom"), "Point")
+     setlocal            9
+
+     getlocal            11
+     getlocal            9
+     getproperty         QName(PackageNamespace(""), "x")
+     getlocal            9
+     getproperty         QName(PackageNamespace(""), "y")
+     callpropvoid        QName(PackageNamespace(""), "add"), 2
+
+     inclocal_i          7
+L65:
+     getlocal            7
+     pushbyte            1
+     ifle                L42
+
+     inclocal_i          6
+L69:
+     getlocal            6
+     pushbyte            1
+     ifle                L38
+
+     getlocal            11
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+end ; class

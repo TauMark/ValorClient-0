@@ -1,0 +1,107 @@
+class
+ refid "kabam.rotmg.death.view:ZombifyDialog"
+ instance QName(PackageNamespace("kabam.rotmg.death.view"), "ZombifyDialog")
+  extends QName(PackageNamespace("flash.display"), "Sprite")
+  flag SEALED
+  iinit
+   name "ZombifyDialog"
+   refid "kabam.rotmg.death.view:ZombifyDialog/instance/init"
+   body
+    maxstack 7
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     findpropstrict      QName(PackageNamespace("org.osflash.signals"), "Signal")
+     constructprop       QName(PackageNamespace("org.osflash.signals"), "Signal"), 0
+     findproperty        QName(PackageNamespace(""), "closed")
+     swap
+     initproperty        QName(PackageNamespace(""), "closed")
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.ui.dialogs"), "Dialog")
+     pushstring          "ZombifyDialog.title"
+     pushstring          "ZombifyDialog.body"
+     pushstring          "ZombifyDialog.button"
+     pushnull
+     pushnull
+     constructprop       QName(PackageNamespace("com.company.assembleegameclient.ui.dialogs"), "Dialog"), 5
+     setproperty         QName(PrivateNamespace("kabam.rotmg.death.view:ZombifyDialog"), "dialog")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.death.view:ZombifyDialog"), "dialog")
+     pushbyte            -100
+     setproperty         QName(PackageNamespace(""), "offsetX")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.death.view:ZombifyDialog"), "dialog")
+     pushshort           200
+     setproperty         QName(PackageNamespace(""), "offsetY")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.death.view:ZombifyDialog"), "dialog")
+     pushstring          "dialogLeftButton"
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.death.view:ZombifyDialog"), "onButtonClick")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.death.view:ZombifyDialog"), "dialog")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait const QName(PackageNamespace(""), "closed") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.death.view:ZombifyDialog"), "dialog") type QName(PackageNamespace("com.company.assembleegameclient.ui.dialogs"), "Dialog") end
+  trait method QName(PrivateNamespace("kabam.rotmg.death.view:ZombifyDialog"), "onButtonClick")
+   method
+    name "onButtonClick"
+    refid "kabam.rotmg.death.view:ZombifyDialog/instance/kabam.rotmg.death.view:ZombifyDialog/instance/init/onButtonClick"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 1
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "closed")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.death.view:ZombifyDialog/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PackageNamespace(""), "TITLE") type QName(PackageNamespace(""), "String") value Utf8("ZombifyDialog.title") end
+ trait const QName(PackageNamespace(""), "BODY") type QName(PackageNamespace(""), "String") value Utf8("ZombifyDialog.body") end
+ trait const QName(PackageNamespace(""), "BUTTON") type QName(PackageNamespace(""), "String") value Utf8("ZombifyDialog.button") end
+end ; class

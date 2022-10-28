@@ -1,0 +1,572 @@
+class
+ refid "kabam.rotmg.account.securityQuestions.view:SecurityQuestionsDialog"
+ instance QName(PackageNamespace("kabam.rotmg.account.securityQuestions.view"), "SecurityQuestionsDialog")
+  extends QName(PackageNamespace("com.company.assembleegameclient.account.ui"), "Frame")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.account.securityQuestions.view:SecurityQuestionsDialog")
+  iinit
+   name "SecurityQuestionsDialog"
+   refid "kabam.rotmg.account.securityQuestions.view:SecurityQuestionsDialog/instance/init"
+   param QName(PackageNamespace(""), "Array")
+   param QName(PackageNamespace(""), "Array")
+   flag HAS_PARAM_NAMES
+   paramname "_arg1"
+   paramname "_arg2"
+   body
+    maxstack 4
+    localcount 3
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PackageNamespace(""), "RegExp")
+     pushstring          "^[a-zA-Z0-9 ]+$"
+     construct           1
+     findproperty        QName(PrivateNamespace("kabam.rotmg.account.securityQuestions.view:SecurityQuestionsDialog"), "inputPattern")
+     swap
+     initproperty        QName(PrivateNamespace("kabam.rotmg.account.securityQuestions.view:SecurityQuestionsDialog"), "inputPattern")
+
+     getlocal0
+     newarray            0
+     setproperty         QName(PrivateNamespace("kabam.rotmg.account.securityQuestions.view:SecurityQuestionsDialog"), "errors")
+
+     getlocal0
+     getlocal1
+     setproperty         QName(PrivateNamespace("kabam.rotmg.account.securityQuestions.view:SecurityQuestionsDialog"), "questionsList")
+
+     getlocal0
+     pushstring          "SecurityQuestionsDialog.title"
+     pushstring          ""
+     pushstring          "SecurityQuestionsDialog.save"
+     constructsuper      3
+
+     getlocal0
+     callpropvoid        QName(PrivateNamespace("kabam.rotmg.account.securityQuestions.view:SecurityQuestionsDialog"), "createAssets"), 0
+
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "length")
+     getlocal2
+     getproperty         QName(PackageNamespace(""), "length")
+     ifne                L29
+
+     getlocal0
+     getlocal2
+     callpropvoid        QName(PackageNamespace(""), "updateAnswers"), 1
+
+L29:
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait const QName(PrivateNamespace("kabam.rotmg.account.securityQuestions.view:SecurityQuestionsDialog"), "minQuestionLength") type QName(PackageNamespace(""), "int") value Integer(3) end
+  trait const QName(PrivateNamespace("kabam.rotmg.account.securityQuestions.view:SecurityQuestionsDialog"), "maxQuestionLength") type QName(PackageNamespace(""), "int") value Integer(50) end
+  trait const QName(PrivateNamespace("kabam.rotmg.account.securityQuestions.view:SecurityQuestionsDialog"), "inputPattern") type QName(PackageNamespace(""), "RegExp") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.account.securityQuestions.view:SecurityQuestionsDialog"), "errors") type QName(PackageNamespace(""), "Array") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.account.securityQuestions.view:SecurityQuestionsDialog"), "fields") type QName(PackageNamespace(""), "Array") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.account.securityQuestions.view:SecurityQuestionsDialog"), "questionsList") type QName(PackageNamespace(""), "Array") end
+  trait method QName(PackageNamespace(""), "updateAnswers")
+   method
+    name "updateAnswers"
+    refid "kabam.rotmg.account.securityQuestions.view:SecurityQuestionsDialog/instance/updateAnswers"
+    param QName(PackageNamespace(""), "Array")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 4
+     localcount 6
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      setlocal3
+
+      pushbyte            1
+      setlocal2
+
+      pushbyte            0
+      setlocal            5
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.account.securityQuestions.view:SecurityQuestionsDialog"), "fields")
+      setlocal            4
+
+      jump                L27
+
+L12:
+      label
+      getlocal            4
+      getlocal            5
+      nextvalue
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.account.ui"), "TextInputField")
+      setlocal3
+
+      getlocal3
+      getproperty         QName(PackageNamespace(""), "inputText_")
+      getlocal1
+      getlocal2
+      pushbyte            1
+      subtract
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.account.securityQuestions.view:SecurityQuestionsDialog"), ProtectedNamespace("kabam.rotmg.account.securityQuestions.view:SecurityQuestionsDialog"), StaticProtectedNs("kabam.rotmg.account.securityQuestions.view:SecurityQuestionsDialog"), StaticProtectedNs("com.company.assembleegameclient.account.ui:Frame"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.account.securityQuestions.view"), PackageInternalNs("kabam.rotmg.account.securityQuestions.view"), PrivateNamespace("FilePrivateNS:SecurityQuestionsDialog"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      setproperty         QName(PackageNamespace(""), "text")
+
+      inclocal_i          2
+L27:
+      hasnext2            4, 5
+      iftrue              L12
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.account.securityQuestions.view:SecurityQuestionsDialog"), "createAssets")
+   method
+    name "createAssets"
+    refid "kabam.rotmg.account.securityQuestions.view:SecurityQuestionsDialog/instance/kabam.rotmg.account.securityQuestions.view:SecurityQuestionsDialog/instance/createAssets"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 6
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      setlocal1
+
+      pushnull
+      setlocal2
+
+      pushbyte            1
+      setlocal3
+
+      getlocal0
+      newarray            0
+      setproperty         QName(PrivateNamespace("kabam.rotmg.account.securityQuestions.view:SecurityQuestionsDialog"), "fields")
+
+      pushbyte            0
+      setlocal            5
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.account.securityQuestions.view:SecurityQuestionsDialog"), "questionsList")
+      setlocal            4
+
+      jump                L50
+
+L17:
+      label
+      getlocal            4
+      getlocal            5
+      nextvalue
+      coerce_s
+      setlocal1
+
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.account.ui"), "TextInputField")
+      getlocal1
+      pushfalse
+      pushshort           240
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.account.ui"), "TextInputField"), 3
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.account.ui"), "TextInputField")
+      setlocal2
+
+      findpropstrict      QName(PackageNamespace(""), "addTextInputField")
+      getlocal2
+      callpropvoid        QName(PackageNamespace(""), "addTextInputField"), 1
+
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "inputText_")
+      pushtrue
+      setproperty         QName(PackageNamespace(""), "tabEnabled")
+
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "inputText_")
+      getlocal3
+      setproperty         QName(PackageNamespace(""), "tabIndex")
+
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "inputText_")
+      pushbyte            50
+      setproperty         QName(PackageNamespace(""), "maxChars")
+
+      inclocal_i          3
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.account.securityQuestions.view:SecurityQuestionsDialog"), "fields")
+      getlocal2
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+
+L50:
+      hasnext2            4, 5
+      iftrue              L17
+
+      getlex              QName(PackageNamespace(""), "rightButton_")
+      getlocal3
+      pushbyte            1
+      add
+      setproperty         QName(PackageNamespace(""), "tabIndex")
+
+      getlex              QName(PackageNamespace(""), "rightButton_")
+      pushtrue
+      setproperty         QName(PackageNamespace(""), "tabEnabled")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "clearErrors")
+   method
+    name "clearErrors"
+    refid "kabam.rotmg.account.securityQuestions.view:SecurityQuestionsDialog/instance/clearErrors"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 4
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      setlocal1
+
+      getlex              QName(PackageNamespace(""), "titleText_")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder")
+      constructprop       QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder"), 0
+      pushstring          "SecurityQuestionsDialog.title"
+      callproperty        QName(PackageNamespace(""), "setParams"), 1
+      callpropvoid        QName(PackageNamespace(""), "setStringBuilder"), 1
+
+      getlex              QName(PackageNamespace(""), "titleText_")
+      pushint             11776947
+      callpropvoid        QName(PackageNamespace(""), "setColor"), 1
+
+      getlocal0
+      newarray            0
+      setproperty         QName(PrivateNamespace("kabam.rotmg.account.securityQuestions.view:SecurityQuestionsDialog"), "errors")
+
+      pushbyte            0
+      setlocal3
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.account.securityQuestions.view:SecurityQuestionsDialog"), "fields")
+      setlocal2
+
+      jump                L31
+
+L22:
+      label
+      getlocal2
+      getlocal3
+      nextvalue
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.account.ui"), "TextInputField")
+      setlocal1
+
+      getlocal1
+      pushfalse
+      callpropvoid        QName(PackageNamespace(""), "setErrorHighlight"), 1
+
+L31:
+      hasnext2            2, 3
+      iftrue              L22
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "areQuestionsValid")
+   method
+    name "areQuestionsValid"
+    refid "kabam.rotmg.account.securityQuestions.view:SecurityQuestionsDialog/instance/areQuestionsValid"
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 2
+     localcount 4
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      setlocal1
+
+      pushbyte            0
+      setlocal3
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.account.securityQuestions.view:SecurityQuestionsDialog"), "fields")
+      setlocal2
+
+      jump                L44
+
+L10:
+      label
+      getlocal2
+      getlocal3
+      nextvalue
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.account.ui"), "TextInputField")
+      setlocal1
+
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "inputText_")
+      getproperty         QName(PackageNamespace(""), "length")
+      pushbyte            3
+      ifnlt               L30
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.account.securityQuestions.view:SecurityQuestionsDialog"), "errors")
+      pushstring          "SecurityQuestionsDialog.tooShort"
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+
+      getlocal1
+      pushtrue
+      callpropvoid        QName(PackageNamespace(""), "setErrorHighlight"), 1
+
+      pushfalse
+      returnvalue
+
+L30:
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "inputText_")
+      getproperty         QName(PackageNamespace(""), "length")
+      pushbyte            50
+      ifngt               L44
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.account.securityQuestions.view:SecurityQuestionsDialog"), "errors")
+      pushstring          "SecurityQuestionsDialog.tooLong"
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+
+      getlocal1
+      pushtrue
+      callpropvoid        QName(PackageNamespace(""), "setErrorHighlight"), 1
+
+      pushfalse
+      returnvalue
+
+L44:
+      hasnext2            2, 3
+      iftrue              L10
+
+      pushtrue
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "displayErrorText")
+   method
+    name "displayErrorText"
+    refid "kabam.rotmg.account.securityQuestions.view:SecurityQuestionsDialog/instance/displayErrorText"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.account.securityQuestions.view:SecurityQuestionsDialog"), "errors")
+      getproperty         QName(PackageNamespace(""), "length")
+      pushbyte            1
+      ifne                L12
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.account.securityQuestions.view:SecurityQuestionsDialog"), "errors")
+      pushbyte            0
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.account.securityQuestions.view:SecurityQuestionsDialog"), ProtectedNamespace("kabam.rotmg.account.securityQuestions.view:SecurityQuestionsDialog"), StaticProtectedNs("kabam.rotmg.account.securityQuestions.view:SecurityQuestionsDialog"), StaticProtectedNs("com.company.assembleegameclient.account.ui:Frame"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.account.securityQuestions.view"), PackageInternalNs("kabam.rotmg.account.securityQuestions.view"), PrivateNamespace("FilePrivateNS:SecurityQuestionsDialog"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      jump                L14
+
+L12:
+      pushstring          "WebRegister.multiple_errors_message"
+      coerce_a
+L14:
+      coerce_s
+      setlocal1
+
+      getlocal0
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "setError"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "dispose")
+   method
+    name "dispose"
+    refid "kabam.rotmg.account.securityQuestions.view:SecurityQuestionsDialog/instance/dispose"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      pushnull
+      setproperty         QName(PrivateNamespace("kabam.rotmg.account.securityQuestions.view:SecurityQuestionsDialog"), "errors")
+
+      getlocal0
+      pushnull
+      setproperty         QName(PrivateNamespace("kabam.rotmg.account.securityQuestions.view:SecurityQuestionsDialog"), "fields")
+
+      getlocal0
+      pushnull
+      setproperty         QName(PrivateNamespace("kabam.rotmg.account.securityQuestions.view:SecurityQuestionsDialog"), "questionsList")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getAnswers")
+   method
+    name "getAnswers"
+    refid "kabam.rotmg.account.securityQuestions.view:SecurityQuestionsDialog/instance/getAnswers"
+    returns QName(PackageNamespace(""), "Array")
+    body
+     maxstack 2
+     localcount 5
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      setlocal1
+
+      newarray            0
+      coerce              QName(PackageNamespace(""), "Array")
+      setlocal2
+
+      pushbyte            0
+      setlocal            4
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.account.securityQuestions.view:SecurityQuestionsDialog"), "fields")
+      setlocal3
+
+      jump                L24
+
+L13:
+      label
+      getlocal3
+      getlocal            4
+      nextvalue
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.account.ui"), "TextInputField")
+      setlocal1
+
+      getlocal2
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "inputText_")
+      getproperty         QName(PackageNamespace(""), "text")
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+
+L24:
+      hasnext2            3, 4
+      iftrue              L13
+
+      getlocal2
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "disable") flag OVERRIDE
+   method
+    name "disable"
+    refid "kabam.rotmg.account.securityQuestions.view:SecurityQuestionsDialog/instance/disable"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      callsupervoid       QName(PackageNamespace(""), "disable"), 0
+      getlex              QName(PackageNamespace(""), "titleText_")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder")
+      constructprop       QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder"), 0
+      pushstring          "SecurityQuestionsDialog.savingInProgress"
+      callproperty        QName(PackageNamespace(""), "setParams"), 1
+      callpropvoid        QName(PackageNamespace(""), "setStringBuilder"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setError")
+   method
+    name "setError"
+    refid "kabam.rotmg.account.securityQuestions.view:SecurityQuestionsDialog/instance/setError"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 5
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace(""), "titleText_")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder")
+      constructprop       QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder"), 0
+      getlocal1
+      pushstring          "min"
+      pushbyte            3
+      newobject           1
+      callproperty        QName(PackageNamespace(""), "setParams"), 2
+      callpropvoid        QName(PackageNamespace(""), "setStringBuilder"), 1
+
+      getlex              QName(PackageNamespace(""), "titleText_")
+      pushint             16549442
+      callpropvoid        QName(PackageNamespace(""), "setColor"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.account.securityQuestions.view:SecurityQuestionsDialog/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

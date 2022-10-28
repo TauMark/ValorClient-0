@@ -1,0 +1,269 @@
+class
+ refid "valor.battlePass:BattlePassModel"
+ instance QName(PackageNamespace("valor.battlePass"), "BattlePassModel")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  iinit
+   refid "valor.battlePass:BattlePassModel/instance/init"
+   body
+    maxstack 2
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     findpropstrict      QName(PackageNamespace("flash.utils"), "Dictionary")
+     constructprop       QName(PackageNamespace("flash.utils"), "Dictionary"), 0
+     findproperty        QName(PackageNamespace(""), "missions")
+     swap
+     setproperty         QName(PackageNamespace(""), "missions")
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "missions") type QName(PackageNamespace("flash.utils"), "Dictionary") end
+ end ; instance
+ cinit
+  refid "valor.battlePass:BattlePassModel/class/init"
+  body
+   maxstack 4
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 1
+   code
+    getlocal0
+    pushscope
+
+    findpropstrict      QName(PackageNamespace("flash.utils"), "Dictionary")
+    constructprop       QName(PackageNamespace("flash.utils"), "Dictionary"), 0
+    findproperty        QName(PackageNamespace(""), "respritersData")
+    swap
+    setproperty         QName(PackageNamespace(""), "respritersData")
+
+    getlex              QName(PackageNamespace(""), "respritersData")
+    pushshort           8178
+    getlex              QName(PackageNamespace("valor.battlePass.resprites"), "RespriteThemes")
+    getproperty         QName(PackageNamespace(""), "FireAndIce")
+    getlex              QName(PackageNamespace("valor.battlePass.resprites"), "RespriteThemes")
+    getproperty         QName(PackageNamespace(""), "Nature")
+    newarray            2
+    setproperty         MultinameL([PrivateNamespace("valor.battlePass:BattlePassModel"), StaticProtectedNs("valor.battlePass:BattlePassModel"), StaticProtectedNs("Object"), PackageNamespace("valor.battlePass"), PackageInternalNs("valor.battlePass"), PrivateNamespace("FilePrivateNS:BattlePassModel"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+    getlex              QName(PackageNamespace(""), "respritersData")
+    pushshort           286
+    getlex              QName(PackageNamespace("valor.battlePass.resprites"), "RespriteThemes")
+    getproperty         QName(PackageNamespace(""), "Halloween")
+    getlex              QName(PackageNamespace("valor.battlePass.resprites"), "RespriteThemes")
+    getproperty         QName(PackageNamespace(""), "Shatters")
+    newarray            2
+    setproperty         MultinameL([PrivateNamespace("valor.battlePass:BattlePassModel"), StaticProtectedNs("valor.battlePass:BattlePassModel"), StaticProtectedNs("Object"), PackageNamespace("valor.battlePass"), PackageInternalNs("valor.battlePass"), PrivateNamespace("FilePrivateNS:BattlePassModel"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait slot QName(PackageNamespace(""), "endTime") type QName(PackageNamespace(""), "int") end
+ trait slot QName(PackageNamespace(""), "maxLevels") type QName(PackageNamespace(""), "int") end
+ trait slot QName(PackageNamespace(""), "normalLevels") type QName(PackageNamespace(""), "Array") end
+ trait slot QName(PackageNamespace(""), "premiumLevels") type QName(PackageNamespace(""), "Array") end
+ trait slot QName(PackageNamespace(""), "battlePassName") type QName(PackageNamespace(""), "String") end
+ trait slot QName(PackageNamespace(""), "expPerLevel") type QName(PackageNamespace(""), "int") end
+ trait slot QName(PackageNamespace(""), "expPerLevelMult") type QName(PackageNamespace(""), "Number") end
+ trait slot QName(PackageNamespace(""), "maxExpPerLevel") type QName(PackageNamespace(""), "int") end
+ trait slot QName(PackageNamespace(""), "level") type QName(PackageNamespace(""), "int") end
+ trait slot QName(PackageNamespace(""), "currExp") type QName(PackageNamespace(""), "int") value Integer(-1) end
+ trait slot QName(PackageNamespace(""), "claimed") type QName(PackageNamespace(""), "String") end
+ trait slot QName(PackageNamespace(""), "premium") type QName(PackageNamespace(""), "Boolean") end
+ trait slot QName(PackageNamespace(""), "battlePassTabNeedsUpdate") type QName(PackageNamespace(""), "Boolean") value False() end
+ trait slot QName(PackageNamespace(""), "missionsTabNeedsUpdate") type QName(PackageNamespace(""), "Boolean") value False() end
+ trait slot QName(PackageNamespace(""), "waitForMissionsUpdate") type QName(PackageNamespace(""), "Boolean") value True() end
+ trait slot QName(PackageNamespace(""), "isOpened") type QName(PackageNamespace(""), "Boolean") value False() end
+ trait slot QName(PackageNamespace(""), "lastSliderX") type QName(PackageNamespace(""), "int") value Integer(-1) end
+ trait slot QName(PackageNamespace(""), "missionsData") type QName(PackageNamespace("flash.utils"), "Dictionary") end
+ trait slot QName(PackageNamespace(""), "respritesData") type QName(PackageNamespace("flash.utils"), "Dictionary") end
+ trait const QName(PackageNamespace(""), "RESPRITER_ID_BLANK") type QName(PackageNamespace(""), "int") value Integer(16356) end
+ trait const QName(PackageNamespace(""), "RESPRITER_ID_S1") type QName(PackageNamespace(""), "int") value Integer(8178) end
+ trait const QName(PackageNamespace(""), "RESPRITER_ID_S2") type QName(PackageNamespace(""), "int") value Integer(286) end
+ trait slot QName(PackageNamespace(""), "respritersData") type QName(PackageNamespace("flash.utils"), "Dictionary") end
+ trait method QName(PackageNamespace(""), "getNeededExp")
+  method
+   name "getNeededExp"
+   refid "valor.battlePass:BattlePassModel/class/getNeededExp"
+   param QName(PackageNamespace(""), "int")
+   returns QName(PackageNamespace(""), "int")
+   flag HAS_PARAM_NAMES
+   paramname "level"
+   body
+    maxstack 6
+    localcount 2
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PackageNamespace(""), "Math")
+     getlex              QName(PackageNamespace(""), "maxExpPerLevel")
+     getlex              QName(PackageNamespace(""), "expPerLevel")
+     getlex              QName(PackageNamespace(""), "Math")
+     getlex              QName(PackageNamespace(""), "expPerLevelMult")
+     getlocal1
+     callproperty        QName(PackageNamespace(""), "pow"), 2
+     multiply
+     callproperty        QName(PackageNamespace(""), "min"), 2
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "getTimeLeft")
+  method
+   name "getTimeLeft"
+   refid "valor.battlePass:BattlePassModel/class/getTimeLeft"
+   returns QName(PackageNamespace(""), "int")
+   body
+    maxstack 3
+    localcount 3
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     findpropstrict      QName(PackageNamespace(""), "Date")
+     constructprop       QName(PackageNamespace(""), "Date"), 0
+     coerce              QName(PackageNamespace(""), "Date")
+     setlocal2
+
+     getlocal2
+     callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "getTime"), 0
+     pushshort           1000
+     divide
+     convert_i
+     setlocal1
+
+     getlex              QName(PackageNamespace(""), "Math")
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "endTime")
+     getlocal1
+     subtract
+     pushbyte            0
+     callproperty        QName(PackageNamespace(""), "max"), 2
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "getTimeLeftStr")
+  method
+   name "getTimeLeftStr"
+   refid "valor.battlePass:BattlePassModel/class/getTimeLeftStr"
+   returns QName(PackageNamespace(""), "String")
+   body
+    maxstack 5
+    localcount 4
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     findpropstrict      QName(PackageNamespace(""), "getTimeLeft")
+     callproperty        QName(PackageNamespace(""), "getTimeLeft"), 0
+     pushint             86400
+     divide
+     convert_i
+     setlocal3
+
+     findpropstrict      QName(PackageNamespace(""), "getTimeLeft")
+     callproperty        QName(PackageNamespace(""), "getTimeLeft"), 0
+     pushshort           3600
+     divide
+     pushbyte            24
+     modulo
+     convert_i
+     setlocal1
+
+     findpropstrict      QName(PackageNamespace(""), "getTimeLeft")
+     callproperty        QName(PackageNamespace(""), "getTimeLeft"), 0
+     pushbyte            60
+     divide
+     pushbyte            60
+     modulo
+     convert_i
+     setlocal2
+
+     getlex              QName(PackageNamespace("mx.utils"), "StringUtil")
+     pushstring          "{0} days {1} hours and {2} mins"
+     getlocal3
+     getlocal1
+     getlocal2
+     callproperty        QName(PackageNamespace(""), "substitute"), 4
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "isClaimed")
+  method
+   name "isClaimed"
+   refid "valor.battlePass:BattlePassModel/class/isClaimed"
+   param QName(PackageNamespace(""), "String")
+   returns QName(PackageNamespace(""), "Boolean")
+   flag HAS_PARAM_NAMES
+   paramname "id"
+   body
+    maxstack 2
+    localcount 6
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PackageNamespace(""), "claimed")
+     pushstring          ","
+     callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "split"), 1
+     coerce              QName(PackageNamespace(""), "Array")
+     setlocal2
+
+     pushbyte            0
+     setlocal            5
+
+     getlocal2
+     setlocal            4
+
+     jump                L23
+
+L12:
+     label
+     getlocal            4
+     getlocal            5
+     nextvalue
+     coerce_s
+     setlocal3
+
+     getlocal3
+     getlocal1
+     ifne                L23
+
+     pushtrue
+     returnvalue
+
+L23:
+     hasnext2            4, 5
+     iftrue              L12
+
+     pushfalse
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+end ; class

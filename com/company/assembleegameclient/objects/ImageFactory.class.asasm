@@ -1,0 +1,131 @@
+class
+ refid "com.company.assembleegameclient.objects:ImageFactory"
+ instance QName(PackageNamespace("com.company.assembleegameclient.objects"), "ImageFactory")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  iinit
+   refid "com.company.assembleegameclient.objects:ImageFactory/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait method QName(PackageNamespace(""), "getImageFromSet")
+   method
+    name "getImageFromSet"
+    refid "com.company.assembleegameclient.objects:ImageFactory/instance/getImageFromSet"
+    param QName(PackageNamespace(""), "String")
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace("flash.display"), "BitmapData")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    paramname "_arg2"
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace("com.company.util"), "AssetLibrary")
+      getlocal1
+      getlocal2
+      callproperty        QName(PackageNamespace(""), "getImageFromSet"), 2
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getTexture")
+   method
+    name "getTexture"
+    refid "com.company.assembleegameclient.objects:ImageFactory/instance/getTexture"
+    param QName(PackageNamespace(""), "int")
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace("flash.display"), "BitmapData")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    paramname "_arg2"
+    body
+     maxstack 6
+     localcount 6
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnan
+      setlocal            4
+
+      pushnull
+      setlocal            5
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.objects"), "ObjectLibrary")
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "getBitmapData"), 1
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      setlocal3
+
+      getlocal3
+      iffalse             L32
+
+      getlocal2
+      pushbyte            24
+      subtract
+      getlocal3
+      getproperty         QName(PackageNamespace(""), "width")
+      divide
+      convert_d
+      setlocal            4
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.objects"), "ObjectLibrary")
+      getlocal1
+      pushbyte            100
+      pushtrue
+      pushfalse
+      getlocal            4
+      callproperty        QName(PackageNamespace(""), "getRedrawnTextureFromType"), 5
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      dup
+      setlocal            5
+
+      returnvalue
+
+L32:
+      findpropstrict      QName(PackageNamespace(""), "BitmapDataSpy")
+      getlocal2
+      getlocal2
+      constructprop       QName(PackageNamespace(""), "BitmapDataSpy"), 2
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.objects:ImageFactory/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

@@ -1,0 +1,169 @@
+class
+ refid "kabam.rotmg.arena.view:ArenaLeaderboardList"
+ instance QName(PackageNamespace("kabam.rotmg.arena.view"), "ArenaLeaderboardList")
+  extends QName(PackageNamespace("flash.display"), "Sprite")
+  flag SEALED
+  iinit
+   name "ArenaLeaderboardList"
+   refid "kabam.rotmg.arena.view:ArenaLeaderboardList/instance/init"
+   body
+    maxstack 4
+    localcount 2
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     pushbyte            0
+     setlocal1
+
+     getlocal0
+     getlex              QName(PackageNamespace("__AS3__.vec"), "Vector")
+     getlex              QName(PackageNamespace("flash.display"), "DisplayObject")
+     applytype           1
+     pushbyte            20
+     construct           1
+     setproperty         QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaLeaderboardList"), "listItemPool")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.util.components"), "VerticalScrollingList")
+     constructprop       QName(PackageNamespace("kabam.rotmg.util.components"), "VerticalScrollingList"), 0
+     setproperty         QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaLeaderboardList"), "scrollList")
+
+     getlocal0
+     constructsuper      0
+
+     jump                L26
+
+L18:
+     label
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaLeaderboardList"), "listItemPool")
+     getlocal1
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.arena.view"), "ArenaLeaderboardListItem")
+     constructprop       QName(PackageNamespace("kabam.rotmg.arena.view"), "ArenaLeaderboardListItem"), 0
+     setproperty         MultinameL([PrivateNamespace("kabam.rotmg.arena.view:ArenaLeaderboardList"), ProtectedNamespace("kabam.rotmg.arena.view:ArenaLeaderboardList"), StaticProtectedNs("kabam.rotmg.arena.view:ArenaLeaderboardList"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.arena.view"), PackageInternalNs("kabam.rotmg.arena.view"), PrivateNamespace("FilePrivateNS:ArenaLeaderboardList"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     inclocal_i          1
+L26:
+     getlocal1
+     pushbyte            20
+     iflt                L18
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaLeaderboardList"), "scrollList")
+     findpropstrict      QName(PackageNamespace("kabam.lib.ui.api"), "Size")
+     pushshort           786
+     pushshort           400
+     constructprop       QName(PackageNamespace("kabam.lib.ui.api"), "Size"), 2
+     callpropvoid        QName(PackageNamespace(""), "setSize"), 1
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaLeaderboardList"), "scrollList")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait const QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaLeaderboardList"), "MAX_SIZE") type QName(PackageNamespace(""), "int") value Integer(20) end
+  trait slot QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaLeaderboardList"), "listItemPool") type TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("flash.display"), "DisplayObject")>) end
+  trait slot QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaLeaderboardList"), "scrollList") type QName(PackageNamespace("kabam.rotmg.util.components"), "VerticalScrollingList") end
+  trait method QName(PackageNamespace(""), "setItems")
+   method
+    name "setItems"
+    refid "kabam.rotmg.arena.view:ArenaLeaderboardList/instance/setItems"
+    param TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("kabam.rotmg.arena.model"), "ArenaLeaderboardEntry")>)
+    param QName(PackageNamespace(""), "Boolean")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    paramname "_arg2"
+    body
+     maxstack 3
+     localcount 6
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      setlocal            4
+
+      pushnull
+      setlocal            5
+
+      pushbyte            0
+      setlocal3
+
+      jump                L35
+
+L9:
+      label
+      getlocal3
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "length")
+      ifnlt               L18
+
+      getlocal1
+      getlocal3
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.arena.view:ArenaLeaderboardList"), ProtectedNamespace("kabam.rotmg.arena.view:ArenaLeaderboardList"), StaticProtectedNs("kabam.rotmg.arena.view:ArenaLeaderboardList"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.arena.view"), PackageInternalNs("kabam.rotmg.arena.view"), PrivateNamespace("FilePrivateNS:ArenaLeaderboardList"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      jump                L20
+
+L18:
+      pushnull
+      coerce_a
+L20:
+      coerce              QName(PackageNamespace("kabam.rotmg.arena.model"), "ArenaLeaderboardEntry")
+      setlocal            4
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaLeaderboardList"), "listItemPool")
+      getlocal3
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.arena.view:ArenaLeaderboardList"), ProtectedNamespace("kabam.rotmg.arena.view:ArenaLeaderboardList"), StaticProtectedNs("kabam.rotmg.arena.view:ArenaLeaderboardList"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.arena.view"), PackageInternalNs("kabam.rotmg.arena.view"), PrivateNamespace("FilePrivateNS:ArenaLeaderboardList"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getlex              QName(PackageNamespace("kabam.rotmg.arena.view"), "ArenaLeaderboardListItem")
+      astypelate
+      coerce              QName(PackageNamespace("kabam.rotmg.arena.view"), "ArenaLeaderboardListItem")
+      dup
+      setlocal            5
+
+      getlocal            4
+      getlocal2
+      callpropvoid        QName(PackageNamespace(""), "apply"), 2
+
+      inclocal_i          3
+L35:
+      getlocal3
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaLeaderboardList"), "listItemPool")
+      getproperty         QName(PackageNamespace(""), "length")
+      iflt                L9
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaLeaderboardList"), "scrollList")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaLeaderboardList"), "listItemPool")
+      callpropvoid        QName(PackageNamespace(""), "setItems"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.arena.view:ArenaLeaderboardList/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

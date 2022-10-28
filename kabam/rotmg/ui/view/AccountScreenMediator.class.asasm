@@ -1,0 +1,196 @@
+class
+ refid "kabam.rotmg.ui.view:AccountScreenMediator"
+ instance QName(PackageNamespace("kabam.rotmg.ui.view"), "AccountScreenMediator")
+  extends QName(PackageNamespace("robotlegs.bender.bundles.mvcs"), "Mediator")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.ui.view:AccountScreenMediator")
+  iinit
+   refid "kabam.rotmg.ui.view:AccountScreenMediator/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "view") flag METADATA type QName(PackageNamespace("com.company.assembleegameclient.screens"), "AccountScreen")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "account") flag METADATA type QName(PackageNamespace("kabam.rotmg.account.core"), "Account")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "playerModel") flag METADATA type QName(PackageNamespace("kabam.rotmg.core.model"), "PlayerModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "showTooltip") flag METADATA type QName(PackageNamespace("kabam.rotmg.core.signals"), "ShowTooltipSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "hideTooltips") flag METADATA type QName(PackageNamespace("kabam.rotmg.core.signals"), "HideTooltipsSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PackageNamespace(""), "initialize") flag OVERRIDE
+   method
+    name "initialize"
+    refid "kabam.rotmg.ui.view:AccountScreenMediator/instance/initialize"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 5
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "tooltip")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.ui.view:AccountScreenMediator"), "onTooltip")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "playerModel")
+      callproperty        QName(PackageNamespace(""), "getNumStars"), 0
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "playerModel")
+      callproperty        QName(PackageNamespace(""), "getRank"), 0
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "playerModel")
+      callproperty        QName(PackageNamespace(""), "isAdmin"), 0
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "playerModel")
+      getproperty         QName(PackageNamespace(""), "charList")
+      getproperty         QName(PackageNamespace(""), "starIconType")
+      callpropvoid        QName(PackageNamespace(""), "setRank"), 4
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "playerModel")
+      callproperty        QName(PackageNamespace(""), "getGuildName"), 0
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "playerModel")
+      callproperty        QName(PackageNamespace(""), "getGuildRank"), 0
+      callpropvoid        QName(PackageNamespace(""), "setGuild"), 2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlocal0
+      callproperty        QName(PrivateNamespace("kabam.rotmg.ui.view:AccountScreenMediator"), "getInfoView"), 0
+      callpropvoid        QName(PackageNamespace(""), "setAccountInfo"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.ui.view:AccountScreenMediator"), "getInfoView")
+   method
+    name "getInfoView"
+    refid "kabam.rotmg.ui.view:AccountScreenMediator/instance/kabam.rotmg.ui.view:AccountScreenMediator/instance/getInfoView"
+    returns QName(PackageNamespace("kabam.rotmg.account.core.view"), "AccountInfoView")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.account.web.view"), "WebAccountInfoView")
+      constructprop       QName(PackageNamespace("kabam.rotmg.account.web.view"), "WebAccountInfoView"), 0
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "destroy") flag OVERRIDE
+   method
+    name "destroy"
+    refid "kabam.rotmg.ui.view:AccountScreenMediator/instance/destroy"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "tooltip")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.ui.view:AccountScreenMediator"), "onTooltip")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hideTooltips")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.ui.view:AccountScreenMediator"), "onTooltip")
+   method
+    name "onTooltip"
+    refid "kabam.rotmg.ui.view:AccountScreenMediator/instance/kabam.rotmg.ui.view:AccountScreenMediator/instance/onTooltip"
+    param QName(PackageNamespace("com.company.assembleegameclient.ui.tooltip"), "ToolTip")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "showTooltip")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.ui.view:AccountScreenMediator/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

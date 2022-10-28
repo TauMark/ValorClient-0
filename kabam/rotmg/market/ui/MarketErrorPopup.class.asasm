@@ -1,0 +1,239 @@
+class
+ refid "kabam.rotmg.market.ui:MarketErrorPopup"
+ instance QName(PackageNamespace("kabam.rotmg.market.ui"), "MarketErrorPopup")
+  extends QName(PackageNamespace("io.decagames.rotmg.ui.popups.modal"), "ModalPopup")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.market.ui:MarketErrorPopup")
+  iinit
+   name "MarketErrorPopup"
+   refid "kabam.rotmg.market.ui:MarketErrorPopup/instance/init"
+   param QName(PackageNamespace(""), "String")
+   param QName(PackageNamespace(""), "String")
+   flag HAS_PARAM_NAMES
+   paramname "title"
+   paramname "desc"
+   body
+    maxstack 5
+    localcount 3
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     pushshort           250
+     pushshort           150
+     getlocal1
+     constructsuper      3
+
+     getlocal0
+     pushshort           175
+     setproperty         QName(PackageNamespace(""), "x")
+
+     getlocal0
+     pushshort           150
+     setproperty         QName(PackageNamespace(""), "y")
+
+     getlocal0
+     getlex              QName(PackageNamespace("io.decagames.rotmg.ui.texture"), "TextureParser")
+     getproperty         QName(PackageNamespace(""), "instance")
+     pushstring          "UI"
+     pushstring          "popup_content_inset"
+     callproperty        QName(PackageNamespace(""), "getSliceScalingBitmap"), 2
+     setproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketErrorPopup"), "darkBackground")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketErrorPopup"), "darkBackground")
+     pushbyte            0
+     setproperty         QName(PackageNamespace(""), "x")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketErrorPopup"), "darkBackground")
+     pushbyte            0
+     setproperty         QName(PackageNamespace(""), "y")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketErrorPopup"), "darkBackground")
+     pushshort           250
+     pushbyte            10
+     subtract
+     setproperty         QName(PackageNamespace(""), "width")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketErrorPopup"), "darkBackground")
+     pushshort           150
+     pushbyte            10
+     subtract
+     setproperty         QName(PackageNamespace(""), "height")
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlex              QName(PrivateNamespace("kabam.rotmg.market.ui:MarketErrorPopup"), "darkBackground")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("io.decagames.rotmg.ui.buttons"), "SliceScalingButton")
+     getlex              QName(PackageNamespace("io.decagames.rotmg.ui.texture"), "TextureParser")
+     getproperty         QName(PackageNamespace(""), "instance")
+     pushstring          "UI"
+     pushstring          "close_button"
+     callproperty        QName(PackageNamespace(""), "getSliceScalingBitmap"), 2
+     constructprop       QName(PackageNamespace("io.decagames.rotmg.ui.buttons"), "SliceScalingButton"), 1
+     setproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketErrorPopup"), "closeButton")
+
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "header")
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketErrorPopup"), "closeButton")
+     pushstring          "right_button"
+     callpropvoid        QName(PackageNamespace(""), "addButton"), 2
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketErrorPopup"), "closeButton")
+     pushstring          "click"
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketErrorPopup"), "onClose")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("io.decagames.rotmg.ui.labels"), "UILabel")
+     constructprop       QName(PackageNamespace("io.decagames.rotmg.ui.labels"), "UILabel"), 0
+     setproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketErrorPopup"), "descLabel")
+
+     getlex              QName(PackageNamespace("io.decagames.rotmg.ui.defaults"), "DefaultLabelFormat")
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketErrorPopup"), "descLabel")
+     callpropvoid        QName(PackageNamespace(""), "shopBoxTitle"), 1
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketErrorPopup"), "descLabel")
+     getlocal2
+     setproperty         QName(PackageNamespace(""), "text")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketErrorPopup"), "descLabel")
+     pushbyte            10
+     setproperty         QName(PackageNamespace(""), "x")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketErrorPopup"), "descLabel")
+     pushtrue
+     callpropvoid        QName(PackageNamespace(""), "setMultiLine"), 1
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketErrorPopup"), "descLabel")
+     pushshort           250
+     pushbyte            10
+     subtract
+     callpropvoid        QName(PackageNamespace(""), "setTextWidth"), 1
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketErrorPopup"), "descLabel")
+     pushbyte            30
+     setproperty         QName(PackageNamespace(""), "y")
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketErrorPopup"), "descLabel")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace("kabam.rotmg.market.ui:MarketErrorPopup"), "darkBackground") type QName(PackageNamespace("io.decagames.rotmg.ui.sliceScaling"), "SliceScalingBitmap") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.market.ui:MarketErrorPopup"), "closeButton") type QName(PackageNamespace("io.decagames.rotmg.ui.buttons"), "SliceScalingButton") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.market.ui:MarketErrorPopup"), "descLabel") type QName(PackageNamespace("io.decagames.rotmg.ui.labels"), "UILabel") end
+  trait method QName(PackageNamespace(""), "dispose") flag OVERRIDE
+   method
+    name "dispose"
+    refid "kabam.rotmg.market.ui:MarketErrorPopup/instance/dispose"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      callsupervoid       QName(PackageNamespace(""), "dispose"), 0
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketErrorPopup"), "closeButton")
+      pushstring          "click"
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketErrorPopup"), "onClose")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketErrorPopup"), "closeButton")
+      callpropvoid        QName(PackageNamespace(""), "dispose"), 0
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketErrorPopup"), "darkBackground")
+      callpropvoid        QName(PackageNamespace(""), "dispose"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.market.ui:MarketErrorPopup"), "onClose")
+   method
+    name "onClose"
+    refid "kabam.rotmg.market.ui:MarketErrorPopup/instance/kabam.rotmg.market.ui:MarketErrorPopup/instance/onClose"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "e"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      callpropvoid        QName(PackageNamespace(""), "dispose"), 0
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.sound"), "SoundEffectLibrary")
+      pushstring          "button_click"
+      callpropvoid        QName(PackageNamespace(""), "play"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "parent")
+      getlex              QName(PackageNamespace("kabam.rotmg.market.ui"), "MarketOverview")
+      astypelate
+      callpropvoid        QName(PackageNamespace(""), "myOffers"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "parent")
+      getlocal0
+      callpropvoid        QName(PackageNamespace(""), "removeChild"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.market.ui:MarketErrorPopup/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PackageNamespace(""), "POPUP_WIDTH") type QName(PackageNamespace(""), "int") value Integer(250) end
+ trait const QName(PackageNamespace(""), "POPUP_HEIGHT") type QName(PackageNamespace(""), "int") value Integer(150) end
+end ; class

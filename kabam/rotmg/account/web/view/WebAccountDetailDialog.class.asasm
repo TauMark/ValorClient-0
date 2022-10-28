@@ -1,0 +1,491 @@
+class
+ refid "kabam.rotmg.account.web.view:WebAccountDetailDialog"
+ instance QName(PackageNamespace("kabam.rotmg.account.web.view"), "WebAccountDetailDialog")
+  extends QName(PackageNamespace("com.company.assembleegameclient.account.ui"), "Frame")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.account.web.view:WebAccountDetailDialog")
+  iinit
+   name "WebAccountDetailDialog"
+   refid "kabam.rotmg.account.web.view:WebAccountDetailDialog/instance/init"
+   param QName(PackageNamespace(""), "String")
+   param QName(PackageNamespace(""), "String")
+   flag HAS_OPTIONAL
+   flag HAS_PARAM_NAMES
+   optional Utf8("WebAccountDetailDialog.title")
+   optional Utf8("WebAccountDetailDialog.loginText")
+   paramname "_arg1"
+   paramname "_arg2"
+   body
+    maxstack 4
+    localcount 3
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     getlocal1
+     pushstring          ""
+     pushstring          "WebAccountDetailDialog.rightButton"
+     constructsuper      3
+
+     getlocal0
+     getlocal2
+     setproperty         QName(PrivateNamespace("kabam.rotmg.account.web.view:WebAccountDetailDialog"), "headerText")
+
+     getlocal0
+     callpropvoid        QName(PrivateNamespace("kabam.rotmg.account.web.view:WebAccountDetailDialog"), "makeLoginText"), 0
+
+     getlocal0
+     callpropvoid        QName(PrivateNamespace("kabam.rotmg.account.web.view:WebAccountDetailDialog"), "makeEmailText"), 0
+
+     getlex              QName(PackageNamespace(""), "h_")
+     pushbyte            88
+     add
+     findproperty        QName(PackageNamespace(""), "h_")
+     swap
+     setproperty         QName(PackageNamespace(""), "h_")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("org.osflash.signals.natives"), "NativeMappedSignal")
+     getlex              QName(PackageNamespace(""), "rightButton_")
+     pushstring          "click"
+     constructprop       QName(PackageNamespace("org.osflash.signals.natives"), "NativeMappedSignal"), 2
+     setproperty         QName(PackageNamespace(""), "cancel")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("org.osflash.signals"), "Signal")
+     constructprop       QName(PackageNamespace("org.osflash.signals"), "Signal"), 0
+     setproperty         QName(PackageNamespace(""), "change")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("org.osflash.signals"), "Signal")
+     constructprop       QName(PackageNamespace("org.osflash.signals"), "Signal"), 0
+     setproperty         QName(PackageNamespace(""), "logout")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("org.osflash.signals"), "Signal")
+     constructprop       QName(PackageNamespace("org.osflash.signals"), "Signal"), 0
+     setproperty         QName(PackageNamespace(""), "verify")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "cancel") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait slot QName(PackageNamespace(""), "change") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait slot QName(PackageNamespace(""), "logout") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait slot QName(PackageNamespace(""), "verify") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.account.web.view:WebAccountDetailDialog"), "loginText") type QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.account.web.view:WebAccountDetailDialog"), "emailText") type QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.account.web.view:WebAccountDetailDialog"), "verifyEmail") type QName(PackageNamespace("com.company.assembleegameclient.ui"), "DeprecatedClickableText") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.account.web.view:WebAccountDetailDialog"), "changeText") type QName(PackageNamespace("com.company.assembleegameclient.ui"), "DeprecatedClickableText") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.account.web.view:WebAccountDetailDialog"), "logoutText") type QName(PackageNamespace("com.company.assembleegameclient.ui"), "DeprecatedClickableText") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.account.web.view:WebAccountDetailDialog"), "headerText") type QName(PackageNamespace(""), "String") end
+  trait method QName(PackageNamespace(""), "setUserInfo")
+   method
+    name "setUserInfo"
+    refid "kabam.rotmg.account.web.view:WebAccountDetailDialog/instance/setUserInfo"
+    param QName(PackageNamespace(""), "String")
+    param QName(PackageNamespace(""), "Boolean")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    paramname "_arg2"
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.account.web.view:WebAccountDetailDialog"), "emailText")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "StaticStringBuilder")
+      getlocal1
+      constructprop       QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "StaticStringBuilder"), 1
+      callpropvoid        QName(PackageNamespace(""), "setStringBuilder"), 1
+
+      getlocal2
+      iftrue              L12
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.account.web.view:WebAccountDetailDialog"), "makeVerifyEmailText"), 0
+
+L12:
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.account.web.view:WebAccountDetailDialog"), "makeChangeText"), 0
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.account.web.view:WebAccountDetailDialog"), "makeLogoutText"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.account.web.view:WebAccountDetailDialog"), "makeVerifyEmailText")
+   method
+    name "makeVerifyEmailText"
+    refid "kabam.rotmg.account.web.view:WebAccountDetailDialog/instance/kabam.rotmg.account.web.view:WebAccountDetailDialog/instance/makeVerifyEmailText"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 5
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.account.web.view:WebAccountDetailDialog"), "verifyEmail")
+      pushnull
+      ifeq                L10
+
+      findpropstrict      QName(PackageNamespace(""), "removeChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.account.web.view:WebAccountDetailDialog"), "verifyEmail")
+      callpropvoid        QName(PackageNamespace(""), "removeChild"), 1
+
+L10:
+      getlocal0
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.ui"), "DeprecatedClickableText")
+      pushbyte            12
+      pushfalse
+      pushstring          "WebAccountDetailDialog.verify"
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.ui"), "DeprecatedClickableText"), 3
+      setproperty         QName(PrivateNamespace("kabam.rotmg.account.web.view:WebAccountDetailDialog"), "verifyEmail")
+
+      findpropstrict      QName(PackageNamespace(""), "addNavigationText")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.account.web.view:WebAccountDetailDialog"), "verifyEmail")
+      callpropvoid        QName(PackageNamespace(""), "addNavigationText"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.account.web.view:WebAccountDetailDialog"), "verifyEmail")
+      pushstring          "click"
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.account.web.view:WebAccountDetailDialog"), "onVerifyEmail")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.account.web.view:WebAccountDetailDialog"), "makeChangeText")
+   method
+    name "makeChangeText"
+    refid "kabam.rotmg.account.web.view:WebAccountDetailDialog/instance/kabam.rotmg.account.web.view:WebAccountDetailDialog/instance/makeChangeText"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 5
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.account.web.view:WebAccountDetailDialog"), "changeText")
+      pushnull
+      ifeq                L10
+
+      findpropstrict      QName(PackageNamespace(""), "removeChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.account.web.view:WebAccountDetailDialog"), "changeText")
+      callpropvoid        QName(PackageNamespace(""), "removeChild"), 1
+
+L10:
+      getlocal0
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.ui"), "DeprecatedClickableText")
+      pushbyte            12
+      pushfalse
+      pushstring          "WebAccountDetailDialog.changePassword"
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.ui"), "DeprecatedClickableText"), 3
+      setproperty         QName(PrivateNamespace("kabam.rotmg.account.web.view:WebAccountDetailDialog"), "changeText")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.account.web.view:WebAccountDetailDialog"), "changeText")
+      pushstring          "click"
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.account.web.view:WebAccountDetailDialog"), "onChange")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      findpropstrict      QName(PackageNamespace(""), "addNavigationText")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.account.web.view:WebAccountDetailDialog"), "changeText")
+      callpropvoid        QName(PackageNamespace(""), "addNavigationText"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.account.web.view:WebAccountDetailDialog"), "onChange")
+   method
+    name "onChange"
+    refid "kabam.rotmg.account.web.view:WebAccountDetailDialog/instance/kabam.rotmg.account.web.view:WebAccountDetailDialog/instance/onChange"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 1
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "change")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.account.web.view:WebAccountDetailDialog"), "makeLogoutText")
+   method
+    name "makeLogoutText"
+    refid "kabam.rotmg.account.web.view:WebAccountDetailDialog/instance/kabam.rotmg.account.web.view:WebAccountDetailDialog/instance/makeLogoutText"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 5
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.account.web.view:WebAccountDetailDialog"), "logoutText")
+      pushnull
+      ifeq                L10
+
+      findpropstrict      QName(PackageNamespace(""), "removeChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.account.web.view:WebAccountDetailDialog"), "logoutText")
+      callpropvoid        QName(PackageNamespace(""), "removeChild"), 1
+
+L10:
+      getlocal0
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.ui"), "DeprecatedClickableText")
+      pushbyte            12
+      pushfalse
+      pushstring          "WebAccountDetailDialog.logout"
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.ui"), "DeprecatedClickableText"), 3
+      setproperty         QName(PrivateNamespace("kabam.rotmg.account.web.view:WebAccountDetailDialog"), "logoutText")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.account.web.view:WebAccountDetailDialog"), "logoutText")
+      pushstring          "click"
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.account.web.view:WebAccountDetailDialog"), "onLogout")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      findpropstrict      QName(PackageNamespace(""), "addNavigationText")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.account.web.view:WebAccountDetailDialog"), "logoutText")
+      callpropvoid        QName(PackageNamespace(""), "addNavigationText"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.account.web.view:WebAccountDetailDialog"), "onLogout")
+   method
+    name "onLogout"
+    refid "kabam.rotmg.account.web.view:WebAccountDetailDialog/instance/kabam.rotmg.account.web.view:WebAccountDetailDialog/instance/onLogout"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 1
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "logout")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.account.web.view:WebAccountDetailDialog"), "makeLoginText")
+   method
+    name "makeLoginText"
+    refid "kabam.rotmg.account.web.view:WebAccountDetailDialog/instance/kabam.rotmg.account.web.view:WebAccountDetailDialog/instance/makeLoginText"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 5
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete")
+      constructprop       QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete"), 0
+      pushbyte            18
+      callproperty        QName(PackageNamespace(""), "setSize"), 1
+      pushint             11776947
+      callproperty        QName(PackageNamespace(""), "setColor"), 1
+      setproperty         QName(PrivateNamespace("kabam.rotmg.account.web.view:WebAccountDetailDialog"), "loginText")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.account.web.view:WebAccountDetailDialog"), "loginText")
+      pushtrue
+      callpropvoid        QName(PackageNamespace(""), "setBold"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.account.web.view:WebAccountDetailDialog"), "loginText")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder")
+      constructprop       QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder"), 0
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.account.web.view:WebAccountDetailDialog"), "headerText")
+      callproperty        QName(PackageNamespace(""), "setParams"), 1
+      callpropvoid        QName(PackageNamespace(""), "setStringBuilder"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.account.web.view:WebAccountDetailDialog"), "loginText")
+      findpropstrict      QName(PackageNamespace("flash.filters"), "DropShadowFilter")
+      pushbyte            0
+      pushbyte            0
+      pushbyte            0
+      constructprop       QName(PackageNamespace("flash.filters"), "DropShadowFilter"), 3
+      newarray            1
+      setproperty         QName(PackageNamespace(""), "filters")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.account.web.view:WebAccountDetailDialog"), "loginText")
+      getlex              QName(PackageNamespace(""), "h_")
+      pushbyte            60
+      subtract
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.account.web.view:WebAccountDetailDialog"), "loginText")
+      pushbyte            17
+      setproperty         QName(PackageNamespace(""), "x")
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.account.web.view:WebAccountDetailDialog"), "loginText")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.account.web.view:WebAccountDetailDialog"), "makeEmailText")
+   method
+    name "makeEmailText"
+    refid "kabam.rotmg.account.web.view:WebAccountDetailDialog/instance/kabam.rotmg.account.web.view:WebAccountDetailDialog/instance/makeEmailText"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete")
+      constructprop       QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete"), 0
+      pushbyte            16
+      callproperty        QName(PackageNamespace(""), "setSize"), 1
+      pushint             11776947
+      callproperty        QName(PackageNamespace(""), "setColor"), 1
+      setproperty         QName(PrivateNamespace("kabam.rotmg.account.web.view:WebAccountDetailDialog"), "emailText")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.account.web.view:WebAccountDetailDialog"), "emailText")
+      getlex              QName(PackageNamespace(""), "h_")
+      pushbyte            30
+      subtract
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.account.web.view:WebAccountDetailDialog"), "emailText")
+      pushbyte            17
+      setproperty         QName(PackageNamespace(""), "x")
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.account.web.view:WebAccountDetailDialog"), "emailText")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.account.web.view:WebAccountDetailDialog"), "onVerifyEmail")
+   method
+    name "onVerifyEmail"
+    refid "kabam.rotmg.account.web.view:WebAccountDetailDialog/instance/kabam.rotmg.account.web.view:WebAccountDetailDialog/instance/onVerifyEmail"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "verify")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.account.web.view:WebAccountDetailDialog"), "verifyEmail")
+      pushstring          "WebAccountDetailDialog.sent"
+      callpropvoid        QName(PackageNamespace(""), "makeStatic"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.account.web.view:WebAccountDetailDialog/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

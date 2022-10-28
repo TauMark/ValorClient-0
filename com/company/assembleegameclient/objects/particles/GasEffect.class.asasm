@@ -1,0 +1,247 @@
+class
+ refid "com.company.assembleegameclient.objects.particles:GasEffect"
+ instance QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "GasEffect")
+  extends QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "ParticleEffect")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.company.assembleegameclient.objects.particles:GasEffect")
+  iinit
+   name "GasEffect"
+   refid "com.company.assembleegameclient.objects.particles:GasEffect/instance/init"
+   param QName(PackageNamespace("com.company.assembleegameclient.objects"), "GameObject")
+   param QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "EffectProperties")
+   flag HAS_PARAM_NAMES
+   paramname "_arg1"
+   paramname "_arg2"
+   body
+    maxstack 2
+    localcount 3
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     getlocal1
+     setproperty         QName(PackageNamespace(""), "go_")
+
+     getlocal0
+     getlocal2
+     getproperty         QName(PackageNamespace(""), "color")
+     setproperty         QName(PackageNamespace(""), "color_")
+
+     getlocal0
+     getlocal2
+     getproperty         QName(PackageNamespace(""), "rate")
+     setproperty         QName(PackageNamespace(""), "rate")
+
+     getlocal0
+     getlocal2
+     setproperty         QName(PackageNamespace(""), "props_")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "go_") type QName(PackageNamespace("com.company.assembleegameclient.objects"), "GameObject") end
+  trait slot QName(PackageNamespace(""), "props_") type QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "EffectProperties") end
+  trait slot QName(PackageNamespace(""), "color_") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PackageNamespace(""), "rate") type QName(PackageNamespace(""), "Number") end
+  trait slot QName(PackageNamespace(""), "type") type QName(PackageNamespace(""), "String") end
+  trait method QName(PackageNamespace(""), "update") flag OVERRIDE
+   method
+    name "update"
+    refid "com.company.assembleegameclient.objects.particles:GasEffect/instance/update"
+    param QName(PackageNamespace(""), "int")
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "Boolean")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    paramname "_arg2"
+    body
+     maxstack 8
+     localcount 11
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnan
+      setlocal            10
+
+      pushnan
+      setlocal            7
+
+      pushnan
+      setlocal            8
+
+      pushnan
+      setlocal            5
+
+      pushnan
+      setlocal            6
+
+      pushnull
+      setlocal3
+
+      pushbyte            0
+      setlocal            9
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "go_")
+      getproperty         QName(PackageNamespace(""), "map_")
+      pushnull
+      ifne                L23
+
+      pushfalse
+      returnvalue
+
+L23:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "go_")
+      getproperty         QName(PackageNamespace(""), "x_")
+      findproperty        QName(PackageNamespace(""), "x_")
+      swap
+      setproperty         QName(PackageNamespace(""), "x_")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "go_")
+      getproperty         QName(PackageNamespace(""), "y_")
+      findproperty        QName(PackageNamespace(""), "y_")
+      swap
+      setproperty         QName(PackageNamespace(""), "y_")
+
+      pushbyte            20
+      setlocal            4
+
+      jump                L128
+
+L38:
+      label
+      getlex              QName(PackageNamespace(""), "Math")
+      callproperty        QName(PackageNamespace(""), "random"), 0
+      pushdouble          0.3
+      add
+      pushshort           200
+      multiply
+      convert_d
+      setlocal            10
+
+      getlex              QName(PackageNamespace(""), "Math")
+      callproperty        QName(PackageNamespace(""), "random"), 0
+      convert_d
+      setlocal            7
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "RandomUtil")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "props_")
+      getproperty         QName(PackageNamespace(""), "speed")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "props_")
+      getproperty         QName(PackageNamespace(""), "speed")
+      getlocal            7
+      pushbyte            1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "props_")
+      getproperty         QName(PackageNamespace(""), "speedVariance")
+      subtract
+      multiply
+      multiply
+      subtract
+      callproperty        QName(PackageNamespace(""), "plusMinus"), 1
+      convert_d
+      setlocal            8
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "RandomUtil")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "props_")
+      getproperty         QName(PackageNamespace(""), "speed")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "props_")
+      getproperty         QName(PackageNamespace(""), "speed")
+      getlocal            7
+      pushbyte            1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "props_")
+      getproperty         QName(PackageNamespace(""), "speedVariance")
+      subtract
+      multiply
+      multiply
+      subtract
+      callproperty        QName(PackageNamespace(""), "plusMinus"), 1
+      convert_d
+      setlocal            5
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "props_")
+      getproperty         QName(PackageNamespace(""), "life")
+      pushshort           1000
+      multiply
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "props_")
+      getproperty         QName(PackageNamespace(""), "life")
+      pushshort           1000
+      multiply
+      getlocal            7
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "props_")
+      getproperty         QName(PackageNamespace(""), "lifeVariance")
+      multiply
+      multiply
+      subtract
+      convert_d
+      setlocal            6
+
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "GasParticle")
+      getlocal            10
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "color_")
+      getlocal            6
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "props_")
+      getproperty         QName(PackageNamespace(""), "spread")
+      pushdouble          0.75
+      getlocal            8
+      getlocal            5
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "GasParticle"), 7
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "GasParticle")
+      setlocal3
+
+      getlex              QName(PackageNamespace(""), "map_")
+      getlocal3
+      getlex              QName(PackageNamespace(""), "x_")
+      getlex              QName(PackageNamespace(""), "y_")
+      callpropvoid        QName(PackageNamespace(""), "addObj"), 3
+
+      inclocal_i          9
+L128:
+      getlocal            9
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "rate")
+      iflt                L38
+
+      pushtrue
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.objects.particles:GasEffect/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

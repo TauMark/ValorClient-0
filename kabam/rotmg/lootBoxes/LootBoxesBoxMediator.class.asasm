@@ -1,0 +1,249 @@
+class
+ refid "kabam.rotmg.lootBoxes:LootBoxesBoxMediator"
+ instance QName(PackageNamespace("kabam.rotmg.lootBoxes"), "LootBoxesBoxMediator")
+  extends QName(PackageNamespace("robotlegs.bender.bundles.mvcs"), "Mediator")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.lootBoxes:LootBoxesBoxMediator")
+  iinit
+   refid "kabam.rotmg.lootBoxes:LootBoxesBoxMediator/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "messages") flag METADATA type QName(PackageNamespace("kabam.lib.net.api"), "MessageProvider")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "server") flag METADATA type QName(PackageNamespace("kabam.lib.net.impl"), "SocketServer")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "instanceID") flag METADATA type QName(PackageNamespace(""), "int")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "view") flag METADATA type QName(PackageNamespace("kabam.rotmg.lootBoxes"), "LootBoxesBox")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "gameModel") flag METADATA type QName(PackageNamespace("kabam.rotmg.game.model"), "GameModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "playerModel") flag METADATA type QName(PackageNamespace("kabam.rotmg.core.model"), "PlayerModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "showPopupSignal") flag METADATA type QName(PackageNamespace("io.decagames.rotmg.ui.popups.signals"), "ShowPopupSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "logger") flag METADATA type QName(PackageNamespace("robotlegs.bender.framework.api"), "ILogger")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "showTooltipSignal") flag METADATA type QName(PackageNamespace("kabam.rotmg.core.signals"), "ShowTooltipSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "hideTooltipSignal") flag METADATA type QName(PackageNamespace("kabam.rotmg.core.signals"), "HideTooltipsSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootBoxesBoxMediator"), "toolTip") type QName(PackageNamespace("com.company.assembleegameclient.ui.tooltip"), "TextToolTip") value Null() end
+  trait slot QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootBoxesBoxMediator"), "hoverTooltipDelegate") type QName(PackageNamespace("kabam.rotmg.tooltips"), "HoverTooltipDelegate") end
+  trait method QName(PackageNamespace(""), "initialize") flag OVERRIDE
+   method
+    name "initialize"
+    refid "kabam.rotmg.lootBoxes:LootBoxesBoxMediator/instance/initialize"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 7
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "unlocked")
+      iffalse             L13
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "buyButton")
+      getproperty         QName(PackageNamespace(""), "clickSignal")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootBoxesBoxMediator"), "onBuyHandler")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+L13:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "_tooltip")
+      pushstring          ""
+      ifeq                L53
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.ui.tooltip"), "TextToolTip")
+      pushint             3552822
+      pushint             10197915
+      pushstring          "Info"
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "_tooltip")
+      pushshort           200
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.ui.tooltip"), "TextToolTip"), 5
+      setproperty         QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootBoxesBoxMediator"), "toolTip")
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.tooltips"), "HoverTooltipDelegate")
+      constructprop       QName(PackageNamespace("kabam.rotmg.tooltips"), "HoverTooltipDelegate"), 0
+      setproperty         QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootBoxesBoxMediator"), "hoverTooltipDelegate")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootBoxesBoxMediator"), "hoverTooltipDelegate")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "showTooltipSignal")
+      callpropvoid        QName(PackageNamespace(""), "setShowToolTipSignal"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootBoxesBoxMediator"), "hoverTooltipDelegate")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hideTooltipSignal")
+      callpropvoid        QName(PackageNamespace(""), "setHideToolTipsSignal"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootBoxesBoxMediator"), "hoverTooltipDelegate")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      callpropvoid        QName(PackageNamespace(""), "setDisplayObject"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootBoxesBoxMediator"), "hoverTooltipDelegate")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootBoxesBoxMediator"), "toolTip")
+      setproperty         QName(PackageNamespace(""), "tooltip")
+
+L53:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootBoxesBoxMediator"), "onBuyHandler")
+   method
+    name "onBuyHandler"
+    refid "kabam.rotmg.lootBoxes:LootBoxesBoxMediator/instance/kabam.rotmg.lootBoxes:LootBoxesBoxMediator/instance/onBuyHandler"
+    param QName(PackageNamespace("io.decagames.rotmg.ui.buttons"), "BaseButton")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "messages")
+      pushshort           161
+      callproperty        QName(Namespace("kabam.lib.net.api:MessageProvider"), "require"), 1
+      getlex              QName(PackageNamespace("kabam.rotmg.messaging.impl.outgoing"), "UnboxRequest")
+      astypelate
+      coerce              QName(PackageNamespace("kabam.rotmg.messaging.impl.outgoing"), "UnboxRequest")
+      setlocal2
+
+      getlocal2
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "_type")
+      setproperty         QName(PackageNamespace(""), "lootboxType_")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "server")
+      getlocal2
+      callpropvoid        QName(PackageNamespace(""), "sendMessage"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "destroy") flag OVERRIDE
+   method
+    name "destroy"
+    refid "kabam.rotmg.lootBoxes:LootBoxesBoxMediator/instance/destroy"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "unlocked")
+      iffalse             L13
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "buyButton")
+      getproperty         QName(PackageNamespace(""), "clickSignal")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootBoxesBoxMediator"), "onBuyHandler")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+L13:
+      getlocal0
+      pushnull
+      setproperty         QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootBoxesBoxMediator"), "toolTip")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootBoxesBoxMediator"), "hoverTooltipDelegate")
+      callpropvoid        QName(PackageNamespace(""), "removeDisplayObject"), 0
+
+      getlocal0
+      pushnull
+      setproperty         QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootBoxesBoxMediator"), "hoverTooltipDelegate")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.lootBoxes:LootBoxesBoxMediator/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

@@ -1,0 +1,200 @@
+class
+ refid "com.company.assembleegameclient.objects.particles:HealingEffect"
+ instance QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "HealingEffect")
+  extends QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "ParticleEffect")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.company.assembleegameclient.objects.particles:HealingEffect")
+  iinit
+   name "HealingEffect"
+   refid "com.company.assembleegameclient.objects.particles:HealingEffect/instance/init"
+   param QName(PackageNamespace("com.company.assembleegameclient.objects"), "GameObject")
+   flag HAS_PARAM_NAMES
+   paramname "_arg1"
+   body
+    maxstack 2
+    localcount 2
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     getlocal1
+     setproperty         QName(PackageNamespace(""), "go_")
+
+     getlocal0
+     pushbyte            0
+     setproperty         QName(PackageNamespace(""), "lastPart_")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "go_") type QName(PackageNamespace("com.company.assembleegameclient.objects"), "GameObject") end
+  trait slot QName(PackageNamespace(""), "lastPart_") type QName(PackageNamespace(""), "int") end
+  trait method QName(PackageNamespace(""), "update") flag OVERRIDE
+   method
+    name "update"
+    refid "com.company.assembleegameclient.objects.particles:HealingEffect/instance/update"
+    param QName(PackageNamespace(""), "int")
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "Boolean")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    paramname "_arg2"
+    body
+     maxstack 9
+     localcount 8
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnan
+      setlocal            6
+
+      pushbyte            0
+      setlocal            7
+
+      pushnan
+      setlocal            4
+
+      pushnull
+      setlocal            5
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "go_")
+      getproperty         QName(PackageNamespace(""), "map_")
+      pushnull
+      ifne                L17
+
+      pushfalse
+      returnvalue
+
+L17:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "go_")
+      getproperty         QName(PackageNamespace(""), "x_")
+      findproperty        QName(PackageNamespace(""), "x_")
+      swap
+      setproperty         QName(PackageNamespace(""), "x_")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "go_")
+      getproperty         QName(PackageNamespace(""), "y_")
+      findproperty        QName(PackageNamespace(""), "y_")
+      swap
+      setproperty         QName(PackageNamespace(""), "y_")
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "lastPart_")
+      subtract
+      convert_i
+      setlocal3
+
+      getlocal3
+      pushshort           500
+      ifngt               L106
+
+      pushbyte            2
+      pushdouble          3.141592653589793
+      multiply
+      getlex              QName(PackageNamespace(""), "Math")
+      callproperty        QName(PackageNamespace(""), "random"), 0
+      multiply
+      convert_d
+      setlocal            6
+
+      pushbyte            3
+      getlex              QName(PackageNamespace(""), "Math")
+      callproperty        QName(PackageNamespace(""), "random"), 0
+      pushbyte            5
+      multiply
+      convert_i
+      add
+      pushbyte            20
+      multiply
+      convert_i
+      setlocal            7
+
+      pushdouble          0.3
+      pushdouble          0.4
+      getlex              QName(PackageNamespace(""), "Math")
+      callproperty        QName(PackageNamespace(""), "random"), 0
+      multiply
+      add
+      convert_d
+      setlocal            4
+
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "HealParticle")
+      pushint             16777215
+      getlex              QName(PackageNamespace(""), "Math")
+      callproperty        QName(PackageNamespace(""), "random"), 0
+      pushdouble          0.3
+      multiply
+      getlocal            7
+      pushshort           1000
+      pushdouble          0.1
+      getlex              QName(PackageNamespace(""), "Math")
+      callproperty        QName(PackageNamespace(""), "random"), 0
+      pushdouble          0.1
+      multiply
+      add
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "go_")
+      getlocal            6
+      getlocal            4
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "HealParticle"), 8
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "HealParticle")
+      setlocal            5
+
+      getlex              QName(PackageNamespace(""), "map_")
+      getlocal            5
+      getlex              QName(PackageNamespace(""), "x_")
+      getlocal            4
+      getlex              QName(PackageNamespace(""), "Math")
+      getlocal            6
+      callproperty        QName(PackageNamespace(""), "cos"), 1
+      multiply
+      add
+      getlex              QName(PackageNamespace(""), "y_")
+      getlocal            4
+      getlex              QName(PackageNamespace(""), "Math")
+      getlocal            6
+      callproperty        QName(PackageNamespace(""), "sin"), 1
+      multiply
+      add
+      callpropvoid        QName(PackageNamespace(""), "addObj"), 3
+
+      getlocal0
+      getlocal1
+      setproperty         QName(PackageNamespace(""), "lastPart_")
+
+L106:
+      pushtrue
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.objects.particles:HealingEffect/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

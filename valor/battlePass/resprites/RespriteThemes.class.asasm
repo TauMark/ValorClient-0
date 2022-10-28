@@ -1,0 +1,180 @@
+class
+ refid "valor.battlePass.resprites:RespriteThemes"
+ instance QName(PackageNamespace("valor.battlePass.resprites"), "RespriteThemes")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  iinit
+   refid "valor.battlePass.resprites:RespriteThemes/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; instance
+ cinit
+  refid "valor.battlePass.resprites:RespriteThemes/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait slot QName(PackageNamespace(""), "Undefined") type QName(PackageNamespace(""), "int") value Integer(-1) end
+ trait slot QName(PackageNamespace(""), "FireAndIce") type QName(PackageNamespace(""), "int") value Integer(0) end
+ trait slot QName(PackageNamespace(""), "Nature") type QName(PackageNamespace(""), "int") value Integer(1) end
+ trait slot QName(PackageNamespace(""), "Halloween") type QName(PackageNamespace(""), "int") value Integer(2) end
+ trait slot QName(PackageNamespace(""), "Shatters") type QName(PackageNamespace(""), "int") value Integer(3) end
+ trait method QName(PackageNamespace(""), "getRespriteThemeFromString")
+  method
+   name "getRespriteThemeFromString"
+   refid "valor.battlePass.resprites:RespriteThemes/class/getRespriteThemeFromString"
+   param QName(PackageNamespace(""), "String")
+   returns QName(PackageNamespace(""), "int")
+   flag HAS_PARAM_NAMES
+   paramname "str"
+   body
+    maxstack 2
+    localcount 3
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal1
+     setlocal2
+
+     jump                L20
+
+L5:
+     label
+     getlex              QName(PackageNamespace(""), "FireAndIce")
+     returnvalue
+
+L8:
+     label
+     getlex              QName(PackageNamespace(""), "Nature")
+     returnvalue
+
+L11:
+     label
+     getlex              QName(PackageNamespace(""), "Halloween")
+     returnvalue
+
+L14:
+     label
+     getlex              QName(PackageNamespace(""), "Shatters")
+     returnvalue
+
+L17:
+     label
+     getlex              QName(PackageNamespace(""), "Undefined")
+     returnvalue
+
+L20:
+     pushstring          "FireAndIce"
+     getlocal2
+     ifstricteq          L5
+
+     pushstring          "Nature"
+     getlocal2
+     ifstricteq          L8
+
+     pushstring          "Halloween"
+     getlocal2
+     ifstricteq          L11
+
+     pushstring          "Shatters"
+     getlocal2
+     ifstricteq          L14
+
+     jump                L17
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "getThemeNameFromId")
+  method
+   name "getThemeNameFromId"
+   refid "valor.battlePass.resprites:RespriteThemes/class/getThemeNameFromId"
+   param QName(PackageNamespace(""), "int")
+   returns QName(PackageNamespace(""), "String")
+   flag HAS_PARAM_NAMES
+   paramname "id"
+   body
+    maxstack 2
+    localcount 3
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal1
+     setlocal2
+
+     jump                L20
+
+L5:
+     label
+     pushstring          "Fire And Ice"
+     returnvalue
+
+L8:
+     label
+     pushstring          "Nature"
+     returnvalue
+
+L11:
+     label
+     pushstring          "Halloween"
+     returnvalue
+
+L14:
+     label
+     pushstring          "Shatters"
+     returnvalue
+
+L17:
+     label
+     pushstring          ""
+     returnvalue
+
+L20:
+     getlex              QName(PackageNamespace(""), "FireAndIce")
+     getlocal2
+     ifstricteq          L5
+
+     getlex              QName(PackageNamespace(""), "Nature")
+     getlocal2
+     ifstricteq          L8
+
+     getlex              QName(PackageNamespace(""), "Halloween")
+     getlocal2
+     ifstricteq          L11
+
+     getlex              QName(PackageNamespace(""), "Shatters")
+     getlocal2
+     ifstricteq          L14
+
+     jump                L17
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+end ; class

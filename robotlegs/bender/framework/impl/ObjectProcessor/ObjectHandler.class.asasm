@@ -1,0 +1,92 @@
+class
+ refid "robotlegs.bender.framework.impl:ObjectProcessor/ObjectHandler"
+ instance QName(PrivateNamespace("ObjectProcessor.as$26"), "ObjectHandler")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("ObjectProcessor.as$26:ObjectHandler")
+  iinit
+   name "ObjectProcessor.as$26:ObjectHandler/ObjectHandler"
+   refid "robotlegs.bender.framework.impl:ObjectProcessor/ObjectHandler/instance/init"
+   param QName(PackageNamespace("org.hamcrest"), "Matcher")
+   param QName(PackageNamespace(""), "Function")
+   flag HAS_PARAM_NAMES
+   paramname "_arg_1"
+   paramname "_arg_2"
+   body
+    maxstack 2
+    localcount 3
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     getlocal1
+     initproperty        QName(PrivateNamespace("ObjectProcessor.as$26"), "_matcher")
+
+     getlocal0
+     getlocal2
+     initproperty        QName(PrivateNamespace("ObjectProcessor.as$26"), "_handler")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace("ObjectProcessor.as$26"), "_matcher") type QName(PackageNamespace("org.hamcrest"), "Matcher") end
+  trait slot QName(PrivateNamespace("ObjectProcessor.as$26"), "_handler") type QName(PackageNamespace(""), "Function") end
+  trait method QName(PackageNamespace(""), "handle")
+   method
+    name "ObjectProcessor.as$26:ObjectHandler/handle"
+    refid "robotlegs.bender.framework.impl:ObjectProcessor/ObjectHandler/instance/handle"
+    param QName(PackageNamespace(""), "Object")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg_1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("ObjectProcessor.as$26"), "_matcher")
+      getlocal1
+      callproperty        QName(Namespace("org.hamcrest:Matcher"), "matches"), 1
+      coerce_a
+      dup
+      iffalse             L14
+
+      pop
+      getlocal0
+      getlocal1
+      callproperty        QName(PrivateNamespace("ObjectProcessor.as$26"), "_handler"), 1
+      coerce_a
+L14:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  name ""
+  refid "robotlegs.bender.framework.impl:ObjectProcessor/ObjectHandler/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

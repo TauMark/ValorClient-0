@@ -1,0 +1,541 @@
+class
+ refid "kabam.rotmg.market.ui:MarketInventorySlot"
+ instance QName(PackageNamespace("kabam.rotmg.market.ui"), "MarketInventorySlot")
+  extends QName(PackageNamespace("kabam.rotmg.pets.view.components.slot"), "FeedFuseSlot")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.market.ui:MarketInventorySlot")
+  iinit
+   name "MarketInventorySlot"
+   refid "kabam.rotmg.market.ui:MarketInventorySlot/instance/init"
+   body
+    maxstack 3
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlex              QName(ProtectedNamespace("kabam.rotmg.pets.view.components.slot:FeedFuseSlot"), "itemSprite")
+     pushstring          "mouseDown"
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketInventorySlot"), "onMouseDown")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     getlocal0
+     callpropvoid        QName(PackageNamespace(""), "updateTitle"), 0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace("kabam.rotmg.market.ui:MarketInventorySlot"), "unblockItemUpdates") type QName(PackageNamespace(""), "Function") end
+  trait method QName(ProtectedNamespace("kabam.rotmg.market.ui:MarketInventorySlot"), "onRemovedFromStage") flag OVERRIDE
+   method
+    name "onRemovedFromStage"
+    refid "kabam.rotmg.market.ui:MarketInventorySlot/instance/kabam.rotmg.market.ui:MarketInventorySlot:onRemovedFromStage"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "param1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      callsupervoid       QName(ProtectedNamespace("kabam.rotmg.pets.view.components.slot:FeedFuseSlot"), "onRemovedFromStage"), 1
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.market.ui:MarketInventorySlot"), "unblockSlot"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setItem")
+   method
+    name "setItem"
+    refid "kabam.rotmg.market.ui:MarketInventorySlot/instance/setItem"
+    param QName(PackageNamespace("valor"), "ItemData")
+    param QName(PackageNamespace(""), "int")
+    param QName(PackageNamespace(""), "int")
+    param QName(PackageNamespace(""), "Function")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "param1"
+    paramname "param2"
+    paramname "param3"
+    paramname "param4"
+    body
+     maxstack 8
+     localcount 5
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "itemData")
+      getlocal1
+      ifeq                L36
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.market.ui:MarketInventorySlot"), "unblockSlot"), 0
+
+      getlocal0
+      getlocal1
+      setproperty         QName(PackageNamespace(""), "itemData")
+
+      getlocal0
+      getlocal2
+      setproperty         QName(PackageNamespace(""), "slotId")
+
+      getlocal0
+      getlocal3
+      setproperty         QName(PackageNamespace(""), "objectId")
+
+      getlex              QName(ProtectedNamespace("kabam.rotmg.pets.view.components.slot:FeedFuseSlot"), "itemBitmap")
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.objects"), "ObjectLibrary")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "objectType")
+      pushbyte            80
+      pushtrue
+      pushtrue
+      pushbyte            5
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "resprite")
+      callproperty        QName(PackageNamespace(""), "getRedrawnTextureFromType"), 6
+      setproperty         QName(PackageNamespace(""), "bitmapData")
+
+      findpropstrict      QName(ProtectedNamespace("kabam.rotmg.pets.view.components.slot:FeedFuseSlot"), "alignBitmapInBox")
+      callpropvoid        QName(ProtectedNamespace("kabam.rotmg.pets.view.components.slot:FeedFuseSlot"), "alignBitmapInBox"), 0
+
+      getlocal0
+      callpropvoid        QName(PackageNamespace(""), "updateTitle"), 0
+
+      getlocal0
+      getlocal            4
+      setproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketInventorySlot"), "unblockItemUpdates")
+
+L36:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "updateTitle")
+   method
+    name "updateTitle"
+    refid "kabam.rotmg.market.ui:MarketInventorySlot/instance/updateTitle"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      coerce              QName(PackageNamespace(""), "XML")
+      setlocal2
+
+      pushnull
+      coerce_s
+      setlocal1
+
+      getlex              QName(PackageNamespace(""), "itemData")
+      pushnull
+      equals
+      not
+      dup
+      iffalse             L20
+
+      pop
+      getlex              QName(PackageNamespace(""), "itemData")
+      getproperty         QName(PackageNamespace(""), "objectType")
+      pushbyte            -1
+      equals
+      not
+L20:
+      iffalse             L49
+
+      findpropstrict      QName(PackageNamespace(""), "setTitle")
+      pushstring          "Ready to sell"
+      newobject           0
+      callpropvoid        QName(PackageNamespace(""), "setTitle"), 2
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.objects"), "ObjectLibrary")
+      getproperty         QName(PackageNamespace(""), "xmlLibrary_")
+      getlex              QName(PackageNamespace(""), "itemData")
+      getproperty         QName(PackageNamespace(""), "objectType")
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.market.ui:MarketInventorySlot"), ProtectedNamespace("kabam.rotmg.market.ui:MarketInventorySlot"), StaticProtectedNs("kabam.rotmg.market.ui:MarketInventorySlot"), StaticProtectedNs("kabam.rotmg.pets.view.components.slot:FeedFuseSlot"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketInventorySlot"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      coerce              QName(PackageNamespace(""), "XML")
+      setlocal2
+
+      getlocal2
+      pushstring          "DisplayId"
+      callproperty        Multiname("hasOwnProperty", [PrivateNamespace("kabam.rotmg.market.ui:MarketInventorySlot"), ProtectedNamespace("kabam.rotmg.market.ui:MarketInventorySlot"), StaticProtectedNs("kabam.rotmg.market.ui:MarketInventorySlot"), StaticProtectedNs("kabam.rotmg.pets.view.components.slot:FeedFuseSlot"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketInventorySlot"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 1
+      iffalse             L39
+
+      getlocal2
+      getproperty         Multiname("DisplayId", [PrivateNamespace("kabam.rotmg.market.ui:MarketInventorySlot"), ProtectedNamespace("kabam.rotmg.market.ui:MarketInventorySlot"), StaticProtectedNs("kabam.rotmg.market.ui:MarketInventorySlot"), StaticProtectedNs("kabam.rotmg.pets.view.components.slot:FeedFuseSlot"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketInventorySlot"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      jump                L42
+
+L39:
+      getlocal2
+      getproperty         MultinameA("id", [PrivateNamespace("kabam.rotmg.market.ui:MarketInventorySlot"), ProtectedNamespace("kabam.rotmg.market.ui:MarketInventorySlot"), StaticProtectedNs("kabam.rotmg.market.ui:MarketInventorySlot"), StaticProtectedNs("kabam.rotmg.pets.view.components.slot:FeedFuseSlot"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketInventorySlot"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      coerce_a
+L42:
+      coerce_s
+      setlocal1
+
+      findpropstrict      QName(PackageNamespace(""), "setSubtitle")
+      getlocal1
+      newobject           0
+      callpropvoid        QName(PackageNamespace(""), "setSubtitle"), 2
+
+      jump                L57
+
+L49:
+      findpropstrict      QName(PackageNamespace(""), "setTitle")
+      pushstring          ""
+      newobject           0
+      callpropvoid        QName(PackageNamespace(""), "setTitle"), 2
+
+      findpropstrict      QName(PackageNamespace(""), "setSubtitle")
+      pushstring          "Drag an item here if you wish to sell it"
+      newobject           0
+      callpropvoid        QName(PackageNamespace(""), "setSubtitle"), 2
+
+L57:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "clearSlot")
+   method
+    name "clearSlot"
+    refid "kabam.rotmg.market.ui:MarketInventorySlot/instance/clearSlot"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.market.ui:MarketInventorySlot"), "unblockSlot"), 0
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("valor"), "ItemData")
+      constructprop       QName(PackageNamespace("valor"), "ItemData"), 0
+      setproperty         QName(PackageNamespace(""), "itemData")
+
+      getlex              QName(ProtectedNamespace("kabam.rotmg.pets.view.components.slot:FeedFuseSlot"), "itemBitmap")
+      pushnull
+      setproperty         QName(PackageNamespace(""), "bitmapData")
+
+      pushbyte            -1
+      findproperty        QName(PackageNamespace(""), "slotId")
+      swap
+      setproperty         QName(PackageNamespace(""), "slotId")
+
+      pushbyte            -1
+      findproperty        QName(PackageNamespace(""), "objectId")
+      swap
+      setproperty         QName(PackageNamespace(""), "objectId")
+
+      getlocal0
+      callpropvoid        QName(PackageNamespace(""), "updateTitle"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.market.ui:MarketInventorySlot"), "alignImage")
+   method
+    name "alignImage"
+    refid "kabam.rotmg.market.ui:MarketInventorySlot/instance/kabam.rotmg.market.ui:MarketInventorySlot/instance/alignImage"
+    param QName(PackageNamespace(""), "int")
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "param1"
+    paramname "param2"
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(ProtectedNamespace("kabam.rotmg.pets.view.components.slot:FeedFuseSlot"), "itemBitmap")
+      getlex              QName(ProtectedNamespace("kabam.rotmg.pets.view.components.slot:FeedFuseSlot"), "itemBitmap")
+      getproperty         QName(PackageNamespace(""), "width")
+      negate
+      pushbyte            2
+      divide
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlex              QName(ProtectedNamespace("kabam.rotmg.pets.view.components.slot:FeedFuseSlot"), "itemBitmap")
+      getlex              QName(ProtectedNamespace("kabam.rotmg.pets.view.components.slot:FeedFuseSlot"), "itemBitmap")
+      getproperty         QName(PackageNamespace(""), "height")
+      negate
+      pushbyte            2
+      divide
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlex              QName(ProtectedNamespace("kabam.rotmg.pets.view.components.slot:FeedFuseSlot"), "itemSprite")
+      getlocal1
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlex              QName(ProtectedNamespace("kabam.rotmg.pets.view.components.slot:FeedFuseSlot"), "itemSprite")
+      getlocal2
+      setproperty         QName(PackageNamespace(""), "y")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.market.ui:MarketInventorySlot"), "onMouseDown")
+   method
+    name "onMouseDown"
+    refid "kabam.rotmg.market.ui:MarketInventorySlot/instance/kabam.rotmg.market.ui:MarketInventorySlot/instance/onMouseDown"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "param1"
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "stageX")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "stageY")
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.market.ui:MarketInventorySlot"), "alignImage"), 2
+
+      getlex              QName(ProtectedNamespace("kabam.rotmg.pets.view.components.slot:FeedFuseSlot"), "itemSprite")
+      pushtrue
+      callpropvoid        QName(PackageNamespace(""), "startDrag"), 1
+
+      getlex              QName(ProtectedNamespace("kabam.rotmg.pets.view.components.slot:FeedFuseSlot"), "itemSprite")
+      pushstring          "mouseUp"
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketInventorySlot"), "onMouseUp")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      getlex              QName(ProtectedNamespace("kabam.rotmg.pets.view.components.slot:FeedFuseSlot"), "itemSprite")
+      getproperty         QName(PackageNamespace(""), "parent")
+      pushnull
+      equals
+      not
+      dup
+      iffalse             L29
+
+      pop
+      getlex              QName(ProtectedNamespace("kabam.rotmg.pets.view.components.slot:FeedFuseSlot"), "itemSprite")
+      getproperty         QName(PackageNamespace(""), "parent")
+      getlex              QName(PackageNamespace(""), "stage")
+      equals
+      not
+L29:
+      iffalse             L36
+
+      findpropstrict      QName(PackageNamespace(""), "removeChild")
+      getlex              QName(ProtectedNamespace("kabam.rotmg.pets.view.components.slot:FeedFuseSlot"), "itemSprite")
+      callpropvoid        QName(PackageNamespace(""), "removeChild"), 1
+
+      getlex              QName(PackageNamespace(""), "stage")
+      getlex              QName(ProtectedNamespace("kabam.rotmg.pets.view.components.slot:FeedFuseSlot"), "itemSprite")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+L36:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.market.ui:MarketInventorySlot"), "onMouseUp")
+   method
+    name "onMouseUp"
+    refid "kabam.rotmg.market.ui:MarketInventorySlot/instance/kabam.rotmg.market.ui:MarketInventorySlot/instance/onMouseUp"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "param1"
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(ProtectedNamespace("kabam.rotmg.pets.view.components.slot:FeedFuseSlot"), "itemSprite")
+      callpropvoid        QName(PackageNamespace(""), "stopDrag"), 0
+
+      getlex              QName(ProtectedNamespace("kabam.rotmg.pets.view.components.slot:FeedFuseSlot"), "itemSprite")
+      pushstring          "mouseUp"
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketInventorySlot"), "onMouseUp")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      getlex              QName(PackageNamespace(""), "stage")
+      getlex              QName(ProtectedNamespace("kabam.rotmg.pets.view.components.slot:FeedFuseSlot"), "itemSprite")
+      callpropvoid        QName(PackageNamespace(""), "removeChild"), 1
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlex              QName(ProtectedNamespace("kabam.rotmg.pets.view.components.slot:FeedFuseSlot"), "itemSprite")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      findpropstrict      QName(ProtectedNamespace("kabam.rotmg.pets.view.components.slot:FeedFuseSlot"), "alignBitmapInBox")
+      callpropvoid        QName(ProtectedNamespace("kabam.rotmg.pets.view.components.slot:FeedFuseSlot"), "alignBitmapInBox"), 0
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "DisplayHierarchy")
+      getlex              QName(ProtectedNamespace("kabam.rotmg.pets.view.components.slot:FeedFuseSlot"), "itemSprite")
+      getproperty         QName(PackageNamespace(""), "dropTarget")
+      getlex              QName(PackageNamespace("kabam.rotmg.market.ui"), "MarketInventorySlot")
+      callproperty        QName(PackageNamespace(""), "getParentWithTypeArray"), 2
+      setlocal2
+
+      getlocal2
+      getlex              QName(PackageNamespace("kabam.rotmg.market.ui"), "MarketInventorySlot")
+      istypelate
+      iftrue              L38
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.market.ui:MarketInventorySlot"), "unblockSlot"), 0
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("valor"), "ItemData")
+      constructprop       QName(PackageNamespace("valor"), "ItemData"), 0
+      setproperty         QName(PackageNamespace(""), "itemData")
+
+      getlex              QName(ProtectedNamespace("kabam.rotmg.pets.view.components.slot:FeedFuseSlot"), "itemBitmap")
+      pushnull
+      setproperty         QName(PackageNamespace(""), "bitmapData")
+
+      getlocal0
+      callpropvoid        QName(PackageNamespace(""), "updateTitle"), 0
+
+L38:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.market.ui:MarketInventorySlot"), "unblockSlot")
+   method
+    name "unblockSlot"
+    refid "kabam.rotmg.market.ui:MarketInventorySlot/instance/kabam.rotmg.market.ui:MarketInventorySlot/instance/unblockSlot"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketInventorySlot"), "unblockItemUpdates")
+      dup
+      iffalse             L10
+
+      pop
+      getlocal0
+      callproperty        QName(PrivateNamespace("kabam.rotmg.market.ui:MarketInventorySlot"), "unblockItemUpdates"), 0
+      coerce_a
+L10:
+      pop
+      getlocal0
+      pushnull
+      setproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketInventorySlot"), "unblockItemUpdates")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "makeObjectSlot")
+   method
+    name "makeObjectSlot"
+    refid "kabam.rotmg.market.ui:MarketInventorySlot/instance/makeObjectSlot"
+    returns QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "SlotObjectData")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "SlotObjectData")
+      constructprop       QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "SlotObjectData"), 0
+      coerce              QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "SlotObjectData")
+      setlocal1
+
+      getlocal1
+      getlex              QName(PackageNamespace(""), "objectId")
+      setproperty         QName(PackageNamespace(""), "objectId_")
+
+      getlocal1
+      getlex              QName(PackageNamespace(""), "itemData")
+      callproperty        QName(PackageNamespace(""), "toString"), 0
+      setproperty         QName(PackageNamespace(""), "itemData_")
+
+      getlocal1
+      getlex              QName(PackageNamespace(""), "slotId")
+      setproperty         QName(PackageNamespace(""), "slotId_")
+
+      getlocal1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.market.ui:MarketInventorySlot/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

@@ -1,0 +1,1098 @@
+class
+ refid "kabam.rotmg.lootBoxes:LootboxModalMediator"
+ instance QName(PackageNamespace("kabam.rotmg.lootBoxes"), "LootboxModalMediator")
+  extends QName(PackageNamespace("robotlegs.bender.bundles.mvcs"), "Mediator")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.lootBoxes:LootboxModalMediator")
+  iinit
+   refid "kabam.rotmg.lootBoxes:LootboxModalMediator/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "view") flag METADATA type QName(PackageNamespace("kabam.rotmg.lootBoxes"), "LootboxModal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "gameModel") flag METADATA type QName(PackageNamespace("kabam.rotmg.game.model"), "GameModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "openMoneyWindow") flag METADATA type QName(PackageNamespace("kabam.rotmg.account.core.signals"), "OpenMoneyWindowSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "closePopupSignal") flag METADATA type QName(PackageNamespace("io.decagames.rotmg.ui.popups.signals"), "ClosePopupSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "closeDialogs") flag METADATA type QName(PackageNamespace("kabam.rotmg.dialogs.control"), "CloseDialogsSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "showTooltipSignal") flag METADATA type QName(PackageNamespace("kabam.rotmg.core.signals"), "ShowTooltipSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "hideTooltipSignal") flag METADATA type QName(PackageNamespace("kabam.rotmg.core.signals"), "HideTooltipsSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "getMysteryBoxesTask") flag METADATA type QName(PackageNamespace("kabam.rotmg.mysterybox.services"), "GetMysteryBoxesTask")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootboxModalMediator"), "closeButton") type QName(PackageNamespace("io.decagames.rotmg.ui.buttons"), "SliceScalingButton") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootboxModalMediator"), "infoButton") type QName(PackageNamespace("io.decagames.rotmg.ui.buttons"), "SliceScalingButton") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootboxModalMediator"), "LootBoxesGrid") type QName(PackageNamespace("io.decagames.rotmg.ui.gird"), "UIGrid") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootboxModalMediator"), "toolTip") type QName(PackageNamespace("com.company.assembleegameclient.ui.tooltip"), "TextToolTip") value Null() end
+  trait slot QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootboxModalMediator"), "hoverTooltipDelegate") type QName(PackageNamespace("kabam.rotmg.tooltips"), "HoverTooltipDelegate") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootboxModalMediator"), "tabs") type QName(PackageNamespace("io.decagames.rotmg.ui.tabs"), "UITabs") end
+  trait const QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootboxModalMediator"), "ELITE_COST") type QName(PackageNamespace(""), "uint") value Integer(5) end
+  trait const QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootboxModalMediator"), "GILDED_COST") type QName(PackageNamespace(""), "uint") value Integer(10000) end
+  trait const QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootboxModalMediator"), "TRIAL_COST") type QName(PackageNamespace(""), "uint") value Integer(500) end
+  trait const QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootboxModalMediator"), "PREMIUM_COST") type QName(PackageNamespace(""), "uint") value Integer(200) end
+  trait const QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootboxModalMediator"), "ASCENDED_COST") type QName(PackageNamespace(""), "uint") value Integer(8) end
+  trait method QName(PackageNamespace(""), "initialize") flag OVERRIDE
+   method
+    name "initialize"
+    refid "kabam.rotmg.lootBoxes:LootboxModalMediator/instance/initialize"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 5
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("io.decagames.rotmg.ui.buttons"), "SliceScalingButton")
+      getlex              QName(PackageNamespace("io.decagames.rotmg.ui.texture"), "TextureParser")
+      getproperty         QName(PackageNamespace(""), "instance")
+      pushstring          "UI"
+      pushstring          "close_button"
+      callproperty        QName(PackageNamespace(""), "getSliceScalingBitmap"), 2
+      constructprop       QName(PackageNamespace("io.decagames.rotmg.ui.buttons"), "SliceScalingButton"), 1
+      setproperty         QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootboxModalMediator"), "closeButton")
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("io.decagames.rotmg.ui.buttons"), "SliceScalingButton")
+      getlex              QName(PackageNamespace("io.decagames.rotmg.ui.texture"), "TextureParser")
+      getproperty         QName(PackageNamespace(""), "instance")
+      pushstring          "UI"
+      pushstring          "info_button"
+      callproperty        QName(PackageNamespace(""), "getSliceScalingBitmap"), 2
+      constructprop       QName(PackageNamespace("io.decagames.rotmg.ui.buttons"), "SliceScalingButton"), 1
+      setproperty         QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootboxModalMediator"), "infoButton")
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("io.decagames.rotmg.ui.tabs"), "UITabs")
+      pushshort           590
+      constructprop       QName(PackageNamespace("io.decagames.rotmg.ui.tabs"), "UITabs"), 1
+      setproperty         QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootboxModalMediator"), "tabs")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootboxModalMediator"), "tabs")
+      getlocal0
+      callproperty        QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootboxModalMediator"), "createTieredLootBoxes"), 0
+      pushtrue
+      callpropvoid        QName(PackageNamespace(""), "addTab"), 2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootboxModalMediator"), "tabs")
+      getlocal0
+      callproperty        QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootboxModalMediator"), "createUntieredLootBoxes"), 0
+      pushfalse
+      callpropvoid        QName(PackageNamespace(""), "addTab"), 2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootboxModalMediator"), "tabs")
+      pushbyte            115
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootboxModalMediator"), "tabs")
+      pushbyte            3
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "header")
+      pushstring          "Loot Boxes"
+      pushshort           519
+      getlex              QName(PackageNamespace("io.decagames.rotmg.ui.defaults"), "DefaultLabelFormat")
+      getproperty         QName(PackageNamespace(""), "defaultPopupTitle")
+      callpropvoid        QName(PackageNamespace(""), "setTitle"), 3
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootboxModalMediator"), "closeButton")
+      getproperty         QName(PackageNamespace(""), "clicked")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootboxModalMediator"), "onClose")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "header")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootboxModalMediator"), "closeButton")
+      pushstring          "right_button"
+      callpropvoid        QName(PackageNamespace(""), "addButton"), 2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "header")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootboxModalMediator"), "infoButton")
+      pushstring          "left_button"
+      callpropvoid        QName(PackageNamespace(""), "addButton"), 2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootboxModalMediator"), "tabs")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.tooltips"), "HoverTooltipDelegate")
+      constructprop       QName(PackageNamespace("kabam.rotmg.tooltips"), "HoverTooltipDelegate"), 0
+      setproperty         QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootboxModalMediator"), "hoverTooltipDelegate")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootboxModalMediator"), "hoverTooltipDelegate")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "showTooltipSignal")
+      callpropvoid        QName(PackageNamespace(""), "setShowToolTipSignal"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootboxModalMediator"), "hoverTooltipDelegate")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hideTooltipSignal")
+      callpropvoid        QName(PackageNamespace(""), "setHideToolTipsSignal"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootboxModalMediator"), "hoverTooltipDelegate")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootboxModalMediator"), "infoButton")
+      callpropvoid        QName(PackageNamespace(""), "setDisplayObject"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootboxModalMediator"), "hoverTooltipDelegate")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootboxModalMediator"), "toolTip")
+      setproperty         QName(PackageNamespace(""), "tooltip")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootboxModalMediator"), "createTieredLootBoxes")
+   method
+    name "createTieredLootBoxes"
+    refid "kabam.rotmg.lootBoxes:LootboxModalMediator/instance/kabam.rotmg.lootBoxes:LootboxModalMediator/instance/createTieredLootBoxes"
+    returns QName(PackageNamespace("io.decagames.rotmg.ui.tabs"), "UITab")
+    body
+     maxstack 8
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("io.decagames.rotmg.ui.tabs"), "UITab")
+      pushstring          "Tiered Loot Boxes"
+      pushtrue
+      constructprop       QName(PackageNamespace("io.decagames.rotmg.ui.tabs"), "UITab"), 2
+      coerce              QName(PackageNamespace("io.decagames.rotmg.ui.tabs"), "UITab")
+      setlocal1
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("io.decagames.rotmg.ui.gird"), "UIGrid")
+      pushshort           550
+      pushbyte            4
+      pushbyte            6
+      pushshort           384
+      pushbyte            4
+      getlocal1
+      constructprop       QName(PackageNamespace("io.decagames.rotmg.ui.gird"), "UIGrid"), 6
+      setproperty         QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootboxModalMediator"), "LootBoxesGrid")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootboxModalMediator"), "LootBoxesGrid")
+      pushstring          "tabs_tile_decor"
+      setproperty         QName(PackageNamespace(""), "decorBitmap")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootboxModalMediator"), "LootBoxesGrid")
+      pushbyte            10
+      setproperty         QName(PackageNamespace(""), "x")
+
+      findpropstrict      QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootboxModalMediator"), "getChests")
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootboxModalMediator"), "getChests"), 0
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootboxModalMediator"), "LootBoxesGrid")
+      callpropvoid        QName(PackageNamespace(""), "addContent"), 1
+
+      getlocal1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootboxModalMediator"), "createUntieredLootBoxes")
+   method
+    name "createUntieredLootBoxes"
+    refid "kabam.rotmg.lootBoxes:LootboxModalMediator/instance/kabam.rotmg.lootBoxes:LootboxModalMediator/instance/createUntieredLootBoxes"
+    returns QName(PackageNamespace("io.decagames.rotmg.ui.tabs"), "UITab")
+    body
+     maxstack 8
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("io.decagames.rotmg.ui.tabs"), "UITab")
+      pushstring          "Untiered Loot Boxes"
+      pushtrue
+      constructprop       QName(PackageNamespace("io.decagames.rotmg.ui.tabs"), "UITab"), 2
+      coerce              QName(PackageNamespace("io.decagames.rotmg.ui.tabs"), "UITab")
+      setlocal1
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("io.decagames.rotmg.ui.gird"), "UIGrid")
+      pushshort           550
+      pushbyte            4
+      pushbyte            6
+      pushshort           384
+      pushbyte            4
+      getlocal1
+      constructprop       QName(PackageNamespace("io.decagames.rotmg.ui.gird"), "UIGrid"), 6
+      setproperty         QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootboxModalMediator"), "LootBoxesGrid")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootboxModalMediator"), "LootBoxesGrid")
+      pushstring          "tabs_tile_decor"
+      setproperty         QName(PackageNamespace(""), "decorBitmap")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootboxModalMediator"), "LootBoxesGrid")
+      pushbyte            10
+      setproperty         QName(PackageNamespace(""), "x")
+
+      findpropstrict      QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootboxModalMediator"), "getPremiumChests")
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootboxModalMediator"), "getPremiumChests"), 0
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootboxModalMediator"), "LootBoxesGrid")
+      callpropvoid        QName(PackageNamespace(""), "addContent"), 1
+
+      getlocal1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootboxModalMediator"), "getChests")
+   method
+    name "getChests"
+    refid "kabam.rotmg.lootBoxes:LootboxModalMediator/instance/kabam.rotmg.lootBoxes:LootboxModalMediator/instance/getChests"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 10
+     localcount 9
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushbyte            0
+      setlocal            6
+
+      getlex              QName(PackageNamespace("kabam.rotmg.core"), "StaticInjectorContext")
+      callproperty        QName(PackageNamespace(""), "getInjector"), 0
+      getlex              QName(PackageNamespace("kabam.rotmg.game.model"), "GameModel")
+      callproperty        QName(PackageNamespace(""), "getInstance"), 1
+      getproperty         Multiname("player", [PrivateNamespace("kabam.rotmg.lootBoxes:LootboxModalMediator"), ProtectedNamespace("kabam.rotmg.lootBoxes:LootboxModalMediator"), StaticProtectedNs("kabam.rotmg.lootBoxes:LootboxModalMediator"), StaticProtectedNs("robotlegs.bender.bundles.mvcs:Mediator"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.lootBoxes"), PackageInternalNs("kabam.rotmg.lootBoxes"), PrivateNamespace("FilePrivateNS:LootboxModalMediator"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.objects"), "Player")
+      setlocal            8
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootboxModalMediator"), "LootBoxesGrid")
+      callpropvoid        QName(PackageNamespace(""), "clearGrid"), 0
+
+      findpropstrict      QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootboxModalMediator"), "glowChest")
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "TextureRedrawer")
+      getlex              QName(PackageNamespace("com.company.util"), "AssetLibrary")
+      pushstring          "LootBoxes"
+      pushbyte            2
+      callproperty        QName(PackageNamespace(""), "getImageFromSet"), 2
+      pushnull
+      pushbyte            80
+      pushtrue
+      pushbyte            0
+      pushbyte            0
+      callproperty        QName(PackageNamespace(""), "resize"), 6
+      pushint             16770570
+      pushbyte            -3
+      callproperty        QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootboxModalMediator"), "glowChest"), 3
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      setlocal            5
+
+      findpropstrict      QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootboxModalMediator"), "glowChest")
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "TextureRedrawer")
+      getlex              QName(PackageNamespace("com.company.util"), "AssetLibrary")
+      pushstring          "LootBoxes"
+      pushbyte            1
+      callproperty        QName(PackageNamespace(""), "getImageFromSet"), 2
+      pushnull
+      pushbyte            80
+      pushtrue
+      pushbyte            0
+      pushbyte            0
+      callproperty        QName(PackageNamespace(""), "resize"), 6
+      pushint             12632256
+      pushbyte            0
+      callproperty        QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootboxModalMediator"), "glowChest"), 3
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      setlocal3
+
+      findpropstrict      QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootboxModalMediator"), "glowChest")
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "TextureRedrawer")
+      getlex              QName(PackageNamespace("com.company.util"), "AssetLibrary")
+      pushstring          "LootBoxes"
+      pushbyte            0
+      callproperty        QName(PackageNamespace(""), "getImageFromSet"), 2
+      pushnull
+      pushbyte            80
+      pushtrue
+      pushbyte            0
+      pushbyte            0
+      callproperty        QName(PackageNamespace(""), "resize"), 6
+      pushint             13467442
+      pushbyte            0
+      callproperty        QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootboxModalMediator"), "glowChest"), 3
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      setlocal            4
+
+      findpropstrict      QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootboxModalMediator"), "glowChest")
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "TextureRedrawer")
+      getlex              QName(PackageNamespace("com.company.util"), "AssetLibrary")
+      pushstring          "d3LofiObjEmbed"
+      pushshort           1266
+      callproperty        QName(PackageNamespace(""), "getImageFromSet"), 2
+      pushnull
+      pushbyte            120
+      pushtrue
+      pushbyte            0
+      pushbyte            0
+      callproperty        QName(PackageNamespace(""), "resize"), 6
+      pushbyte            -1
+      callproperty        QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootboxModalMediator"), "glowChest"), 2
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      setlocal1
+
+      findpropstrict      QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootboxModalMediator"), "glowChest")
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "TextureRedrawer")
+      getlex              QName(PackageNamespace("com.company.util"), "AssetLibrary")
+      pushstring          "d3LofiObjEmbed"
+      pushshort           1282
+      callproperty        QName(PackageNamespace(""), "getImageFromSet"), 2
+      pushnull
+      pushbyte            120
+      pushtrue
+      pushbyte            0
+      pushbyte            0
+      callproperty        QName(PackageNamespace(""), "resize"), 6
+      pushbyte            -1
+      callproperty        QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootboxModalMediator"), "glowChest"), 2
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      setlocal2
+
+      findpropstrict      QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootboxModalMediator"), "glowChest")
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "TextureRedrawer")
+      getlex              QName(PackageNamespace("com.company.util"), "AssetLibrary")
+      pushstring          "d3LofiObjEmbed"
+      pushshort           1283
+      callproperty        QName(PackageNamespace(""), "getImageFromSet"), 2
+      pushnull
+      pushbyte            120
+      pushtrue
+      pushbyte            0
+      pushbyte            0
+      callproperty        QName(PackageNamespace(""), "resize"), 6
+      pushbyte            -1
+      callproperty        QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootboxModalMediator"), "glowChest"), 2
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      setlocal            7
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.parameters"), "Parameters")
+      getproperty         QName(PackageNamespace(""), "data")
+      getproperty         Multiname("lootBoxStack", [PrivateNamespace("kabam.rotmg.lootBoxes:LootboxModalMediator"), ProtectedNamespace("kabam.rotmg.lootBoxes:LootboxModalMediator"), StaticProtectedNs("kabam.rotmg.lootBoxes:LootboxModalMediator"), StaticProtectedNs("robotlegs.bender.bundles.mvcs:Mediator"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.lootBoxes"), PackageInternalNs("kabam.rotmg.lootBoxes"), PrivateNamespace("FilePrivateNS:LootboxModalMediator"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      iffalse             L178
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootboxModalMediator"), "LootBoxesGrid")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.lootBoxes"), "LootBoxesBox")
+      pushbyte            3
+      pushstring          "Gold Loot Box"
+      pushbyte            1
+      getlocal            8
+      getproperty         QName(PackageNamespace(""), "goldLootbox_")
+      pushbyte            0
+      greaterthan
+      getlocal            5
+      pushbyte            0
+      pushstring          "You have "
+      getlocal            8
+      getproperty         QName(PackageNamespace(""), "goldLootbox_")
+      add
+      pushstring          " Gold Loot Boxes!"
+      add
+      constructprop       QName(PackageNamespace("kabam.rotmg.lootBoxes"), "LootBoxesBox"), 7
+      callpropvoid        QName(PackageNamespace(""), "addGridElement"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootboxModalMediator"), "LootBoxesGrid")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.lootBoxes"), "LootBoxesBox")
+      pushbyte            2
+      pushstring          "Silver Loot Box"
+      pushbyte            1
+      getlocal            8
+      getproperty         QName(PackageNamespace(""), "silverLootbox_")
+      pushbyte            0
+      greaterthan
+      getlocal3
+      pushbyte            0
+      pushstring          "You have "
+      getlocal            8
+      getproperty         QName(PackageNamespace(""), "silverLootbox_")
+      add
+      pushstring          " Silver Loot Boxes!"
+      add
+      constructprop       QName(PackageNamespace("kabam.rotmg.lootBoxes"), "LootBoxesBox"), 7
+      callpropvoid        QName(PackageNamespace(""), "addGridElement"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootboxModalMediator"), "LootBoxesGrid")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.lootBoxes"), "LootBoxesBox")
+      pushbyte            1
+      pushstring          "Bronze Loot Box"
+      pushbyte            1
+      getlocal            8
+      getproperty         QName(PackageNamespace(""), "bronzeLootbox_")
+      pushbyte            0
+      greaterthan
+      getlocal            4
+      pushbyte            0
+      pushstring          "You have "
+      getlocal            8
+      getproperty         QName(PackageNamespace(""), "bronzeLootbox_")
+      add
+      pushstring          " Bronze Loot Boxes!"
+      add
+      constructprop       QName(PackageNamespace("kabam.rotmg.lootBoxes"), "LootBoxesBox"), 7
+      callpropvoid        QName(PackageNamespace(""), "addGridElement"), 1
+
+      jump                L238
+
+L178:
+      pushbyte            0
+      setlocal            6
+
+      jump                L194
+
+L181:
+      label
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootboxModalMediator"), "LootBoxesGrid")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.lootBoxes"), "LootBoxesBox")
+      pushbyte            3
+      pushstring          "Gold Loot Box"
+      pushbyte            1
+      pushtrue
+      getlocal            5
+      pushbyte            0
+      constructprop       QName(PackageNamespace("kabam.rotmg.lootBoxes"), "LootBoxesBox"), 6
+      callpropvoid        QName(PackageNamespace(""), "addGridElement"), 1
+
+      inclocal_i          6
+L194:
+      getlocal            6
+      getlocal            8
+      getproperty         QName(PackageNamespace(""), "goldLootbox_")
+      iflt                L181
+
+      pushbyte            0
+      setlocal            6
+
+      jump                L214
+
+L201:
+      label
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootboxModalMediator"), "LootBoxesGrid")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.lootBoxes"), "LootBoxesBox")
+      pushbyte            2
+      pushstring          "Silver Loot Box"
+      pushbyte            1
+      pushtrue
+      getlocal3
+      pushbyte            0
+      constructprop       QName(PackageNamespace("kabam.rotmg.lootBoxes"), "LootBoxesBox"), 6
+      callpropvoid        QName(PackageNamespace(""), "addGridElement"), 1
+
+      inclocal_i          6
+L214:
+      getlocal            6
+      getlocal            8
+      getproperty         QName(PackageNamespace(""), "silverLootbox_")
+      iflt                L201
+
+      pushbyte            0
+      setlocal            6
+
+      jump                L234
+
+L221:
+      label
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootboxModalMediator"), "LootBoxesGrid")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.lootBoxes"), "LootBoxesBox")
+      pushbyte            1
+      pushstring          "Bronze Loot Box"
+      pushbyte            1
+      pushtrue
+      getlocal            4
+      pushbyte            0
+      constructprop       QName(PackageNamespace("kabam.rotmg.lootBoxes"), "LootBoxesBox"), 6
+      callpropvoid        QName(PackageNamespace(""), "addGridElement"), 1
+
+      inclocal_i          6
+L234:
+      getlocal            6
+      getlocal            8
+      getproperty         QName(PackageNamespace(""), "bronzeLootbox_")
+      iflt                L221
+
+L238:
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootboxModalMediator"), "LootBoxesGrid")
+      findpropstrict      QName(PackageNamespace("io.decagames.rotmg.ui.gird"), "UIGridElement")
+      constructprop       QName(PackageNamespace("io.decagames.rotmg.ui.gird"), "UIGridElement"), 0
+      callpropvoid        QName(PackageNamespace(""), "addGridElement"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootboxModalMediator"), "LootBoxesGrid")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.lootBoxes"), "LootBoxesBox")
+      pushbyte            7
+      pushstring          "Rat Bag I"
+      pushbyte            5
+      getlocal            8
+      getproperty         QName(PackageNamespace(""), "ratBags")
+      pushbyte            5
+      greaterequals
+      getlocal1
+      pushbyte            7
+      pushstring          "You have "
+      getlocal            8
+      getproperty         QName(PackageNamespace(""), "ratBags")
+      add
+      pushstring          " Rat Bags!"
+      add
+      constructprop       QName(PackageNamespace("kabam.rotmg.lootBoxes"), "LootBoxesBox"), 7
+      callpropvoid        QName(PackageNamespace(""), "addGridElement"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootboxModalMediator"), "LootBoxesGrid")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.lootBoxes"), "LootBoxesBox")
+      pushbyte            8
+      pushstring          "Rat Bag II"
+      pushbyte            10
+      getlocal            8
+      getproperty         QName(PackageNamespace(""), "ratBags")
+      pushbyte            10
+      greaterequals
+      getlocal2
+      pushbyte            7
+      pushstring          "You have "
+      getlocal            8
+      getproperty         QName(PackageNamespace(""), "ratBags")
+      add
+      pushstring          " Rat Bags!"
+      add
+      constructprop       QName(PackageNamespace("kabam.rotmg.lootBoxes"), "LootBoxesBox"), 7
+      callpropvoid        QName(PackageNamespace(""), "addGridElement"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootboxModalMediator"), "LootBoxesGrid")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.lootBoxes"), "LootBoxesBox")
+      pushbyte            9
+      pushstring          "Rat Bag III"
+      pushbyte            20
+      getlocal            8
+      getproperty         QName(PackageNamespace(""), "ratBags")
+      pushbyte            20
+      greaterequals
+      getlocal            7
+      pushbyte            7
+      pushstring          "You have "
+      getlocal            8
+      getproperty         QName(PackageNamespace(""), "ratBags")
+      add
+      pushstring          " Rat Bags!"
+      add
+      constructprop       QName(PackageNamespace("kabam.rotmg.lootBoxes"), "LootBoxesBox"), 7
+      callpropvoid        QName(PackageNamespace(""), "addGridElement"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootboxModalMediator"), "getPremiumChests")
+   method
+    name "getPremiumChests"
+    refid "kabam.rotmg.lootBoxes:LootboxModalMediator/instance/kabam.rotmg.lootBoxes:LootboxModalMediator/instance/getPremiumChests"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 10
+     localcount 8
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushbyte            0
+      setlocal            4
+
+      getlex              QName(PackageNamespace("kabam.rotmg.core"), "StaticInjectorContext")
+      callproperty        QName(PackageNamespace(""), "getInjector"), 0
+      getlex              QName(PackageNamespace("kabam.rotmg.game.model"), "GameModel")
+      callproperty        QName(PackageNamespace(""), "getInstance"), 1
+      getproperty         Multiname("player", [PrivateNamespace("kabam.rotmg.lootBoxes:LootboxModalMediator"), ProtectedNamespace("kabam.rotmg.lootBoxes:LootboxModalMediator"), StaticProtectedNs("kabam.rotmg.lootBoxes:LootboxModalMediator"), StaticProtectedNs("robotlegs.bender.bundles.mvcs:Mediator"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.lootBoxes"), PackageInternalNs("kabam.rotmg.lootBoxes"), PrivateNamespace("FilePrivateNS:LootboxModalMediator"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.objects"), "Player")
+      setlocal            7
+
+      pushstring          "Contains \\n • Item Trackers & Augments\\n • Gold Valor Boost\\n • Anniversary Effect Chips\\n "
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootboxModalMediator"), "LootBoxesGrid")
+      callproperty        QName(PackageNamespace(""), "clearGrid"), 0
+      add
+      coerce_s
+      setlocal2
+
+      findpropstrict      QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootboxModalMediator"), "glowChest")
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "TextureRedrawer")
+      getlex              QName(PackageNamespace("com.company.util"), "AssetLibrary")
+      pushstring          "LootBoxes"
+      pushbyte            4
+      callproperty        QName(PackageNamespace(""), "getImageFromSet"), 2
+      pushnull
+      pushbyte            80
+      pushtrue
+      pushbyte            0
+      pushbyte            0
+      callproperty        QName(PackageNamespace(""), "resize"), 6
+      pushint             16711926
+      pushbyte            0
+      callproperty        QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootboxModalMediator"), "glowChest"), 3
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      setlocal            5
+
+      findpropstrict      QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootboxModalMediator"), "glowChest")
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "TextureRedrawer")
+      getlex              QName(PackageNamespace("com.company.util"), "AssetLibrary")
+      pushstring          "LootBoxes"
+      pushbyte            5
+      callproperty        QName(PackageNamespace(""), "getImageFromSet"), 2
+      pushnull
+      pushbyte            80
+      pushtrue
+      pushbyte            0
+      pushbyte            0
+      callproperty        QName(PackageNamespace(""), "resize"), 6
+      pushint             16765952
+      pushbyte            0
+      callproperty        QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootboxModalMediator"), "glowChest"), 3
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      setlocal3
+
+      findpropstrict      QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootboxModalMediator"), "glowChest")
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "TextureRedrawer")
+      getlex              QName(PackageNamespace("com.company.util"), "AssetLibrary")
+      pushstring          "LootBoxes"
+      pushbyte            3
+      callproperty        QName(PackageNamespace(""), "getImageFromSet"), 2
+      pushnull
+      pushbyte            80
+      pushtrue
+      pushbyte            0
+      pushbyte            0
+      callproperty        QName(PackageNamespace(""), "resize"), 6
+      pushint             16719104
+      pushbyte            0
+      callproperty        QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootboxModalMediator"), "glowChest"), 3
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      setlocal            6
+
+      findpropstrict      QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootboxModalMediator"), "glowChest")
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "TextureRedrawer")
+      getlex              QName(PackageNamespace("com.company.util"), "AssetLibrary")
+      pushstring          "LootBoxes"
+      pushbyte            7
+      callproperty        QName(PackageNamespace(""), "getImageFromSet"), 2
+      pushnull
+      pushbyte            80
+      pushtrue
+      pushbyte            0
+      pushbyte            0
+      callproperty        QName(PackageNamespace(""), "resize"), 6
+      pushint             16746496
+      pushbyte            0
+      callproperty        QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootboxModalMediator"), "glowChest"), 3
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      setlocal1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootboxModalMediator"), "LootBoxesGrid")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.lootBoxes"), "LootBoxesBox")
+      pushbyte            5
+      pushstring          "Premium Loot Box"
+      pushshort           200
+      getlocal            7
+      getproperty         QName(PackageNamespace(""), "kantos_")
+      pushshort           200
+      greaterequals
+      getlocal            5
+      pushbyte            2
+      getlocal2
+      constructprop       QName(PackageNamespace("kabam.rotmg.lootBoxes"), "LootBoxesBox"), 7
+      callpropvoid        QName(PackageNamespace(""), "addGridElement"), 1
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.parameters"), "Parameters")
+      getproperty         QName(PackageNamespace(""), "data")
+      getproperty         Multiname("lootBoxStack", [PrivateNamespace("kabam.rotmg.lootBoxes:LootboxModalMediator"), ProtectedNamespace("kabam.rotmg.lootBoxes:LootboxModalMediator"), StaticProtectedNs("kabam.rotmg.lootBoxes:LootboxModalMediator"), StaticProtectedNs("robotlegs.bender.bundles.mvcs:Mediator"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.lootBoxes"), PackageInternalNs("kabam.rotmg.lootBoxes"), PrivateNamespace("FilePrivateNS:LootboxModalMediator"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      iffalse             L133
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootboxModalMediator"), "LootBoxesGrid")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.lootBoxes"), "LootBoxesBox")
+      pushbyte            4
+      pushstring          "Elite Loot Box"
+      pushbyte            5
+      getlocal            7
+      getproperty         QName(PackageNamespace(""), "onrane_")
+      pushbyte            5
+      greaterequals
+      dup
+      iffalse             L122
+
+      pop
+      getlocal            7
+      getproperty         QName(PackageNamespace(""), "eliteLootbox_")
+      pushbyte            0
+      greaterthan
+L122:
+      getlocal            6
+      pushbyte            3
+      pushstring          "You have "
+      getlocal            7
+      getproperty         QName(PackageNamespace(""), "eliteLootbox_")
+      add
+      pushstring          " Elite Loot Boxes!"
+      add
+      constructprop       QName(PackageNamespace("kabam.rotmg.lootBoxes"), "LootBoxesBox"), 7
+      callpropvoid        QName(PackageNamespace(""), "addGridElement"), 1
+
+      jump                L156
+
+L133:
+      pushbyte            0
+      setlocal            4
+
+      jump                L152
+
+L136:
+      label
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootboxModalMediator"), "LootBoxesGrid")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.lootBoxes"), "LootBoxesBox")
+      pushbyte            4
+      pushstring          "Elite Loot Box"
+      pushbyte            5
+      getlocal            7
+      getproperty         QName(PackageNamespace(""), "onrane_")
+      pushbyte            5
+      greaterequals
+      getlocal            6
+      pushbyte            3
+      constructprop       QName(PackageNamespace("kabam.rotmg.lootBoxes"), "LootBoxesBox"), 6
+      callpropvoid        QName(PackageNamespace(""), "addGridElement"), 1
+
+      inclocal_i          4
+L152:
+      getlocal            4
+      getlocal            7
+      getproperty         QName(PackageNamespace(""), "eliteLootbox_")
+      iflt                L136
+
+L156:
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.parameters"), "Parameters")
+      getproperty         QName(PackageNamespace(""), "data")
+      getproperty         Multiname("lootBoxStack", [PrivateNamespace("kabam.rotmg.lootBoxes:LootboxModalMediator"), ProtectedNamespace("kabam.rotmg.lootBoxes:LootboxModalMediator"), StaticProtectedNs("kabam.rotmg.lootBoxes:LootboxModalMediator"), StaticProtectedNs("robotlegs.bender.bundles.mvcs:Mediator"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.lootBoxes"), PackageInternalNs("kabam.rotmg.lootBoxes"), PrivateNamespace("FilePrivateNS:LootboxModalMediator"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      iffalse             L188
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootboxModalMediator"), "LootBoxesGrid")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.lootBoxes"), "LootBoxesBox")
+      pushbyte            6
+      pushstring          "Scavenger Chest"
+      pushshort           500
+      getlocal            7
+      getproperty         QName(PackageNamespace(""), "credits_")
+      pushshort           500
+      greaterequals
+      dup
+      iffalse             L177
+
+      pop
+      getlocal            7
+      getproperty         QName(PackageNamespace(""), "trialLootbox_")
+      pushbyte            0
+      greaterthan
+L177:
+      getlocal1
+      pushbyte            4
+      pushstring          "You have "
+      getlocal            7
+      getproperty         QName(PackageNamespace(""), "trialLootbox_")
+      add
+      pushstring          " Scavenger Chests!"
+      add
+      constructprop       QName(PackageNamespace("kabam.rotmg.lootBoxes"), "LootBoxesBox"), 7
+      callpropvoid        QName(PackageNamespace(""), "addGridElement"), 1
+
+      jump                L219
+
+L188:
+      pushbyte            0
+      setlocal            4
+
+      jump                L215
+
+L191:
+      label
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootboxModalMediator"), "LootBoxesGrid")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.lootBoxes"), "LootBoxesBox")
+      pushbyte            6
+      pushstring          "Scavenger Chest"
+      pushshort           500
+      getlocal            7
+      getproperty         QName(PackageNamespace(""), "credits_")
+      pushshort           500
+      greaterequals
+      dup
+      iffalse             L209
+
+      pop
+      getlocal            7
+      getproperty         QName(PackageNamespace(""), "trialLootbox_")
+      pushbyte            0
+      greaterthan
+L209:
+      getlocal1
+      pushbyte            4
+      pushstring          "Earned through Trials & Contracts."
+      constructprop       QName(PackageNamespace("kabam.rotmg.lootBoxes"), "LootBoxesBox"), 7
+      callpropvoid        QName(PackageNamespace(""), "addGridElement"), 1
+
+      inclocal_i          4
+L215:
+      getlocal            4
+      getlocal            7
+      getproperty         QName(PackageNamespace(""), "trialLootbox_")
+      iflt                L191
+
+L219:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "destroy") flag OVERRIDE
+   method
+    name "destroy"
+    refid "kabam.rotmg.lootBoxes:LootboxModalMediator/instance/destroy"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      callpropvoid        QName(PackageNamespace(""), "dispose"), 0
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootboxModalMediator"), "closeButton")
+      callpropvoid        QName(PackageNamespace(""), "dispose"), 0
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootboxModalMediator"), "infoButton")
+      callpropvoid        QName(PackageNamespace(""), "dispose"), 0
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootboxModalMediator"), "tabs")
+      callpropvoid        QName(PackageNamespace(""), "dispose"), 0
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootboxModalMediator"), "LootBoxesGrid")
+      callpropvoid        QName(PackageNamespace(""), "dispose"), 0
+
+      getlocal0
+      pushnull
+      setproperty         QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootboxModalMediator"), "toolTip")
+
+      getlex              QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootboxModalMediator"), "hoverTooltipDelegate")
+      pushnull
+      ifeq                L29
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootboxModalMediator"), "hoverTooltipDelegate")
+      callpropvoid        QName(PackageNamespace(""), "removeDisplayObject"), 0
+
+      getlocal0
+      pushnull
+      setproperty         QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootboxModalMediator"), "hoverTooltipDelegate")
+
+L29:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootboxModalMediator"), "onClose")
+   method
+    name "onClose"
+    refid "kabam.rotmg.lootBoxes:LootboxModalMediator/instance/kabam.rotmg.lootBoxes:LootboxModalMediator/instance/onClose"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      callpropvoid        QName(PackageNamespace(""), "destroy"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "closePopupSignal")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "closeDialogs")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.lootBoxes:LootboxModalMediator/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait method QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootboxModalMediator"), "glowChest")
+  method
+   name "glowChest"
+   refid "kabam.rotmg.lootBoxes:LootboxModalMediator/class/kabam.rotmg.lootBoxes:LootboxModalMediator/instance/glowChest"
+   param QName(PackageNamespace("flash.display"), "BitmapData")
+   param QName(PackageNamespace(""), "uint")
+   param QName(PackageNamespace(""), "int")
+   returns QName(PackageNamespace("flash.display"), "BitmapData")
+   flag HAS_OPTIONAL
+   flag HAS_PARAM_NAMES
+   optional Integer(0)
+   paramname "arg_1"
+   paramname "arg_2"
+   paramname "offSetWidth"
+   body
+    maxstack 7
+    localcount 4
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PackageNamespace("com.company.assembleegameclient.util.redrawers"), "GlowRedrawer")
+     getlocal1
+     getlocal2
+     callproperty        QName(PackageNamespace(""), "outlineGlowNew"), 2
+     coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+     setlocal1
+
+     getlex              QName(PackageNamespace("com.company.util"), "BitmapUtil")
+     getlocal1
+     pushbyte            5
+     getlocal3
+     add
+     pushbyte            5
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "width")
+     pushbyte            10
+     subtract
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "height")
+     pushbyte            10
+     subtract
+     callproperty        QName(PackageNamespace(""), "cropToBitmapData"), 5
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+end ; class

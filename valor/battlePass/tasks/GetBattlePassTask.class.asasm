@@ -1,0 +1,462 @@
+class
+ refid "valor.battlePass.tasks:GetBattlePassTask"
+ instance QName(PackageNamespace("valor.battlePass.tasks"), "GetBattlePassTask")
+  extends QName(PackageNamespace("kabam.lib.tasks"), "BaseTask")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("valor.battlePass.tasks:GetBattlePassTask")
+  iinit
+   refid "valor.battlePass.tasks:GetBattlePassTask/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "account") flag METADATA type QName(PackageNamespace("kabam.rotmg.account.core"), "Account")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "logger") flag METADATA type QName(PackageNamespace("robotlegs.bender.framework.api"), "ILogger")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "client") flag METADATA type QName(PackageNamespace("kabam.rotmg.appengine.api"), "AppEngineClient")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PrivateNamespace("valor.battlePass.tasks:GetBattlePassTask"), "requestData") type QName(PackageNamespace(""), "Object") end
+  trait method QName(ProtectedNamespace("valor.battlePass.tasks:GetBattlePassTask"), "startTask") flag OVERRIDE
+   method
+    name "startTask"
+    refid "valor.battlePass.tasks:GetBattlePassTask/instance/valor.battlePass.tasks:GetBattlePassTask:startTask"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "logger")
+      pushstring          "GetBattlePassTask start"
+      callpropvoid        QName(Namespace("robotlegs.bender.framework.api:ILogger"), "info"), 1
+
+      getlocal0
+      getlocal0
+      callproperty        QName(PackageNamespace(""), "makeRequestData"), 0
+      setproperty         QName(PrivateNamespace("valor.battlePass.tasks:GetBattlePassTask"), "requestData")
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("valor.battlePass.tasks:GetBattlePassTask"), "sendRequest"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("valor.battlePass.tasks:GetBattlePassTask"), "sendRequest")
+   method
+    name "sendRequest"
+    refid "valor.battlePass.tasks:GetBattlePassTask/instance/valor.battlePass.tasks:GetBattlePassTask/instance/sendRequest"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "client")
+      getproperty         QName(Namespace("kabam.rotmg.appengine.api:AppEngineClient"), "complete")
+      getlocal0
+      getproperty         QName(PrivateNamespace("valor.battlePass.tasks:GetBattlePassTask"), "onComplete")
+      callpropvoid        QName(PackageNamespace(""), "addOnce"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "client")
+      pushstring          "/battlePass/getBattlePass"
+      getlocal0
+      getproperty         QName(PrivateNamespace("valor.battlePass.tasks:GetBattlePassTask"), "requestData")
+      callpropvoid        QName(Namespace("kabam.rotmg.appengine.api:AppEngineClient"), "sendRequest"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("valor.battlePass.tasks:GetBattlePassTask"), "onComplete")
+   method
+    name "onComplete"
+    refid "valor.battlePass.tasks:GetBattlePassTask/instance/valor.battlePass.tasks:GetBattlePassTask/instance/onComplete"
+    param QName(PackageNamespace(""), "Boolean")
+    param null
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "noError"
+    paramname "data"
+    body
+     maxstack 5
+     localcount 14
+     initscopedepth 0
+     maxscopedepth 2
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      setlocal            7
+
+      pushbyte            0
+      setlocal            4
+
+      pushbyte            0
+      setlocal3
+
+      getlocal1
+      iftrue              L14
+
+      findpropstrict      QName(ProtectedNamespace("kabam.lib.tasks:BaseTask"), "completeTask")
+      pushtrue
+      callpropvoid        QName(ProtectedNamespace("kabam.lib.tasks:BaseTask"), "completeTask"), 1
+
+      returnvoid
+
+L14:
+      findpropstrict      QName(PackageNamespace(""), "XML")
+      getlocal2
+      constructprop       QName(PackageNamespace(""), "XML"), 1
+      coerce              QName(PackageNamespace(""), "XML")
+      setlocal            7
+
+L19:
+      jump                L35
+
+L20:
+      getlocal0
+      pushscope
+
+      newcatch            0
+      dup
+      setlocal            9
+
+      dup
+      pushscope
+
+      swap
+      setslot             1
+
+      findpropstrict      QName(ProtectedNamespace("kabam.lib.tasks:BaseTask"), "completeTask")
+      pushtrue
+      callpropvoid        QName(ProtectedNamespace("kabam.lib.tasks:BaseTask"), "completeTask"), 1
+
+      popscope
+      kill                9
+      returnvoid
+
+L35:
+      getlex              QName(PackageNamespace("valor.battlePass"), "BattlePassModel")
+      getlocal            7
+      pushstring          "name"
+      callproperty        Multiname("attribute", [PrivateNamespace("valor.battlePass.tasks:GetBattlePassTask"), ProtectedNamespace("valor.battlePass.tasks:GetBattlePassTask"), StaticProtectedNs("valor.battlePass.tasks:GetBattlePassTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("valor.battlePass"), PackageNamespace("valor.battlePass.tasks"), PackageInternalNs("valor.battlePass.tasks"), PrivateNamespace("FilePrivateNS:GetBattlePassTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 1
+      callproperty        Multiname("toString", [PrivateNamespace("valor.battlePass.tasks:GetBattlePassTask"), ProtectedNamespace("valor.battlePass.tasks:GetBattlePassTask"), StaticProtectedNs("valor.battlePass.tasks:GetBattlePassTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("valor.battlePass"), PackageNamespace("valor.battlePass.tasks"), PackageInternalNs("valor.battlePass.tasks"), PrivateNamespace("FilePrivateNS:GetBattlePassTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 0
+      setproperty         QName(PackageNamespace(""), "battlePassName")
+
+      getlex              QName(PackageNamespace("valor.battlePass"), "BattlePassModel")
+      getlex              QName(PackageNamespace(""), "parseInt")
+      getglobalscope
+      getlocal            7
+      pushstring          "endTime"
+      callproperty        Multiname("attribute", [PrivateNamespace("valor.battlePass.tasks:GetBattlePassTask"), ProtectedNamespace("valor.battlePass.tasks:GetBattlePassTask"), StaticProtectedNs("valor.battlePass.tasks:GetBattlePassTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("valor.battlePass"), PackageNamespace("valor.battlePass.tasks"), PackageInternalNs("valor.battlePass.tasks"), PrivateNamespace("FilePrivateNS:GetBattlePassTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 1
+      call                1
+      setproperty         QName(PackageNamespace(""), "endTime")
+
+      getlex              QName(PackageNamespace("valor.battlePass"), "BattlePassModel")
+      getlex              QName(PackageNamespace(""), "parseInt")
+      getglobalscope
+      getlocal            7
+      getproperty         Multiname("MaxLevels", [PrivateNamespace("valor.battlePass.tasks:GetBattlePassTask"), ProtectedNamespace("valor.battlePass.tasks:GetBattlePassTask"), StaticProtectedNs("valor.battlePass.tasks:GetBattlePassTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("valor.battlePass"), PackageNamespace("valor.battlePass.tasks"), PackageInternalNs("valor.battlePass.tasks"), PrivateNamespace("FilePrivateNS:GetBattlePassTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      call                1
+      setproperty         QName(PackageNamespace(""), "maxLevels")
+
+      getlex              QName(PackageNamespace("valor.battlePass"), "BattlePassModel")
+      getlex              QName(PackageNamespace(""), "parseInt")
+      getglobalscope
+      getlocal            7
+      getproperty         Multiname("ExpPerLevel", [PrivateNamespace("valor.battlePass.tasks:GetBattlePassTask"), ProtectedNamespace("valor.battlePass.tasks:GetBattlePassTask"), StaticProtectedNs("valor.battlePass.tasks:GetBattlePassTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("valor.battlePass"), PackageNamespace("valor.battlePass.tasks"), PackageInternalNs("valor.battlePass.tasks"), PrivateNamespace("FilePrivateNS:GetBattlePassTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      call                1
+      setproperty         QName(PackageNamespace(""), "expPerLevel")
+
+      getlex              QName(PackageNamespace("valor.battlePass"), "BattlePassModel")
+      getlex              QName(PackageNamespace(""), "parseFloat")
+      getglobalscope
+      getlocal            7
+      getproperty         Multiname("ExpPerLevelMult", [PrivateNamespace("valor.battlePass.tasks:GetBattlePassTask"), ProtectedNamespace("valor.battlePass.tasks:GetBattlePassTask"), StaticProtectedNs("valor.battlePass.tasks:GetBattlePassTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("valor.battlePass"), PackageNamespace("valor.battlePass.tasks"), PackageInternalNs("valor.battlePass.tasks"), PrivateNamespace("FilePrivateNS:GetBattlePassTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      call                1
+      setproperty         QName(PackageNamespace(""), "expPerLevelMult")
+
+      getlex              QName(PackageNamespace("valor.battlePass"), "BattlePassModel")
+      getlex              QName(PackageNamespace(""), "parseInt")
+      getglobalscope
+      getlocal            7
+      getproperty         Multiname("MaxExpPerLevel", [PrivateNamespace("valor.battlePass.tasks:GetBattlePassTask"), ProtectedNamespace("valor.battlePass.tasks:GetBattlePassTask"), StaticProtectedNs("valor.battlePass.tasks:GetBattlePassTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("valor.battlePass"), PackageNamespace("valor.battlePass.tasks"), PackageInternalNs("valor.battlePass.tasks"), PrivateNamespace("FilePrivateNS:GetBattlePassTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      call                1
+      setproperty         QName(PackageNamespace(""), "maxExpPerLevel")
+
+      getlex              QName(PackageNamespace("valor.battlePass"), "BattlePassModel")
+      newarray            0
+      setproperty         QName(PackageNamespace(""), "normalLevels")
+
+      getlex              QName(PackageNamespace("valor.battlePass"), "BattlePassModel")
+      newarray            0
+      setproperty         QName(PackageNamespace(""), "premiumLevels")
+
+      pushbyte            0
+      setlocal            4
+
+      jump                L96
+
+L86:
+      label
+      getlex              QName(PackageNamespace("valor.battlePass"), "BattlePassModel")
+      getproperty         QName(PackageNamespace(""), "normalLevels")
+      pushbyte            -1
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+
+      getlex              QName(PackageNamespace("valor.battlePass"), "BattlePassModel")
+      getproperty         QName(PackageNamespace(""), "premiumLevels")
+      pushbyte            -1
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+
+      inclocal_i          4
+L96:
+      getlocal            4
+      getlex              QName(PackageNamespace("valor.battlePass"), "BattlePassModel")
+      getproperty         QName(PackageNamespace(""), "maxLevels")
+      iflt                L86
+
+      getlocal            7
+      pushstring          "Normal"
+      callproperty        Multiname("hasOwnProperty", [PrivateNamespace("valor.battlePass.tasks:GetBattlePassTask"), ProtectedNamespace("valor.battlePass.tasks:GetBattlePassTask"), StaticProtectedNs("valor.battlePass.tasks:GetBattlePassTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("valor.battlePass"), PackageNamespace("valor.battlePass.tasks"), PackageInternalNs("valor.battlePass.tasks"), PrivateNamespace("FilePrivateNS:GetBattlePassTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 1
+      iffalse             L151
+
+      pushbyte            0
+      setlocal            11
+
+      getlocal            7
+      getproperty         Multiname("Normal", [PrivateNamespace("valor.battlePass.tasks:GetBattlePassTask"), ProtectedNamespace("valor.battlePass.tasks:GetBattlePassTask"), StaticProtectedNs("valor.battlePass.tasks:GetBattlePassTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("valor.battlePass"), PackageNamespace("valor.battlePass.tasks"), PackageInternalNs("valor.battlePass.tasks"), PrivateNamespace("FilePrivateNS:GetBattlePassTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getproperty         Multiname("Level", [PrivateNamespace("valor.battlePass.tasks:GetBattlePassTask"), ProtectedNamespace("valor.battlePass.tasks:GetBattlePassTask"), StaticProtectedNs("valor.battlePass.tasks:GetBattlePassTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("valor.battlePass"), PackageNamespace("valor.battlePass.tasks"), PackageInternalNs("valor.battlePass.tasks"), PrivateNamespace("FilePrivateNS:GetBattlePassTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      setlocal            10
+
+      jump                L149
+
+L111:
+      label
+      getlocal            10
+      getlocal            11
+      nextvalue
+      coerce              QName(PackageNamespace(""), "XML")
+      setlocal            6
+
+      getlex              QName(PackageNamespace(""), "parseInt")
+      getglobalscope
+      getlocal            6
+      pushstring          "item"
+      callproperty        Multiname("attribute", [PrivateNamespace("valor.battlePass.tasks:GetBattlePassTask"), ProtectedNamespace("valor.battlePass.tasks:GetBattlePassTask"), StaticProtectedNs("valor.battlePass.tasks:GetBattlePassTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("valor.battlePass"), PackageNamespace("valor.battlePass.tasks"), PackageInternalNs("valor.battlePass.tasks"), PrivateNamespace("FilePrivateNS:GetBattlePassTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 1
+      call                1
+      convert_i
+      setlocal3
+
+      getlocal3
+      pushbyte            0
+      ifne                L137
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.objects"), "ObjectLibrary")
+      getproperty         QName(PackageNamespace(""), "idToType_")
+      getlocal            6
+      pushstring          "item"
+      callproperty        Multiname("attribute", [PrivateNamespace("valor.battlePass.tasks:GetBattlePassTask"), ProtectedNamespace("valor.battlePass.tasks:GetBattlePassTask"), StaticProtectedNs("valor.battlePass.tasks:GetBattlePassTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("valor.battlePass"), PackageNamespace("valor.battlePass.tasks"), PackageInternalNs("valor.battlePass.tasks"), PrivateNamespace("FilePrivateNS:GetBattlePassTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 1
+      callproperty        Multiname("toString", [PrivateNamespace("valor.battlePass.tasks:GetBattlePassTask"), ProtectedNamespace("valor.battlePass.tasks:GetBattlePassTask"), StaticProtectedNs("valor.battlePass.tasks:GetBattlePassTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("valor.battlePass"), PackageNamespace("valor.battlePass.tasks"), PackageInternalNs("valor.battlePass.tasks"), PrivateNamespace("FilePrivateNS:GetBattlePassTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 0
+      getproperty         MultinameL([PrivateNamespace("valor.battlePass.tasks:GetBattlePassTask"), ProtectedNamespace("valor.battlePass.tasks:GetBattlePassTask"), StaticProtectedNs("valor.battlePass.tasks:GetBattlePassTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("valor.battlePass"), PackageNamespace("valor.battlePass.tasks"), PackageInternalNs("valor.battlePass.tasks"), PrivateNamespace("FilePrivateNS:GetBattlePassTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      convert_i
+      setlocal3
+
+L137:
+      getlex              QName(PackageNamespace("valor.battlePass"), "BattlePassModel")
+      getproperty         QName(PackageNamespace(""), "normalLevels")
+      getlex              QName(PackageNamespace(""), "parseInt")
+      getglobalscope
+      getlocal            6
+      pushstring          "id"
+      callproperty        Multiname("attribute", [PrivateNamespace("valor.battlePass.tasks:GetBattlePassTask"), ProtectedNamespace("valor.battlePass.tasks:GetBattlePassTask"), StaticProtectedNs("valor.battlePass.tasks:GetBattlePassTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("valor.battlePass"), PackageNamespace("valor.battlePass.tasks"), PackageInternalNs("valor.battlePass.tasks"), PrivateNamespace("FilePrivateNS:GetBattlePassTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 1
+      call                1
+      pushbyte            1
+      subtract
+      getlocal3
+      setproperty         MultinameL([PrivateNamespace("valor.battlePass.tasks:GetBattlePassTask"), ProtectedNamespace("valor.battlePass.tasks:GetBattlePassTask"), StaticProtectedNs("valor.battlePass.tasks:GetBattlePassTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("valor.battlePass"), PackageNamespace("valor.battlePass.tasks"), PackageInternalNs("valor.battlePass.tasks"), PrivateNamespace("FilePrivateNS:GetBattlePassTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+L149:
+      hasnext2            10, 11
+      iftrue              L111
+
+L151:
+      getlocal            7
+      pushstring          "Premium"
+      callproperty        Multiname("hasOwnProperty", [PrivateNamespace("valor.battlePass.tasks:GetBattlePassTask"), ProtectedNamespace("valor.battlePass.tasks:GetBattlePassTask"), StaticProtectedNs("valor.battlePass.tasks:GetBattlePassTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("valor.battlePass"), PackageNamespace("valor.battlePass.tasks"), PackageInternalNs("valor.battlePass.tasks"), PrivateNamespace("FilePrivateNS:GetBattlePassTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 1
+      iffalse             L202
+
+      pushbyte            0
+      setlocal            13
+
+      getlocal            7
+      getproperty         Multiname("Premium", [PrivateNamespace("valor.battlePass.tasks:GetBattlePassTask"), ProtectedNamespace("valor.battlePass.tasks:GetBattlePassTask"), StaticProtectedNs("valor.battlePass.tasks:GetBattlePassTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("valor.battlePass"), PackageNamespace("valor.battlePass.tasks"), PackageInternalNs("valor.battlePass.tasks"), PrivateNamespace("FilePrivateNS:GetBattlePassTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getproperty         Multiname("Level", [PrivateNamespace("valor.battlePass.tasks:GetBattlePassTask"), ProtectedNamespace("valor.battlePass.tasks:GetBattlePassTask"), StaticProtectedNs("valor.battlePass.tasks:GetBattlePassTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("valor.battlePass"), PackageNamespace("valor.battlePass.tasks"), PackageInternalNs("valor.battlePass.tasks"), PrivateNamespace("FilePrivateNS:GetBattlePassTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      setlocal            12
+
+      jump                L200
+
+L162:
+      label
+      getlocal            12
+      getlocal            13
+      nextvalue
+      coerce              QName(PackageNamespace(""), "XML")
+      setlocal            5
+
+      getlex              QName(PackageNamespace(""), "parseInt")
+      getglobalscope
+      getlocal            5
+      pushstring          "item"
+      callproperty        Multiname("attribute", [PrivateNamespace("valor.battlePass.tasks:GetBattlePassTask"), ProtectedNamespace("valor.battlePass.tasks:GetBattlePassTask"), StaticProtectedNs("valor.battlePass.tasks:GetBattlePassTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("valor.battlePass"), PackageNamespace("valor.battlePass.tasks"), PackageInternalNs("valor.battlePass.tasks"), PrivateNamespace("FilePrivateNS:GetBattlePassTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 1
+      call                1
+      convert_i
+      setlocal3
+
+      getlocal3
+      pushbyte            0
+      ifne                L188
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.objects"), "ObjectLibrary")
+      getproperty         QName(PackageNamespace(""), "idToType_")
+      getlocal            5
+      pushstring          "item"
+      callproperty        Multiname("attribute", [PrivateNamespace("valor.battlePass.tasks:GetBattlePassTask"), ProtectedNamespace("valor.battlePass.tasks:GetBattlePassTask"), StaticProtectedNs("valor.battlePass.tasks:GetBattlePassTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("valor.battlePass"), PackageNamespace("valor.battlePass.tasks"), PackageInternalNs("valor.battlePass.tasks"), PrivateNamespace("FilePrivateNS:GetBattlePassTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 1
+      callproperty        Multiname("toString", [PrivateNamespace("valor.battlePass.tasks:GetBattlePassTask"), ProtectedNamespace("valor.battlePass.tasks:GetBattlePassTask"), StaticProtectedNs("valor.battlePass.tasks:GetBattlePassTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("valor.battlePass"), PackageNamespace("valor.battlePass.tasks"), PackageInternalNs("valor.battlePass.tasks"), PrivateNamespace("FilePrivateNS:GetBattlePassTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 0
+      getproperty         MultinameL([PrivateNamespace("valor.battlePass.tasks:GetBattlePassTask"), ProtectedNamespace("valor.battlePass.tasks:GetBattlePassTask"), StaticProtectedNs("valor.battlePass.tasks:GetBattlePassTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("valor.battlePass"), PackageNamespace("valor.battlePass.tasks"), PackageInternalNs("valor.battlePass.tasks"), PrivateNamespace("FilePrivateNS:GetBattlePassTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      convert_i
+      setlocal3
+
+L188:
+      getlex              QName(PackageNamespace("valor.battlePass"), "BattlePassModel")
+      getproperty         QName(PackageNamespace(""), "premiumLevels")
+      getlex              QName(PackageNamespace(""), "parseInt")
+      getglobalscope
+      getlocal            5
+      pushstring          "id"
+      callproperty        Multiname("attribute", [PrivateNamespace("valor.battlePass.tasks:GetBattlePassTask"), ProtectedNamespace("valor.battlePass.tasks:GetBattlePassTask"), StaticProtectedNs("valor.battlePass.tasks:GetBattlePassTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("valor.battlePass"), PackageNamespace("valor.battlePass.tasks"), PackageInternalNs("valor.battlePass.tasks"), PrivateNamespace("FilePrivateNS:GetBattlePassTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 1
+      call                1
+      pushbyte            1
+      subtract
+      getlocal3
+      setproperty         MultinameL([PrivateNamespace("valor.battlePass.tasks:GetBattlePassTask"), ProtectedNamespace("valor.battlePass.tasks:GetBattlePassTask"), StaticProtectedNs("valor.battlePass.tasks:GetBattlePassTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("valor.battlePass"), PackageNamespace("valor.battlePass.tasks"), PackageInternalNs("valor.battlePass.tasks"), PrivateNamespace("FilePrivateNS:GetBattlePassTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+L200:
+      hasnext2            12, 13
+      iftrue              L162
+
+L202:
+      findpropstrict      QName(ProtectedNamespace("kabam.lib.tasks:BaseTask"), "completeTask")
+      pushtrue
+      callpropvoid        QName(ProtectedNamespace("kabam.lib.tasks:BaseTask"), "completeTask"), 1
+
+      returnvoid
+     end ; code
+     try from L14 to L19 target L20 type QName(PackageNamespace(""), "Error") name QName(PackageInternalNs("valor.battlePass.tasks"), "e") end
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "makeRequestData")
+   method
+    name "makeRequestData"
+    refid "valor.battlePass.tasks:GetBattlePassTask/instance/makeRequestData"
+    returns QName(PackageNamespace(""), "Object")
+    body
+     maxstack 4
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      newobject           0
+      coerce              QName(PackageNamespace(""), "Object")
+      setlocal1
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "account")
+      callproperty        QName(Namespace("kabam.rotmg.account.core:Account"), "gameNetworkUserId"), 0
+      setproperty         Multiname("game_net_user_id", [PrivateNamespace("valor.battlePass.tasks:GetBattlePassTask"), ProtectedNamespace("valor.battlePass.tasks:GetBattlePassTask"), StaticProtectedNs("valor.battlePass.tasks:GetBattlePassTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("valor.battlePass"), PackageNamespace("valor.battlePass.tasks"), PackageInternalNs("valor.battlePass.tasks"), PrivateNamespace("FilePrivateNS:GetBattlePassTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "account")
+      callproperty        QName(Namespace("kabam.rotmg.account.core:Account"), "gameNetwork"), 0
+      setproperty         Multiname("game_net", [PrivateNamespace("valor.battlePass.tasks:GetBattlePassTask"), ProtectedNamespace("valor.battlePass.tasks:GetBattlePassTask"), StaticProtectedNs("valor.battlePass.tasks:GetBattlePassTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("valor.battlePass"), PackageNamespace("valor.battlePass.tasks"), PackageInternalNs("valor.battlePass.tasks"), PrivateNamespace("FilePrivateNS:GetBattlePassTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "account")
+      callproperty        QName(Namespace("kabam.rotmg.account.core:Account"), "playPlatform"), 0
+      setproperty         Multiname("play_platform", [PrivateNamespace("valor.battlePass.tasks:GetBattlePassTask"), ProtectedNamespace("valor.battlePass.tasks:GetBattlePassTask"), StaticProtectedNs("valor.battlePass.tasks:GetBattlePassTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("valor.battlePass"), PackageNamespace("valor.battlePass.tasks"), PackageInternalNs("valor.battlePass.tasks"), PrivateNamespace("FilePrivateNS:GetBattlePassTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      getlocal1
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.parameters"), "Parameters")
+      getproperty         QName(PackageNamespace(""), "sendLogin_")
+      setproperty         Multiname("do_login", [PrivateNamespace("valor.battlePass.tasks:GetBattlePassTask"), ProtectedNamespace("valor.battlePass.tasks:GetBattlePassTask"), StaticProtectedNs("valor.battlePass.tasks:GetBattlePassTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("valor.battlePass"), PackageNamespace("valor.battlePass.tasks"), PackageInternalNs("valor.battlePass.tasks"), PrivateNamespace("FilePrivateNS:GetBattlePassTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      getlex              QName(PackageNamespace("com.company.util"), "MoreObjectUtil")
+      getlocal1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "account")
+      pushtrue
+      callproperty        QName(Namespace("kabam.rotmg.account.core:Account"), "getCredentials"), 1
+      callpropvoid        QName(PackageNamespace(""), "addToObject"), 2
+
+      getlocal1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "valor.battlePass.tasks:GetBattlePassTask/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

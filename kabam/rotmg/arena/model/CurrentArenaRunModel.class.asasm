@@ -1,0 +1,291 @@
+class
+ refid "kabam.rotmg.arena.model:CurrentArenaRunModel"
+ instance QName(PackageNamespace("kabam.rotmg.arena.model"), "CurrentArenaRunModel")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  iinit
+   name "CurrentArenaRunModel"
+   refid "kabam.rotmg.arena.model:CurrentArenaRunModel/instance/init"
+   body
+    maxstack 2
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     findpropstrict      QName(PackageNamespace("org.osflash.signals"), "Signal")
+     constructprop       QName(PackageNamespace("org.osflash.signals"), "Signal"), 0
+     findproperty        QName(PackageNamespace(""), "waveUpdated")
+     swap
+     initproperty        QName(PackageNamespace(""), "waveUpdated")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.arena.model"), "ArenaLeaderboardEntry")
+     constructprop       QName(PackageNamespace("kabam.rotmg.arena.model"), "ArenaLeaderboardEntry"), 0
+     setproperty         QName(PackageNamespace(""), "entry")
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     callpropvoid        QName(PackageNamespace(""), "clear"), 0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait const QName(PackageNamespace(""), "waveUpdated") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait slot QName(PackageNamespace(""), "gameModel") flag METADATA type QName(PackageNamespace("kabam.rotmg.game.model"), "GameModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "classesModel") flag METADATA type QName(PackageNamespace("kabam.rotmg.classes.model"), "ClassesModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "factory") flag METADATA type QName(PackageNamespace("kabam.rotmg.assets.services"), "CharacterFactory")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "died") type QName(PackageNamespace(""), "Boolean") value False() end
+  trait slot QName(PackageNamespace(""), "entry") type QName(PackageNamespace("kabam.rotmg.arena.model"), "ArenaLeaderboardEntry") end
+  trait slot QName(PackageNamespace(""), "costOfContinue") type QName(PackageNamespace(""), "int") value Integer(0) end
+  trait method QName(PackageNamespace(""), "clear")
+   method
+    name "clear"
+    refid "kabam.rotmg.arena.model:CurrentArenaRunModel/instance/clear"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      pushfalse
+      setproperty         QName(PackageNamespace(""), "died")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "entry")
+      pushbyte            0
+      setproperty         QName(PackageNamespace(""), "currentWave")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "entry")
+      pushbyte            -1
+      setproperty         QName(PackageNamespace(""), "runtime")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "incrementWave")
+   method
+    name "incrementWave"
+    refid "kabam.rotmg.arena.model:CurrentArenaRunModel/instance/incrementWave"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "died")
+      iffalse             L9
+
+      getlocal0
+      pushfalse
+      setproperty         QName(PackageNamespace(""), "died")
+
+      jump                L19
+
+L9:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "entry")
+      dup
+      getproperty         QName(PackageNamespace(""), "currentWave")
+      convert_d
+      increment
+      setproperty         QName(PackageNamespace(""), "currentWave")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "waveUpdated")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+L19:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "hasEntry")
+   method
+    name "hasEntry"
+    refid "kabam.rotmg.arena.model:CurrentArenaRunModel/instance/hasEntry"
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "entry")
+      getproperty         QName(PackageNamespace(""), "runtime")
+      pushbyte            -1
+      equals
+      not
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "saveCurrentUserInfo")
+   method
+    name "saveCurrentUserInfo"
+    refid "kabam.rotmg.arena.model:CurrentArenaRunModel/instance/saveCurrentUserInfo"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 6
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      callpropvoid        QName(PackageNamespace(""), "clear"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "entry")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "gameModel")
+      getproperty         QName(PackageNamespace(""), "player")
+      getproperty         QName(PackageNamespace(""), "name_")
+      setproperty         QName(PackageNamespace(""), "name")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "classesModel")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "gameModel")
+      getproperty         QName(PackageNamespace(""), "player")
+      getproperty         QName(PackageNamespace(""), "objectType_")
+      callproperty        QName(PackageNamespace(""), "getCharacterClass"), 1
+      getproperty         QName(PackageNamespace(""), "skins")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "gameModel")
+      getproperty         QName(PackageNamespace(""), "player")
+      getproperty         QName(PackageNamespace(""), "skinId")
+      callproperty        QName(PackageNamespace(""), "getSkin"), 1
+      coerce              QName(PackageNamespace("kabam.rotmg.classes.model"), "CharacterSkin")
+      setlocal1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "entry")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "factory")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "template")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "is32x32")
+      iffalse             L37
+
+      pushbyte            25
+      jump                L44
+
+L37:
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "is16x16")
+      iffalse             L42
+
+      pushbyte            50
+      jump                L43
+
+L42:
+      pushdouble          100
+L43:
+      convert_d
+L44:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "gameModel")
+      getproperty         QName(PackageNamespace(""), "player")
+      callproperty        QName(PackageNamespace(""), "getTex1"), 0
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "gameModel")
+      getproperty         QName(PackageNamespace(""), "player")
+      callproperty        QName(PackageNamespace(""), "getTex2"), 0
+      callproperty        QName(PackageNamespace(""), "makeIcon"), 4
+      setproperty         QName(PackageNamespace(""), "playerBitmap")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "entry")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "gameModel")
+      getproperty         QName(PackageNamespace(""), "player")
+      getproperty         QName(PackageNamespace(""), "guildName_")
+      setproperty         QName(PackageNamespace(""), "guildName")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "entry")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "gameModel")
+      getproperty         QName(PackageNamespace(""), "player")
+      getproperty         QName(PackageNamespace(""), "guildRank_")
+      setproperty         QName(PackageNamespace(""), "guildRank")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "entry")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "gameModel")
+      getproperty         QName(PackageNamespace(""), "player")
+      getproperty         QName(PackageNamespace(""), "slotTypes_")
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "concat"), 0
+      setproperty         QName(PackageNamespace(""), "slotTypes")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "entry")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "gameModel")
+      getproperty         QName(PackageNamespace(""), "player")
+      getproperty         QName(PackageNamespace(""), "equipment_")
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "concat"), 0
+      setproperty         QName(PackageNamespace(""), "equipment")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "entry")
+      pushtrue
+      setproperty         QName(PackageNamespace(""), "isPersonalRecord")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.arena.model:CurrentArenaRunModel/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

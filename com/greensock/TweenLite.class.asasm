@@ -1,0 +1,4124 @@
+class
+ refid "com.greensock:TweenLite"
+ instance QName(PackageNamespace("com.greensock"), "TweenLite")
+  extends QName(PackageNamespace("com.greensock.core"), "Animation")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.greensock:TweenLite")
+  iinit
+   name "TweenLite"
+   refid "com.greensock:TweenLite/instance/init"
+   param QName(PackageNamespace(""), "Object")
+   param QName(PackageNamespace(""), "Number")
+   param QName(PackageNamespace(""), "Object")
+   flag HAS_PARAM_NAMES
+   paramname "target"
+   paramname "duration"
+   paramname "vars"
+   body
+    maxstack 16
+    localcount 6
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     pushbyte            0
+     setlocal            4
+
+     getlocal0
+     getlocal2
+     getlocal3
+     constructsuper      2
+
+     getlocal1
+     pushnull
+     ifne                L22
+
+     findpropstrict      QName(PackageNamespace(""), "Error")
+     pushstring          "Cannot tween a null object. Duration: "
+     getlocal2
+     add
+     pushstring          ", data: "
+     add
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "data")
+     add
+     constructprop       QName(PackageNamespace(""), "Error"), 1
+     throw
+
+L22:
+     getlex              QName(StaticProtectedNs("com.greensock:TweenLite"), "_overwriteLookup")
+     iftrue              L51
+
+     pushstring          "none"
+     pushbyte            0
+     pushstring          "all"
+     pushbyte            1
+     pushstring          "auto"
+     pushbyte            2
+     pushstring          "concurrent"
+     pushbyte            3
+     pushstring          "allOnStart"
+     pushbyte            4
+     pushstring          "preexisting"
+     pushbyte            5
+     pushstring          "true"
+     pushbyte            1
+     pushstring          "false"
+     pushbyte            0
+     newobject           8
+     findproperty        QName(StaticProtectedNs("com.greensock:TweenLite"), "_overwriteLookup")
+     swap
+     setproperty         QName(StaticProtectedNs("com.greensock:TweenLite"), "_overwriteLookup")
+
+     getlex              QName(PackageNamespace(""), "ticker")
+     pushstring          "enterFrame"
+     getlex              QName(PrivateNamespace("com.greensock:TweenLite"), "_dumpGarbage")
+     pushfalse
+     pushbyte            -1
+     pushtrue
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 5
+
+L51:
+     pushbyte            0
+     findproperty        QName(PackageNamespace(""), "ratio")
+     swap
+     setproperty         QName(PackageNamespace(""), "ratio")
+
+     getlocal0
+     getlocal1
+     setproperty         QName(PackageNamespace(""), "target")
+
+     getlex              QName(PackageNamespace(""), "defaultEase")
+     findproperty        QName(PackageNamespace(""), "_ease")
+     swap
+     setproperty         QName(PackageNamespace(""), "_ease")
+
+     pushstring          "overwrite"
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "vars")
+     in
+     iftrue              L71
+
+     getlex              QName(StaticProtectedNs("com.greensock:TweenLite"), "_overwriteLookup")
+     getlex              QName(PackageNamespace(""), "defaultOverwrite")
+     getproperty         MultinameL([PrivateNamespace("com.greensock:TweenLite"), ProtectedNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     jump                L90
+
+L71:
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "vars")
+     getproperty         Multiname("overwrite", [PrivateNamespace("com.greensock:TweenLite"), ProtectedNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     typeof
+     pushstring          "number"
+     ifstrictne          L83
+
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "vars")
+     getproperty         Multiname("overwrite", [PrivateNamespace("com.greensock:TweenLite"), ProtectedNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     pushbyte            0
+     rshift
+     jump                L89
+
+L83:
+     getlex              QName(StaticProtectedNs("com.greensock:TweenLite"), "_overwriteLookup")
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "vars")
+     getproperty         Multiname("overwrite", [PrivateNamespace("com.greensock:TweenLite"), ProtectedNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     getproperty         MultinameL([PrivateNamespace("com.greensock:TweenLite"), ProtectedNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     coerce_a
+L89:
+     coerce_a
+L90:
+     findproperty        QName(ProtectedNamespace("com.greensock:TweenLite"), "_overwrite")
+     swap
+     setproperty         QName(ProtectedNamespace("com.greensock:TweenLite"), "_overwrite")
+
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "target")
+     getlex              QName(PackageNamespace(""), "Array")
+     istypelate
+     dup
+     iffalse             L107
+
+     pop
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "target")
+     pushbyte            0
+     getproperty         MultinameL([PrivateNamespace("com.greensock:TweenLite"), ProtectedNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     typeof
+     pushstring          "object"
+     strictequals
+L107:
+     iffalse             L163
+
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "target")
+     callproperty        Multiname("concat", [PrivateNamespace("com.greensock:TweenLite"), ProtectedNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 0
+     findproperty        QName(ProtectedNamespace("com.greensock:TweenLite"), "_targets")
+     swap
+     setproperty         QName(ProtectedNamespace("com.greensock:TweenLite"), "_targets")
+
+     newarray            0
+     findproperty        QName(PackageNamespace(""), "_propLookup")
+     swap
+     setproperty         QName(PackageNamespace(""), "_propLookup")
+
+     newarray            0
+     findproperty        QName(ProtectedNamespace("com.greensock:TweenLite"), "_siblings")
+     swap
+     setproperty         QName(ProtectedNamespace("com.greensock:TweenLite"), "_siblings")
+
+     getlex              QName(ProtectedNamespace("com.greensock:TweenLite"), "_targets")
+     getproperty         QName(PackageNamespace(""), "length")
+     convert_i
+     setlocal            4
+
+     jump                L158
+
+L127:
+     label
+     getlex              QName(ProtectedNamespace("com.greensock:TweenLite"), "_siblings")
+     getlocal            4
+     findpropstrict      QName(StaticProtectedNs("com.greensock:TweenLite"), "_register")
+     getlex              QName(ProtectedNamespace("com.greensock:TweenLite"), "_targets")
+     getlocal            4
+     getproperty         MultinameL([PrivateNamespace("com.greensock:TweenLite"), ProtectedNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     getlocal0
+     pushfalse
+     callproperty        QName(StaticProtectedNs("com.greensock:TweenLite"), "_register"), 3
+     setproperty         MultinameL([PrivateNamespace("com.greensock:TweenLite"), ProtectedNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     getlex              QName(ProtectedNamespace("com.greensock:TweenLite"), "_overwrite")
+     pushbyte            1
+     ifne                L158
+
+     getlex              QName(ProtectedNamespace("com.greensock:TweenLite"), "_siblings")
+     getlocal            4
+     getproperty         MultinameL([PrivateNamespace("com.greensock:TweenLite"), ProtectedNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     getproperty         Multiname("length", [PrivateNamespace("com.greensock:TweenLite"), ProtectedNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     pushbyte            1
+     ifngt               L158
+
+     findpropstrict      QName(StaticProtectedNs("com.greensock:TweenLite"), "_applyOverwrite")
+     getlex              QName(ProtectedNamespace("com.greensock:TweenLite"), "_targets")
+     getlocal            4
+     getproperty         MultinameL([PrivateNamespace("com.greensock:TweenLite"), ProtectedNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     getlocal0
+     pushnull
+     pushbyte            1
+     getlex              QName(ProtectedNamespace("com.greensock:TweenLite"), "_siblings")
+     getlocal            4
+     getproperty         MultinameL([PrivateNamespace("com.greensock:TweenLite"), ProtectedNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     callpropvoid        QName(StaticProtectedNs("com.greensock:TweenLite"), "_applyOverwrite"), 5
+
+L158:
+     declocal_i          4
+     getlocal            4
+     pushbyte            -1
+     ifgt                L127
+
+     jump                L203
+
+L163:
+     newobject           0
+     findproperty        QName(PackageNamespace(""), "_propLookup")
+     swap
+     setproperty         QName(PackageNamespace(""), "_propLookup")
+
+     getlex              QName(StaticProtectedNs("com.greensock:TweenLite"), "_tweenLookup")
+     getlocal1
+     getproperty         MultinameL([PrivateNamespace("com.greensock:TweenLite"), ProtectedNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     findproperty        QName(ProtectedNamespace("com.greensock:TweenLite"), "_siblings")
+     swap
+     setproperty         QName(ProtectedNamespace("com.greensock:TweenLite"), "_siblings")
+
+     getlex              QName(ProtectedNamespace("com.greensock:TweenLite"), "_siblings")
+     pushnull
+     ifne                L188
+
+     getlex              QName(StaticProtectedNs("com.greensock:TweenLite"), "_tweenLookup")
+     getlocal1
+     getlocal0
+     newarray            1
+     dup
+     setlocal            5
+
+     setproperty         MultinameL([PrivateNamespace("com.greensock:TweenLite"), ProtectedNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     getlocal            5
+     findproperty        QName(ProtectedNamespace("com.greensock:TweenLite"), "_siblings")
+     swap
+     setproperty         QName(ProtectedNamespace("com.greensock:TweenLite"), "_siblings")
+
+     jump                L203
+
+L188:
+     getlex              QName(ProtectedNamespace("com.greensock:TweenLite"), "_siblings")
+     getlex              QName(ProtectedNamespace("com.greensock:TweenLite"), "_siblings")
+     getproperty         QName(PackageNamespace(""), "length")
+     getlocal0
+     setproperty         MultinameL([PrivateNamespace("com.greensock:TweenLite"), ProtectedNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     getlex              QName(ProtectedNamespace("com.greensock:TweenLite"), "_overwrite")
+     pushbyte            1
+     ifne                L203
+
+     findpropstrict      QName(StaticProtectedNs("com.greensock:TweenLite"), "_applyOverwrite")
+     getlocal1
+     getlocal0
+     pushnull
+     pushbyte            1
+     getlex              QName(ProtectedNamespace("com.greensock:TweenLite"), "_siblings")
+     callpropvoid        QName(StaticProtectedNs("com.greensock:TweenLite"), "_applyOverwrite"), 5
+
+L203:
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "vars")
+     getproperty         Multiname("immediateRender", [PrivateNamespace("com.greensock:TweenLite"), ProtectedNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     dup
+     iftrue              L228
+
+     pop
+     getlocal2
+     pushbyte            0
+     equals
+     dup
+     iffalse             L218
+
+     pop
+     getlex              QName(PackageNamespace(""), "_delay")
+     pushbyte            0
+     equals
+L218:
+     dup
+     iffalse             L227
+
+     pop
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "vars")
+     getproperty         Multiname("immediateRender", [PrivateNamespace("com.greensock:TweenLite"), ProtectedNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     pushfalse
+     equals
+     not
+L227:
+     coerce_a
+L228:
+     iffalse             L235
+
+     findpropstrict      QName(PackageNamespace(""), "render")
+     getlex              QName(PackageNamespace(""), "_delay")
+     negate
+     pushfalse
+     pushtrue
+     callpropvoid        QName(PackageNamespace(""), "render"), 3
+
+L235:
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "target") type QName(PackageNamespace(""), "Object") end
+  trait slot QName(PackageNamespace(""), "ratio") type QName(PackageNamespace(""), "Number") end
+  trait slot QName(PackageNamespace(""), "_propLookup") type QName(PackageNamespace(""), "Object") end
+  trait slot QName(PackageNamespace(""), "_firstPT") type QName(PackageNamespace("com.greensock.core"), "PropTween") end
+  trait slot QName(ProtectedNamespace("com.greensock:TweenLite"), "_targets") type QName(PackageNamespace(""), "Array") end
+  trait slot QName(PackageNamespace(""), "_ease") type QName(PackageNamespace("com.greensock.easing"), "Ease") end
+  trait slot QName(ProtectedNamespace("com.greensock:TweenLite"), "_easeType") type QName(PackageNamespace(""), "int") end
+  trait slot QName(ProtectedNamespace("com.greensock:TweenLite"), "_easePower") type QName(PackageNamespace(""), "int") end
+  trait slot QName(ProtectedNamespace("com.greensock:TweenLite"), "_siblings") type QName(PackageNamespace(""), "Array") end
+  trait slot QName(ProtectedNamespace("com.greensock:TweenLite"), "_overwrite") type QName(PackageNamespace(""), "int") end
+  trait slot QName(ProtectedNamespace("com.greensock:TweenLite"), "_overwrittenProps") type QName(PackageNamespace(""), "Object") end
+  trait slot QName(ProtectedNamespace("com.greensock:TweenLite"), "_notifyPluginsOfEnabled") type QName(PackageNamespace(""), "Boolean") end
+  trait slot QName(ProtectedNamespace("com.greensock:TweenLite"), "_startAt") type QName(PackageNamespace("com.greensock"), "TweenLite") end
+  trait method QName(ProtectedNamespace("com.greensock:TweenLite"), "_init")
+   method
+    name "_init"
+    refid "com.greensock:TweenLite/instance/com.greensock:TweenLite:_init"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 6
+     localcount 9
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushbyte            0
+      setlocal            5
+
+      pushfalse
+      setlocal2
+
+      pushnull
+      setlocal3
+
+      pushnull
+      setlocal1
+
+      pushnull
+      setlocal            6
+
+      getlex              QName(PackageNamespace(""), "vars")
+      getproperty         Multiname("immediateRender", [PrivateNamespace("com.greensock:TweenLite"), ProtectedNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      convert_b
+      setlocal            4
+
+      getlex              QName(PackageNamespace(""), "vars")
+      getproperty         Multiname("startAt", [PrivateNamespace("com.greensock:TweenLite"), ProtectedNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      iffalse             L58
+
+      getlex              QName(ProtectedNamespace("com.greensock:TweenLite"), "_startAt")
+      pushnull
+      ifeq                L26
+
+      getlex              QName(ProtectedNamespace("com.greensock:TweenLite"), "_startAt")
+      pushbyte            -1
+      pushtrue
+      callpropvoid        QName(PackageNamespace(""), "render"), 2
+
+L26:
+      getlex              QName(PackageNamespace(""), "vars")
+      getproperty         Multiname("startAt", [PrivateNamespace("com.greensock:TweenLite"), ProtectedNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      pushbyte            0
+      setproperty         Multiname("overwrite", [PrivateNamespace("com.greensock:TweenLite"), ProtectedNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      getlex              QName(PackageNamespace(""), "vars")
+      getproperty         Multiname("startAt", [PrivateNamespace("com.greensock:TweenLite"), ProtectedNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      pushtrue
+      setproperty         Multiname("immediateRender", [PrivateNamespace("com.greensock:TweenLite"), ProtectedNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      findpropstrict      QName(PackageNamespace("com.greensock"), "TweenLite")
+      getlex              QName(PackageNamespace(""), "target")
+      pushbyte            0
+      getlex              QName(PackageNamespace(""), "vars")
+      getproperty         Multiname("startAt", [PrivateNamespace("com.greensock:TweenLite"), ProtectedNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      constructprop       QName(PackageNamespace("com.greensock"), "TweenLite"), 3
+      findproperty        QName(ProtectedNamespace("com.greensock:TweenLite"), "_startAt")
+      swap
+      setproperty         QName(ProtectedNamespace("com.greensock:TweenLite"), "_startAt")
+
+      getlocal            4
+      iffalse             L57
+
+      getlex              QName(PackageNamespace(""), "_time")
+      pushbyte            0
+      ifngt               L53
+
+      pushnull
+      findproperty        QName(ProtectedNamespace("com.greensock:TweenLite"), "_startAt")
+      swap
+      setproperty         QName(ProtectedNamespace("com.greensock:TweenLite"), "_startAt")
+
+      jump                L57
+
+L53:
+      getlex              QName(PackageNamespace(""), "_duration")
+      pushbyte            0
+      ifstricteq          L57
+
+      returnvoid
+
+L57:
+      jump                L132
+
+L58:
+      getlex              QName(PackageNamespace(""), "vars")
+      getproperty         Multiname("runBackwards", [PrivateNamespace("com.greensock:TweenLite"), ProtectedNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      dup
+      iffalse             L68
+
+      pop
+      getlex              QName(PackageNamespace(""), "_duration")
+      pushbyte            0
+      strictequals
+      not
+      coerce_a
+L68:
+      iffalse             L132
+
+      getlex              QName(ProtectedNamespace("com.greensock:TweenLite"), "_startAt")
+      pushnull
+      ifeq                L81
+
+      getlex              QName(ProtectedNamespace("com.greensock:TweenLite"), "_startAt")
+      pushbyte            -1
+      pushtrue
+      callpropvoid        QName(PackageNamespace(""), "render"), 2
+
+      pushnull
+      findproperty        QName(ProtectedNamespace("com.greensock:TweenLite"), "_startAt")
+      swap
+      setproperty         QName(ProtectedNamespace("com.greensock:TweenLite"), "_startAt")
+
+      jump                L132
+
+L81:
+      newobject           0
+      coerce              QName(PackageNamespace(""), "Object")
+      setlocal            6
+
+      pushbyte            0
+      setlocal            8
+
+      getlex              QName(PackageNamespace(""), "vars")
+      setlocal            7
+
+      jump                L105
+
+L89:
+      label
+      getlocal            7
+      getlocal            8
+      nextname
+      coerce_s
+      setlocal1
+
+      getlocal1
+      getlex              QName(StaticProtectedNs("com.greensock:TweenLite"), "_reservedProps")
+      in
+      iftrue              L105
+
+      getlocal            6
+      getlocal1
+      getlex              QName(PackageNamespace(""), "vars")
+      getlocal1
+      getproperty         MultinameL([PrivateNamespace("com.greensock:TweenLite"), ProtectedNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      setproperty         MultinameL([PrivateNamespace("com.greensock:TweenLite"), ProtectedNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+L105:
+      hasnext2            7, 8
+      iftrue              L89
+
+      getlocal            6
+      pushbyte            0
+      setproperty         Multiname("overwrite", [PrivateNamespace("com.greensock:TweenLite"), ProtectedNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      getlocal            6
+      pushstring          "isFromStart"
+      setproperty         Multiname("data", [PrivateNamespace("com.greensock:TweenLite"), ProtectedNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      getlex              QName(PackageNamespace("com.greensock"), "TweenLite")
+      getlex              QName(PackageNamespace(""), "target")
+      pushbyte            0
+      getlocal            6
+      callproperty        QName(PackageNamespace(""), "to"), 3
+      findproperty        QName(ProtectedNamespace("com.greensock:TweenLite"), "_startAt")
+      swap
+      setproperty         QName(ProtectedNamespace("com.greensock:TweenLite"), "_startAt")
+
+      getlocal            4
+      iftrue              L128
+
+      getlex              QName(ProtectedNamespace("com.greensock:TweenLite"), "_startAt")
+      pushbyte            -1
+      pushtrue
+      callpropvoid        QName(PackageNamespace(""), "render"), 2
+
+      jump                L132
+
+L128:
+      getlex              QName(PackageNamespace(""), "_time")
+      pushbyte            0
+      ifstrictne          L132
+
+      returnvoid
+
+L132:
+      getlex              QName(PackageNamespace(""), "vars")
+      getproperty         Multiname("ease", [PrivateNamespace("com.greensock:TweenLite"), ProtectedNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getlex              QName(PackageNamespace("com.greensock.easing"), "Ease")
+      istypelate
+      iffalse             L158
+
+      getlex              QName(PackageNamespace(""), "vars")
+      getproperty         Multiname("easeParams", [PrivateNamespace("com.greensock:TweenLite"), ProtectedNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getlex              QName(PackageNamespace(""), "Array")
+      istypelate
+      iffalse             L151
+
+      getlex              QName(PackageNamespace(""), "vars")
+      getproperty         Multiname("ease", [PrivateNamespace("com.greensock:TweenLite"), ProtectedNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getproperty         Multiname("config", [PrivateNamespace("com.greensock:TweenLite"), ProtectedNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getlex              QName(PackageNamespace(""), "vars")
+      getproperty         Multiname("ease", [PrivateNamespace("com.greensock:TweenLite"), ProtectedNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getlex              QName(PackageNamespace(""), "vars")
+      getproperty         Multiname("easeParams", [PrivateNamespace("com.greensock:TweenLite"), ProtectedNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      callproperty        Multiname("apply", [PrivateNamespace("com.greensock:TweenLite"), ProtectedNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 2
+      jump                L154
+
+L151:
+      getlex              QName(PackageNamespace(""), "vars")
+      getproperty         Multiname("ease", [PrivateNamespace("com.greensock:TweenLite"), ProtectedNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      coerce_a
+L154:
+      findproperty        QName(PackageNamespace(""), "_ease")
+      swap
+      setproperty         QName(PackageNamespace(""), "_ease")
+
+      jump                L177
+
+L158:
+      getlex              QName(PackageNamespace(""), "vars")
+      getproperty         Multiname("ease", [PrivateNamespace("com.greensock:TweenLite"), ProtectedNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      typeof
+      pushstring          "function"
+      ifstrictne          L173
+
+      findpropstrict      QName(PackageNamespace("com.greensock.easing"), "Ease")
+      getlex              QName(PackageNamespace(""), "vars")
+      getproperty         Multiname("ease", [PrivateNamespace("com.greensock:TweenLite"), ProtectedNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getlex              QName(PackageNamespace(""), "vars")
+      getproperty         Multiname("easeParams", [PrivateNamespace("com.greensock:TweenLite"), ProtectedNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      constructprop       QName(PackageNamespace("com.greensock.easing"), "Ease"), 2
+      findproperty        QName(PackageNamespace(""), "_ease")
+      swap
+      setproperty         QName(PackageNamespace(""), "_ease")
+
+      jump                L177
+
+L173:
+      getlex              QName(PackageNamespace(""), "defaultEase")
+      findproperty        QName(PackageNamespace(""), "_ease")
+      swap
+      setproperty         QName(PackageNamespace(""), "_ease")
+
+L177:
+      getlex              QName(PackageNamespace(""), "_ease")
+      getproperty         QName(PackageNamespace(""), "_type")
+      findproperty        QName(ProtectedNamespace("com.greensock:TweenLite"), "_easeType")
+      swap
+      setproperty         QName(ProtectedNamespace("com.greensock:TweenLite"), "_easeType")
+
+      getlex              QName(PackageNamespace(""), "_ease")
+      getproperty         QName(PackageNamespace(""), "_power")
+      findproperty        QName(ProtectedNamespace("com.greensock:TweenLite"), "_easePower")
+      swap
+      setproperty         QName(ProtectedNamespace("com.greensock:TweenLite"), "_easePower")
+
+      pushnull
+      findproperty        QName(PackageNamespace(""), "_firstPT")
+      swap
+      setproperty         QName(PackageNamespace(""), "_firstPT")
+
+      getlex              QName(ProtectedNamespace("com.greensock:TweenLite"), "_targets")
+      iffalse             L230
+
+      getlex              QName(ProtectedNamespace("com.greensock:TweenLite"), "_targets")
+      getproperty         QName(PackageNamespace(""), "length")
+      convert_i
+      setlocal            5
+
+      jump                L225
+
+L198:
+      label
+      findpropstrict      QName(ProtectedNamespace("com.greensock:TweenLite"), "_initProps")
+      getlex              QName(ProtectedNamespace("com.greensock:TweenLite"), "_targets")
+      getlocal            5
+      getproperty         MultinameL([PrivateNamespace("com.greensock:TweenLite"), ProtectedNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getlex              QName(PackageNamespace(""), "_propLookup")
+      getlocal            5
+      newobject           0
+      dup
+      setlocal            8
+
+      setproperty         MultinameL([PrivateNamespace("com.greensock:TweenLite"), ProtectedNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      getlocal            8
+      getlex              QName(ProtectedNamespace("com.greensock:TweenLite"), "_siblings")
+      getlocal            5
+      getproperty         MultinameL([PrivateNamespace("com.greensock:TweenLite"), ProtectedNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getlex              QName(ProtectedNamespace("com.greensock:TweenLite"), "_overwrittenProps")
+      iffalse             L219
+
+      getlex              QName(ProtectedNamespace("com.greensock:TweenLite"), "_overwrittenProps")
+      getlocal            5
+      getproperty         MultinameL([PrivateNamespace("com.greensock:TweenLite"), ProtectedNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      jump                L221
+
+L219:
+      pushnull
+      coerce_a
+L221:
+      callproperty        QName(ProtectedNamespace("com.greensock:TweenLite"), "_initProps"), 4
+      iffalse             L225
+
+      pushtrue
+      setlocal2
+
+L225:
+      declocal_i          5
+      getlocal            5
+      pushbyte            -1
+      ifgt                L198
+
+      jump                L238
+
+L230:
+      findpropstrict      QName(ProtectedNamespace("com.greensock:TweenLite"), "_initProps")
+      getlex              QName(PackageNamespace(""), "target")
+      getlex              QName(PackageNamespace(""), "_propLookup")
+      getlex              QName(ProtectedNamespace("com.greensock:TweenLite"), "_siblings")
+      getlex              QName(ProtectedNamespace("com.greensock:TweenLite"), "_overwrittenProps")
+      callproperty        QName(ProtectedNamespace("com.greensock:TweenLite"), "_initProps"), 4
+      convert_b
+      setlocal2
+
+L238:
+      getlocal2
+      iffalse             L246
+
+      getlex              QName(PackageNamespace(""), "_onPluginEvent")
+      getglobalscope
+      pushstring          "_onInitAllProps"
+      getlocal0
+      call                2
+      pop
+L246:
+      getlex              QName(ProtectedNamespace("com.greensock:TweenLite"), "_overwrittenProps")
+      iffalse             L260
+
+      getlex              QName(PackageNamespace(""), "_firstPT")
+      pushnull
+      ifne                L260
+
+      findproperty        QName(PackageNamespace(""), "target")
+      getproperty         QName(PackageNamespace(""), "target")
+      typeof
+      pushstring          "function"
+      ifstricteq          L260
+
+      findpropstrict      QName(PackageNamespace(""), "_enabled")
+      pushfalse
+      pushfalse
+      callpropvoid        QName(PackageNamespace(""), "_enabled"), 2
+
+L260:
+      getlex              QName(PackageNamespace(""), "vars")
+      getproperty         Multiname("runBackwards", [PrivateNamespace("com.greensock:TweenLite"), ProtectedNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      iffalse             L287
+
+      getlex              QName(PackageNamespace(""), "_firstPT")
+      coerce              QName(PackageNamespace("com.greensock.core"), "PropTween")
+      setlocal3
+
+      jump                L285
+
+L267:
+      label
+      getlocal3
+      getproperty         QName(PackageNamespace(""), "s")
+      getlocal3
+      getproperty         QName(PackageNamespace(""), "c")
+      add
+      getlocal3
+      swap
+      setproperty         QName(PackageNamespace(""), "s")
+
+      getlocal3
+      getlocal3
+      getproperty         QName(PackageNamespace(""), "c")
+      negate
+      setproperty         QName(PackageNamespace(""), "c")
+
+      getlocal3
+      getproperty         QName(PackageNamespace(""), "_next")
+      coerce              QName(PackageNamespace("com.greensock.core"), "PropTween")
+      setlocal3
+
+L285:
+      getlocal3
+      iftrue              L267
+
+L287:
+      getlex              QName(PackageNamespace(""), "vars")
+      getproperty         Multiname("onUpdate", [PrivateNamespace("com.greensock:TweenLite"), ProtectedNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      findproperty        QName(ProtectedNamespace("com.greensock.core:Animation"), "_onUpdate")
+      swap
+      setproperty         QName(ProtectedNamespace("com.greensock.core:Animation"), "_onUpdate")
+
+      pushtrue
+      findproperty        QName(PackageNamespace(""), "_initted")
+      swap
+      setproperty         QName(PackageNamespace(""), "_initted")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(ProtectedNamespace("com.greensock:TweenLite"), "_initProps")
+   method
+    name "_initProps"
+    refid "com.greensock:TweenLite/instance/com.greensock:TweenLite:_initProps"
+    param QName(PackageNamespace(""), "Object")
+    param QName(PackageNamespace(""), "Object")
+    param QName(PackageNamespace(""), "Array")
+    param QName(PackageNamespace(""), "Object")
+    returns QName(PackageNamespace(""), "Boolean")
+    flag HAS_PARAM_NAMES
+    paramname "target"
+    paramname "propLookup"
+    paramname "siblings"
+    paramname "overwrittenProps"
+    body
+     maxstack 10
+     localcount 14
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      setlocal            5
+
+      pushbyte            0
+      setlocal            9
+
+      pushfalse
+      setlocal            7
+
+      pushnull
+      setlocal            8
+
+      pushnull
+      setlocal            6
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "vars")
+      coerce              QName(PackageNamespace(""), "Object")
+      setlocal            10
+
+      getlocal1
+      pushnull
+      ifne                L21
+
+      pushfalse
+      returnvalue
+
+L21:
+      pushbyte            0
+      setlocal            13
+
+      getlocal            10
+      setlocal            12
+
+      jump                L242
+
+L26:
+      label
+      getlocal            12
+      getlocal            13
+      nextname
+      coerce_s
+      setlocal            5
+
+      getlocal            10
+      getlocal            5
+      getproperty         MultinameL([PrivateNamespace("com.greensock:TweenLite"), ProtectedNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      coerce              QName(PackageNamespace(""), "Object")
+      setlocal            6
+
+      getlocal            5
+      getlex              QName(StaticProtectedNs("com.greensock:TweenLite"), "_reservedProps")
+      in
+      iffalse             L61
+
+      getlocal            6
+      getlex              QName(PackageNamespace(""), "Array")
+      istypelate
+      iffalse             L60
+
+      getlocal            6
+      pushstring          ""
+      callproperty        Multiname("join", [PrivateNamespace("com.greensock:TweenLite"), ProtectedNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 1
+      pushstring          "{self}"
+      callproperty        Multiname("indexOf", [PrivateNamespace("com.greensock:TweenLite"), ProtectedNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 1
+      pushbyte            -1
+      ifstricteq          L60
+
+      getlocal            10
+      getlocal            5
+      findpropstrict      QName(ProtectedNamespace("com.greensock.core:Animation"), "_swapSelfInParams")
+      getlocal            6
+      getlex              QName(PackageNamespace(""), "Array")
+      astypelate
+      callproperty        QName(ProtectedNamespace("com.greensock.core:Animation"), "_swapSelfInParams"), 1
+      setproperty         MultinameL([PrivateNamespace("com.greensock:TweenLite"), ProtectedNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+L60:
+      jump                L242
+
+L61:
+      getlocal            5
+      getlex              QName(PackageNamespace(""), "_plugins")
+      in
+      dup
+      iffalse             L79
+
+      pop
+      getlex              QName(PackageNamespace(""), "_plugins")
+      getlocal            5
+      getproperty         MultinameL([PrivateNamespace("com.greensock:TweenLite"), ProtectedNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      construct           0
+      dup
+      coerce              QName(PackageNamespace(""), "Object")
+      setlocal            8
+
+      getlocal1
+      getlocal            6
+      getlocal0
+      callproperty        Multiname("_onInitTween", [PrivateNamespace("com.greensock:TweenLite"), ProtectedNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 3
+      coerce_a
+L79:
+      iffalse             L139
+
+      findpropstrict      QName(PackageNamespace("com.greensock.core"), "PropTween")
+      getlocal            8
+      pushstring          "setRatio"
+      pushbyte            0
+      pushbyte            1
+      getlocal            5
+      pushtrue
+      getlex              QName(PackageNamespace(""), "_firstPT")
+      getlocal            8
+      getproperty         Multiname("_priority", [PrivateNamespace("com.greensock:TweenLite"), ProtectedNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      constructprop       QName(PackageNamespace("com.greensock.core"), "PropTween"), 8
+      findproperty        QName(PackageNamespace(""), "_firstPT")
+      swap
+      setproperty         QName(PackageNamespace(""), "_firstPT")
+
+      getlocal            8
+      getproperty         Multiname("_overwriteProps", [PrivateNamespace("com.greensock:TweenLite"), ProtectedNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getproperty         Multiname("length", [PrivateNamespace("com.greensock:TweenLite"), ProtectedNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      convert_i
+      setlocal            9
+
+      jump                L108
+
+L100:
+      label
+      getlocal2
+      getlocal            8
+      getproperty         Multiname("_overwriteProps", [PrivateNamespace("com.greensock:TweenLite"), ProtectedNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getlocal            9
+      getproperty         MultinameL([PrivateNamespace("com.greensock:TweenLite"), ProtectedNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getlex              QName(PackageNamespace(""), "_firstPT")
+      setproperty         MultinameL([PrivateNamespace("com.greensock:TweenLite"), ProtectedNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+L108:
+      declocal_i          9
+      getlocal            9
+      pushbyte            -1
+      ifgt                L100
+
+      getlocal            8
+      getproperty         Multiname("_priority", [PrivateNamespace("com.greensock:TweenLite"), ProtectedNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      dup
+      iftrue              L121
+
+      pop
+      pushstring          "_onInitAllProps"
+      getlocal            8
+      in
+      coerce_a
+L121:
+      iffalse             L124
+
+      pushtrue
+      setlocal            7
+
+L124:
+      pushstring          "_onDisable"
+      getlocal            8
+      in
+      dup
+      iftrue              L133
+
+      pop
+      pushstring          "_onEnable"
+      getlocal            8
+      in
+L133:
+      iffalse             L138
+
+      pushtrue
+      findproperty        QName(ProtectedNamespace("com.greensock:TweenLite"), "_notifyPluginsOfEnabled")
+      swap
+      setproperty         QName(ProtectedNamespace("com.greensock:TweenLite"), "_notifyPluginsOfEnabled")
+
+L138:
+      jump                L242
+
+L139:
+      getlocal2
+      getlocal            5
+      findpropstrict      QName(PackageNamespace("com.greensock.core"), "PropTween")
+      getlocal1
+      getlocal            5
+      pushbyte            0
+      pushbyte            1
+      getlocal            5
+      pushfalse
+      getlex              QName(PackageNamespace(""), "_firstPT")
+      constructprop       QName(PackageNamespace("com.greensock.core"), "PropTween"), 7
+      dup
+      setlocal            11
+
+      setproperty         MultinameL([PrivateNamespace("com.greensock:TweenLite"), ProtectedNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      getlocal            11
+      findproperty        QName(PackageNamespace(""), "_firstPT")
+      swap
+      setproperty         QName(PackageNamespace(""), "_firstPT")
+
+      getlex              QName(PackageNamespace(""), "_firstPT")
+      getlex              QName(PackageNamespace(""), "_firstPT")
+      getproperty         QName(PackageNamespace(""), "f")
+      iftrue              L166
+
+      getlocal1
+      getlocal            5
+      getproperty         MultinameL([PrivateNamespace("com.greensock:TweenLite"), ProtectedNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      convert_d
+      jump                L196
+
+L166:
+      getlocal1
+      dup
+      getlocal            5
+      pushstring          "set"
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "indexOf"), 1
+      dup
+      iftrue              L183
+
+      pop
+      pushstring          "get"
+      getlocal            5
+      pushbyte            3
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "substr"), 1
+      add
+      getlocal1
+      in
+      not
+      coerce_a
+L183:
+      iffalse             L186
+
+      getlocal            5
+      jump                L192
+
+L186:
+      pushstring          "get"
+      getlocal            5
+      pushbyte            3
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "substr"), 1
+      add
+      coerce_s
+L192:
+      getproperty         MultinameL([PrivateNamespace("com.greensock:TweenLite"), ProtectedNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      swap
+      call                0
+      coerce_a
+L196:
+      setproperty         QName(PackageNamespace(""), "s")
+
+      getlex              QName(PackageNamespace(""), "_firstPT")
+      getlocal            6
+      typeof
+      pushstring          "number"
+      ifstrictne          L208
+
+      getlocal            6
+      convert_d
+      getlex              QName(PackageNamespace(""), "_firstPT")
+      getproperty         QName(PackageNamespace(""), "s")
+      subtract
+      jump                L241
+
+L208:
+      getlocal            6
+      typeof
+      pushstring          "string"
+      strictequals
+      dup
+      iffalse             L220
+
+      pop
+      getlocal            6
+      pushbyte            1
+      callproperty        Multiname("charAt", [PrivateNamespace("com.greensock:TweenLite"), ProtectedNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 1
+      pushstring          "="
+      strictequals
+L220:
+      iffalse             L233
+
+      getlocal            6
+      pushbyte            0
+      callproperty        Multiname("charAt", [PrivateNamespace("com.greensock:TweenLite"), ProtectedNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 1
+      pushstring          "1"
+      add
+      convert_i
+      getlocal            6
+      pushbyte            2
+      callproperty        Multiname("substr", [PrivateNamespace("com.greensock:TweenLite"), ProtectedNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 1
+      convert_d
+      multiply
+      jump                L240
+
+L233:
+      getlocal            6
+      convert_d
+      dup
+      iftrue              L239
+
+      pop
+      pushdouble          0
+L239:
+      convert_d
+L240:
+      convert_d
+L241:
+      setproperty         QName(PackageNamespace(""), "c")
+
+L242:
+      hasnext2            12, 13
+      iftrue              L26
+
+      getlocal            4
+      iffalse             L258
+
+      findpropstrict      QName(PackageNamespace(""), "_kill")
+      getlocal            4
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "_kill"), 2
+      iffalse             L258
+
+      findpropstrict      QName(ProtectedNamespace("com.greensock:TweenLite"), "_initProps")
+      getlocal1
+      getlocal2
+      getlocal3
+      getlocal            4
+      callproperty        QName(ProtectedNamespace("com.greensock:TweenLite"), "_initProps"), 4
+      returnvalue
+
+L258:
+      getlex              QName(ProtectedNamespace("com.greensock:TweenLite"), "_overwrite")
+      pushbyte            1
+      ifngt               L287
+
+      getlex              QName(PackageNamespace(""), "_firstPT")
+      pushnull
+      ifeq                L287
+
+      getlocal3
+      getproperty         QName(PackageNamespace(""), "length")
+      pushbyte            1
+      ifngt               L287
+
+      findpropstrict      QName(StaticProtectedNs("com.greensock:TweenLite"), "_applyOverwrite")
+      getlocal1
+      getlocal0
+      getlocal2
+      getlex              QName(ProtectedNamespace("com.greensock:TweenLite"), "_overwrite")
+      getlocal3
+      callproperty        QName(StaticProtectedNs("com.greensock:TweenLite"), "_applyOverwrite"), 5
+      iffalse             L287
+
+      findpropstrict      QName(PackageNamespace(""), "_kill")
+      getlocal2
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "_kill"), 2
+
+      findpropstrict      QName(ProtectedNamespace("com.greensock:TweenLite"), "_initProps")
+      getlocal1
+      getlocal2
+      getlocal3
+      getlocal            4
+      callproperty        QName(ProtectedNamespace("com.greensock:TweenLite"), "_initProps"), 4
+      returnvalue
+
+L287:
+      getlocal            7
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "render") flag OVERRIDE
+   method
+    name "render"
+    refid "com.greensock:TweenLite/instance/render"
+    param QName(PackageNamespace(""), "Number")
+    param QName(PackageNamespace(""), "Boolean")
+    param QName(PackageNamespace(""), "Boolean")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_OPTIONAL
+    flag HAS_PARAM_NAMES
+    optional False()
+    optional False()
+    paramname "time"
+    paramname "suppressEvents"
+    paramname "force"
+    body
+     maxstack 5
+     localcount 10
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      setlocal            7
+
+      pushnull
+      setlocal            5
+
+      pushnan
+      setlocal            6
+
+      pushfalse
+      setlocal            9
+
+      pushnan
+      setlocal            4
+
+      getlex              QName(PackageNamespace(""), "_time")
+      convert_d
+      setlocal            8
+
+      getlocal1
+      getlex              QName(PackageNamespace(""), "_duration")
+      ifnge               L118
+
+      getlex              QName(PackageNamespace(""), "_duration")
+      dup
+      findproperty        QName(PackageNamespace(""), "_time")
+      swap
+      setproperty         QName(PackageNamespace(""), "_time")
+
+      findproperty        QName(PackageNamespace(""), "_totalTime")
+      swap
+      setproperty         QName(PackageNamespace(""), "_totalTime")
+
+      getlex              QName(PackageNamespace(""), "_ease")
+      getproperty         QName(PackageNamespace(""), "_calcEnd")
+      iffalse             L33
+
+      getlex              QName(PackageNamespace(""), "_ease")
+      pushbyte            1
+      callproperty        QName(PackageNamespace(""), "getRatio"), 1
+      jump                L34
+
+L33:
+      pushdouble          1
+L34:
+      findproperty        QName(PackageNamespace(""), "ratio")
+      swap
+      setproperty         QName(PackageNamespace(""), "ratio")
+
+      getlex              QName(PackageNamespace(""), "_reversed")
+      iftrue              L44
+
+      pushtrue
+      setlocal            9
+
+      pushstring          "onComplete"
+      coerce_s
+      setlocal            7
+
+L44:
+      getlex              QName(PackageNamespace(""), "_duration")
+      pushbyte            0
+      ifne                L117
+
+      getlex              QName(PackageNamespace(""), "_rawPrevTime")
+      convert_d
+      setlocal            6
+
+      getlex              QName(PackageNamespace(""), "_startTime")
+      getlex              QName(PackageNamespace(""), "_timeline")
+      getproperty         QName(PackageNamespace(""), "_duration")
+      ifstrictne          L56
+
+      pushdouble          0
+      setlocal1
+
+L56:
+      getlocal1
+      pushbyte            0
+      strictequals
+      dup
+      iftrue              L65
+
+      pop
+      getlocal            6
+      pushbyte            0
+      lessthan
+L65:
+      dup
+      iftrue              L71
+
+      pop
+      getlocal            6
+      getlex              QName(StaticProtectedNs("com.greensock.core:Animation"), "_tinyNum")
+      strictequals
+L71:
+      iffalse             L91
+
+      getlocal            6
+      getlocal1
+      ifstricteq          L91
+
+      pushtrue
+      setlocal3
+
+      getlocal            6
+      pushbyte            0
+      greaterthan
+      dup
+      iffalse             L87
+
+      pop
+      getlocal            6
+      getlex              QName(StaticProtectedNs("com.greensock.core:Animation"), "_tinyNum")
+      strictequals
+      not
+L87:
+      iffalse             L91
+
+      pushstring          "onReverseComplete"
+      coerce_s
+      setlocal            7
+
+L91:
+      getlocal2
+      not
+      dup
+      iftrue              L100
+
+      pop
+      getlocal1
+      pushbyte            0
+      strictequals
+      not
+L100:
+      dup
+      iftrue              L106
+
+      pop
+      getlex              QName(PackageNamespace(""), "_rawPrevTime")
+      getlocal1
+      strictequals
+L106:
+      iffalse             L109
+
+      getlocal1
+      jump                L111
+
+L109:
+      getlex              QName(StaticProtectedNs("com.greensock.core:Animation"), "_tinyNum")
+      convert_d
+L111:
+      dup
+      convert_d
+      setlocal            6
+
+      findproperty        QName(PackageNamespace(""), "_rawPrevTime")
+      swap
+      setproperty         QName(PackageNamespace(""), "_rawPrevTime")
+
+L117:
+      jump                L357
+
+L118:
+      getlocal1
+      pushdouble          9.99999999999999955e-08
+      ifnlt               L218
+
+      pushbyte            0
+      dup
+      findproperty        QName(PackageNamespace(""), "_time")
+      swap
+      setproperty         QName(PackageNamespace(""), "_time")
+
+      findproperty        QName(PackageNamespace(""), "_totalTime")
+      swap
+      setproperty         QName(PackageNamespace(""), "_totalTime")
+
+      getlex              QName(PackageNamespace(""), "_ease")
+      getproperty         QName(PackageNamespace(""), "_calcEnd")
+      iffalse             L136
+
+      getlex              QName(PackageNamespace(""), "_ease")
+      pushbyte            0
+      callproperty        QName(PackageNamespace(""), "getRatio"), 1
+      jump                L137
+
+L136:
+      pushdouble          0
+L137:
+      findproperty        QName(PackageNamespace(""), "ratio")
+      swap
+      setproperty         QName(PackageNamespace(""), "ratio")
+
+      getlocal            8
+      pushbyte            0
+      strictequals
+      not
+      dup
+      iftrue              L164
+
+      pop
+      getlex              QName(PackageNamespace(""), "_duration")
+      pushbyte            0
+      strictequals
+      dup
+      iffalse             L156
+
+      pop
+      getlex              QName(PackageNamespace(""), "_rawPrevTime")
+      pushbyte            0
+      greaterthan
+L156:
+      dup
+      iffalse             L163
+
+      pop
+      getlex              QName(PackageNamespace(""), "_rawPrevTime")
+      getlex              QName(StaticProtectedNs("com.greensock.core:Animation"), "_tinyNum")
+      strictequals
+      not
+L163:
+      convert_b
+L164:
+      iffalse             L171
+
+      pushstring          "onReverseComplete"
+      coerce_s
+      setlocal            7
+
+      getlex              QName(PackageNamespace(""), "_reversed")
+      convert_b
+      setlocal            9
+
+L171:
+      getlocal1
+      pushbyte            0
+      ifnlt               L213
+
+      pushfalse
+      findproperty        QName(PackageNamespace(""), "_active")
+      swap
+      setproperty         QName(PackageNamespace(""), "_active")
+
+      getlex              QName(PackageNamespace(""), "_duration")
+      pushbyte            0
+      ifne                L212
+
+      getlex              QName(PackageNamespace(""), "_rawPrevTime")
+      pushbyte            0
+      ifnge               L186
+
+      pushtrue
+      setlocal3
+
+L186:
+      getlocal2
+      not
+      dup
+      iftrue              L195
+
+      pop
+      getlocal1
+      pushbyte            0
+      strictequals
+      not
+L195:
+      dup
+      iftrue              L201
+
+      pop
+      getlex              QName(PackageNamespace(""), "_rawPrevTime")
+      getlocal1
+      strictequals
+L201:
+      iffalse             L204
+
+      getlocal1
+      jump                L206
+
+L204:
+      getlex              QName(StaticProtectedNs("com.greensock.core:Animation"), "_tinyNum")
+      convert_d
+L206:
+      dup
+      convert_d
+      setlocal            6
+
+      findproperty        QName(PackageNamespace(""), "_rawPrevTime")
+      swap
+      setproperty         QName(PackageNamespace(""), "_rawPrevTime")
+
+L212:
+      jump                L217
+
+L213:
+      getlex              QName(PackageNamespace(""), "_initted")
+      iftrue              L217
+
+      pushtrue
+      setlocal3
+
+L217:
+      jump                L357
+
+L218:
+      getlocal1
+      dup
+      findproperty        QName(PackageNamespace(""), "_time")
+      swap
+      setproperty         QName(PackageNamespace(""), "_time")
+
+      findproperty        QName(PackageNamespace(""), "_totalTime")
+      swap
+      setproperty         QName(PackageNamespace(""), "_totalTime")
+
+      getlex              QName(ProtectedNamespace("com.greensock:TweenLite"), "_easeType")
+      iffalse             L349
+
+      getlocal1
+      getlex              QName(PackageNamespace(""), "_duration")
+      divide
+      convert_d
+      setlocal            4
+
+      getlex              QName(ProtectedNamespace("com.greensock:TweenLite"), "_easeType")
+      pushbyte            1
+      equals
+      dup
+      iftrue              L249
+
+      pop
+      getlex              QName(ProtectedNamespace("com.greensock:TweenLite"), "_easeType")
+      pushbyte            3
+      equals
+      dup
+      iffalse             L248
+
+      pop
+      getlocal            4
+      pushdouble          0.5
+      greaterequals
+L248:
+      convert_b
+L249:
+      iffalse             L255
+
+      pushbyte            1
+      getlocal            4
+      subtract
+      convert_d
+      setlocal            4
+
+L255:
+      getlex              QName(ProtectedNamespace("com.greensock:TweenLite"), "_easeType")
+      pushbyte            3
+      ifne                L263
+
+      getlocal            4
+      pushbyte            2
+      multiply
+      convert_d
+      setlocal            4
+
+L263:
+      getlex              QName(ProtectedNamespace("com.greensock:TweenLite"), "_easePower")
+      pushbyte            1
+      ifne                L272
+
+      getlocal            4
+      getlocal            4
+      multiply
+      convert_d
+      setlocal            4
+
+      jump                L310
+
+L272:
+      getlex              QName(ProtectedNamespace("com.greensock:TweenLite"), "_easePower")
+      pushbyte            2
+      ifne                L283
+
+      getlocal            4
+      getlocal            4
+      getlocal            4
+      multiply
+      multiply
+      convert_d
+      setlocal            4
+
+      jump                L310
+
+L283:
+      getlex              QName(ProtectedNamespace("com.greensock:TweenLite"), "_easePower")
+      pushbyte            3
+      ifne                L296
+
+      getlocal            4
+      getlocal            4
+      getlocal            4
+      multiply
+      getlocal            4
+      multiply
+      multiply
+      convert_d
+      setlocal            4
+
+      jump                L310
+
+L296:
+      getlex              QName(ProtectedNamespace("com.greensock:TweenLite"), "_easePower")
+      pushbyte            4
+      ifne                L310
+
+      getlocal            4
+      getlocal            4
+      getlocal            4
+      multiply
+      getlocal            4
+      multiply
+      getlocal            4
+      multiply
+      multiply
+      convert_d
+      setlocal            4
+
+L310:
+      getlex              QName(ProtectedNamespace("com.greensock:TweenLite"), "_easeType")
+      pushbyte            1
+      ifne                L320
+
+      pushbyte            1
+      getlocal            4
+      subtract
+      findproperty        QName(PackageNamespace(""), "ratio")
+      swap
+      setproperty         QName(PackageNamespace(""), "ratio")
+
+      jump                L348
+
+L320:
+      getlex              QName(ProtectedNamespace("com.greensock:TweenLite"), "_easeType")
+      pushbyte            2
+      ifne                L328
+
+      getlocal            4
+      findproperty        QName(PackageNamespace(""), "ratio")
+      swap
+      setproperty         QName(PackageNamespace(""), "ratio")
+
+      jump                L348
+
+L328:
+      getlocal1
+      getlex              QName(PackageNamespace(""), "_duration")
+      divide
+      pushdouble          0.5
+      ifnlt               L340
+
+      getlocal            4
+      pushbyte            2
+      divide
+      findproperty        QName(PackageNamespace(""), "ratio")
+      swap
+      setproperty         QName(PackageNamespace(""), "ratio")
+
+      jump                L348
+
+L340:
+      pushbyte            1
+      getlocal            4
+      pushbyte            2
+      divide
+      subtract
+      findproperty        QName(PackageNamespace(""), "ratio")
+      swap
+      setproperty         QName(PackageNamespace(""), "ratio")
+
+L348:
+      jump                L357
+
+L349:
+      getlex              QName(PackageNamespace(""), "_ease")
+      getlocal1
+      getlex              QName(PackageNamespace(""), "_duration")
+      divide
+      callproperty        QName(PackageNamespace(""), "getRatio"), 1
+      findproperty        QName(PackageNamespace(""), "ratio")
+      swap
+      setproperty         QName(PackageNamespace(""), "ratio")
+
+L357:
+      getlex              QName(PackageNamespace(""), "_time")
+      getlocal            8
+      equals
+      dup
+      iffalse             L365
+
+      pop
+      getlocal3
+      not
+L365:
+      iffalse             L367
+
+      returnvoid
+
+L367:
+      getlex              QName(PackageNamespace(""), "_initted")
+      iftrue              L416
+
+      findpropstrict      QName(ProtectedNamespace("com.greensock:TweenLite"), "_init")
+      callpropvoid        QName(ProtectedNamespace("com.greensock:TweenLite"), "_init"), 0
+
+      getlex              QName(PackageNamespace(""), "_initted")
+      not
+      dup
+      iftrue              L378
+
+      pop
+      getlex              QName(PackageNamespace(""), "_gc")
+      convert_b
+L378:
+      iffalse             L380
+
+      returnvoid
+
+L380:
+      getlex              QName(PackageNamespace(""), "_time")
+      dup
+      iffalse             L387
+
+      pop
+      getlocal            9
+      not
+      coerce_a
+L387:
+      iffalse             L397
+
+      getlex              QName(PackageNamespace(""), "_ease")
+      getlex              QName(PackageNamespace(""), "_time")
+      getlex              QName(PackageNamespace(""), "_duration")
+      divide
+      callproperty        QName(PackageNamespace(""), "getRatio"), 1
+      findproperty        QName(PackageNamespace(""), "ratio")
+      swap
+      setproperty         QName(PackageNamespace(""), "ratio")
+
+      jump                L416
+
+L397:
+      getlocal            9
+      dup
+      iffalse             L404
+
+      pop
+      getlex              QName(PackageNamespace(""), "_ease")
+      getproperty         QName(PackageNamespace(""), "_calcEnd")
+      convert_b
+L404:
+      iffalse             L416
+
+      getlex              QName(PackageNamespace(""), "_ease")
+      getlex              QName(PackageNamespace(""), "_time")
+      pushbyte            0
+      ifstrictne          L411
+
+      pushbyte            0
+      jump                L412
+
+L411:
+      pushdouble          1
+L412:
+      callproperty        QName(PackageNamespace(""), "getRatio"), 1
+      findproperty        QName(PackageNamespace(""), "ratio")
+      swap
+      setproperty         QName(PackageNamespace(""), "ratio")
+
+L416:
+      getlex              QName(PackageNamespace(""), "_active")
+      iftrue              L438
+
+      getlex              QName(PackageNamespace(""), "_paused")
+      not
+      dup
+      iffalse             L427
+
+      pop
+      getlex              QName(PackageNamespace(""), "_time")
+      getlocal            8
+      strictequals
+      not
+L427:
+      dup
+      iffalse             L433
+
+      pop
+      getlocal1
+      pushbyte            0
+      greaterequals
+L433:
+      iffalse             L438
+
+      pushtrue
+      findproperty        QName(PackageNamespace(""), "_active")
+      swap
+      setproperty         QName(PackageNamespace(""), "_active")
+
+L438:
+      getlocal            8
+      pushbyte            0
+      ifne                L480
+
+      getlex              QName(ProtectedNamespace("com.greensock:TweenLite"), "_startAt")
+      pushnull
+      ifeq                L458
+
+      getlocal1
+      pushbyte            0
+      ifnge               L453
+
+      getlex              QName(ProtectedNamespace("com.greensock:TweenLite"), "_startAt")
+      getlocal1
+      getlocal2
+      getlocal3
+      callpropvoid        QName(PackageNamespace(""), "render"), 3
+
+      jump                L458
+
+L453:
+      getlocal            7
+      iftrue              L458
+
+      pushstring          "_dummyGS"
+      coerce_s
+      setlocal            7
+
+L458:
+      getlex              QName(PackageNamespace(""), "vars")
+      getproperty         Multiname("onStart", [PrivateNamespace("com.greensock:TweenLite"), ProtectedNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      iffalse             L480
+
+      getlex              QName(PackageNamespace(""), "_time")
+      pushbyte            0
+      equals
+      not
+      dup
+      iftrue              L471
+
+      pop
+      getlex              QName(PackageNamespace(""), "_duration")
+      pushbyte            0
+      equals
+L471:
+      iffalse             L480
+
+      getlocal2
+      iftrue              L480
+
+      getlex              QName(PackageNamespace(""), "vars")
+      getproperty         Multiname("onStart", [PrivateNamespace("com.greensock:TweenLite"), ProtectedNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      pushnull
+      getlex              QName(PackageNamespace(""), "vars")
+      getproperty         Multiname("onStartParams", [PrivateNamespace("com.greensock:TweenLite"), ProtectedNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      callpropvoid        Multiname("apply", [PrivateNamespace("com.greensock:TweenLite"), ProtectedNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 2
+
+L480:
+      getlex              QName(PackageNamespace(""), "_firstPT")
+      coerce              QName(PackageNamespace("com.greensock.core"), "PropTween")
+      setlocal            5
+
+      jump                L521
+
+L484:
+      label
+      getlocal            5
+      getproperty         QName(PackageNamespace(""), "f")
+      iffalse             L505
+
+      getlocal            5
+      getproperty         QName(PackageNamespace(""), "t")
+      dup
+      getlocal            5
+      getproperty         QName(PackageNamespace(""), "p")
+      getproperty         MultinameL([PrivateNamespace("com.greensock:TweenLite"), ProtectedNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      swap
+      getlocal            5
+      getproperty         QName(PackageNamespace(""), "c")
+      getlex              QName(PackageNamespace(""), "ratio")
+      multiply
+      getlocal            5
+      getproperty         QName(PackageNamespace(""), "s")
+      add
+      call                1
+      pop
+      jump                L517
+
+L505:
+      getlocal            5
+      getproperty         QName(PackageNamespace(""), "t")
+      getlocal            5
+      getproperty         QName(PackageNamespace(""), "p")
+      getlocal            5
+      getproperty         QName(PackageNamespace(""), "c")
+      getlex              QName(PackageNamespace(""), "ratio")
+      multiply
+      getlocal            5
+      getproperty         QName(PackageNamespace(""), "s")
+      add
+      setproperty         MultinameL([PrivateNamespace("com.greensock:TweenLite"), ProtectedNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+L517:
+      getlocal            5
+      getproperty         QName(PackageNamespace(""), "_next")
+      coerce              QName(PackageNamespace("com.greensock.core"), "PropTween")
+      setlocal            5
+
+L521:
+      getlocal            5
+      iftrue              L484
+
+      getlex              QName(ProtectedNamespace("com.greensock.core:Animation"), "_onUpdate")
+      pushnull
+      ifeq                L566
+
+      getlocal1
+      pushbyte            0
+      lessthan
+      dup
+      iffalse             L536
+
+      pop
+      getlex              QName(ProtectedNamespace("com.greensock:TweenLite"), "_startAt")
+      pushnull
+      equals
+      not
+L536:
+      dup
+      iffalse             L543
+
+      pop
+      getlex              QName(PackageNamespace(""), "_startTime")
+      pushbyte            0
+      equals
+      not
+L543:
+      iffalse             L549
+
+      getlex              QName(ProtectedNamespace("com.greensock:TweenLite"), "_startAt")
+      getlocal1
+      getlocal2
+      getlocal3
+      callpropvoid        QName(PackageNamespace(""), "render"), 3
+
+L549:
+      getlocal2
+      iftrue              L566
+
+      getlex              QName(PackageNamespace(""), "_time")
+      getlocal            8
+      strictequals
+      not
+      dup
+      iftrue              L560
+
+      pop
+      getlocal            9
+      convert_b
+L560:
+      iffalse             L566
+
+      getlex              QName(ProtectedNamespace("com.greensock.core:Animation"), "_onUpdate")
+      pushnull
+      getlex              QName(PackageNamespace(""), "vars")
+      getproperty         Multiname("onUpdateParams", [PrivateNamespace("com.greensock:TweenLite"), ProtectedNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "apply"), 2
+
+L566:
+      getlocal            7
+      iffalse             L649
+
+      getlex              QName(PackageNamespace(""), "_gc")
+      iftrue              L649
+
+      getlocal1
+      pushbyte            0
+      lessthan
+      dup
+      iffalse             L580
+
+      pop
+      getlex              QName(ProtectedNamespace("com.greensock:TweenLite"), "_startAt")
+      pushnull
+      equals
+      not
+L580:
+      dup
+      iffalse             L586
+
+      pop
+      getlex              QName(ProtectedNamespace("com.greensock.core:Animation"), "_onUpdate")
+      pushnull
+      equals
+L586:
+      dup
+      iffalse             L593
+
+      pop
+      getlex              QName(PackageNamespace(""), "_startTime")
+      pushbyte            0
+      equals
+      not
+L593:
+      iffalse             L599
+
+      getlex              QName(ProtectedNamespace("com.greensock:TweenLite"), "_startAt")
+      getlocal1
+      getlocal2
+      getlocal3
+      callpropvoid        QName(PackageNamespace(""), "render"), 3
+
+L599:
+      getlocal            9
+      iffalse             L612
+
+      getlex              QName(PackageNamespace(""), "_timeline")
+      getproperty         QName(PackageNamespace(""), "autoRemoveChildren")
+      iffalse             L608
+
+      findpropstrict      QName(PackageNamespace(""), "_enabled")
+      pushfalse
+      pushfalse
+      callpropvoid        QName(PackageNamespace(""), "_enabled"), 2
+
+L608:
+      pushfalse
+      findproperty        QName(PackageNamespace(""), "_active")
+      swap
+      setproperty         QName(PackageNamespace(""), "_active")
+
+L612:
+      getlocal2
+      iftrue              L628
+
+      getlex              QName(PackageNamespace(""), "vars")
+      getlocal            7
+      getproperty         MultinameL([PrivateNamespace("com.greensock:TweenLite"), ProtectedNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      iffalse             L628
+
+      getlex              QName(PackageNamespace(""), "vars")
+      getlocal            7
+      getproperty         MultinameL([PrivateNamespace("com.greensock:TweenLite"), ProtectedNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      pushnull
+      getlex              QName(PackageNamespace(""), "vars")
+      getlocal            7
+      pushstring          "Params"
+      add
+      getproperty         MultinameL([PrivateNamespace("com.greensock:TweenLite"), ProtectedNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      callpropvoid        Multiname("apply", [PrivateNamespace("com.greensock:TweenLite"), ProtectedNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 2
+
+L628:
+      getlex              QName(PackageNamespace(""), "_duration")
+      pushbyte            0
+      strictequals
+      dup
+      iffalse             L637
+
+      pop
+      getlex              QName(PackageNamespace(""), "_rawPrevTime")
+      getlex              QName(StaticProtectedNs("com.greensock.core:Animation"), "_tinyNum")
+      strictequals
+L637:
+      dup
+      iffalse             L644
+
+      pop
+      getlocal            6
+      getlex              QName(StaticProtectedNs("com.greensock.core:Animation"), "_tinyNum")
+      strictequals
+      not
+L644:
+      iffalse             L649
+
+      pushbyte            0
+      findproperty        QName(PackageNamespace(""), "_rawPrevTime")
+      swap
+      setproperty         QName(PackageNamespace(""), "_rawPrevTime")
+
+L649:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "_kill") flag OVERRIDE
+   method
+    name "_kill"
+    refid "com.greensock:TweenLite/instance/_kill"
+    param QName(PackageNamespace(""), "Object")
+    param QName(PackageNamespace(""), "Object")
+    returns QName(PackageNamespace(""), "Boolean")
+    flag HAS_OPTIONAL
+    flag HAS_PARAM_NAMES
+    optional Null()
+    optional Null()
+    paramname "vars"
+    paramname "target"
+    body
+     maxstack 4
+     localcount 14
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      setlocal            5
+
+      pushnull
+      setlocal3
+
+      pushnull
+      setlocal            4
+
+      pushnull
+      setlocal            8
+
+      pushfalse
+      setlocal            10
+
+      pushnull
+      setlocal            9
+
+      pushfalse
+      setlocal            6
+
+      pushbyte            0
+      setlocal            7
+
+      getlocal1
+      pushstring          "all"
+      ifstrictne          L24
+
+      pushnull
+      coerce              QName(PackageNamespace(""), "Object")
+      setlocal1
+
+L24:
+      getlocal1
+      pushnull
+      ifne                L43
+
+      getlocal2
+      pushnull
+      equals
+      dup
+      iftrue              L37
+
+      pop
+      getlocal2
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "target")
+      equals
+L37:
+      iffalse             L43
+
+      findpropstrict      QName(PackageNamespace(""), "_enabled")
+      pushfalse
+      pushfalse
+      callproperty        QName(PackageNamespace(""), "_enabled"), 2
+      returnvalue
+
+L43:
+      getlocal2
+      dup
+      iftrue              L49
+
+      pop
+      getlex              QName(ProtectedNamespace("com.greensock:TweenLite"), "_targets")
+      coerce_a
+L49:
+      dup
+      iftrue              L55
+
+      pop
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "target")
+      coerce_a
+L55:
+      coerce              QName(PackageNamespace(""), "Object")
+      setlocal2
+
+      getlocal2
+      getlex              QName(PackageNamespace(""), "Array")
+      istypelate
+      dup
+      iffalse             L69
+
+      pop
+      getlocal2
+      pushbyte            0
+      getproperty         MultinameL([PrivateNamespace("com.greensock:TweenLite"), ProtectedNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      typeof
+      pushstring          "object"
+      strictequals
+L69:
+      iffalse             L90
+
+      getlocal2
+      getproperty         Multiname("length", [PrivateNamespace("com.greensock:TweenLite"), ProtectedNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      convert_i
+      setlocal            7
+
+      jump                L85
+
+L75:
+      label
+      findpropstrict      QName(PackageNamespace(""), "_kill")
+      getlocal1
+      getlocal2
+      getlocal            7
+      getproperty         MultinameL([PrivateNamespace("com.greensock:TweenLite"), ProtectedNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      callproperty        QName(PackageNamespace(""), "_kill"), 2
+      iffalse             L85
+
+      pushtrue
+      setlocal            10
+
+L85:
+      declocal_i          7
+      getlocal            7
+      pushbyte            -1
+      ifgt                L75
+
+      jump                L325
+
+L90:
+      getlex              QName(ProtectedNamespace("com.greensock:TweenLite"), "_targets")
+      iffalse             L149
+
+      getlex              QName(ProtectedNamespace("com.greensock:TweenLite"), "_targets")
+      getproperty         QName(PackageNamespace(""), "length")
+      convert_i
+      setlocal            7
+
+      jump                L144
+
+L97:
+      label
+      getlocal2
+      getlex              QName(ProtectedNamespace("com.greensock:TweenLite"), "_targets")
+      getlocal            7
+      getproperty         MultinameL([PrivateNamespace("com.greensock:TweenLite"), ProtectedNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      ifstrictne          L144
+
+      getlex              QName(PackageNamespace(""), "_propLookup")
+      getlocal            7
+      getproperty         MultinameL([PrivateNamespace("com.greensock:TweenLite"), ProtectedNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      dup
+      iftrue              L111
+
+      pop
+      newobject           0
+      coerce_a
+L111:
+      coerce              QName(PackageNamespace(""), "Object")
+      setlocal            8
+
+      getlex              QName(ProtectedNamespace("com.greensock:TweenLite"), "_overwrittenProps")
+      dup
+      iftrue              L119
+
+      pop
+      newarray            0
+      coerce_a
+L119:
+      findproperty        QName(ProtectedNamespace("com.greensock:TweenLite"), "_overwrittenProps")
+      swap
+      setproperty         QName(ProtectedNamespace("com.greensock:TweenLite"), "_overwrittenProps")
+
+      getlex              QName(ProtectedNamespace("com.greensock:TweenLite"), "_overwrittenProps")
+      getlocal            7
+      getlocal1
+      iffalse             L135
+
+      getlex              QName(ProtectedNamespace("com.greensock:TweenLite"), "_overwrittenProps")
+      getlocal            7
+      getproperty         MultinameL([PrivateNamespace("com.greensock:TweenLite"), ProtectedNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      dup
+      iftrue              L134
+
+      pop
+      newobject           0
+      coerce_a
+L134:
+      jump                L137
+
+L135:
+      pushstring          "all"
+      coerce_a
+L137:
+      dup
+      setlocal            11
+
+      setproperty         MultinameL([PrivateNamespace("com.greensock:TweenLite"), ProtectedNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      getlocal            11
+      coerce              QName(PackageNamespace(""), "Object")
+      setlocal            5
+
+      jump                L148
+
+L144:
+      declocal_i          7
+      getlocal            7
+      pushbyte            -1
+      ifgt                L97
+
+L148:
+      jump                L175
+
+L149:
+      getlocal2
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "target")
+      ifstricteq          L155
+
+      pushfalse
+      returnvalue
+
+L155:
+      getlex              QName(PackageNamespace(""), "_propLookup")
+      coerce              QName(PackageNamespace(""), "Object")
+      setlocal            8
+
+      getlocal1
+      iffalse             L167
+
+      getlex              QName(ProtectedNamespace("com.greensock:TweenLite"), "_overwrittenProps")
+      dup
+      iftrue              L166
+
+      pop
+      newobject           0
+      coerce              QName(PackageNamespace(""), "Object")
+L166:
+      jump                L169
+
+L167:
+      pushstring          "all"
+      coerce_a
+L169:
+      dup
+      findproperty        QName(ProtectedNamespace("com.greensock:TweenLite"), "_overwrittenProps")
+      swap
+      setproperty         QName(ProtectedNamespace("com.greensock:TweenLite"), "_overwrittenProps")
+
+      coerce              QName(PackageNamespace(""), "Object")
+      setlocal            5
+
+L175:
+      getlocal            8
+      iffalse             L325
+
+      getlocal1
+      dup
+      iftrue              L183
+
+      pop
+      getlocal            8
+      coerce              QName(PackageNamespace(""), "Object")
+L183:
+      coerce              QName(PackageNamespace(""), "Object")
+      setlocal            9
+
+      getlocal1
+      getlocal            5
+      equals
+      not
+      dup
+      iffalse             L196
+
+      pop
+      getlocal            5
+      pushstring          "all"
+      equals
+      not
+L196:
+      dup
+      iffalse             L203
+
+      pop
+      getlocal1
+      getlocal            8
+      equals
+      not
+L203:
+      dup
+      iffalse             L220
+
+      pop
+      getlocal1
+      typeof
+      pushstring          "object"
+      equals
+      not
+      dup
+      iftrue              L219
+
+      pop
+      getlocal1
+      getproperty         Multiname("_tempKill", [PrivateNamespace("com.greensock:TweenLite"), ProtectedNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      pushtrue
+      equals
+      not
+L219:
+      convert_b
+L220:
+      convert_b
+      setlocal            6
+
+      pushbyte            0
+      setlocal            13
+
+      getlocal            9
+      setlocal            12
+
+      jump                L310
+
+L227:
+      label
+      getlocal            12
+      getlocal            13
+      nextname
+      coerce_s
+      setlocal3
+
+      getlocal            8
+      getlocal3
+      getproperty         MultinameL([PrivateNamespace("com.greensock:TweenLite"), ProtectedNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      coerce              QName(PackageNamespace("com.greensock.core"), "PropTween")
+      dup
+      setlocal            4
+
+      pushnull
+      ifeq                L304
+
+      getlocal            4
+      getproperty         QName(PackageNamespace(""), "pg")
+      dup
+      iffalse             L251
+
+      pop
+      getlocal            4
+      getproperty         QName(PackageNamespace(""), "t")
+      getlocal            9
+      callproperty        Multiname("_kill", [PrivateNamespace("com.greensock:TweenLite"), ProtectedNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 1
+      coerce_a
+L251:
+      iffalse             L254
+
+      pushtrue
+      setlocal            10
+
+L254:
+      getlocal            4
+      getproperty         QName(PackageNamespace(""), "pg")
+      not
+      dup
+      iftrue              L266
+
+      pop
+      getlocal            4
+      getproperty         QName(PackageNamespace(""), "t")
+      getproperty         Multiname("_overwriteProps", [PrivateNamespace("com.greensock:TweenLite"), ProtectedNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getproperty         Multiname("length", [PrivateNamespace("com.greensock:TweenLite"), ProtectedNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      pushbyte            0
+      strictequals
+L266:
+      iffalse             L300
+
+      getlocal            4
+      getproperty         QName(PackageNamespace(""), "_prev")
+      iffalse             L276
+
+      getlocal            4
+      getproperty         QName(PackageNamespace(""), "_prev")
+      getlocal            4
+      getproperty         QName(PackageNamespace(""), "_next")
+      setproperty         QName(PackageNamespace(""), "_next")
+
+      jump                L284
+
+L276:
+      getlocal            4
+      getlex              QName(PackageNamespace(""), "_firstPT")
+      ifne                L284
+
+      getlocal            4
+      getproperty         QName(PackageNamespace(""), "_next")
+      findproperty        QName(PackageNamespace(""), "_firstPT")
+      swap
+      setproperty         QName(PackageNamespace(""), "_firstPT")
+
+L284:
+      getlocal            4
+      getproperty         QName(PackageNamespace(""), "_next")
+      iffalse             L292
+
+      getlocal            4
+      getproperty         QName(PackageNamespace(""), "_next")
+      getlocal            4
+      getproperty         QName(PackageNamespace(""), "_prev")
+      setproperty         QName(PackageNamespace(""), "_prev")
+
+L292:
+      getlocal            4
+      getlocal            4
+      pushnull
+      dup
+      setlocal            11
+
+      setproperty         QName(PackageNamespace(""), "_prev")
+
+      getlocal            11
+      setproperty         QName(PackageNamespace(""), "_next")
+
+L300:
+      getlocal            8
+      getlocal3
+      deleteproperty      MultinameL([PrivateNamespace("com.greensock:TweenLite"), ProtectedNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      pop
+L304:
+      getlocal            6
+      iffalse             L310
+
+      getlocal            5
+      getlocal3
+      pushbyte            1
+      setproperty         MultinameL([PrivateNamespace("com.greensock:TweenLite"), ProtectedNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+L310:
+      hasnext2            12, 13
+      iftrue              L227
+
+      getlex              QName(PackageNamespace(""), "_firstPT")
+      pushnull
+      equals
+      dup
+      iffalse             L320
+
+      pop
+      getlex              QName(PackageNamespace(""), "_initted")
+      convert_b
+L320:
+      iffalse             L325
+
+      findpropstrict      QName(PackageNamespace(""), "_enabled")
+      pushfalse
+      pushfalse
+      callpropvoid        QName(PackageNamespace(""), "_enabled"), 2
+
+L325:
+      getlocal            10
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "invalidate") flag OVERRIDE
+   method
+    name "invalidate"
+    refid "com.greensock:TweenLite/instance/invalidate"
+    body
+     maxstack 4
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(ProtectedNamespace("com.greensock:TweenLite"), "_notifyPluginsOfEnabled")
+      iffalse             L10
+
+      getlex              QName(PackageNamespace(""), "_onPluginEvent")
+      getglobalscope
+      pushstring          "_onDisable"
+      getlocal0
+      call                2
+      pop
+L10:
+      pushnull
+      findproperty        QName(PackageNamespace(""), "_firstPT")
+      swap
+      setproperty         QName(PackageNamespace(""), "_firstPT")
+
+      pushnull
+      findproperty        QName(ProtectedNamespace("com.greensock:TweenLite"), "_overwrittenProps")
+      swap
+      setproperty         QName(ProtectedNamespace("com.greensock:TweenLite"), "_overwrittenProps")
+
+      pushnull
+      findproperty        QName(ProtectedNamespace("com.greensock.core:Animation"), "_onUpdate")
+      swap
+      setproperty         QName(ProtectedNamespace("com.greensock.core:Animation"), "_onUpdate")
+
+      pushnull
+      findproperty        QName(ProtectedNamespace("com.greensock:TweenLite"), "_startAt")
+      swap
+      setproperty         QName(ProtectedNamespace("com.greensock:TweenLite"), "_startAt")
+
+      pushfalse
+      dup
+      findproperty        QName(ProtectedNamespace("com.greensock:TweenLite"), "_notifyPluginsOfEnabled")
+      swap
+      setproperty         QName(ProtectedNamespace("com.greensock:TweenLite"), "_notifyPluginsOfEnabled")
+
+      dup
+      findproperty        QName(PackageNamespace(""), "_active")
+      swap
+      setproperty         QName(PackageNamespace(""), "_active")
+
+      findproperty        QName(PackageNamespace(""), "_initted")
+      swap
+      setproperty         QName(PackageNamespace(""), "_initted")
+
+      getlex              QName(ProtectedNamespace("com.greensock:TweenLite"), "_targets")
+      iffalse             L42
+
+      newobject           0
+      jump                L44
+
+L42:
+      newarray            0
+      coerce_a
+L44:
+      findproperty        QName(PackageNamespace(""), "_propLookup")
+      swap
+      setproperty         QName(PackageNamespace(""), "_propLookup")
+
+      getlocal0
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "_enabled") flag OVERRIDE
+   method
+    name "_enabled"
+    refid "com.greensock:TweenLite/instance/_enabled"
+    param QName(PackageNamespace(""), "Boolean")
+    param QName(PackageNamespace(""), "Boolean")
+    returns QName(PackageNamespace(""), "Boolean")
+    flag HAS_OPTIONAL
+    flag HAS_PARAM_NAMES
+    optional False()
+    paramname "enabled"
+    paramname "ignoreTimeline"
+    body
+     maxstack 6
+     localcount 4
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushbyte            0
+      setlocal3
+
+      getlocal1
+      dup
+      iffalse             L10
+
+      pop
+      getlex              QName(PackageNamespace(""), "_gc")
+      convert_b
+L10:
+      iffalse             L42
+
+      getlex              QName(ProtectedNamespace("com.greensock:TweenLite"), "_targets")
+      iffalse             L34
+
+      getlex              QName(ProtectedNamespace("com.greensock:TweenLite"), "_targets")
+      getproperty         QName(PackageNamespace(""), "length")
+      convert_i
+      setlocal3
+
+      jump                L29
+
+L18:
+      label
+      getlex              QName(ProtectedNamespace("com.greensock:TweenLite"), "_siblings")
+      getlocal3
+      findpropstrict      QName(StaticProtectedNs("com.greensock:TweenLite"), "_register")
+      getlex              QName(ProtectedNamespace("com.greensock:TweenLite"), "_targets")
+      getlocal3
+      getproperty         MultinameL([PrivateNamespace("com.greensock:TweenLite"), ProtectedNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getlocal0
+      pushtrue
+      callproperty        QName(StaticProtectedNs("com.greensock:TweenLite"), "_register"), 3
+      setproperty         MultinameL([PrivateNamespace("com.greensock:TweenLite"), ProtectedNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+L29:
+      declocal_i          3
+      getlocal3
+      pushbyte            -1
+      ifgt                L18
+
+      jump                L42
+
+L34:
+      findpropstrict      QName(StaticProtectedNs("com.greensock:TweenLite"), "_register")
+      getlex              QName(PackageNamespace(""), "target")
+      getlocal0
+      pushtrue
+      callproperty        QName(StaticProtectedNs("com.greensock:TweenLite"), "_register"), 3
+      findproperty        QName(ProtectedNamespace("com.greensock:TweenLite"), "_siblings")
+      swap
+      setproperty         QName(ProtectedNamespace("com.greensock:TweenLite"), "_siblings")
+
+L42:
+      getlocal0
+      getlocal1
+      getlocal2
+      callsupervoid       QName(PackageNamespace(""), "_enabled"), 2
+      getlex              QName(ProtectedNamespace("com.greensock:TweenLite"), "_notifyPluginsOfEnabled")
+      iffalse             L62
+
+      getlex              QName(PackageNamespace(""), "_firstPT")
+      pushnull
+      ifeq                L62
+
+      getlex              QName(PackageNamespace(""), "_onPluginEvent")
+      getglobalscope
+      getlocal1
+      iffalse             L57
+
+      pushstring          "_onEnable"
+      jump                L59
+
+L57:
+      pushstring          "_onDisable"
+      coerce_s
+L59:
+      getlocal0
+      call                2
+      returnvalue
+
+L62:
+      pushfalse
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.greensock:TweenLite/class/init"
+  body
+   maxstack 70
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 1
+   code
+    getlocal0
+    pushscope
+
+    findpropstrict      QName(PackageNamespace("com.greensock.easing"), "Ease")
+    pushnull
+    pushnull
+    pushbyte            1
+    pushbyte            1
+    constructprop       QName(PackageNamespace("com.greensock.easing"), "Ease"), 4
+    findproperty        QName(PackageNamespace(""), "defaultEase")
+    swap
+    setproperty         QName(PackageNamespace(""), "defaultEase")
+
+    getlex              QName(PackageNamespace("com.greensock.core"), "Animation")
+    getproperty         QName(PackageNamespace(""), "ticker")
+    findproperty        QName(PackageNamespace(""), "ticker")
+    swap
+    setproperty         QName(PackageNamespace(""), "ticker")
+
+    newobject           0
+    findproperty        QName(PackageNamespace(""), "_plugins")
+    swap
+    setproperty         QName(PackageNamespace(""), "_plugins")
+
+    findpropstrict      QName(PackageNamespace("flash.utils"), "Dictionary")
+    pushfalse
+    constructprop       QName(PackageNamespace("flash.utils"), "Dictionary"), 1
+    findproperty        QName(StaticProtectedNs("com.greensock:TweenLite"), "_tweenLookup")
+    swap
+    setproperty         QName(StaticProtectedNs("com.greensock:TweenLite"), "_tweenLookup")
+
+    pushstring          "ease"
+    pushbyte            1
+    pushstring          "delay"
+    pushbyte            1
+    pushstring          "overwrite"
+    pushbyte            1
+    pushstring          "onComplete"
+    pushbyte            1
+    pushstring          "onCompleteParams"
+    pushbyte            1
+    pushstring          "onCompleteScope"
+    pushbyte            1
+    pushstring          "useFrames"
+    pushbyte            1
+    pushstring          "runBackwards"
+    pushbyte            1
+    pushstring          "startAt"
+    pushbyte            1
+    pushstring          "onUpdate"
+    pushbyte            1
+    pushstring          "onUpdateParams"
+    pushbyte            1
+    pushstring          "onUpdateScope"
+    pushbyte            1
+    pushstring          "onStart"
+    pushbyte            1
+    pushstring          "onStartParams"
+    pushbyte            1
+    pushstring          "onStartScope"
+    pushbyte            1
+    pushstring          "onReverseComplete"
+    pushbyte            1
+    pushstring          "onReverseCompleteParams"
+    pushbyte            1
+    pushstring          "onReverseCompleteScope"
+    pushbyte            1
+    pushstring          "onRepeat"
+    pushbyte            1
+    pushstring          "onRepeatParams"
+    pushbyte            1
+    pushstring          "onRepeatScope"
+    pushbyte            1
+    pushstring          "easeParams"
+    pushbyte            1
+    pushstring          "yoyo"
+    pushbyte            1
+    pushstring          "onCompleteListener"
+    pushbyte            1
+    pushstring          "onUpdateListener"
+    pushbyte            1
+    pushstring          "onStartListener"
+    pushbyte            1
+    pushstring          "onReverseCompleteListener"
+    pushbyte            1
+    pushstring          "onRepeatListener"
+    pushbyte            1
+    pushstring          "orientToBezier"
+    pushbyte            1
+    pushstring          "immediateRender"
+    pushbyte            1
+    pushstring          "repeat"
+    pushbyte            1
+    pushstring          "repeatDelay"
+    pushbyte            1
+    pushstring          "data"
+    pushbyte            1
+    pushstring          "paused"
+    pushbyte            1
+    pushstring          "reversed"
+    pushbyte            1
+    newobject           35
+    findproperty        QName(StaticProtectedNs("com.greensock:TweenLite"), "_reservedProps")
+    swap
+    setproperty         QName(StaticProtectedNs("com.greensock:TweenLite"), "_reservedProps")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PackageNamespace(""), "version") type QName(PackageNamespace(""), "String") value Utf8("12.1.5") end
+ trait slot QName(PackageNamespace(""), "defaultEase") type QName(PackageNamespace("com.greensock.easing"), "Ease") end
+ trait slot QName(PackageNamespace(""), "defaultOverwrite") type QName(PackageNamespace(""), "String") value Utf8("auto") end
+ trait slot QName(PackageNamespace(""), "ticker") type QName(PackageNamespace("flash.display"), "Shape") end
+ trait slot QName(PackageNamespace(""), "_plugins") type QName(PackageNamespace(""), "Object") end
+ trait slot QName(PackageNamespace(""), "_onPluginEvent") type QName(PackageNamespace(""), "Function") end
+ trait slot QName(StaticProtectedNs("com.greensock:TweenLite"), "_tweenLookup") type QName(PackageNamespace("flash.utils"), "Dictionary") end
+ trait slot QName(StaticProtectedNs("com.greensock:TweenLite"), "_reservedProps") type QName(PackageNamespace(""), "Object") end
+ trait slot QName(StaticProtectedNs("com.greensock:TweenLite"), "_overwriteLookup") type QName(PackageNamespace(""), "Object") end
+ trait method QName(PackageNamespace(""), "to")
+  method
+   name "to"
+   refid "com.greensock:TweenLite/class/to"
+   param QName(PackageNamespace(""), "Object")
+   param QName(PackageNamespace(""), "Number")
+   param QName(PackageNamespace(""), "Object")
+   returns QName(PackageNamespace("com.greensock"), "TweenLite")
+   flag HAS_PARAM_NAMES
+   paramname "target"
+   paramname "duration"
+   paramname "vars"
+   body
+    maxstack 4
+    localcount 4
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     getlocal1
+     getlocal2
+     getlocal3
+     construct           3
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "from")
+  method
+   name "from"
+   refid "com.greensock:TweenLite/class/from"
+   param QName(PackageNamespace(""), "Object")
+   param QName(PackageNamespace(""), "Number")
+   param QName(PackageNamespace(""), "Object")
+   returns QName(PackageNamespace("com.greensock"), "TweenLite")
+   flag HAS_PARAM_NAMES
+   paramname "target"
+   paramname "duration"
+   paramname "vars"
+   body
+    maxstack 4
+    localcount 4
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     findpropstrict      QName(StaticProtectedNs("com.greensock:TweenLite"), "_prepVars")
+     getlocal3
+     pushtrue
+     callproperty        QName(StaticProtectedNs("com.greensock:TweenLite"), "_prepVars"), 2
+     coerce              QName(PackageNamespace(""), "Object")
+     setlocal3
+
+     getlocal3
+     pushtrue
+     setproperty         Multiname("runBackwards", [PrivateNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     getlocal0
+     getlocal1
+     getlocal2
+     getlocal3
+     construct           3
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "fromTo")
+  method
+   name "fromTo"
+   refid "com.greensock:TweenLite/class/fromTo"
+   param QName(PackageNamespace(""), "Object")
+   param QName(PackageNamespace(""), "Number")
+   param QName(PackageNamespace(""), "Object")
+   param QName(PackageNamespace(""), "Object")
+   returns QName(PackageNamespace("com.greensock"), "TweenLite")
+   flag HAS_PARAM_NAMES
+   paramname "target"
+   paramname "duration"
+   paramname "fromVars"
+   paramname "toVars"
+   body
+    maxstack 4
+    localcount 5
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     findpropstrict      QName(StaticProtectedNs("com.greensock:TweenLite"), "_prepVars")
+     getlocal            4
+     pushtrue
+     callproperty        QName(StaticProtectedNs("com.greensock:TweenLite"), "_prepVars"), 2
+     coerce              QName(PackageNamespace(""), "Object")
+     setlocal            4
+
+     findpropstrict      QName(StaticProtectedNs("com.greensock:TweenLite"), "_prepVars")
+     getlocal3
+     callproperty        QName(StaticProtectedNs("com.greensock:TweenLite"), "_prepVars"), 1
+     coerce              QName(PackageNamespace(""), "Object")
+     setlocal3
+
+     getlocal            4
+     getlocal3
+     setproperty         Multiname("startAt", [PrivateNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     getlocal            4
+     getlocal            4
+     getproperty         Multiname("immediateRender", [PrivateNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     pushfalse
+     equals
+     not
+     dup
+     iffalse             L30
+
+     pop
+     getlocal3
+     getproperty         Multiname("immediateRender", [PrivateNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     pushfalse
+     equals
+     not
+L30:
+     setproperty         Multiname("immediateRender", [PrivateNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     getlocal0
+     getlocal1
+     getlocal2
+     getlocal            4
+     construct           3
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(StaticProtectedNs("com.greensock:TweenLite"), "_prepVars")
+  method
+   name "_prepVars"
+   refid "com.greensock:TweenLite/class/com.greensock:TweenLite:_prepVars"
+   param QName(PackageNamespace(""), "Object")
+   param QName(PackageNamespace(""), "Boolean")
+   returns QName(PackageNamespace(""), "Object")
+   flag HAS_OPTIONAL
+   flag HAS_PARAM_NAMES
+   optional False()
+   paramname "vars"
+   paramname "immediateRender"
+   body
+    maxstack 2
+    localcount 3
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal1
+     getproperty         Multiname("_isGSVars", [PrivateNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     iffalse             L9
+
+     getlocal1
+     getproperty         Multiname("vars", [PrivateNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     coerce              QName(PackageNamespace(""), "Object")
+     setlocal1
+
+L9:
+     getlocal2
+     dup
+     iffalse             L17
+
+     pop
+     pushstring          "immediateRender"
+     getlocal1
+     in
+     not
+L17:
+     iffalse             L21
+
+     getlocal1
+     pushtrue
+     setproperty         Multiname("immediateRender", [PrivateNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+L21:
+     getlocal1
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "delayedCall")
+  method
+   name "delayedCall"
+   refid "com.greensock:TweenLite/class/delayedCall"
+   param QName(PackageNamespace(""), "Number")
+   param QName(PackageNamespace(""), "Function")
+   param QName(PackageNamespace(""), "Array")
+   param QName(PackageNamespace(""), "Boolean")
+   returns QName(PackageNamespace("com.greensock"), "TweenLite")
+   flag HAS_OPTIONAL
+   flag HAS_PARAM_NAMES
+   optional Null()
+   optional False()
+   paramname "delay"
+   paramname "callback"
+   paramname "params"
+   paramname "useFrames"
+   body
+    maxstack 19
+    localcount 5
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     getlocal2
+     pushbyte            0
+     pushstring          "delay"
+     getlocal1
+     pushstring          "onComplete"
+     getlocal2
+     pushstring          "onCompleteParams"
+     getlocal3
+     pushstring          "onReverseComplete"
+     getlocal2
+     pushstring          "onReverseCompleteParams"
+     getlocal3
+     pushstring          "immediateRender"
+     pushfalse
+     pushstring          "useFrames"
+     getlocal            4
+     pushstring          "overwrite"
+     pushbyte            0
+     newobject           8
+     construct           3
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "set")
+  method
+   name "set"
+   refid "com.greensock:TweenLite/class/set"
+   param QName(PackageNamespace(""), "Object")
+   param QName(PackageNamespace(""), "Object")
+   returns QName(PackageNamespace("com.greensock"), "TweenLite")
+   flag HAS_PARAM_NAMES
+   paramname "target"
+   paramname "vars"
+   body
+    maxstack 4
+    localcount 3
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     getlocal1
+     pushbyte            0
+     getlocal2
+     construct           3
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PrivateNamespace("com.greensock:TweenLite"), "_dumpGarbage")
+  method
+   name "_dumpGarbage"
+   refid "com.greensock:TweenLite/class/com.greensock:TweenLite/_dumpGarbage"
+   param QName(PackageNamespace("flash.events"), "Event")
+   returns QName(PackageNamespace(""), "void")
+   flag HAS_PARAM_NAMES
+   paramname "event"
+   body
+    maxstack 3
+    localcount 7
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     pushnull
+     setlocal3
+
+     pushnull
+     setlocal2
+
+     pushbyte            0
+     setlocal            4
+
+     getlex              QName(StaticProtectedNs("com.greensock.core:Animation"), "_rootFrame")
+     pushbyte            60
+     divide
+     pushbyte            0
+     rshift
+     getlex              QName(StaticProtectedNs("com.greensock.core:Animation"), "_rootFrame")
+     pushbyte            60
+     divide
+     ifstrictne          L62
+
+     pushbyte            0
+     setlocal            6
+
+     getlex              QName(StaticProtectedNs("com.greensock:TweenLite"), "_tweenLookup")
+     setlocal            5
+
+     jump                L60
+
+L22:
+     label
+     getlocal            5
+     getlocal            6
+     nextname
+     coerce              QName(PackageNamespace(""), "Object")
+     setlocal2
+
+     getlex              QName(StaticProtectedNs("com.greensock:TweenLite"), "_tweenLookup")
+     getlocal2
+     getproperty         MultinameL([PrivateNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     coerce              QName(PackageNamespace(""), "Array")
+     setlocal3
+
+     getlocal3
+     getproperty         QName(PackageNamespace(""), "length")
+     convert_i
+     setlocal            4
+
+     jump                L48
+
+L38:
+     label
+     getlocal3
+     getlocal            4
+     getproperty         MultinameL([PrivateNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     getproperty         Multiname("_gc", [PrivateNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     iffalse             L48
+
+     getlocal3
+     getlocal            4
+     pushbyte            1
+     callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "splice"), 2
+
+L48:
+     declocal_i          4
+     getlocal            4
+     pushbyte            -1
+     ifgt                L38
+
+     getlocal3
+     getproperty         QName(PackageNamespace(""), "length")
+     pushbyte            0
+     ifstrictne          L60
+
+     getlex              QName(StaticProtectedNs("com.greensock:TweenLite"), "_tweenLookup")
+     getlocal2
+     deleteproperty      MultinameL([PrivateNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     pop
+L60:
+     hasnext2            5, 6
+     iftrue              L22
+
+L62:
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "killTweensOf")
+  method
+   name "killTweensOf"
+   refid "com.greensock:TweenLite/class/killTweensOf"
+   param null
+   param null
+   param QName(PackageNamespace(""), "Object")
+   returns QName(PackageNamespace(""), "void")
+   flag HAS_OPTIONAL
+   flag HAS_PARAM_NAMES
+   optional False()
+   optional Null()
+   paramname "target"
+   paramname "onlyActive"
+   paramname "vars"
+   body
+    maxstack 3
+    localcount 6
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     pushnull
+     setlocal            4
+
+     getlocal2
+     typeof
+     pushstring          "object"
+     ifstrictne          L13
+
+     getlocal2
+     coerce              QName(PackageNamespace(""), "Object")
+     setlocal3
+
+     pushfalse
+     setlocal2
+
+L13:
+     getlocal0
+     getlocal1
+     getlocal2
+     callproperty        QName(PackageNamespace(""), "getTweensOf"), 2
+     coerce              QName(PackageNamespace(""), "Array")
+     dup
+     setlocal            4
+
+     getproperty         QName(PackageNamespace(""), "length")
+     convert_i
+     setlocal            5
+
+     jump                L31
+
+L24:
+     label
+     getlocal            4
+     getlocal            5
+     getproperty         MultinameL([PrivateNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     getlocal3
+     getlocal1
+     callpropvoid        Multiname("_kill", [PrivateNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 2
+
+L31:
+     declocal_i          5
+     getlocal            5
+     pushbyte            -1
+     ifgt                L24
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "killDelayedCallsTo")
+  method
+   name "killDelayedCallsTo"
+   refid "com.greensock:TweenLite/class/killDelayedCallsTo"
+   param QName(PackageNamespace(""), "Function")
+   returns QName(PackageNamespace(""), "void")
+   flag HAS_PARAM_NAMES
+   paramname "func"
+   body
+    maxstack 2
+    localcount 2
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     findpropstrict      QName(PackageNamespace(""), "killTweensOf")
+     getlocal1
+     callpropvoid        QName(PackageNamespace(""), "killTweensOf"), 1
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "getTweensOf")
+  method
+   name "getTweensOf"
+   refid "com.greensock:TweenLite/class/getTweensOf"
+   param null
+   param QName(PackageNamespace(""), "Boolean")
+   returns QName(PackageNamespace(""), "Array")
+   flag HAS_OPTIONAL
+   flag HAS_PARAM_NAMES
+   optional False()
+   paramname "target"
+   paramname "onlyActive"
+   body
+    maxstack 4
+    localcount 7
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     pushnull
+     setlocal3
+
+     pushbyte            0
+     setlocal            6
+
+     pushnull
+     setlocal            4
+
+     pushbyte            0
+     setlocal            5
+
+     getlocal1
+     getlex              QName(PackageNamespace(""), "Array")
+     istypelate
+     dup
+     iffalse             L23
+
+     pop
+     getlocal1
+     pushbyte            0
+     getproperty         MultinameL([PrivateNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     typeof
+     pushstring          "string"
+     equals
+     not
+L23:
+     dup
+     iffalse             L33
+
+     pop
+     getlocal1
+     pushbyte            0
+     getproperty         MultinameL([PrivateNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     typeof
+     pushstring          "number"
+     equals
+     not
+L33:
+     iffalse             L90
+
+     getlocal1
+     getproperty         Multiname("length", [PrivateNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     convert_i
+     setlocal            5
+
+     newarray            0
+     coerce              QName(PackageNamespace(""), "Array")
+     setlocal3
+
+     jump                L53
+
+L42:
+     label
+     getlocal3
+     findpropstrict      QName(PackageNamespace(""), "getTweensOf")
+     getlocal1
+     getlocal            5
+     getproperty         MultinameL([PrivateNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     getlocal2
+     callproperty        QName(PackageNamespace(""), "getTweensOf"), 2
+     callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "concat"), 1
+     coerce              QName(PackageNamespace(""), "Array")
+     setlocal3
+
+L53:
+     declocal_i          5
+     getlocal            5
+     pushbyte            -1
+     ifgt                L42
+
+     getlocal3
+     getproperty         QName(PackageNamespace(""), "length")
+     convert_i
+     setlocal            5
+
+     jump                L85
+
+L62:
+     label
+     getlocal3
+     getlocal            5
+     getproperty         MultinameL([PrivateNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     coerce              QName(PackageNamespace("com.greensock"), "TweenLite")
+     setlocal            4
+
+     getlocal            5
+     setlocal            6
+
+     jump                L81
+
+L71:
+     label
+     getlocal            4
+     getlocal3
+     getlocal            6
+     getproperty         MultinameL([PrivateNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     ifstrictne          L81
+
+     getlocal3
+     getlocal            5
+     pushbyte            1
+     callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "splice"), 2
+
+L81:
+     declocal_i          6
+     getlocal            6
+     pushbyte            -1
+     ifgt                L71
+
+L85:
+     declocal_i          5
+     getlocal            5
+     pushbyte            -1
+     ifgt                L62
+
+     jump                L128
+
+L90:
+     findpropstrict      QName(StaticProtectedNs("com.greensock:TweenLite"), "_register")
+     getlocal1
+     callproperty        QName(StaticProtectedNs("com.greensock:TweenLite"), "_register"), 1
+     callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "concat"), 0
+     coerce              QName(PackageNamespace(""), "Array")
+     setlocal3
+
+     getlocal3
+     getproperty         QName(PackageNamespace(""), "length")
+     convert_i
+     setlocal            5
+
+     jump                L124
+
+L101:
+     label
+     getlocal3
+     getlocal            5
+     getproperty         MultinameL([PrivateNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     getproperty         Multiname("_gc", [PrivateNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     dup
+     iftrue              L119
+
+     pop
+     getlocal2
+     dup
+     iffalse             L118
+
+     pop
+     getlocal3
+     getlocal            5
+     getproperty         MultinameL([PrivateNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     callproperty        Multiname("isActive", [PrivateNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 0
+     not
+L118:
+     coerce_a
+L119:
+     iffalse             L124
+
+     getlocal3
+     getlocal            5
+     pushbyte            1
+     callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "splice"), 2
+
+L124:
+     declocal_i          5
+     getlocal            5
+     pushbyte            -1
+     ifgt                L101
+
+L128:
+     getlocal3
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(StaticProtectedNs("com.greensock:TweenLite"), "_register")
+  method
+   name "_register"
+   refid "com.greensock:TweenLite/class/com.greensock:TweenLite:_register"
+   param QName(PackageNamespace(""), "Object")
+   param QName(PackageNamespace("com.greensock"), "TweenLite")
+   param QName(PackageNamespace(""), "Boolean")
+   returns QName(PackageNamespace(""), "Array")
+   flag HAS_OPTIONAL
+   flag HAS_PARAM_NAMES
+   optional Null()
+   optional False()
+   paramname "target"
+   paramname "tween"
+   paramname "scrub"
+   body
+    maxstack 4
+    localcount 7
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     pushbyte            0
+     setlocal            5
+
+     getlex              QName(StaticProtectedNs("com.greensock:TweenLite"), "_tweenLookup")
+     getlocal1
+     getproperty         MultinameL([PrivateNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     coerce              QName(PackageNamespace(""), "Array")
+     dup
+     setlocal            4
+
+     pushnull
+     ifne                L21
+
+     getlex              QName(StaticProtectedNs("com.greensock:TweenLite"), "_tweenLookup")
+     getlocal1
+     newarray            0
+     dup
+     setlocal            6
+
+     setproperty         MultinameL([PrivateNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     getlocal            6
+     coerce              QName(PackageNamespace(""), "Array")
+     setlocal            4
+
+L21:
+     getlocal2
+     iffalse             L48
+
+     getlocal            4
+     getproperty         QName(PackageNamespace(""), "length")
+     convert_i
+     setlocal            5
+
+     getlocal            4
+     getlocal            5
+     getlocal2
+     setproperty         MultinameL([PrivateNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     getlocal3
+     iffalse             L48
+
+     jump                L44
+
+L34:
+     label
+     getlocal            4
+     getlocal            5
+     getproperty         MultinameL([PrivateNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     getlocal2
+     ifstrictne          L44
+
+     getlocal            4
+     getlocal            5
+     pushbyte            1
+     callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "splice"), 2
+
+L44:
+     declocal_i          5
+     getlocal            5
+     pushbyte            -1
+     ifgt                L34
+
+L48:
+     getlocal            4
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(StaticProtectedNs("com.greensock:TweenLite"), "_applyOverwrite")
+  method
+   name "_applyOverwrite"
+   refid "com.greensock:TweenLite/class/com.greensock:TweenLite:_applyOverwrite"
+   param QName(PackageNamespace(""), "Object")
+   param QName(PackageNamespace("com.greensock"), "TweenLite")
+   param QName(PackageNamespace(""), "Object")
+   param QName(PackageNamespace(""), "int")
+   param QName(PackageNamespace(""), "Array")
+   returns QName(PackageNamespace(""), "Boolean")
+   flag HAS_PARAM_NAMES
+   paramname "target"
+   paramname "tween"
+   paramname "props"
+   paramname "mode"
+   paramname "siblings"
+   body
+    maxstack 4
+    localcount 15
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     pushfalse
+     setlocal            14
+
+     pushnull
+     setlocal            6
+
+     pushbyte            0
+     setlocal            7
+
+     pushbyte            0
+     setlocal            8
+
+     pushnan
+     setlocal            10
+
+     getlocal            4
+     pushbyte            1
+     equals
+     dup
+     iftrue              L21
+
+     pop
+     getlocal            4
+     pushbyte            4
+     greaterequals
+L21:
+     iffalse             L58
+
+     getlocal            5
+     getproperty         QName(PackageNamespace(""), "length")
+     convert_i
+     setlocal            8
+
+     pushbyte            0
+     setlocal            7
+
+     jump                L53
+
+L29:
+     label
+     getlocal            5
+     getlocal            7
+     getproperty         MultinameL([PrivateNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.greensock:TweenLite")])
+     coerce              QName(PackageNamespace("com.greensock"), "TweenLite")
+     dup
+     setlocal            6
+
+     getlocal2
+     ifeq                L49
+
+     getlocal            6
+     getproperty         QName(PackageNamespace(""), "_gc")
+     iftrue              L48
+
+     getlocal            6
+     pushfalse
+     pushfalse
+     callproperty        QName(PackageNamespace(""), "_enabled"), 2
+     iffalse             L48
+
+     pushtrue
+     setlocal            14
+
+L48:
+     jump                L52
+
+L49:
+     getlocal            4
+     pushbyte            5
+     ifeq                L56
+
+L52:
+     inclocal_i          7
+L53:
+     getlocal            7
+     getlocal            8
+     iflt                L29
+
+L56:
+     getlocal            14
+     returnvalue
+
+L58:
+     getlocal2
+     getproperty         QName(PackageNamespace(""), "_startTime")
+     pushdouble          1.00000000000000004e-10
+     add
+     convert_d
+     setlocal            13
+
+     newarray            0
+     coerce              QName(PackageNamespace(""), "Array")
+     setlocal            12
+
+     pushbyte            0
+     setlocal            9
+
+     getlocal2
+     getproperty         QName(PackageNamespace(""), "_duration")
+     pushbyte            0
+     equals
+     setlocal            11
+
+     getlocal            5
+     getproperty         QName(PackageNamespace(""), "length")
+     convert_i
+     setlocal            7
+
+     jump                L167
+
+L79:
+     label
+     getlocal            5
+     getlocal            7
+     getproperty         MultinameL([PrivateNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.greensock:TweenLite")])
+     coerce              QName(PackageNamespace("com.greensock"), "TweenLite")
+     dup
+     setlocal            6
+
+     getlocal2
+     strictequals
+     dup
+     iftrue              L94
+
+     pop
+     getlocal            6
+     getproperty         QName(PackageNamespace(""), "_gc")
+     convert_b
+L94:
+     dup
+     iftrue              L100
+
+     pop
+     getlocal            6
+     getproperty         QName(PackageNamespace(""), "_paused")
+     convert_b
+L100:
+     iftrue              L167
+
+     getlocal            6
+     getproperty         QName(PackageNamespace(""), "_timeline")
+     getlocal2
+     getproperty         QName(PackageNamespace(""), "_timeline")
+     ifeq                L131
+
+     getlocal            10
+     dup
+     iftrue              L116
+
+     pop
+     findpropstrict      QName(PrivateNamespace("com.greensock:TweenLite"), "_checkOverlap")
+     getlocal2
+     pushbyte            0
+     getlocal            11
+     callproperty        QName(PrivateNamespace("com.greensock:TweenLite"), "_checkOverlap"), 3
+     convert_d
+L116:
+     convert_d
+     setlocal            10
+
+     findpropstrict      QName(PrivateNamespace("com.greensock:TweenLite"), "_checkOverlap")
+     getlocal            6
+     getlocal            10
+     getlocal            11
+     callproperty        QName(PrivateNamespace("com.greensock:TweenLite"), "_checkOverlap"), 3
+     pushbyte            0
+     ifstrictne          L130
+
+     getlocal            12
+     getlocal            9
+     inclocal_i          9
+     getlocal            6
+     setproperty         MultinameL([PrivateNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.greensock:TweenLite")])
+
+L130:
+     jump                L167
+
+L131:
+     getlocal            6
+     getproperty         QName(PackageNamespace(""), "_startTime")
+     getlocal            13
+     ifnle               L167
+
+     getlocal            6
+     getproperty         QName(PackageNamespace(""), "_startTime")
+     getlocal            6
+     callproperty        QName(PackageNamespace(""), "totalDuration"), 0
+     getlocal            6
+     getproperty         QName(PackageNamespace(""), "_timeScale")
+     divide
+     add
+     getlocal            13
+     ifngt               L167
+
+     getlocal            11
+     dup
+     iftrue              L152
+
+     pop
+     getlocal            6
+     getproperty         QName(PackageNamespace(""), "_initted")
+     not
+L152:
+     dup
+     iffalse             L161
+
+     pop
+     getlocal            13
+     getlocal            6
+     getproperty         QName(PackageNamespace(""), "_startTime")
+     subtract
+     pushdouble          2.00000000000000007e-10
+     lessequals
+L161:
+     iftrue              L167
+
+     getlocal            12
+     getlocal            9
+     inclocal_i          9
+     getlocal            6
+     setproperty         MultinameL([PrivateNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.greensock:TweenLite")])
+
+L167:
+     declocal_i          7
+     getlocal            7
+     pushbyte            -1
+     ifgt                L79
+
+     getlocal            9
+     setlocal            7
+
+     jump                L215
+
+L174:
+     label
+     getlocal            12
+     getlocal            7
+     getproperty         MultinameL([PrivateNamespace("com.greensock:TweenLite"), StaticProtectedNs("com.greensock:TweenLite"), StaticProtectedNs("com.greensock.core:Animation"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageInternalNs("com.greensock"), PrivateNamespace("FilePrivateNS:TweenLite"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.greensock:TweenLite")])
+     coerce              QName(PackageNamespace("com.greensock"), "TweenLite")
+     setlocal            6
+
+     getlocal            4
+     pushbyte            2
+     ifne                L190
+
+     getlocal            6
+     getlocal3
+     getlocal1
+     callproperty        QName(PackageNamespace(""), "_kill"), 2
+     iffalse             L190
+
+     pushtrue
+     setlocal            14
+
+L190:
+     getlocal            4
+     pushbyte            2
+     strictequals
+     not
+     dup
+     iftrue              L207
+
+     pop
+     getlocal            6
+     getproperty         QName(PackageNamespace(""), "_firstPT")
+     not
+     dup
+     iffalse             L206
+
+     pop
+     getlocal            6
+     getproperty         QName(PackageNamespace(""), "_initted")
+     convert_b
+L206:
+     convert_b
+L207:
+     iffalse             L215
+
+     getlocal            6
+     pushfalse
+     pushfalse
+     callproperty        QName(PackageNamespace(""), "_enabled"), 2
+     iffalse             L215
+
+     pushtrue
+     setlocal            14
+
+L215:
+     declocal_i          7
+     getlocal            7
+     pushbyte            -1
+     ifgt                L174
+
+     getlocal            14
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PrivateNamespace("com.greensock:TweenLite"), "_checkOverlap")
+  method
+   name "_checkOverlap"
+   refid "com.greensock:TweenLite/class/com.greensock:TweenLite/_checkOverlap"
+   param QName(PackageNamespace("com.greensock.core"), "Animation")
+   param QName(PackageNamespace(""), "Number")
+   param QName(PackageNamespace(""), "Boolean")
+   returns QName(PackageNamespace(""), "Number")
+   flag HAS_PARAM_NAMES
+   paramname "tween"
+   paramname "reference"
+   paramname "zeroDur"
+   body
+    maxstack 3
+    localcount 8
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     pushnull
+     setlocal            6
+
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "_timeline")
+     coerce              QName(PackageNamespace("com.greensock.core"), "SimpleTimeline")
+     dup
+     setlocal            6
+
+     getproperty         QName(PackageNamespace(""), "_timeScale")
+     convert_d
+     setlocal            7
+
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "_startTime")
+     convert_d
+     setlocal            5
+
+     pushdouble          1.00000000000000004e-10
+     setlocal            4
+
+     jump                L41
+
+L19:
+     label
+     getlocal            5
+     getlocal            6
+     getproperty         QName(PackageNamespace(""), "_startTime")
+     add
+     convert_d
+     setlocal            5
+
+     getlocal            7
+     getlocal            6
+     getproperty         QName(PackageNamespace(""), "_timeScale")
+     multiply
+     convert_d
+     setlocal            7
+
+     getlocal            6
+     getproperty         QName(PackageNamespace(""), "_paused")
+     iffalse             L37
+
+     pushbyte            -100
+     returnvalue
+
+L37:
+     getlocal            6
+     getproperty         QName(PackageNamespace(""), "_timeline")
+     coerce              QName(PackageNamespace("com.greensock.core"), "SimpleTimeline")
+     setlocal            6
+
+L41:
+     getlocal            6
+     getproperty         QName(PackageNamespace(""), "_timeline")
+     iftrue              L19
+
+     getlocal            5
+     getlocal            7
+     divide
+     convert_d
+     dup
+     setlocal            5
+
+     getlocal2
+     ifngt               L56
+
+     getlocal            5
+     getlocal2
+     subtract
+     jump                L109
+
+L56:
+     getlocal3
+     dup
+     iffalse             L63
+
+     pop
+     getlocal            5
+     getlocal2
+     equals
+L63:
+     dup
+     iftrue              L80
+
+     pop
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "_initted")
+     not
+     dup
+     iffalse             L79
+
+     pop
+     getlocal            5
+     getlocal2
+     subtract
+     pushbyte            2
+     getlocal            4
+     multiply
+     lessthan
+L79:
+     convert_b
+L80:
+     iffalse             L83
+
+     getlocal            4
+     jump                L108
+
+L83:
+     getlocal            5
+     getlocal1
+     callproperty        QName(PackageNamespace(""), "totalDuration"), 0
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "_timeScale")
+     divide
+     getlocal            7
+     divide
+     add
+     dup
+     convert_d
+     setlocal            5
+
+     getlocal2
+     getlocal            4
+     add
+     ifngt               L101
+
+     pushbyte            0
+     jump                L107
+
+L101:
+     getlocal            5
+     getlocal2
+     subtract
+     getlocal            4
+     subtract
+     convert_d
+L107:
+     convert_d
+L108:
+     convert_d
+L109:
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+end ; class

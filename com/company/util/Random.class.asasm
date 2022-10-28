@@ -1,0 +1,310 @@
+class
+ refid "com.company.util:Random"
+ instance QName(PackageNamespace("com.company.util"), "Random")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  iinit
+   name "Random"
+   refid "com.company.util:Random/instance/init"
+   param QName(PackageNamespace(""), "uint")
+   flag HAS_OPTIONAL
+   flag HAS_PARAM_NAMES
+   optional Integer(1)
+   paramname "seed"
+   body
+    maxstack 2
+    localcount 2
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     getlocal1
+     setproperty         QName(PackageNamespace(""), "seed")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "seed") type QName(PackageNamespace(""), "uint") end
+  trait method QName(PackageNamespace(""), "nextInt")
+   method
+    name "nextInt"
+    refid "com.company.util:Random/instance/nextInt"
+    returns QName(PackageNamespace(""), "uint")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      callproperty        QName(PrivateNamespace("com.company.util:Random"), "gen"), 0
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "nextDouble")
+   method
+    name "nextDouble"
+    refid "com.company.util:Random/instance/nextDouble"
+    returns QName(PackageNamespace(""), "Number")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      callproperty        QName(PrivateNamespace("com.company.util:Random"), "gen"), 0
+      pushint             2147483647
+      divide
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "nextNormal")
+   method
+    name "nextNormal"
+    refid "com.company.util:Random/instance/nextNormal"
+    param QName(PackageNamespace(""), "Number")
+    param QName(PackageNamespace(""), "Number")
+    returns QName(PackageNamespace(""), "Number")
+    flag HAS_OPTIONAL
+    flag HAS_PARAM_NAMES
+    optional Integer(0)
+    optional Integer(1)
+    paramname "min"
+    paramname "max"
+    body
+     maxstack 4
+     localcount 6
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      callproperty        QName(PrivateNamespace("com.company.util:Random"), "gen"), 0
+      pushint             2147483647
+      divide
+      convert_d
+      setlocal3
+
+      getlocal0
+      callproperty        QName(PrivateNamespace("com.company.util:Random"), "gen"), 0
+      pushint             2147483647
+      divide
+      convert_d
+      setlocal            4
+
+      getlex              QName(PackageNamespace(""), "Math")
+      pushbyte            -2
+      getlex              QName(PackageNamespace(""), "Math")
+      getlocal3
+      callproperty        QName(PackageNamespace(""), "log"), 1
+      multiply
+      callproperty        QName(PackageNamespace(""), "sqrt"), 1
+      getlex              QName(PackageNamespace(""), "Math")
+      pushbyte            2
+      getlocal            4
+      multiply
+      pushdouble          3.141592653589793
+      multiply
+      callproperty        QName(PackageNamespace(""), "cos"), 1
+      multiply
+      convert_d
+      setlocal            5
+
+      getlocal1
+      getlocal            5
+      getlocal2
+      multiply
+      add
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "nextIntRange")
+   method
+    name "nextIntRange"
+    refid "com.company.util:Random/instance/nextIntRange"
+    param QName(PackageNamespace(""), "uint")
+    param QName(PackageNamespace(""), "uint")
+    returns QName(PackageNamespace(""), "uint")
+    flag HAS_PARAM_NAMES
+    paramname "min"
+    paramname "max"
+    body
+     maxstack 4
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      getlocal2
+      ifne                L7
+
+      getlocal1
+      jump                L16
+
+L7:
+      getlocal1
+      getlocal0
+      callproperty        QName(PrivateNamespace("com.company.util:Random"), "gen"), 0
+      getlocal2
+      getlocal1
+      subtract
+      modulo
+      add
+      coerce_a
+L16:
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "nextDoubleRange")
+   method
+    name "nextDoubleRange"
+    refid "com.company.util:Random/instance/nextDoubleRange"
+    param QName(PackageNamespace(""), "Number")
+    param QName(PackageNamespace(""), "Number")
+    returns QName(PackageNamespace(""), "Number")
+    flag HAS_PARAM_NAMES
+    paramname "min"
+    paramname "max"
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      getlocal2
+      getlocal1
+      subtract
+      getlocal0
+      callproperty        QName(PackageNamespace(""), "nextDouble"), 0
+      multiply
+      add
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.util:Random"), "gen")
+   method
+    name "gen"
+    refid "com.company.util:Random/instance/com.company.util:Random/instance/gen"
+    returns QName(PackageNamespace(""), "uint")
+    body
+     maxstack 3
+     localcount 4
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushbyte            0
+      setlocal1
+
+      pushbyte            0
+      setlocal2
+
+      pushshort           16807
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "seed")
+      pushint             65535
+      bitand
+      multiply
+      convert_u
+      setlocal1
+
+      pushshort           16807
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "seed")
+      pushbyte            16
+      rshift
+      multiply
+      convert_u
+      setlocal2
+
+      getlocal1
+      getlocal2
+      pushshort           32767
+      bitand
+      pushbyte            16
+      lshift
+      add
+      convert_u
+      setlocal1
+
+      getlocal1
+      getlocal2
+      pushbyte            15
+      rshift
+      add
+      convert_u
+      setlocal1
+
+      getlocal1
+      pushint             2147483647
+      ifngt               L46
+
+      getlocal1
+      pushint             2147483647
+      subtract
+      convert_u
+      setlocal1
+
+L46:
+      getlocal0
+      getlocal1
+      dup
+      setlocal3
+
+      setproperty         QName(PackageNamespace(""), "seed")
+
+      getlocal3
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.util:Random/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

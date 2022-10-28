@@ -1,0 +1,349 @@
+class
+ refid "kabam.lib.tasks:TaskSequence"
+ instance QName(PackageNamespace("kabam.lib.tasks"), "TaskSequence")
+  extends QName(PackageNamespace("kabam.lib.tasks"), "BaseTask")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.lib.tasks:TaskSequence")
+  iinit
+   name "TaskSequence"
+   refid "kabam.lib.tasks:TaskSequence/instance/init"
+   body
+    maxstack 3
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     getlex              QName(PackageNamespace("__AS3__.vec"), "Vector")
+     getlex              QName(PackageNamespace("kabam.lib.tasks"), "Task")
+     applytype           1
+     construct           0
+     setproperty         QName(PrivateNamespace("kabam.lib.tasks:TaskSequence"), "tasks")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace("kabam.lib.tasks:TaskSequence"), "tasks") type TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("kabam.lib.tasks"), "Task")>) end
+  trait slot QName(PrivateNamespace("kabam.lib.tasks:TaskSequence"), "index") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PrivateNamespace("kabam.lib.tasks:TaskSequence"), "continueOnFail") type QName(PackageNamespace(""), "Boolean") end
+  trait method QName(PackageNamespace(""), "getContinueOnFail")
+   method
+    name "getContinueOnFail"
+    refid "kabam.lib.tasks:TaskSequence/instance/getContinueOnFail"
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.lib.tasks:TaskSequence"), "continueOnFail")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setContinueOnFail")
+   method
+    name "setContinueOnFail"
+    refid "kabam.lib.tasks:TaskSequence/instance/setContinueOnFail"
+    param QName(PackageNamespace(""), "Boolean")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      setproperty         QName(PrivateNamespace("kabam.lib.tasks:TaskSequence"), "continueOnFail")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "add")
+   method
+    name "add"
+    refid "kabam.lib.tasks:TaskSequence/instance/add"
+    param QName(PackageNamespace("kabam.lib.tasks"), "Task")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.lib.tasks:TaskSequence"), "tasks")
+      getlocal1
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(ProtectedNamespace("kabam.lib.tasks:TaskSequence"), "startTask") flag OVERRIDE
+   method
+    name "startTask"
+    refid "kabam.lib.tasks:TaskSequence/instance/kabam.lib.tasks:TaskSequence:startTask"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      pushbyte            0
+      setproperty         QName(PrivateNamespace("kabam.lib.tasks:TaskSequence"), "index")
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("kabam.lib.tasks:TaskSequence"), "doNextTaskOrComplete"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(ProtectedNamespace("kabam.lib.tasks:TaskSequence"), "onReset") flag OVERRIDE
+   method
+    name "onReset"
+    refid "kabam.lib.tasks:TaskSequence/instance/kabam.lib.tasks:TaskSequence:onReset"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 4
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      setlocal1
+
+      pushbyte            0
+      setlocal3
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.lib.tasks:TaskSequence"), "tasks")
+      setlocal2
+
+      jump                L18
+
+L10:
+      label
+      getlocal2
+      getlocal3
+      nextvalue
+      coerce              QName(PackageNamespace("kabam.lib.tasks"), "Task")
+      setlocal1
+
+      getlocal1
+      callpropvoid        QName(Namespace("kabam.lib.tasks:Task"), "reset"), 0
+
+L18:
+      hasnext2            2, 3
+      iftrue              L10
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.lib.tasks:TaskSequence"), "doNextTaskOrComplete")
+   method
+    name "doNextTaskOrComplete"
+    refid "kabam.lib.tasks:TaskSequence/instance/kabam.lib.tasks:TaskSequence/instance/doNextTaskOrComplete"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      callproperty        QName(PrivateNamespace("kabam.lib.tasks:TaskSequence"), "isAnotherTask"), 0
+      iffalse             L8
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("kabam.lib.tasks:TaskSequence"), "doNextTask"), 0
+
+      jump                L11
+
+L8:
+      findpropstrict      QName(ProtectedNamespace("kabam.lib.tasks:BaseTask"), "completeTask")
+      pushtrue
+      callpropvoid        QName(ProtectedNamespace("kabam.lib.tasks:BaseTask"), "completeTask"), 1
+
+L11:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.lib.tasks:TaskSequence"), "isAnotherTask")
+   method
+    name "isAnotherTask"
+    refid "kabam.lib.tasks:TaskSequence/instance/kabam.lib.tasks:TaskSequence/instance/isAnotherTask"
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.lib.tasks:TaskSequence"), "index")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.lib.tasks:TaskSequence"), "tasks")
+      getproperty         QName(PackageNamespace(""), "length")
+      lessthan
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.lib.tasks:TaskSequence"), "doNextTask")
+   method
+    name "doNextTask"
+    refid "kabam.lib.tasks:TaskSequence/instance/kabam.lib.tasks:TaskSequence/instance/doNextTask"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.lib.tasks:TaskSequence"), "tasks")
+      getlocal0
+      dup
+      getproperty         QName(PrivateNamespace("kabam.lib.tasks:TaskSequence"), "index")
+      convert_d
+      dup
+      setlocal2
+
+      increment
+      setproperty         QName(PrivateNamespace("kabam.lib.tasks:TaskSequence"), "index")
+
+      getlocal2
+      getproperty         MultinameL([PrivateNamespace("kabam.lib.tasks:TaskSequence"), ProtectedNamespace("kabam.lib.tasks:TaskSequence"), StaticProtectedNs("kabam.lib.tasks:TaskSequence"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.lib.tasks"), PackageInternalNs("kabam.lib.tasks"), PrivateNamespace("FilePrivateNS:TaskSequence"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      coerce              QName(PackageNamespace("kabam.lib.tasks"), "Task")
+      setlocal1
+
+      getlocal1
+      getproperty         QName(Namespace("kabam.lib.tasks:Task"), "lastly")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.lib.tasks:TaskSequence"), "onTaskFinished")
+      callpropvoid        QName(PackageNamespace(""), "addOnce"), 1
+
+      getlocal1
+      callpropvoid        QName(Namespace("kabam.lib.tasks:Task"), "start"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.lib.tasks:TaskSequence"), "onTaskFinished")
+   method
+    name "onTaskFinished"
+    refid "kabam.lib.tasks:TaskSequence/instance/kabam.lib.tasks:TaskSequence/instance/onTaskFinished"
+    param QName(PackageNamespace("kabam.lib.tasks"), "Task")
+    param QName(PackageNamespace(""), "Boolean")
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    paramname "_arg2"
+    paramname "_arg3"
+    body
+     maxstack 3
+     localcount 4
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal2
+      dup
+      iftrue              L9
+
+      pop
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.lib.tasks:TaskSequence"), "continueOnFail")
+      convert_b
+L9:
+      iffalse             L13
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("kabam.lib.tasks:TaskSequence"), "doNextTaskOrComplete"), 0
+
+      jump                L17
+
+L13:
+      findpropstrict      QName(ProtectedNamespace("kabam.lib.tasks:BaseTask"), "completeTask")
+      pushfalse
+      getlocal3
+      callpropvoid        QName(ProtectedNamespace("kabam.lib.tasks:BaseTask"), "completeTask"), 2
+
+L17:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.lib.tasks:TaskSequence/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

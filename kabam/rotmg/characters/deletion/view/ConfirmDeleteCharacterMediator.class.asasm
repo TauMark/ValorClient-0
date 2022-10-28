@@ -1,0 +1,186 @@
+class
+ refid "kabam.rotmg.characters.deletion.view:ConfirmDeleteCharacterMediator"
+ instance QName(PackageNamespace("kabam.rotmg.characters.deletion.view"), "ConfirmDeleteCharacterMediator")
+  extends QName(PackageNamespace("robotlegs.bender.bundles.mvcs"), "Mediator")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.characters.deletion.view:ConfirmDeleteCharacterMediator")
+  iinit
+   refid "kabam.rotmg.characters.deletion.view:ConfirmDeleteCharacterMediator/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "view") flag METADATA type QName(PackageNamespace("kabam.rotmg.characters.deletion.view"), "ConfirmDeleteCharacterDialog")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "model") flag METADATA type QName(PackageNamespace("kabam.rotmg.characters.model"), "CharacterModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "deleteCharacter") flag METADATA type QName(PackageNamespace("kabam.rotmg.characters.deletion.control"), "DeleteCharacterSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "closeDialogs") flag METADATA type QName(PackageNamespace("kabam.rotmg.dialogs.control"), "CloseDialogsSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PrivateNamespace("kabam.rotmg.characters.deletion.view:ConfirmDeleteCharacterMediator"), "character") type QName(PackageNamespace("com.company.assembleegameclient.appengine"), "SavedCharacter") end
+  trait method QName(PackageNamespace(""), "initialize") flag OVERRIDE
+   method
+    name "initialize"
+    refid "kabam.rotmg.characters.deletion.view:ConfirmDeleteCharacterMediator/instance/initialize"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "deleteCharacter")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.characters.deletion.view:ConfirmDeleteCharacterMediator"), "onDeleteCharacter")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "cancel")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.characters.deletion.view:ConfirmDeleteCharacterMediator"), "closeDialog")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "model")
+      callproperty        QName(Namespace("kabam.rotmg.characters.model:CharacterModel"), "getSelected"), 0
+      setproperty         QName(PrivateNamespace("kabam.rotmg.characters.deletion.view:ConfirmDeleteCharacterMediator"), "character")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.characters.deletion.view:ConfirmDeleteCharacterMediator"), "character")
+      callproperty        QName(PackageNamespace(""), "name"), 0
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.characters.deletion.view:ConfirmDeleteCharacterMediator"), "character")
+      callproperty        QName(PackageNamespace(""), "displayId"), 0
+      callpropvoid        QName(PackageNamespace(""), "setText"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "destroy") flag OVERRIDE
+   method
+    name "destroy"
+    refid "kabam.rotmg.characters.deletion.view:ConfirmDeleteCharacterMediator/instance/destroy"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "deleteCharacter")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.characters.deletion.view:ConfirmDeleteCharacterMediator"), "onDeleteCharacter")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "cancel")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.characters.deletion.view:ConfirmDeleteCharacterMediator"), "closeDialog")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.characters.deletion.view:ConfirmDeleteCharacterMediator"), "onDeleteCharacter")
+   method
+    name "onDeleteCharacter"
+    refid "kabam.rotmg.characters.deletion.view:ConfirmDeleteCharacterMediator/instance/kabam.rotmg.characters.deletion.view:ConfirmDeleteCharacterMediator/instance/onDeleteCharacter"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "deleteCharacter")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.characters.deletion.view:ConfirmDeleteCharacterMediator"), "character")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.characters.deletion.view:ConfirmDeleteCharacterMediator"), "closeDialog")
+   method
+    name "closeDialog"
+    refid "kabam.rotmg.characters.deletion.view:ConfirmDeleteCharacterMediator/instance/kabam.rotmg.characters.deletion.view:ConfirmDeleteCharacterMediator/instance/closeDialog"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "closeDialogs")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.characters.deletion.view:ConfirmDeleteCharacterMediator/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

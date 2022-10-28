@@ -1,0 +1,643 @@
+class
+ refid "com.company.assembleegameclient.ui.panels.itemgrids:ItemGrid"
+ instance QName(PackageNamespace("com.company.assembleegameclient.ui.panels.itemgrids"), "ItemGrid")
+  extends QName(PackageNamespace("com.company.assembleegameclient.ui.panels"), "Panel")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.company.assembleegameclient.ui.panels.itemgrids:ItemGrid")
+  iinit
+   name "ItemGrid"
+   refid "com.company.assembleegameclient.ui.panels.itemgrids:ItemGrid/instance/init"
+   param QName(PackageNamespace("com.company.assembleegameclient.objects"), "GameObject")
+   param QName(PackageNamespace("com.company.assembleegameclient.objects"), "Player")
+   param QName(PackageNamespace(""), "int")
+   flag HAS_PARAM_NAMES
+   paramname "_arg1"
+   paramname "_arg2"
+   paramname "_arg3"
+   body
+    maxstack 2
+    localcount 5
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     findpropstrict      QName(PackageNamespace("org.osflash.signals"), "Signal")
+     getlex              QName(PackageNamespace("com.company.assembleegameclient.ui.tooltip"), "ToolTip")
+     constructprop       QName(PackageNamespace("org.osflash.signals"), "Signal"), 1
+     findproperty        QName(PackageNamespace(""), "addToolTip")
+     swap
+     initproperty        QName(PackageNamespace(""), "addToolTip")
+
+     getlocal0
+     pushnull
+     constructsuper      1
+
+     getlocal0
+     getlocal1
+     setproperty         QName(PackageNamespace(""), "owner")
+
+     getlocal0
+     getlocal2
+     setproperty         QName(PackageNamespace(""), "curPlayer")
+
+     getlocal0
+     getlocal3
+     setproperty         QName(ProtectedNamespace("com.company.assembleegameclient.ui.panels.itemgrids:ItemGrid"), "indexOffset")
+
+     getlocal1
+     getlex              QName(PackageNamespace("com.company.assembleegameclient.objects"), "Container")
+     astypelate
+     coerce              QName(PackageNamespace("com.company.assembleegameclient.objects"), "Container")
+     setlocal            4
+
+     getlocal1
+     getlocal2
+     equals
+     dup
+     iftrue              L33
+
+     pop
+     getlocal            4
+     coerce_a
+L33:
+     iffalse             L37
+
+     getlocal0
+     pushtrue
+     setproperty         QName(PackageNamespace(""), "interactive")
+
+L37:
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait const QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids:ItemGrid"), "padding") type QName(PackageNamespace(""), "uint") value Integer(4) end
+  trait const QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids:ItemGrid"), "rowLength") type QName(PackageNamespace(""), "uint") value Integer(4) end
+  trait const QName(PackageNamespace(""), "addToolTip") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait slot QName(PackageNamespace(""), "owner") type QName(PackageNamespace("com.company.assembleegameclient.objects"), "GameObject") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids:ItemGrid"), "tooltip") type QName(PackageNamespace("com.company.assembleegameclient.ui.tooltip"), "ToolTip") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids:ItemGrid"), "tooltipFocusTile") type QName(PackageNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles"), "ItemTile") end
+  trait slot QName(PackageNamespace(""), "curPlayer") type QName(PackageNamespace("com.company.assembleegameclient.objects"), "Player") end
+  trait slot QName(ProtectedNamespace("com.company.assembleegameclient.ui.panels.itemgrids:ItemGrid"), "indexOffset") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PackageNamespace(""), "interactive") type QName(PackageNamespace(""), "Boolean") end
+  trait method QName(PackageNamespace(""), "hideTooltip")
+   method
+    name "hideTooltip"
+    refid "com.company.assembleegameclient.ui.panels.itemgrids:ItemGrid/instance/hideTooltip"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids:ItemGrid"), "tooltip")
+      iffalse             L14
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids:ItemGrid"), "tooltip")
+      callpropvoid        QName(PackageNamespace(""), "detachFromTarget"), 0
+
+      getlocal0
+      pushnull
+      setproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids:ItemGrid"), "tooltip")
+
+      getlocal0
+      pushnull
+      setproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids:ItemGrid"), "tooltipFocusTile")
+
+L14:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "refreshTooltip")
+   method
+    name "refreshTooltip"
+    refid "com.company.assembleegameclient.ui.panels.itemgrids:ItemGrid/instance/refreshTooltip"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace(""), "stage")
+      not
+      dup
+      iftrue              L10
+
+      pop
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids:ItemGrid"), "tooltip")
+      not
+L10:
+      dup
+      iftrue              L17
+
+      pop
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids:ItemGrid"), "tooltip")
+      getproperty         QName(PackageNamespace(""), "stage")
+      not
+L17:
+      iffalse             L19
+
+      returnvoid
+
+L19:
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids:ItemGrid"), "tooltipFocusTile")
+      iffalse             L32
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids:ItemGrid"), "tooltip")
+      callpropvoid        QName(PackageNamespace(""), "detachFromTarget"), 0
+
+      getlocal0
+      pushnull
+      setproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids:ItemGrid"), "tooltip")
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids:ItemGrid"), "tooltipFocusTile")
+      callpropvoid        QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids:ItemGrid"), "addToolTipToTile"), 1
+
+L32:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids:ItemGrid"), "onTileHover")
+   method
+    name "onTileHover"
+    refid "com.company.assembleegameclient.ui.panels.itemgrids:ItemGrid/instance/com.company.assembleegameclient.ui.panels.itemgrids:ItemGrid/onTileHover"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace(""), "stage")
+      iftrue              L5
+
+      returnvoid
+
+L5:
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "currentTarget")
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles"), "ItemTile")
+      astypelate
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles"), "ItemTile")
+      setlocal2
+
+      getlocal0
+      getlocal2
+      callpropvoid        QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids:ItemGrid"), "addToolTipToTile"), 1
+
+      getlocal0
+      getlocal2
+      setproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids:ItemGrid"), "tooltipFocusTile")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids:ItemGrid"), "addToolTipToTile")
+   method
+    name "addToolTipToTile"
+    refid "com.company.assembleegameclient.ui.panels.itemgrids:ItemGrid/instance/com.company.assembleegameclient.ui.panels.itemgrids:ItemGrid/addToolTipToTile"
+    param QName(PackageNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles"), "ItemTile")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 10
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      setlocal2
+
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "itemSprite")
+      getproperty         QName(PackageNamespace(""), "itemData")
+      getproperty         QName(PackageNamespace(""), "objectType")
+      pushbyte            0
+      greaterthan
+      dup
+      iffalse             L20
+
+      pop
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "itemSprite")
+      getproperty         QName(PackageNamespace(""), "itemData")
+      getproperty         QName(PackageNamespace(""), "objectType")
+      pushint             65535
+      equals
+      not
+L20:
+      iffalse             L44
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.ui.tooltip"), "EquipmentToolTip")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "itemSprite")
+      getproperty         QName(PackageNamespace(""), "itemData")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "curPlayer")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "owner")
+      iffalse             L35
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "owner")
+      getproperty         QName(PackageNamespace(""), "objectType_")
+      jump                L37
+
+L35:
+      pushbyte            -1
+      coerce_a
+L37:
+      getlocal0
+      callproperty        QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids:ItemGrid"), "getCharacterType"), 0
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "tileId")
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.ui.tooltip"), "EquipmentToolTip"), 5
+      setproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids:ItemGrid"), "tooltip")
+
+      jump                L74
+
+L44:
+      getlocal1
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles"), "EquipmentTile")
+      istypelate
+      iffalse             L57
+
+      getlex              QName(PackageNamespace("kabam.rotmg.constants"), "ItemConstants")
+      getlocal1
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles"), "EquipmentTile")
+      astypelate
+      getproperty         QName(PackageNamespace(""), "itemType")
+      callproperty        QName(PackageNamespace(""), "itemTypeToName"), 1
+      coerce_s
+      setlocal2
+
+      jump                L60
+
+L57:
+      pushstring          "item.toolTip"
+      coerce_s
+      setlocal2
+
+L60:
+      getlocal0
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.ui.tooltip"), "TextToolTip")
+      pushint             3552822
+      pushint             10197915
+      pushnull
+      pushstring          "item.emptySlot"
+      pushshort           200
+      pushstring          "itemType"
+      getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "TextKey")
+      getlocal2
+      callproperty        QName(PackageNamespace(""), "wrapForTokenResolution"), 1
+      newobject           1
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.ui.tooltip"), "TextToolTip"), 6
+      setproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids:ItemGrid"), "tooltip")
+
+L74:
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids:ItemGrid"), "tooltip")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "attachToTarget"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "addToolTip")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids:ItemGrid"), "tooltip")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids:ItemGrid"), "getCharacterType")
+   method
+    name "getCharacterType"
+    refid "com.company.assembleegameclient.ui.panels.itemgrids:ItemGrid/instance/com.company.assembleegameclient.ui.panels.itemgrids:ItemGrid/getCharacterType"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "owner")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "curPlayer")
+      ifne                L9
+
+      pushstring          "CURRENT_PLAYER"
+      returnvalue
+
+L9:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "owner")
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.objects"), "Player")
+      istypelate
+      iffalse             L16
+
+      pushstring          "OTHER_PLAYER"
+      returnvalue
+
+L16:
+      pushstring          "NPC"
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(ProtectedNamespace("com.company.assembleegameclient.ui.panels.itemgrids:ItemGrid"), "addToGrid")
+   method
+    name "addToGrid"
+    refid "com.company.assembleegameclient.ui.panels.itemgrids:ItemGrid/instance/com.company.assembleegameclient.ui.panels.itemgrids:ItemGrid:addToGrid"
+    param QName(PackageNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles"), "ItemTile")
+    param QName(PackageNamespace(""), "uint")
+    param QName(PackageNamespace(""), "uint")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    paramname "_arg2"
+    paramname "_arg3"
+    body
+     maxstack 4
+     localcount 4
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      getlex              QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids:ItemGrid"), "CutsByNum")
+      getlocal2
+      getproperty         MultinameL([PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids:ItemGrid"), ProtectedNamespace("com.company.assembleegameclient.ui.panels.itemgrids:ItemGrid"), StaticProtectedNs("com.company.assembleegameclient.ui.panels.itemgrids:ItemGrid"), StaticProtectedNs("com.company.assembleegameclient.ui.panels:Panel"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.ui.panels.itemgrids"), PackageInternalNs("com.company.assembleegameclient.ui.panels.itemgrids"), PrivateNamespace("FilePrivateNS:ItemGrid"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getlocal3
+      getproperty         MultinameL([PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids:ItemGrid"), ProtectedNamespace("com.company.assembleegameclient.ui.panels.itemgrids:ItemGrid"), StaticProtectedNs("com.company.assembleegameclient.ui.panels.itemgrids:ItemGrid"), StaticProtectedNs("com.company.assembleegameclient.ui.panels:Panel"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.ui.panels.itemgrids"), PackageInternalNs("com.company.assembleegameclient.ui.panels.itemgrids"), PrivateNamespace("FilePrivateNS:ItemGrid"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      callpropvoid        QName(PackageNamespace(""), "drawBackground"), 1
+
+      getlocal1
+      pushstring          "rollOver"
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids:ItemGrid"), "onTileHover")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      getlocal1
+      getlocal3
+      pushbyte            4
+      modulo
+      convert_i
+      pushbyte            40
+      pushbyte            4
+      add
+      multiply
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal1
+      getlocal3
+      pushbyte            4
+      divide
+      convert_i
+      pushbyte            40
+      pushbyte            4
+      add
+      multiply
+      setproperty         QName(PackageNamespace(""), "y")
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setItems")
+   method
+    name "setItems"
+    refid "com.company.assembleegameclient.ui.panels.itemgrids:ItemGrid/instance/setItems"
+    param TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("valor"), "ItemData")>)
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_OPTIONAL
+    flag HAS_PARAM_NAMES
+    optional Integer(0)
+    paramname "_arg1"
+    paramname "_arg2"
+    body
+     maxstack 1
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "enableInteraction")
+   method
+    name "enableInteraction"
+    refid "com.company.assembleegameclient.ui.panels.itemgrids:ItemGrid/instance/enableInteraction"
+    param QName(PackageNamespace(""), "Boolean")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      findproperty        QName(PackageNamespace(""), "mouseEnabled")
+      swap
+      setproperty         QName(PackageNamespace(""), "mouseEnabled")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "draw") flag OVERRIDE
+   method
+    name "draw"
+    refid "com.company.assembleegameclient.ui.panels.itemgrids:ItemGrid/instance/draw"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "owner")
+      getproperty         QName(PackageNamespace(""), "equipment_")
+      getlocal0
+      getproperty         QName(ProtectedNamespace("com.company.assembleegameclient.ui.panels.itemgrids:ItemGrid"), "indexOffset")
+      callpropvoid        QName(PackageNamespace(""), "setItems"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.ui.panels.itemgrids:ItemGrid/class/init"
+  body
+   maxstack 20
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 1
+   code
+    getlocal0
+    pushscope
+
+    pushbyte            0
+    pushbyte            0
+    pushbyte            0
+    pushbyte            0
+    newarray            4
+    findproperty        QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids:ItemGrid"), "NO_CUT")
+    swap
+    initproperty        QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids:ItemGrid"), "NO_CUT")
+
+    pushstring          "1"
+    pushbyte            1
+    pushbyte            0
+    pushbyte            0
+    pushbyte            1
+    newarray            4
+    getlex              QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids:ItemGrid"), "NO_CUT")
+    getlex              QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids:ItemGrid"), "NO_CUT")
+    pushbyte            0
+    pushbyte            1
+    pushbyte            1
+    pushbyte            0
+    newarray            4
+    newarray            4
+    pushstring          "2"
+    pushbyte            1
+    pushbyte            0
+    pushbyte            0
+    pushbyte            0
+    newarray            4
+    getlex              QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids:ItemGrid"), "NO_CUT")
+    getlex              QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids:ItemGrid"), "NO_CUT")
+    pushbyte            0
+    pushbyte            1
+    pushbyte            0
+    pushbyte            0
+    newarray            4
+    pushbyte            0
+    pushbyte            0
+    pushbyte            0
+    pushbyte            1
+    newarray            4
+    getlex              QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids:ItemGrid"), "NO_CUT")
+    getlex              QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids:ItemGrid"), "NO_CUT")
+    pushbyte            0
+    pushbyte            0
+    pushbyte            1
+    pushbyte            0
+    newarray            4
+    newarray            8
+    pushstring          "3"
+    pushbyte            1
+    pushbyte            0
+    pushbyte            0
+    pushbyte            1
+    newarray            4
+    getlex              QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids:ItemGrid"), "NO_CUT")
+    getlex              QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids:ItemGrid"), "NO_CUT")
+    pushbyte            0
+    pushbyte            1
+    pushbyte            1
+    pushbyte            0
+    newarray            4
+    pushbyte            1
+    pushbyte            0
+    pushbyte            0
+    pushbyte            0
+    newarray            4
+    getlex              QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids:ItemGrid"), "NO_CUT")
+    getlex              QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids:ItemGrid"), "NO_CUT")
+    pushbyte            0
+    pushbyte            1
+    pushbyte            0
+    pushbyte            0
+    newarray            4
+    pushbyte            0
+    pushbyte            0
+    pushbyte            0
+    pushbyte            1
+    newarray            4
+    getlex              QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids:ItemGrid"), "NO_CUT")
+    getlex              QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids:ItemGrid"), "NO_CUT")
+    pushbyte            0
+    pushbyte            0
+    pushbyte            1
+    pushbyte            0
+    newarray            4
+    newarray            12
+    newobject           3
+    findproperty        QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids:ItemGrid"), "CutsByNum")
+    swap
+    initproperty        QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids:ItemGrid"), "CutsByNum")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids:ItemGrid"), "NO_CUT") type QName(PackageNamespace(""), "Array") end
+ trait const QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids:ItemGrid"), "CutsByNum") type QName(PackageNamespace(""), "Object") end
+end ; class

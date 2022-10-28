@@ -1,0 +1,327 @@
+class
+ refid "kabam.rotmg.arena.view:ArenaQueryPanel"
+ instance QName(PackageNamespace("kabam.rotmg.arena.view"), "ArenaQueryPanel")
+  extends QName(PackageNamespace("com.company.assembleegameclient.ui.panels"), "Panel")
+  flag SEALED
+  iinit
+   name "ArenaQueryPanel"
+   refid "kabam.rotmg.arena.view:ArenaQueryPanel/instance/init"
+   param QName(PackageNamespace("com.company.assembleegameclient.game"), "GameSprite")
+   param QName(PackageNamespace(""), "uint")
+   flag HAS_PARAM_NAMES
+   paramname "_arg1"
+   paramname "_arg2"
+   body
+    maxstack 4
+    localcount 3
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PackageNamespace("kabam.rotmg.arena.util"), "ArenaViewAssetFactory")
+     pushint             16777215
+     pushbyte            16
+     pushtrue
+     callproperty        QName(PackageNamespace(""), "returnTextfield"), 3
+     findproperty        QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaQueryPanel"), "titleText")
+     swap
+     initproperty        QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaQueryPanel"), "titleText")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.ui.view"), "SignalWaiter")
+     constructprop       QName(PackageNamespace("kabam.rotmg.ui.view"), "SignalWaiter"), 0
+     setproperty         QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaQueryPanel"), "waiter")
+
+     getlocal0
+     getlocal2
+     setproperty         QName(PackageInternalNs("kabam.rotmg.arena.view"), "type")
+
+     getlocal0
+     getlocal1
+     constructsuper      1
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaQueryPanel"), "waiter")
+     getproperty         QName(PackageNamespace(""), "complete")
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaQueryPanel"), "alignButton")
+     callpropvoid        QName(PackageNamespace(""), "addOnce"), 1
+
+     getlocal0
+     callpropvoid        QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaQueryPanel"), "handleIcon"), 0
+
+     getlocal0
+     callpropvoid        QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaQueryPanel"), "handleTitleText"), 0
+
+     getlocal0
+     callpropvoid        QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaQueryPanel"), "handleInfoButton"), 0
+
+     getlocal0
+     callpropvoid        QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaQueryPanel"), "handleEnterButton"), 0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait const QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaQueryPanel"), "titleText") type QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaQueryPanel"), "icon") type QName(PackageNamespace("flash.display"), "Bitmap") end
+  trait slot QName(PackageInternalNs("kabam.rotmg.arena.view"), "infoButton") type QName(PackageNamespace("com.company.assembleegameclient.ui"), "DeprecatedTextButton") end
+  trait slot QName(PackageInternalNs("kabam.rotmg.arena.view"), "enterButton") type QName(PackageNamespace("com.company.assembleegameclient.ui"), "DeprecatedTextButton") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaQueryPanel"), "title") type QName(PackageNamespace(""), "String") value Utf8("ArenaQueryPanel.title") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaQueryPanel"), "infoButtonString") type QName(PackageNamespace(""), "String") value Utf8("Pets.caretakerPanelButtonInfo") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaQueryPanel"), "upgradeYardButtonString") type QName(PackageNamespace(""), "String") value Utf8("ArenaQueryPanel.leaderboard") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaQueryPanel"), "waiter") type QName(PackageNamespace("kabam.rotmg.ui.view"), "SignalWaiter") end
+  trait slot QName(PackageInternalNs("kabam.rotmg.arena.view"), "type") type QName(PackageNamespace(""), "uint") end
+  trait method QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaQueryPanel"), "handleInfoButton")
+   method
+    name "handleInfoButton"
+    refid "kabam.rotmg.arena.view:ArenaQueryPanel/instance/kabam.rotmg.arena.view:ArenaQueryPanel/instance/handleInfoButton"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.ui"), "DeprecatedTextButton")
+      pushbyte            16
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaQueryPanel"), "infoButtonString")
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.ui"), "DeprecatedTextButton"), 2
+      setproperty         QName(PackageInternalNs("kabam.rotmg.arena.view"), "infoButton")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaQueryPanel"), "waiter")
+      getlocal0
+      getproperty         QName(PackageInternalNs("kabam.rotmg.arena.view"), "infoButton")
+      getproperty         QName(PackageNamespace(""), "textChanged")
+      callpropvoid        QName(PackageNamespace(""), "push"), 1
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PackageInternalNs("kabam.rotmg.arena.view"), "infoButton")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaQueryPanel"), "handleTitleText")
+   method
+    name "handleTitleText"
+    refid "kabam.rotmg.arena.view:ArenaQueryPanel/instance/kabam.rotmg.arena.view:ArenaQueryPanel/instance/handleTitleText"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaQueryPanel"), "titleText")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder")
+      constructprop       QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder"), 0
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaQueryPanel"), "title")
+      callproperty        QName(PackageNamespace(""), "setParams"), 1
+      callpropvoid        QName(PackageNamespace(""), "setStringBuilder"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaQueryPanel"), "titleText")
+      pushbyte            65
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaQueryPanel"), "titleText")
+      pushbyte            28
+      setproperty         QName(PackageNamespace(""), "y")
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaQueryPanel"), "titleText")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaQueryPanel"), "handleEnterButton")
+   method
+    name "handleEnterButton"
+    refid "kabam.rotmg.arena.view:ArenaQueryPanel/instance/kabam.rotmg.arena.view:ArenaQueryPanel/instance/handleEnterButton"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.ui"), "DeprecatedTextButton")
+      pushbyte            16
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaQueryPanel"), "upgradeYardButtonString")
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.ui"), "DeprecatedTextButton"), 2
+      setproperty         QName(PackageInternalNs("kabam.rotmg.arena.view"), "enterButton")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaQueryPanel"), "waiter")
+      getlocal0
+      getproperty         QName(PackageInternalNs("kabam.rotmg.arena.view"), "enterButton")
+      getproperty         QName(PackageNamespace(""), "textChanged")
+      callpropvoid        QName(PackageNamespace(""), "push"), 1
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PackageInternalNs("kabam.rotmg.arena.view"), "enterButton")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaQueryPanel"), "handleIcon")
+   method
+    name "handleIcon"
+    refid "kabam.rotmg.arena.view:ArenaQueryPanel/instance/kabam.rotmg.arena.view:ArenaQueryPanel/instance/handleIcon"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlex              QName(PackageNamespace("kabam.rotmg.arena.util"), "ArenaViewAssetFactory")
+      getlocal0
+      getproperty         QName(PackageInternalNs("kabam.rotmg.arena.view"), "type")
+      callproperty        QName(PackageNamespace(""), "returnHostBitmap"), 1
+      setproperty         QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaQueryPanel"), "icon")
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaQueryPanel"), "icon")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaQueryPanel"), "icon")
+      pushbyte            5
+      setproperty         QName(PackageNamespace(""), "x")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaQueryPanel"), "alignButton")
+   method
+    name "alignButton"
+    refid "kabam.rotmg.arena.view:ArenaQueryPanel/instance/kabam.rotmg.arena.view:ArenaQueryPanel/instance/alignButton"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushbyte            15
+      setlocal2
+
+      getlocal0
+      getproperty         QName(PackageInternalNs("kabam.rotmg.arena.view"), "infoButton")
+      getproperty         QName(PackageNamespace(""), "width")
+      getlocal2
+      add
+      getlocal0
+      getproperty         QName(PackageInternalNs("kabam.rotmg.arena.view"), "enterButton")
+      getproperty         QName(PackageNamespace(""), "width")
+      add
+      convert_i
+      setlocal1
+
+      getlocal0
+      getproperty         QName(PackageInternalNs("kabam.rotmg.arena.view"), "infoButton")
+      pushshort           188
+      pushbyte            2
+      divide
+      getlocal1
+      pushbyte            2
+      divide
+      subtract
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PackageInternalNs("kabam.rotmg.arena.view"), "enterButton")
+      getlocal0
+      getproperty         QName(PackageInternalNs("kabam.rotmg.arena.view"), "infoButton")
+      getproperty         QName(PackageNamespace(""), "x")
+      getlocal0
+      getproperty         QName(PackageInternalNs("kabam.rotmg.arena.view"), "infoButton")
+      getproperty         QName(PackageNamespace(""), "width")
+      add
+      getlocal2
+      add
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PackageInternalNs("kabam.rotmg.arena.view"), "enterButton")
+      pushbyte            84
+      getlocal0
+      getproperty         QName(PackageInternalNs("kabam.rotmg.arena.view"), "enterButton")
+      getproperty         QName(PackageNamespace(""), "height")
+      subtract
+      pushbyte            4
+      subtract
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal0
+      getproperty         QName(PackageInternalNs("kabam.rotmg.arena.view"), "infoButton")
+      pushbyte            84
+      getlocal0
+      getproperty         QName(PackageInternalNs("kabam.rotmg.arena.view"), "infoButton")
+      getproperty         QName(PackageNamespace(""), "height")
+      subtract
+      pushbyte            4
+      subtract
+      setproperty         QName(PackageNamespace(""), "y")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.arena.view:ArenaQueryPanel/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

@@ -1,0 +1,117 @@
+class
+ refid "com.company.assembleegameclient.ui.components:TimerDisplay"
+ instance QName(PackageNamespace("com.company.assembleegameclient.ui.components"), "TimerDisplay")
+  extends QName(PackageNamespace("flash.display"), "Sprite")
+  flag SEALED
+  iinit
+   name "TimerDisplay"
+   refid "com.company.assembleegameclient.ui.components:TimerDisplay/instance/init"
+   param QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete")
+   flag HAS_PARAM_NAMES
+   paramname "_arg1"
+   body
+    maxstack 2
+    localcount 2
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("kabam.lib.util"), "TimeWriter")
+     constructprop       QName(PackageNamespace("kabam.lib.util"), "TimeWriter"), 0
+     setproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.components:TimerDisplay"), "stringifier")
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     getlocal1
+     callpropvoid        QName(PrivateNamespace("com.company.assembleegameclient.ui.components:TimerDisplay"), "initTextField"), 1
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.ui.components:TimerDisplay"), "_textField") type QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.ui.components:TimerDisplay"), "stringifier") type QName(PackageNamespace("kabam.lib.util"), "TimeWriter") end
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.ui.components:TimerDisplay"), "initTextField")
+   method
+    name "initTextField"
+    refid "com.company.assembleegameclient.ui.components:TimerDisplay/instance/com.company.assembleegameclient.ui.components:TimerDisplay/instance/initTextField"
+    param QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 4
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getlocal1
+      dup
+      setlocal2
+
+      setproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.components:TimerDisplay"), "_textField")
+
+      getlocal2
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "update")
+   method
+    name "update"
+    refid "com.company.assembleegameclient.ui.components:TimerDisplay/instance/update"
+    param QName(PackageNamespace(""), "Number")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 4
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.components:TimerDisplay"), "_textField")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "StaticStringBuilder")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.components:TimerDisplay"), "stringifier")
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "parseTime"), 1
+      constructprop       QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "StaticStringBuilder"), 1
+      callpropvoid        QName(PackageNamespace(""), "setStringBuilder"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.ui.components:TimerDisplay/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

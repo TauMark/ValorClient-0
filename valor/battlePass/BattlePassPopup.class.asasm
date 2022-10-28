@@ -1,0 +1,286 @@
+class
+ refid "valor.battlePass:BattlePassPopup"
+ instance QName(PackageNamespace("valor.battlePass"), "BattlePassPopup")
+  extends QName(PackageNamespace("io.decagames.rotmg.ui.popups"), "UIPopup")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("valor.battlePass:BattlePassPopup")
+  iinit
+   name "BattlePassPopup"
+   refid "valor.battlePass:BattlePassPopup/instance/init"
+   param QName(PackageNamespace("com.company.assembleegameclient.game"), "GameSprite")
+   flag HAS_PARAM_NAMES
+   paramname "gameSprite"
+   body
+    maxstack 5
+    localcount 2
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     findpropstrict      QName(PackageNamespace("org.osflash.signals"), "Signal")
+     constructprop       QName(PackageNamespace("org.osflash.signals"), "Signal"), 0
+     findproperty        QName(PackageInternalNs("valor.battlePass"), "close")
+     swap
+     setproperty         QName(PackageInternalNs("valor.battlePass"), "close")
+
+     getlocal0
+     pushshort           800
+     getlex              QName(PackageNamespace(""), "WebMain")
+     getproperty         QName(PackageNamespace(""), "HUDWidth")
+     subtract
+     pushshort           600
+     constructsuper      2
+
+     getlocal0
+     getlocal1
+     setproperty         QName(PrivateNamespace("valor.battlePass:BattlePassPopup"), "gameSprite")
+
+     getlocal0
+     getlex              QName(PackageNamespace("kabam.rotmg.core"), "StaticInjectorContext")
+     callproperty        QName(PackageNamespace(""), "getInjector"), 0
+     getlex              QName(PackageNamespace("io.decagames.rotmg.ui.popups.signals"), "ClosePopupSignal")
+     callproperty        QName(PackageNamespace(""), "getInstance"), 1
+     setproperty         QName(PackageNamespace(""), "closePopupSignal")
+
+     getlocal0
+     getlex              QName(PackageNamespace("kabam.rotmg.core"), "StaticInjectorContext")
+     callproperty        QName(PackageNamespace(""), "getInjector"), 0
+     getlex              QName(PackageNamespace("kabam.rotmg.dialogs.control"), "CloseDialogsSignal")
+     callproperty        QName(PackageNamespace(""), "getInstance"), 1
+     setproperty         QName(PackageNamespace(""), "closeDialogs")
+
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "header")
+     pushstring          "Battle Pass"
+     pushshort           519
+     getlex              QName(PackageNamespace("io.decagames.rotmg.ui.defaults"), "DefaultLabelFormat")
+     getproperty         QName(PackageNamespace(""), "defaultPopupTitle")
+     callpropvoid        QName(PackageNamespace(""), "setTitle"), 3
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("valor.battlePass"), "BattlePassTab")
+     getlocal1
+     constructprop       QName(PackageNamespace("valor.battlePass"), "BattlePassTab"), 1
+     setproperty         QName(PrivateNamespace("valor.battlePass:BattlePassPopup"), "battlePassTab")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("valor.battlePass.missions"), "MissionsTab")
+     getlocal1
+     constructprop       QName(PackageNamespace("valor.battlePass.missions"), "MissionsTab"), 1
+     setproperty         QName(PrivateNamespace("valor.battlePass:BattlePassPopup"), "missionsTab")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("io.decagames.rotmg.ui.tabs"), "UITabs")
+     pushshort           590
+     constructprop       QName(PackageNamespace("io.decagames.rotmg.ui.tabs"), "UITabs"), 1
+     setproperty         QName(PrivateNamespace("valor.battlePass:BattlePassPopup"), "tabs")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("valor.battlePass:BattlePassPopup"), "tabs")
+     getlocal0
+     getproperty         QName(PrivateNamespace("valor.battlePass:BattlePassPopup"), "battlePassTab")
+     pushtrue
+     callpropvoid        QName(PackageNamespace(""), "addTab"), 2
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("valor.battlePass:BattlePassPopup"), "tabs")
+     getlocal0
+     getproperty         QName(PrivateNamespace("valor.battlePass:BattlePassPopup"), "missionsTab")
+     pushfalse
+     callpropvoid        QName(PackageNamespace(""), "addTab"), 2
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("valor.battlePass:BattlePassPopup"), "tabs")
+     pushbyte            115
+     setproperty         QName(PackageNamespace(""), "y")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("valor.battlePass:BattlePassPopup"), "tabs")
+     pushbyte            3
+     setproperty         QName(PackageNamespace(""), "x")
+
+     getlocal0
+     getlocal0
+     getproperty         QName(PrivateNamespace("valor.battlePass:BattlePassPopup"), "tabs")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("io.decagames.rotmg.ui.buttons"), "SliceScalingButton")
+     getlex              QName(PackageNamespace("io.decagames.rotmg.ui.texture"), "TextureParser")
+     getproperty         QName(PackageNamespace(""), "instance")
+     pushstring          "UI"
+     pushstring          "close_button"
+     callproperty        QName(PackageNamespace(""), "getSliceScalingBitmap"), 2
+     constructprop       QName(PackageNamespace("io.decagames.rotmg.ui.buttons"), "SliceScalingButton"), 1
+     setproperty         QName(PrivateNamespace("valor.battlePass:BattlePassPopup"), "quitButton")
+
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "header")
+     getlocal0
+     getproperty         QName(PrivateNamespace("valor.battlePass:BattlePassPopup"), "quitButton")
+     pushstring          "right_button"
+     callpropvoid        QName(PackageNamespace(""), "addButton"), 2
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("valor.battlePass:BattlePassPopup"), "quitButton")
+     pushstring          "click"
+     getlocal0
+     getproperty         QName(PrivateNamespace("valor.battlePass:BattlePassPopup"), "onClose")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     getlex              QName(PackageNamespace("valor.battlePass"), "BattlePassModel")
+     pushtrue
+     setproperty         QName(PackageNamespace(""), "isOpened")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "closePopupSignal") flag METADATA type QName(PackageNamespace("io.decagames.rotmg.ui.popups.signals"), "ClosePopupSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "closeDialogs") flag METADATA type QName(PackageNamespace("kabam.rotmg.dialogs.control"), "CloseDialogsSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PrivateNamespace("valor.battlePass:BattlePassPopup"), "gameSprite") type QName(PackageNamespace("com.company.assembleegameclient.game"), "GameSprite") end
+  trait slot QName(PackageInternalNs("valor.battlePass"), "close") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait slot QName(PrivateNamespace("valor.battlePass:BattlePassPopup"), "tabs") type QName(PackageNamespace("io.decagames.rotmg.ui.tabs"), "UITabs") end
+  trait slot QName(PrivateNamespace("valor.battlePass:BattlePassPopup"), "quitButton") type QName(PackageNamespace("io.decagames.rotmg.ui.buttons"), "SliceScalingButton") end
+  trait slot QName(PrivateNamespace("valor.battlePass:BattlePassPopup"), "battlePassTab") type QName(PackageNamespace("valor.battlePass"), "BattlePassTab") end
+  trait slot QName(PrivateNamespace("valor.battlePass:BattlePassPopup"), "missionsTab") type QName(PackageNamespace("valor.battlePass.missions"), "MissionsTab") end
+  trait method QName(PrivateNamespace("valor.battlePass:BattlePassPopup"), "onClose")
+   method
+    name "onClose"
+    refid "valor.battlePass:BattlePassPopup/instance/valor.battlePass:BattlePassPopup/instance/onClose"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageInternalNs("valor.battlePass"), "close")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      getlocal0
+      callpropvoid        QName(PackageNamespace(""), "dispose"), 0
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("valor.battlePass:BattlePassPopup"), "gameSprite")
+      getlocal0
+      callpropvoid        QName(PackageNamespace(""), "removeChild"), 1
+
+      getlex              QName(PackageNamespace("valor.battlePass"), "BattlePassModel")
+      pushfalse
+      setproperty         QName(PackageNamespace(""), "isOpened")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "dispose") flag OVERRIDE
+   method
+    name "dispose"
+    refid "valor.battlePass:BattlePassPopup/instance/dispose"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      callsupervoid       QName(PackageNamespace(""), "dispose"), 0
+      getlocal0
+      getproperty         QName(PrivateNamespace("valor.battlePass:BattlePassPopup"), "quitButton")
+      pushnull
+      ifeq                L20
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("valor.battlePass:BattlePassPopup"), "quitButton")
+      pushstring          "click"
+      getlocal0
+      getproperty         QName(PrivateNamespace("valor.battlePass:BattlePassPopup"), "onClose")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("valor.battlePass:BattlePassPopup"), "quitButton")
+      callpropvoid        QName(PackageNamespace(""), "dispose"), 0
+
+      getlocal0
+      pushnull
+      setproperty         QName(PrivateNamespace("valor.battlePass:BattlePassPopup"), "quitButton")
+
+L20:
+      getlocal0
+      getproperty         QName(PrivateNamespace("valor.battlePass:BattlePassPopup"), "battlePassTab")
+      pushnull
+      ifeq                L30
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("valor.battlePass:BattlePassPopup"), "battlePassTab")
+      callpropvoid        QName(PackageNamespace(""), "dispose"), 0
+
+      getlocal0
+      pushnull
+      setproperty         QName(PrivateNamespace("valor.battlePass:BattlePassPopup"), "battlePassTab")
+
+L30:
+      getlocal0
+      getproperty         QName(PrivateNamespace("valor.battlePass:BattlePassPopup"), "missionsTab")
+      pushnull
+      ifeq                L40
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("valor.battlePass:BattlePassPopup"), "missionsTab")
+      callpropvoid        QName(PackageNamespace(""), "dispose"), 0
+
+      getlocal0
+      pushnull
+      setproperty         QName(PrivateNamespace("valor.battlePass:BattlePassPopup"), "missionsTab")
+
+L40:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "closePopupSignal")
+      getlocal0
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "closeDialogs")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "valor.battlePass:BattlePassPopup/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

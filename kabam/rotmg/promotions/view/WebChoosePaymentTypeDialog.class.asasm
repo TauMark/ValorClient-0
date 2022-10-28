@@ -1,0 +1,288 @@
+class
+ refid "kabam.rotmg.promotions.view:WebChoosePaymentTypeDialog"
+ instance QName(PackageNamespace("kabam.rotmg.promotions.view"), "WebChoosePaymentTypeDialog")
+  extends QName(PackageNamespace("flash.display"), "Sprite")
+  flag SEALED
+  iinit
+   name "WebChoosePaymentTypeDialog"
+   refid "kabam.rotmg.promotions.view:WebChoosePaymentTypeDialog/instance/init"
+   body
+    maxstack 4
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("org.osflash.signals"), "Signal")
+     constructprop       QName(PackageNamespace("org.osflash.signals"), "Signal"), 0
+     setproperty         QName(PackageNamespace(""), "close")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("kabam.lib.ui"), "GroupMappedSignal")
+     pushstring          "click"
+     getlex              QName(PackageNamespace(""), "String")
+     constructprop       QName(PackageNamespace("kabam.lib.ui"), "GroupMappedSignal"), 2
+     setproperty         QName(PackageNamespace(""), "select")
+
+     getlocal0
+     callpropvoid        QName(PrivateNamespace("kabam.rotmg.promotions.view:WebChoosePaymentTypeDialog"), "makeBackground"), 0
+
+     getlocal0
+     callpropvoid        QName(PrivateNamespace("kabam.rotmg.promotions.view:WebChoosePaymentTypeDialog"), "makeCloseButton"), 0
+
+     getlocal0
+     callpropvoid        QName(PrivateNamespace("kabam.rotmg.promotions.view:WebChoosePaymentTypeDialog"), "makePaymentSelection"), 0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "close") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait slot QName(PackageNamespace(""), "select") type QName(PackageNamespace("kabam.lib.ui"), "GroupMappedSignal") end
+  trait slot QName(PackageNamespace(""), "paypal") type QName(PackageNamespace("flash.display"), "Sprite") end
+  trait slot QName(PackageNamespace(""), "creditCard") type QName(PackageNamespace("flash.display"), "Sprite") end
+  trait slot QName(PackageNamespace(""), "google") type QName(PackageNamespace("flash.display"), "Sprite") end
+  trait method QName(PackageNamespace(""), "centerOnScreen")
+   method
+    name "centerOnScreen"
+    refid "kabam.rotmg.promotions.view:WebChoosePaymentTypeDialog/instance/centerOnScreen"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace(""), "stage")
+      getproperty         QName(PackageNamespace(""), "stageWidth")
+      getlex              QName(PackageNamespace(""), "width")
+      subtract
+      pushdouble          0.5
+      multiply
+      findproperty        QName(PackageNamespace(""), "x")
+      swap
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlex              QName(PackageNamespace(""), "stage")
+      getproperty         QName(PackageNamespace(""), "stageHeight")
+      getlex              QName(PackageNamespace(""), "height")
+      subtract
+      pushdouble          0.5
+      multiply
+      pushbyte            5
+      subtract
+      findproperty        QName(PackageNamespace(""), "y")
+      swap
+      setproperty         QName(PackageNamespace(""), "y")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.promotions.view:WebChoosePaymentTypeDialog"), "makeBackground")
+   method
+    name "makeBackground"
+    refid "kabam.rotmg.promotions.view:WebChoosePaymentTypeDialog/instance/kabam.rotmg.promotions.view:WebChoosePaymentTypeDialog/instance/makeBackground"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      findpropstrict      QName(PackageNamespace(""), "hifiBeginnerOfferMoneyFrameEmbed")
+      constructprop       QName(PackageNamespace(""), "hifiBeginnerOfferMoneyFrameEmbed"), 0
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.promotions.view:WebChoosePaymentTypeDialog"), "makeCloseButton")
+   method
+    name "makeCloseButton"
+    refid "kabam.rotmg.promotions.view:WebChoosePaymentTypeDialog/instance/kabam.rotmg.promotions.view:WebChoosePaymentTypeDialog/instance/makeCloseButton"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 5
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      pushshort           550
+      pushbyte            30
+      pushbyte            30
+      pushbyte            30
+      callproperty        QName(PrivateNamespace("kabam.rotmg.promotions.view:WebChoosePaymentTypeDialog"), "makeTransparentButton"), 4
+      coerce              QName(PackageNamespace("flash.display"), "Sprite")
+      setlocal1
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("org.osflash.signals.natives"), "NativeMappedSignal")
+      getlocal1
+      pushstring          "click"
+      constructprop       QName(PackageNamespace("org.osflash.signals.natives"), "NativeMappedSignal"), 2
+      setproperty         QName(PackageNamespace(""), "close")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.promotions.view:WebChoosePaymentTypeDialog"), "makePaymentSelection")
+   method
+    name "makePaymentSelection"
+    refid "kabam.rotmg.promotions.view:WebChoosePaymentTypeDialog/instance/kabam.rotmg.promotions.view:WebChoosePaymentTypeDialog/instance/makePaymentSelection"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 6
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal0
+      pushshort           220
+      pushshort           180
+      pushshort           180
+      pushbyte            35
+      callproperty        QName(PrivateNamespace("kabam.rotmg.promotions.view:WebChoosePaymentTypeDialog"), "makeTransparentButton"), 4
+      setproperty         QName(PackageNamespace(""), "paypal")
+
+      getlocal0
+      getlocal0
+      pushshort           220
+      pushshort           224
+      pushshort           180
+      pushbyte            35
+      callproperty        QName(PrivateNamespace("kabam.rotmg.promotions.view:WebChoosePaymentTypeDialog"), "makeTransparentButton"), 4
+      setproperty         QName(PackageNamespace(""), "creditCard")
+
+      getlocal0
+      getlocal0
+      pushshort           220
+      pushshort           268
+      pushshort           180
+      pushbyte            35
+      callproperty        QName(PrivateNamespace("kabam.rotmg.promotions.view:WebChoosePaymentTypeDialog"), "makeTransparentButton"), 4
+      setproperty         QName(PackageNamespace(""), "google")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "select")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "paypal")
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "PaymentMethod")
+      getproperty         QName(PackageNamespace(""), "PAYPAL_METHOD")
+      getproperty         QName(PackageNamespace(""), "label_")
+      callpropvoid        QName(PackageNamespace(""), "map"), 2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "select")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "creditCard")
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "PaymentMethod")
+      getproperty         QName(PackageNamespace(""), "CREDITS_METHOD")
+      getproperty         QName(PackageNamespace(""), "label_")
+      callpropvoid        QName(PackageNamespace(""), "map"), 2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "select")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "google")
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "PaymentMethod")
+      getproperty         QName(PackageNamespace(""), "GO_METHOD")
+      getproperty         QName(PackageNamespace(""), "label_")
+      callpropvoid        QName(PackageNamespace(""), "map"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.promotions.view:WebChoosePaymentTypeDialog"), "makeTransparentButton")
+   method
+    name "makeTransparentButton"
+    refid "kabam.rotmg.promotions.view:WebChoosePaymentTypeDialog/instance/kabam.rotmg.promotions.view:WebChoosePaymentTypeDialog/instance/makeTransparentButton"
+    param QName(PackageNamespace(""), "int")
+    param QName(PackageNamespace(""), "int")
+    param QName(PackageNamespace(""), "int")
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace("flash.display"), "Sprite")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    paramname "_arg2"
+    paramname "_arg3"
+    paramname "_arg4"
+    body
+     maxstack 5
+     localcount 6
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.promotions.view.components"), "TransparentButton")
+      getlocal1
+      getlocal2
+      getlocal3
+      getlocal            4
+      constructprop       QName(PackageNamespace("kabam.rotmg.promotions.view.components"), "TransparentButton"), 4
+      coerce              QName(PackageNamespace("kabam.rotmg.promotions.view.components"), "TransparentButton")
+      setlocal            5
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal            5
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      getlocal            5
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.promotions.view:WebChoosePaymentTypeDialog/class/init"
+  body
+   maxstack 2
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 1
+   code
+    getlocal0
+    pushscope
+
+    getlex              QName(PackageNamespace("kabam.rotmg.promotions.view"), "WebChoosePaymentTypeDialog_hifiBeginnerOfferMoneyFrameEmbed")
+    findproperty        QName(PackageNamespace(""), "hifiBeginnerOfferMoneyFrameEmbed")
+    swap
+    setproperty         QName(PackageNamespace(""), "hifiBeginnerOfferMoneyFrameEmbed")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait slot QName(PackageNamespace(""), "hifiBeginnerOfferMoneyFrameEmbed") type QName(PackageNamespace(""), "Class") end
+end ; class

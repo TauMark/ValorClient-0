@@ -1,0 +1,288 @@
+class
+ refid "kabam.rotmg.market:MarketNPCPanel"
+ instance QName(PackageNamespace("kabam.rotmg.market"), "MarketNPCPanel")
+  extends QName(PackageNamespace("com.company.assembleegameclient.ui.panels"), "Panel")
+  flag SEALED
+  iinit
+   name "MarketNPCPanel"
+   refid "kabam.rotmg.market:MarketNPCPanel/instance/init#1"
+   param QName(PackageNamespace("com.company.assembleegameclient.game"), "GameSprite")
+   param QName(PackageNamespace(""), "uint")
+   flag HAS_PARAM_NAMES
+   paramname "gs"
+   paramname "type"
+   body
+    maxstack 4
+    localcount 3
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PackageNamespace("kabam.rotmg.pets.util"), "PetsViewAssetFactory")
+     pushint             16777215
+     pushbyte            16
+     pushtrue
+     callproperty        QName(PackageNamespace(""), "returnTextfield"), 3
+     findproperty        QName(PrivateNamespace("kabam.rotmg.market:MarketNPCPanel"), "title")
+     swap
+     initproperty        QName(PrivateNamespace("kabam.rotmg.market:MarketNPCPanel"), "title")
+
+     getlocal0
+     getlocal2
+     setproperty         QName(PackageInternalNs("kabam.rotmg.market"), "type")
+
+     getlocal0
+     getlocal1
+     constructsuper      1
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait const QName(PrivateNamespace("kabam.rotmg.market:MarketNPCPanel"), "title") type QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.market:MarketNPCPanel"), "icon") type QName(PackageNamespace("flash.display"), "Bitmap") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.market:MarketNPCPanel"), "_title") type QName(PackageNamespace(""), "String") value Utf8("Marketplace") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.market:MarketNPCPanel"), "_manage") type QName(PackageNamespace(""), "String") value Utf8("Manage") end
+  trait slot QName(PackageInternalNs("kabam.rotmg.market"), "manageBtn") type QName(PackageNamespace("com.company.assembleegameclient.ui"), "DeprecatedTextButton") end
+  trait slot QName(PackageInternalNs("kabam.rotmg.market"), "type") type QName(PackageNamespace(""), "uint") end
+  trait method QName(PrivateNamespace("kabam.rotmg.market:MarketNPCPanel"), "positionAndAddText")
+   method
+    name "positionAndAddText"
+    refid "kabam.rotmg.market:MarketNPCPanel/instance/kabam.rotmg.market:MarketNPCPanel/instance/positionAndAddText"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.market:MarketNPCPanel"), "icon")
+      pushbyte            16
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.market:MarketNPCPanel"), "icon")
+      pushbyte            -2
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.market:MarketNPCPanel"), "title")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "StaticStringBuilder")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.market:MarketNPCPanel"), "_title")
+      constructprop       QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "StaticStringBuilder"), 1
+      callpropvoid        QName(PackageNamespace(""), "setStringBuilder"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.market:MarketNPCPanel"), "title")
+      pushbyte            69
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.market:MarketNPCPanel"), "title")
+      pushbyte            28
+      setproperty         QName(PackageNamespace(""), "y")
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.market:MarketNPCPanel"), "title")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.market:MarketNPCPanel"), "addManageBtn")
+   method
+    name "addManageBtn"
+    refid "kabam.rotmg.market:MarketNPCPanel/instance/kabam.rotmg.market:MarketNPCPanel/instance/addManageBtn"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 6
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.ui"), "DeprecatedTextButton")
+      pushbyte            16
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.market:MarketNPCPanel"), "_manage")
+      pushbyte            0
+      pushtrue
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.ui"), "DeprecatedTextButton"), 4
+      setproperty         QName(PackageInternalNs("kabam.rotmg.market"), "manageBtn")
+
+      getlocal0
+      getproperty         QName(PackageInternalNs("kabam.rotmg.market"), "manageBtn")
+      getproperty         QName(PackageNamespace(""), "textChanged")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.market:MarketNPCPanel"), "update")
+      callpropvoid        QName(PackageNamespace(""), "addOnce"), 1
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PackageInternalNs("kabam.rotmg.market"), "manageBtn")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "init")
+   method
+    name "init"
+    refid "kabam.rotmg.market:MarketNPCPanel/instance/init#0"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.market:MarketNPCPanel"), "scaleIcon"), 0
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.market:MarketNPCPanel"), "positionAndAddText"), 0
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.market:MarketNPCPanel"), "addManageBtn"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.market:MarketNPCPanel"), "scaleIcon")
+   method
+    name "scaleIcon"
+    refid "kabam.rotmg.market:MarketNPCPanel/instance/kabam.rotmg.market:MarketNPCPanel/instance/scaleIcon"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlex              QName(PackageNamespace("kabam.rotmg.pets.util"), "PetsViewAssetFactory")
+      getlocal0
+      getproperty         QName(PackageInternalNs("kabam.rotmg.market"), "type")
+      callproperty        QName(PackageNamespace(""), "returnCaretakerBitmap"), 1
+      setproperty         QName(PrivateNamespace("kabam.rotmg.market:MarketNPCPanel"), "icon")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.market:MarketNPCPanel"), "icon")
+      pushdouble          0.5
+      setproperty         QName(PackageNamespace(""), "scaleX")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.market:MarketNPCPanel"), "icon")
+      pushdouble          0.5
+      setproperty         QName(PackageNamespace(""), "scaleY")
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.market:MarketNPCPanel"), "icon")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.market:MarketNPCPanel"), "icon")
+      pushbyte            5
+      setproperty         QName(PackageNamespace(""), "x")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.market:MarketNPCPanel"), "update")
+   method
+    name "update"
+    refid "kabam.rotmg.market:MarketNPCPanel/instance/kabam.rotmg.market:MarketNPCPanel/instance/update"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageInternalNs("kabam.rotmg.market"), "manageBtn")
+      dup
+      iffalse             L12
+
+      pop
+      findpropstrict      QName(PackageNamespace(""), "contains")
+      getlocal0
+      getproperty         QName(PackageInternalNs("kabam.rotmg.market"), "manageBtn")
+      callproperty        QName(PackageNamespace(""), "contains"), 1
+      coerce_a
+L12:
+      iffalse             L35
+
+      getlocal0
+      getproperty         QName(PackageInternalNs("kabam.rotmg.market"), "manageBtn")
+      pushshort           188
+      pushbyte            2
+      divide
+      getlocal0
+      getproperty         QName(PackageInternalNs("kabam.rotmg.market"), "manageBtn")
+      getproperty         QName(PackageNamespace(""), "width")
+      pushbyte            2
+      divide
+      subtract
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PackageInternalNs("kabam.rotmg.market"), "manageBtn")
+      pushbyte            84
+      getlocal0
+      getproperty         QName(PackageInternalNs("kabam.rotmg.market"), "manageBtn")
+      getproperty         QName(PackageNamespace(""), "height")
+      subtract
+      pushbyte            4
+      subtract
+      setproperty         QName(PackageNamespace(""), "y")
+
+L35:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.market:MarketNPCPanel/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

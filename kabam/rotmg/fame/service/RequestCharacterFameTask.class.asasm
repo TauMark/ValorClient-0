@@ -1,0 +1,591 @@
+class
+ refid "kabam.rotmg.fame.service:RequestCharacterFameTask"
+ instance QName(PackageNamespace("kabam.rotmg.fame.service"), "RequestCharacterFameTask")
+  extends QName(PackageNamespace("kabam.lib.tasks"), "BaseTask")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.fame.service:RequestCharacterFameTask")
+  iinit
+   name "RequestCharacterFameTask"
+   refid "kabam.rotmg.fame.service:RequestCharacterFameTask/instance/init"
+   body
+    maxstack 3
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("flash.utils"), "Timer")
+     pushshort           150
+     constructprop       QName(PackageNamespace("flash.utils"), "Timer"), 1
+     setproperty         QName(PackageNamespace(""), "timer")
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "client") flag METADATA type QName(PackageNamespace("kabam.rotmg.appengine.api"), "AppEngineClient")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "openDialog") flag METADATA type QName(PackageNamespace("kabam.rotmg.dialogs.control"), "OpenDialogSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "classes") flag METADATA type QName(PackageNamespace("kabam.rotmg.classes.model"), "ClassesModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "accountId") type QName(PackageNamespace(""), "String") end
+  trait slot QName(PackageNamespace(""), "charId") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PackageNamespace(""), "xml") type QName(PackageNamespace(""), "XML") end
+  trait slot QName(PackageNamespace(""), "name") type QName(PackageNamespace(""), "String") end
+  trait slot QName(PackageNamespace(""), "level") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PackageNamespace(""), "type") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PackageNamespace(""), "deathDate") type QName(PackageNamespace(""), "String") end
+  trait slot QName(PackageNamespace(""), "killer") type QName(PackageNamespace(""), "String") end
+  trait slot QName(PackageNamespace(""), "totalFame") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PackageNamespace(""), "template") type QName(PackageNamespace("kabam.rotmg.assets.model"), "CharacterTemplate") end
+  trait slot QName(PackageNamespace(""), "texture1") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PackageNamespace(""), "texture2") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PackageNamespace(""), "size") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PackageNamespace(""), "timer") type QName(PackageNamespace("flash.utils"), "Timer") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.fame.service:RequestCharacterFameTask"), "errorRetry") type QName(PackageNamespace(""), "Boolean") value False() end
+  trait method QName(ProtectedNamespace("kabam.rotmg.fame.service:RequestCharacterFameTask"), "startTask") flag OVERRIDE
+   method
+    name "startTask"
+    refid "kabam.rotmg.fame.service:RequestCharacterFameTask/instance/kabam.rotmg.fame.service:RequestCharacterFameTask:startTask"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "timer")
+      pushstring          "timer"
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.fame.service:RequestCharacterFameTask"), "sendFameRequest")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "timer")
+      callpropvoid        QName(PackageNamespace(""), "start"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.fame.service:RequestCharacterFameTask"), "sendFameRequest")
+   method
+    name "sendFameRequest"
+    refid "kabam.rotmg.fame.service:RequestCharacterFameTask/instance/kabam.rotmg.fame.service:RequestCharacterFameTask/instance/sendFameRequest"
+    param QName(PackageNamespace("flash.events"), "TimerEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "client")
+      pushbyte            8
+      callpropvoid        QName(Namespace("kabam.rotmg.appengine.api:AppEngineClient"), "setMaxRetries"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "client")
+      getproperty         QName(Namespace("kabam.rotmg.appengine.api:AppEngineClient"), "complete")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.fame.service:RequestCharacterFameTask"), "onComplete")
+      callpropvoid        QName(PackageNamespace(""), "addOnce"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "client")
+      pushstring          "char/fame"
+      getlocal0
+      callproperty        QName(PrivateNamespace("kabam.rotmg.fame.service:RequestCharacterFameTask"), "getDataPacket"), 0
+      callpropvoid        QName(Namespace("kabam.rotmg.appengine.api:AppEngineClient"), "sendRequest"), 2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "timer")
+      pushstring          "timer"
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.fame.service:RequestCharacterFameTask"), "sendFameRequest")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "timer")
+      callpropvoid        QName(PackageNamespace(""), "stop"), 0
+
+      getlocal0
+      pushnull
+      setproperty         QName(PackageNamespace(""), "timer")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.fame.service:RequestCharacterFameTask"), "getDataPacket")
+   method
+    name "getDataPacket"
+    refid "kabam.rotmg.fame.service:RequestCharacterFameTask/instance/kabam.rotmg.fame.service:RequestCharacterFameTask/instance/getDataPacket"
+    returns QName(PackageNamespace(""), "Object")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      newobject           0
+      coerce              QName(PackageNamespace(""), "Object")
+      setlocal1
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "accountId")
+      setproperty         Multiname("accountId", [PrivateNamespace("kabam.rotmg.fame.service:RequestCharacterFameTask"), ProtectedNamespace("kabam.rotmg.fame.service:RequestCharacterFameTask"), StaticProtectedNs("kabam.rotmg.fame.service:RequestCharacterFameTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.fame.service"), PackageInternalNs("kabam.rotmg.fame.service"), PrivateNamespace("FilePrivateNS:RequestCharacterFameTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "accountId")
+      pushstring          ""
+      ifne                L16
+
+      pushbyte            -1
+      jump                L19
+
+L16:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "charId")
+      coerce_a
+L19:
+      setproperty         Multiname("charId", [PrivateNamespace("kabam.rotmg.fame.service:RequestCharacterFameTask"), ProtectedNamespace("kabam.rotmg.fame.service:RequestCharacterFameTask"), StaticProtectedNs("kabam.rotmg.fame.service:RequestCharacterFameTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.fame.service"), PackageInternalNs("kabam.rotmg.fame.service"), PrivateNamespace("FilePrivateNS:RequestCharacterFameTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      getlocal1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.fame.service:RequestCharacterFameTask"), "onComplete")
+   method
+    name "onComplete"
+    refid "kabam.rotmg.fame.service:RequestCharacterFameTask/instance/kabam.rotmg.fame.service:RequestCharacterFameTask/instance/onComplete"
+    param QName(PackageNamespace(""), "Boolean")
+    param null
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    paramname "_arg2"
+    body
+     maxstack 2
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      iffalse             L8
+
+      getlocal0
+      getlocal2
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.fame.service:RequestCharacterFameTask"), "parseFameData"), 1
+
+      jump                L11
+
+L8:
+      getlocal0
+      getlocal2
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.fame.service:RequestCharacterFameTask"), "onFameError"), 1
+
+L11:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.fame.service:RequestCharacterFameTask"), "parseFameData")
+   method
+    name "parseFameData"
+    refid "kabam.rotmg.fame.service:RequestCharacterFameTask/instance/kabam.rotmg.fame.service:RequestCharacterFameTask/instance/parseFameData"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace(""), "XML")
+      getlocal1
+      constructprop       QName(PackageNamespace(""), "XML"), 1
+      setproperty         QName(PackageNamespace(""), "xml")
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.fame.service:RequestCharacterFameTask"), "parseXML"), 0
+
+      findpropstrict      QName(ProtectedNamespace("kabam.lib.tasks:BaseTask"), "completeTask")
+      pushtrue
+      callpropvoid        QName(ProtectedNamespace("kabam.lib.tasks:BaseTask"), "completeTask"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.fame.service:RequestCharacterFameTask"), "parseXML")
+   method
+    name "parseXML"
+    refid "kabam.rotmg.fame.service:RequestCharacterFameTask/instance/kabam.rotmg.fame.service:RequestCharacterFameTask/instance/parseXML"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 8
+     initscopedepth 0
+     maxscopedepth 2
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      setlocal3
+
+      pushnull
+      setlocal1
+
+      pushnull
+      setlocal2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "xml")
+      getproperty         Multiname("Char", [PrivateNamespace("kabam.rotmg.fame.service:RequestCharacterFameTask"), ProtectedNamespace("kabam.rotmg.fame.service:RequestCharacterFameTask"), StaticProtectedNs("kabam.rotmg.fame.service:RequestCharacterFameTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.fame.service"), PackageInternalNs("kabam.rotmg.fame.service"), PrivateNamespace("FilePrivateNS:RequestCharacterFameTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      checkfilter
+      setlocal            4
+
+      pushbyte            0
+      setlocal            5
+
+      getlex              QName(PackageNamespace(""), "XMLList")
+      pushstring          ""
+      construct           1
+      setlocal            7
+
+      jump                L35
+
+L20:
+      label
+      getlocal            4
+      getlocal            5
+      nextvalue
+      dup
+      setlocal            6
+
+      pushwith
+      getlex              MultinameA("id", [PrivateNamespace("kabam.rotmg.fame.service:RequestCharacterFameTask"), ProtectedNamespace("kabam.rotmg.fame.service:RequestCharacterFameTask"), StaticProtectedNs("kabam.rotmg.fame.service:RequestCharacterFameTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.fame.service"), PackageInternalNs("kabam.rotmg.fame.service"), PrivateNamespace("FilePrivateNS:RequestCharacterFameTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getlex              QName(PackageNamespace(""), "charId")
+      ifne                L34
+
+      getlocal            7
+      getlocal            5
+      getlocal            6
+      setproperty         MultinameL([PrivateNamespace("kabam.rotmg.fame.service:RequestCharacterFameTask"), ProtectedNamespace("kabam.rotmg.fame.service:RequestCharacterFameTask"), StaticProtectedNs("kabam.rotmg.fame.service:RequestCharacterFameTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.fame.service"), PackageInternalNs("kabam.rotmg.fame.service"), PrivateNamespace("FilePrivateNS:RequestCharacterFameTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+L34:
+      popscope
+L35:
+      hasnext2            4, 5
+      iftrue              L20
+
+      getlocal            7
+      pushbyte            0
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.fame.service:RequestCharacterFameTask"), ProtectedNamespace("kabam.rotmg.fame.service:RequestCharacterFameTask"), StaticProtectedNs("kabam.rotmg.fame.service:RequestCharacterFameTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.fame.service"), PackageInternalNs("kabam.rotmg.fame.service"), PrivateNamespace("FilePrivateNS:RequestCharacterFameTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      coerce              QName(PackageNamespace(""), "XML")
+      setlocal3
+
+      getlocal0
+      getlocal3
+      getproperty         Multiname("Account", [PrivateNamespace("kabam.rotmg.fame.service:RequestCharacterFameTask"), ProtectedNamespace("kabam.rotmg.fame.service:RequestCharacterFameTask"), StaticProtectedNs("kabam.rotmg.fame.service:RequestCharacterFameTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.fame.service"), PackageInternalNs("kabam.rotmg.fame.service"), PrivateNamespace("FilePrivateNS:RequestCharacterFameTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getproperty         Multiname("Name", [PrivateNamespace("kabam.rotmg.fame.service:RequestCharacterFameTask"), ProtectedNamespace("kabam.rotmg.fame.service:RequestCharacterFameTask"), StaticProtectedNs("kabam.rotmg.fame.service:RequestCharacterFameTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.fame.service"), PackageInternalNs("kabam.rotmg.fame.service"), PrivateNamespace("FilePrivateNS:RequestCharacterFameTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      setproperty         QName(PackageNamespace(""), "name")
+
+      getlocal0
+      getlocal3
+      getproperty         Multiname("Level", [PrivateNamespace("kabam.rotmg.fame.service:RequestCharacterFameTask"), ProtectedNamespace("kabam.rotmg.fame.service:RequestCharacterFameTask"), StaticProtectedNs("kabam.rotmg.fame.service:RequestCharacterFameTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.fame.service"), PackageInternalNs("kabam.rotmg.fame.service"), PrivateNamespace("FilePrivateNS:RequestCharacterFameTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      setproperty         QName(PackageNamespace(""), "level")
+
+      getlocal0
+      getlocal3
+      getproperty         Multiname("ObjectType", [PrivateNamespace("kabam.rotmg.fame.service:RequestCharacterFameTask"), ProtectedNamespace("kabam.rotmg.fame.service:RequestCharacterFameTask"), StaticProtectedNs("kabam.rotmg.fame.service:RequestCharacterFameTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.fame.service"), PackageInternalNs("kabam.rotmg.fame.service"), PrivateNamespace("FilePrivateNS:RequestCharacterFameTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      setproperty         QName(PackageNamespace(""), "type")
+
+      getlocal0
+      getlocal0
+      callproperty        QName(PrivateNamespace("kabam.rotmg.fame.service:RequestCharacterFameTask"), "getDeathDate"), 0
+      setproperty         QName(PackageNamespace(""), "deathDate")
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "xml")
+      getproperty         Multiname("KilledBy", [PrivateNamespace("kabam.rotmg.fame.service:RequestCharacterFameTask"), ProtectedNamespace("kabam.rotmg.fame.service:RequestCharacterFameTask"), StaticProtectedNs("kabam.rotmg.fame.service:RequestCharacterFameTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.fame.service"), PackageInternalNs("kabam.rotmg.fame.service"), PrivateNamespace("FilePrivateNS:RequestCharacterFameTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      dup
+      iftrue              L68
+
+      pop
+      pushstring          ""
+      coerce_a
+L68:
+      setproperty         QName(PackageNamespace(""), "killer")
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "xml")
+      getproperty         Multiname("TotalFame", [PrivateNamespace("kabam.rotmg.fame.service:RequestCharacterFameTask"), ProtectedNamespace("kabam.rotmg.fame.service:RequestCharacterFameTask"), StaticProtectedNs("kabam.rotmg.fame.service:RequestCharacterFameTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.fame.service"), PackageInternalNs("kabam.rotmg.fame.service"), PrivateNamespace("FilePrivateNS:RequestCharacterFameTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      setproperty         QName(PackageNamespace(""), "totalFame")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "classes")
+      getlocal3
+      getproperty         Multiname("ObjectType", [PrivateNamespace("kabam.rotmg.fame.service:RequestCharacterFameTask"), ProtectedNamespace("kabam.rotmg.fame.service:RequestCharacterFameTask"), StaticProtectedNs("kabam.rotmg.fame.service:RequestCharacterFameTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.fame.service"), PackageInternalNs("kabam.rotmg.fame.service"), PrivateNamespace("FilePrivateNS:RequestCharacterFameTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      callproperty        QName(PackageNamespace(""), "getCharacterClass"), 1
+      coerce              QName(PackageNamespace("kabam.rotmg.classes.model"), "CharacterClass")
+      setlocal1
+
+      getlocal3
+      pushstring          "Texture"
+      callproperty        Multiname("hasOwnProperty", [PrivateNamespace("kabam.rotmg.fame.service:RequestCharacterFameTask"), ProtectedNamespace("kabam.rotmg.fame.service:RequestCharacterFameTask"), StaticProtectedNs("kabam.rotmg.fame.service:RequestCharacterFameTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.fame.service"), PackageInternalNs("kabam.rotmg.fame.service"), PrivateNamespace("FilePrivateNS:RequestCharacterFameTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 1
+      iffalse             L91
+
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "skins")
+      getlocal3
+      getproperty         Multiname("Texture", [PrivateNamespace("kabam.rotmg.fame.service:RequestCharacterFameTask"), ProtectedNamespace("kabam.rotmg.fame.service:RequestCharacterFameTask"), StaticProtectedNs("kabam.rotmg.fame.service:RequestCharacterFameTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.fame.service"), PackageInternalNs("kabam.rotmg.fame.service"), PrivateNamespace("FilePrivateNS:RequestCharacterFameTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      callproperty        QName(PackageNamespace(""), "getSkin"), 1
+      jump                L95
+
+L91:
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "skins")
+      callproperty        QName(PackageNamespace(""), "getDefaultSkin"), 0
+      coerce              QName(PackageNamespace("kabam.rotmg.classes.model"), "CharacterSkin")
+L95:
+      coerce              QName(PackageNamespace("kabam.rotmg.classes.model"), "CharacterSkin")
+      setlocal2
+
+      getlocal0
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "template")
+      setproperty         QName(PackageNamespace(""), "template")
+
+      getlocal0
+      getlocal3
+      pushstring          "Tex1"
+      callproperty        Multiname("hasOwnProperty", [PrivateNamespace("kabam.rotmg.fame.service:RequestCharacterFameTask"), ProtectedNamespace("kabam.rotmg.fame.service:RequestCharacterFameTask"), StaticProtectedNs("kabam.rotmg.fame.service:RequestCharacterFameTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.fame.service"), PackageInternalNs("kabam.rotmg.fame.service"), PrivateNamespace("FilePrivateNS:RequestCharacterFameTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 1
+      iffalse             L109
+
+      getlocal3
+      getproperty         Multiname("Tex1", [PrivateNamespace("kabam.rotmg.fame.service:RequestCharacterFameTask"), ProtectedNamespace("kabam.rotmg.fame.service:RequestCharacterFameTask"), StaticProtectedNs("kabam.rotmg.fame.service:RequestCharacterFameTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.fame.service"), PackageInternalNs("kabam.rotmg.fame.service"), PrivateNamespace("FilePrivateNS:RequestCharacterFameTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      jump                L111
+
+L109:
+      pushbyte            0
+      coerce_a
+L111:
+      setproperty         QName(PackageNamespace(""), "texture1")
+
+      getlocal0
+      getlocal3
+      pushstring          "Tex2"
+      callproperty        Multiname("hasOwnProperty", [PrivateNamespace("kabam.rotmg.fame.service:RequestCharacterFameTask"), ProtectedNamespace("kabam.rotmg.fame.service:RequestCharacterFameTask"), StaticProtectedNs("kabam.rotmg.fame.service:RequestCharacterFameTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.fame.service"), PackageInternalNs("kabam.rotmg.fame.service"), PrivateNamespace("FilePrivateNS:RequestCharacterFameTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 1
+      iffalse             L120
+
+      getlocal3
+      getproperty         Multiname("Tex2", [PrivateNamespace("kabam.rotmg.fame.service:RequestCharacterFameTask"), ProtectedNamespace("kabam.rotmg.fame.service:RequestCharacterFameTask"), StaticProtectedNs("kabam.rotmg.fame.service:RequestCharacterFameTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.fame.service"), PackageInternalNs("kabam.rotmg.fame.service"), PrivateNamespace("FilePrivateNS:RequestCharacterFameTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      jump                L122
+
+L120:
+      pushbyte            0
+      coerce_a
+L122:
+      setproperty         QName(PackageNamespace(""), "texture2")
+
+      getlocal0
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "is32x32")
+      iffalse             L129
+
+      pushbyte            80
+      jump                L137
+
+L129:
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "is16x16")
+      iffalse             L134
+
+      pushshort           140
+      jump                L136
+
+L134:
+      pushshort           250
+      convert_d
+L136:
+      convert_d
+L137:
+      setproperty         QName(PackageNamespace(""), "size")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.fame.service:RequestCharacterFameTask"), "getDeathDate")
+   method
+    name "getDeathDate"
+    refid "kabam.rotmg.fame.service:RequestCharacterFameTask/instance/kabam.rotmg.fame.service:RequestCharacterFameTask/instance/getDeathDate"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 2
+     localcount 4
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "xml")
+      getproperty         Multiname("CreatedOn", [PrivateNamespace("kabam.rotmg.fame.service:RequestCharacterFameTask"), ProtectedNamespace("kabam.rotmg.fame.service:RequestCharacterFameTask"), StaticProtectedNs("kabam.rotmg.fame.service:RequestCharacterFameTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.fame.service"), PackageInternalNs("kabam.rotmg.fame.service"), PrivateNamespace("FilePrivateNS:RequestCharacterFameTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      convert_d
+      pushshort           1000
+      multiply
+      convert_d
+      setlocal3
+
+      findpropstrict      QName(PackageNamespace(""), "Date")
+      getlocal3
+      constructprop       QName(PackageNamespace(""), "Date"), 1
+      coerce              QName(PackageNamespace(""), "Date")
+      setlocal1
+
+      findpropstrict      QName(PackageNamespace("com.company.util"), "DateFormatterReplacement")
+      constructprop       QName(PackageNamespace("com.company.util"), "DateFormatterReplacement"), 0
+      coerce              QName(PackageNamespace("com.company.util"), "DateFormatterReplacement")
+      setlocal2
+
+      getlocal2
+      pushstring          "MMMM D, YYYY"
+      setproperty         QName(PackageNamespace(""), "formatString")
+
+      getlocal2
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "format"), 1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.fame.service:RequestCharacterFameTask"), "onFameError")
+   method
+    name "onFameError"
+    refid "kabam.rotmg.fame.service:RequestCharacterFameTask/instance/kabam.rotmg.fame.service:RequestCharacterFameTask/instance/onFameError"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.fame.service:RequestCharacterFameTask"), "errorRetry")
+      pushfalse
+      ifne                L24
+
+      getlocal0
+      pushtrue
+      setproperty         QName(PrivateNamespace("kabam.rotmg.fame.service:RequestCharacterFameTask"), "errorRetry")
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("flash.utils"), "Timer")
+      pushshort           600
+      constructprop       QName(PackageNamespace("flash.utils"), "Timer"), 1
+      setproperty         QName(PackageNamespace(""), "timer")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "timer")
+      pushstring          "timer"
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.fame.service:RequestCharacterFameTask"), "sendFameRequest")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "timer")
+      callpropvoid        QName(PackageNamespace(""), "start"), 0
+
+      jump                L33
+
+L24:
+      getlocal0
+      pushfalse
+      setproperty         QName(PrivateNamespace("kabam.rotmg.fame.service:RequestCharacterFameTask"), "errorRetry")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "openDialog")
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.ui.dialogs"), "ErrorDialog")
+      getlocal1
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.ui.dialogs"), "ErrorDialog"), 1
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+L33:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.fame.service:RequestCharacterFameTask/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

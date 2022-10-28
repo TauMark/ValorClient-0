@@ -1,0 +1,160 @@
+class
+ refid "kabam.rotmg.market:MarketNPCPanelMediator"
+ instance QName(PackageNamespace("kabam.rotmg.market"), "MarketNPCPanelMediator")
+  extends QName(PackageNamespace("robotlegs.bender.bundles.mvcs"), "Mediator")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.market:MarketNPCPanelMediator")
+  iinit
+   name "MarketNPCPanelMediator"
+   refid "kabam.rotmg.market:MarketNPCPanelMediator/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "view") flag METADATA type QName(PackageNamespace("kabam.rotmg.market"), "MarketNPCPanel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "dialogNoDim") flag METADATA type QName(PackageNamespace("kabam.rotmg.dialogs.control"), "OpenDialogNoModalSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "account") flag METADATA type QName(PackageNamespace("kabam.rotmg.account.core"), "Account")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PackageNamespace(""), "initialize") flag OVERRIDE
+   method
+    name "initialize"
+    refid "kabam.rotmg.market:MarketNPCPanelMediator/instance/initialize"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      callpropvoid        QName(PackageNamespace(""), "init"), 0
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.market:MarketNPCPanelMediator"), "addListener"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.market:MarketNPCPanelMediator"), "addListener")
+   method
+    name "addListener"
+    refid "kabam.rotmg.market:MarketNPCPanelMediator/instance/kabam.rotmg.market:MarketNPCPanelMediator/instance/initialize/addListener"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageInternalNs("kabam.rotmg.market"), "manageBtn")
+      iffalse             L13
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageInternalNs("kabam.rotmg.market"), "manageBtn")
+      pushstring          "click"
+      getlocal0
+      getproperty         QName(ProtectedNamespace("kabam.rotmg.market:MarketNPCPanelMediator"), "openMarketView")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+L13:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "destroy") flag OVERRIDE
+   method
+    name "destroy"
+    refid "kabam.rotmg.market:MarketNPCPanelMediator/instance/destroy"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      callsupervoid       QName(PackageNamespace(""), "destroy"), 0
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(ProtectedNamespace("kabam.rotmg.market:MarketNPCPanelMediator"), "openMarketView")
+   method
+    name "openMarketView"
+    refid "kabam.rotmg.market:MarketNPCPanelMediator/instance/kabam.rotmg.market:MarketNPCPanelMediator:openMarketView"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "e"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "dialogNoDim")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.market.ui"), "MarketOverview")
+      constructprop       QName(PackageNamespace("kabam.rotmg.market.ui"), "MarketOverview"), 0
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.market:MarketNPCPanelMediator/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

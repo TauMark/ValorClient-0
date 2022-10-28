@@ -1,0 +1,89 @@
+class
+ refid "kabam.rotmg.game.model:GameModel"
+ instance QName(PackageNamespace("kabam.rotmg.game.model"), "GameModel")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  iinit
+   refid "kabam.rotmg.game.model:GameModel/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "player") type QName(PackageNamespace("com.company.assembleegameclient.objects"), "Player") end
+  trait slot QName(PackageNamespace(""), "gameObjects") type QName(PackageNamespace("flash.utils"), "Dictionary") end
+  trait method QName(PackageNamespace(""), "getGameObject")
+   method
+    name "getGameObject"
+    refid "kabam.rotmg.game.model:GameModel/instance/getGameObject"
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace("com.company.assembleegameclient.objects"), "GameObject")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "gameObjects")
+      getlocal1
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.game.model:GameModel"), ProtectedNamespace("kabam.rotmg.game.model:GameModel"), StaticProtectedNs("kabam.rotmg.game.model:GameModel"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.game.model"), PackageInternalNs("kabam.rotmg.game.model"), PrivateNamespace("FilePrivateNS:GameModel"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.objects"), "GameObject")
+      setlocal2
+
+      getlocal2
+      not
+      dup
+      iffalse             L18
+
+      pop
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "player")
+      getproperty         QName(PackageNamespace(""), "objectId")
+      getlocal1
+      equals
+L18:
+      iffalse             L23
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "player")
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.objects"), "GameObject")
+      setlocal2
+
+L23:
+      getlocal2
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.game.model:GameModel/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

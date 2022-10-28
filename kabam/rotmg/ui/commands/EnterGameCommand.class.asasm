@@ -1,0 +1,255 @@
+class
+ refid "kabam.rotmg.ui.commands:EnterGameCommand"
+ instance QName(PackageNamespace("kabam.rotmg.ui.commands"), "EnterGameCommand")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  iinit
+   refid "kabam.rotmg.ui.commands:EnterGameCommand/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait const QName(PrivateNamespace("kabam.rotmg.ui.commands:EnterGameCommand"), "DEFAULT_CHARACTER") type QName(PackageNamespace(""), "int") value Integer(782) end
+  trait slot QName(PackageNamespace(""), "account") flag METADATA type QName(PackageNamespace("kabam.rotmg.account.core"), "Account")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "model") flag METADATA type QName(PackageNamespace("kabam.rotmg.core.model"), "PlayerModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "setScreenWithValidData") flag METADATA type QName(PackageNamespace("kabam.rotmg.core.signals"), "SetScreenWithValidDataSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "playGame") flag METADATA type QName(PackageNamespace("kabam.rotmg.game.signals"), "PlayGameSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "openDialog") flag METADATA type QName(PackageNamespace("kabam.rotmg.dialogs.control"), "OpenDialogSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "servers") flag METADATA type QName(PackageNamespace("kabam.rotmg.servers.api"), "ServerModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "noServersDialogFactory") flag METADATA type QName(PackageNamespace("kabam.rotmg.ui.noservers"), "NoServersDialogFactory")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PackageNamespace(""), "execute")
+   method
+    name "execute"
+    refid "kabam.rotmg.ui.commands:EnterGameCommand/instance/execute"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "servers")
+      callproperty        QName(Namespace("kabam.rotmg.servers.api:ServerModel"), "isServerAvailable"), 0
+      iftrue              L9
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.ui.commands:EnterGameCommand"), "showNoServersDialog"), 0
+
+      jump                L18
+
+L9:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "model")
+      callproperty        QName(PackageNamespace(""), "getIsAgeVerified"), 0
+      iftrue              L16
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.ui.commands:EnterGameCommand"), "showAgeVerificationDialog"), 0
+
+      jump                L18
+
+L16:
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.ui.commands:EnterGameCommand"), "showCurrentCharacterScreen"), 0
+
+L18:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.ui.commands:EnterGameCommand"), "showCurrentCharacterScreen")
+   method
+    name "showCurrentCharacterScreen"
+    refid "kabam.rotmg.ui.commands:EnterGameCommand/instance/kabam.rotmg.ui.commands:EnterGameCommand/instance/showCurrentCharacterScreen"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "setScreenWithValidData")
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.screens"), "CharacterSelectionAndNewsScreen")
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.screens"), "CharacterSelectionAndNewsScreen"), 0
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.ui.commands:EnterGameCommand"), "launchGame")
+   method
+    name "launchGame"
+    refid "kabam.rotmg.ui.commands:EnterGameCommand/instance/kabam.rotmg.ui.commands:EnterGameCommand/instance/launchGame"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "playGame")
+      getlocal0
+      callproperty        QName(PrivateNamespace("kabam.rotmg.ui.commands:EnterGameCommand"), "makeGameInitData"), 0
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.ui.commands:EnterGameCommand"), "makeGameInitData")
+   method
+    name "makeGameInitData"
+    refid "kabam.rotmg.ui.commands:EnterGameCommand/instance/kabam.rotmg.ui.commands:EnterGameCommand/instance/makeGameInitData"
+    returns QName(PackageNamespace("kabam.rotmg.game.model"), "GameInitData")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.game.model"), "GameInitData")
+      constructprop       QName(PackageNamespace("kabam.rotmg.game.model"), "GameInitData"), 0
+      coerce              QName(PackageNamespace("kabam.rotmg.game.model"), "GameInitData")
+      setlocal1
+
+      getlocal1
+      pushtrue
+      setproperty         QName(PackageNamespace(""), "createCharacter")
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "model")
+      callproperty        QName(PackageNamespace(""), "getNextCharId"), 0
+      setproperty         QName(PackageNamespace(""), "charId")
+
+      getlocal1
+      pushbyte            -1
+      setproperty         QName(PackageNamespace(""), "keyTime")
+
+      getlocal1
+      pushtrue
+      setproperty         QName(PackageNamespace(""), "isNewGame")
+
+      getlocal1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.ui.commands:EnterGameCommand"), "showAgeVerificationDialog")
+   method
+    name "showAgeVerificationDialog"
+    refid "kabam.rotmg.ui.commands:EnterGameCommand/instance/kabam.rotmg.ui.commands:EnterGameCommand/instance/showAgeVerificationDialog"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "openDialog")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.ui.view"), "AgeVerificationDialog")
+      constructprop       QName(PackageNamespace("kabam.rotmg.ui.view"), "AgeVerificationDialog"), 0
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.ui.commands:EnterGameCommand"), "showNoServersDialog")
+   method
+    name "showNoServersDialog"
+    refid "kabam.rotmg.ui.commands:EnterGameCommand/instance/kabam.rotmg.ui.commands:EnterGameCommand/instance/showNoServersDialog"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "openDialog")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "noServersDialogFactory")
+      callproperty        QName(Namespace("kabam.rotmg.ui.noservers:NoServersDialogFactory"), "makeDialog"), 0
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.ui.commands:EnterGameCommand/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

@@ -1,0 +1,789 @@
+class
+ refid "com.company.assembleegameclient.ui.guild:GuildPlayerList"
+ instance QName(PackageNamespace("com.company.assembleegameclient.ui.guild"), "GuildPlayerList")
+  extends QName(PackageNamespace("flash.display"), "Sprite")
+  flag SEALED
+  iinit
+   name "GuildPlayerList"
+   refid "com.company.assembleegameclient.ui.guild:GuildPlayerList/instance/init"
+   param QName(PackageNamespace(""), "int")
+   param QName(PackageNamespace(""), "int")
+   param QName(PackageNamespace(""), "String")
+   param QName(PackageNamespace(""), "int")
+   flag HAS_OPTIONAL
+   flag HAS_PARAM_NAMES
+   optional Utf8("")
+   optional Integer(0)
+   paramname "_arg1"
+   paramname "_arg2"
+   paramname "_arg3"
+   paramname "_arg4"
+   body
+    maxstack 8
+    localcount 7
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     getlocal1
+     setproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), "num_")
+
+     getlocal0
+     getlocal2
+     setproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), "offset_")
+
+     getlocal0
+     getlocal3
+     setproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), "myName_")
+
+     getlocal0
+     getlocal            4
+     setproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), "myRank_")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete")
+     constructprop       QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete"), 0
+     pushbyte            22
+     callproperty        QName(PackageNamespace(""), "setSize"), 1
+     pushint             11776947
+     callproperty        QName(PackageNamespace(""), "setColor"), 1
+     setproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), "loadingText_")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), "loadingText_")
+     pushtrue
+     callpropvoid        QName(PackageNamespace(""), "setBold"), 1
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), "loadingText_")
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder")
+     constructprop       QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder"), 0
+     pushstring          "Loading.text"
+     callproperty        QName(PackageNamespace(""), "setParams"), 1
+     callpropvoid        QName(PackageNamespace(""), "setStringBuilder"), 1
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), "loadingText_")
+     findpropstrict      QName(PackageNamespace("flash.filters"), "DropShadowFilter")
+     pushbyte            0
+     pushbyte            0
+     pushbyte            0
+     pushbyte            1
+     pushbyte            8
+     pushbyte            8
+     constructprop       QName(PackageNamespace("flash.filters"), "DropShadowFilter"), 6
+     newarray            1
+     setproperty         QName(PackageNamespace(""), "filters")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), "loadingText_")
+     pushstring          "center"
+     callproperty        QName(PackageNamespace(""), "setAutoSize"), 1
+     pushstring          "middle"
+     callpropvoid        QName(PackageNamespace(""), "setVerticalAlign"), 1
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), "loadingText_")
+     pushshort           400
+     setproperty         QName(PackageNamespace(""), "x")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), "loadingText_")
+     pushshort           550
+     setproperty         QName(PackageNamespace(""), "y")
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), "loadingText_")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     getlex              QName(PackageNamespace("kabam.rotmg.core"), "StaticInjectorContext")
+     callproperty        QName(PackageNamespace(""), "getInjector"), 0
+     getlex              QName(PackageNamespace("kabam.rotmg.account.core"), "Account")
+     callproperty        QName(PackageNamespace(""), "getInstance"), 1
+     coerce              QName(PackageNamespace("kabam.rotmg.account.core"), "Account")
+     setlocal            6
+
+     pushstring          "num"
+     getlocal1
+     pushstring          "offset"
+     getlocal2
+     newobject           2
+     coerce              QName(PackageNamespace(""), "Object")
+     setlocal            5
+
+     getlex              QName(PackageNamespace("com.company.util"), "MoreObjectUtil")
+     getlocal            5
+     getlocal            6
+     pushtrue
+     callproperty        QName(Namespace("kabam.rotmg.account.core:Account"), "getCredentials"), 1
+     callpropvoid        QName(PackageNamespace(""), "addToObject"), 2
+
+     getlocal0
+     getlex              QName(PackageNamespace("kabam.rotmg.core"), "StaticInjectorContext")
+     callproperty        QName(PackageNamespace(""), "getInjector"), 0
+     getlex              QName(PackageNamespace("kabam.rotmg.appengine.api"), "AppEngineClient")
+     callproperty        QName(PackageNamespace(""), "getInstance"), 1
+     setproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), "listClient_")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), "listClient_")
+     pushbyte            2
+     callpropvoid        QName(Namespace("kabam.rotmg.appengine.api:AppEngineClient"), "setMaxRetries"), 1
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), "listClient_")
+     getproperty         QName(Namespace("kabam.rotmg.appengine.api:AppEngineClient"), "complete")
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), "onComplete")
+     callpropvoid        QName(PackageNamespace(""), "addOnce"), 1
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), "listClient_")
+     pushstring          "/guild/listMembers"
+     getlocal            5
+     callpropvoid        QName(Namespace("kabam.rotmg.appengine.api:AppEngineClient"), "sendRequest"), 2
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), "num_") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), "offset_") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), "myName_") type QName(PackageNamespace(""), "String") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), "myRank_") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), "listClient_") type QName(PackageNamespace("kabam.rotmg.appengine.api"), "AppEngineClient") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), "loadingText_") type QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), "titleText_") type QName(PackageNamespace("com.company.ui"), "BaseSimpleText") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), "guildFameText_") type QName(PackageNamespace("com.company.ui"), "BaseSimpleText") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), "guildFameIcon_") type QName(PackageNamespace("flash.display"), "Bitmap") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), "lines_") type QName(PackageNamespace("flash.display"), "Shape") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), "mainSprite_") type QName(PackageNamespace("flash.display"), "Sprite") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), "listSprite_") type QName(PackageNamespace("flash.display"), "Sprite") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), "openSlotsText_") type QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), "scrollBar_") type QName(PackageNamespace("com.company.assembleegameclient.ui"), "Scrollbar") end
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), "onComplete")
+   method
+    name "onComplete"
+    refid "com.company.assembleegameclient.ui.guild:GuildPlayerList/instance/com.company.assembleegameclient.ui.guild:GuildPlayerList/instance/onComplete"
+    param QName(PackageNamespace(""), "Boolean")
+    param null
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    paramname "_arg2"
+    body
+     maxstack 2
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      iffalse             L8
+
+      getlocal0
+      getlocal2
+      callpropvoid        QName(PrivateNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), "onGenericData"), 1
+
+      jump                L11
+
+L8:
+      getlocal0
+      getlocal2
+      callpropvoid        QName(PrivateNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), "onTextError"), 1
+
+L11:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), "onGenericData")
+   method
+    name "onGenericData"
+    refid "com.company.assembleegameclient.ui.guild:GuildPlayerList/instance/com.company.assembleegameclient.ui.guild:GuildPlayerList/instance/onGenericData"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 4
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlex              QName(PackageNamespace(""), "XML")
+      getglobalscope
+      getlocal1
+      call                1
+      callpropvoid        QName(PrivateNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), "build"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), "onTextError")
+   method
+    name "onTextError"
+    refid "com.company.assembleegameclient.ui.guild:GuildPlayerList/instance/com.company.assembleegameclient.ui.guild:GuildPlayerList/instance/onTextError"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 1
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), "build")
+   method
+    name "build"
+    refid "com.company.assembleegameclient.ui.guild:GuildPlayerList/instance/com.company.assembleegameclient.ui.guild:GuildPlayerList/instance/build"
+    param QName(PackageNamespace(""), "XML")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 8
+     localcount 12
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      setlocal2
+
+      pushnull
+      setlocal            9
+
+      pushbyte            0
+      setlocal            6
+
+      pushfalse
+      setlocal            7
+
+      pushbyte            0
+      setlocal            4
+
+      pushnull
+      setlocal            5
+
+      pushbyte            0
+      setlocal            8
+
+      findpropstrict      QName(PackageNamespace(""), "removeChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), "loadingText_")
+      callpropvoid        QName(PackageNamespace(""), "removeChild"), 1
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("com.company.ui"), "BaseSimpleText")
+      pushbyte            32
+      pushint             11776947
+      pushfalse
+      pushbyte            0
+      pushbyte            0
+      constructprop       QName(PackageNamespace("com.company.ui"), "BaseSimpleText"), 5
+      setproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), "titleText_")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), "titleText_")
+      pushtrue
+      callpropvoid        QName(PackageNamespace(""), "setBold"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), "titleText_")
+      getlocal1
+      getproperty         MultinameA("name", [PrivateNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), ProtectedNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), StaticProtectedNs("com.company.assembleegameclient.ui.guild:GuildPlayerList"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.ui.guild"), PackageInternalNs("com.company.assembleegameclient.ui.guild"), PrivateNamespace("FilePrivateNS:GuildPlayerList"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      setproperty         QName(PackageNamespace(""), "text")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), "titleText_")
+      callpropvoid        QName(PackageNamespace(""), "useTextDimensions"), 0
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), "titleText_")
+      findpropstrict      QName(PackageNamespace("flash.filters"), "DropShadowFilter")
+      pushbyte            0
+      pushbyte            0
+      pushbyte            0
+      pushbyte            1
+      pushbyte            8
+      pushbyte            8
+      constructprop       QName(PackageNamespace("flash.filters"), "DropShadowFilter"), 6
+      newarray            1
+      setproperty         QName(PackageNamespace(""), "filters")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), "titleText_")
+      pushbyte            24
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), "titleText_")
+      getlex              QName(PackageNamespace(""), "stage")
+      getproperty         QName(PackageNamespace(""), "stageWidth")
+      pushbyte            2
+      divide
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), "titleText_")
+      getproperty         QName(PackageNamespace(""), "width")
+      pushbyte            2
+      divide
+      subtract
+      setproperty         QName(PackageNamespace(""), "x")
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), "titleText_")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("com.company.ui"), "BaseSimpleText")
+      pushbyte            22
+      pushint             16777215
+      pushfalse
+      pushbyte            0
+      pushbyte            0
+      constructprop       QName(PackageNamespace("com.company.ui"), "BaseSimpleText"), 5
+      setproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), "guildFameText_")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), "guildFameText_")
+      getlocal1
+      getproperty         Multiname("CurrentFame", [PrivateNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), ProtectedNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), StaticProtectedNs("com.company.assembleegameclient.ui.guild:GuildPlayerList"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.ui.guild"), PackageInternalNs("com.company.assembleegameclient.ui.guild"), PrivateNamespace("FilePrivateNS:GuildPlayerList"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      setproperty         QName(PackageNamespace(""), "text")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), "guildFameText_")
+      callpropvoid        QName(PackageNamespace(""), "useTextDimensions"), 0
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), "guildFameText_")
+      findpropstrict      QName(PackageNamespace("flash.filters"), "DropShadowFilter")
+      pushbyte            0
+      pushbyte            0
+      pushbyte            0
+      pushbyte            1
+      pushbyte            8
+      pushbyte            8
+      constructprop       QName(PackageNamespace("flash.filters"), "DropShadowFilter"), 6
+      newarray            1
+      setproperty         QName(PackageNamespace(""), "filters")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), "guildFameText_")
+      pushshort           768
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), "guildFameText_")
+      getproperty         QName(PackageNamespace(""), "width")
+      subtract
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), "guildFameText_")
+      pushbyte            16
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), "guildFameText_")
+      getproperty         QName(PackageNamespace(""), "height")
+      pushbyte            2
+      divide
+      subtract
+      setproperty         QName(PackageNamespace(""), "y")
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), "guildFameText_")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("flash.display"), "Bitmap")
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "GuildUtil")
+      pushbyte            40
+      callproperty        QName(PackageNamespace(""), "guildFameIcon"), 1
+      constructprop       QName(PackageNamespace("flash.display"), "Bitmap"), 1
+      setproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), "guildFameIcon_")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), "guildFameIcon_")
+      pushshort           760
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), "guildFameIcon_")
+      pushbyte            16
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), "guildFameIcon_")
+      getproperty         QName(PackageNamespace(""), "height")
+      pushbyte            2
+      divide
+      subtract
+      setproperty         QName(PackageNamespace(""), "y")
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), "guildFameIcon_")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("flash.display"), "Shape")
+      constructprop       QName(PackageNamespace("flash.display"), "Shape"), 0
+      setproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), "lines_")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), "lines_")
+      getproperty         QName(PackageNamespace(""), "graphics")
+      coerce              QName(PackageNamespace("flash.display"), "Graphics")
+      setlocal2
+
+      getlocal2
+      callpropvoid        QName(PackageNamespace(""), "clear"), 0
+
+      getlocal2
+      pushbyte            2
+      pushint             5526612
+      callpropvoid        QName(PackageNamespace(""), "lineStyle"), 2
+
+      getlocal2
+      pushbyte            0
+      pushbyte            100
+      callpropvoid        QName(PackageNamespace(""), "moveTo"), 2
+
+      getlocal2
+      getlex              QName(PackageNamespace(""), "stage")
+      getproperty         QName(PackageNamespace(""), "stageWidth")
+      pushbyte            100
+      callpropvoid        QName(PackageNamespace(""), "lineTo"), 2
+
+      getlocal2
+      callpropvoid        QName(PackageNamespace(""), "lineStyle"), 0
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), "lines_")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("flash.display"), "Sprite")
+      constructprop       QName(PackageNamespace("flash.display"), "Sprite"), 0
+      setproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), "mainSprite_")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), "mainSprite_")
+      pushbyte            10
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), "mainSprite_")
+      pushbyte            110
+      setproperty         QName(PackageNamespace(""), "y")
+
+      findpropstrict      QName(PackageNamespace("flash.display"), "Shape")
+      constructprop       QName(PackageNamespace("flash.display"), "Shape"), 0
+      coerce              QName(PackageNamespace("flash.display"), "Shape")
+      setlocal3
+
+      getlocal3
+      getproperty         QName(PackageNamespace(""), "graphics")
+      coerce              QName(PackageNamespace("flash.display"), "Graphics")
+      setlocal2
+
+      getlocal2
+      pushbyte            0
+      callpropvoid        QName(PackageNamespace(""), "beginFill"), 1
+
+      getlocal2
+      pushbyte            0
+      pushbyte            0
+      pushshort           756
+      pushshort           430
+      callpropvoid        QName(PackageNamespace(""), "drawRect"), 4
+
+      getlocal2
+      callpropvoid        QName(PackageNamespace(""), "endFill"), 0
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), "mainSprite_")
+      getlocal3
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), "mainSprite_")
+      getlocal3
+      setproperty         QName(PackageNamespace(""), "mask")
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), "mainSprite_")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("flash.display"), "Sprite")
+      constructprop       QName(PackageNamespace("flash.display"), "Sprite"), 0
+      setproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), "listSprite_")
+
+      pushbyte            0
+      setlocal            11
+
+      getlocal1
+      getproperty         Multiname("Member", [PrivateNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), ProtectedNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), StaticProtectedNs("com.company.assembleegameclient.ui.guild:GuildPlayerList"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.ui.guild"), PackageInternalNs("com.company.assembleegameclient.ui.guild"), PrivateNamespace("FilePrivateNS:GuildPlayerList"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      setlocal            10
+
+      jump                L278
+
+L233:
+      label
+      getlocal            10
+      getlocal            11
+      nextvalue
+      coerce              QName(PackageNamespace(""), "XML")
+      setlocal            9
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), "myName_")
+      getlocal            9
+      getproperty         Multiname("Name", [PrivateNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), ProtectedNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), StaticProtectedNs("com.company.assembleegameclient.ui.guild:GuildPlayerList"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.ui.guild"), PackageInternalNs("com.company.assembleegameclient.ui.guild"), PrivateNamespace("FilePrivateNS:GuildPlayerList"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      equals
+      setlocal            7
+
+      getlocal            9
+      getproperty         Multiname("Rank", [PrivateNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), ProtectedNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), StaticProtectedNs("com.company.assembleegameclient.ui.guild:GuildPlayerList"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.ui.guild"), PackageInternalNs("com.company.assembleegameclient.ui.guild"), PrivateNamespace("FilePrivateNS:GuildPlayerList"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      convert_i
+      setlocal            4
+
+      findpropstrict      QName(PackageInternalNs("com.company.assembleegameclient.ui.guild"), "MemberListLine")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), "offset_")
+      getlocal            8
+      add
+      pushbyte            1
+      add
+      getlocal            9
+      getproperty         Multiname("Name", [PrivateNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), ProtectedNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), StaticProtectedNs("com.company.assembleegameclient.ui.guild:GuildPlayerList"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.ui.guild"), PackageInternalNs("com.company.assembleegameclient.ui.guild"), PrivateNamespace("FilePrivateNS:GuildPlayerList"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getlocal            9
+      getproperty         Multiname("Rank", [PrivateNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), ProtectedNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), StaticProtectedNs("com.company.assembleegameclient.ui.guild:GuildPlayerList"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.ui.guild"), PackageInternalNs("com.company.assembleegameclient.ui.guild"), PrivateNamespace("FilePrivateNS:GuildPlayerList"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getlocal            9
+      getproperty         Multiname("Fame", [PrivateNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), ProtectedNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), StaticProtectedNs("com.company.assembleegameclient.ui.guild:GuildPlayerList"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.ui.guild"), PackageInternalNs("com.company.assembleegameclient.ui.guild"), PrivateNamespace("FilePrivateNS:GuildPlayerList"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getlocal            7
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), "myRank_")
+      constructprop       QName(PackageInternalNs("com.company.assembleegameclient.ui.guild"), "MemberListLine"), 6
+      coerce              QName(PackageInternalNs("com.company.assembleegameclient.ui.guild"), "MemberListLine")
+      dup
+      setlocal            5
+
+      getlocal            8
+      pushbyte            32
+      multiply
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), "listSprite_")
+      getlocal            5
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      inclocal_i          8
+L278:
+      hasnext2            10, 11
+      iftrue              L233
+
+      pushbyte            50
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), "offset_")
+      getlocal            8
+      add
+      subtract
+      convert_i
+      setlocal            6
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete")
+      constructprop       QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete"), 0
+      pushbyte            22
+      callproperty        QName(PackageNamespace(""), "setSize"), 1
+      pushint             11776947
+      callproperty        QName(PackageNamespace(""), "setColor"), 1
+      setproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), "openSlotsText_")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), "openSlotsText_")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder")
+      constructprop       QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder"), 0
+      pushstring          "GuildPlayerList.openSlots"
+      pushstring          "openSlots"
+      getlocal            6
+      newobject           1
+      callproperty        QName(PackageNamespace(""), "setParams"), 2
+      callpropvoid        QName(PackageNamespace(""), "setStringBuilder"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), "openSlotsText_")
+      findpropstrict      QName(PackageNamespace("flash.filters"), "DropShadowFilter")
+      pushbyte            0
+      pushbyte            0
+      pushbyte            0
+      pushbyte            1
+      pushbyte            8
+      pushbyte            8
+      constructprop       QName(PackageNamespace("flash.filters"), "DropShadowFilter"), 6
+      newarray            1
+      setproperty         QName(PackageNamespace(""), "filters")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), "openSlotsText_")
+      pushstring          "center"
+      callpropvoid        QName(PackageNamespace(""), "setAutoSize"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), "openSlotsText_")
+      pushshort           756
+      pushbyte            2
+      divide
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), "openSlotsText_")
+      getlocal            8
+      pushbyte            32
+      multiply
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), "listSprite_")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), "openSlotsText_")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), "mainSprite_")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), "listSprite_")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), "listSprite_")
+      getproperty         QName(PackageNamespace(""), "height")
+      pushshort           400
+      ifngt               L386
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.ui"), "Scrollbar")
+      pushbyte            16
+      pushshort           400
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.ui"), "Scrollbar"), 2
+      setproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), "scrollBar_")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), "scrollBar_")
+      pushshort           800
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), "scrollBar_")
+      getproperty         QName(PackageNamespace(""), "width")
+      subtract
+      pushbyte            4
+      subtract
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), "scrollBar_")
+      pushbyte            104
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), "scrollBar_")
+      pushshort           400
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), "listSprite_")
+      getproperty         QName(PackageNamespace(""), "height")
+      callpropvoid        QName(PackageNamespace(""), "setIndicatorSize"), 2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), "scrollBar_")
+      pushstring          "change"
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), "onScrollBarChange")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), "scrollBar_")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+L386:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), "onScrollBarChange")
+   method
+    name "onScrollBarChange"
+    refid "com.company.assembleegameclient.ui.guild:GuildPlayerList/instance/com.company.assembleegameclient.ui.guild:GuildPlayerList/instance/onScrollBarChange"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 4
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), "listSprite_")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), "scrollBar_")
+      callproperty        QName(PackageNamespace(""), "pos"), 0
+      negate
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.guild:GuildPlayerList"), "listSprite_")
+      getproperty         QName(PackageNamespace(""), "height")
+      pushshort           400
+      subtract
+      multiply
+      setproperty         QName(PackageNamespace(""), "y")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.ui.guild:GuildPlayerList/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

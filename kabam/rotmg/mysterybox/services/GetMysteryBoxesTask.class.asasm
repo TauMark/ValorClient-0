@@ -1,0 +1,586 @@
+class
+ refid "kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"
+ instance QName(PackageNamespace("kabam.rotmg.mysterybox.services"), "GetMysteryBoxesTask")
+  extends QName(PackageNamespace("kabam.lib.tasks"), "BaseTask")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask")
+  iinit
+   refid "kabam.rotmg.mysterybox.services:GetMysteryBoxesTask/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "client") flag METADATA type QName(PackageNamespace("kabam.rotmg.appengine.api"), "AppEngineClient")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "mysteryBoxModel") flag METADATA type QName(PackageNamespace("kabam.rotmg.mysterybox.services"), "MysteryBoxModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "account") flag METADATA type QName(PackageNamespace("kabam.rotmg.account.core"), "Account")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "logger") flag METADATA type QName(PackageNamespace("robotlegs.bender.framework.api"), "ILogger")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "languageModel") flag METADATA type QName(PackageNamespace("kabam.rotmg.language.model"), "LanguageModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "openDialogSignal") flag METADATA type QName(PackageNamespace("kabam.rotmg.dialogs.control"), "OpenDialogSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "lastRan") type QName(PackageNamespace(""), "uint") value Integer(0) end
+  trait method QName(ProtectedNamespace("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), "startTask") flag OVERRIDE
+   method
+    name "startTask"
+    refid "kabam.rotmg.mysterybox.services:GetMysteryBoxesTask/instance/kabam.rotmg.mysterybox.services:GetMysteryBoxesTask:startTask"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnan
+      setlocal2
+
+      pushnull
+      setlocal1
+
+      getlex              QName(PackageNamespace("kabam.rotmg.application"), "DynamicSettings")
+      pushstring          "MysteryBoxRefresh"
+      callproperty        QName(PackageNamespace(""), "settingExists"), 1
+      iffalse             L16
+
+      getlex              QName(PackageNamespace("kabam.rotmg.application"), "DynamicSettings")
+      pushstring          "MysteryBoxRefresh"
+      callproperty        QName(PackageNamespace(""), "getSettingValue"), 1
+      convert_d
+      setlocal2
+
+      jump                L19
+
+L16:
+      pushshort           600
+      convert_d
+      setlocal2
+
+L19:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "lastRan")
+      pushbyte            0
+      equals
+      dup
+      iftrue              L36
+
+      pop
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "lastRan")
+      getlocal2
+      add
+      getlex              QName(PackageNamespace("flash.utils"), "getTimer")
+      getglobalscope
+      call                0
+      pushshort           1000
+      divide
+      lessthan
+L36:
+      iffalse             L73
+
+      getlocal0
+      getlex              QName(PackageNamespace("flash.utils"), "getTimer")
+      getglobalscope
+      call                0
+      pushshort           1000
+      divide
+      setproperty         QName(PackageNamespace(""), "lastRan")
+
+      findpropstrict      QName(ProtectedNamespace("kabam.lib.tasks:BaseTask"), "completeTask")
+      pushtrue
+      callpropvoid        QName(ProtectedNamespace("kabam.lib.tasks:BaseTask"), "completeTask"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "account")
+      pushtrue
+      callproperty        QName(Namespace("kabam.rotmg.account.core:Account"), "getCredentials"), 1
+      coerce              QName(PackageNamespace(""), "Object")
+      setlocal1
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "languageModel")
+      callproperty        QName(Namespace("kabam.rotmg.language.model:LanguageModel"), "getLanguage"), 0
+      setproperty         Multiname("language", [PrivateNamespace("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), ProtectedNamespace("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), StaticProtectedNs("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.mysterybox.services"), PackageInternalNs("kabam.rotmg.mysterybox.services"), PrivateNamespace("FilePrivateNS:GetMysteryBoxesTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      getlocal1
+      getlex              QName(PrivateNamespace("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), "version")
+      setproperty         Multiname("version", [PrivateNamespace("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), ProtectedNamespace("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), StaticProtectedNs("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.mysterybox.services"), PackageInternalNs("kabam.rotmg.mysterybox.services"), PrivateNamespace("FilePrivateNS:GetMysteryBoxesTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "client")
+      pushstring          "/mysterybox/getBoxes"
+      getlocal1
+      callpropvoid        QName(Namespace("kabam.rotmg.appengine.api:AppEngineClient"), "sendRequest"), 2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "client")
+      getproperty         QName(Namespace("kabam.rotmg.appengine.api:AppEngineClient"), "complete")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), "onComplete")
+      callpropvoid        QName(PackageNamespace(""), "addOnce"), 1
+
+      jump                L78
+
+L73:
+      findpropstrict      QName(ProtectedNamespace("kabam.lib.tasks:BaseTask"), "completeTask")
+      pushtrue
+      callpropvoid        QName(ProtectedNamespace("kabam.lib.tasks:BaseTask"), "completeTask"), 1
+
+      findpropstrict      QName(PackageNamespace(""), "reset")
+      callpropvoid        QName(PackageNamespace(""), "reset"), 0
+
+L78:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "clearLastRanBlock")
+   method
+    name "clearLastRanBlock"
+    refid "kabam.rotmg.mysterybox.services:GetMysteryBoxesTask/instance/clearLastRanBlock"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      pushbyte            0
+      setproperty         QName(PackageNamespace(""), "lastRan")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), "onComplete")
+   method
+    name "onComplete"
+    refid "kabam.rotmg.mysterybox.services:GetMysteryBoxesTask/instance/kabam.rotmg.mysterybox.services:GetMysteryBoxesTask/instance/onComplete"
+    param QName(PackageNamespace(""), "Boolean")
+    param null
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    paramname "_arg2"
+    body
+     maxstack 2
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace(""), "reset")
+      callpropvoid        QName(PackageNamespace(""), "reset"), 0
+
+      getlocal1
+      iffalse             L10
+
+      getlocal0
+      getlocal2
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), "handleOkay"), 1
+
+      jump                L17
+
+L10:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "logger")
+      pushstring          "GetPackageTask.onComplete: Request failed."
+      callpropvoid        QName(Namespace("robotlegs.bender.framework.api:ILogger"), "warn"), 1
+
+      findpropstrict      QName(ProtectedNamespace("kabam.lib.tasks:BaseTask"), "completeTask")
+      pushfalse
+      callpropvoid        QName(ProtectedNamespace("kabam.lib.tasks:BaseTask"), "completeTask"), 1
+
+L17:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), "handleOkay")
+   method
+    name "handleOkay"
+    refid "kabam.rotmg.mysterybox.services:GetMysteryBoxesTask/instance/kabam.rotmg.mysterybox.services:GetMysteryBoxesTask/instance/handleOkay"
+    param null
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      setlocal2
+
+      getlocal0
+      getlocal1
+      callproperty        QName(PrivateNamespace("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), "hasNoBoxes"), 1
+      iffalse             L18
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "mysteryBoxModel")
+      callproperty        QName(PackageNamespace(""), "isInitialized"), 0
+      iffalse             L13
+
+      returnvoid
+
+L13:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "mysteryBoxModel")
+      pushfalse
+      callpropvoid        QName(PackageNamespace(""), "setInitialized"), 1
+
+      jump                L39
+
+L18:
+      getlex              QName(PackageNamespace(""), "XML")
+      getglobalscope
+      getlocal1
+      call                1
+      pushstring          "version"
+      callproperty        Multiname("attribute", [PrivateNamespace("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), ProtectedNamespace("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), StaticProtectedNs("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.mysterybox.services"), PackageInternalNs("kabam.rotmg.mysterybox.services"), PrivateNamespace("FilePrivateNS:GetMysteryBoxesTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 1
+      callproperty        Multiname("toString", [PrivateNamespace("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), ProtectedNamespace("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), StaticProtectedNs("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.mysterybox.services"), PackageInternalNs("kabam.rotmg.mysterybox.services"), PrivateNamespace("FilePrivateNS:GetMysteryBoxesTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 0
+      findproperty        QName(PrivateNamespace("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), "version")
+      swap
+      setproperty         QName(PrivateNamespace("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), "version")
+
+      getlex              QName(PackageNamespace(""), "XML")
+      getglobalscope
+      getlocal1
+      call                1
+      pushstring          "MysteryBox"
+      callproperty        Multiname("child", [PrivateNamespace("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), ProtectedNamespace("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), StaticProtectedNs("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.mysterybox.services"), PackageInternalNs("kabam.rotmg.mysterybox.services"), PrivateNamespace("FilePrivateNS:GetMysteryBoxesTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 1
+      coerce              QName(PackageNamespace(""), "XMLList")
+      setlocal2
+
+      getlocal0
+      getlocal2
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), "parse"), 1
+
+L39:
+      findpropstrict      QName(ProtectedNamespace("kabam.lib.tasks:BaseTask"), "completeTask")
+      pushtrue
+      callpropvoid        QName(ProtectedNamespace("kabam.lib.tasks:BaseTask"), "completeTask"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), "hasNoBoxes")
+   method
+    name "hasNoBoxes"
+    refid "kabam.rotmg.mysterybox.services:GetMysteryBoxesTask/instance/kabam.rotmg.mysterybox.services:GetMysteryBoxesTask/instance/hasNoBoxes"
+    param null
+    returns QName(PackageNamespace(""), "Boolean")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace(""), "XML")
+      getglobalscope
+      getlocal1
+      call                1
+      callproperty        Multiname("children", [PrivateNamespace("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), ProtectedNamespace("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), StaticProtectedNs("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.mysterybox.services"), PackageInternalNs("kabam.rotmg.mysterybox.services"), PrivateNamespace("FilePrivateNS:GetMysteryBoxesTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 0
+      coerce              QName(PackageNamespace(""), "XMLList")
+      setlocal2
+
+      getlocal2
+      callproperty        Multiname("length", [PrivateNamespace("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), ProtectedNamespace("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), StaticProtectedNs("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.mysterybox.services"), PackageInternalNs("kabam.rotmg.mysterybox.services"), PrivateNamespace("FilePrivateNS:GetMysteryBoxesTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 0
+      pushbyte            0
+      equals
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), "parse")
+   method
+    name "parse"
+    refid "kabam.rotmg.mysterybox.services:GetMysteryBoxesTask/instance/kabam.rotmg.mysterybox.services:GetMysteryBoxesTask/instance/parse"
+    param QName(PackageNamespace(""), "XMLList")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 3
+     localcount 8
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      setlocal            4
+
+      pushnull
+      setlocal            5
+
+      pushfalse
+      setlocal3
+
+      newarray            0
+      coerce              QName(PackageNamespace(""), "Array")
+      setlocal2
+
+      pushbyte            0
+      setlocal            7
+
+      getlocal1
+      setlocal            6
+
+      jump                L149
+
+L16:
+      label
+      getlocal            6
+      getlocal            7
+      nextvalue
+      coerce              QName(PackageNamespace(""), "XML")
+      setlocal            4
+
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.mysterybox.model"), "MysteryBoxInfo")
+      constructprop       QName(PackageNamespace("kabam.rotmg.mysterybox.model"), "MysteryBoxInfo"), 0
+      coerce              QName(PackageNamespace("kabam.rotmg.mysterybox.model"), "MysteryBoxInfo")
+      dup
+      setlocal            5
+
+      getlocal            4
+      pushstring          "id"
+      callproperty        Multiname("attribute", [PrivateNamespace("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), ProtectedNamespace("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), StaticProtectedNs("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.mysterybox.services"), PackageInternalNs("kabam.rotmg.mysterybox.services"), PrivateNamespace("FilePrivateNS:GetMysteryBoxesTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 1
+      callproperty        Multiname("toString", [PrivateNamespace("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), ProtectedNamespace("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), StaticProtectedNs("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.mysterybox.services"), PackageInternalNs("kabam.rotmg.mysterybox.services"), PrivateNamespace("FilePrivateNS:GetMysteryBoxesTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 0
+      setproperty         QName(PackageNamespace(""), "id")
+
+      getlocal            5
+      getlocal            4
+      pushstring          "title"
+      callproperty        Multiname("attribute", [PrivateNamespace("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), ProtectedNamespace("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), StaticProtectedNs("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.mysterybox.services"), PackageInternalNs("kabam.rotmg.mysterybox.services"), PrivateNamespace("FilePrivateNS:GetMysteryBoxesTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 1
+      callproperty        Multiname("toString", [PrivateNamespace("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), ProtectedNamespace("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), StaticProtectedNs("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.mysterybox.services"), PackageInternalNs("kabam.rotmg.mysterybox.services"), PrivateNamespace("FilePrivateNS:GetMysteryBoxesTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 0
+      setproperty         QName(PackageNamespace(""), "title")
+
+      getlocal            5
+      getlocal            4
+      pushstring          "weight"
+      callproperty        Multiname("attribute", [PrivateNamespace("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), ProtectedNamespace("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), StaticProtectedNs("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.mysterybox.services"), PackageInternalNs("kabam.rotmg.mysterybox.services"), PrivateNamespace("FilePrivateNS:GetMysteryBoxesTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 1
+      callproperty        Multiname("toString", [PrivateNamespace("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), ProtectedNamespace("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), StaticProtectedNs("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.mysterybox.services"), PackageInternalNs("kabam.rotmg.mysterybox.services"), PrivateNamespace("FilePrivateNS:GetMysteryBoxesTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 0
+      setproperty         QName(PackageNamespace(""), "weight")
+
+      getlocal            5
+      getlocal            4
+      getproperty         Multiname("Description", [PrivateNamespace("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), ProtectedNamespace("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), StaticProtectedNs("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.mysterybox.services"), PackageInternalNs("kabam.rotmg.mysterybox.services"), PrivateNamespace("FilePrivateNS:GetMysteryBoxesTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      callproperty        Multiname("toString", [PrivateNamespace("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), ProtectedNamespace("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), StaticProtectedNs("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.mysterybox.services"), PackageInternalNs("kabam.rotmg.mysterybox.services"), PrivateNamespace("FilePrivateNS:GetMysteryBoxesTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 0
+      setproperty         QName(PackageNamespace(""), "description")
+
+      getlocal            5
+      getlocal            4
+      getproperty         Multiname("Contents", [PrivateNamespace("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), ProtectedNamespace("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), StaticProtectedNs("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.mysterybox.services"), PackageInternalNs("kabam.rotmg.mysterybox.services"), PrivateNamespace("FilePrivateNS:GetMysteryBoxesTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      callproperty        Multiname("toString", [PrivateNamespace("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), ProtectedNamespace("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), StaticProtectedNs("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.mysterybox.services"), PackageInternalNs("kabam.rotmg.mysterybox.services"), PrivateNamespace("FilePrivateNS:GetMysteryBoxesTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 0
+      setproperty         QName(PackageNamespace(""), "contents")
+
+      getlocal            5
+      getlocal            4
+      getproperty         Multiname("Price", [PrivateNamespace("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), ProtectedNamespace("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), StaticProtectedNs("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.mysterybox.services"), PackageInternalNs("kabam.rotmg.mysterybox.services"), PrivateNamespace("FilePrivateNS:GetMysteryBoxesTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      pushstring          "amount"
+      callproperty        Multiname("attribute", [PrivateNamespace("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), ProtectedNamespace("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), StaticProtectedNs("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.mysterybox.services"), PackageInternalNs("kabam.rotmg.mysterybox.services"), PrivateNamespace("FilePrivateNS:GetMysteryBoxesTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 1
+      callproperty        Multiname("toString", [PrivateNamespace("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), ProtectedNamespace("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), StaticProtectedNs("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.mysterybox.services"), PackageInternalNs("kabam.rotmg.mysterybox.services"), PrivateNamespace("FilePrivateNS:GetMysteryBoxesTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 0
+      setproperty         QName(PackageNamespace(""), "priceAmount")
+
+      getlocal            5
+      getlocal            4
+      getproperty         Multiname("Price", [PrivateNamespace("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), ProtectedNamespace("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), StaticProtectedNs("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.mysterybox.services"), PackageInternalNs("kabam.rotmg.mysterybox.services"), PrivateNamespace("FilePrivateNS:GetMysteryBoxesTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      pushstring          "currency"
+      callproperty        Multiname("attribute", [PrivateNamespace("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), ProtectedNamespace("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), StaticProtectedNs("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.mysterybox.services"), PackageInternalNs("kabam.rotmg.mysterybox.services"), PrivateNamespace("FilePrivateNS:GetMysteryBoxesTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 1
+      callproperty        Multiname("toString", [PrivateNamespace("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), ProtectedNamespace("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), StaticProtectedNs("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.mysterybox.services"), PackageInternalNs("kabam.rotmg.mysterybox.services"), PrivateNamespace("FilePrivateNS:GetMysteryBoxesTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 0
+      setproperty         QName(PackageNamespace(""), "priceCurrency")
+
+      getlocal            4
+      pushstring          "Sale"
+      callproperty        Multiname("hasOwnProperty", [PrivateNamespace("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), ProtectedNamespace("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), StaticProtectedNs("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.mysterybox.services"), PackageInternalNs("kabam.rotmg.mysterybox.services"), PrivateNamespace("FilePrivateNS:GetMysteryBoxesTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 1
+      iffalse             L94
+
+      getlocal            5
+      getlocal            4
+      getproperty         Multiname("Sale", [PrivateNamespace("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), ProtectedNamespace("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), StaticProtectedNs("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.mysterybox.services"), PackageInternalNs("kabam.rotmg.mysterybox.services"), PrivateNamespace("FilePrivateNS:GetMysteryBoxesTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      pushstring          "price"
+      callproperty        Multiname("attribute", [PrivateNamespace("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), ProtectedNamespace("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), StaticProtectedNs("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.mysterybox.services"), PackageInternalNs("kabam.rotmg.mysterybox.services"), PrivateNamespace("FilePrivateNS:GetMysteryBoxesTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 1
+      callproperty        Multiname("toString", [PrivateNamespace("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), ProtectedNamespace("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), StaticProtectedNs("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.mysterybox.services"), PackageInternalNs("kabam.rotmg.mysterybox.services"), PrivateNamespace("FilePrivateNS:GetMysteryBoxesTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 0
+      setproperty         QName(PackageNamespace(""), "saleAmount")
+
+      getlocal            5
+      getlocal            4
+      getproperty         Multiname("Sale", [PrivateNamespace("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), ProtectedNamespace("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), StaticProtectedNs("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.mysterybox.services"), PackageInternalNs("kabam.rotmg.mysterybox.services"), PrivateNamespace("FilePrivateNS:GetMysteryBoxesTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      pushstring          "currency"
+      callproperty        Multiname("attribute", [PrivateNamespace("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), ProtectedNamespace("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), StaticProtectedNs("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.mysterybox.services"), PackageInternalNs("kabam.rotmg.mysterybox.services"), PrivateNamespace("FilePrivateNS:GetMysteryBoxesTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 1
+      callproperty        Multiname("toString", [PrivateNamespace("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), ProtectedNamespace("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), StaticProtectedNs("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.mysterybox.services"), PackageInternalNs("kabam.rotmg.mysterybox.services"), PrivateNamespace("FilePrivateNS:GetMysteryBoxesTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 0
+      setproperty         QName(PackageNamespace(""), "saleCurrency")
+
+      getlocal            5
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "TimeUtil")
+      getlocal            4
+      getproperty         Multiname("Sale", [PrivateNamespace("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), ProtectedNamespace("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), StaticProtectedNs("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.mysterybox.services"), PackageInternalNs("kabam.rotmg.mysterybox.services"), PrivateNamespace("FilePrivateNS:GetMysteryBoxesTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getproperty         Multiname("End", [PrivateNamespace("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), ProtectedNamespace("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), StaticProtectedNs("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.mysterybox.services"), PackageInternalNs("kabam.rotmg.mysterybox.services"), PrivateNamespace("FilePrivateNS:GetMysteryBoxesTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      callproperty        Multiname("toString", [PrivateNamespace("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), ProtectedNamespace("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), StaticProtectedNs("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.mysterybox.services"), PackageInternalNs("kabam.rotmg.mysterybox.services"), PrivateNamespace("FilePrivateNS:GetMysteryBoxesTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 0
+      callproperty        QName(PackageNamespace(""), "parseUTCDate"), 1
+      setproperty         QName(PackageNamespace(""), "saleEnd")
+
+L94:
+      getlocal            4
+      pushstring          "Left"
+      callproperty        Multiname("hasOwnProperty", [PrivateNamespace("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), ProtectedNamespace("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), StaticProtectedNs("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.mysterybox.services"), PackageInternalNs("kabam.rotmg.mysterybox.services"), PrivateNamespace("FilePrivateNS:GetMysteryBoxesTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 1
+      iffalse             L102
+
+      getlocal            5
+      getlocal            4
+      getproperty         Multiname("Left", [PrivateNamespace("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), ProtectedNamespace("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), StaticProtectedNs("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.mysterybox.services"), PackageInternalNs("kabam.rotmg.mysterybox.services"), PrivateNamespace("FilePrivateNS:GetMysteryBoxesTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      setproperty         QName(PackageNamespace(""), "unitsLeft")
+
+L102:
+      getlocal            4
+      pushstring          "Total"
+      callproperty        Multiname("hasOwnProperty", [PrivateNamespace("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), ProtectedNamespace("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), StaticProtectedNs("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.mysterybox.services"), PackageInternalNs("kabam.rotmg.mysterybox.services"), PrivateNamespace("FilePrivateNS:GetMysteryBoxesTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 1
+      iffalse             L110
+
+      getlocal            5
+      getlocal            4
+      getproperty         Multiname("Total", [PrivateNamespace("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), ProtectedNamespace("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), StaticProtectedNs("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.mysterybox.services"), PackageInternalNs("kabam.rotmg.mysterybox.services"), PrivateNamespace("FilePrivateNS:GetMysteryBoxesTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      setproperty         QName(PackageNamespace(""), "totalUnits")
+
+L110:
+      getlocal            5
+      getlocal            4
+      getproperty         Multiname("Icon", [PrivateNamespace("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), ProtectedNamespace("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), StaticProtectedNs("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.mysterybox.services"), PackageInternalNs("kabam.rotmg.mysterybox.services"), PrivateNamespace("FilePrivateNS:GetMysteryBoxesTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      callproperty        Multiname("toString", [PrivateNamespace("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), ProtectedNamespace("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), StaticProtectedNs("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.mysterybox.services"), PackageInternalNs("kabam.rotmg.mysterybox.services"), PrivateNamespace("FilePrivateNS:GetMysteryBoxesTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 0
+      setproperty         QName(PackageNamespace(""), "iconImageUrl")
+
+      getlocal            5
+      getlocal            4
+      getproperty         Multiname("Image", [PrivateNamespace("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), ProtectedNamespace("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), StaticProtectedNs("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.mysterybox.services"), PackageInternalNs("kabam.rotmg.mysterybox.services"), PrivateNamespace("FilePrivateNS:GetMysteryBoxesTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      callproperty        Multiname("toString", [PrivateNamespace("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), ProtectedNamespace("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), StaticProtectedNs("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.mysterybox.services"), PackageInternalNs("kabam.rotmg.mysterybox.services"), PrivateNamespace("FilePrivateNS:GetMysteryBoxesTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 0
+      setproperty         QName(PackageNamespace(""), "infoImageUrl")
+
+      getlocal            5
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "TimeUtil")
+      getlocal            4
+      getproperty         Multiname("StartTime", [PrivateNamespace("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), ProtectedNamespace("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), StaticProtectedNs("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.mysterybox.services"), PackageInternalNs("kabam.rotmg.mysterybox.services"), PrivateNamespace("FilePrivateNS:GetMysteryBoxesTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      callproperty        Multiname("toString", [PrivateNamespace("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), ProtectedNamespace("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), StaticProtectedNs("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.mysterybox.services"), PackageInternalNs("kabam.rotmg.mysterybox.services"), PrivateNamespace("FilePrivateNS:GetMysteryBoxesTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 0
+      callproperty        QName(PackageNamespace(""), "parseUTCDate"), 1
+      setproperty         QName(PackageNamespace(""), "startTime")
+
+      getlocal            5
+      callpropvoid        QName(PackageNamespace(""), "parseContents"), 0
+
+      getlocal3
+      not
+      dup
+      iffalse             L143
+
+      pop
+      getlocal            5
+      callproperty        QName(PackageNamespace(""), "isNew"), 0
+      dup
+      iftrue              L142
+
+      pop
+      getlocal            5
+      callproperty        QName(PackageNamespace(""), "isOnSale"), 0
+      convert_b
+L142:
+      convert_b
+L143:
+      iffalse             L146
+
+      pushtrue
+      setlocal3
+
+L146:
+      getlocal2
+      getlocal            5
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+
+L149:
+      hasnext2            6, 7
+      iftrue              L16
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "mysteryBoxModel")
+      getlocal2
+      callpropvoid        QName(PackageNamespace(""), "setMysetryBoxes"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "mysteryBoxModel")
+      getlocal3
+      setproperty         QName(PackageNamespace(""), "isNew")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.mysterybox.services:GetMysteryBoxesTask/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PrivateNamespace("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), "TEN_MINUTES") type QName(PackageNamespace(""), "int") value Integer(600) end
+ trait slot QName(PrivateNamespace("kabam.rotmg.mysterybox.services:GetMysteryBoxesTask"), "version") type QName(PackageNamespace(""), "String") value Utf8("0") end
+end ; class

@@ -1,0 +1,319 @@
+class
+ refid "io.decagames.rotmg.ui.scroll:UIScrollbarMediator"
+ instance QName(PackageNamespace("io.decagames.rotmg.ui.scroll"), "UIScrollbarMediator")
+  extends QName(PackageNamespace("robotlegs.bender.bundles.mvcs"), "Mediator")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("io.decagames.rotmg.ui.scroll:UIScrollbarMediator")
+  iinit
+   refid "io.decagames.rotmg.ui.scroll:UIScrollbarMediator/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "view") flag METADATA type QName(PackageNamespace("io.decagames.rotmg.ui.scroll"), "UIScrollbar")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "logger") flag METADATA type QName(PackageNamespace("robotlegs.bender.framework.api"), "ILogger")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PrivateNamespace("io.decagames.rotmg.ui.scroll:UIScrollbarMediator"), "startDragging") type QName(PackageNamespace(""), "Boolean") end
+  trait slot QName(PrivateNamespace("io.decagames.rotmg.ui.scroll:UIScrollbarMediator"), "startY") type QName(PackageNamespace(""), "Number") end
+  trait method QName(PackageNamespace(""), "initialize") flag OVERRIDE
+   method
+    name "initialize"
+    refid "io.decagames.rotmg.ui.scroll:UIScrollbarMediator/instance/initialize"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      pushstring          "enterFrame"
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.scroll:UIScrollbarMediator"), "onUpdateHandler")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "slider")
+      pushstring          "mouseDown"
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.scroll:UIScrollbarMediator"), "onMouseDown")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      getlex              QName(PackageNamespace(""), "WebMain")
+      getproperty         QName(PackageNamespace(""), "STAGE")
+      pushstring          "mouseUp"
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.scroll:UIScrollbarMediator"), "onMouseUp")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("io.decagames.rotmg.ui.scroll:UIScrollbarMediator"), "onMouseWheel")
+   method
+    name "onMouseWheel"
+    refid "io.decagames.rotmg.ui.scroll:UIScrollbarMediator/instance/io.decagames.rotmg.ui.scroll:UIScrollbarMediator/instance/onMouseWheel"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg_1"
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "stopImmediatePropagation"), 0
+
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "stopPropagation"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "delta")
+      negate
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "mouseRollSpeedFactor")
+      multiply
+      callpropvoid        QName(PackageNamespace(""), "updatePosition"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("io.decagames.rotmg.ui.scroll:UIScrollbarMediator"), "onMouseDown")
+   method
+    name "onMouseDown"
+    refid "io.decagames.rotmg.ui.scroll:UIScrollbarMediator/instance/io.decagames.rotmg.ui.scroll:UIScrollbarMediator/instance/onMouseDown"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg_1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      pushtrue
+      setproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.scroll:UIScrollbarMediator"), "startDragging")
+
+      getlocal0
+      getlex              QName(PackageNamespace(""), "WebMain")
+      getproperty         QName(PackageNamespace(""), "STAGE")
+      getproperty         QName(PackageNamespace(""), "mouseY")
+      setproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.scroll:UIScrollbarMediator"), "startY")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("io.decagames.rotmg.ui.scroll:UIScrollbarMediator"), "onMouseUp")
+   method
+    name "onMouseUp"
+    refid "io.decagames.rotmg.ui.scroll:UIScrollbarMediator/instance/io.decagames.rotmg.ui.scroll:UIScrollbarMediator/instance/onMouseUp"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg_1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      pushfalse
+      setproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.scroll:UIScrollbarMediator"), "startDragging")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "destroy") flag OVERRIDE
+   method
+    name "destroy"
+    refid "io.decagames.rotmg.ui.scroll:UIScrollbarMediator/instance/destroy"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      pushstring          "enterFrame"
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.scroll:UIScrollbarMediator"), "onUpdateHandler")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "slider")
+      pushstring          "mouseDown"
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.scroll:UIScrollbarMediator"), "onMouseDown")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "scrollObject")
+      iffalse             L26
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "scrollObject")
+      pushstring          "mouseWheel"
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.scroll:UIScrollbarMediator"), "onMouseWheel")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+L26:
+      getlex              QName(PackageNamespace(""), "WebMain")
+      getproperty         QName(PackageNamespace(""), "STAGE")
+      pushstring          "mouseUp"
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.scroll:UIScrollbarMediator"), "onMouseUp")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      callpropvoid        QName(PackageNamespace(""), "dispose"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("io.decagames.rotmg.ui.scroll:UIScrollbarMediator"), "onUpdateHandler")
+   method
+    name "onUpdateHandler"
+    refid "io.decagames.rotmg.ui.scroll:UIScrollbarMediator/instance/io.decagames.rotmg.ui.scroll:UIScrollbarMediator/instance/onUpdateHandler"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg_1"
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "scrollObject")
+      dup
+      iffalse             L15
+
+      pop
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "scrollObject")
+      pushstring          "mouseWheel"
+      callproperty        QName(PackageNamespace(""), "hasEventListener"), 1
+      not
+      coerce_a
+L15:
+      iffalse             L23
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "scrollObject")
+      pushstring          "mouseWheel"
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.scroll:UIScrollbarMediator"), "onMouseWheel")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+L23:
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.scroll:UIScrollbarMediator"), "startDragging")
+      iffalse             L40
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlex              QName(PackageNamespace(""), "WebMain")
+      getproperty         QName(PackageNamespace(""), "STAGE")
+      getproperty         QName(PackageNamespace(""), "mouseY")
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.scroll:UIScrollbarMediator"), "startY")
+      subtract
+      callpropvoid        QName(PackageNamespace(""), "updatePosition"), 1
+
+      getlocal0
+      getlex              QName(PackageNamespace(""), "WebMain")
+      getproperty         QName(PackageNamespace(""), "STAGE")
+      getproperty         QName(PackageNamespace(""), "mouseY")
+      setproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.scroll:UIScrollbarMediator"), "startY")
+
+L40:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      callpropvoid        QName(PackageNamespace(""), "update"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "io.decagames.rotmg.ui.scroll:UIScrollbarMediator/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

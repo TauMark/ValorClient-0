@@ -1,0 +1,301 @@
+class
+ refid "com.greensock.plugins:ShortRotationPlugin"
+ instance QName(PackageNamespace("com.greensock.plugins"), "ShortRotationPlugin")
+  extends QName(PackageNamespace("com.greensock.plugins"), "TweenPlugin")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.greensock.plugins:ShortRotationPlugin")
+  iinit
+   name "ShortRotationPlugin"
+   refid "com.greensock.plugins:ShortRotationPlugin/instance/init"
+   body
+    maxstack 2
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     pushstring          "shortRotation"
+     constructsuper      1
+
+     getlex              QName(PackageNamespace(""), "_overwriteProps")
+     callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "pop"), 0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait method QName(PackageNamespace(""), "_onInitTween") flag OVERRIDE
+   method
+    name "_onInitTween"
+    refid "com.greensock.plugins:ShortRotationPlugin/instance/_onInitTween"
+    param QName(PackageNamespace(""), "Object")
+    param null
+    param QName(PackageNamespace("com.greensock"), "TweenLite")
+    returns QName(PackageNamespace(""), "Boolean")
+    flag HAS_PARAM_NAMES
+    paramname "target"
+    paramname "value"
+    paramname "tween"
+    body
+     maxstack 7
+     localcount 9
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnan
+      setlocal            6
+
+      getlocal2
+      typeof
+      pushstring          "number"
+      ifne                L10
+
+      pushfalse
+      returnvalue
+
+L10:
+      getlocal2
+      getproperty         Multiname("useRadians", [PrivateNamespace("com.greensock.plugins:ShortRotationPlugin"), ProtectedNamespace("com.greensock.plugins:ShortRotationPlugin"), StaticProtectedNs("com.greensock.plugins:ShortRotationPlugin"), StaticProtectedNs("com.greensock.plugins:TweenPlugin"), StaticProtectedNs("Object"), PackageNamespace("com.greensock.plugins"), PackageInternalNs("com.greensock.plugins"), PrivateNamespace("FilePrivateNS:ShortRotationPlugin"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      pushtrue
+      equals
+      setlocal            5
+
+      pushbyte            0
+      setlocal            8
+
+      getlocal2
+      setlocal            7
+
+      jump                L99
+
+L20:
+      label
+      getlocal            7
+      getlocal            8
+      nextname
+      coerce_s
+      dup
+      setlocal            4
+
+      pushstring          "useRadians"
+      ifeq                L99
+
+      getlocal1
+      getlocal            4
+      getproperty         MultinameL([PrivateNamespace("com.greensock.plugins:ShortRotationPlugin"), ProtectedNamespace("com.greensock.plugins:ShortRotationPlugin"), StaticProtectedNs("com.greensock.plugins:ShortRotationPlugin"), StaticProtectedNs("com.greensock.plugins:TweenPlugin"), StaticProtectedNs("Object"), PackageNamespace("com.greensock.plugins"), PackageInternalNs("com.greensock.plugins"), PrivateNamespace("FilePrivateNS:ShortRotationPlugin"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getlex              QName(PackageNamespace(""), "Function")
+      istypelate
+      iffalse             L65
+
+      getlocal1
+      dup
+      getlocal            4
+      pushstring          "set"
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "indexOf"), 1
+      dup
+      iftrue              L52
+
+      pop
+      pushstring          "get"
+      getlocal            4
+      pushbyte            3
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "substr"), 1
+      add
+      getlocal1
+      in
+      not
+      coerce_a
+L52:
+      iffalse             L55
+
+      getlocal            4
+      jump                L61
+
+L55:
+      pushstring          "get"
+      getlocal            4
+      pushbyte            3
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "substr"), 1
+      add
+      coerce_s
+L61:
+      getproperty         MultinameL([PrivateNamespace("com.greensock.plugins:ShortRotationPlugin"), ProtectedNamespace("com.greensock.plugins:ShortRotationPlugin"), StaticProtectedNs("com.greensock.plugins:ShortRotationPlugin"), StaticProtectedNs("com.greensock.plugins:TweenPlugin"), StaticProtectedNs("Object"), PackageNamespace("com.greensock.plugins"), PackageInternalNs("com.greensock.plugins"), PrivateNamespace("FilePrivateNS:ShortRotationPlugin"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      swap
+      call                0
+      jump                L69
+
+L65:
+      getlocal1
+      getlocal            4
+      getproperty         MultinameL([PrivateNamespace("com.greensock.plugins:ShortRotationPlugin"), ProtectedNamespace("com.greensock.plugins:ShortRotationPlugin"), StaticProtectedNs("com.greensock.plugins:ShortRotationPlugin"), StaticProtectedNs("com.greensock.plugins:TweenPlugin"), StaticProtectedNs("Object"), PackageNamespace("com.greensock.plugins"), PackageInternalNs("com.greensock.plugins"), PrivateNamespace("FilePrivateNS:ShortRotationPlugin"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      coerce_a
+L69:
+      convert_d
+      setlocal            6
+
+      findpropstrict      QName(PackageNamespace(""), "_initRotation")
+      getlocal1
+      getlocal            4
+      getlocal            6
+      getlocal2
+      getlocal            4
+      getproperty         MultinameL([PrivateNamespace("com.greensock.plugins:ShortRotationPlugin"), ProtectedNamespace("com.greensock.plugins:ShortRotationPlugin"), StaticProtectedNs("com.greensock.plugins:ShortRotationPlugin"), StaticProtectedNs("com.greensock.plugins:TweenPlugin"), StaticProtectedNs("Object"), PackageNamespace("com.greensock.plugins"), PackageInternalNs("com.greensock.plugins"), PrivateNamespace("FilePrivateNS:ShortRotationPlugin"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      typeof
+      pushstring          "number"
+      ifne                L86
+
+      getlocal2
+      getlocal            4
+      getproperty         MultinameL([PrivateNamespace("com.greensock.plugins:ShortRotationPlugin"), ProtectedNamespace("com.greensock.plugins:ShortRotationPlugin"), StaticProtectedNs("com.greensock.plugins:ShortRotationPlugin"), StaticProtectedNs("com.greensock.plugins:TweenPlugin"), StaticProtectedNs("Object"), PackageNamespace("com.greensock.plugins"), PackageInternalNs("com.greensock.plugins"), PrivateNamespace("FilePrivateNS:ShortRotationPlugin"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      convert_d
+      jump                L97
+
+L86:
+      getlocal            6
+      getlocal2
+      getlocal            4
+      getproperty         MultinameL([PrivateNamespace("com.greensock.plugins:ShortRotationPlugin"), ProtectedNamespace("com.greensock.plugins:ShortRotationPlugin"), StaticProtectedNs("com.greensock.plugins:ShortRotationPlugin"), StaticProtectedNs("com.greensock.plugins:TweenPlugin"), StaticProtectedNs("Object"), PackageNamespace("com.greensock.plugins"), PackageInternalNs("com.greensock.plugins"), PrivateNamespace("FilePrivateNS:ShortRotationPlugin"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      pushstring          "="
+      callproperty        Multiname("split", [PrivateNamespace("com.greensock.plugins:ShortRotationPlugin"), ProtectedNamespace("com.greensock.plugins:ShortRotationPlugin"), StaticProtectedNs("com.greensock.plugins:ShortRotationPlugin"), StaticProtectedNs("com.greensock.plugins:TweenPlugin"), StaticProtectedNs("Object"), PackageNamespace("com.greensock.plugins"), PackageInternalNs("com.greensock.plugins"), PrivateNamespace("FilePrivateNS:ShortRotationPlugin"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 1
+      pushstring          ""
+      callproperty        Multiname("join", [PrivateNamespace("com.greensock.plugins:ShortRotationPlugin"), ProtectedNamespace("com.greensock.plugins:ShortRotationPlugin"), StaticProtectedNs("com.greensock.plugins:ShortRotationPlugin"), StaticProtectedNs("com.greensock.plugins:TweenPlugin"), StaticProtectedNs("Object"), PackageNamespace("com.greensock.plugins"), PackageInternalNs("com.greensock.plugins"), PrivateNamespace("FilePrivateNS:ShortRotationPlugin"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 1
+      convert_d
+      add
+      convert_d
+L97:
+      getlocal            5
+      callpropvoid        QName(PackageNamespace(""), "_initRotation"), 5
+
+L99:
+      hasnext2            7, 8
+      iftrue              L20
+
+      pushtrue
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "_initRotation")
+   method
+    name "_initRotation"
+    refid "com.greensock.plugins:ShortRotationPlugin/instance/_initRotation"
+    param QName(PackageNamespace(""), "Object")
+    param QName(PackageNamespace(""), "String")
+    param QName(PackageNamespace(""), "Number")
+    param QName(PackageNamespace(""), "Number")
+    param QName(PackageNamespace(""), "Boolean")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_OPTIONAL
+    flag HAS_PARAM_NAMES
+    optional False()
+    paramname "target"
+    paramname "p"
+    paramname "start"
+    paramname "end"
+    paramname "useRadians"
+    body
+     maxstack 6
+     localcount 8
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnan
+      setlocal            7
+
+      getlocal            5
+      iffalse             L10
+
+      pushdouble          3.141592653589793
+      pushbyte            2
+      multiply
+      jump                L12
+
+L10:
+      pushshort           360
+      convert_d
+L12:
+      convert_d
+      setlocal            7
+
+      getlocal            4
+      getlocal3
+      subtract
+      getlocal            7
+      modulo
+      convert_d
+      dup
+      dup
+      setlocal            6
+
+      getlocal            7
+      pushbyte            2
+      divide
+      modulo
+      ifeq                L41
+
+      getlocal            6
+      pushbyte            0
+      ifnlt               L35
+
+      getlocal            6
+      getlocal            7
+      add
+      jump                L39
+
+L35:
+      getlocal            6
+      getlocal            7
+      subtract
+      convert_d
+L39:
+      convert_d
+      setlocal            6
+
+L41:
+      findpropstrict      QName(ProtectedNamespace("com.greensock.plugins:TweenPlugin"), "_addTween")
+      getlocal1
+      getlocal2
+      getlocal3
+      getlocal3
+      getlocal            6
+      add
+      getlocal2
+      callpropvoid        QName(ProtectedNamespace("com.greensock.plugins:TweenPlugin"), "_addTween"), 5
+
+      getlex              QName(PackageNamespace(""), "_overwriteProps")
+      getlex              QName(PackageNamespace(""), "_overwriteProps")
+      getproperty         QName(PackageNamespace(""), "length")
+      getlocal2
+      setproperty         MultinameL([PrivateNamespace("com.greensock.plugins:ShortRotationPlugin"), ProtectedNamespace("com.greensock.plugins:ShortRotationPlugin"), StaticProtectedNs("com.greensock.plugins:ShortRotationPlugin"), StaticProtectedNs("com.greensock.plugins:TweenPlugin"), StaticProtectedNs("Object"), PackageNamespace("com.greensock.plugins"), PackageInternalNs("com.greensock.plugins"), PrivateNamespace("FilePrivateNS:ShortRotationPlugin"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.greensock.plugins:ShortRotationPlugin/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PackageNamespace(""), "API") type QName(PackageNamespace(""), "Number") value Integer(2) end
+end ; class

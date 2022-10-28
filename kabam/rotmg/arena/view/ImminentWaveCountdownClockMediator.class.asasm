@@ -1,0 +1,294 @@
+class
+ refid "kabam.rotmg.arena.view:ImminentWaveCountdownClockMediator"
+ instance QName(PackageNamespace("kabam.rotmg.arena.view"), "ImminentWaveCountdownClockMediator")
+  extends QName(PackageNamespace("robotlegs.bender.bundles.mvcs"), "Mediator")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.arena.view:ImminentWaveCountdownClockMediator")
+  iinit
+   name "ImminentWaveCountdownClockMediator"
+   refid "kabam.rotmg.arena.view:ImminentWaveCountdownClockMediator/instance/init"
+   body
+    maxstack 4
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("flash.utils"), "Timer")
+     pushshort           800
+     pushbyte            1
+     constructprop       QName(PackageNamespace("flash.utils"), "Timer"), 2
+     setproperty         QName(PrivateNamespace("kabam.rotmg.arena.view:ImminentWaveCountdownClockMediator"), "fadeOutTimer")
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "view") flag METADATA type QName(PackageNamespace("kabam.rotmg.arena.view"), "ImminentWaveCountdownClock")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "layers") flag METADATA type QName(PackageNamespace("kabam.rotmg.core.view"), "Layers")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "currentArenaRun") flag METADATA type QName(PackageNamespace("kabam.rotmg.arena.model"), "CurrentArenaRunModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "closeMapLoading") flag METADATA type QName(PackageNamespace("kabam.rotmg.maploading.signals"), "HideMapLoadingSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "showMapLoading") flag METADATA type QName(PackageNamespace("kabam.rotmg.maploading.signals"), "ShowLoadingViewSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "gameClosed") flag METADATA type QName(PackageNamespace("kabam.rotmg.game.signals"), "GameClosedSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PrivateNamespace("kabam.rotmg.arena.view:ImminentWaveCountdownClockMediator"), "fadeOutTimer") type QName(PackageNamespace("flash.utils"), "Timer") end
+  trait method QName(PackageNamespace(""), "initialize") flag OVERRIDE
+   method
+    name "initialize"
+    refid "kabam.rotmg.arena.view:ImminentWaveCountdownClockMediator/instance/initialize"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.arena.view:ImminentWaveCountdownClockMediator"), "fadeOutTimer")
+      pushstring          "timer"
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.arena.view:ImminentWaveCountdownClockMediator"), "onShow")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "showMapLoading")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.arena.view:ImminentWaveCountdownClockMediator"), "removeView")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "gameClosed")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.arena.view:ImminentWaveCountdownClockMediator"), "removeView")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "waveNumber")
+      callpropvoid        QName(PackageNamespace(""), "setWaveNumber"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "close")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.arena.view:ImminentWaveCountdownClockMediator"), "onClose")
+      callpropvoid        QName(PackageNamespace(""), "addOnce"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      callpropvoid        QName(PackageNamespace(""), "init"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "waveNumber")
+      pushbyte            1
+      ifne                L42
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.arena.view:ImminentWaveCountdownClockMediator"), "fadeOutTimer")
+      callpropvoid        QName(PackageNamespace(""), "start"), 0
+
+      jump                L45
+
+L42:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      callpropvoid        QName(PackageNamespace(""), "show"), 0
+
+L45:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.arena.view:ImminentWaveCountdownClockMediator"), "removeView")
+   method
+    name "removeView"
+    refid "kabam.rotmg.arena.view:ImminentWaveCountdownClockMediator/instance/kabam.rotmg.arena.view:ImminentWaveCountdownClockMediator/instance/removeView"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      callpropvoid        QName(PackageNamespace(""), "destroy"), 0
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.arena.view:ImminentWaveCountdownClockMediator"), "onClose"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "destroy") flag OVERRIDE
+   method
+    name "destroy"
+    refid "kabam.rotmg.arena.view:ImminentWaveCountdownClockMediator/instance/destroy"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.arena.view:ImminentWaveCountdownClockMediator"), "fadeOutTimer")
+      pushstring          "timer"
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.arena.view:ImminentWaveCountdownClockMediator"), "onShow")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "showMapLoading")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.arena.view:ImminentWaveCountdownClockMediator"), "removeView")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "gameClosed")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.arena.view:ImminentWaveCountdownClockMediator"), "removeView")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.arena.view:ImminentWaveCountdownClockMediator"), "initView")
+   method
+    name "initView"
+    refid "kabam.rotmg.arena.view:ImminentWaveCountdownClockMediator/instance/kabam.rotmg.arena.view:ImminentWaveCountdownClockMediator/instance/initView"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.arena.view:ImminentWaveCountdownClockMediator"), "fadeOutTimer")
+      callpropvoid        QName(PackageNamespace(""), "start"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.arena.view:ImminentWaveCountdownClockMediator"), "onShow")
+   method
+    name "onShow"
+    refid "kabam.rotmg.arena.view:ImminentWaveCountdownClockMediator/instance/kabam.rotmg.arena.view:ImminentWaveCountdownClockMediator/instance/onShow"
+    param QName(PackageNamespace("flash.events"), "TimerEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 1
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      callpropvoid        QName(PackageNamespace(""), "show"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.arena.view:ImminentWaveCountdownClockMediator"), "onClose")
+   method
+    name "onClose"
+    refid "kabam.rotmg.arena.view:ImminentWaveCountdownClockMediator/instance/kabam.rotmg.arena.view:ImminentWaveCountdownClockMediator/instance/onClose"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "layers")
+      getproperty         QName(PackageNamespace(""), "mouseDisabledTop")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      callproperty        QName(PackageNamespace(""), "contains"), 1
+      iffalse             L15
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "layers")
+      getproperty         QName(PackageNamespace(""), "mouseDisabledTop")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      callpropvoid        QName(PackageNamespace(""), "removeChild"), 1
+
+L15:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.arena.view:ImminentWaveCountdownClockMediator/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

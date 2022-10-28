@@ -1,0 +1,139 @@
+class
+ refid "valor.battlePass.resprites:RespriteItemGrid"
+ instance QName(PackageNamespace("valor.battlePass.resprites"), "RespriteItemGrid")
+  extends QName(PackageNamespace("flash.display"), "Sprite")
+  flag SEALED
+  iinit
+   name "RespriteItemGrid"
+   refid "valor.battlePass.resprites:RespriteItemGrid/instance/init"
+   param QName(PackageNamespace("valor.battlePass.resprites"), "RespriteData")
+   flag HAS_PARAM_NAMES
+   paramname "respriteData"
+   body
+    maxstack 8
+    localcount 2
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("flash.display"), "Bitmap")
+     getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "TextureRedrawer")
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "texture")
+     pushbyte            80
+     pushtrue
+     pushbyte            0
+     pushfalse
+     callproperty        QName(PackageNamespace(""), "redraw"), 5
+     constructprop       QName(PackageNamespace("flash.display"), "Bitmap"), 1
+     setproperty         QName(PrivateNamespace("valor.battlePass.resprites:RespriteItemGrid"), "texture")
+
+     getlocal0
+     getlocal0
+     getproperty         QName(PrivateNamespace("valor.battlePass.resprites:RespriteItemGrid"), "texture")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     getlocal0
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "id")
+     setproperty         QName(PackageNamespace(""), "respriteId")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace("valor.battlePass.resprites:RespriteItemGrid"), "texture") type QName(PackageNamespace("flash.display"), "Bitmap") end
+  trait slot QName(PackageNamespace(""), "respriteId") type QName(PackageNamespace(""), "int") end
+  trait method QName(PackageNamespace(""), "onClicked")
+   method
+    name "onClicked"
+    refid "valor.battlePass.resprites:RespriteItemGrid/instance/onClicked"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "arg1"
+    body
+     maxstack 5
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "parent")
+      getlex              QName(PackageNamespace("kabam.rotmg.sorForge.tabs"), "EditItemTab")
+      astypelate
+      getproperty         QName(PackageNamespace(""), "chosenObj")
+      pushnull
+      ifeq                L18
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "parent")
+      getlex              QName(PackageNamespace("kabam.rotmg.sorForge.tabs"), "EditItemTab")
+      astypelate
+      getproperty         QName(PackageNamespace(""), "chosenObj")
+      getproperty         QName(PackageNamespace(""), "transform")
+      findpropstrict      QName(PackageNamespace("flash.geom"), "ColorTransform")
+      constructprop       QName(PackageNamespace("flash.geom"), "ColorTransform"), 0
+      setproperty         QName(PackageNamespace(""), "colorTransform")
+
+L18:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "parent")
+      getlex              QName(PackageNamespace("kabam.rotmg.sorForge.tabs"), "EditItemTab")
+      astypelate
+      getlocal0
+      setproperty         QName(PackageNamespace(""), "chosenObj")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "transform")
+      findpropstrict      QName(PackageNamespace("flash.geom"), "ColorTransform")
+      pushdouble          0.3
+      pushbyte            1
+      pushdouble          0.3
+      constructprop       QName(PackageNamespace("flash.geom"), "ColorTransform"), 3
+      setproperty         QName(PackageNamespace(""), "colorTransform")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "dispose")
+   method
+    name "dispose"
+    refid "valor.battlePass.resprites:RespriteItemGrid/instance/dispose"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "valor.battlePass.resprites:RespriteItemGrid/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

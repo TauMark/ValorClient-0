@@ -1,0 +1,737 @@
+class
+ refid "kabam.rotmg.assets.services:RequestEmbeddedAssetsTask"
+ instance QName(PackageNamespace("kabam.rotmg.assets.services"), "RequestEmbeddedAssetsTask")
+  extends QName(PackageNamespace("kabam.lib.tasks"), "BaseTask")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.assets.services:RequestEmbeddedAssetsTask")
+  iinit
+   refid "kabam.rotmg.assets.services:RequestEmbeddedAssetsTask/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "client") flag METADATA type QName(PackageNamespace("kabam.rotmg.appengine.api"), "AppEngineClient")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "setLoadingMessage") flag METADATA type QName(PackageNamespace("kabam.rotmg.core.signals"), "SetLoadingMessageSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(ProtectedNamespace("kabam.rotmg.assets.services:RequestEmbeddedAssetsTask"), "startTask") flag OVERRIDE
+   method
+    name "startTask"
+    refid "kabam.rotmg.assets.services:RequestEmbeddedAssetsTask/instance/kabam.rotmg.assets.services:RequestEmbeddedAssetsTask:startTask"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "client")
+      getproperty         QName(Namespace("kabam.rotmg.appengine.api:AppEngineClient"), "complete")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.assets.services:RequestEmbeddedAssetsTask"), "onComplete")
+      callpropvoid        QName(PackageNamespace(""), "addOnce"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "client")
+      pushstring          "binary"
+      callpropvoid        QName(Namespace("kabam.rotmg.appengine.api:AppEngineClient"), "setDataFormat"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "client")
+      pushstring          "/app/getTextures"
+      pushnull
+      callpropvoid        QName(Namespace("kabam.rotmg.appengine.api:AppEngineClient"), "sendRequest"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.assets.services:RequestEmbeddedAssetsTask"), "onComplete")
+   method
+    name "onComplete"
+    refid "kabam.rotmg.assets.services:RequestEmbeddedAssetsTask/instance/kabam.rotmg.assets.services:RequestEmbeddedAssetsTask/onComplete"
+    param QName(PackageNamespace(""), "Boolean")
+    param null
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "success"
+    paramname "data"
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      iffalse             L8
+
+      findpropstrict      QName(PrivateNamespace("kabam.rotmg.assets.services:RequestEmbeddedAssetsTask"), "onAssetsComplete")
+      getlocal2
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.assets.services:RequestEmbeddedAssetsTask"), "onAssetsComplete"), 1
+
+      jump                L11
+
+L8:
+      findpropstrict      QName(PrivateNamespace("kabam.rotmg.assets.services:RequestEmbeddedAssetsTask"), "onTextError")
+      getlocal2
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.assets.services:RequestEmbeddedAssetsTask"), "onTextError"), 1
+
+L11:
+      findpropstrict      QName(ProtectedNamespace("kabam.lib.tasks:BaseTask"), "completeTask")
+      getlocal1
+      getlocal2
+      callpropvoid        QName(ProtectedNamespace("kabam.lib.tasks:BaseTask"), "completeTask"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.assets.services:RequestEmbeddedAssetsTask"), "onAssetsComplete")
+   method
+    name "onAssetsComplete"
+    refid "kabam.rotmg.assets.services:RequestEmbeddedAssetsTask/instance/kabam.rotmg.assets.services:RequestEmbeddedAssetsTask/onAssetsComplete"
+    param QName(PackageNamespace("flash.utils"), "IDataInput")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "data"
+    body
+     maxstack 7
+     localcount 27
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushbyte            0
+      setlocal            11
+
+      pushnull
+      setlocal            20
+
+      pushnull
+      setlocal2
+
+      pushnull
+      setlocal            6
+
+      pushnull
+      setlocal            24
+
+      pushnull
+      setlocal            4
+
+      pushnull
+      setlocal            8
+
+      pushnull
+      setlocal            12
+
+      pushnull
+      setlocal            17
+
+      pushnull
+      setlocal            15
+
+      pushnull
+      setlocal            16
+
+      pushnull
+      setlocal            18
+
+      pushnull
+      setlocal            19
+
+      pushnull
+      setlocal            14
+
+      pushundefined
+      setlocal            10
+
+      pushundefined
+      setlocal            22
+
+      pushundefined
+      setlocal            23
+
+      pushnull
+      setlocal            13
+
+      pushnull
+      setlocal            5
+
+      pushnull
+      setlocal            21
+
+      findpropstrict      QName(PackageNamespace("flash.utils"), "Dictionary")
+      constructprop       QName(PackageNamespace("flash.utils"), "Dictionary"), 0
+      coerce              QName(PackageNamespace("flash.utils"), "Dictionary")
+      setlocal3
+
+      getlocal1
+      callproperty        QName(Namespace("flash.utils:IDataInput"), "readInt"), 0
+      convert_i
+      setlocal            9
+
+      pushbyte            0
+      setlocal            11
+
+      jump                L73
+
+L53:
+      label
+      getlocal1
+      callproperty        QName(Namespace("flash.utils:IDataInput"), "readUTF"), 0
+      coerce_s
+      setlocal            20
+
+      findpropstrict      QName(PackageNamespace("flash.utils"), "ByteArray")
+      constructprop       QName(PackageNamespace("flash.utils"), "ByteArray"), 0
+      coerce              QName(PackageNamespace("flash.utils"), "ByteArray")
+      setlocal2
+
+      getlocal1
+      getlocal2
+      pushbyte            0
+      getlocal1
+      callproperty        QName(Namespace("flash.utils:IDataInput"), "readInt"), 0
+      callpropvoid        QName(Namespace("flash.utils:IDataInput"), "readBytes"), 3
+
+      getlocal3
+      getlocal            20
+      getlocal2
+      setproperty         MultinameL([PrivateNamespace("kabam.rotmg.assets.services:RequestEmbeddedAssetsTask"), ProtectedNamespace("kabam.rotmg.assets.services:RequestEmbeddedAssetsTask"), StaticProtectedNs("kabam.rotmg.assets.services:RequestEmbeddedAssetsTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.assets.services"), PackageInternalNs("kabam.rotmg.assets.services"), PrivateNamespace("FilePrivateNS:RequestEmbeddedAssetsTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      inclocal_i          11
+L73:
+      getlocal            11
+      getlocal            9
+      iflt                L53
+
+      pushbyte            0
+      setlocal            26
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.objects"), "ObjectLibrary")
+      getproperty         QName(PackageNamespace(""), "typeToTextureData_")
+      setlocal            25
+
+      jump                L126
+
+L82:
+      label
+      getlocal            25
+      getlocal            26
+      nextvalue
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.objects"), "TextureDataConcrete")
+      dup
+      setlocal            6
+
+      callproperty        QName(PackageNamespace(""), "isRemoteTexture"), 0
+      dup
+      iffalse             L98
+
+      pop
+      getlocal3
+      getlocal            6
+      callproperty        QName(PackageNamespace(""), "id"), 0
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "hasOwnProperty"), 1
+      convert_b
+L98:
+      iffalse             L126
+
+      getlocal            6
+      callproperty        QName(PackageNamespace(""), "id"), 0
+      pushstring          "_mask"
+      add
+      coerce_s
+      setlocal            24
+
+      getlocal3
+      getlocal            24
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.assets.services:RequestEmbeddedAssetsTask"), ProtectedNamespace("kabam.rotmg.assets.services:RequestEmbeddedAssetsTask"), StaticProtectedNs("kabam.rotmg.assets.services:RequestEmbeddedAssetsTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.assets.services"), PackageInternalNs("kabam.rotmg.assets.services"), PrivateNamespace("FilePrivateNS:RequestEmbeddedAssetsTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      pushnull
+      ifeq                L117
+
+      getlex              QName(PackageNamespace("ion.utils.png"), "PNGDecoder")
+      getlocal3
+      getlocal            24
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.assets.services:RequestEmbeddedAssetsTask"), ProtectedNamespace("kabam.rotmg.assets.services:RequestEmbeddedAssetsTask"), StaticProtectedNs("kabam.rotmg.assets.services:RequestEmbeddedAssetsTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.assets.services"), PackageInternalNs("kabam.rotmg.assets.services"), PrivateNamespace("FilePrivateNS:RequestEmbeddedAssetsTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      callproperty        QName(PackageNamespace(""), "decodeImage"), 1
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      setlocal            4
+
+L117:
+      getlocal            6
+      getlex              QName(PackageNamespace("ion.utils.png"), "PNGDecoder")
+      getlocal3
+      getlocal            6
+      callproperty        QName(PackageNamespace(""), "id"), 0
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.assets.services:RequestEmbeddedAssetsTask"), ProtectedNamespace("kabam.rotmg.assets.services:RequestEmbeddedAssetsTask"), StaticProtectedNs("kabam.rotmg.assets.services:RequestEmbeddedAssetsTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.assets.services"), PackageInternalNs("kabam.rotmg.assets.services"), PrivateNamespace("FilePrivateNS:RequestEmbeddedAssetsTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      callproperty        QName(PackageNamespace(""), "decodeImage"), 1
+      getlocal            4
+      callpropvoid        QName(PackageNamespace(""), "onRemoteTexture"), 2
+
+L126:
+      hasnext2            25, 26
+      iftrue              L82
+
+      getlex              QName(PackageNamespace("kabam.rotmg.core"), "StaticInjectorContext")
+      callproperty        QName(PackageNamespace(""), "getInjector"), 0
+      getlex              QName(PackageNamespace("robotlegs.bender.framework.api"), "ILogger")
+      callproperty        QName(PackageNamespace(""), "getInstance"), 1
+      coerce              QName(PackageNamespace("robotlegs.bender.framework.api"), "ILogger")
+      setlocal            7
+
+      getlex              QName(PackageNamespace(""), "WebMain")
+      getproperty         QName(PackageNamespace(""), "ENV")
+      pushstring          "IMG"
+      ifne                L138
+
+L138:
+      getlex              QName(PackageNamespace(""), "WebMain")
+      getproperty         QName(PackageNamespace(""), "ENV")
+      pushstring          "BOT"
+      ifne                L332
+
+      getlex              QName(PackageNamespace("kabam.rotmg.core"), "StaticInjectorContext")
+      callproperty        QName(PackageNamespace(""), "getInjector"), 0
+      getlex              QName(PackageNamespace("kabam.rotmg.classes.model"), "ClassesModel")
+      callproperty        QName(PackageNamespace(""), "getInstance"), 1
+      coerce              QName(PackageNamespace("kabam.rotmg.classes.model"), "ClassesModel")
+      setlocal            8
+
+      getlex              QName(PackageNamespace(""), "WebMain")
+      getproperty         QName(PackageNamespace(""), "STAGE")
+      getproperty         QName(PackageNamespace(""), "loaderInfo")
+      getproperty         QName(PackageNamespace(""), "parameters")
+      pushstring          "botarg"
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.assets.services:RequestEmbeddedAssetsTask"), ProtectedNamespace("kabam.rotmg.assets.services:RequestEmbeddedAssetsTask"), StaticProtectedNs("kabam.rotmg.assets.services:RequestEmbeddedAssetsTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.assets.services"), PackageInternalNs("kabam.rotmg.assets.services"), PrivateNamespace("FilePrivateNS:RequestEmbeddedAssetsTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      coerce_s
+      dup
+      setlocal            12
+
+      pushstring          "?"
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "split"), 1
+      coerce              QName(PackageNamespace(""), "Array")
+      dup
+      setlocal            17
+
+      pushbyte            0
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.assets.services:RequestEmbeddedAssetsTask"), ProtectedNamespace("kabam.rotmg.assets.services:RequestEmbeddedAssetsTask"), StaticProtectedNs("kabam.rotmg.assets.services:RequestEmbeddedAssetsTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.assets.services"), PackageInternalNs("kabam.rotmg.assets.services"), PrivateNamespace("FilePrivateNS:RequestEmbeddedAssetsTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      coerce_s
+      dup
+      setlocal            15
+
+      pushstring          "charactertype="
+      pushstring          ""
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "replace"), 2
+      coerce_s
+      dup
+      setlocal            15
+
+      pushbyte            2
+      getlocal            15
+      getproperty         QName(PackageNamespace(""), "length")
+      pushbyte            3
+      subtract
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "substr"), 2
+      coerce_s
+      setlocal            15
+
+      getlocal            17
+      pushbyte            1
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.assets.services:RequestEmbeddedAssetsTask"), ProtectedNamespace("kabam.rotmg.assets.services:RequestEmbeddedAssetsTask"), StaticProtectedNs("kabam.rotmg.assets.services:RequestEmbeddedAssetsTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.assets.services"), PackageInternalNs("kabam.rotmg.assets.services"), PrivateNamespace("FilePrivateNS:RequestEmbeddedAssetsTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      coerce_s
+      dup
+      setlocal            16
+
+      pushstring          "skintype="
+      pushstring          ""
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "replace"), 2
+      coerce_s
+      dup
+      setlocal            16
+
+      pushbyte            1
+      getlocal            16
+      getproperty         QName(PackageNamespace(""), "length")
+      pushbyte            2
+      subtract
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "substr"), 2
+      coerce_s
+      setlocal            16
+
+      getlocal            17
+      pushbyte            2
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.assets.services:RequestEmbeddedAssetsTask"), ProtectedNamespace("kabam.rotmg.assets.services:RequestEmbeddedAssetsTask"), StaticProtectedNs("kabam.rotmg.assets.services:RequestEmbeddedAssetsTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.assets.services"), PackageInternalNs("kabam.rotmg.assets.services"), PrivateNamespace("FilePrivateNS:RequestEmbeddedAssetsTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      coerce_s
+      dup
+      setlocal            18
+
+      pushstring          "tex1="
+      pushstring          ""
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "replace"), 2
+      coerce_s
+      dup
+      setlocal            18
+
+      pushbyte            1
+      getlocal            18
+      getproperty         QName(PackageNamespace(""), "length")
+      pushbyte            2
+      subtract
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "substr"), 2
+      coerce_s
+      setlocal            18
+
+      getlocal            17
+      pushbyte            3
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.assets.services:RequestEmbeddedAssetsTask"), ProtectedNamespace("kabam.rotmg.assets.services:RequestEmbeddedAssetsTask"), StaticProtectedNs("kabam.rotmg.assets.services:RequestEmbeddedAssetsTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.assets.services"), PackageInternalNs("kabam.rotmg.assets.services"), PrivateNamespace("FilePrivateNS:RequestEmbeddedAssetsTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      coerce_s
+      dup
+      setlocal            19
+
+      pushstring          "tex2="
+      pushstring          ""
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "replace"), 2
+      coerce_s
+      dup
+      setlocal            19
+
+      pushbyte            1
+      getlocal            19
+      getproperty         QName(PackageNamespace(""), "length")
+      pushbyte            3
+      subtract
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "substr"), 2
+      coerce_s
+      setlocal            19
+
+      getlocal            8
+      getlocal            15
+      convert_i
+      callproperty        QName(PackageNamespace(""), "getCharacterClass"), 1
+      coerce              QName(PackageNamespace("kabam.rotmg.classes.model"), "CharacterClass")
+      dup
+      setlocal            14
+
+      getproperty         QName(PackageNamespace(""), "skins")
+      getlocal            16
+      convert_i
+      callproperty        QName(PackageNamespace(""), "getSkin"), 1
+      setlocal            10
+
+      getlocal            18
+      convert_i
+      setlocal            22
+
+      getlocal            19
+      convert_i
+      setlocal            23
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "AnimatedChars")
+      getlocal            10
+      getproperty         Multiname("template", [PrivateNamespace("kabam.rotmg.assets.services:RequestEmbeddedAssetsTask"), ProtectedNamespace("kabam.rotmg.assets.services:RequestEmbeddedAssetsTask"), StaticProtectedNs("kabam.rotmg.assets.services:RequestEmbeddedAssetsTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.assets.services"), PackageInternalNs("kabam.rotmg.assets.services"), PrivateNamespace("FilePrivateNS:RequestEmbeddedAssetsTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getproperty         Multiname("file", [PrivateNamespace("kabam.rotmg.assets.services:RequestEmbeddedAssetsTask"), ProtectedNamespace("kabam.rotmg.assets.services:RequestEmbeddedAssetsTask"), StaticProtectedNs("kabam.rotmg.assets.services:RequestEmbeddedAssetsTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.assets.services"), PackageInternalNs("kabam.rotmg.assets.services"), PrivateNamespace("FilePrivateNS:RequestEmbeddedAssetsTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getlocal            10
+      getproperty         Multiname("template", [PrivateNamespace("kabam.rotmg.assets.services:RequestEmbeddedAssetsTask"), ProtectedNamespace("kabam.rotmg.assets.services:RequestEmbeddedAssetsTask"), StaticProtectedNs("kabam.rotmg.assets.services:RequestEmbeddedAssetsTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.assets.services"), PackageInternalNs("kabam.rotmg.assets.services"), PrivateNamespace("FilePrivateNS:RequestEmbeddedAssetsTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getproperty         Multiname("index", [PrivateNamespace("kabam.rotmg.assets.services:RequestEmbeddedAssetsTask"), ProtectedNamespace("kabam.rotmg.assets.services:RequestEmbeddedAssetsTask"), StaticProtectedNs("kabam.rotmg.assets.services:RequestEmbeddedAssetsTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.assets.services"), PackageInternalNs("kabam.rotmg.assets.services"), PrivateNamespace("FilePrivateNS:RequestEmbeddedAssetsTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      callproperty        QName(PackageNamespace(""), "getAnimatedChar"), 2
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.util"), "AnimatedChar")
+      dup
+      setlocal            13
+
+      pushbyte            0
+      pushbyte            0
+      pushbyte            0
+      callproperty        QName(PackageNamespace(""), "imageFromDir"), 3
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.util"), "MaskedImage")
+      setlocal            5
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "TextureRedrawer")
+      getlocal            5
+      getproperty         QName(PackageNamespace(""), "image_")
+      getlocal            5
+      getproperty         QName(PackageNamespace(""), "mask_")
+      pushshort           300
+      pushtrue
+      getlocal            22
+      getlocal            23
+      callproperty        QName(PackageNamespace(""), "resize"), 6
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      setlocal            21
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.util.redrawers"), "GlowRedrawer")
+      getlocal            21
+      pushbyte            0
+      pushdouble          1.4
+      pushfalse
+      callproperty        QName(PackageNamespace(""), "outlineGlow"), 4
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      setlocal            21
+
+      findpropstrict      QName(PrivateNamespace("kabam.rotmg.assets.services:RequestEmbeddedAssetsTask"), "saveToDisk")
+      getlocal            21
+      getlocal            10
+      getproperty         Multiname("name", [PrivateNamespace("kabam.rotmg.assets.services:RequestEmbeddedAssetsTask"), ProtectedNamespace("kabam.rotmg.assets.services:RequestEmbeddedAssetsTask"), StaticProtectedNs("kabam.rotmg.assets.services:RequestEmbeddedAssetsTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.assets.services"), PackageInternalNs("kabam.rotmg.assets.services"), PrivateNamespace("FilePrivateNS:RequestEmbeddedAssetsTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getlocal            14
+      getproperty         QName(PackageNamespace(""), "skins")
+      callproperty        QName(PackageNamespace(""), "getDefaultSkin"), 0
+      getproperty         QName(PackageNamespace(""), "name")
+      ifne                L308
+
+      getlocal            14
+      getproperty         QName(PackageNamespace(""), "name")
+      jump                L311
+
+L308:
+      getlocal            10
+      getproperty         Multiname("name", [PrivateNamespace("kabam.rotmg.assets.services:RequestEmbeddedAssetsTask"), ProtectedNamespace("kabam.rotmg.assets.services:RequestEmbeddedAssetsTask"), StaticProtectedNs("kabam.rotmg.assets.services:RequestEmbeddedAssetsTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.assets.services"), PackageInternalNs("kabam.rotmg.assets.services"), PrivateNamespace("FilePrivateNS:RequestEmbeddedAssetsTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      coerce_a
+L311:
+      pushstring          "-"
+      add
+      getlocal            10
+      getproperty         Multiname("id", [PrivateNamespace("kabam.rotmg.assets.services:RequestEmbeddedAssetsTask"), ProtectedNamespace("kabam.rotmg.assets.services:RequestEmbeddedAssetsTask"), StaticProtectedNs("kabam.rotmg.assets.services:RequestEmbeddedAssetsTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.assets.services"), PackageInternalNs("kabam.rotmg.assets.services"), PrivateNamespace("FilePrivateNS:RequestEmbeddedAssetsTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      add
+      pushstring          "-"
+      add
+      getlocal            22
+      add
+      pushstring          "-"
+      add
+      getlocal            23
+      add
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.assets.services:RequestEmbeddedAssetsTask"), "saveToDisk"), 2
+
+      getlocal            7
+      pushstring          "Goodbye."
+      callpropvoid        QName(Namespace("robotlegs.bender.framework.api:ILogger"), "fatal"), 1
+
+      getlex              QName(PackageNamespace("flash.desktop"), "NativeApplication")
+      getproperty         QName(PackageNamespace(""), "nativeApplication")
+      pushbyte            1
+      callpropvoid        QName(PackageNamespace(""), "exit"), 1
+
+L332:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.assets.services:RequestEmbeddedAssetsTask"), "onTextError")
+   method
+    name "onTextError"
+    refid "kabam.rotmg.assets.services:RequestEmbeddedAssetsTask/instance/kabam.rotmg.assets.services:RequestEmbeddedAssetsTask/onTextError"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "data"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "setLoadingMessage")
+      pushstring          "error.loadError"
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.assets.services:RequestEmbeddedAssetsTask/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait method QName(PrivateNamespace("kabam.rotmg.assets.services:RequestEmbeddedAssetsTask"), "saveToDiskItem")
+  method
+   name "saveToDiskItem"
+   refid "kabam.rotmg.assets.services:RequestEmbeddedAssetsTask/class/kabam.rotmg.assets.services:RequestEmbeddedAssetsTask/saveToDiskItem"
+   param QName(PackageNamespace(""), "int")
+   param QName(PackageNamespace(""), "String")
+   returns QName(PackageNamespace(""), "void")
+   flag HAS_PARAM_NAMES
+   paramname "itemType"
+   paramname "name"
+   body
+    maxstack 5
+    localcount 3
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     findpropstrict      QName(PrivateNamespace("kabam.rotmg.assets.services:RequestEmbeddedAssetsTask"), "saveToDisk")
+     getlex              QName(PackageNamespace("com.company.assembleegameclient.objects"), "ObjectLibrary")
+     getlocal1
+     pushbyte            80
+     pushtrue
+     callproperty        QName(PackageNamespace(""), "getRedrawnTextureFromType"), 3
+     getlocal2
+     callpropvoid        QName(PrivateNamespace("kabam.rotmg.assets.services:RequestEmbeddedAssetsTask"), "saveToDisk"), 2
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PrivateNamespace("kabam.rotmg.assets.services:RequestEmbeddedAssetsTask"), "saveToDisk")
+  method
+   name "saveToDisk"
+   refid "kabam.rotmg.assets.services:RequestEmbeddedAssetsTask/class/kabam.rotmg.assets.services:RequestEmbeddedAssetsTask/saveToDisk"
+   param QName(PackageNamespace("flash.display"), "BitmapData")
+   param QName(PackageNamespace(""), "String")
+   returns QName(PackageNamespace(""), "void")
+   flag HAS_PARAM_NAMES
+   paramname "image"
+   paramname "name"
+   body
+    maxstack 3
+    localcount 9
+    initscopedepth 0
+    maxscopedepth 2
+    code
+     getlocal0
+     pushscope
+
+     pushnull
+     setlocal            5
+
+     pushnull
+     setlocal3
+
+     pushnull
+     setlocal            6
+
+     getlex              QName(PackageNamespace("kabam.rotmg.core"), "StaticInjectorContext")
+     callproperty        QName(PackageNamespace(""), "getInjector"), 0
+     getlex              QName(PackageNamespace("robotlegs.bender.framework.api"), "ILogger")
+     callproperty        QName(PackageNamespace(""), "getInstance"), 1
+     coerce              QName(PackageNamespace("robotlegs.bender.framework.api"), "ILogger")
+     setlocal            4
+
+L14:
+     getlex              QName(PackageNamespace("com.adobe.images"), "PNGEncoder")
+     getlocal1
+     callproperty        QName(PackageNamespace(""), "encode"), 1
+     coerce              QName(PackageNamespace("flash.utils"), "ByteArray")
+     setlocal            5
+
+     findpropstrict      QName(PackageNamespace("flash.filesystem"), "File")
+     getlex              QName(PackageNamespace("flash.filesystem"), "File")
+     getproperty         QName(PackageNamespace(""), "applicationDirectory")
+     getproperty         QName(PackageNamespace(""), "nativePath")
+     pushstring          "/Graphics/"
+     add
+     getlocal2
+     add
+     pushstring          ".png"
+     add
+     constructprop       QName(PackageNamespace("flash.filesystem"), "File"), 1
+     coerce              QName(PackageNamespace("flash.filesystem"), "File")
+     setlocal3
+
+     getlocal3
+     getproperty         QName(PackageNamespace(""), "exists")
+     iffalse             L36
+
+     returnvoid
+
+L36:
+     getlocal            4
+     pushstring          "Writing to "
+     getlocal3
+     getproperty         QName(PackageNamespace(""), "nativePath")
+     add
+     callpropvoid        QName(Namespace("robotlegs.bender.framework.api:ILogger"), "debug"), 1
+
+     findpropstrict      QName(PackageNamespace("flash.filesystem"), "FileStream")
+     constructprop       QName(PackageNamespace("flash.filesystem"), "FileStream"), 0
+     coerce              QName(PackageNamespace("flash.filesystem"), "FileStream")
+     dup
+     setlocal            6
+
+     getlocal3
+     pushstring          "write"
+     callpropvoid        QName(PackageNamespace(""), "open"), 2
+
+     getlocal            6
+     getlocal            5
+     callpropvoid        QName(PackageNamespace(""), "writeBytes"), 1
+
+     getlocal            6
+     callpropvoid        QName(PackageNamespace(""), "close"), 0
+
+L55:
+     jump                L69
+
+L56:
+     getlocal0
+     pushscope
+
+     newcatch            0
+     dup
+     setlocal            8
+
+     dup
+     pushscope
+
+     swap
+     setslot             1
+
+     getlocal            4
+     getlex              QName(PackageInternalNs("kabam.rotmg.assets.services"), "e")
+     callpropvoid        QName(Namespace("robotlegs.bender.framework.api:ILogger"), "error"), 1
+
+     popscope
+L69:
+     returnvoid
+    end ; code
+    try from L14 to L55 target L56 type null name QName(PackageInternalNs("kabam.rotmg.assets.services"), "e") end
+   end ; body
+  end ; method
+ end ; trait
+end ; class

@@ -1,0 +1,133 @@
+class
+ refid "kabam.rotmg.arena.view:ArenaWaveCounter"
+ instance QName(PackageNamespace("kabam.rotmg.arena.view"), "ArenaWaveCounter")
+  extends QName(PackageNamespace("flash.display"), "Sprite")
+  flag SEALED
+  iinit
+   refid "kabam.rotmg.arena.view:ArenaWaveCounter/instance/init"
+   body
+    maxstack 2
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     findpropstrict      QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaWaveCounter"), "makeWaveText")
+     callproperty        QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaWaveCounter"), "makeWaveText"), 0
+     findproperty        QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaWaveCounter"), "waveText")
+     swap
+     initproperty        QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaWaveCounter"), "waveText")
+
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder")
+     constructprop       QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder"), 0
+     findproperty        QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaWaveCounter"), "waveStringBuilder")
+     swap
+     initproperty        QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaWaveCounter"), "waveStringBuilder")
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait const QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaWaveCounter"), "waveText") type QName(PackageNamespace("kabam.rotmg.text.view"), "StaticTextDisplay") end
+  trait const QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaWaveCounter"), "waveStringBuilder") type QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder") end
+  trait method QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaWaveCounter"), "makeWaveText")
+   method
+    name "makeWaveText"
+    refid "kabam.rotmg.arena.view:ArenaWaveCounter/instance/kabam.rotmg.arena.view:ArenaWaveCounter/instance/makeWaveText"
+    returns QName(PackageNamespace("kabam.rotmg.text.view"), "StaticTextDisplay")
+    body
+     maxstack 8
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view"), "StaticTextDisplay")
+      constructprop       QName(PackageNamespace("kabam.rotmg.text.view"), "StaticTextDisplay"), 0
+      coerce              QName(PackageNamespace("kabam.rotmg.text.view"), "StaticTextDisplay")
+      setlocal1
+
+      getlocal1
+      pushbyte            24
+      callproperty        QName(PackageNamespace(""), "setSize"), 1
+      pushtrue
+      callproperty        QName(PackageNamespace(""), "setBold"), 1
+      pushint             16777215
+      callpropvoid        QName(PackageNamespace(""), "setColor"), 1
+
+      getlocal1
+      findpropstrict      QName(PackageNamespace("flash.filters"), "DropShadowFilter")
+      pushbyte            0
+      pushbyte            0
+      pushbyte            0
+      pushbyte            1
+      pushbyte            8
+      pushbyte            8
+      constructprop       QName(PackageNamespace("flash.filters"), "DropShadowFilter"), 6
+      newarray            1
+      setproperty         QName(PackageNamespace(""), "filters")
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      getlocal1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setWaveNumber")
+   method
+    name "setWaveNumber"
+    refid "kabam.rotmg.arena.view:ArenaWaveCounter/instance/setWaveNumber"
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 5
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaWaveCounter"), "waveText")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaWaveCounter"), "waveStringBuilder")
+      pushstring          "ArenaLeaderboardListItem.waveNumber"
+      pushstring          "waveNumber"
+      getlocal1
+      newobject           1
+      callproperty        QName(PackageNamespace(""), "setParams"), 2
+      callpropvoid        QName(PackageNamespace(""), "setStringBuilder"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.arena.view:ArenaWaveCounter/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

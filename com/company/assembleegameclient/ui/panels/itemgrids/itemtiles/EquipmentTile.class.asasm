@@ -1,0 +1,988 @@
+class
+ refid "com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:EquipmentTile"
+ instance QName(PackageNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles"), "EquipmentTile")
+  extends QName(PackageNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles"), "InteractiveItemTile")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:EquipmentTile")
+  iinit
+   name "EquipmentTile"
+   refid "com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:EquipmentTile/instance/init"
+   param QName(PackageNamespace(""), "int")
+   param QName(PackageNamespace("com.company.assembleegameclient.ui.panels.itemgrids"), "ItemGrid")
+   param QName(PackageNamespace(""), "Boolean")
+   flag HAS_PARAM_NAMES
+   paramname "_arg1"
+   paramname "_arg2"
+   paramname "_arg3"
+   body
+    maxstack 4
+    localcount 4
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     getlocal1
+     getlocal2
+     getlocal3
+     constructsuper      3
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "backgroundDetail") type QName(PackageNamespace("flash.display"), "Bitmap") end
+  trait slot QName(PackageNamespace(""), "itemType") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:EquipmentTile"), "minManaUsage") type QName(PackageNamespace(""), "int") end
+  trait method QName(PackageNamespace(""), "canHoldItem") flag OVERRIDE
+   method
+    name "canHoldItem"
+    refid "com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:EquipmentTile/instance/canHoldItem"
+    param QName(PackageNamespace("valor"), "ItemData")
+    returns QName(PackageNamespace(""), "Boolean")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "objectType")
+      pushbyte            0
+      lessequals
+      dup
+      iftrue              L13
+
+      pop
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "objectType")
+      pushint             65535
+      equals
+L13:
+      dup
+      iftrue              L23
+
+      pop
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "itemType")
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.objects"), "ObjectLibrary")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "objectType")
+      callproperty        QName(PackageNamespace(""), "getSlotTypeFromType"), 1
+      equals
+L23:
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setType")
+   method
+    name "setType"
+    refid "com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:EquipmentTile/instance/setType"
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 3
+     localcount 4
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      setlocal2
+
+      getlocal1
+      setlocal3
+
+      jump                L297
+
+L7:
+      label
+      jump                L408
+
+L9:
+      label
+      getlex              QName(PackageNamespace("com.company.util"), "AssetLibrary")
+      pushstring          "lofiObj5"
+      pushbyte            48
+      callproperty        QName(PackageNamespace(""), "getImageFromSet"), 2
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      setlocal2
+
+      jump                L408
+
+L17:
+      label
+      getlex              QName(PackageNamespace("com.company.util"), "AssetLibrary")
+      pushstring          "lofiObj5"
+      pushbyte            96
+      callproperty        QName(PackageNamespace(""), "getImageFromSet"), 2
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      setlocal2
+
+      jump                L408
+
+L25:
+      label
+      getlex              QName(PackageNamespace("com.company.util"), "AssetLibrary")
+      pushstring          "lofiObj5"
+      pushbyte            80
+      callproperty        QName(PackageNamespace(""), "getImageFromSet"), 2
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      setlocal2
+
+      jump                L408
+
+L33:
+      label
+      getlex              QName(PackageNamespace("com.company.util"), "AssetLibrary")
+      pushstring          "lofiObj6"
+      pushbyte            80
+      callproperty        QName(PackageNamespace(""), "getImageFromSet"), 2
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      setlocal2
+
+      jump                L408
+
+L41:
+      label
+      getlex              QName(PackageNamespace("com.company.util"), "AssetLibrary")
+      pushstring          "lofiObj6"
+      pushbyte            112
+      callproperty        QName(PackageNamespace(""), "getImageFromSet"), 2
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      setlocal2
+
+      jump                L408
+
+L49:
+      label
+      getlex              QName(PackageNamespace("com.company.util"), "AssetLibrary")
+      pushstring          "lofiObj5"
+      pushbyte            0
+      callproperty        QName(PackageNamespace(""), "getImageFromSet"), 2
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      setlocal2
+
+      jump                L408
+
+L57:
+      label
+      getlex              QName(PackageNamespace("com.company.util"), "AssetLibrary")
+      pushstring          "lofiObj5"
+      pushbyte            32
+      callproperty        QName(PackageNamespace(""), "getImageFromSet"), 2
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      setlocal2
+
+      jump                L408
+
+L65:
+      label
+      getlex              QName(PackageNamespace("com.company.util"), "AssetLibrary")
+      pushstring          "lofiObj5"
+      pushbyte            64
+      callproperty        QName(PackageNamespace(""), "getImageFromSet"), 2
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      setlocal2
+
+      jump                L408
+
+L73:
+      label
+      getlex              QName(PackageNamespace("com.company.util"), "AssetLibrary")
+      pushstring          "lofiObj"
+      pushbyte            44
+      callproperty        QName(PackageNamespace(""), "getImageFromSet"), 2
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      setlocal2
+
+      jump                L408
+
+L81:
+      label
+      getlex              QName(PackageNamespace("com.company.util"), "AssetLibrary")
+      pushstring          "lofiObj6"
+      pushbyte            64
+      callproperty        QName(PackageNamespace(""), "getImageFromSet"), 2
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      setlocal2
+
+      jump                L408
+
+L89:
+      label
+      getlex              QName(PackageNamespace("com.company.util"), "AssetLibrary")
+      pushstring          "lofiObj6"
+      pushshort           160
+      callproperty        QName(PackageNamespace(""), "getImageFromSet"), 2
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      setlocal2
+
+      jump                L408
+
+L97:
+      label
+      getlex              QName(PackageNamespace("com.company.util"), "AssetLibrary")
+      pushstring          "lofiObj6"
+      pushbyte            32
+      callproperty        QName(PackageNamespace(""), "getImageFromSet"), 2
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      setlocal2
+
+      jump                L408
+
+L105:
+      label
+      getlex              QName(PackageNamespace("com.company.util"), "AssetLibrary")
+      pushstring          "lofiObj5"
+      pushbyte            16
+      callproperty        QName(PackageNamespace(""), "getImageFromSet"), 2
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      setlocal2
+
+      jump                L408
+
+L113:
+      label
+      getlex              QName(PackageNamespace("com.company.util"), "AssetLibrary")
+      pushstring          "lofiObj6"
+      pushbyte            48
+      callproperty        QName(PackageNamespace(""), "getImageFromSet"), 2
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      setlocal2
+
+      jump                L408
+
+L121:
+      label
+      getlex              QName(PackageNamespace("com.company.util"), "AssetLibrary")
+      pushstring          "lofiObj6"
+      pushbyte            96
+      callproperty        QName(PackageNamespace(""), "getImageFromSet"), 2
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      setlocal2
+
+      jump                L408
+
+L129:
+      label
+      getlex              QName(PackageNamespace("com.company.util"), "AssetLibrary")
+      pushstring          "lofiObj5"
+      pushbyte            112
+      callproperty        QName(PackageNamespace(""), "getImageFromSet"), 2
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      setlocal2
+
+      jump                L408
+
+L137:
+      label
+      getlex              QName(PackageNamespace("com.company.util"), "AssetLibrary")
+      pushstring          "lofiObj6"
+      pushshort           128
+      callproperty        QName(PackageNamespace(""), "getImageFromSet"), 2
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      setlocal2
+
+      jump                L408
+
+L145:
+      label
+      getlex              QName(PackageNamespace("com.company.util"), "AssetLibrary")
+      pushstring          "lofiObj6"
+      pushbyte            0
+      callproperty        QName(PackageNamespace(""), "getImageFromSet"), 2
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      setlocal2
+
+      jump                L408
+
+L153:
+      label
+      getlex              QName(PackageNamespace("com.company.util"), "AssetLibrary")
+      pushstring          "lofiObj6"
+      pushbyte            16
+      callproperty        QName(PackageNamespace(""), "getImageFromSet"), 2
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      setlocal2
+
+      jump                L408
+
+L161:
+      label
+      getlex              QName(PackageNamespace("com.company.util"), "AssetLibrary")
+      pushstring          "lofiObj6"
+      pushshort           144
+      callproperty        QName(PackageNamespace(""), "getImageFromSet"), 2
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      setlocal2
+
+      jump                L408
+
+L169:
+      label
+      getlex              QName(PackageNamespace("com.company.util"), "AssetLibrary")
+      pushstring          "lofiObj6"
+      pushshort           176
+      callproperty        QName(PackageNamespace(""), "getImageFromSet"), 2
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      setlocal2
+
+      jump                L408
+
+L177:
+      label
+      getlex              QName(PackageNamespace("com.company.util"), "AssetLibrary")
+      pushstring          "lofiObj6"
+      pushshort           192
+      callproperty        QName(PackageNamespace(""), "getImageFromSet"), 2
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      setlocal2
+
+      jump                L408
+
+L185:
+      label
+      getlex              QName(PackageNamespace("com.company.util"), "AssetLibrary")
+      pushstring          "lofiObj3"
+      pushshort           540
+      callproperty        QName(PackageNamespace(""), "getImageFromSet"), 2
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      setlocal2
+
+      jump                L408
+
+L193:
+      label
+      getlex              QName(PackageNamespace("com.company.util"), "AssetLibrary")
+      pushstring          "lofiObj3"
+      pushshort           555
+      callproperty        QName(PackageNamespace(""), "getImageFromSet"), 2
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      setlocal2
+
+      jump                L408
+
+L201:
+      label
+      getlex              QName(PackageNamespace("com.company.util"), "AssetLibrary")
+      pushstring          "lofiObj2"
+      pushbyte            122
+      callproperty        QName(PackageNamespace(""), "getImageFromSet"), 2
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      setlocal2
+
+      jump                L408
+
+L209:
+      label
+      getlex              QName(PackageNamespace("com.company.util"), "AssetLibrary")
+      pushstring          "lofiObj2"
+      pushbyte            125
+      callproperty        QName(PackageNamespace(""), "getImageFromSet"), 2
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      setlocal2
+
+      jump                L408
+
+L217:
+      label
+      getlex              QName(PackageNamespace("com.company.util"), "AssetLibrary")
+      pushstring          "lofiObj2"
+      pushbyte            116
+      callproperty        QName(PackageNamespace(""), "getImageFromSet"), 2
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      setlocal2
+
+      jump                L408
+
+L225:
+      label
+      getlex              QName(PackageNamespace("com.company.util"), "AssetLibrary")
+      pushstring          "d3LofiObjEmbed"
+      pushbyte            112
+      callproperty        QName(PackageNamespace(""), "getImageFromSet"), 2
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      setlocal2
+
+      jump                L408
+
+L233:
+      label
+      getlex              QName(PackageNamespace("com.company.util"), "AssetLibrary")
+      pushstring          "lofiObj6"
+      pushshort           208
+      callproperty        QName(PackageNamespace(""), "getImageFromSet"), 2
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      setlocal2
+
+      jump                L408
+
+L241:
+      label
+      getlex              QName(PackageNamespace("com.company.util"), "AssetLibrary")
+      pushstring          "d3LofiObjEmbed"
+      pushshort           832
+      callproperty        QName(PackageNamespace(""), "getImageFromSet"), 2
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      setlocal2
+
+      jump                L408
+
+L249:
+      label
+      getlex              QName(PackageNamespace("com.company.util"), "AssetLibrary")
+      pushstring          "lofiObj6"
+      pushshort           224
+      callproperty        QName(PackageNamespace(""), "getImageFromSet"), 2
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      setlocal2
+
+      jump                L408
+
+L257:
+      label
+      getlex              QName(PackageNamespace("com.company.util"), "AssetLibrary")
+      pushstring          "d3LofiObjEmbed"
+      pushshort           1027
+      callproperty        QName(PackageNamespace(""), "getImageFromSet"), 2
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      setlocal2
+
+      jump                L408
+
+L265:
+      label
+      getlex              QName(PackageNamespace("com.company.util"), "AssetLibrary")
+      pushstring          "d3LofiObjEmbed"
+      pushshort           1041
+      callproperty        QName(PackageNamespace(""), "getImageFromSet"), 2
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      setlocal2
+
+      jump                L408
+
+L273:
+      label
+      getlex              QName(PackageNamespace("com.company.util"), "AssetLibrary")
+      pushstring          "legendaries8x8Embed"
+      pushshort           160
+      callproperty        QName(PackageNamespace(""), "getImageFromSet"), 2
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      setlocal2
+
+      jump                L408
+
+L281:
+      label
+      getlex              QName(PackageNamespace("com.company.util"), "AssetLibrary")
+      pushstring          "lofiObj6"
+      pushshort           240
+      callproperty        QName(PackageNamespace(""), "getImageFromSet"), 2
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      setlocal2
+
+      jump                L408
+
+L289:
+      label
+      getlex              QName(PackageNamespace("com.company.util"), "AssetLibrary")
+      pushstring          "legendaries8x8Embed"
+      pushshort           352
+      callproperty        QName(PackageNamespace(""), "getImageFromSet"), 2
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      setlocal2
+
+      jump                L408
+
+L297:
+      pushbyte            0
+      getlocal3
+      ifstricteq          L7
+
+      pushbyte            1
+      getlocal3
+      ifstricteq          L9
+
+      pushbyte            2
+      getlocal3
+      ifstricteq          L17
+
+      pushbyte            3
+      getlocal3
+      ifstricteq          L25
+
+      pushbyte            4
+      getlocal3
+      ifstricteq          L33
+
+      pushbyte            5
+      getlocal3
+      ifstricteq          L41
+
+      pushbyte            6
+      getlocal3
+      ifstricteq          L49
+
+      pushbyte            7
+      getlocal3
+      ifstricteq          L57
+
+      pushbyte            8
+      getlocal3
+      ifstricteq          L65
+
+      pushbyte            9
+      getlocal3
+      ifstricteq          L73
+
+      pushbyte            11
+      getlocal3
+      ifstricteq          L81
+
+      pushbyte            12
+      getlocal3
+      ifstricteq          L89
+
+      pushbyte            13
+      getlocal3
+      ifstricteq          L97
+
+      pushbyte            14
+      getlocal3
+      ifstricteq          L105
+
+      pushbyte            15
+      getlocal3
+      ifstricteq          L113
+
+      pushbyte            16
+      getlocal3
+      ifstricteq          L121
+
+      pushbyte            17
+      getlocal3
+      ifstricteq          L129
+
+      pushbyte            18
+      getlocal3
+      ifstricteq          L137
+
+      pushbyte            19
+      getlocal3
+      ifstricteq          L145
+
+      pushbyte            20
+      getlocal3
+      ifstricteq          L153
+
+      pushbyte            21
+      getlocal3
+      ifstricteq          L161
+
+      pushbyte            22
+      getlocal3
+      ifstricteq          L169
+
+      pushbyte            23
+      getlocal3
+      ifstricteq          L177
+
+      pushbyte            24
+      getlocal3
+      ifstricteq          L185
+
+      pushbyte            25
+      getlocal3
+      ifstricteq          L193
+
+      pushbyte            37
+      getlocal3
+      ifstricteq          L201
+
+      pushbyte            38
+      getlocal3
+      ifstricteq          L209
+
+      pushbyte            31
+      getlocal3
+      ifstricteq          L217
+
+      pushbyte            27
+      getlocal3
+      ifstricteq          L225
+
+      pushbyte            28
+      getlocal3
+      ifstricteq          L233
+
+      pushbyte            29
+      getlocal3
+      ifstricteq          L241
+
+      pushbyte            30
+      getlocal3
+      ifstricteq          L249
+
+      pushbyte            32
+      getlocal3
+      ifstricteq          L257
+
+      pushbyte            33
+      getlocal3
+      ifstricteq          L265
+
+      pushbyte            34
+      getlocal3
+      ifstricteq          L273
+
+      pushbyte            35
+      getlocal3
+      ifstricteq          L281
+
+      pushbyte            36
+      getlocal3
+      ifstricteq          L289
+
+L408:
+      getlocal2
+      pushnull
+      ifeq                L442
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("flash.display"), "Bitmap")
+      getlocal2
+      constructprop       QName(PackageNamespace("flash.display"), "Bitmap"), 1
+      setproperty         QName(PackageNamespace(""), "backgroundDetail")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "backgroundDetail")
+      pushbyte            4
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "backgroundDetail")
+      pushbyte            4
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "backgroundDetail")
+      pushbyte            4
+      setproperty         QName(PackageNamespace(""), "scaleX")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "backgroundDetail")
+      pushbyte            4
+      setproperty         QName(PackageNamespace(""), "scaleY")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "backgroundDetail")
+      getlex              QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:EquipmentTile"), "greyColorFilter")
+      newarray            1
+      setproperty         QName(PackageNamespace(""), "filters")
+
+      findpropstrict      QName(PackageNamespace(""), "addChildAt")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "backgroundDetail")
+      pushbyte            0
+      callpropvoid        QName(PackageNamespace(""), "addChildAt"), 2
+
+L442:
+      getlocal0
+      getlocal1
+      setproperty         QName(PackageNamespace(""), "itemType")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setItem") flag OVERRIDE
+   method
+    name "setItem"
+    refid "com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:EquipmentTile/instance/setItem"
+    param QName(PackageNamespace("valor"), "ItemData")
+    returns QName(PackageNamespace(""), "Boolean")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      callsuper           QName(PackageNamespace(""), "setItem"), 1
+      convert_b
+      setlocal2
+
+      getlocal2
+      iffalse             L27
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "backgroundDetail")
+      getlex              QName(PackageNamespace(""), "itemSprite")
+      getproperty         QName(PackageNamespace(""), "itemData")
+      getproperty         QName(PackageNamespace(""), "objectType")
+      pushbyte            0
+      lessequals
+      dup
+      iftrue              L24
+
+      pop
+      getlex              QName(PackageNamespace(""), "itemSprite")
+      getproperty         QName(PackageNamespace(""), "itemData")
+      getproperty         QName(PackageNamespace(""), "objectType")
+      pushint             65535
+      equals
+L24:
+      setproperty         QName(PackageNamespace(""), "visible")
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:EquipmentTile"), "updateMinMana"), 0
+
+L27:
+      getlocal2
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:EquipmentTile"), "updateMinMana")
+   method
+    name "updateMinMana"
+    refid "com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:EquipmentTile/instance/com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:EquipmentTile/updateMinMana"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      setlocal1
+
+      getlocal0
+      pushbyte            0
+      setproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:EquipmentTile"), "minManaUsage")
+
+      getlex              QName(PackageNamespace(""), "itemSprite")
+      getproperty         QName(PackageNamespace(""), "itemData")
+      getproperty         QName(PackageNamespace(""), "objectType")
+      pushbyte            0
+      greaterthan
+      dup
+      iffalse             L21
+
+      pop
+      getlex              QName(PackageNamespace(""), "itemSprite")
+      getproperty         QName(PackageNamespace(""), "itemData")
+      getproperty         QName(PackageNamespace(""), "objectType")
+      pushint             65535
+      equals
+      not
+L21:
+      iffalse             L52
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.objects"), "ObjectLibrary")
+      getproperty         QName(PackageNamespace(""), "xmlLibrary_")
+      getlex              QName(PackageNamespace(""), "itemSprite")
+      getproperty         QName(PackageNamespace(""), "itemData")
+      getproperty         QName(PackageNamespace(""), "objectType")
+      getproperty         MultinameL([PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:EquipmentTile"), ProtectedNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:EquipmentTile"), StaticProtectedNs("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:EquipmentTile"), StaticProtectedNs("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile"), StaticProtectedNs("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:ItemTile"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles"), PackageInternalNs("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles"), PrivateNamespace("FilePrivateNS:EquipmentTile"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      coerce              QName(PackageNamespace(""), "XML")
+      setlocal1
+
+      getlocal1
+      dup
+      iffalse             L38
+
+      pop
+      getlocal1
+      pushstring          "Usable"
+      callproperty        Multiname("hasOwnProperty", [PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:EquipmentTile"), ProtectedNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:EquipmentTile"), StaticProtectedNs("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:EquipmentTile"), StaticProtectedNs("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile"), StaticProtectedNs("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:ItemTile"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles"), PackageInternalNs("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles"), PrivateNamespace("FilePrivateNS:EquipmentTile"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 1
+      coerce_a
+L38:
+      iffalse             L52
+
+      getlocal1
+      pushstring          "MultiPhase"
+      callproperty        Multiname("hasOwnProperty", [PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:EquipmentTile"), ProtectedNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:EquipmentTile"), StaticProtectedNs("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:EquipmentTile"), StaticProtectedNs("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile"), StaticProtectedNs("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:ItemTile"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles"), PackageInternalNs("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles"), PrivateNamespace("FilePrivateNS:EquipmentTile"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 1
+      iffalse             L48
+
+      getlocal0
+      getlocal1
+      getproperty         Multiname("MpEndCost", [PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:EquipmentTile"), ProtectedNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:EquipmentTile"), StaticProtectedNs("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:EquipmentTile"), StaticProtectedNs("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile"), StaticProtectedNs("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:ItemTile"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles"), PackageInternalNs("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles"), PrivateNamespace("FilePrivateNS:EquipmentTile"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      setproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:EquipmentTile"), "minManaUsage")
+
+      jump                L52
+
+L48:
+      getlocal0
+      getlocal1
+      getproperty         Multiname("MpCost", [PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:EquipmentTile"), ProtectedNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:EquipmentTile"), StaticProtectedNs("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:EquipmentTile"), StaticProtectedNs("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile"), StaticProtectedNs("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:ItemTile"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles"), PackageInternalNs("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles"), PrivateNamespace("FilePrivateNS:EquipmentTile"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      setproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:EquipmentTile"), "minManaUsage")
+
+L52:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "updateDim")
+   method
+    name "updateDim"
+    refid "com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:EquipmentTile/instance/updateDim"
+    param QName(PackageNamespace("com.company.assembleegameclient.objects"), "Player")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace(""), "itemSprite")
+      getlocal1
+      dup
+      iffalse             L13
+
+      pop
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "mp_")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:EquipmentTile"), "minManaUsage")
+      lessthan
+      coerce_a
+L13:
+      callpropvoid        QName(PackageNamespace(""), "setDim"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(ProtectedNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:EquipmentTile"), "beginDragCallback") flag OVERRIDE
+   method
+    name "beginDragCallback"
+    refid "com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:EquipmentTile/instance/com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:EquipmentTile:beginDragCallback"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "backgroundDetail")
+      pushtrue
+      setproperty         QName(PackageNamespace(""), "visible")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(ProtectedNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:EquipmentTile"), "endDragCallback") flag OVERRIDE
+   method
+    name "endDragCallback"
+    refid "com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:EquipmentTile/instance/com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:EquipmentTile:endDragCallback"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "backgroundDetail")
+      getlex              QName(PackageNamespace(""), "itemSprite")
+      getproperty         QName(PackageNamespace(""), "itemData")
+      getproperty         QName(PackageNamespace(""), "objectType")
+      pushbyte            0
+      lessequals
+      setproperty         QName(PackageNamespace(""), "visible")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(ProtectedNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:EquipmentTile"), "getBackgroundColor") flag OVERRIDE
+   method
+    name "getBackgroundColor"
+    refid "com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:EquipmentTile/instance/com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:EquipmentTile:getBackgroundColor"
+    returns QName(PackageNamespace(""), "int")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushint             4539717
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:EquipmentTile/class/init"
+  body
+   maxstack 3
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 1
+   code
+    getlocal0
+    pushscope
+
+    findpropstrict      QName(PackageNamespace("flash.filters"), "ColorMatrixFilter")
+    getlex              QName(PackageNamespace("com.company.util"), "MoreColorUtil")
+    pushint             3552822
+    callproperty        QName(PackageNamespace(""), "singleColorFilterMatrix"), 1
+    constructprop       QName(PackageNamespace("flash.filters"), "ColorMatrixFilter"), 1
+    findproperty        QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:EquipmentTile"), "greyColorFilter")
+    swap
+    initproperty        QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:EquipmentTile"), "greyColorFilter")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:EquipmentTile"), "greyColorFilter") type QName(PackageNamespace("flash.filters"), "ColorMatrixFilter") end
+end ; class

@@ -1,0 +1,616 @@
+class
+ refid "com.company.assembleegameclient.ui.board:GuildBoardWindow"
+ instance QName(PackageNamespace("com.company.assembleegameclient.ui.board"), "GuildBoardWindow")
+  extends QName(PackageNamespace("flash.display"), "Sprite")
+  flag SEALED
+  iinit
+   name "GuildBoardWindow"
+   refid "com.company.assembleegameclient.ui.board:GuildBoardWindow/instance/init"
+   param QName(PackageNamespace(""), "Boolean")
+   flag HAS_PARAM_NAMES
+   paramname "_arg1"
+   body
+    maxstack 5
+    localcount 3
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     getlocal1
+     setproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.board:GuildBoardWindow"), "canEdit_")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("flash.display"), "Shape")
+     constructprop       QName(PackageNamespace("flash.display"), "Shape"), 0
+     setproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.board:GuildBoardWindow"), "darkBox_")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.board:GuildBoardWindow"), "darkBox_")
+     getproperty         QName(PackageNamespace(""), "graphics")
+     coerce              QName(PackageNamespace("flash.display"), "Graphics")
+     setlocal2
+
+     getlocal2
+     callpropvoid        QName(PackageNamespace(""), "clear"), 0
+
+     getlocal2
+     pushbyte            0
+     pushdouble          0.8
+     callpropvoid        QName(PackageNamespace(""), "beginFill"), 2
+
+     getlocal2
+     pushbyte            0
+     pushbyte            0
+     pushshort           800
+     pushshort           600
+     callpropvoid        QName(PackageNamespace(""), "drawRect"), 4
+
+     getlocal2
+     callpropvoid        QName(PackageNamespace(""), "endFill"), 0
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.board:GuildBoardWindow"), "darkBox_")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     getlocal0
+     callpropvoid        QName(PrivateNamespace("com.company.assembleegameclient.ui.board:GuildBoardWindow"), "load"), 0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.ui.board:GuildBoardWindow"), "canEdit_") type QName(PackageNamespace(""), "Boolean") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.ui.board:GuildBoardWindow"), "darkBox_") type QName(PackageNamespace("flash.display"), "Shape") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.ui.board:GuildBoardWindow"), "dialog_") type QName(PackageNamespace("com.company.assembleegameclient.ui.dialogs"), "Dialog") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.ui.board:GuildBoardWindow"), "text_") type QName(PackageNamespace(""), "String") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.ui.board:GuildBoardWindow"), "viewBoard_") type QName(PackageInternalNs("com.company.assembleegameclient.ui.board"), "ViewBoard") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.ui.board:GuildBoardWindow"), "editBoard_") type QName(PackageInternalNs("com.company.assembleegameclient.ui.board"), "EditBoard") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.ui.board:GuildBoardWindow"), "client") type QName(PackageNamespace("kabam.rotmg.appengine.api"), "AppEngineClient") end
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.ui.board:GuildBoardWindow"), "load")
+   method
+    name "load"
+    refid "com.company.assembleegameclient.ui.board:GuildBoardWindow/instance/com.company.assembleegameclient.ui.board:GuildBoardWindow/instance/load"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 7
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace("kabam.rotmg.core"), "StaticInjectorContext")
+      callproperty        QName(PackageNamespace(""), "getInjector"), 0
+      getlex              QName(PackageNamespace("kabam.rotmg.account.core"), "Account")
+      callproperty        QName(PackageNamespace(""), "getInstance"), 1
+      coerce              QName(PackageNamespace("kabam.rotmg.account.core"), "Account")
+      setlocal1
+
+      getlocal0
+      getlex              QName(PackageNamespace("kabam.rotmg.core"), "StaticInjectorContext")
+      callproperty        QName(PackageNamespace(""), "getInjector"), 0
+      getlex              QName(PackageNamespace("kabam.rotmg.appengine.api"), "AppEngineClient")
+      callproperty        QName(PackageNamespace(""), "getInstance"), 1
+      setproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.board:GuildBoardWindow"), "client")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.board:GuildBoardWindow"), "client")
+      getproperty         QName(Namespace("kabam.rotmg.appengine.api:AppEngineClient"), "complete")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.board:GuildBoardWindow"), "onGetBoardComplete")
+      callpropvoid        QName(PackageNamespace(""), "addOnce"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.board:GuildBoardWindow"), "client")
+      pushstring          "/guild/getBoard"
+      getlocal1
+      pushtrue
+      callproperty        QName(Namespace("kabam.rotmg.account.core:Account"), "getCredentials"), 1
+      callpropvoid        QName(Namespace("kabam.rotmg.appengine.api:AppEngineClient"), "sendRequest"), 2
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.ui.dialogs"), "Dialog")
+      pushnull
+      pushstring          "Loading..."
+      pushnull
+      pushnull
+      pushnull
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.ui.dialogs"), "Dialog"), 5
+      setproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.board:GuildBoardWindow"), "dialog_")
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.board:GuildBoardWindow"), "dialog_")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.board:GuildBoardWindow"), "darkBox_")
+      pushfalse
+      setproperty         QName(PackageNamespace(""), "visible")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.ui.board:GuildBoardWindow"), "onGetBoardComplete")
+   method
+    name "onGetBoardComplete"
+    refid "com.company.assembleegameclient.ui.board:GuildBoardWindow/instance/com.company.assembleegameclient.ui.board:GuildBoardWindow/instance/onGetBoardComplete"
+    param QName(PackageNamespace(""), "Boolean")
+    param null
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    paramname "_arg2"
+    body
+     maxstack 2
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      iffalse             L8
+
+      getlocal0
+      getlocal2
+      callpropvoid        QName(PrivateNamespace("com.company.assembleegameclient.ui.board:GuildBoardWindow"), "showGuildBoard"), 1
+
+      jump                L11
+
+L8:
+      getlocal0
+      getlocal2
+      callpropvoid        QName(PrivateNamespace("com.company.assembleegameclient.ui.board:GuildBoardWindow"), "reportError"), 1
+
+L11:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.ui.board:GuildBoardWindow"), "showGuildBoard")
+   method
+    name "showGuildBoard"
+    refid "com.company.assembleegameclient.ui.board:GuildBoardWindow/instance/com.company.assembleegameclient.ui.board:GuildBoardWindow/instance/showGuildBoard"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.board:GuildBoardWindow"), "darkBox_")
+      pushtrue
+      setproperty         QName(PackageNamespace(""), "visible")
+
+      findpropstrict      QName(PackageNamespace(""), "removeChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.board:GuildBoardWindow"), "dialog_")
+      callpropvoid        QName(PackageNamespace(""), "removeChild"), 1
+
+      getlocal0
+      pushnull
+      setproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.board:GuildBoardWindow"), "dialog_")
+
+      getlocal0
+      getlocal1
+      setproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.board:GuildBoardWindow"), "text_")
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("com.company.assembleegameclient.ui.board:GuildBoardWindow"), "show"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.ui.board:GuildBoardWindow"), "show")
+   method
+    name "show"
+    refid "com.company.assembleegameclient.ui.board:GuildBoardWindow/instance/com.company.assembleegameclient.ui.board:GuildBoardWindow/instance/show"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      findpropstrict      QName(PackageInternalNs("com.company.assembleegameclient.ui.board"), "ViewBoard")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.board:GuildBoardWindow"), "text_")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.board:GuildBoardWindow"), "canEdit_")
+      constructprop       QName(PackageInternalNs("com.company.assembleegameclient.ui.board"), "ViewBoard"), 2
+      setproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.board:GuildBoardWindow"), "viewBoard_")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.board:GuildBoardWindow"), "viewBoard_")
+      pushstring          "complete"
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.board:GuildBoardWindow"), "onViewComplete")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.board:GuildBoardWindow"), "viewBoard_")
+      pushstring          "change"
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.board:GuildBoardWindow"), "onViewChange")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.board:GuildBoardWindow"), "viewBoard_")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.ui.board:GuildBoardWindow"), "reportError")
+   method
+    name "reportError"
+    refid "com.company.assembleegameclient.ui.board:GuildBoardWindow/instance/com.company.assembleegameclient.ui.board:GuildBoardWindow/instance/reportError"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 1
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.ui.board:GuildBoardWindow"), "onViewComplete")
+   method
+    name "onViewComplete"
+    refid "com.company.assembleegameclient.ui.board:GuildBoardWindow/instance/com.company.assembleegameclient.ui.board:GuildBoardWindow/instance/onViewComplete"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace(""), "parent")
+      getlocal0
+      callpropvoid        QName(PackageNamespace(""), "removeChild"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.ui.board:GuildBoardWindow"), "onViewChange")
+   method
+    name "onViewChange"
+    refid "com.company.assembleegameclient.ui.board:GuildBoardWindow/instance/com.company.assembleegameclient.ui.board:GuildBoardWindow/instance/onViewChange"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace(""), "removeChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.board:GuildBoardWindow"), "viewBoard_")
+      callpropvoid        QName(PackageNamespace(""), "removeChild"), 1
+
+      getlocal0
+      pushnull
+      setproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.board:GuildBoardWindow"), "viewBoard_")
+
+      getlocal0
+      findpropstrict      QName(PackageInternalNs("com.company.assembleegameclient.ui.board"), "EditBoard")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.board:GuildBoardWindow"), "text_")
+      constructprop       QName(PackageInternalNs("com.company.assembleegameclient.ui.board"), "EditBoard"), 1
+      setproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.board:GuildBoardWindow"), "editBoard_")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.board:GuildBoardWindow"), "editBoard_")
+      pushstring          "cancel"
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.board:GuildBoardWindow"), "onEditCancel")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.board:GuildBoardWindow"), "editBoard_")
+      pushstring          "complete"
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.board:GuildBoardWindow"), "onEditComplete")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.board:GuildBoardWindow"), "editBoard_")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.ui.board:GuildBoardWindow"), "onEditCancel")
+   method
+    name "onEditCancel"
+    refid "com.company.assembleegameclient.ui.board:GuildBoardWindow/instance/com.company.assembleegameclient.ui.board:GuildBoardWindow/instance/onEditCancel"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace(""), "removeChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.board:GuildBoardWindow"), "editBoard_")
+      callpropvoid        QName(PackageNamespace(""), "removeChild"), 1
+
+      getlocal0
+      pushnull
+      setproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.board:GuildBoardWindow"), "editBoard_")
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("com.company.assembleegameclient.ui.board:GuildBoardWindow"), "show"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.ui.board:GuildBoardWindow"), "onEditComplete")
+   method
+    name "onEditComplete"
+    refid "com.company.assembleegameclient.ui.board:GuildBoardWindow/instance/com.company.assembleegameclient.ui.board:GuildBoardWindow/instance/onEditComplete"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 7
+     localcount 4
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace("kabam.rotmg.core"), "StaticInjectorContext")
+      callproperty        QName(PackageNamespace(""), "getInjector"), 0
+      getlex              QName(PackageNamespace("kabam.rotmg.account.core"), "Account")
+      callproperty        QName(PackageNamespace(""), "getInstance"), 1
+      coerce              QName(PackageNamespace("kabam.rotmg.account.core"), "Account")
+      setlocal2
+
+      pushstring          "board"
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.board:GuildBoardWindow"), "editBoard_")
+      callproperty        QName(PackageNamespace(""), "getText"), 0
+      newobject           1
+      coerce              QName(PackageNamespace(""), "Object")
+      setlocal3
+
+      getlex              QName(PackageNamespace("com.company.util"), "MoreObjectUtil")
+      getlocal3
+      getlocal2
+      pushtrue
+      callproperty        QName(Namespace("kabam.rotmg.account.core:Account"), "getCredentials"), 1
+      callpropvoid        QName(PackageNamespace(""), "addToObject"), 2
+
+      getlocal0
+      getlex              QName(PackageNamespace("kabam.rotmg.core"), "StaticInjectorContext")
+      callproperty        QName(PackageNamespace(""), "getInjector"), 0
+      getlex              QName(PackageNamespace("kabam.rotmg.appengine.api"), "AppEngineClient")
+      callproperty        QName(PackageNamespace(""), "getInstance"), 1
+      setproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.board:GuildBoardWindow"), "client")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.board:GuildBoardWindow"), "client")
+      getproperty         QName(Namespace("kabam.rotmg.appengine.api:AppEngineClient"), "complete")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.board:GuildBoardWindow"), "onSetBoardComplete")
+      callpropvoid        QName(PackageNamespace(""), "addOnce"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.board:GuildBoardWindow"), "client")
+      pushstring          "/guild/setBoard"
+      getlocal3
+      callpropvoid        QName(Namespace("kabam.rotmg.appengine.api:AppEngineClient"), "sendRequest"), 2
+
+      findpropstrict      QName(PackageNamespace(""), "removeChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.board:GuildBoardWindow"), "editBoard_")
+      callpropvoid        QName(PackageNamespace(""), "removeChild"), 1
+
+      getlocal0
+      pushnull
+      setproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.board:GuildBoardWindow"), "editBoard_")
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.ui.dialogs"), "Dialog")
+      pushnull
+      pushstring          "Saving..."
+      pushnull
+      pushnull
+      pushnull
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.ui.dialogs"), "Dialog"), 5
+      setproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.board:GuildBoardWindow"), "dialog_")
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.board:GuildBoardWindow"), "dialog_")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.board:GuildBoardWindow"), "darkBox_")
+      pushfalse
+      setproperty         QName(PackageNamespace(""), "visible")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.ui.board:GuildBoardWindow"), "onSetBoardComplete")
+   method
+    name "onSetBoardComplete"
+    refid "com.company.assembleegameclient.ui.board:GuildBoardWindow/instance/com.company.assembleegameclient.ui.board:GuildBoardWindow/instance/onSetBoardComplete"
+    param QName(PackageNamespace(""), "Boolean")
+    param null
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    paramname "_arg2"
+    body
+     maxstack 2
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      iffalse             L8
+
+      getlocal0
+      getlocal2
+      callpropvoid        QName(PrivateNamespace("com.company.assembleegameclient.ui.board:GuildBoardWindow"), "onSaveDone"), 1
+
+      jump                L11
+
+L8:
+      getlocal0
+      getlocal2
+      callpropvoid        QName(PrivateNamespace("com.company.assembleegameclient.ui.board:GuildBoardWindow"), "onSaveError"), 1
+
+L11:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.ui.board:GuildBoardWindow"), "onSaveDone")
+   method
+    name "onSaveDone"
+    refid "com.company.assembleegameclient.ui.board:GuildBoardWindow/instance/com.company.assembleegameclient.ui.board:GuildBoardWindow/instance/onSaveDone"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.board:GuildBoardWindow"), "darkBox_")
+      pushtrue
+      setproperty         QName(PackageNamespace(""), "visible")
+
+      findpropstrict      QName(PackageNamespace(""), "removeChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.board:GuildBoardWindow"), "dialog_")
+      callpropvoid        QName(PackageNamespace(""), "removeChild"), 1
+
+      getlocal0
+      pushnull
+      setproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.board:GuildBoardWindow"), "dialog_")
+
+      getlocal0
+      getlocal1
+      setproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.board:GuildBoardWindow"), "text_")
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("com.company.assembleegameclient.ui.board:GuildBoardWindow"), "show"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.ui.board:GuildBoardWindow"), "onSaveError")
+   method
+    name "onSaveError"
+    refid "com.company.assembleegameclient.ui.board:GuildBoardWindow/instance/com.company.assembleegameclient.ui.board:GuildBoardWindow/instance/onSaveError"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 1
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.ui.board:GuildBoardWindow/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

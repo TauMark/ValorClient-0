@@ -1,0 +1,78 @@
+class
+ refid "com.company.assembleegameclient.objects:AnubisAltar"
+ instance QName(PackageNamespace("com.company.assembleegameclient.objects"), "AnubisAltar")
+  extends QName(PackageNamespace("com.company.assembleegameclient.objects"), "GameObject")
+  implements QName(PackageNamespace("com.company.assembleegameclient.objects"), "IInteractiveObject")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.company.assembleegameclient.objects:AnubisAltar")
+  iinit
+   name "AnubisAltar"
+   refid "com.company.assembleegameclient.objects:AnubisAltar/instance/init"
+   param QName(PackageNamespace(""), "XML")
+   flag HAS_PARAM_NAMES
+   paramname "param1"
+   body
+    maxstack 2
+    localcount 2
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     getlocal1
+     constructsuper      1
+
+     pushtrue
+     findproperty        QName(PackageNamespace(""), "isInteractive_")
+     swap
+     setproperty         QName(PackageNamespace(""), "isInteractive_")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait method QName(PackageNamespace(""), "getPanel")
+   method
+    name "getPanel"
+    refid "com.company.assembleegameclient.objects:AnubisAltar/instance/getPanel"
+    param QName(PackageNamespace("com.company.assembleegameclient.game"), "GameSprite")
+    returns QName(PackageNamespace("com.company.assembleegameclient.ui.panels"), "Panel")
+    flag HAS_PARAM_NAMES
+    paramname "_arg_1"
+    body
+     maxstack 5
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.aspectStatues"), "PriestAltarPanel")
+      getlocal1
+      getlex              QName(PackageNamespace(""), "objectType_")
+      pushbyte            20
+      pushstring          "Aspect of Anubis"
+      constructprop       QName(PackageNamespace("kabam.rotmg.aspectStatues"), "PriestAltarPanel"), 4
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.objects:AnubisAltar/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

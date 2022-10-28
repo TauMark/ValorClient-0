@@ -1,0 +1,172 @@
+class
+ refid "com.company.assembleegameclient.objects.animation:Animations/RunningAnimation"
+ instance QName(PrivateNamespace("FilePrivateNS:Animations"), "RunningAnimation")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  iinit
+   name "RunningAnimation"
+   refid "com.company.assembleegameclient.objects.animation:Animations/RunningAnimation/instance/init"
+   param QName(PackageNamespace("com.company.assembleegameclient.objects.animation"), "AnimationData")
+   param QName(PackageNamespace(""), "int")
+   flag HAS_PARAM_NAMES
+   paramname "_arg1"
+   paramname "_arg2"
+   body
+    maxstack 2
+    localcount 3
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     getlocal1
+     setproperty         QName(PackageNamespace(""), "animationData_")
+
+     getlocal0
+     getlocal2
+     setproperty         QName(PackageNamespace(""), "start_")
+
+     getlocal0
+     pushbyte            0
+     setproperty         QName(PackageNamespace(""), "frameId_")
+
+     getlocal0
+     getlocal2
+     setproperty         QName(PackageNamespace(""), "frameStart_")
+
+     getlocal0
+     pushnull
+     setproperty         QName(PackageNamespace(""), "texture_")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "animationData_") type QName(PackageNamespace("com.company.assembleegameclient.objects.animation"), "AnimationData") end
+  trait slot QName(PackageNamespace(""), "start_") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PackageNamespace(""), "frameId_") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PackageNamespace(""), "frameStart_") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PackageNamespace(""), "texture_") type QName(PackageNamespace("flash.display"), "BitmapData") end
+  trait method QName(PackageNamespace(""), "getTexture")
+   method
+    name "getTexture"
+    refid "com.company.assembleegameclient.objects.animation:Animations/RunningAnimation/instance/getTexture"
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace("flash.display"), "BitmapData")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 4
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "animationData_")
+      getproperty         QName(PackageNamespace(""), "frames")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "frameId_")
+      getproperty         MultinameL([PrivateNamespace("FilePrivateNS:Animations:RunningAnimation"), ProtectedNamespace("FilePrivateNS:Animations:RunningAnimation"), StaticProtectedNs("FilePrivateNS:Animations:RunningAnimation"), StaticProtectedNs("Object"), PrivateNamespace("FilePrivateNS:Animations"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.objects.animation"), "FrameData")
+      setlocal2
+
+      jump                L47
+
+L11:
+      label
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "frameId_")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "animationData_")
+      getproperty         QName(PackageNamespace(""), "frames")
+      getproperty         QName(PackageNamespace(""), "length")
+      pushbyte            1
+      subtract
+      ifnge               L23
+
+      pushnull
+      returnvalue
+
+L23:
+      getlocal0
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "frameStart_")
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "time_")
+      add
+      setproperty         QName(PackageNamespace(""), "frameStart_")
+
+      getlocal0
+      dup
+      getproperty         QName(PackageNamespace(""), "frameId_")
+      convert_d
+      increment
+      setproperty         QName(PackageNamespace(""), "frameId_")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "animationData_")
+      getproperty         QName(PackageNamespace(""), "frames")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "frameId_")
+      getproperty         MultinameL([PrivateNamespace("FilePrivateNS:Animations:RunningAnimation"), ProtectedNamespace("FilePrivateNS:Animations:RunningAnimation"), StaticProtectedNs("FilePrivateNS:Animations:RunningAnimation"), StaticProtectedNs("Object"), PrivateNamespace("FilePrivateNS:Animations"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.objects.animation"), "FrameData")
+      setlocal2
+
+      getlocal0
+      pushnull
+      setproperty         QName(PackageNamespace(""), "texture_")
+
+L47:
+      getlocal1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "frameStart_")
+      subtract
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "time_")
+      ifgt                L11
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "texture_")
+      pushnull
+      ifne                L67
+
+      getlocal0
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "textureData_")
+      getlex              QName(PackageNamespace(""), "Math")
+      callproperty        QName(PackageNamespace(""), "random"), 0
+      pushbyte            100
+      multiply
+      callproperty        QName(PackageNamespace(""), "getTexture"), 1
+      setproperty         QName(PackageNamespace(""), "texture_")
+
+L67:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "texture_")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.objects.animation:Animations/RunningAnimation/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

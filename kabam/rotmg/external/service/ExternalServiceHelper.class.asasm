@@ -1,0 +1,94 @@
+class
+ refid "kabam.rotmg.external.service:ExternalServiceHelper"
+ instance QName(PackageNamespace("kabam.rotmg.external.service"), "ExternalServiceHelper")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  iinit
+   refid "kabam.rotmg.external.service:ExternalServiceHelper/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "requestPlayerCredits") flag METADATA type QName(PackageNamespace("kabam.rotmg.external.command"), "RequestPlayerCreditsSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PackageNamespace(""), "mapExternalCallbacks")
+   method
+    name "mapExternalCallbacks"
+    refid "kabam.rotmg.external.service:ExternalServiceHelper/instance/mapExternalCallbacks"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace("flash.external"), "ExternalInterface")
+      getproperty         QName(PackageNamespace(""), "available")
+      iffalse             L10
+
+      getlex              QName(PackageNamespace("flash.external"), "ExternalInterface")
+      pushstring          "updatePlayerCredits"
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.external.service:ExternalServiceHelper"), "updatePlayerCredits")
+      callpropvoid        QName(PackageNamespace(""), "addCallback"), 2
+
+L10:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.external.service:ExternalServiceHelper"), "updatePlayerCredits")
+   method
+    name "updatePlayerCredits"
+    refid "kabam.rotmg.external.service:ExternalServiceHelper/instance/kabam.rotmg.external.service:ExternalServiceHelper/instance/mapExternalCallbacks/updatePlayerCredits"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "requestPlayerCredits")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.external.service:ExternalServiceHelper/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

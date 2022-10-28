@@ -1,0 +1,182 @@
+class
+ refid "kabam.rotmg.servers.control:ParseServerDataCommand"
+ instance QName(PackageNamespace("kabam.rotmg.servers.control"), "ParseServerDataCommand")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  iinit
+   refid "kabam.rotmg.servers.control:ParseServerDataCommand/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "servers") flag METADATA type QName(PackageNamespace("kabam.rotmg.servers.api"), "ServerModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "data") flag METADATA type QName(PackageNamespace(""), "XML")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PackageNamespace(""), "execute")
+   method
+    name "execute"
+    refid "kabam.rotmg.servers.control:ParseServerDataCommand/instance/execute"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "servers")
+      getlocal0
+      callproperty        QName(PrivateNamespace("kabam.rotmg.servers.control:ParseServerDataCommand"), "makeListOfServers"), 0
+      callpropvoid        QName(Namespace("kabam.rotmg.servers.api:ServerModel"), "setServers"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.servers.control:ParseServerDataCommand"), "makeListOfServers")
+   method
+    name "makeListOfServers"
+    refid "kabam.rotmg.servers.control:ParseServerDataCommand/instance/kabam.rotmg.servers.control:ParseServerDataCommand/instance/makeListOfServers"
+    returns TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("kabam.rotmg.servers.api"), "Server")>)
+    body
+     maxstack 3
+     localcount 6
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      setlocal2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "data")
+      pushstring          "Servers"
+      callproperty        Multiname("child", [PrivateNamespace("kabam.rotmg.servers.control:ParseServerDataCommand"), ProtectedNamespace("kabam.rotmg.servers.control:ParseServerDataCommand"), StaticProtectedNs("kabam.rotmg.servers.control:ParseServerDataCommand"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.servers.control"), PackageInternalNs("kabam.rotmg.servers.control"), PrivateNamespace("FilePrivateNS:ParseServerDataCommand"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 1
+      pushstring          "Server"
+      callproperty        Multiname("child", [PrivateNamespace("kabam.rotmg.servers.control:ParseServerDataCommand"), ProtectedNamespace("kabam.rotmg.servers.control:ParseServerDataCommand"), StaticProtectedNs("kabam.rotmg.servers.control:ParseServerDataCommand"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.servers.control"), PackageInternalNs("kabam.rotmg.servers.control"), PrivateNamespace("FilePrivateNS:ParseServerDataCommand"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 1
+      coerce              QName(PackageNamespace(""), "XMLList")
+      setlocal3
+
+      getlex              QName(PackageNamespace("__AS3__.vec"), "Vector")
+      getlex              QName(PackageNamespace("kabam.rotmg.servers.api"), "Server")
+      applytype           1
+      pushbyte            0
+      construct           1
+      coerce              TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("kabam.rotmg.servers.api"), "Server")>)
+      setlocal1
+
+      pushbyte            0
+      setlocal            5
+
+      getlocal3
+      setlocal            4
+
+      jump                L35
+
+L24:
+      label
+      getlocal            4
+      getlocal            5
+      nextvalue
+      coerce              QName(PackageNamespace(""), "XML")
+      setlocal2
+
+      getlocal1
+      getlocal0
+      getlocal2
+      callproperty        QName(PrivateNamespace("kabam.rotmg.servers.control:ParseServerDataCommand"), "makeServer"), 1
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+
+L35:
+      hasnext2            4, 5
+      iftrue              L24
+
+      getlocal1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.servers.control:ParseServerDataCommand"), "makeServer")
+   method
+    name "makeServer"
+    refid "kabam.rotmg.servers.control:ParseServerDataCommand/instance/kabam.rotmg.servers.control:ParseServerDataCommand/instance/makeServer"
+    param QName(PackageNamespace(""), "XML")
+    returns QName(PackageNamespace("kabam.rotmg.servers.api"), "Server")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.servers.api"), "Server")
+      constructprop       QName(PackageNamespace("kabam.rotmg.servers.api"), "Server"), 0
+      getlocal1
+      getproperty         Multiname("Name", [PrivateNamespace("kabam.rotmg.servers.control:ParseServerDataCommand"), ProtectedNamespace("kabam.rotmg.servers.control:ParseServerDataCommand"), StaticProtectedNs("kabam.rotmg.servers.control:ParseServerDataCommand"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.servers.control"), PackageInternalNs("kabam.rotmg.servers.control"), PrivateNamespace("FilePrivateNS:ParseServerDataCommand"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      callproperty        QName(PackageNamespace(""), "setName"), 1
+      getlocal1
+      getproperty         Multiname("DNS", [PrivateNamespace("kabam.rotmg.servers.control:ParseServerDataCommand"), ProtectedNamespace("kabam.rotmg.servers.control:ParseServerDataCommand"), StaticProtectedNs("kabam.rotmg.servers.control:ParseServerDataCommand"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.servers.control"), PackageInternalNs("kabam.rotmg.servers.control"), PrivateNamespace("FilePrivateNS:ParseServerDataCommand"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      callproperty        QName(PackageNamespace(""), "setAddress"), 1
+      pushshort           2050
+      callproperty        QName(PackageNamespace(""), "setPort"), 1
+      getlocal1
+      getproperty         Multiname("Lat", [PrivateNamespace("kabam.rotmg.servers.control:ParseServerDataCommand"), ProtectedNamespace("kabam.rotmg.servers.control:ParseServerDataCommand"), StaticProtectedNs("kabam.rotmg.servers.control:ParseServerDataCommand"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.servers.control"), PackageInternalNs("kabam.rotmg.servers.control"), PrivateNamespace("FilePrivateNS:ParseServerDataCommand"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      convert_d
+      getlocal1
+      getproperty         Multiname("Long", [PrivateNamespace("kabam.rotmg.servers.control:ParseServerDataCommand"), ProtectedNamespace("kabam.rotmg.servers.control:ParseServerDataCommand"), StaticProtectedNs("kabam.rotmg.servers.control:ParseServerDataCommand"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.servers.control"), PackageInternalNs("kabam.rotmg.servers.control"), PrivateNamespace("FilePrivateNS:ParseServerDataCommand"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      convert_d
+      callproperty        QName(PackageNamespace(""), "setLatLong"), 2
+      getlocal1
+      getproperty         Multiname("Usage", [PrivateNamespace("kabam.rotmg.servers.control:ParseServerDataCommand"), ProtectedNamespace("kabam.rotmg.servers.control:ParseServerDataCommand"), StaticProtectedNs("kabam.rotmg.servers.control:ParseServerDataCommand"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.servers.control"), PackageInternalNs("kabam.rotmg.servers.control"), PrivateNamespace("FilePrivateNS:ParseServerDataCommand"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      callproperty        QName(PackageNamespace(""), "setUsage"), 1
+      getlocal1
+      pushstring          "AdminOnly"
+      callproperty        Multiname("hasOwnProperty", [PrivateNamespace("kabam.rotmg.servers.control:ParseServerDataCommand"), ProtectedNamespace("kabam.rotmg.servers.control:ParseServerDataCommand"), StaticProtectedNs("kabam.rotmg.servers.control:ParseServerDataCommand"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.servers.control"), PackageInternalNs("kabam.rotmg.servers.control"), PrivateNamespace("FilePrivateNS:ParseServerDataCommand"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 1
+      callproperty        QName(PackageNamespace(""), "setIsAdminOnly"), 1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.servers.control:ParseServerDataCommand/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

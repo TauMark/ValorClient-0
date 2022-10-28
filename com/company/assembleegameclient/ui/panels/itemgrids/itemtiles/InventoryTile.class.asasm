@@ -1,0 +1,285 @@
+class
+ refid "com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InventoryTile"
+ instance QName(PackageNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles"), "InventoryTile")
+  extends QName(PackageNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles"), "InteractiveItemTile")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InventoryTile")
+  iinit
+   name "InventoryTile"
+   refid "com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InventoryTile/instance/init"
+   param QName(PackageNamespace(""), "int")
+   param QName(PackageNamespace("com.company.assembleegameclient.ui.panels.itemgrids"), "ItemGrid")
+   param QName(PackageNamespace(""), "Boolean")
+   flag HAS_PARAM_NAMES
+   paramname "_arg1"
+   paramname "_arg2"
+   paramname "_arg3"
+   body
+    maxstack 4
+    localcount 4
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     getlocal1
+     getlocal2
+     getlocal3
+     constructsuper      3
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "hotKey") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InventoryTile"), "hotKeyBMP") type QName(PackageNamespace("flash.display"), "Bitmap") end
+  trait method QName(PackageNamespace(""), "addTileNumber")
+   method
+    name "addTileNumber"
+    refid "com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InventoryTile/instance/addTileNumber"
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      setproperty         QName(PackageNamespace(""), "hotKey")
+
+      getlocal0
+      callpropvoid        QName(PackageNamespace(""), "buildHotKeyBMP"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "buildHotKeyBMP")
+   method
+    name "buildHotKeyBMP"
+    refid "com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InventoryTile/instance/buildHotKeyBMP"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 7
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace("kabam.rotmg.core"), "StaticInjectorContext")
+      callproperty        QName(PackageNamespace(""), "getInjector"), 0
+      getlex              QName(PackageNamespace("kabam.rotmg.text.view"), "BitmapTextFactory")
+      callproperty        QName(PackageNamespace(""), "getInstance"), 1
+      coerce              QName(PackageNamespace("kabam.rotmg.text.view"), "BitmapTextFactory")
+      setlocal2
+
+      getlocal2
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "StaticStringBuilder")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hotKey")
+      convert_s
+      constructprop       QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "StaticStringBuilder"), 1
+      pushbyte            26
+      pushint             3552822
+      pushtrue
+      getlex              QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InventoryTile"), "IDENTITY_MATRIX")
+      pushfalse
+      callproperty        QName(PackageNamespace(""), "make"), 6
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      setlocal1
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("flash.display"), "Bitmap")
+      getlocal1
+      constructprop       QName(PackageNamespace("flash.display"), "Bitmap"), 1
+      setproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InventoryTile"), "hotKeyBMP")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InventoryTile"), "hotKeyBMP")
+      pushbyte            40
+      pushbyte            2
+      divide
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InventoryTile"), "hotKeyBMP")
+      getproperty         QName(PackageNamespace(""), "width")
+      pushbyte            2
+      divide
+      subtract
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InventoryTile"), "hotKeyBMP")
+      pushbyte            6
+      setproperty         QName(PackageNamespace(""), "y")
+
+      findpropstrict      QName(PackageNamespace(""), "addChildAt")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InventoryTile"), "hotKeyBMP")
+      pushbyte            0
+      callpropvoid        QName(PackageNamespace(""), "addChildAt"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setItemSprite") flag OVERRIDE
+   method
+    name "setItemSprite"
+    refid "com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InventoryTile/instance/setItemSprite"
+    param QName(PackageNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles"), "ItemTileSprite")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      callsupervoid       QName(PackageNamespace(""), "setItemSprite"), 1
+      getlocal1
+      pushfalse
+      callpropvoid        QName(PackageNamespace(""), "setDim"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setItem") flag OVERRIDE
+   method
+    name "setItem"
+    refid "com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InventoryTile/instance/setItem"
+    param QName(PackageNamespace("valor"), "ItemData")
+    returns QName(PackageNamespace(""), "Boolean")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      callsuper           QName(PackageNamespace(""), "setItem"), 1
+      convert_b
+      setlocal2
+
+      getlocal2
+      iffalse             L17
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InventoryTile"), "hotKeyBMP")
+      getlex              QName(PackageNamespace(""), "itemSprite")
+      getproperty         QName(PackageNamespace(""), "itemData")
+      getproperty         QName(PackageNamespace(""), "objectType")
+      pushbyte            0
+      lessequals
+      setproperty         QName(PackageNamespace(""), "visible")
+
+L17:
+      getlocal2
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(ProtectedNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InventoryTile"), "beginDragCallback") flag OVERRIDE
+   method
+    name "beginDragCallback"
+    refid "com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InventoryTile/instance/com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InventoryTile:beginDragCallback"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InventoryTile"), "hotKeyBMP")
+      pushtrue
+      setproperty         QName(PackageNamespace(""), "visible")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(ProtectedNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InventoryTile"), "endDragCallback") flag OVERRIDE
+   method
+    name "endDragCallback"
+    refid "com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InventoryTile/instance/com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InventoryTile:endDragCallback"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InventoryTile"), "hotKeyBMP")
+      getlex              QName(PackageNamespace(""), "itemSprite")
+      getproperty         QName(PackageNamespace(""), "itemData")
+      getproperty         QName(PackageNamespace(""), "objectType")
+      pushbyte            0
+      lessequals
+      setproperty         QName(PackageNamespace(""), "visible")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InventoryTile/class/init"
+  body
+   maxstack 2
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 1
+   code
+    getlocal0
+    pushscope
+
+    findpropstrict      QName(PackageNamespace("flash.geom"), "Matrix")
+    constructprop       QName(PackageNamespace("flash.geom"), "Matrix"), 0
+    findproperty        QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InventoryTile"), "IDENTITY_MATRIX")
+    swap
+    initproperty        QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InventoryTile"), "IDENTITY_MATRIX")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InventoryTile"), "IDENTITY_MATRIX") type QName(PackageNamespace("flash.geom"), "Matrix") end
+end ; class

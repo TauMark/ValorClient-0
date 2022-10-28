@@ -1,0 +1,181 @@
+class
+ refid "kabam.rotmg.core.view:ScreensMediator"
+ instance QName(PackageNamespace("kabam.rotmg.core.view"), "ScreensMediator")
+  extends QName(PackageNamespace("robotlegs.bender.bundles.mvcs"), "Mediator")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.core.view:ScreensMediator")
+  iinit
+   refid "kabam.rotmg.core.view:ScreensMediator/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "view") flag METADATA type QName(PackageNamespace("kabam.rotmg.core.view"), "ScreensView")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "setScreen") flag METADATA type QName(PackageNamespace("kabam.rotmg.core.signals"), "SetScreenSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "model") flag METADATA type QName(PackageNamespace("kabam.rotmg.core.model"), "ScreenModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "gotoPrevious") flag METADATA type QName(PackageNamespace("kabam.rotmg.core.signals"), "GotoPreviousScreenSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PackageNamespace(""), "initialize") flag OVERRIDE
+   method
+    name "initialize"
+    refid "kabam.rotmg.core.view:ScreensMediator/instance/initialize"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "setScreen")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.core.view:ScreensMediator"), "onSetScreen")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "gotoPrevious")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.core.view:ScreensMediator"), "onGotoPrevious")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "destroy") flag OVERRIDE
+   method
+    name "destroy"
+    refid "kabam.rotmg.core.view:ScreensMediator/instance/destroy"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "setScreen")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.core.view:ScreensMediator"), "onSetScreen")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "gotoPrevious")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.core.view:ScreensMediator"), "onGotoPrevious")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.core.view:ScreensMediator"), "onSetScreen")
+   method
+    name "onSetScreen"
+    refid "kabam.rotmg.core.view:ScreensMediator/instance/kabam.rotmg.core.view:ScreensMediator/instance/onSetScreen"
+    param QName(PackageNamespace("flash.display"), "Sprite")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 4
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "model")
+      getlex              QName(PackageNamespace(""), "Object")
+      getglobalscope
+      getlocal1
+      call                1
+      getproperty         Multiname("constructor", [PrivateNamespace("kabam.rotmg.core.view:ScreensMediator"), ProtectedNamespace("kabam.rotmg.core.view:ScreensMediator"), StaticProtectedNs("kabam.rotmg.core.view:ScreensMediator"), StaticProtectedNs("robotlegs.bender.bundles.mvcs:Mediator"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.core.view"), PackageInternalNs("kabam.rotmg.core.view"), PrivateNamespace("FilePrivateNS:ScreensMediator"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getlex              QName(PackageNamespace(""), "Class")
+      astypelate
+      callpropvoid        QName(PackageNamespace(""), "setCurrentScreenType"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "setScreen"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.core.view:ScreensMediator"), "onGotoPrevious")
+   method
+    name "onGotoPrevious"
+    refid "kabam.rotmg.core.view:ScreensMediator/instance/kabam.rotmg.core.view:ScreensMediator/instance/onGotoPrevious"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      callproperty        QName(PackageNamespace(""), "getPrevious"), 0
+      callpropvoid        QName(PackageNamespace(""), "setScreen"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.core.view:ScreensMediator/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

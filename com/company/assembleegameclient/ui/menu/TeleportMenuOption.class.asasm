@@ -1,0 +1,409 @@
+class
+ refid "com.company.assembleegameclient.ui.menu:TeleportMenuOption"
+ instance QName(PackageNamespace("com.company.assembleegameclient.ui.menu"), "TeleportMenuOption")
+  extends QName(PackageNamespace("com.company.assembleegameclient.ui.menu"), "MenuOption")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.company.assembleegameclient.ui.menu:TeleportMenuOption")
+  iinit
+   name "TeleportMenuOption"
+   refid "com.company.assembleegameclient.ui.menu:TeleportMenuOption/instance/init"
+   param QName(PackageNamespace("com.company.assembleegameclient.objects"), "Player")
+   flag HAS_PARAM_NAMES
+   paramname "_arg1"
+   body
+    maxstack 4
+    localcount 3
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("flash.display"), "Shape")
+     constructprop       QName(PackageNamespace("flash.display"), "Shape"), 0
+     setproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.menu:TeleportMenuOption"), "barMask")
+
+     getlocal0
+     getlex              QName(PackageNamespace("com.company.util"), "AssetLibrary")
+     pushstring          "lofiInterface2"
+     pushbyte            3
+     callproperty        QName(PackageNamespace(""), "getImageFromSet"), 2
+     pushint             16777215
+     pushstring          "TeleportMenuOption.title"
+     constructsuper      3
+
+     getlocal0
+     getlocal1
+     setproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.menu:TeleportMenuOption"), "player_")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete")
+     constructprop       QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete"), 0
+     pushbyte            18
+     callproperty        QName(PackageNamespace(""), "setSize"), 1
+     pushint             16777215
+     callproperty        QName(PackageNamespace(""), "setColor"), 1
+     setproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.menu:TeleportMenuOption"), "barText_")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.menu:TeleportMenuOption"), "barText_")
+     pushtrue
+     callpropvoid        QName(PackageNamespace(""), "setBold"), 1
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.menu:TeleportMenuOption"), "barText_")
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder")
+     constructprop       QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder"), 0
+     pushstring          "TeleportMenuOption.title"
+     callproperty        QName(PackageNamespace(""), "setParams"), 1
+     callpropvoid        QName(PackageNamespace(""), "setStringBuilder"), 1
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.menu:TeleportMenuOption"), "barText_")
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.menu:TeleportMenuOption"), "barMask")
+     getlex              QName(ProtectedNamespace("com.company.assembleegameclient.ui.menu:MenuOption"), "text_")
+     getproperty         QName(PackageNamespace(""), "x")
+     dup
+     setlocal2
+
+     setproperty         QName(PackageNamespace(""), "x")
+
+     getlocal2
+     setproperty         QName(PackageNamespace(""), "x")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.menu:TeleportMenuOption"), "barText_")
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.menu:TeleportMenuOption"), "barMask")
+     getlex              QName(ProtectedNamespace("com.company.assembleegameclient.ui.menu:MenuOption"), "text_")
+     getproperty         QName(PackageNamespace(""), "y")
+     dup
+     setlocal2
+
+     setproperty         QName(PackageNamespace(""), "y")
+
+     getlocal2
+     setproperty         QName(PackageNamespace(""), "y")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.menu:TeleportMenuOption"), "barText_")
+     getproperty         QName(PackageNamespace(""), "textChanged")
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.menu:TeleportMenuOption"), "onTextChanged")
+     callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+     findpropstrict      QName(PackageNamespace(""), "addEventListener")
+     pushstring          "addedToStage"
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.menu:TeleportMenuOption"), "onAddedToStage")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     findpropstrict      QName(PackageNamespace(""), "addEventListener")
+     pushstring          "removedFromStage"
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.menu:TeleportMenuOption"), "onRemovedFromStage")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.ui.menu:TeleportMenuOption"), "player_") type QName(PackageNamespace("com.company.assembleegameclient.objects"), "Player") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.ui.menu:TeleportMenuOption"), "mouseOver_") type QName(PackageNamespace(""), "Boolean") value False() end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.ui.menu:TeleportMenuOption"), "barText_") type QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.ui.menu:TeleportMenuOption"), "barTextOrigWidth_") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.ui.menu:TeleportMenuOption"), "barMask") type QName(PackageNamespace("flash.display"), "Shape") end
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.ui.menu:TeleportMenuOption"), "onTextChanged")
+   method
+    name "onTextChanged"
+    refid "com.company.assembleegameclient.ui.menu:TeleportMenuOption/instance/com.company.assembleegameclient.ui.menu:TeleportMenuOption/onTextChanged"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 5
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.menu:TeleportMenuOption"), "barText_")
+      getproperty         QName(PackageNamespace(""), "textField")
+      getproperty         QName(PackageNamespace(""), "width")
+      setproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.menu:TeleportMenuOption"), "barTextOrigWidth_")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.menu:TeleportMenuOption"), "barMask")
+      getproperty         QName(PackageNamespace(""), "graphics")
+      pushint             16711935
+      callpropvoid        QName(PackageNamespace(""), "beginFill"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.menu:TeleportMenuOption"), "barMask")
+      getproperty         QName(PackageNamespace(""), "graphics")
+      pushbyte            0
+      pushbyte            0
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.menu:TeleportMenuOption"), "barText_")
+      getproperty         QName(PackageNamespace(""), "textField")
+      getproperty         QName(PackageNamespace(""), "width")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.menu:TeleportMenuOption"), "barText_")
+      getproperty         QName(PackageNamespace(""), "textField")
+      getproperty         QName(PackageNamespace(""), "height")
+      callpropvoid        QName(PackageNamespace(""), "drawRect"), 4
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.ui.menu:TeleportMenuOption"), "onAddedToStage")
+   method
+    name "onAddedToStage"
+    refid "com.company.assembleegameclient.ui.menu:TeleportMenuOption/instance/com.company.assembleegameclient.ui.menu:TeleportMenuOption/onAddedToStage"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace(""), "addEventListener")
+      pushstring          "enterFrame"
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.menu:TeleportMenuOption"), "onEnterFrame")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.ui.menu:TeleportMenuOption"), "onRemovedFromStage")
+   method
+    name "onRemovedFromStage"
+    refid "com.company.assembleegameclient.ui.menu:TeleportMenuOption/instance/com.company.assembleegameclient.ui.menu:TeleportMenuOption/onRemovedFromStage"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace(""), "removeEventListener")
+      pushstring          "enterFrame"
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.menu:TeleportMenuOption"), "onEnterFrame")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.ui.menu:TeleportMenuOption"), "onEnterFrame")
+   method
+    name "onEnterFrame"
+    refid "com.company.assembleegameclient.ui.menu:TeleportMenuOption/instance/com.company.assembleegameclient.ui.menu:TeleportMenuOption/onEnterFrame"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 4
+     localcount 4
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnan
+      setlocal3
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.menu:TeleportMenuOption"), "player_")
+      callproperty        QName(PackageNamespace(""), "msUtilTeleport"), 0
+      convert_i
+      setlocal2
+
+      getlocal2
+      pushbyte            0
+      ifngt               L48
+
+      findpropstrict      QName(PackageNamespace(""), "contains")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.menu:TeleportMenuOption"), "barText_")
+      callproperty        QName(PackageNamespace(""), "contains"), 1
+      iftrue              L30
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.menu:TeleportMenuOption"), "barText_")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.menu:TeleportMenuOption"), "barMask")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.menu:TeleportMenuOption"), "barText_")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.menu:TeleportMenuOption"), "barMask")
+      setproperty         QName(PackageNamespace(""), "mask")
+
+L30:
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.menu:TeleportMenuOption"), "barTextOrigWidth_")
+      pushbyte            1
+      getlocal2
+      pushshort           10000
+      divide
+      subtract
+      multiply
+      convert_d
+      setlocal3
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.menu:TeleportMenuOption"), "barMask")
+      getlocal3
+      setproperty         QName(PackageNamespace(""), "width")
+
+      findpropstrict      QName(PackageNamespace(""), "setColorTransform")
+      getlex              QName(PrivateNamespace("com.company.assembleegameclient.ui.menu:TeleportMenuOption"), "inactiveCT")
+      callpropvoid        QName(PackageNamespace(""), "setColorTransform"), 1
+
+      jump                L67
+
+L48:
+      findpropstrict      QName(PackageNamespace(""), "contains")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.menu:TeleportMenuOption"), "barText_")
+      callproperty        QName(PackageNamespace(""), "contains"), 1
+      iffalse             L57
+
+      findpropstrict      QName(PackageNamespace(""), "removeChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.menu:TeleportMenuOption"), "barText_")
+      callpropvoid        QName(PackageNamespace(""), "removeChild"), 1
+
+L57:
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.menu:TeleportMenuOption"), "mouseOver_")
+      iffalse             L64
+
+      findpropstrict      QName(PackageNamespace(""), "setColorTransform")
+      getlex              QName(StaticProtectedNs("com.company.assembleegameclient.ui.menu:MenuOption"), "mouseOverCT")
+      callpropvoid        QName(PackageNamespace(""), "setColorTransform"), 1
+
+      jump                L67
+
+L64:
+      findpropstrict      QName(PackageNamespace(""), "setColorTransform")
+      pushnull
+      callpropvoid        QName(PackageNamespace(""), "setColorTransform"), 1
+
+L67:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(ProtectedNamespace("com.company.assembleegameclient.ui.menu:TeleportMenuOption"), "onMouseOver") flag OVERRIDE
+   method
+    name "onMouseOver"
+    refid "com.company.assembleegameclient.ui.menu:TeleportMenuOption/instance/com.company.assembleegameclient.ui.menu:TeleportMenuOption:onMouseOver"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      pushtrue
+      setproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.menu:TeleportMenuOption"), "mouseOver_")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(ProtectedNamespace("com.company.assembleegameclient.ui.menu:TeleportMenuOption"), "onMouseOut") flag OVERRIDE
+   method
+    name "onMouseOut"
+    refid "com.company.assembleegameclient.ui.menu:TeleportMenuOption/instance/com.company.assembleegameclient.ui.menu:TeleportMenuOption:onMouseOut"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      pushfalse
+      setproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.menu:TeleportMenuOption"), "mouseOver_")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.ui.menu:TeleportMenuOption/class/init"
+  body
+   maxstack 4
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 1
+   code
+    getlocal0
+    pushscope
+
+    findpropstrict      QName(PackageNamespace("flash.geom"), "ColorTransform")
+    pushdouble          0.32941176470588235
+    pushdouble          0.32941176470588235
+    pushdouble          0.32941176470588235
+    constructprop       QName(PackageNamespace("flash.geom"), "ColorTransform"), 3
+    findproperty        QName(PrivateNamespace("com.company.assembleegameclient.ui.menu:TeleportMenuOption"), "inactiveCT")
+    swap
+    initproperty        QName(PrivateNamespace("com.company.assembleegameclient.ui.menu:TeleportMenuOption"), "inactiveCT")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PrivateNamespace("com.company.assembleegameclient.ui.menu:TeleportMenuOption"), "inactiveCT") type QName(PackageNamespace("flash.geom"), "ColorTransform") end
+end ; class

@@ -1,0 +1,485 @@
+class
+ refid "com.company.assembleegameclient.screens:ServerBox"
+ instance QName(PackageNamespace("com.company.assembleegameclient.screens"), "ServerBox")
+  extends QName(PackageNamespace("flash.display"), "Sprite")
+  flag SEALED
+  iinit
+   name "ServerBox"
+   refid "com.company.assembleegameclient.screens:ServerBox/instance/init"
+   param QName(PackageNamespace("kabam.rotmg.servers.api"), "Server")
+   flag HAS_PARAM_NAMES
+   paramname "_arg1"
+   body
+    maxstack 8
+    localcount 2
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     getlocal1
+     pushnull
+     ifne                L10
+
+     pushnull
+     jump                L13
+
+L10:
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "name")
+     coerce_a
+L13:
+     setproperty         QName(PackageNamespace(""), "value_")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete")
+     constructprop       QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete"), 0
+     pushbyte            18
+     callproperty        QName(PackageNamespace(""), "setSize"), 1
+     pushint             16777215
+     callproperty        QName(PackageNamespace(""), "setColor"), 1
+     pushtrue
+     callproperty        QName(PackageNamespace(""), "setBold"), 1
+     setproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:ServerBox"), "nameText_")
+
+     getlocal1
+     pushnull
+     ifne                L35
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:ServerBox"), "nameText_")
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder")
+     constructprop       QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder"), 0
+     pushstring          "ServerBox.best"
+     callproperty        QName(PackageNamespace(""), "setParams"), 1
+     callpropvoid        QName(PackageNamespace(""), "setStringBuilder"), 1
+
+     jump                L42
+
+L35:
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:ServerBox"), "nameText_")
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "StaticStringBuilder")
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "name")
+     constructprop       QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "StaticStringBuilder"), 1
+     callpropvoid        QName(PackageNamespace(""), "setStringBuilder"), 1
+
+L42:
+     getlocal0
+     getlex              QName(PackageNamespace("io.decagames.rotmg.ui.texture"), "TextureParser")
+     getproperty         QName(PackageNamespace(""), "instance")
+     pushstring          "UI"
+     pushstring          "popup_content_inset"
+     callproperty        QName(PackageNamespace(""), "getSliceScalingBitmap"), 2
+     setproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:ServerBox"), "background")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:ServerBox"), "background")
+     pushshort           384
+     setproperty         QName(PackageNamespace(""), "width")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:ServerBox"), "background")
+     pushbyte            52
+     setproperty         QName(PackageNamespace(""), "height")
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:ServerBox"), "background")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:ServerBox"), "nameText_")
+     findpropstrict      QName(PackageNamespace("flash.filters"), "DropShadowFilter")
+     pushbyte            0
+     pushbyte            0
+     pushbyte            0
+     pushbyte            1
+     pushbyte            8
+     pushbyte            8
+     constructprop       QName(PackageNamespace("flash.filters"), "DropShadowFilter"), 6
+     newarray            1
+     setproperty         QName(PackageNamespace(""), "filters")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:ServerBox"), "nameText_")
+     pushbyte            18
+     setproperty         QName(PackageNamespace(""), "x")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:ServerBox"), "nameText_")
+     pushstring          "middle"
+     callpropvoid        QName(PackageNamespace(""), "setVerticalAlign"), 1
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:ServerBox"), "nameText_")
+     pushbyte            52
+     pushbyte            2
+     divide
+     setproperty         QName(PackageNamespace(""), "y")
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:ServerBox"), "nameText_")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     getlocal0
+     getlocal1
+     callpropvoid        QName(PrivateNamespace("com.company.assembleegameclient.screens:ServerBox"), "addUI"), 1
+
+     findpropstrict      QName(PackageNamespace(""), "addEventListener")
+     pushstring          "mouseOver"
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:ServerBox"), "onMouseOver")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     findpropstrict      QName(PackageNamespace(""), "addEventListener")
+     pushstring          "rollOut"
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:ServerBox"), "onRollOut")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "value_") type QName(PackageNamespace(""), "String") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.screens:ServerBox"), "nameText_") type QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.screens:ServerBox"), "statusText_") type QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.screens:ServerBox"), "selected_") type QName(PackageNamespace(""), "Boolean") value False() end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.screens:ServerBox"), "over_") type QName(PackageNamespace(""), "Boolean") value False() end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.screens:ServerBox"), "background") type QName(PackageNamespace("io.decagames.rotmg.ui.sliceScaling"), "SliceScalingBitmap") end
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.screens:ServerBox"), "addUI")
+   method
+    name "addUI"
+    refid "com.company.assembleegameclient.screens:ServerBox/instance/com.company.assembleegameclient.screens:ServerBox/instance/addUI"
+    param QName(PackageNamespace("kabam.rotmg.servers.api"), "Server")
+    returns QName(PackageNamespace(""), "void")
+    flag NEED_ACTIVATION
+    flag HAS_PARAM_NAMES
+    paramname "server"
+    body
+     maxstack 2
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 2
+     code
+      getlocal0
+      pushscope
+
+      newactivation
+      dup
+      setlocal2
+
+      pushscope
+
+      findpropstrict      QName(PackageInternalNs("com.company.assembleegameclient.screens"), "server")
+      getlocal1
+      setproperty         QName(PackageInternalNs("com.company.assembleegameclient.screens"), "server")
+
+      newfunction         "com.company.assembleegameclient.screens:ServerBox/instance/com.company.assembleegameclient.screens:ServerBox/instance/addUI/inline_method"
+      coerce              QName(PackageNamespace(""), "Function")
+      getlocal2
+      swap
+      setslot             2
+
+      getlex              QName(PackageInternalNs("com.company.assembleegameclient.screens"), "server")
+      pushnull
+      ifeq                L59
+
+      pushint             65280
+      convert_u
+      getlocal2
+      swap
+      setslot             3
+
+      pushstring          "ServerBox.normal"
+      coerce_s
+      getlocal2
+      swap
+      setslot             4
+
+      getlex              QName(PackageInternalNs("com.company.assembleegameclient.screens"), "server")
+      callproperty        QName(PackageNamespace(""), "isFull"), 0
+      iffalse             L41
+
+      pushint             16711680
+      convert_u
+      getlocal2
+      swap
+      setslot             3
+
+      pushstring          "ServerBox.full"
+      coerce_s
+      getlocal2
+      swap
+      setslot             4
+
+      jump                L54
+
+L41:
+      getlex              QName(PackageInternalNs("com.company.assembleegameclient.screens"), "server")
+      callproperty        QName(PackageNamespace(""), "isCrowded"), 0
+      iffalse             L54
+
+      pushint             16549442
+      convert_u
+      getlocal2
+      swap
+      setslot             3
+
+      pushstring          "ServerBox.crowded"
+      coerce_s
+      getlocal2
+      swap
+      setslot             4
+
+L54:
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:ServerBox"), "nameText_")
+      getproperty         QName(PackageNamespace(""), "textChanged")
+      getlex              QName(PackageInternalNs("com.company.assembleegameclient.screens"), "onTextChanged")
+      callpropvoid        QName(PackageNamespace(""), "addOnce"), 1
+
+L59:
+      returnvoid
+     end ; code
+     trait slot QName(PackageInternalNs("com.company.assembleegameclient.screens"), "server") slotid 1 type QName(PackageNamespace("kabam.rotmg.servers.api"), "Server") end
+     trait slot QName(PackageInternalNs("com.company.assembleegameclient.screens"), "onTextChanged") slotid 2 type QName(PackageNamespace(""), "Function") end
+     trait slot QName(PackageInternalNs("com.company.assembleegameclient.screens"), "color") slotid 3 type QName(PackageNamespace(""), "uint") end
+     trait slot QName(PackageInternalNs("com.company.assembleegameclient.screens"), "text") slotid 4 type QName(PackageNamespace(""), "String") end
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.screens:ServerBox"), "makeStatusText")
+   method
+    name "makeStatusText"
+    refid "com.company.assembleegameclient.screens:ServerBox/instance/com.company.assembleegameclient.screens:ServerBox/instance/makeStatusText"
+    param QName(PackageNamespace(""), "uint")
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    paramname "_arg2"
+    body
+     maxstack 8
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete")
+      constructprop       QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete"), 0
+      pushbyte            18
+      callproperty        QName(PackageNamespace(""), "setSize"), 1
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "setColor"), 1
+      pushtrue
+      callproperty        QName(PackageNamespace(""), "setBold"), 1
+      pushstring          "center"
+      callproperty        QName(PackageNamespace(""), "setAutoSize"), 1
+      setproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:ServerBox"), "statusText_")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:ServerBox"), "statusText_")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder")
+      constructprop       QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder"), 0
+      getlocal2
+      callproperty        QName(PackageNamespace(""), "setParams"), 1
+      callpropvoid        QName(PackageNamespace(""), "setStringBuilder"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:ServerBox"), "statusText_")
+      findpropstrict      QName(PackageNamespace("flash.filters"), "DropShadowFilter")
+      pushbyte            0
+      pushbyte            0
+      pushbyte            0
+      pushbyte            1
+      pushbyte            8
+      pushbyte            8
+      constructprop       QName(PackageNamespace("flash.filters"), "DropShadowFilter"), 6
+      newarray            1
+      setproperty         QName(PackageNamespace(""), "filters")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:ServerBox"), "statusText_")
+      pushshort           288
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:ServerBox"), "statusText_")
+      pushbyte            52
+      pushbyte            2
+      divide
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:ServerBox"), "nameText_")
+      getproperty         QName(PackageNamespace(""), "height")
+      pushbyte            2
+      divide
+      subtract
+      setproperty         QName(PackageNamespace(""), "y")
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:ServerBox"), "statusText_")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setSelected")
+   method
+    name "setSelected"
+    refid "com.company.assembleegameclient.screens:ServerBox/instance/setSelected"
+    param QName(PackageNamespace(""), "Boolean")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 5
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      setproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:ServerBox"), "selected_")
+
+      getlocal1
+      iffalse             L17
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:ServerBox"), "background")
+      getproperty         QName(PackageNamespace(""), "transform")
+      findpropstrict      QName(PackageNamespace("flash.geom"), "ColorTransform")
+      pushdouble          1.5
+      pushdouble          1.5
+      pushdouble          1.5
+      constructprop       QName(PackageNamespace("flash.geom"), "ColorTransform"), 3
+      setproperty         QName(PackageNamespace(""), "colorTransform")
+
+      jump                L23
+
+L17:
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:ServerBox"), "background")
+      getproperty         QName(PackageNamespace(""), "transform")
+      findpropstrict      QName(PackageNamespace("flash.geom"), "ColorTransform")
+      constructprop       QName(PackageNamespace("flash.geom"), "ColorTransform"), 0
+      setproperty         QName(PackageNamespace(""), "colorTransform")
+
+L23:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.screens:ServerBox"), "onMouseOver")
+   method
+    name "onMouseOver"
+    refid "com.company.assembleegameclient.screens:ServerBox/instance/com.company.assembleegameclient.screens:ServerBox/instance/onMouseOver"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 5
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      pushtrue
+      setproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:ServerBox"), "over_")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:ServerBox"), "selected_")
+      iftrue              L17
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:ServerBox"), "background")
+      getproperty         QName(PackageNamespace(""), "transform")
+      findpropstrict      QName(PackageNamespace("flash.geom"), "ColorTransform")
+      pushdouble          1.2
+      pushdouble          1.2
+      pushdouble          1.2
+      constructprop       QName(PackageNamespace("flash.geom"), "ColorTransform"), 3
+      setproperty         QName(PackageNamespace(""), "colorTransform")
+
+L17:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.screens:ServerBox"), "onRollOut")
+   method
+    name "onRollOut"
+    refid "com.company.assembleegameclient.screens:ServerBox/instance/com.company.assembleegameclient.screens:ServerBox/instance/onRollOut"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      pushfalse
+      setproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:ServerBox"), "over_")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:ServerBox"), "selected_")
+      iftrue              L14
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:ServerBox"), "background")
+      getproperty         QName(PackageNamespace(""), "transform")
+      findpropstrict      QName(PackageNamespace("flash.geom"), "ColorTransform")
+      constructprop       QName(PackageNamespace("flash.geom"), "ColorTransform"), 0
+      setproperty         QName(PackageNamespace(""), "colorTransform")
+
+L14:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.screens:ServerBox/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PackageNamespace(""), "WIDTH") type QName(PackageNamespace(""), "int") value Integer(384) end
+ trait const QName(PackageNamespace(""), "HEIGHT") type QName(PackageNamespace(""), "int") value Integer(52) end
+end ; class

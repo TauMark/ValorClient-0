@@ -1,0 +1,161 @@
+class
+ refid "kabam.rotmg.chat.model:ChatModel"
+ instance QName(PackageNamespace("kabam.rotmg.chat.model"), "ChatModel")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  iinit
+   name "ChatModel"
+   refid "kabam.rotmg.chat.model:ChatModel/instance/init"
+   body
+    maxstack 6
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     getlex              QName(PackageNamespace("__AS3__.vec"), "Vector")
+     getlex              QName(PackageNamespace("kabam.rotmg.chat.model"), "ChatMessage")
+     applytype           1
+     construct           0
+     setproperty         QName(PackageNamespace(""), "chatMessages")
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("flash.geom"), "Rectangle")
+     pushbyte            0
+     pushbyte            0
+     findpropstrict      QName(PrivateNamespace("kabam.rotmg.chat.model:ChatModel"), "getSize")
+     callproperty        QName(PrivateNamespace("kabam.rotmg.chat.model:ChatModel"), "getSize"), 0
+     pushshort           300
+     constructprop       QName(PackageNamespace("flash.geom"), "Rectangle"), 4
+     setproperty         QName(PackageNamespace(""), "bounds")
+
+     getlocal0
+     pushbyte            20
+     setproperty         QName(PackageNamespace(""), "lineHeight")
+
+     getlocal0
+     pushbyte            10
+     setproperty         QName(PackageNamespace(""), "visibleItemCount")
+
+     getlocal0
+     pushshort           150
+     setproperty         QName(PackageNamespace(""), "storedItemCount")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "bounds") type QName(PackageNamespace("flash.geom"), "Rectangle") end
+  trait slot QName(PackageNamespace(""), "lineHeight") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PackageNamespace(""), "visibleItemCount") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PackageNamespace(""), "storedItemCount") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PackageNamespace(""), "chatMessages") type TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("kabam.rotmg.chat.model"), "ChatMessage")>) end
+  trait method QName(PackageNamespace(""), "pushMessage")
+   method
+    name "pushMessage"
+    refid "kabam.rotmg.chat.model:ChatModel/instance/pushMessage"
+    param QName(PackageNamespace("kabam.rotmg.chat.model"), "ChatMessage")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "chatMessages")
+      getlocal1
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "chatMessages")
+      getproperty         QName(PackageNamespace(""), "length")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "storedItemCount")
+      ifngt               L15
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "chatMessages")
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "shift"), 0
+
+L15:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.chat.model:ChatModel"), "getSize")
+   method
+    name "getSize"
+    refid "kabam.rotmg.chat.model:ChatModel/instance/kabam.rotmg.chat.model:ChatModel/instance/getSize"
+    returns QName(PackageNamespace(""), "int")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.parameters"), "Parameters")
+      getproperty         QName(PackageNamespace(""), "data")
+      getproperty         Multiname("chatSize", [PrivateNamespace("kabam.rotmg.chat.model:ChatModel"), ProtectedNamespace("kabam.rotmg.chat.model:ChatModel"), StaticProtectedNs("kabam.rotmg.chat.model:ChatModel"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.chat.model"), PackageInternalNs("kabam.rotmg.chat.model"), PrivateNamespace("FilePrivateNS:ChatModel"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      setlocal1
+
+      jump                L16
+
+L7:
+      label
+      pushshort           600
+      returnvalue
+
+L10:
+      label
+      pushshort           400
+      returnvalue
+
+L13:
+      label
+      pushshort           600
+      returnvalue
+
+L16:
+      pushbyte            0
+      getlocal1
+      ifstricteq          L7
+
+      pushbyte            1
+      getlocal1
+      ifstricteq          L10
+
+      jump                L13
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.chat.model:ChatModel/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

@@ -1,0 +1,68 @@
+class
+ refid "kabam.rotmg.account.core.view:RegisterPromptDialog"
+ instance QName(PackageNamespace("kabam.rotmg.account.core.view"), "RegisterPromptDialog")
+  extends QName(PackageNamespace("com.company.assembleegameclient.ui.dialogs"), "Dialog")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.account.core.view:RegisterPromptDialog")
+  iinit
+   name "RegisterPromptDialog"
+   refid "kabam.rotmg.account.core.view:RegisterPromptDialog/instance/init"
+   param QName(PackageNamespace(""), "String")
+   param QName(PackageNamespace(""), "Object")
+   flag HAS_OPTIONAL
+   flag HAS_PARAM_NAMES
+   optional Null()
+   paramname "_arg1"
+   paramname "_arg2"
+   body
+    maxstack 6
+    localcount 3
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     pushstring          "RegisterPrompt.notRegistered"
+     getlocal1
+     pushstring          "RegisterPrompt.left"
+     pushstring          "RegisterPrompt.right"
+     getlocal2
+     constructsuper      5
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("org.osflash.signals.natives"), "NativeMappedSignal")
+     getlocal0
+     pushstring          "dialogLeftButton"
+     constructprop       QName(PackageNamespace("org.osflash.signals.natives"), "NativeMappedSignal"), 2
+     setproperty         QName(PackageNamespace(""), "cancel")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("org.osflash.signals.natives"), "NativeMappedSignal")
+     getlocal0
+     pushstring          "dialogRightButton"
+     constructprop       QName(PackageNamespace("org.osflash.signals.natives"), "NativeMappedSignal"), 2
+     setproperty         QName(PackageNamespace(""), "register")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "cancel") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait slot QName(PackageNamespace(""), "register") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+ end ; instance
+ cinit
+  refid "kabam.rotmg.account.core.view:RegisterPromptDialog/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

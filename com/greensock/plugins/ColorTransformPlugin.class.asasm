@@ -1,0 +1,412 @@
+class
+ refid "com.greensock.plugins:ColorTransformPlugin"
+ instance QName(PackageNamespace("com.greensock.plugins"), "ColorTransformPlugin")
+  extends QName(PackageNamespace("com.greensock.plugins"), "TintPlugin")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.greensock.plugins:ColorTransformPlugin")
+  iinit
+   name "ColorTransformPlugin"
+   refid "com.greensock.plugins:ColorTransformPlugin/instance/init"
+   body
+    maxstack 2
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     pushstring          "colorTransform"
+     findproperty        QName(PackageNamespace(""), "_propName")
+     swap
+     setproperty         QName(PackageNamespace(""), "_propName")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait method QName(PackageNamespace(""), "_onInitTween") flag OVERRIDE
+   method
+    name "_onInitTween"
+    refid "com.greensock.plugins:ColorTransformPlugin/instance/_onInitTween"
+    param QName(PackageNamespace(""), "Object")
+    param null
+    param QName(PackageNamespace("com.greensock"), "TweenLite")
+    returns QName(PackageNamespace(""), "Boolean")
+    flag HAS_PARAM_NAMES
+    paramname "target"
+    paramname "value"
+    paramname "tween"
+    body
+     maxstack 7
+     localcount 10
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      setlocal            5
+
+      pushnan
+      setlocal            7
+
+      findpropstrict      QName(PackageNamespace("flash.geom"), "ColorTransform")
+      constructprop       QName(PackageNamespace("flash.geom"), "ColorTransform"), 0
+      coerce              QName(PackageNamespace("flash.geom"), "ColorTransform")
+      setlocal            6
+
+      getlocal1
+      getlex              QName(PackageNamespace("flash.display"), "DisplayObject")
+      istypelate
+      iffalse             L27
+
+      getlex              QName(PackageNamespace("flash.display"), "DisplayObject")
+      getglobalscope
+      getlocal1
+      call                1
+      getproperty         QName(PackageNamespace(""), "transform")
+      findproperty        QName(ProtectedNamespace("com.greensock.plugins:TintPlugin"), "_transform")
+      swap
+      setproperty         QName(ProtectedNamespace("com.greensock.plugins:TintPlugin"), "_transform")
+
+      getlex              QName(ProtectedNamespace("com.greensock.plugins:TintPlugin"), "_transform")
+      getproperty         QName(PackageNamespace(""), "colorTransform")
+      coerce              QName(PackageNamespace("flash.geom"), "ColorTransform")
+      setlocal            5
+
+      jump                L39
+
+L27:
+      getlocal1
+      getlex              QName(PackageNamespace("flash.geom"), "ColorTransform")
+      istypelate
+      iffalse             L37
+
+      getlocal1
+      getlex              QName(PackageNamespace("flash.geom"), "ColorTransform")
+      astypelate
+      coerce              QName(PackageNamespace("flash.geom"), "ColorTransform")
+      setlocal            5
+
+      jump                L39
+
+L37:
+      pushfalse
+      returnvalue
+
+L39:
+      getlocal2
+      getlex              QName(PackageNamespace("flash.geom"), "ColorTransform")
+      istypelate
+      iffalse             L47
+
+      getlocal            6
+      getlocal2
+      callpropvoid        QName(PackageNamespace(""), "concat"), 1
+
+      jump                L50
+
+L47:
+      getlocal            6
+      getlocal            5
+      callpropvoid        QName(PackageNamespace(""), "concat"), 1
+
+L50:
+      pushbyte            0
+      setlocal            9
+
+      getlocal2
+      setlocal            8
+
+      jump                L105
+
+L55:
+      label
+      getlocal            8
+      getlocal            9
+      nextname
+      coerce_s
+      dup
+      setlocal            4
+
+      pushstring          "tint"
+      equals
+      dup
+      iftrue              L70
+
+      pop
+      getlocal            4
+      pushstring          "color"
+      equals
+L70:
+      iffalse             L83
+
+      getlocal2
+      getlocal            4
+      getproperty         MultinameL([PrivateNamespace("com.greensock.plugins:ColorTransformPlugin"), ProtectedNamespace("com.greensock.plugins:ColorTransformPlugin"), StaticProtectedNs("com.greensock.plugins:ColorTransformPlugin"), StaticProtectedNs("com.greensock.plugins:TintPlugin"), StaticProtectedNs("com.greensock.plugins:TweenPlugin"), StaticProtectedNs("Object"), PackageNamespace("com.greensock.plugins"), PackageInternalNs("com.greensock.plugins"), PrivateNamespace("FilePrivateNS:ColorTransformPlugin"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      pushnull
+      ifeq                L82
+
+      getlocal            6
+      getlocal2
+      getlocal            4
+      getproperty         MultinameL([PrivateNamespace("com.greensock.plugins:ColorTransformPlugin"), ProtectedNamespace("com.greensock.plugins:ColorTransformPlugin"), StaticProtectedNs("com.greensock.plugins:ColorTransformPlugin"), StaticProtectedNs("com.greensock.plugins:TintPlugin"), StaticProtectedNs("com.greensock.plugins:TweenPlugin"), StaticProtectedNs("Object"), PackageNamespace("com.greensock.plugins"), PackageInternalNs("com.greensock.plugins"), PrivateNamespace("FilePrivateNS:ColorTransformPlugin"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      convert_i
+      setproperty         QName(PackageNamespace(""), "color")
+
+L82:
+      jump                L105
+
+L83:
+      getlocal            4
+      pushstring          "tintAmount"
+      equals
+      dup
+      iftrue              L92
+
+      pop
+      getlocal            4
+      pushstring          "exposure"
+      equals
+L92:
+      dup
+      iftrue              L98
+
+      pop
+      getlocal            4
+      pushstring          "brightness"
+      equals
+L98:
+      iftrue              L105
+
+      getlocal            6
+      getlocal            4
+      getlocal2
+      getlocal            4
+      getproperty         MultinameL([PrivateNamespace("com.greensock.plugins:ColorTransformPlugin"), ProtectedNamespace("com.greensock.plugins:ColorTransformPlugin"), StaticProtectedNs("com.greensock.plugins:ColorTransformPlugin"), StaticProtectedNs("com.greensock.plugins:TintPlugin"), StaticProtectedNs("com.greensock.plugins:TweenPlugin"), StaticProtectedNs("Object"), PackageNamespace("com.greensock.plugins"), PackageInternalNs("com.greensock.plugins"), PrivateNamespace("FilePrivateNS:ColorTransformPlugin"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      setproperty         MultinameL([PrivateNamespace("com.greensock.plugins:ColorTransformPlugin"), ProtectedNamespace("com.greensock.plugins:ColorTransformPlugin"), StaticProtectedNs("com.greensock.plugins:ColorTransformPlugin"), StaticProtectedNs("com.greensock.plugins:TintPlugin"), StaticProtectedNs("com.greensock.plugins:TweenPlugin"), StaticProtectedNs("Object"), PackageNamespace("com.greensock.plugins"), PackageInternalNs("com.greensock.plugins"), PrivateNamespace("FilePrivateNS:ColorTransformPlugin"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+L105:
+      hasnext2            8, 9
+      iftrue              L55
+
+      getlocal2
+      getlex              QName(PackageNamespace("flash.geom"), "ColorTransform")
+      istypelate
+      iftrue              L257
+
+      getlex              QName(PackageNamespace(""), "isNaN")
+      getglobalscope
+      getlocal2
+      getproperty         Multiname("tintAmount", [PrivateNamespace("com.greensock.plugins:ColorTransformPlugin"), ProtectedNamespace("com.greensock.plugins:ColorTransformPlugin"), StaticProtectedNs("com.greensock.plugins:ColorTransformPlugin"), StaticProtectedNs("com.greensock.plugins:TintPlugin"), StaticProtectedNs("com.greensock.plugins:TweenPlugin"), StaticProtectedNs("Object"), PackageNamespace("com.greensock.plugins"), PackageInternalNs("com.greensock.plugins"), PrivateNamespace("FilePrivateNS:ColorTransformPlugin"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      call                1
+      iftrue              L172
+
+      getlocal2
+      getproperty         Multiname("tintAmount", [PrivateNamespace("com.greensock.plugins:ColorTransformPlugin"), ProtectedNamespace("com.greensock.plugins:ColorTransformPlugin"), StaticProtectedNs("com.greensock.plugins:ColorTransformPlugin"), StaticProtectedNs("com.greensock.plugins:TintPlugin"), StaticProtectedNs("com.greensock.plugins:TweenPlugin"), StaticProtectedNs("Object"), PackageNamespace("com.greensock.plugins"), PackageInternalNs("com.greensock.plugins"), PrivateNamespace("FilePrivateNS:ColorTransformPlugin"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      pushbyte            1
+      getlocal            6
+      getproperty         QName(PackageNamespace(""), "redMultiplier")
+      getlocal            6
+      getproperty         QName(PackageNamespace(""), "greenMultiplier")
+      add
+      getlocal            6
+      getproperty         QName(PackageNamespace(""), "blueMultiplier")
+      add
+      pushbyte            3
+      divide
+      subtract
+      divide
+      convert_d
+      setlocal            7
+
+      getlocal            6
+      getproperty         QName(PackageNamespace(""), "redOffset")
+      getlocal            7
+      multiply
+      getlocal            6
+      swap
+      setproperty         QName(PackageNamespace(""), "redOffset")
+
+      getlocal            6
+      getproperty         QName(PackageNamespace(""), "greenOffset")
+      getlocal            7
+      multiply
+      getlocal            6
+      swap
+      setproperty         QName(PackageNamespace(""), "greenOffset")
+
+      getlocal            6
+      getproperty         QName(PackageNamespace(""), "blueOffset")
+      getlocal            7
+      multiply
+      getlocal            6
+      swap
+      setproperty         QName(PackageNamespace(""), "blueOffset")
+
+      getlocal            6
+      getlocal            6
+      getlocal            6
+      pushbyte            1
+      getlocal2
+      getproperty         Multiname("tintAmount", [PrivateNamespace("com.greensock.plugins:ColorTransformPlugin"), ProtectedNamespace("com.greensock.plugins:ColorTransformPlugin"), StaticProtectedNs("com.greensock.plugins:ColorTransformPlugin"), StaticProtectedNs("com.greensock.plugins:TintPlugin"), StaticProtectedNs("com.greensock.plugins:TweenPlugin"), StaticProtectedNs("Object"), PackageNamespace("com.greensock.plugins"), PackageInternalNs("com.greensock.plugins"), PrivateNamespace("FilePrivateNS:ColorTransformPlugin"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      subtract
+      dup
+      setlocal            9
+
+      setproperty         QName(PackageNamespace(""), "blueMultiplier")
+
+      getlocal            9
+      dup
+      setlocal            8
+
+      setproperty         QName(PackageNamespace(""), "greenMultiplier")
+
+      getlocal            8
+      setproperty         QName(PackageNamespace(""), "redMultiplier")
+
+      jump                L257
+
+L172:
+      getlex              QName(PackageNamespace(""), "isNaN")
+      getglobalscope
+      getlocal2
+      getproperty         Multiname("exposure", [PrivateNamespace("com.greensock.plugins:ColorTransformPlugin"), ProtectedNamespace("com.greensock.plugins:ColorTransformPlugin"), StaticProtectedNs("com.greensock.plugins:ColorTransformPlugin"), StaticProtectedNs("com.greensock.plugins:TintPlugin"), StaticProtectedNs("com.greensock.plugins:TweenPlugin"), StaticProtectedNs("Object"), PackageNamespace("com.greensock.plugins"), PackageInternalNs("com.greensock.plugins"), PrivateNamespace("FilePrivateNS:ColorTransformPlugin"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      call                1
+      iftrue              L210
+
+      getlocal            6
+      getlocal            6
+      getlocal            6
+      pushshort           255
+      getlocal2
+      getproperty         Multiname("exposure", [PrivateNamespace("com.greensock.plugins:ColorTransformPlugin"), ProtectedNamespace("com.greensock.plugins:ColorTransformPlugin"), StaticProtectedNs("com.greensock.plugins:ColorTransformPlugin"), StaticProtectedNs("com.greensock.plugins:TintPlugin"), StaticProtectedNs("com.greensock.plugins:TweenPlugin"), StaticProtectedNs("Object"), PackageNamespace("com.greensock.plugins"), PackageInternalNs("com.greensock.plugins"), PrivateNamespace("FilePrivateNS:ColorTransformPlugin"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      pushbyte            1
+      subtract
+      multiply
+      dup
+      setlocal            9
+
+      setproperty         QName(PackageNamespace(""), "blueOffset")
+
+      getlocal            9
+      dup
+      setlocal            8
+
+      setproperty         QName(PackageNamespace(""), "greenOffset")
+
+      getlocal            8
+      setproperty         QName(PackageNamespace(""), "redOffset")
+
+      getlocal            6
+      getlocal            6
+      getlocal            6
+      pushbyte            1
+      dup
+      setlocal            9
+
+      setproperty         QName(PackageNamespace(""), "blueMultiplier")
+
+      getlocal            9
+      dup
+      setlocal            8
+
+      setproperty         QName(PackageNamespace(""), "greenMultiplier")
+
+      getlocal            8
+      setproperty         QName(PackageNamespace(""), "redMultiplier")
+
+      jump                L257
+
+L210:
+      getlex              QName(PackageNamespace(""), "isNaN")
+      getglobalscope
+      getlocal2
+      getproperty         Multiname("brightness", [PrivateNamespace("com.greensock.plugins:ColorTransformPlugin"), ProtectedNamespace("com.greensock.plugins:ColorTransformPlugin"), StaticProtectedNs("com.greensock.plugins:ColorTransformPlugin"), StaticProtectedNs("com.greensock.plugins:TintPlugin"), StaticProtectedNs("com.greensock.plugins:TweenPlugin"), StaticProtectedNs("Object"), PackageNamespace("com.greensock.plugins"), PackageInternalNs("com.greensock.plugins"), PrivateNamespace("FilePrivateNS:ColorTransformPlugin"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      call                1
+      iftrue              L257
+
+      getlocal            6
+      getlocal            6
+      getlocal            6
+      getlex              QName(PackageNamespace(""), "Math")
+      pushbyte            0
+      getlocal2
+      getproperty         Multiname("brightness", [PrivateNamespace("com.greensock.plugins:ColorTransformPlugin"), ProtectedNamespace("com.greensock.plugins:ColorTransformPlugin"), StaticProtectedNs("com.greensock.plugins:ColorTransformPlugin"), StaticProtectedNs("com.greensock.plugins:TintPlugin"), StaticProtectedNs("com.greensock.plugins:TweenPlugin"), StaticProtectedNs("Object"), PackageNamespace("com.greensock.plugins"), PackageInternalNs("com.greensock.plugins"), PrivateNamespace("FilePrivateNS:ColorTransformPlugin"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      pushbyte            1
+      subtract
+      pushshort           255
+      multiply
+      callproperty        QName(PackageNamespace(""), "max"), 2
+      dup
+      setlocal            9
+
+      setproperty         QName(PackageNamespace(""), "blueOffset")
+
+      getlocal            9
+      dup
+      setlocal            8
+
+      setproperty         QName(PackageNamespace(""), "greenOffset")
+
+      getlocal            8
+      setproperty         QName(PackageNamespace(""), "redOffset")
+
+      getlocal            6
+      getlocal            6
+      getlocal            6
+      pushbyte            1
+      getlex              QName(PackageNamespace(""), "Math")
+      getlocal2
+      getproperty         Multiname("brightness", [PrivateNamespace("com.greensock.plugins:ColorTransformPlugin"), ProtectedNamespace("com.greensock.plugins:ColorTransformPlugin"), StaticProtectedNs("com.greensock.plugins:ColorTransformPlugin"), StaticProtectedNs("com.greensock.plugins:TintPlugin"), StaticProtectedNs("com.greensock.plugins:TweenPlugin"), StaticProtectedNs("Object"), PackageNamespace("com.greensock.plugins"), PackageInternalNs("com.greensock.plugins"), PrivateNamespace("FilePrivateNS:ColorTransformPlugin"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      pushbyte            1
+      subtract
+      callproperty        QName(PackageNamespace(""), "abs"), 1
+      subtract
+      dup
+      setlocal            9
+
+      setproperty         QName(PackageNamespace(""), "blueMultiplier")
+
+      getlocal            9
+      dup
+      setlocal            8
+
+      setproperty         QName(PackageNamespace(""), "greenMultiplier")
+
+      getlocal            8
+      setproperty         QName(PackageNamespace(""), "redMultiplier")
+
+L257:
+      findpropstrict      QName(PackageNamespace(""), "_init")
+      getlocal            5
+      getlocal            6
+      callpropvoid        QName(PackageNamespace(""), "_init"), 2
+
+      pushtrue
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.greensock.plugins:ColorTransformPlugin/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PackageNamespace(""), "API") type QName(PackageNamespace(""), "Number") value Integer(2) end
+end ; class

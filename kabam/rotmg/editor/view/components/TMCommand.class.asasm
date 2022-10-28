@@ -1,0 +1,132 @@
+class
+ refid "kabam.rotmg.editor.view.components:TMCommand"
+ instance QName(PackageNamespace("kabam.rotmg.editor.view.components"), "TMCommand")
+  extends QName(PackageNamespace("com.company.assembleegameclient.editor"), "Command")
+  flag SEALED
+  iinit
+   name "TMCommand"
+   refid "kabam.rotmg.editor.view.components:TMCommand/instance/init"
+   param QName(PackageNamespace("kabam.rotmg.editor.view.components.drawer"), "Pixel")
+   param QName(PackageNamespace("com.company.color"), "HSV")
+   param QName(PackageNamespace("com.company.color"), "HSV")
+   flag HAS_PARAM_NAMES
+   paramname "_arg_1"
+   paramname "_arg_2"
+   paramname "_arg_3"
+   body
+    maxstack 3
+    localcount 4
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     getlocal1
+     setproperty         QName(PackageNamespace(""), "pixel_")
+
+     getlocal0
+     getlocal2
+     pushnull
+     ifeq                L14
+
+     getlocal2
+     callproperty        QName(PackageNamespace(""), "clone"), 0
+     jump                L16
+
+L14:
+     pushnull
+     coerce_a
+L16:
+     setproperty         QName(PackageNamespace(""), "prevHSV_")
+
+     getlocal0
+     getlocal3
+     pushnull
+     ifeq                L24
+
+     getlocal3
+     callproperty        QName(PackageNamespace(""), "clone"), 0
+     jump                L26
+
+L24:
+     pushnull
+     coerce_a
+L26:
+     setproperty         QName(PackageNamespace(""), "newHSV_")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "pixel_") type QName(PackageNamespace("kabam.rotmg.editor.view.components.drawer"), "Pixel") end
+  trait slot QName(PackageNamespace(""), "prevHSV_") type QName(PackageNamespace("com.company.color"), "HSV") end
+  trait slot QName(PackageNamespace(""), "newHSV_") type QName(PackageNamespace("com.company.color"), "HSV") end
+  trait method QName(PackageNamespace(""), "execute") flag OVERRIDE
+   method
+    name "execute"
+    refid "kabam.rotmg.editor.view.components:TMCommand/instance/execute"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "pixel_")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "newHSV_")
+      callpropvoid        QName(PackageNamespace(""), "setHSV"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "unexecute") flag OVERRIDE
+   method
+    name "unexecute"
+    refid "kabam.rotmg.editor.view.components:TMCommand/instance/unexecute"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "pixel_")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "prevHSV_")
+      callpropvoid        QName(PackageNamespace(""), "setHSV"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.editor.view.components:TMCommand/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

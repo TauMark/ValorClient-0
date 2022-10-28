@@ -1,0 +1,127 @@
+class
+ refid "kabam.lib.ui:GroupMappedSignal"
+ instance QName(PackageNamespace("kabam.lib.ui"), "GroupMappedSignal")
+  extends QName(PackageNamespace("org.osflash.signals"), "Signal")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.lib.ui:GroupMappedSignal")
+  iinit
+   name "GroupMappedSignal"
+   refid "kabam.lib.ui:GroupMappedSignal/instance/init"
+   param QName(PackageNamespace(""), "String")
+   flag NEED_REST
+   flag HAS_PARAM_NAMES
+   paramname "_arg1"
+   body
+    maxstack 3
+    localcount 3
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     getlocal1
+     setproperty         QName(PrivateNamespace("kabam.lib.ui:GroupMappedSignal"), "eventType")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("flash.utils"), "Dictionary")
+     pushtrue
+     constructprop       QName(PackageNamespace("flash.utils"), "Dictionary"), 1
+     setproperty         QName(PrivateNamespace("kabam.lib.ui:GroupMappedSignal"), "mappedTargets")
+
+     getlocal0
+     getlocal2
+     constructsuper      1
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace("kabam.lib.ui:GroupMappedSignal"), "eventType") type QName(PackageNamespace(""), "String") end
+  trait slot QName(PrivateNamespace("kabam.lib.ui:GroupMappedSignal"), "mappedTargets") type QName(PackageNamespace("flash.utils"), "Dictionary") end
+  trait method QName(PackageNamespace(""), "map")
+   method
+    name "map"
+    refid "kabam.lib.ui:GroupMappedSignal/instance/map"
+    param QName(PackageNamespace("flash.events"), "IEventDispatcher")
+    param null
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    paramname "_arg2"
+    body
+     maxstack 6
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.lib.ui:GroupMappedSignal"), "mappedTargets")
+      getlocal1
+      getlocal2
+      setproperty         MultinameL([PrivateNamespace("kabam.lib.ui:GroupMappedSignal"), ProtectedNamespace("kabam.lib.ui:GroupMappedSignal"), StaticProtectedNs("kabam.lib.ui:GroupMappedSignal"), StaticProtectedNs("org.osflash.signals:Signal"), StaticProtectedNs("org.osflash.signals:OnceSignal"), StaticProtectedNs("Object"), PackageNamespace("kabam.lib.ui"), PackageInternalNs("kabam.lib.ui"), PrivateNamespace("FilePrivateNS:GroupMappedSignal"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.lib.ui:GroupMappedSignal"), "eventType")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.lib.ui:GroupMappedSignal"), "onTarget")
+      pushfalse
+      pushbyte            0
+      pushtrue
+      callpropvoid        QName(Namespace("flash.events:IEventDispatcher"), "addEventListener"), 5
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.lib.ui:GroupMappedSignal"), "onTarget")
+   method
+    name "onTarget"
+    refid "kabam.lib.ui:GroupMappedSignal/instance/kabam.lib.ui:GroupMappedSignal/instance/onTarget"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace(""), "dispatch")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.lib.ui:GroupMappedSignal"), "mappedTargets")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "target")
+      getproperty         MultinameL([PrivateNamespace("kabam.lib.ui:GroupMappedSignal"), ProtectedNamespace("kabam.lib.ui:GroupMappedSignal"), StaticProtectedNs("kabam.lib.ui:GroupMappedSignal"), StaticProtectedNs("org.osflash.signals:Signal"), StaticProtectedNs("org.osflash.signals:OnceSignal"), StaticProtectedNs("Object"), PackageNamespace("kabam.lib.ui"), PackageInternalNs("kabam.lib.ui"), PrivateNamespace("FilePrivateNS:GroupMappedSignal"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.lib.ui:GroupMappedSignal/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

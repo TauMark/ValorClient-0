@@ -1,0 +1,345 @@
+class
+ refid "kabam.rotmg.account.core.services:GetOffersTask"
+ instance QName(PackageNamespace("kabam.rotmg.account.core.services"), "GetOffersTask")
+  extends QName(PackageNamespace("kabam.lib.tasks"), "BaseTask")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.account.core.services:GetOffersTask")
+  iinit
+   refid "kabam.rotmg.account.core.services:GetOffersTask/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "account") flag METADATA type QName(PackageNamespace("kabam.rotmg.account.core"), "Account")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "model") flag METADATA type QName(PackageNamespace("kabam.rotmg.account.core.model"), "OfferModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "logger") flag METADATA type QName(PackageNamespace("robotlegs.bender.framework.api"), "ILogger")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "client") flag METADATA type QName(PackageNamespace("kabam.rotmg.appengine.api"), "AppEngineClient")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PrivateNamespace("kabam.rotmg.account.core.services:GetOffersTask"), "target") type QName(PackageNamespace(""), "String") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.account.core.services:GetOffersTask"), "guid") type QName(PackageNamespace(""), "String") end
+  trait method QName(ProtectedNamespace("kabam.rotmg.account.core.services:GetOffersTask"), "startTask") flag OVERRIDE
+   method
+    name "startTask"
+    refid "kabam.rotmg.account.core.services:GetOffersTask/instance/kabam.rotmg.account.core.services:GetOffersTask:startTask"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "account")
+      callproperty        QName(Namespace("kabam.rotmg.account.core:Account"), "getRequestPrefix"), 0
+      pushstring          "/getoffers"
+      add
+      setproperty         QName(PrivateNamespace("kabam.rotmg.account.core.services:GetOffersTask"), "target")
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "account")
+      callproperty        QName(Namespace("kabam.rotmg.account.core:Account"), "getUserId"), 0
+      setproperty         QName(PrivateNamespace("kabam.rotmg.account.core.services:GetOffersTask"), "guid")
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.account.core.services:GetOffersTask"), "updateModelRequestTimeAndGUID"), 0
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.account.core.services:GetOffersTask"), "sendGetOffersRequest"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.account.core.services:GetOffersTask"), "updateModelRequestTimeAndGUID")
+   method
+    name "updateModelRequestTimeAndGUID"
+    refid "kabam.rotmg.account.core.services:GetOffersTask/instance/kabam.rotmg.account.core.services:GetOffersTask/instance/updateModelRequestTimeAndGUID"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace("flash.utils"), "getTimer")
+      getglobalscope
+      call                0
+      convert_i
+      setlocal1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.account.core.services:GetOffersTask"), "guid")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "model")
+      getproperty         QName(PackageNamespace(""), "lastOfferRequestGUID")
+      equals
+      not
+      dup
+      iftrue              L24
+
+      pop
+      getlocal1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "model")
+      getproperty         QName(PackageNamespace(""), "lastOfferRequestTime")
+      subtract
+      pushint             300000
+      greaterthan
+L24:
+      iffalse             L34
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "model")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.account.core.services:GetOffersTask"), "guid")
+      setproperty         QName(PackageNamespace(""), "lastOfferRequestGUID")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "model")
+      getlocal1
+      setproperty         QName(PackageNamespace(""), "lastOfferRequestTime")
+
+L34:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.account.core.services:GetOffersTask"), "sendGetOffersRequest")
+   method
+    name "sendGetOffersRequest"
+    refid "kabam.rotmg.account.core.services:GetOffersTask/instance/kabam.rotmg.account.core.services:GetOffersTask/instance/sendGetOffersRequest"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "client")
+      pushbyte            2
+      callpropvoid        QName(Namespace("kabam.rotmg.appengine.api:AppEngineClient"), "setMaxRetries"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "client")
+      getproperty         QName(Namespace("kabam.rotmg.appengine.api:AppEngineClient"), "complete")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.account.core.services:GetOffersTask"), "onComplete")
+      callpropvoid        QName(PackageNamespace(""), "addOnce"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "client")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.account.core.services:GetOffersTask"), "target")
+      getlocal0
+      callproperty        QName(PrivateNamespace("kabam.rotmg.account.core.services:GetOffersTask"), "makeRequestDataPacket"), 0
+      callpropvoid        QName(Namespace("kabam.rotmg.appengine.api:AppEngineClient"), "sendRequest"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.account.core.services:GetOffersTask"), "makeRequestDataPacket")
+   method
+    name "makeRequestDataPacket"
+    refid "kabam.rotmg.account.core.services:GetOffersTask/instance/kabam.rotmg.account.core.services:GetOffersTask/instance/makeRequestDataPacket"
+    returns QName(PackageNamespace(""), "Object")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "account")
+      pushtrue
+      callproperty        QName(Namespace("kabam.rotmg.account.core:Account"), "getCredentials"), 1
+      coerce              QName(PackageNamespace(""), "Object")
+      setlocal1
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "model")
+      getproperty         QName(PackageNamespace(""), "lastOfferRequestTime")
+      setproperty         Multiname("time", [PrivateNamespace("kabam.rotmg.account.core.services:GetOffersTask"), ProtectedNamespace("kabam.rotmg.account.core.services:GetOffersTask"), StaticProtectedNs("kabam.rotmg.account.core.services:GetOffersTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.account.core.services"), PackageInternalNs("kabam.rotmg.account.core.services"), PrivateNamespace("FilePrivateNS:GetOffersTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "account")
+      callproperty        QName(Namespace("kabam.rotmg.account.core:Account"), "gameNetworkUserId"), 0
+      setproperty         Multiname("game_net_user_id", [PrivateNamespace("kabam.rotmg.account.core.services:GetOffersTask"), ProtectedNamespace("kabam.rotmg.account.core.services:GetOffersTask"), StaticProtectedNs("kabam.rotmg.account.core.services:GetOffersTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.account.core.services"), PackageInternalNs("kabam.rotmg.account.core.services"), PrivateNamespace("FilePrivateNS:GetOffersTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "account")
+      callproperty        QName(Namespace("kabam.rotmg.account.core:Account"), "gameNetwork"), 0
+      setproperty         Multiname("game_net", [PrivateNamespace("kabam.rotmg.account.core.services:GetOffersTask"), ProtectedNamespace("kabam.rotmg.account.core.services:GetOffersTask"), StaticProtectedNs("kabam.rotmg.account.core.services:GetOffersTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.account.core.services"), PackageInternalNs("kabam.rotmg.account.core.services"), PrivateNamespace("FilePrivateNS:GetOffersTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "account")
+      callproperty        QName(Namespace("kabam.rotmg.account.core:Account"), "playPlatform"), 0
+      setproperty         Multiname("play_platform", [PrivateNamespace("kabam.rotmg.account.core.services:GetOffersTask"), ProtectedNamespace("kabam.rotmg.account.core.services:GetOffersTask"), StaticProtectedNs("kabam.rotmg.account.core.services:GetOffersTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.account.core.services"), PackageInternalNs("kabam.rotmg.account.core.services"), PrivateNamespace("FilePrivateNS:GetOffersTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      getlocal1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.account.core.services:GetOffersTask"), "onComplete")
+   method
+    name "onComplete"
+    refid "kabam.rotmg.account.core.services:GetOffersTask/instance/kabam.rotmg.account.core.services:GetOffersTask/instance/onComplete"
+    param QName(PackageNamespace(""), "Boolean")
+    param null
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    paramname "_arg2"
+    body
+     maxstack 2
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      iffalse             L8
+
+      getlocal0
+      getlocal2
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.account.core.services:GetOffersTask"), "onDataResponse"), 1
+
+      jump                L11
+
+L8:
+      getlocal0
+      getlocal2
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.account.core.services:GetOffersTask"), "onTextError"), 1
+
+L11:
+      findpropstrict      QName(ProtectedNamespace("kabam.lib.tasks:BaseTask"), "completeTask")
+      getlocal1
+      callpropvoid        QName(ProtectedNamespace("kabam.lib.tasks:BaseTask"), "completeTask"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.account.core.services:GetOffersTask"), "onDataResponse")
+   method
+    name "onDataResponse"
+    refid "kabam.rotmg.account.core.services:GetOffersTask/instance/kabam.rotmg.account.core.services:GetOffersTask/instance/onDataResponse"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 4
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "model")
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.util.offer"), "Offers")
+      findpropstrict      QName(PackageNamespace(""), "XML")
+      getlocal1
+      constructprop       QName(PackageNamespace(""), "XML"), 1
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.util.offer"), "Offers"), 1
+      setproperty         QName(PackageNamespace(""), "offers")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.account.core.services:GetOffersTask"), "onTextError")
+   method
+    name "onTextError"
+    refid "kabam.rotmg.account.core.services:GetOffersTask/instance/kabam.rotmg.account.core.services:GetOffersTask/instance/onTextError"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "logger")
+      getlocal1
+      callpropvoid        QName(Namespace("robotlegs.bender.framework.api:ILogger"), "error"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.account.core.services:GetOffersTask/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

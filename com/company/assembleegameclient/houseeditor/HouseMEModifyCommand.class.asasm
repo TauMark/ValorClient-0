@@ -1,0 +1,185 @@
+class
+ refid "com.company.assembleegameclient.houseeditor:HouseMEModifyCommand"
+ instance QName(PackageNamespace("com.company.assembleegameclient.houseeditor"), "HouseMEModifyCommand")
+  extends QName(PackageNamespace("com.company.assembleegameclient.editor"), "Command")
+  flag SEALED
+  iinit
+   name "HouseMEModifyCommand"
+   refid "com.company.assembleegameclient.houseeditor:HouseMEModifyCommand/instance/init"
+   param QName(PackageInternalNs("com.company.assembleegameclient.houseeditor"), "HouseMEMap")
+   param QName(PackageNamespace(""), "int")
+   param QName(PackageNamespace(""), "int")
+   param QName(PackageNamespace(""), "int")
+   param QName(PackageNamespace(""), "int")
+   param QName(PackageNamespace(""), "int")
+   param QName(PackageNamespace(""), "Boolean")
+   param QName(PackageNamespace("com.company.assembleegameclient.houseeditor"), "HouseElement")
+   flag HAS_PARAM_NAMES
+   paramname "_arg1"
+   paramname "_arg2"
+   paramname "_arg3"
+   paramname "_arg4"
+   paramname "_arg5"
+   paramname "_arg6"
+   paramname "_arg7"
+   paramname "_arg8"
+   body
+    maxstack 2
+    localcount 9
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     getlocal1
+     setproperty         QName(PrivateNamespace("com.company.assembleegameclient.houseeditor:HouseMEModifyCommand"), "map_")
+
+     getlocal0
+     getlocal2
+     setproperty         QName(PrivateNamespace("com.company.assembleegameclient.houseeditor:HouseMEModifyCommand"), "x_")
+
+     getlocal0
+     getlocal3
+     setproperty         QName(PrivateNamespace("com.company.assembleegameclient.houseeditor:HouseMEModifyCommand"), "y_")
+
+     getlocal0
+     getlocal            4
+     setproperty         QName(PrivateNamespace("com.company.assembleegameclient.houseeditor:HouseMEModifyCommand"), "layer_")
+
+     getlocal0
+     getlocal            5
+     setproperty         QName(PrivateNamespace("com.company.assembleegameclient.houseeditor:HouseMEModifyCommand"), "oldType_")
+
+     getlocal0
+     getlocal            6
+     setproperty         QName(PrivateNamespace("com.company.assembleegameclient.houseeditor:HouseMEModifyCommand"), "newType_")
+
+     getlocal0
+     getlocal            7
+     setproperty         QName(PrivateNamespace("com.company.assembleegameclient.houseeditor:HouseMEModifyCommand"), "add_")
+
+     getlocal0
+     getlocal            8
+     setproperty         QName(PrivateNamespace("com.company.assembleegameclient.houseeditor:HouseMEModifyCommand"), "elem_")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.houseeditor:HouseMEModifyCommand"), "map_") type QName(PackageInternalNs("com.company.assembleegameclient.houseeditor"), "HouseMEMap") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.houseeditor:HouseMEModifyCommand"), "x_") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.houseeditor:HouseMEModifyCommand"), "y_") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.houseeditor:HouseMEModifyCommand"), "layer_") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.houseeditor:HouseMEModifyCommand"), "oldType_") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.houseeditor:HouseMEModifyCommand"), "newType_") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.houseeditor:HouseMEModifyCommand"), "add_") type QName(PackageNamespace(""), "Boolean") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.houseeditor:HouseMEModifyCommand"), "elem_") type QName(PackageNamespace("com.company.assembleegameclient.houseeditor"), "HouseElement") end
+  trait method QName(PackageNamespace(""), "execute") flag OVERRIDE
+   method
+    name "execute"
+    refid "com.company.assembleegameclient.houseeditor:HouseMEModifyCommand/instance/execute"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 5
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.houseeditor:HouseMEModifyCommand"), "map_")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.houseeditor:HouseMEModifyCommand"), "x_")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.houseeditor:HouseMEModifyCommand"), "y_")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.houseeditor:HouseMEModifyCommand"), "layer_")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.houseeditor:HouseMEModifyCommand"), "newType_")
+      callpropvoid        QName(PackageNamespace(""), "modifyTile"), 4
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.houseeditor:HouseMEModifyCommand"), "elem_")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.houseeditor:HouseMEModifyCommand"), "add_")
+      iffalse             L20
+
+      pushbyte            -1
+      jump                L21
+
+L20:
+      pushdouble          1
+L21:
+      callpropvoid        QName(PackageNamespace(""), "modifyCount"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "unexecute") flag OVERRIDE
+   method
+    name "unexecute"
+    refid "com.company.assembleegameclient.houseeditor:HouseMEModifyCommand/instance/unexecute"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 5
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.houseeditor:HouseMEModifyCommand"), "map_")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.houseeditor:HouseMEModifyCommand"), "x_")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.houseeditor:HouseMEModifyCommand"), "y_")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.houseeditor:HouseMEModifyCommand"), "layer_")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.houseeditor:HouseMEModifyCommand"), "oldType_")
+      callpropvoid        QName(PackageNamespace(""), "modifyTile"), 4
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.houseeditor:HouseMEModifyCommand"), "elem_")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.houseeditor:HouseMEModifyCommand"), "add_")
+      iffalse             L20
+
+      pushbyte            1
+      jump                L21
+
+L20:
+      pushdouble          -1
+L21:
+      callpropvoid        QName(PackageNamespace(""), "modifyCount"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.houseeditor:HouseMEModifyCommand/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

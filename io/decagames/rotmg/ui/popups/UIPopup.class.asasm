@@ -1,0 +1,154 @@
+class
+ refid "io.decagames.rotmg.ui.popups:UIPopup"
+ instance QName(PackageNamespace("io.decagames.rotmg.ui.popups"), "UIPopup")
+  extends QName(PackageNamespace("io.decagames.rotmg.ui.popups"), "BasePopup")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("io.decagames.rotmg.ui.popups:UIPopup")
+  iinit
+   name "UIPopup"
+   refid "io.decagames.rotmg.ui.popups:UIPopup/instance/init"
+   param QName(PackageNamespace(""), "int")
+   param QName(PackageNamespace(""), "int")
+   flag HAS_PARAM_NAMES
+   paramname "_arg1"
+   paramname "_arg2"
+   body
+    maxstack 5
+    localcount 3
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     getlocal1
+     getlocal2
+     constructsuper      2
+
+     getlocal0
+     getlocal0
+     getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.popups:UIPopup"), "popupType")
+     setproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.popups:UIPopup"), "popupType")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("io.decagames.rotmg.ui.popups.header"), "PopupHeader")
+     getlocal1
+     getlex              QName(PackageNamespace("io.decagames.rotmg.ui.popups.header"), "PopupHeader")
+     getproperty         QName(PackageNamespace(""), "TYPE_FULL")
+     constructprop       QName(PackageNamespace("io.decagames.rotmg.ui.popups.header"), "PopupHeader"), 2
+     setproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.popups:UIPopup"), "_header")
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.popups:UIPopup"), "_header")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     getlocal0
+     getlex              QName(PackageNamespace("io.decagames.rotmg.ui.texture"), "TextureParser")
+     getproperty         QName(PackageNamespace(""), "instance")
+     pushstring          "UI"
+     pushstring          "popup_footer"
+     getlocal1
+     callproperty        QName(PackageNamespace(""), "getSliceScalingBitmap"), 3
+     setproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.popups:UIPopup"), "footer")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.popups:UIPopup"), "footer")
+     getlocal2
+     getlocal0
+     getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.popups:UIPopup"), "footer")
+     getproperty         QName(PackageNamespace(""), "height")
+     subtract
+     setproperty         QName(PackageNamespace(""), "y")
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.popups:UIPopup"), "footer")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace("io.decagames.rotmg.ui.popups:UIPopup"), "_header") type QName(PackageNamespace("io.decagames.rotmg.ui.popups.header"), "PopupHeader") end
+  trait slot QName(PrivateNamespace("io.decagames.rotmg.ui.popups:UIPopup"), "footer") type QName(PackageNamespace("io.decagames.rotmg.ui.sliceScaling"), "SliceScalingBitmap") end
+  trait slot QName(PrivateNamespace("io.decagames.rotmg.ui.popups:UIPopup"), "_background") type QName(PackageNamespace("io.decagames.rotmg.ui.sliceScaling"), "SliceScalingBitmap") end
+  trait slot QName(PrivateNamespace("io.decagames.rotmg.ui.popups:UIPopup"), "popupType") type QName(PackageNamespace(""), "String") end
+  trait getter QName(PackageNamespace(""), "header")
+   method
+    name "header"
+    refid "io.decagames.rotmg.ui.popups:UIPopup/instance/header/getter"
+    returns QName(PackageNamespace("io.decagames.rotmg.ui.popups.header"), "PopupHeader")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.popups:UIPopup"), "_header")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "dispose")
+   method
+    name "dispose"
+    refid "io.decagames.rotmg.ui.popups:UIPopup/instance/dispose"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.popups:UIPopup"), "_header")
+      callpropvoid        QName(PackageNamespace(""), "dispose"), 0
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.popups:UIPopup"), "footer")
+      iffalse             L11
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.popups:UIPopup"), "footer")
+      callpropvoid        QName(PackageNamespace(""), "dispose"), 0
+
+L11:
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.popups:UIPopup"), "_background")
+      iffalse             L17
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.popups:UIPopup"), "_background")
+      callpropvoid        QName(PackageNamespace(""), "dispose"), 0
+
+L17:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "io.decagames.rotmg.ui.popups:UIPopup/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

@@ -1,0 +1,3150 @@
+class
+ refid "kabam.rotmg.util:AGALMiniAssembler"
+ instance QName(PackageNamespace("kabam.rotmg.util"), "AGALMiniAssembler")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  iinit
+   name "AGALMiniAssembler"
+   refid "kabam.rotmg.util:AGALMiniAssembler/instance/init"
+   param QName(PackageNamespace(""), "Boolean")
+   returns QName(PackageNamespace(""), "void")
+   flag HAS_OPTIONAL
+   flag HAS_PARAM_NAMES
+   optional False()
+   paramname "debugging"
+   body
+    maxstack 2
+    localcount 2
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal1
+     findproperty        QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "debugEnabled")
+     swap
+     setproperty         QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "debugEnabled")
+
+     getlex              QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "initialized")
+     iftrue              L12
+
+     findpropstrict      QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "init")
+     callpropvoid        QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "init"), 0
+
+L12:
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "_agalcode") type QName(PackageNamespace("flash.utils"), "ByteArray") value Null() end
+  trait slot QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "_error") type QName(PackageNamespace(""), "String") value Utf8("") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "debugEnabled") type QName(PackageNamespace(""), "Boolean") value False() end
+  trait slot QName(PackageNamespace(""), "verbose") type QName(PackageNamespace(""), "Boolean") value False() end
+  trait getter QName(PackageNamespace(""), "error")
+   method
+    name "error"
+    refid "kabam.rotmg.util:AGALMiniAssembler/instance/error/getter"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "_error")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait getter QName(PackageNamespace(""), "agalcode")
+   method
+    name "agalcode"
+    refid "kabam.rotmg.util:AGALMiniAssembler/instance/agalcode/getter"
+    returns QName(PackageNamespace("flash.utils"), "ByteArray")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "_agalcode")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "assemble2")
+   method
+    name "assemble2"
+    refid "kabam.rotmg.util:AGALMiniAssembler/instance/assemble2"
+    param QName(PackageNamespace("flash.display3D"), "Context3D")
+    param QName(PackageNamespace(""), "uint")
+    param QName(PackageNamespace(""), "String")
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace("flash.display3D"), "Program3D")
+    flag HAS_PARAM_NAMES
+    paramname "ctx3d"
+    paramname "version"
+    paramname "vertexsrc"
+    paramname "fragmentsrc"
+    body
+     maxstack 4
+     localcount 8
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace(""), "assemble")
+      pushstring          "vertex"
+      getlocal3
+      getlocal2
+      callproperty        QName(PackageNamespace(""), "assemble"), 3
+      coerce              QName(PackageNamespace("flash.utils"), "ByteArray")
+      setlocal            5
+
+      findpropstrict      QName(PackageNamespace(""), "assemble")
+      pushstring          "fragment"
+      getlocal            4
+      getlocal2
+      callproperty        QName(PackageNamespace(""), "assemble"), 3
+      coerce              QName(PackageNamespace("flash.utils"), "ByteArray")
+      setlocal            6
+
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "createProgram"), 0
+      coerce              QName(PackageNamespace("flash.display3D"), "Program3D")
+      dup
+      setlocal            7
+
+      getlocal            5
+      getlocal            6
+      callpropvoid        QName(PackageNamespace(""), "upload"), 2
+
+      getlocal            7
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "assemble")
+   method
+    name "assemble"
+    refid "kabam.rotmg.util:AGALMiniAssembler/instance/assemble"
+    param QName(PackageNamespace(""), "String")
+    param QName(PackageNamespace(""), "String")
+    param QName(PackageNamespace(""), "uint")
+    param QName(PackageNamespace(""), "Boolean")
+    returns QName(PackageNamespace("flash.utils"), "ByteArray")
+    flag HAS_OPTIONAL
+    flag HAS_PARAM_NAMES
+    optional Integer(1)
+    optional False()
+    paramname "mode"
+    paramname "source"
+    paramname "version"
+    paramname "ignorelimits"
+    body
+     maxstack 5
+     localcount 51
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushbyte            0
+      setlocal            41
+
+      pushnull
+      setlocal            29
+
+      pushbyte            0
+      setlocal            32
+
+      pushbyte            0
+      setlocal            13
+
+      pushnull
+      setlocal            9
+
+      pushnull
+      setlocal            34
+
+      pushnull
+      setlocal            15
+
+      pushnull
+      setlocal            42
+
+      pushfalse
+      setlocal            23
+
+      pushbyte            0
+      setlocal            8
+
+      pushbyte            0
+      setlocal            49
+
+      pushbyte            0
+      setlocal            43
+
+      pushfalse
+      setlocal            25
+
+      pushnull
+      setlocal            7
+
+      pushnull
+      setlocal            16
+
+      pushnull
+      setlocal            18
+
+      pushnull
+      setlocal            10
+
+      pushbyte            0
+      setlocal            38
+
+      pushbyte            0
+      setlocal            26
+
+      pushnull
+      setlocal            50
+
+      pushfalse
+      setlocal            31
+
+      pushfalse
+      setlocal            39
+
+      pushbyte            0
+      setlocal            35
+
+      pushbyte            0
+      setlocal            45
+
+      pushbyte            0
+      setlocal            27
+
+      pushbyte            0
+      setlocal            47
+
+      pushbyte            0
+      setlocal            48
+
+      pushbyte            0
+      setlocal            46
+
+      pushnull
+      setlocal            17
+
+      pushnull
+      setlocal            30
+
+      pushnull
+      setlocal            37
+
+      pushnull
+      setlocal            5
+
+      pushbyte            0
+      setlocal            21
+
+      pushbyte            0
+      setlocal            11
+
+      pushnan
+      setlocal            12
+
+      pushnull
+      setlocal            6
+
+      pushnull
+      setlocal            28
+
+      pushbyte            0
+      setlocal            33
+
+      pushbyte            0
+      setlocal            22
+
+      pushnull
+      setlocal            20
+
+      getlex              QName(PackageNamespace("flash.utils"), "getTimer")
+      getglobalscope
+      call                0
+      convert_u
+      setlocal            40
+
+      findpropstrict      QName(PackageNamespace("flash.utils"), "ByteArray")
+      constructprop       QName(PackageNamespace("flash.utils"), "ByteArray"), 0
+      findproperty        QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "_agalcode")
+      swap
+      setproperty         QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "_agalcode")
+
+      pushstring          ""
+      findproperty        QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "_error")
+      swap
+      setproperty         QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "_error")
+
+      pushfalse
+      setlocal            14
+
+      getlocal1
+      pushstring          "fragment"
+      ifne                L104
+
+      pushtrue
+      setlocal            14
+
+      jump                L115
+
+L104:
+      getlocal1
+      pushstring          "vertex"
+      ifeq                L115
+
+      pushstring          "ERROR: mode needs to be \"fragment\" or \"vertex\" but is \""
+      getlocal1
+      add
+      pushstring          "\"."
+      add
+      findproperty        QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "_error")
+      swap
+      setproperty         QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "_error")
+
+L115:
+      getlex              QName(PackageNamespace(""), "agalcode")
+      pushstring          "littleEndian"
+      setproperty         QName(PackageNamespace(""), "endian")
+
+      getlex              QName(PackageNamespace(""), "agalcode")
+      pushshort           160
+      callpropvoid        QName(PackageNamespace(""), "writeByte"), 1
+
+      getlex              QName(PackageNamespace(""), "agalcode")
+      getlocal3
+      callpropvoid        QName(PackageNamespace(""), "writeUnsignedInt"), 1
+
+      getlex              QName(PackageNamespace(""), "agalcode")
+      pushshort           161
+      callpropvoid        QName(PackageNamespace(""), "writeByte"), 1
+
+      getlex              QName(PackageNamespace(""), "agalcode")
+      getlocal            14
+      iffalse             L132
+
+      pushbyte            1
+      jump                L133
+
+L132:
+      pushdouble          0
+L133:
+      callpropvoid        QName(PackageNamespace(""), "writeByte"), 1
+
+      findpropstrict      QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "initregmap")
+      getlocal3
+      getlocal            4
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "initregmap"), 2
+
+      getlocal2
+      getlex              QName(PackageNamespace(""), "RegExp")
+      pushstring          "[\\f\\n\\r\\v]+"
+      pushstring          "g"
+      construct           2
+      pushstring          "\n"
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "replace"), 2
+      pushstring          "\n"
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "split"), 1
+      coerce              QName(PackageNamespace(""), "Array")
+      setlocal            36
+
+      pushbyte            0
+      setlocal            44
+
+      pushbyte            0
+      setlocal            24
+
+      getlocal            36
+      getproperty         QName(PackageNamespace(""), "length")
+      convert_i
+      setlocal            19
+
+      pushbyte            0
+      setlocal            41
+
+      jump                L1167
+
+L160:
+      label
+      findpropstrict      QName(PackageNamespace(""), "String")
+      getlocal            36
+      getlocal            41
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), ProtectedNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      constructprop       QName(PackageNamespace(""), "String"), 1
+      coerce_s
+      dup
+      setlocal            29
+
+      getlex              QName(StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), "REGEXP_OUTER_SPACES")
+      pushstring          ""
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "replace"), 2
+      coerce_s
+      dup
+      setlocal            29
+
+      pushstring          "//"
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "search"), 1
+      convert_i
+      dup
+      setlocal            32
+
+      pushbyte            -1
+      ifeq                L188
+
+      getlocal            29
+      pushbyte            0
+      getlocal            32
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "slice"), 2
+      coerce_s
+      setlocal            29
+
+L188:
+      getlocal            29
+      getlex              QName(PackageNamespace(""), "RegExp")
+      pushstring          "<.*>"
+      pushstring          "g"
+      construct           2
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "search"), 1
+      convert_i
+      dup
+      setlocal            13
+
+      pushbyte            -1
+      ifeq                L215
+
+      getlocal            29
+      getlocal            13
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "slice"), 1
+      getlex              QName(PackageNamespace(""), "RegExp")
+      pushstring          "([\\w\\.\\-\\+]+)"
+      pushstring          "gi"
+      construct           2
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "match"), 1
+      coerce              QName(PackageNamespace(""), "Array")
+      setlocal            9
+
+      getlocal            29
+      pushbyte            0
+      getlocal            13
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "slice"), 2
+      coerce_s
+      setlocal            29
+
+L215:
+      getlocal            29
+      getlex              QName(PackageNamespace(""), "RegExp")
+      pushstring          "^\\w{3}"
+      pushstring          "gi"
+      construct           2
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "match"), 1
+      coerce              QName(PackageNamespace(""), "Array")
+      dup
+      setlocal            34
+
+      iftrue              L243
+
+      getlocal            29
+      getproperty         QName(PackageNamespace(""), "length")
+      pushbyte            3
+      ifnge               L242
+
+      getlex              QName(PackageNamespace(""), "trace")
+      getglobalscope
+      pushstring          "warning: bad line "
+      getlocal            41
+      add
+      pushstring          ": "
+      add
+      getlocal            36
+      getlocal            41
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), ProtectedNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      add
+      call                1
+      pop
+L242:
+      jump                L1166
+
+L243:
+      getlex              QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "OPMAP")
+      getlocal            34
+      pushbyte            0
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), ProtectedNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), ProtectedNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      coerce              QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "OpCode")
+      setlocal            15
+
+      getlex              QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "debugEnabled")
+      iffalse             L257
+
+      getlex              QName(PackageNamespace(""), "trace")
+      getglobalscope
+      getlocal            15
+      call                1
+      pop
+L257:
+      getlocal            15
+      pushnull
+      ifne                L278
+
+      getlocal            29
+      getproperty         QName(PackageNamespace(""), "length")
+      pushbyte            3
+      ifnge               L277
+
+      getlex              QName(PackageNamespace(""), "trace")
+      getglobalscope
+      pushstring          "warning: bad line "
+      getlocal            41
+      add
+      pushstring          ": "
+      add
+      getlocal            36
+      getlocal            41
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), ProtectedNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      add
+      call                1
+      pop
+L277:
+      jump                L1166
+
+L278:
+      getlocal            29
+      getlocal            29
+      getlocal            15
+      getproperty         QName(PackageNamespace(""), "name")
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "search"), 1
+      getlocal            15
+      getproperty         QName(PackageNamespace(""), "name")
+      getproperty         QName(PackageNamespace(""), "length")
+      add
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "slice"), 1
+      coerce_s
+      setlocal            29
+
+      getlocal            15
+      getproperty         QName(PackageNamespace(""), "flags")
+      pushshort           256
+      bitand
+      dup
+      iffalse             L301
+
+      pop
+      getlocal3
+      pushbyte            2
+      lessthan
+      coerce_a
+L301:
+      iffalse             L307
+
+      pushstring          "error: opcode requires version 2."
+      findproperty        QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "_error")
+      swap
+      setproperty         QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "_error")
+
+      jump                L1177
+
+L307:
+      getlocal            15
+      getproperty         QName(PackageNamespace(""), "flags")
+      pushbyte            64
+      bitand
+      dup
+      iffalse             L316
+
+      pop
+      getlocal            14
+      coerce_a
+L316:
+      iffalse             L322
+
+      pushstring          "error: opcode is only allowed in vertex programs."
+      findproperty        QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "_error")
+      swap
+      setproperty         QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "_error")
+
+      jump                L1177
+
+L322:
+      getlocal            15
+      getproperty         QName(PackageNamespace(""), "flags")
+      pushbyte            32
+      bitand
+      dup
+      iffalse             L332
+
+      pop
+      getlocal            14
+      not
+      coerce_a
+L332:
+      iffalse             L338
+
+      pushstring          "error: opcode is only allowed in fragment programs."
+      findproperty        QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "_error")
+      swap
+      setproperty         QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "_error")
+
+      jump                L1177
+
+L338:
+      getlex              QName(PackageNamespace(""), "verbose")
+      iffalse             L347
+
+      getlex              QName(PackageNamespace(""), "trace")
+      getglobalscope
+      pushstring          "emit opcode="
+      getlocal            15
+      add
+      call                1
+      pop
+L347:
+      getlex              QName(PackageNamespace(""), "agalcode")
+      getlocal            15
+      getproperty         QName(PackageNamespace(""), "emitCode")
+      callpropvoid        QName(PackageNamespace(""), "writeUnsignedInt"), 1
+
+      inclocal_i          24
+      getlocal            24
+      pushshort           4096
+      ifngt               L360
+
+      pushstring          "error: too many opcodes. maximum is 4096."
+      findproperty        QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "_error")
+      swap
+      setproperty         QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "_error")
+
+      jump                L1177
+
+L360:
+      getlocal            29
+      getlex              QName(PackageNamespace(""), "RegExp")
+      pushstring          "vc\\[([vofi][acostdip]?[d]?)(\\d*)?((\\.[xyzw])?(\\+\\d{1,3})?)?\\](\\.[xyzw]{1,4})?|([vofi][acostdip]?[d]?)(\\d*)?(\\.[xyzw]{1,4})?"
+      pushstring          "gi"
+      construct           2
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "match"), 1
+      coerce              QName(PackageNamespace(""), "Array")
+      dup
+      setlocal            42
+
+      not
+      dup
+      iftrue              L379
+
+      pop
+      getlocal            42
+      getproperty         QName(PackageNamespace(""), "length")
+      getlocal            15
+      getproperty         QName(PackageNamespace(""), "numRegister")
+      equals
+      not
+L379:
+      iffalse             L395
+
+      pushstring          "error: wrong number of operands. found "
+      getlocal            42
+      getproperty         QName(PackageNamespace(""), "length")
+      add
+      pushstring          " but expected "
+      add
+      getlocal            15
+      getproperty         QName(PackageNamespace(""), "numRegister")
+      add
+      pushstring          "."
+      add
+      findproperty        QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "_error")
+      swap
+      setproperty         QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "_error")
+
+      jump                L1177
+
+L395:
+      pushfalse
+      setlocal            23
+
+      pushshort           160
+      convert_u
+      setlocal            8
+
+      getlocal            42
+      getproperty         QName(PackageNamespace(""), "length")
+      convert_u
+      setlocal            49
+
+      pushbyte            0
+      setlocal            43
+
+      jump                L1146
+
+L407:
+      label
+      pushfalse
+      setlocal            25
+
+      getlocal            42
+      getlocal            43
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), ProtectedNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getlex              QName(PackageNamespace(""), "RegExp")
+      pushstring          "\\[.*\\]"
+      pushstring          "gi"
+      construct           2
+      callproperty        Multiname("match", [PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), ProtectedNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 1
+      coerce              QName(PackageNamespace(""), "Array")
+      dup
+      setlocal            7
+
+      dup
+      iffalse             L429
+
+      pop
+      getlocal            7
+      getproperty         QName(PackageNamespace(""), "length")
+      pushbyte            0
+      greaterthan
+      coerce_a
+L429:
+      iffalse             L450
+
+      getlocal            42
+      getlocal            43
+      getlocal            42
+      getlocal            43
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), ProtectedNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getlocal            7
+      pushbyte            0
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), ProtectedNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      pushstring          "0"
+      callproperty        Multiname("replace", [PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), ProtectedNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 2
+      setproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), ProtectedNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      getlex              QName(PackageNamespace(""), "verbose")
+      iffalse             L448
+
+      getlex              QName(PackageNamespace(""), "trace")
+      getglobalscope
+      pushstring          "IS REL"
+      call                1
+      pop
+L448:
+      pushtrue
+      setlocal            25
+
+L450:
+      getlocal            42
+      getlocal            43
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), ProtectedNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getlex              QName(PackageNamespace(""), "RegExp")
+      pushstring          "^\\b[A-Za-z]{1,3}"
+      pushstring          "gi"
+      construct           2
+      callproperty        Multiname("match", [PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), ProtectedNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 1
+      coerce              QName(PackageNamespace(""), "Array")
+      dup
+      setlocal            16
+
+      iftrue              L479
+
+      pushstring          "error: could not parse operand "
+      getlocal            43
+      add
+      pushstring          " ("
+      add
+      getlocal            42
+      getlocal            43
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), ProtectedNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      add
+      pushstring          ")."
+      add
+      findproperty        QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "_error")
+      swap
+      setproperty         QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "_error")
+
+      pushtrue
+      setlocal            23
+
+      jump                L1149
+
+L479:
+      getlex              QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "REGMAP")
+      getlocal            16
+      pushbyte            0
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), ProtectedNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), ProtectedNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      coerce              QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "Register")
+      setlocal            18
+
+      getlex              QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "debugEnabled")
+      iffalse             L493
+
+      getlex              QName(PackageNamespace(""), "trace")
+      getglobalscope
+      getlocal            18
+      call                1
+      pop
+L493:
+      getlocal            18
+      pushnull
+      ifne                L513
+
+      pushstring          "error: could not find register name for operand "
+      getlocal            43
+      add
+      pushstring          " ("
+      add
+      getlocal            42
+      getlocal            43
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), ProtectedNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      add
+      pushstring          ")."
+      add
+      findproperty        QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "_error")
+      swap
+      setproperty         QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "_error")
+
+      pushtrue
+      setlocal            23
+
+      jump                L1149
+
+L513:
+      getlocal            14
+      iffalse             L557
+
+      getlocal            18
+      getproperty         QName(PackageNamespace(""), "flags")
+      pushbyte            32
+      bitand
+      iftrue              L537
+
+      pushstring          "error: register operand "
+      getlocal            43
+      add
+      pushstring          " ("
+      add
+      getlocal            42
+      getlocal            43
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), ProtectedNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      add
+      pushstring          ") only allowed in vertex programs."
+      add
+      findproperty        QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "_error")
+      swap
+      setproperty         QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "_error")
+
+      pushtrue
+      setlocal            23
+
+      jump                L1149
+
+L537:
+      getlocal            25
+      iffalse             L556
+
+      pushstring          "error: register operand "
+      getlocal            43
+      add
+      pushstring          " ("
+      add
+      getlocal            42
+      getlocal            43
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), ProtectedNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      add
+      pushstring          ") relative adressing not allowed in fragment programs."
+      add
+      findproperty        QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "_error")
+      swap
+      setproperty         QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "_error")
+
+      pushtrue
+      setlocal            23
+
+      jump                L1149
+
+L556:
+      jump                L579
+
+L557:
+      getlocal            18
+      getproperty         QName(PackageNamespace(""), "flags")
+      pushbyte            64
+      bitand
+      iftrue              L579
+
+      pushstring          "error: register operand "
+      getlocal            43
+      add
+      pushstring          " ("
+      add
+      getlocal            42
+      getlocal            43
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), ProtectedNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      add
+      pushstring          ") only allowed in fragment programs."
+      add
+      findproperty        QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "_error")
+      swap
+      setproperty         QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "_error")
+
+      pushtrue
+      setlocal            23
+
+      jump                L1149
+
+L579:
+      getlocal            42
+      getlocal            43
+      getlocal            42
+      getlocal            43
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), ProtectedNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getlocal            42
+      getlocal            43
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), ProtectedNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getlocal            18
+      getproperty         QName(PackageNamespace(""), "name")
+      callproperty        Multiname("search", [PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), ProtectedNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 1
+      getlocal            18
+      getproperty         QName(PackageNamespace(""), "name")
+      getproperty         QName(PackageNamespace(""), "length")
+      add
+      callproperty        Multiname("slice", [PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), ProtectedNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 1
+      setproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), ProtectedNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      getlocal            25
+      iffalse             L606
+
+      getlocal            7
+      pushbyte            0
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), ProtectedNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getlex              QName(PackageNamespace(""), "RegExp")
+      pushstring          "\\d+"
+      construct           1
+      callproperty        Multiname("match", [PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), ProtectedNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 1
+      jump                L614
+
+L606:
+      getlocal            42
+      getlocal            43
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), ProtectedNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getlex              QName(PackageNamespace(""), "RegExp")
+      pushstring          "\\d+"
+      construct           1
+      callproperty        Multiname("match", [PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), ProtectedNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 1
+      coerce_a
+L614:
+      coerce              QName(PackageNamespace(""), "Array")
+      setlocal            10
+
+      pushbyte            0
+      convert_u
+      setlocal            38
+
+      getlocal            10
+      iffalse             L626
+
+      getlocal            10
+      pushbyte            0
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), ProtectedNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      convert_u
+      setlocal            38
+
+L626:
+      getlocal            18
+      getproperty         QName(PackageNamespace(""), "range")
+      getlocal            38
+      ifnlt               L654
+
+      pushstring          "error: register operand "
+      getlocal            43
+      add
+      pushstring          " ("
+      add
+      getlocal            42
+      getlocal            43
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), ProtectedNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      add
+      pushstring          ") index exceeds limit of "
+      add
+      getlocal            18
+      getproperty         QName(PackageNamespace(""), "range")
+      pushbyte            1
+      add
+      add
+      pushstring          "."
+      add
+      findproperty        QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "_error")
+      swap
+      setproperty         QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "_error")
+
+      pushtrue
+      setlocal            23
+
+      jump                L1149
+
+L654:
+      pushbyte            0
+      convert_u
+      setlocal            26
+
+      getlocal            42
+      getlocal            43
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), ProtectedNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getlex              QName(PackageNamespace(""), "RegExp")
+      pushstring          "(\\.[xyzw]{1,4})"
+      construct           1
+      callproperty        Multiname("match", [PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), ProtectedNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 1
+      coerce              QName(PackageNamespace(""), "Array")
+      setlocal            50
+
+      getlocal            43
+      pushbyte            0
+      equals
+      dup
+      iffalse             L677
+
+      pop
+      getlocal            15
+      getproperty         QName(PackageNamespace(""), "flags")
+      pushshort           128
+      bitand
+      not
+L677:
+      convert_b
+      setlocal            31
+
+      getlocal            43
+      pushbyte            2
+      equals
+      dup
+      iffalse             L690
+
+      pop
+      getlocal            15
+      getproperty         QName(PackageNamespace(""), "flags")
+      pushbyte            8
+      bitand
+      coerce_a
+L690:
+      convert_b
+      setlocal            39
+
+      pushbyte            0
+      convert_u
+      setlocal            35
+
+      pushbyte            0
+      convert_u
+      setlocal            45
+
+      pushbyte            0
+      setlocal            27
+
+      getlocal            31
+      dup
+      iffalse             L706
+
+      pop
+      getlocal            25
+      convert_b
+L706:
+      iffalse             L714
+
+      pushstring          "error: relative can not be destination"
+      findproperty        QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "_error")
+      swap
+      setproperty         QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "_error")
+
+      pushtrue
+      setlocal            23
+
+      jump                L1149
+
+L714:
+      getlocal            50
+      iffalse             L791
+
+      pushbyte            0
+      convert_u
+      setlocal            26
+
+      getlocal            50
+      pushbyte            0
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), ProtectedNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getproperty         Multiname("length", [PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), ProtectedNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      convert_u
+      setlocal            48
+
+      pushbyte            1
+      setlocal            46
+
+      jump                L768
+
+L728:
+      label
+      getlocal            50
+      pushbyte            0
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), ProtectedNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getlocal            46
+      callproperty        Multiname("charCodeAt", [PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), ProtectedNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 1
+      pushstring          "x"
+      pushbyte            0
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "charCodeAt"), 1
+      subtract
+      convert_u
+      dup
+      setlocal            47
+
+      pushbyte            2
+      ifngt               L746
+
+      pushbyte            3
+      convert_u
+      setlocal            47
+
+L746:
+      getlocal            31
+      iffalse             L756
+
+      getlocal            26
+      pushbyte            1
+      getlocal            47
+      lshift
+      bitor
+      convert_u
+      setlocal            26
+
+      jump                L767
+
+L756:
+      getlocal            26
+      getlocal            47
+      getlocal            46
+      pushbyte            1
+      subtract
+      pushbyte            1
+      lshift
+      lshift
+      bitor
+      convert_u
+      setlocal            26
+
+L767:
+      inclocal_i          46
+L768:
+      getlocal            46
+      getlocal            48
+      iflt                L728
+
+      getlocal            31
+      iftrue              L790
+
+      jump                L787
+
+L774:
+      label
+      getlocal            26
+      getlocal            47
+      getlocal            46
+      pushbyte            1
+      subtract
+      pushbyte            1
+      lshift
+      lshift
+      bitor
+      convert_u
+      setlocal            26
+
+      inclocal_i          46
+L787:
+      getlocal            46
+      pushbyte            4
+      ifle                L774
+
+L790:
+      jump                L799
+
+L791:
+      getlocal            31
+      iffalse             L795
+
+      pushbyte            15
+      jump                L797
+
+L795:
+      pushshort           228
+      convert_d
+L797:
+      convert_u
+      setlocal            26
+
+L799:
+      getlocal            25
+      iffalse             L942
+
+      getlocal            7
+      pushbyte            0
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), ProtectedNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getlex              QName(PackageNamespace(""), "RegExp")
+      pushstring          "[A-Za-z]{1,3}"
+      pushstring          "gi"
+      construct           2
+      callproperty        Multiname("match", [PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), ProtectedNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 1
+      coerce              QName(PackageNamespace(""), "Array")
+      setlocal            17
+
+      getlex              QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "REGMAP")
+      getlocal            17
+      pushbyte            0
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), ProtectedNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), ProtectedNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      coerce              QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "Register")
+      dup
+      setlocal            30
+
+      pushnull
+      ifne                L828
+
+      pushstring          "error: bad index register"
+      findproperty        QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "_error")
+      swap
+      setproperty         QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "_error")
+
+      pushtrue
+      setlocal            23
+
+      jump                L1149
+
+L828:
+      getlocal            30
+      getproperty         QName(PackageNamespace(""), "emitCode")
+      convert_u
+      setlocal            35
+
+      getlocal            7
+      pushbyte            0
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), ProtectedNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getlex              QName(PackageNamespace(""), "RegExp")
+      pushstring          "(\\.[xyzw]{1,1})"
+      construct           1
+      callproperty        Multiname("match", [PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), ProtectedNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 1
+      coerce              QName(PackageNamespace(""), "Array")
+      dup
+      setlocal            37
+
+      getproperty         QName(PackageNamespace(""), "length")
+      pushbyte            0
+      ifne                L852
+
+      pushstring          "error: bad index register select"
+      findproperty        QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "_error")
+      swap
+      setproperty         QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "_error")
+
+      pushtrue
+      setlocal            23
+
+      jump                L1149
+
+L852:
+      getlocal            37
+      pushbyte            0
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), ProtectedNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      pushbyte            1
+      callproperty        Multiname("charCodeAt", [PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), ProtectedNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 1
+      pushstring          "x"
+      pushbyte            0
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "charCodeAt"), 1
+      subtract
+      convert_u
+      dup
+      setlocal            45
+
+      pushbyte            2
+      ifngt               L869
+
+      pushbyte            3
+      convert_u
+      setlocal            45
+
+L869:
+      getlocal            7
+      pushbyte            0
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), ProtectedNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getlex              QName(PackageNamespace(""), "RegExp")
+      pushstring          "\\+\\d{1,3}"
+      pushstring          "gi"
+      construct           2
+      callproperty        Multiname("match", [PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), ProtectedNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 1
+      coerce              QName(PackageNamespace(""), "Array")
+      dup
+      setlocal            5
+
+      getproperty         QName(PackageNamespace(""), "length")
+      pushbyte            0
+      ifngt               L888
+
+      getlocal            5
+      pushbyte            0
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), ProtectedNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      convert_i
+      setlocal            27
+
+L888:
+      getlocal            27
+      pushbyte            0
+      lessthan
+      dup
+      iftrue              L897
+
+      pop
+      getlocal            27
+      pushshort           255
+      greaterthan
+L897:
+      iffalse             L909
+
+      pushstring          "error: index offset "
+      getlocal            27
+      add
+      pushstring          " out of bounds. [0..255]"
+      add
+      findproperty        QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "_error")
+      swap
+      setproperty         QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "_error")
+
+      pushtrue
+      setlocal            23
+
+      jump                L1149
+
+L909:
+      getlex              QName(PackageNamespace(""), "verbose")
+      iffalse             L942
+
+      getlex              QName(PackageNamespace(""), "trace")
+      getglobalscope
+      pushstring          "RELATIVE: type="
+      getlocal            35
+      add
+      pushstring          "=="
+      add
+      getlocal            17
+      pushbyte            0
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), ProtectedNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      add
+      pushstring          " sel="
+      add
+      getlocal            45
+      add
+      pushstring          "=="
+      add
+      getlocal            37
+      pushbyte            0
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), ProtectedNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      add
+      pushstring          " idx="
+      add
+      getlocal            38
+      add
+      pushstring          " offset="
+      add
+      getlocal            27
+      add
+      call                1
+      pop
+L942:
+      getlex              QName(PackageNamespace(""), "verbose")
+      iffalse             L961
+
+      getlex              QName(PackageNamespace(""), "trace")
+      getglobalscope
+      pushstring          "  emit argcode="
+      getlocal            18
+      add
+      pushstring          "["
+      add
+      getlocal            38
+      add
+      pushstring          "]["
+      add
+      getlocal            26
+      add
+      pushstring          "]"
+      add
+      call                1
+      pop
+L961:
+      getlocal            31
+      iffalse             L979
+
+      getlex              QName(PackageNamespace(""), "agalcode")
+      getlocal            38
+      callpropvoid        QName(PackageNamespace(""), "writeShort"), 1
+
+      getlex              QName(PackageNamespace(""), "agalcode")
+      getlocal            26
+      callpropvoid        QName(PackageNamespace(""), "writeByte"), 1
+
+      getlex              QName(PackageNamespace(""), "agalcode")
+      getlocal            18
+      getproperty         QName(PackageNamespace(""), "emitCode")
+      callpropvoid        QName(PackageNamespace(""), "writeByte"), 1
+
+      getlocal            8
+      pushbyte            32
+      subtract
+      convert_u
+      setlocal            8
+
+      jump                L1145
+
+L979:
+      getlocal            39
+      iffalse             L1103
+
+      getlex              QName(PackageNamespace(""), "verbose")
+      iffalse             L988
+
+      getlex              QName(PackageNamespace(""), "trace")
+      getglobalscope
+      pushstring          "  emit sampler"
+      call                1
+      pop
+L988:
+      pushbyte            5
+      convert_u
+      setlocal            21
+
+      getlocal            9
+      pushnull
+      ifne                L996
+
+      pushbyte            0
+      jump                L999
+
+L996:
+      getlocal            9
+      getproperty         QName(PackageNamespace(""), "length")
+      coerce_a
+L999:
+      convert_u
+      setlocal            11
+
+      pushdouble          0
+      setlocal            12
+
+      pushbyte            0
+      setlocal            46
+
+      jump                L1068
+
+L1006:
+      label
+      getlex              QName(PackageNamespace(""), "verbose")
+      iffalse             L1018
+
+      getlex              QName(PackageNamespace(""), "trace")
+      getglobalscope
+      pushstring          "    opt: "
+      getlocal            9
+      getlocal            46
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), ProtectedNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      add
+      call                1
+      pop
+L1018:
+      getlex              QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "SAMPLEMAP")
+      getlocal            9
+      getlocal            46
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), ProtectedNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), ProtectedNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      coerce              QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "Sampler")
+      dup
+      setlocal            6
+
+      pushnull
+      ifne                L1043
+
+      getlocal            9
+      getlocal            46
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), ProtectedNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      convert_d
+      setlocal            12
+
+      getlex              QName(PackageNamespace(""), "verbose")
+      iffalse             L1042
+
+      getlex              QName(PackageNamespace(""), "trace")
+      getglobalscope
+      pushstring          "    bias: "
+      getlocal            12
+      add
+      call                1
+      pop
+L1042:
+      jump                L1067
+
+L1043:
+      getlocal            6
+      getproperty         QName(PackageNamespace(""), "flag")
+      pushbyte            16
+      ifeq                L1056
+
+      getlocal            21
+      pushbyte            15
+      getlocal            6
+      getproperty         QName(PackageNamespace(""), "flag")
+      lshift
+      bitnot
+      bitand
+      convert_u
+      setlocal            21
+
+L1056:
+      getlocal            21
+      getlocal            6
+      getproperty         QName(PackageNamespace(""), "mask")
+      convert_u
+      getlocal            6
+      getproperty         QName(PackageNamespace(""), "flag")
+      convert_u
+      lshift
+      bitor
+      convert_u
+      setlocal            21
+
+L1067:
+      inclocal_i          46
+L1068:
+      getlocal            46
+      getlocal            11
+      iflt                L1006
+
+      getlex              QName(PackageNamespace(""), "agalcode")
+      getlocal            38
+      callpropvoid        QName(PackageNamespace(""), "writeShort"), 1
+
+      getlex              QName(PackageNamespace(""), "agalcode")
+      getlocal            12
+      pushbyte            8
+      multiply
+      convert_i
+      callpropvoid        QName(PackageNamespace(""), "writeByte"), 1
+
+      getlex              QName(PackageNamespace(""), "agalcode")
+      pushbyte            0
+      callpropvoid        QName(PackageNamespace(""), "writeByte"), 1
+
+      getlex              QName(PackageNamespace(""), "agalcode")
+      getlocal            21
+      callpropvoid        QName(PackageNamespace(""), "writeUnsignedInt"), 1
+
+      getlex              QName(PackageNamespace(""), "verbose")
+      iffalse             L1097
+
+      getlex              QName(PackageNamespace(""), "trace")
+      getglobalscope
+      pushstring          "    bits: "
+      getlocal            21
+      pushbyte            5
+      subtract
+      add
+      call                1
+      pop
+L1097:
+      getlocal            8
+      pushbyte            64
+      subtract
+      convert_u
+      setlocal            8
+
+      jump                L1145
+
+L1103:
+      getlocal            43
+      pushbyte            0
+      ifne                L1114
+
+      getlex              QName(PackageNamespace(""), "agalcode")
+      pushbyte            0
+      callpropvoid        QName(PackageNamespace(""), "writeUnsignedInt"), 1
+
+      getlocal            8
+      pushbyte            32
+      subtract
+      convert_u
+      setlocal            8
+
+L1114:
+      getlex              QName(PackageNamespace(""), "agalcode")
+      getlocal            38
+      callpropvoid        QName(PackageNamespace(""), "writeShort"), 1
+
+      getlex              QName(PackageNamespace(""), "agalcode")
+      getlocal            27
+      callpropvoid        QName(PackageNamespace(""), "writeByte"), 1
+
+      getlex              QName(PackageNamespace(""), "agalcode")
+      getlocal            26
+      callpropvoid        QName(PackageNamespace(""), "writeByte"), 1
+
+      getlex              QName(PackageNamespace(""), "agalcode")
+      getlocal            18
+      getproperty         QName(PackageNamespace(""), "emitCode")
+      callpropvoid        QName(PackageNamespace(""), "writeByte"), 1
+
+      getlex              QName(PackageNamespace(""), "agalcode")
+      getlocal            35
+      callpropvoid        QName(PackageNamespace(""), "writeByte"), 1
+
+      getlex              QName(PackageNamespace(""), "agalcode")
+      getlocal            25
+      iffalse             L1137
+
+      getlocal            45
+      pushint             32768
+      bitor
+      jump                L1139
+
+L1137:
+      pushbyte            0
+      coerce_a
+L1139:
+      callpropvoid        QName(PackageNamespace(""), "writeShort"), 1
+
+      getlocal            8
+      pushbyte            64
+      subtract
+      convert_u
+      setlocal            8
+
+L1145:
+      inclocal_i          43
+L1146:
+      getlocal            43
+      getlocal            49
+      iflt                L407
+
+L1149:
+      pushbyte            0
+      setlocal            43
+
+      jump                L1161
+
+L1152:
+      label
+      getlex              QName(PackageNamespace(""), "agalcode")
+      pushbyte            0
+      callpropvoid        QName(PackageNamespace(""), "writeByte"), 1
+
+      getlocal            43
+      pushbyte            8
+      add
+      convert_i
+      setlocal            43
+
+L1161:
+      getlocal            43
+      getlocal            8
+      iflt                L1152
+
+      getlocal            23
+      iftrue              L1177
+
+L1166:
+      inclocal_i          41
+L1167:
+      getlocal            41
+      getlocal            19
+      lessthan
+      dup
+      iffalse             L1176
+
+      pop
+      getlex              QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "_error")
+      pushstring          ""
+      equals
+L1176:
+      iftrue              L160
+
+L1177:
+      getlex              QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "_error")
+      pushstring          ""
+      ifeq                L1202
+
+      findpropstrict      QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "_error")
+      dup
+      getproperty         QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "_error")
+      pushstring          "\n  at line "
+      getlocal            41
+      add
+      pushstring          " "
+      add
+      getlocal            36
+      getlocal            41
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), ProtectedNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      add
+      add
+      setproperty         QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "_error")
+
+      getlex              QName(PackageNamespace(""), "agalcode")
+      pushbyte            0
+      setproperty         QName(PackageNamespace(""), "length")
+
+      getlex              QName(PackageNamespace(""), "trace")
+      getglobalscope
+      getlex              QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "_error")
+      call                1
+      pop
+L1202:
+      getlex              QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "debugEnabled")
+      iffalse             L1268
+
+      pushstring          "generated bytecode:"
+      coerce_s
+      setlocal            28
+
+      getlex              QName(PackageNamespace(""), "agalcode")
+      getproperty         QName(PackageNamespace(""), "length")
+      convert_u
+      setlocal            33
+
+      pushbyte            0
+      convert_u
+      setlocal            22
+
+      jump                L1260
+
+L1215:
+      label
+      getlocal            22
+      pushbyte            16
+      modulo
+      iftrue              L1225
+
+      getlocal            28
+      pushstring          "\n"
+      add
+      coerce_s
+      setlocal            28
+
+L1225:
+      getlocal            22
+      pushbyte            4
+      modulo
+      iftrue              L1234
+
+      getlocal            28
+      pushstring          " "
+      add
+      coerce_s
+      setlocal            28
+
+L1234:
+      getlex              QName(PackageNamespace(""), "agalcode")
+      getlocal            22
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), ProtectedNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      pushbyte            16
+      callproperty        Multiname("toString", [PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), ProtectedNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 1
+      coerce_s
+      dup
+      setlocal            20
+
+      getproperty         QName(PackageNamespace(""), "length")
+      pushbyte            2
+      ifnlt               L1250
+
+      pushstring          "0"
+      getlocal            20
+      add
+      coerce_s
+      setlocal            20
+
+L1250:
+      getlocal            28
+      getlocal            20
+      add
+      coerce_s
+      setlocal            28
+
+      getlocal            22
+      convert_d
+      increment
+      convert_u
+      setlocal            22
+
+L1260:
+      getlocal            22
+      getlocal            33
+      iflt                L1215
+
+      getlex              QName(PackageNamespace(""), "trace")
+      getglobalscope
+      getlocal            28
+      call                1
+      pop
+L1268:
+      getlex              QName(PackageNamespace(""), "verbose")
+      iffalse             L1285
+
+      getlex              QName(PackageNamespace(""), "trace")
+      getglobalscope
+      pushstring          "AGALMiniAssembler.assemble time: "
+      getlex              QName(PackageNamespace("flash.utils"), "getTimer")
+      getglobalscope
+      call                0
+      getlocal            40
+      subtract
+      pushshort           1000
+      divide
+      add
+      pushstring          "s"
+      add
+      call                1
+      pop
+L1285:
+      getlex              QName(PackageNamespace(""), "agalcode")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "initregmap")
+   method
+    name "initregmap"
+    refid "kabam.rotmg.util:AGALMiniAssembler/instance/kabam.rotmg.util:AGALMiniAssembler/initregmap"
+    param QName(PackageNamespace(""), "uint")
+    param QName(PackageNamespace(""), "Boolean")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "version"
+    paramname "ignorelimits"
+    body
+     maxstack 9
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "REGMAP")
+      pushstring          "va"
+      findpropstrict      QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "Register")
+      pushstring          "va"
+      pushstring          "vertex attribute"
+      pushbyte            0
+      getlocal2
+      iffalse             L12
+
+      pushshort           1024
+      jump                L26
+
+L12:
+      getlocal1
+      pushbyte            1
+      equals
+      dup
+      iftrue              L21
+
+      pop
+      getlocal1
+      pushbyte            2
+      equals
+L21:
+      iffalse             L24
+
+      pushbyte            7
+      jump                L25
+
+L24:
+      pushdouble          15
+L25:
+      convert_d
+L26:
+      pushbyte            64
+      pushbyte            2
+      bitor
+      constructprop       QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "Register"), 5
+      setproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), ProtectedNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      getlex              QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "REGMAP")
+      pushstring          "vc"
+      findpropstrict      QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "Register")
+      pushstring          "vc"
+      pushstring          "vertex constant"
+      pushbyte            1
+      getlocal2
+      iffalse             L41
+
+      pushshort           1024
+      jump                L49
+
+L41:
+      getlocal1
+      pushbyte            1
+      ifne                L46
+
+      pushbyte            127
+      jump                L48
+
+L46:
+      pushshort           249
+      convert_d
+L48:
+      convert_d
+L49:
+      pushbyte            64
+      pushbyte            2
+      bitor
+      constructprop       QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "Register"), 5
+      setproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), ProtectedNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      getlex              QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "REGMAP")
+      pushstring          "vt"
+      findpropstrict      QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "Register")
+      pushstring          "vt"
+      pushstring          "vertex temporary"
+      pushbyte            2
+      getlocal2
+      iffalse             L64
+
+      pushshort           1024
+      jump                L71
+
+L64:
+      getlocal1
+      pushbyte            1
+      ifne                L69
+
+      pushbyte            7
+      jump                L70
+
+L69:
+      pushdouble          25
+L70:
+      convert_d
+L71:
+      pushbyte            64
+      pushbyte            1
+      bitor
+      pushbyte            2
+      bitor
+      constructprop       QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "Register"), 5
+      setproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), ProtectedNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      getlex              QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "REGMAP")
+      pushstring          "vo"
+      findpropstrict      QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "Register")
+      pushstring          "vo"
+      pushstring          "vertex output"
+      pushbyte            3
+      getlocal2
+      iffalse             L88
+
+      pushshort           1024
+      jump                L89
+
+L88:
+      pushdouble          0
+L89:
+      pushbyte            64
+      pushbyte            1
+      bitor
+      constructprop       QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "Register"), 5
+      setproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), ProtectedNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      getlex              QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "REGMAP")
+      pushstring          "vi"
+      findpropstrict      QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "Register")
+      pushstring          "vi"
+      pushstring          "varying"
+      pushbyte            4
+      getlocal2
+      iffalse             L104
+
+      pushshort           1024
+      jump                L111
+
+L104:
+      getlocal1
+      pushbyte            1
+      ifne                L109
+
+      pushbyte            7
+      jump                L110
+
+L109:
+      pushdouble          9
+L110:
+      convert_d
+L111:
+      pushbyte            64
+      pushbyte            32
+      bitor
+      pushbyte            2
+      bitor
+      pushbyte            1
+      bitor
+      constructprop       QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "Register"), 5
+      setproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), ProtectedNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      getlex              QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "REGMAP")
+      pushstring          "fc"
+      findpropstrict      QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "Register")
+      pushstring          "fc"
+      pushstring          "fragment constant"
+      pushbyte            1
+      getlocal2
+      iffalse             L130
+
+      pushshort           1024
+      jump                L144
+
+L130:
+      getlocal1
+      pushbyte            1
+      ifne                L135
+
+      pushbyte            27
+      jump                L143
+
+L135:
+      getlocal1
+      pushbyte            2
+      ifne                L140
+
+      pushbyte            63
+      jump                L142
+
+L140:
+      pushshort           199
+      convert_d
+L142:
+      convert_d
+L143:
+      convert_d
+L144:
+      pushbyte            32
+      pushbyte            2
+      bitor
+      constructprop       QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "Register"), 5
+      setproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), ProtectedNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      getlex              QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "REGMAP")
+      pushstring          "ft"
+      findpropstrict      QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "Register")
+      pushstring          "ft"
+      pushstring          "fragment temporary"
+      pushbyte            2
+      getlocal2
+      iffalse             L159
+
+      pushshort           1024
+      jump                L166
+
+L159:
+      getlocal1
+      pushbyte            1
+      ifne                L164
+
+      pushbyte            7
+      jump                L165
+
+L164:
+      pushdouble          25
+L165:
+      convert_d
+L166:
+      pushbyte            32
+      pushbyte            1
+      bitor
+      pushbyte            2
+      bitor
+      constructprop       QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "Register"), 5
+      setproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), ProtectedNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      getlex              QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "REGMAP")
+      pushstring          "fs"
+      findpropstrict      QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "Register")
+      pushstring          "fs"
+      pushstring          "texture sampler"
+      pushbyte            5
+      getlocal2
+      iffalse             L183
+
+      pushshort           1024
+      jump                L184
+
+L183:
+      pushdouble          15
+L184:
+      pushbyte            32
+      pushbyte            2
+      bitor
+      constructprop       QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "Register"), 5
+      setproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), ProtectedNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      getlex              QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "REGMAP")
+      pushstring          "fo"
+      findpropstrict      QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "Register")
+      pushstring          "fo"
+      pushstring          "fragment output"
+      pushbyte            3
+      getlocal2
+      iffalse             L199
+
+      pushshort           1024
+      jump                L206
+
+L199:
+      getlocal1
+      pushbyte            1
+      ifne                L204
+
+      pushbyte            0
+      jump                L205
+
+L204:
+      pushdouble          3
+L205:
+      convert_d
+L206:
+      pushbyte            32
+      pushbyte            1
+      bitor
+      constructprop       QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "Register"), 5
+      setproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), ProtectedNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      getlex              QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "REGMAP")
+      pushstring          "fd"
+      findpropstrict      QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "Register")
+      pushstring          "fd"
+      pushstring          "fragment depth output"
+      pushbyte            6
+      getlocal2
+      iffalse             L221
+
+      pushshort           1024
+      jump                L228
+
+L221:
+      getlocal1
+      pushbyte            1
+      ifne                L226
+
+      pushbyte            -1
+      jump                L227
+
+L226:
+      pushdouble          0
+L227:
+      convert_d
+L228:
+      pushbyte            32
+      pushbyte            1
+      bitor
+      constructprop       QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "Register"), 5
+      setproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), ProtectedNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      getlex              QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "REGMAP")
+      pushstring          "iid"
+      findpropstrict      QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "Register")
+      pushstring          "iid"
+      pushstring          "instance id"
+      pushbyte            7
+      getlocal2
+      iffalse             L243
+
+      pushshort           1024
+      jump                L244
+
+L243:
+      pushdouble          0
+L244:
+      pushbyte            64
+      pushbyte            2
+      bitor
+      constructprop       QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "Register"), 5
+      setproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), ProtectedNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      getlex              QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "REGMAP")
+      pushstring          "vs"
+      findpropstrict      QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "Register")
+      pushstring          "vs"
+      pushstring          "vertex texture sampler"
+      pushbyte            5
+      getlocal2
+      iffalse             L259
+
+      pushshort           1024
+      jump                L260
+
+L259:
+      pushdouble          3
+L260:
+      pushbyte            64
+      pushbyte            2
+      bitor
+      constructprop       QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "Register"), 5
+      setproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), ProtectedNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      getlex              QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "REGMAP")
+      pushstring          "op"
+      getlex              QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "REGMAP")
+      pushstring          "vo"
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), ProtectedNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      setproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), ProtectedNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      getlex              QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "REGMAP")
+      pushstring          "i"
+      getlex              QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "REGMAP")
+      pushstring          "vi"
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), ProtectedNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      setproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), ProtectedNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      getlex              QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "REGMAP")
+      pushstring          "v"
+      getlex              QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "REGMAP")
+      pushstring          "vi"
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), ProtectedNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      setproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), ProtectedNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      getlex              QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "REGMAP")
+      pushstring          "oc"
+      getlex              QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "REGMAP")
+      pushstring          "fo"
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), ProtectedNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      setproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), ProtectedNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      getlex              QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "REGMAP")
+      pushstring          "od"
+      getlex              QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "REGMAP")
+      pushstring          "fd"
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), ProtectedNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      setproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), ProtectedNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      getlex              QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "REGMAP")
+      pushstring          "fi"
+      getlex              QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "REGMAP")
+      pushstring          "vi"
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), ProtectedNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      setproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), ProtectedNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.util:AGALMiniAssembler/class/init"
+  body
+   maxstack 3
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 1
+   code
+    getlocal0
+    pushscope
+
+    getlex              QName(PackageNamespace(""), "RegExp")
+    pushstring          "^\\s+|\\s+$"
+    pushstring          "g"
+    construct           2
+    findproperty        QName(StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), "REGEXP_OUTER_SPACES")
+    swap
+    initproperty        QName(StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), "REGEXP_OUTER_SPACES")
+
+    findpropstrict      QName(PackageNamespace("flash.utils"), "Dictionary")
+    constructprop       QName(PackageNamespace("flash.utils"), "Dictionary"), 0
+    findproperty        QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "OPMAP")
+    swap
+    initproperty        QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "OPMAP")
+
+    findpropstrict      QName(PackageNamespace("flash.utils"), "Dictionary")
+    constructprop       QName(PackageNamespace("flash.utils"), "Dictionary"), 0
+    findproperty        QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "REGMAP")
+    swap
+    initproperty        QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "REGMAP")
+
+    findpropstrict      QName(PackageNamespace("flash.utils"), "Dictionary")
+    constructprop       QName(PackageNamespace("flash.utils"), "Dictionary"), 0
+    findproperty        QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "SAMPLEMAP")
+    swap
+    initproperty        QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "SAMPLEMAP")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), "REGEXP_OUTER_SPACES") type QName(PackageNamespace(""), "RegExp") end
+ trait slot QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "initialized") type QName(PackageNamespace(""), "Boolean") value False() end
+ trait method QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "init")
+  method
+   name "init"
+   refid "kabam.rotmg.util:AGALMiniAssembler/class/kabam.rotmg.util:AGALMiniAssembler/init"
+   returns QName(PackageNamespace(""), "void")
+   body
+    maxstack 8
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     pushtrue
+     findproperty        QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "initialized")
+     swap
+     setproperty         QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "initialized")
+
+     getlex              QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "OPMAP")
+     pushstring          "mov"
+     findpropstrict      QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "OpCode")
+     pushstring          "mov"
+     pushbyte            2
+     pushbyte            0
+     pushbyte            0
+     constructprop       QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "OpCode"), 4
+     setproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     getlex              QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "OPMAP")
+     pushstring          "add"
+     findpropstrict      QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "OpCode")
+     pushstring          "add"
+     pushbyte            3
+     pushbyte            1
+     pushbyte            0
+     constructprop       QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "OpCode"), 4
+     setproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     getlex              QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "OPMAP")
+     pushstring          "sub"
+     findpropstrict      QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "OpCode")
+     pushstring          "sub"
+     pushbyte            3
+     pushbyte            2
+     pushbyte            0
+     constructprop       QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "OpCode"), 4
+     setproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     getlex              QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "OPMAP")
+     pushstring          "mul"
+     findpropstrict      QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "OpCode")
+     pushstring          "mul"
+     pushbyte            3
+     pushbyte            3
+     pushbyte            0
+     constructprop       QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "OpCode"), 4
+     setproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     getlex              QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "OPMAP")
+     pushstring          "div"
+     findpropstrict      QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "OpCode")
+     pushstring          "div"
+     pushbyte            3
+     pushbyte            4
+     pushbyte            0
+     constructprop       QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "OpCode"), 4
+     setproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     getlex              QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "OPMAP")
+     pushstring          "rcp"
+     findpropstrict      QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "OpCode")
+     pushstring          "rcp"
+     pushbyte            2
+     pushbyte            5
+     pushbyte            0
+     constructprop       QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "OpCode"), 4
+     setproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     getlex              QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "OPMAP")
+     pushstring          "min"
+     findpropstrict      QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "OpCode")
+     pushstring          "min"
+     pushbyte            3
+     pushbyte            6
+     pushbyte            0
+     constructprop       QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "OpCode"), 4
+     setproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     getlex              QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "OPMAP")
+     pushstring          "max"
+     findpropstrict      QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "OpCode")
+     pushstring          "max"
+     pushbyte            3
+     pushbyte            7
+     pushbyte            0
+     constructprop       QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "OpCode"), 4
+     setproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     getlex              QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "OPMAP")
+     pushstring          "frc"
+     findpropstrict      QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "OpCode")
+     pushstring          "frc"
+     pushbyte            2
+     pushbyte            8
+     pushbyte            0
+     constructprop       QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "OpCode"), 4
+     setproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     getlex              QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "OPMAP")
+     pushstring          "sqt"
+     findpropstrict      QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "OpCode")
+     pushstring          "sqt"
+     pushbyte            2
+     pushbyte            9
+     pushbyte            0
+     constructprop       QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "OpCode"), 4
+     setproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     getlex              QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "OPMAP")
+     pushstring          "rsq"
+     findpropstrict      QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "OpCode")
+     pushstring          "rsq"
+     pushbyte            2
+     pushbyte            10
+     pushbyte            0
+     constructprop       QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "OpCode"), 4
+     setproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     getlex              QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "OPMAP")
+     pushstring          "pow"
+     findpropstrict      QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "OpCode")
+     pushstring          "pow"
+     pushbyte            3
+     pushbyte            11
+     pushbyte            0
+     constructprop       QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "OpCode"), 4
+     setproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     getlex              QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "OPMAP")
+     pushstring          "log"
+     findpropstrict      QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "OpCode")
+     pushstring          "log"
+     pushbyte            2
+     pushbyte            12
+     pushbyte            0
+     constructprop       QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "OpCode"), 4
+     setproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     getlex              QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "OPMAP")
+     pushstring          "exp"
+     findpropstrict      QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "OpCode")
+     pushstring          "exp"
+     pushbyte            2
+     pushbyte            13
+     pushbyte            0
+     constructprop       QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "OpCode"), 4
+     setproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     getlex              QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "OPMAP")
+     pushstring          "nrm"
+     findpropstrict      QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "OpCode")
+     pushstring          "nrm"
+     pushbyte            2
+     pushbyte            14
+     pushbyte            0
+     constructprop       QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "OpCode"), 4
+     setproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     getlex              QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "OPMAP")
+     pushstring          "sin"
+     findpropstrict      QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "OpCode")
+     pushstring          "sin"
+     pushbyte            2
+     pushbyte            15
+     pushbyte            0
+     constructprop       QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "OpCode"), 4
+     setproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     getlex              QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "OPMAP")
+     pushstring          "cos"
+     findpropstrict      QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "OpCode")
+     pushstring          "cos"
+     pushbyte            2
+     pushbyte            16
+     pushbyte            0
+     constructprop       QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "OpCode"), 4
+     setproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     getlex              QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "OPMAP")
+     pushstring          "crs"
+     findpropstrict      QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "OpCode")
+     pushstring          "crs"
+     pushbyte            3
+     pushbyte            17
+     pushbyte            0
+     constructprop       QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "OpCode"), 4
+     setproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     getlex              QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "OPMAP")
+     pushstring          "dp3"
+     findpropstrict      QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "OpCode")
+     pushstring          "dp3"
+     pushbyte            3
+     pushbyte            18
+     pushbyte            0
+     constructprop       QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "OpCode"), 4
+     setproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     getlex              QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "OPMAP")
+     pushstring          "dp4"
+     findpropstrict      QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "OpCode")
+     pushstring          "dp4"
+     pushbyte            3
+     pushbyte            19
+     pushbyte            0
+     constructprop       QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "OpCode"), 4
+     setproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     getlex              QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "OPMAP")
+     pushstring          "abs"
+     findpropstrict      QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "OpCode")
+     pushstring          "abs"
+     pushbyte            2
+     pushbyte            20
+     pushbyte            0
+     constructprop       QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "OpCode"), 4
+     setproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     getlex              QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "OPMAP")
+     pushstring          "neg"
+     findpropstrict      QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "OpCode")
+     pushstring          "neg"
+     pushbyte            2
+     pushbyte            21
+     pushbyte            0
+     constructprop       QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "OpCode"), 4
+     setproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     getlex              QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "OPMAP")
+     pushstring          "sat"
+     findpropstrict      QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "OpCode")
+     pushstring          "sat"
+     pushbyte            2
+     pushbyte            22
+     pushbyte            0
+     constructprop       QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "OpCode"), 4
+     setproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     getlex              QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "OPMAP")
+     pushstring          "m33"
+     findpropstrict      QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "OpCode")
+     pushstring          "m33"
+     pushbyte            3
+     pushbyte            23
+     pushbyte            16
+     constructprop       QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "OpCode"), 4
+     setproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     getlex              QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "OPMAP")
+     pushstring          "m44"
+     findpropstrict      QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "OpCode")
+     pushstring          "m44"
+     pushbyte            3
+     pushbyte            24
+     pushbyte            16
+     constructprop       QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "OpCode"), 4
+     setproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     getlex              QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "OPMAP")
+     pushstring          "m34"
+     findpropstrict      QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "OpCode")
+     pushstring          "m34"
+     pushbyte            3
+     pushbyte            25
+     pushbyte            16
+     constructprop       QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "OpCode"), 4
+     setproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     getlex              QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "OPMAP")
+     pushstring          "ddx"
+     findpropstrict      QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "OpCode")
+     pushstring          "ddx"
+     pushbyte            2
+     pushbyte            26
+     pushshort           256
+     pushbyte            32
+     bitor
+     constructprop       QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "OpCode"), 4
+     setproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     getlex              QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "OPMAP")
+     pushstring          "ddy"
+     findpropstrict      QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "OpCode")
+     pushstring          "ddy"
+     pushbyte            2
+     pushbyte            27
+     pushshort           256
+     pushbyte            32
+     bitor
+     constructprop       QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "OpCode"), 4
+     setproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     getlex              QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "OPMAP")
+     pushstring          "ife"
+     findpropstrict      QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "OpCode")
+     pushstring          "ife"
+     pushbyte            2
+     pushbyte            28
+     pushshort           128
+     pushshort           256
+     bitor
+     pushshort           512
+     bitor
+     pushbyte            1
+     bitor
+     constructprop       QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "OpCode"), 4
+     setproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     getlex              QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "OPMAP")
+     pushstring          "ine"
+     findpropstrict      QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "OpCode")
+     pushstring          "ine"
+     pushbyte            2
+     pushbyte            29
+     pushshort           128
+     pushshort           256
+     bitor
+     pushshort           512
+     bitor
+     pushbyte            1
+     bitor
+     constructprop       QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "OpCode"), 4
+     setproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     getlex              QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "OPMAP")
+     pushstring          "ifg"
+     findpropstrict      QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "OpCode")
+     pushstring          "ifg"
+     pushbyte            2
+     pushbyte            30
+     pushshort           128
+     pushshort           256
+     bitor
+     pushshort           512
+     bitor
+     pushbyte            1
+     bitor
+     constructprop       QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "OpCode"), 4
+     setproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     getlex              QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "OPMAP")
+     pushstring          "ifl"
+     findpropstrict      QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "OpCode")
+     pushstring          "ifl"
+     pushbyte            2
+     pushbyte            31
+     pushshort           128
+     pushshort           256
+     bitor
+     pushshort           512
+     bitor
+     pushbyte            1
+     bitor
+     constructprop       QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "OpCode"), 4
+     setproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     getlex              QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "OPMAP")
+     pushstring          "els"
+     findpropstrict      QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "OpCode")
+     pushstring          "els"
+     pushbyte            0
+     pushbyte            32
+     pushshort           128
+     pushshort           256
+     bitor
+     pushshort           512
+     bitor
+     pushshort           1024
+     bitor
+     pushbyte            1
+     bitor
+     constructprop       QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "OpCode"), 4
+     setproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     getlex              QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "OPMAP")
+     pushstring          "eif"
+     findpropstrict      QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "OpCode")
+     pushstring          "eif"
+     pushbyte            0
+     pushbyte            33
+     pushshort           128
+     pushshort           256
+     bitor
+     pushshort           1024
+     bitor
+     pushbyte            1
+     bitor
+     constructprop       QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "OpCode"), 4
+     setproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     getlex              QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "OPMAP")
+     pushstring          "kil"
+     findpropstrict      QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "OpCode")
+     pushstring          "kil"
+     pushbyte            1
+     pushbyte            39
+     pushshort           128
+     pushbyte            32
+     bitor
+     constructprop       QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "OpCode"), 4
+     setproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     getlex              QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "OPMAP")
+     pushstring          "tex"
+     findpropstrict      QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "OpCode")
+     pushstring          "tex"
+     pushbyte            3
+     pushbyte            40
+     pushbyte            32
+     pushbyte            8
+     bitor
+     constructprop       QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "OpCode"), 4
+     setproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     getlex              QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "OPMAP")
+     pushstring          "sge"
+     findpropstrict      QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "OpCode")
+     pushstring          "sge"
+     pushbyte            3
+     pushbyte            41
+     pushbyte            0
+     constructprop       QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "OpCode"), 4
+     setproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     getlex              QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "OPMAP")
+     pushstring          "slt"
+     findpropstrict      QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "OpCode")
+     pushstring          "slt"
+     pushbyte            3
+     pushbyte            42
+     pushbyte            0
+     constructprop       QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "OpCode"), 4
+     setproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     getlex              QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "OPMAP")
+     pushstring          "sgn"
+     findpropstrict      QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "OpCode")
+     pushstring          "sgn"
+     pushbyte            2
+     pushbyte            43
+     pushbyte            0
+     constructprop       QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "OpCode"), 4
+     setproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     getlex              QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "OPMAP")
+     pushstring          "seq"
+     findpropstrict      QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "OpCode")
+     pushstring          "seq"
+     pushbyte            3
+     pushbyte            44
+     pushbyte            0
+     constructprop       QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "OpCode"), 4
+     setproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     getlex              QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "OPMAP")
+     pushstring          "sne"
+     findpropstrict      QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "OpCode")
+     pushstring          "sne"
+     pushbyte            3
+     pushbyte            45
+     pushbyte            0
+     constructprop       QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "OpCode"), 4
+     setproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     getlex              QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "OPMAP")
+     pushstring          "tld"
+     findpropstrict      QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "OpCode")
+     pushstring          "tld"
+     pushbyte            3
+     pushbyte            46
+     pushbyte            64
+     pushbyte            8
+     bitor
+     constructprop       QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "OpCode"), 4
+     setproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     getlex              QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "SAMPLEMAP")
+     pushstring          "rgba"
+     findpropstrict      QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "Sampler")
+     pushstring          "rgba"
+     pushbyte            8
+     pushbyte            0
+     constructprop       QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "Sampler"), 3
+     setproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     getlex              QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "SAMPLEMAP")
+     pushstring          "compressed"
+     findpropstrict      QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "Sampler")
+     pushstring          "compressed"
+     pushbyte            8
+     pushbyte            1
+     constructprop       QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "Sampler"), 3
+     setproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     getlex              QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "SAMPLEMAP")
+     pushstring          "compressedalpha"
+     findpropstrict      QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "Sampler")
+     pushstring          "compressedalpha"
+     pushbyte            8
+     pushbyte            2
+     constructprop       QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "Sampler"), 3
+     setproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     getlex              QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "SAMPLEMAP")
+     pushstring          "dxt1"
+     findpropstrict      QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "Sampler")
+     pushstring          "dxt1"
+     pushbyte            8
+     pushbyte            1
+     constructprop       QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "Sampler"), 3
+     setproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     getlex              QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "SAMPLEMAP")
+     pushstring          "dxt5"
+     findpropstrict      QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "Sampler")
+     pushstring          "dxt5"
+     pushbyte            8
+     pushbyte            2
+     constructprop       QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "Sampler"), 3
+     setproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     getlex              QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "SAMPLEMAP")
+     pushstring          "video"
+     findpropstrict      QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "Sampler")
+     pushstring          "video"
+     pushbyte            8
+     pushbyte            3
+     constructprop       QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "Sampler"), 3
+     setproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     getlex              QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "SAMPLEMAP")
+     pushstring          "2d"
+     findpropstrict      QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "Sampler")
+     pushstring          "2d"
+     pushbyte            12
+     pushbyte            0
+     constructprop       QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "Sampler"), 3
+     setproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     getlex              QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "SAMPLEMAP")
+     pushstring          "3d"
+     findpropstrict      QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "Sampler")
+     pushstring          "3d"
+     pushbyte            12
+     pushbyte            2
+     constructprop       QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "Sampler"), 3
+     setproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     getlex              QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "SAMPLEMAP")
+     pushstring          "cube"
+     findpropstrict      QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "Sampler")
+     pushstring          "cube"
+     pushbyte            12
+     pushbyte            1
+     constructprop       QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "Sampler"), 3
+     setproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     getlex              QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "SAMPLEMAP")
+     pushstring          "mipnearest"
+     findpropstrict      QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "Sampler")
+     pushstring          "mipnearest"
+     pushbyte            24
+     pushbyte            1
+     constructprop       QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "Sampler"), 3
+     setproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     getlex              QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "SAMPLEMAP")
+     pushstring          "miplinear"
+     findpropstrict      QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "Sampler")
+     pushstring          "miplinear"
+     pushbyte            24
+     pushbyte            2
+     constructprop       QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "Sampler"), 3
+     setproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     getlex              QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "SAMPLEMAP")
+     pushstring          "mipnone"
+     findpropstrict      QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "Sampler")
+     pushstring          "mipnone"
+     pushbyte            24
+     pushbyte            0
+     constructprop       QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "Sampler"), 3
+     setproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     getlex              QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "SAMPLEMAP")
+     pushstring          "nomip"
+     findpropstrict      QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "Sampler")
+     pushstring          "nomip"
+     pushbyte            24
+     pushbyte            0
+     constructprop       QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "Sampler"), 3
+     setproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     getlex              QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "SAMPLEMAP")
+     pushstring          "nearest"
+     findpropstrict      QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "Sampler")
+     pushstring          "nearest"
+     pushbyte            28
+     pushbyte            0
+     constructprop       QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "Sampler"), 3
+     setproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     getlex              QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "SAMPLEMAP")
+     pushstring          "linear"
+     findpropstrict      QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "Sampler")
+     pushstring          "linear"
+     pushbyte            28
+     pushbyte            1
+     constructprop       QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "Sampler"), 3
+     setproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     getlex              QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "SAMPLEMAP")
+     pushstring          "anisotropic2x"
+     findpropstrict      QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "Sampler")
+     pushstring          "anisotropic2x"
+     pushbyte            28
+     pushbyte            2
+     constructprop       QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "Sampler"), 3
+     setproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     getlex              QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "SAMPLEMAP")
+     pushstring          "anisotropic4x"
+     findpropstrict      QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "Sampler")
+     pushstring          "anisotropic4x"
+     pushbyte            28
+     pushbyte            3
+     constructprop       QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "Sampler"), 3
+     setproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     getlex              QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "SAMPLEMAP")
+     pushstring          "anisotropic8x"
+     findpropstrict      QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "Sampler")
+     pushstring          "anisotropic8x"
+     pushbyte            28
+     pushbyte            4
+     constructprop       QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "Sampler"), 3
+     setproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     getlex              QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "SAMPLEMAP")
+     pushstring          "anisotropic16x"
+     findpropstrict      QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "Sampler")
+     pushstring          "anisotropic16x"
+     pushbyte            28
+     pushbyte            5
+     constructprop       QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "Sampler"), 3
+     setproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     getlex              QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "SAMPLEMAP")
+     pushstring          "centroid"
+     findpropstrict      QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "Sampler")
+     pushstring          "centroid"
+     pushbyte            16
+     pushbyte            1
+     constructprop       QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "Sampler"), 3
+     setproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     getlex              QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "SAMPLEMAP")
+     pushstring          "single"
+     findpropstrict      QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "Sampler")
+     pushstring          "single"
+     pushbyte            16
+     pushbyte            2
+     constructprop       QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "Sampler"), 3
+     setproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     getlex              QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "SAMPLEMAP")
+     pushstring          "ignoresampler"
+     findpropstrict      QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "Sampler")
+     pushstring          "ignoresampler"
+     pushbyte            16
+     pushbyte            4
+     constructprop       QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "Sampler"), 3
+     setproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     getlex              QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "SAMPLEMAP")
+     pushstring          "repeat"
+     findpropstrict      QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "Sampler")
+     pushstring          "repeat"
+     pushbyte            20
+     pushbyte            1
+     constructprop       QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "Sampler"), 3
+     setproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     getlex              QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "SAMPLEMAP")
+     pushstring          "wrap"
+     findpropstrict      QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "Sampler")
+     pushstring          "wrap"
+     pushbyte            20
+     pushbyte            1
+     constructprop       QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "Sampler"), 3
+     setproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     getlex              QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "SAMPLEMAP")
+     pushstring          "clamp"
+     findpropstrict      QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "Sampler")
+     pushstring          "clamp"
+     pushbyte            20
+     pushbyte            0
+     constructprop       QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "Sampler"), 3
+     setproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     getlex              QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "SAMPLEMAP")
+     pushstring          "clamp_u_repeat_v"
+     findpropstrict      QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "Sampler")
+     pushstring          "clamp_u_repeat_v"
+     pushbyte            20
+     pushbyte            2
+     constructprop       QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "Sampler"), 3
+     setproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     getlex              QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "SAMPLEMAP")
+     pushstring          "repeat_u_clamp_v"
+     findpropstrict      QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "Sampler")
+     pushstring          "repeat_u_clamp_v"
+     pushbyte            20
+     pushbyte            3
+     constructprop       QName(PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), "Sampler"), 3
+     setproperty         MultinameL([PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("kabam.rotmg.util:AGALMiniAssembler"), StaticProtectedNs("Object"), PackageNamespace("flash.display3D"), PackageNamespace("flash.utils"), PackageNamespace("kabam.rotmg.util"), PackageInternalNs("kabam.rotmg.util"), PrivateNamespace("FilePrivateNS:AGALMiniAssembler"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait const QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "OPMAP") type QName(PackageNamespace("flash.utils"), "Dictionary") end
+ trait const QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "REGMAP") type QName(PackageNamespace("flash.utils"), "Dictionary") end
+ trait const QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "SAMPLEMAP") type QName(PackageNamespace("flash.utils"), "Dictionary") end
+ trait const QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "MAX_NESTING") type QName(PackageNamespace(""), "int") value Integer(4) end
+ trait const QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "MAX_OPCODES") type QName(PackageNamespace(""), "int") value Integer(4096) end
+ trait const QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "FRAGMENT") type QName(PackageNamespace(""), "String") value Utf8("fragment") end
+ trait const QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "VERTEX") type QName(PackageNamespace(""), "String") value Utf8("vertex") end
+ trait const QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "SAMPLER_TYPE_SHIFT") type QName(PackageNamespace(""), "uint") value Integer(8) end
+ trait const QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "SAMPLER_DIM_SHIFT") type QName(PackageNamespace(""), "uint") value Integer(12) end
+ trait const QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "SAMPLER_SPECIAL_SHIFT") type QName(PackageNamespace(""), "uint") value Integer(16) end
+ trait const QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "SAMPLER_REPEAT_SHIFT") type QName(PackageNamespace(""), "uint") value Integer(20) end
+ trait const QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "SAMPLER_MIPMAP_SHIFT") type QName(PackageNamespace(""), "uint") value Integer(24) end
+ trait const QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "SAMPLER_FILTER_SHIFT") type QName(PackageNamespace(""), "uint") value Integer(28) end
+ trait const QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "REG_WRITE") type QName(PackageNamespace(""), "uint") value Integer(1) end
+ trait const QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "REG_READ") type QName(PackageNamespace(""), "uint") value Integer(2) end
+ trait const QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "REG_FRAG") type QName(PackageNamespace(""), "uint") value Integer(32) end
+ trait const QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "REG_VERT") type QName(PackageNamespace(""), "uint") value Integer(64) end
+ trait const QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "OP_SCALAR") type QName(PackageNamespace(""), "uint") value Integer(1) end
+ trait const QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "OP_SPECIAL_TEX") type QName(PackageNamespace(""), "uint") value Integer(8) end
+ trait const QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "OP_SPECIAL_faer") type QName(PackageNamespace(""), "uint") value Integer(16) end
+ trait const QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "OP_FRAG_ONLY") type QName(PackageNamespace(""), "uint") value Integer(32) end
+ trait const QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "OP_VERT_ONLY") type QName(PackageNamespace(""), "uint") value Integer(64) end
+ trait const QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "OP_NO_DEST") type QName(PackageNamespace(""), "uint") value Integer(128) end
+ trait const QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "OP_VERSION2") type QName(PackageNamespace(""), "uint") value Integer(256) end
+ trait const QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "OP_INCNEST") type QName(PackageNamespace(""), "uint") value Integer(512) end
+ trait const QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "OP_DECNEST") type QName(PackageNamespace(""), "uint") value Integer(1024) end
+ trait const QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "MOV") type QName(PackageNamespace(""), "String") value Utf8("mov") end
+ trait const QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "ADD") type QName(PackageNamespace(""), "String") value Utf8("add") end
+ trait const QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "SUB") type QName(PackageNamespace(""), "String") value Utf8("sub") end
+ trait const QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "MUL") type QName(PackageNamespace(""), "String") value Utf8("mul") end
+ trait const QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "DIV") type QName(PackageNamespace(""), "String") value Utf8("div") end
+ trait const QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "RCP") type QName(PackageNamespace(""), "String") value Utf8("rcp") end
+ trait const QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "MIN") type QName(PackageNamespace(""), "String") value Utf8("min") end
+ trait const QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "MAX") type QName(PackageNamespace(""), "String") value Utf8("max") end
+ trait const QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "FRC") type QName(PackageNamespace(""), "String") value Utf8("frc") end
+ trait const QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "SQT") type QName(PackageNamespace(""), "String") value Utf8("sqt") end
+ trait const QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "RSQ") type QName(PackageNamespace(""), "String") value Utf8("rsq") end
+ trait const QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "POW") type QName(PackageNamespace(""), "String") value Utf8("pow") end
+ trait const QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "LOG") type QName(PackageNamespace(""), "String") value Utf8("log") end
+ trait const QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "EXP") type QName(PackageNamespace(""), "String") value Utf8("exp") end
+ trait const QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "NRM") type QName(PackageNamespace(""), "String") value Utf8("nrm") end
+ trait const QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "SIN") type QName(PackageNamespace(""), "String") value Utf8("sin") end
+ trait const QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "COS") type QName(PackageNamespace(""), "String") value Utf8("cos") end
+ trait const QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "CRS") type QName(PackageNamespace(""), "String") value Utf8("crs") end
+ trait const QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "DP3") type QName(PackageNamespace(""), "String") value Utf8("dp3") end
+ trait const QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "DP4") type QName(PackageNamespace(""), "String") value Utf8("dp4") end
+ trait const QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "ABS") type QName(PackageNamespace(""), "String") value Utf8("abs") end
+ trait const QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "NEG") type QName(PackageNamespace(""), "String") value Utf8("neg") end
+ trait const QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "SAT") type QName(PackageNamespace(""), "String") value Utf8("sat") end
+ trait const QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "M33") type QName(PackageNamespace(""), "String") value Utf8("m33") end
+ trait const QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "M44") type QName(PackageNamespace(""), "String") value Utf8("m44") end
+ trait const QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "M34") type QName(PackageNamespace(""), "String") value Utf8("m34") end
+ trait const QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "DDX") type QName(PackageNamespace(""), "String") value Utf8("ddx") end
+ trait const QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "DDY") type QName(PackageNamespace(""), "String") value Utf8("ddy") end
+ trait const QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "IFE") type QName(PackageNamespace(""), "String") value Utf8("ife") end
+ trait const QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "INE") type QName(PackageNamespace(""), "String") value Utf8("ine") end
+ trait const QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "IFG") type QName(PackageNamespace(""), "String") value Utf8("ifg") end
+ trait const QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "IFL") type QName(PackageNamespace(""), "String") value Utf8("ifl") end
+ trait const QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "ELS") type QName(PackageNamespace(""), "String") value Utf8("els") end
+ trait const QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "EIF") type QName(PackageNamespace(""), "String") value Utf8("eif") end
+ trait const QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "TED") type QName(PackageNamespace(""), "String") value Utf8("ted") end
+ trait const QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "KIL") type QName(PackageNamespace(""), "String") value Utf8("kil") end
+ trait const QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "TEX") type QName(PackageNamespace(""), "String") value Utf8("tex") end
+ trait const QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "SGE") type QName(PackageNamespace(""), "String") value Utf8("sge") end
+ trait const QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "SLT") type QName(PackageNamespace(""), "String") value Utf8("slt") end
+ trait const QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "SGN") type QName(PackageNamespace(""), "String") value Utf8("sgn") end
+ trait const QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "SEQ") type QName(PackageNamespace(""), "String") value Utf8("seq") end
+ trait const QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "SNE") type QName(PackageNamespace(""), "String") value Utf8("sne") end
+ trait const QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "TLD") type QName(PackageNamespace(""), "String") value Utf8("tld") end
+ trait const QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "VA") type QName(PackageNamespace(""), "String") value Utf8("va") end
+ trait const QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "VC") type QName(PackageNamespace(""), "String") value Utf8("vc") end
+ trait const QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "VT") type QName(PackageNamespace(""), "String") value Utf8("vt") end
+ trait const QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "VO") type QName(PackageNamespace(""), "String") value Utf8("vo") end
+ trait const QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "VI") type QName(PackageNamespace(""), "String") value Utf8("vi") end
+ trait const QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "FC") type QName(PackageNamespace(""), "String") value Utf8("fc") end
+ trait const QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "FT") type QName(PackageNamespace(""), "String") value Utf8("ft") end
+ trait const QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "FS") type QName(PackageNamespace(""), "String") value Utf8("fs") end
+ trait const QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "FO") type QName(PackageNamespace(""), "String") value Utf8("fo") end
+ trait const QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "FD") type QName(PackageNamespace(""), "String") value Utf8("fd") end
+ trait const QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "IID") type QName(PackageNamespace(""), "String") value Utf8("iid") end
+ trait const QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "VS") type QName(PackageNamespace(""), "String") value Utf8("vs") end
+ trait const QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "D2") type QName(PackageNamespace(""), "String") value Utf8("2d") end
+ trait const QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "D3") type QName(PackageNamespace(""), "String") value Utf8("3d") end
+ trait const QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "CUBE") type QName(PackageNamespace(""), "String") value Utf8("cube") end
+ trait const QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "MIPNEAREST") type QName(PackageNamespace(""), "String") value Utf8("mipnearest") end
+ trait const QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "MIPLINEAR") type QName(PackageNamespace(""), "String") value Utf8("miplinear") end
+ trait const QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "MIPNONE") type QName(PackageNamespace(""), "String") value Utf8("mipnone") end
+ trait const QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "NOMIP") type QName(PackageNamespace(""), "String") value Utf8("nomip") end
+ trait const QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "NEAREST") type QName(PackageNamespace(""), "String") value Utf8("nearest") end
+ trait const QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "LINEAR") type QName(PackageNamespace(""), "String") value Utf8("linear") end
+ trait const QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "ANISOTROPIC2X") type QName(PackageNamespace(""), "String") value Utf8("anisotropic2x") end
+ trait const QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "ANISOTROPIC4X") type QName(PackageNamespace(""), "String") value Utf8("anisotropic4x") end
+ trait const QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "ANISOTROPIC8X") type QName(PackageNamespace(""), "String") value Utf8("anisotropic8x") end
+ trait const QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "ANISOTROPIC16X") type QName(PackageNamespace(""), "String") value Utf8("anisotropic16x") end
+ trait const QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "CENTROID") type QName(PackageNamespace(""), "String") value Utf8("centroid") end
+ trait const QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "SINGLE") type QName(PackageNamespace(""), "String") value Utf8("single") end
+ trait const QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "IGNORESAMPLER") type QName(PackageNamespace(""), "String") value Utf8("ignoresampler") end
+ trait const QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "REPEAT") type QName(PackageNamespace(""), "String") value Utf8("repeat") end
+ trait const QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "WRAP") type QName(PackageNamespace(""), "String") value Utf8("wrap") end
+ trait const QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "CLAMP") type QName(PackageNamespace(""), "String") value Utf8("clamp") end
+ trait const QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "REPEAT_U_CLAMP_V") type QName(PackageNamespace(""), "String") value Utf8("repeat_u_clamp_v") end
+ trait const QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "CLAMP_U_REPEAT_V") type QName(PackageNamespace(""), "String") value Utf8("clamp_u_repeat_v") end
+ trait const QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "RGBA") type QName(PackageNamespace(""), "String") value Utf8("rgba") end
+ trait const QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "COMPRESSED") type QName(PackageNamespace(""), "String") value Utf8("compressed") end
+ trait const QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "COMPRESSEDALPHA") type QName(PackageNamespace(""), "String") value Utf8("compressedalpha") end
+ trait const QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "DXT1") type QName(PackageNamespace(""), "String") value Utf8("dxt1") end
+ trait const QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "DXT5") type QName(PackageNamespace(""), "String") value Utf8("dxt5") end
+ trait const QName(PrivateNamespace("kabam.rotmg.util:AGALMiniAssembler"), "VIDEO") type QName(PackageNamespace(""), "String") value Utf8("video") end
+end ; class

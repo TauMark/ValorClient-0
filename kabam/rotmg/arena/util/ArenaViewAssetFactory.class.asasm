@@ -1,0 +1,132 @@
+class
+ refid "kabam.rotmg.arena.util:ArenaViewAssetFactory"
+ instance QName(PackageNamespace("kabam.rotmg.arena.util"), "ArenaViewAssetFactory")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  iinit
+   refid "kabam.rotmg.arena.util:ArenaViewAssetFactory/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; instance
+ cinit
+  refid "kabam.rotmg.arena.util:ArenaViewAssetFactory/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait method QName(PackageNamespace(""), "returnTextfield")
+  method
+   name "returnTextfield"
+   refid "kabam.rotmg.arena.util:ArenaViewAssetFactory/class/returnTextfield"
+   param QName(PackageNamespace(""), "int")
+   param QName(PackageNamespace(""), "int")
+   param QName(PackageNamespace(""), "Boolean")
+   param QName(PackageNamespace(""), "Boolean")
+   returns QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete")
+   flag HAS_OPTIONAL
+   flag HAS_PARAM_NAMES
+   optional False()
+   paramname "_arg1"
+   paramname "_arg2"
+   paramname "_arg3"
+   paramname "_arg4"
+   body
+    maxstack 5
+    localcount 6
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete")
+     constructprop       QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete"), 0
+     coerce              QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete")
+     dup
+     setlocal            5
+
+     getlocal2
+     callproperty        QName(PackageNamespace(""), "setSize"), 1
+     getlocal1
+     callproperty        QName(PackageNamespace(""), "setColor"), 1
+     getlocal3
+     callpropvoid        QName(PackageNamespace(""), "setBold"), 1
+
+     getlocal            5
+     pushstring          "bottom"
+     callpropvoid        QName(PackageNamespace(""), "setVerticalAlign"), 1
+
+     getlocal            5
+     getlocal            4
+     iffalse             L26
+
+     findpropstrict      QName(PackageNamespace("flash.filters"), "DropShadowFilter")
+     pushbyte            0
+     pushbyte            0
+     pushbyte            0
+     constructprop       QName(PackageNamespace("flash.filters"), "DropShadowFilter"), 3
+     newarray            1
+     jump                L28
+
+L26:
+     newarray            0
+     coerce              QName(PackageNamespace(""), "Array")
+L28:
+     setproperty         QName(PackageNamespace(""), "filters")
+
+     getlocal            5
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "returnHostBitmap")
+  method
+   name "returnHostBitmap"
+   refid "kabam.rotmg.arena.util:ArenaViewAssetFactory/class/returnHostBitmap"
+   param QName(PackageNamespace(""), "uint")
+   returns QName(PackageNamespace("flash.display"), "Bitmap")
+   flag HAS_PARAM_NAMES
+   paramname "_arg1"
+   body
+    maxstack 5
+    localcount 2
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     findpropstrict      QName(PackageNamespace("flash.display"), "Bitmap")
+     getlex              QName(PackageNamespace("com.company.assembleegameclient.objects"), "ObjectLibrary")
+     getlocal1
+     pushbyte            80
+     pushtrue
+     callproperty        QName(PackageNamespace(""), "getRedrawnTextureFromType"), 3
+     constructprop       QName(PackageNamespace("flash.display"), "Bitmap"), 1
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+end ; class

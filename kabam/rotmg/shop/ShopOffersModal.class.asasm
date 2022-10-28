@@ -1,0 +1,765 @@
+class
+ refid "kabam.rotmg.shop:ShopOffersModal"
+ instance QName(PackageNamespace("kabam.rotmg.shop"), "ShopOffersModal")
+  extends QName(PackageNamespace("io.decagames.rotmg.ui.popups.modal"), "ModalPopup")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.shop:ShopOffersModal")
+  iinit
+   name "ShopOffersModal"
+   refid "kabam.rotmg.shop:ShopOffersModal/instance/init"
+   param QName(PackageNamespace("com.company.assembleegameclient.game"), "GameSprite")
+   flag HAS_PARAM_NAMES
+   paramname "gs"
+   body
+    maxstack 5
+    localcount 2
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     findpropstrict      QName(PackageNamespace("org.osflash.signals"), "Signal")
+     constructprop       QName(PackageNamespace("org.osflash.signals"), "Signal"), 0
+     findproperty        QName(PackageNamespace(""), "close")
+     swap
+     initproperty        QName(PackageNamespace(""), "close")
+
+     getlocal0
+     getlex              QName(PackageNamespace("kabam.rotmg.core"), "StaticInjectorContext")
+     callproperty        QName(PackageNamespace(""), "getInjector"), 0
+     getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "FontModel")
+     callproperty        QName(PackageNamespace(""), "getInstance"), 1
+     setproperty         QName(PrivateNamespace("kabam.rotmg.shop:ShopOffersModal"), "fontModel")
+
+     pushshort           640
+     findproperty        QName(PackageNamespace(""), "modalWidth")
+     swap
+     setproperty         QName(PackageNamespace(""), "modalWidth")
+
+     pushshort           500
+     findproperty        QName(PackageNamespace(""), "modalHeight")
+     swap
+     setproperty         QName(PackageNamespace(""), "modalHeight")
+
+     getlocal0
+     getlocal1
+     setproperty         QName(PackageNamespace(""), "gs_")
+
+     getlocal0
+     getlex              QName(PackageNamespace(""), "modalWidth")
+     getlex              QName(PackageNamespace(""), "modalHeight")
+     pushstring          "Donator Shop"
+     constructsuper      3
+
+     getlocal0
+     pushbyte            60
+     setproperty         QName(PackageNamespace(""), "x")
+
+     getlocal0
+     pushbyte            30
+     setproperty         QName(PackageNamespace(""), "y")
+
+     findpropstrict      QName(PrivateNamespace("kabam.rotmg.shop:ShopOffersModal"), "InitializeBaseUI")
+     callpropvoid        QName(PrivateNamespace("kabam.rotmg.shop:ShopOffersModal"), "InitializeBaseUI"), 0
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("io.decagames.rotmg.ui.buttons"), "SliceScalingButton")
+     getlex              QName(PackageNamespace("io.decagames.rotmg.ui.texture"), "TextureParser")
+     getproperty         QName(PackageNamespace(""), "instance")
+     pushstring          "UI"
+     pushstring          "close_button"
+     callproperty        QName(PackageNamespace(""), "getSliceScalingBitmap"), 2
+     constructprop       QName(PackageNamespace("io.decagames.rotmg.ui.buttons"), "SliceScalingButton"), 1
+     setproperty         QName(PackageNamespace(""), "quitButton")
+
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "header")
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "quitButton")
+     pushstring          "right_button"
+     callpropvoid        QName(PackageNamespace(""), "addButton"), 2
+
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "quitButton")
+     pushstring          "click"
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.shop:ShopOffersModal"), "onClose")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace("kabam.rotmg.shop:ShopOffersModal"), "fontModel") type QName(PackageNamespace("kabam.rotmg.text.model"), "FontModel") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.shop:ShopOffersModal"), "newBackground") type QName(PackageNamespace("io.decagames.rotmg.ui.sliceScaling"), "SliceScalingBitmap") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.shop:ShopOffersModal"), "lightForeground") type QName(PackageNamespace("io.decagames.rotmg.ui.sliceScaling"), "SliceScalingBitmap") end
+  trait slot QName(PackageNamespace(""), "quitButton") type QName(PackageNamespace("io.decagames.rotmg.ui.buttons"), "SliceScalingButton") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.shop:ShopOffersModal"), "_tabs") type QName(PackageNamespace("io.decagames.rotmg.ui.tabs"), "UITabs") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.shop:ShopOffersModal"), "limitedBuyContainer") type QName(PackageNamespace("flash.display"), "Sprite") end
+  trait slot QName(PackageNamespace(""), "gs_") type QName(PackageNamespace("com.company.assembleegameclient.game"), "GameSprite") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.shop:ShopOffersModal"), "normalBuyContainer") type QName(PackageNamespace("flash.display"), "Sprite") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.shop:ShopOffersModal"), "normalLinesPosition") type QName(PackageNamespace(""), "int") value Integer(0) end
+  trait slot QName(PrivateNamespace("kabam.rotmg.shop:ShopOffersModal"), "limitedLinesPosition") type QName(PackageNamespace(""), "int") value Integer(0) end
+  trait const QName(PackageNamespace(""), "close") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait method QName(PrivateNamespace("kabam.rotmg.shop:ShopOffersModal"), "InitializeBaseUI")
+   method
+    name "InitializeBaseUI"
+    refid "kabam.rotmg.shop:ShopOffersModal/instance/kabam.rotmg.shop:ShopOffersModal/instance/InitializeBaseUI"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 6
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlex              QName(PackageNamespace("io.decagames.rotmg.ui.texture"), "TextureParser")
+      getproperty         QName(PackageNamespace(""), "instance")
+      pushstring          "UI"
+      pushstring          "popup_content_inset"
+      callproperty        QName(PackageNamespace(""), "getSliceScalingBitmap"), 2
+      setproperty         QName(PrivateNamespace("kabam.rotmg.shop:ShopOffersModal"), "newBackground")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.shop:ShopOffersModal"), "newBackground")
+      pushbyte            0
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.shop:ShopOffersModal"), "newBackground")
+      pushbyte            0
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.shop:ShopOffersModal"), "newBackground")
+      getlex              QName(PackageNamespace(""), "modalWidth")
+      pushbyte            10
+      subtract
+      setproperty         QName(PackageNamespace(""), "width")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.shop:ShopOffersModal"), "newBackground")
+      getlex              QName(PackageNamespace(""), "modalHeight")
+      pushbyte            10
+      subtract
+      setproperty         QName(PackageNamespace(""), "height")
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.shop:ShopOffersModal"), "newBackground")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      getlocal0
+      getlex              QName(PackageNamespace("io.decagames.rotmg.ui.texture"), "TextureParser")
+      getproperty         QName(PackageNamespace(""), "instance")
+      pushstring          "UI"
+      pushstring          "shop_box_background"
+      callproperty        QName(PackageNamespace(""), "getSliceScalingBitmap"), 2
+      setproperty         QName(PrivateNamespace("kabam.rotmg.shop:ShopOffersModal"), "lightForeground")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.shop:ShopOffersModal"), "lightForeground")
+      pushbyte            5
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.shop:ShopOffersModal"), "lightForeground")
+      pushbyte            10
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.shop:ShopOffersModal"), "lightForeground")
+      getlex              QName(PackageNamespace(""), "modalWidth")
+      pushshort           518
+      subtract
+      setproperty         QName(PackageNamespace(""), "width")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.shop:ShopOffersModal"), "lightForeground")
+      getlex              QName(PackageNamespace(""), "modalHeight")
+      pushbyte            30
+      subtract
+      setproperty         QName(PackageNamespace(""), "height")
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("io.decagames.rotmg.ui.tabs"), "UITabs")
+      pushshort           630
+      pushtrue
+      constructprop       QName(PackageNamespace("io.decagames.rotmg.ui.tabs"), "UITabs"), 2
+      setproperty         QName(PrivateNamespace("kabam.rotmg.shop:ShopOffersModal"), "_tabs")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.shop:ShopOffersModal"), "_tabs")
+      getlocal0
+      callproperty        QName(PrivateNamespace("kabam.rotmg.shop:ShopOffersModal"), "createLimitedTab"), 0
+      pushtrue
+      callpropvoid        QName(PackageNamespace(""), "addTab"), 2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.shop:ShopOffersModal"), "_tabs")
+      getlocal0
+      callproperty        QName(PrivateNamespace("kabam.rotmg.shop:ShopOffersModal"), "createNormalTab"), 0
+      callpropvoid        QName(PackageNamespace(""), "addTab"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.shop:ShopOffersModal"), "_tabs")
+      pushbyte            1
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.shop:ShopOffersModal"), "_tabs")
+      getlex              QName(PackageNamespace(""), "modalWidth")
+      pushshort           640
+      subtract
+      setproperty         QName(PackageNamespace(""), "x")
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.shop:ShopOffersModal"), "_tabs")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      findpropstrict      QName(PackageNamespace(""), "addShopToList")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.shop"), "ShopListElements")
+      pushbyte            0
+      pushstring          "Unlocks a new vault chest for you! Only 150 kantos!"
+      pushbyte            70
+      pushbyte            1
+      constructprop       QName(PackageNamespace("kabam.rotmg.shop"), "ShopListElements"), 4
+      callpropvoid        QName(PackageNamespace(""), "addShopToList"), 1
+
+      findpropstrict      QName(PackageNamespace(""), "addShopToList")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.shop"), "ShopListElements")
+      pushbyte            1
+      pushstring          "Unlocks a new character slot for you! Only 300 kantos!"
+      pushbyte            70
+      pushbyte            2
+      constructprop       QName(PackageNamespace("kabam.rotmg.shop"), "ShopListElements"), 4
+      callpropvoid        QName(PackageNamespace(""), "addShopToList"), 1
+
+      findpropstrict      QName(PackageNamespace(""), "addLimitedToList")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.shop"), "ShopListElements")
+      pushbyte            4
+      pushstring          "Unlock a random unique particle effect from this unique pack! Spin to win one of six particle effects to deck out your Character."
+      pushshort           330
+      pushbyte            3
+      constructprop       QName(PackageNamespace("kabam.rotmg.shop"), "ShopListElements"), 4
+      callpropvoid        QName(PackageNamespace(""), "addLimitedToList"), 1
+
+      findpropstrict      QName(PackageNamespace(""), "addLimitedToList")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.shop"), "ShopListElements")
+      pushbyte            2
+      pushstring          "This is a special event. Keys for Onrane is offering a random key for 15 Onrane. Limited time only! Thanks for being an amazing community!"
+      pushshort           330
+      pushbyte            4
+      constructprop       QName(PackageNamespace("kabam.rotmg.shop"), "ShopListElements"), 4
+      callpropvoid        QName(PackageNamespace(""), "addLimitedToList"), 1
+
+      findpropstrict      QName(PackageNamespace(""), "addLimitedToList")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.shop"), "ShopListElements")
+      pushbyte            3
+      pushstring          "Backpacks for 300 Kantos. In Honour of iKappa, who will never get 100k base fame. Extra eight slots."
+      pushbyte            70
+      pushbyte            5
+      constructprop       QName(PackageNamespace("kabam.rotmg.shop"), "ShopListElements"), 4
+      callpropvoid        QName(PackageNamespace(""), "addLimitedToList"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.shop:ShopOffersModal"), "createLimitedTab")
+   method
+    name "createLimitedTab"
+    refid "kabam.rotmg.shop:ShopOffersModal/instance/kabam.rotmg.shop:ShopOffersModal/instance/createLimitedTab"
+    returns QName(PackageNamespace("io.decagames.rotmg.ui.tabs"), "UITab")
+    body
+     maxstack 5
+     localcount 5
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      setlocal2
+
+      pushnull
+      setlocal3
+
+      findpropstrict      QName(PackageNamespace("io.decagames.rotmg.ui.tabs"), "UITab")
+      pushstring          "Limited Edition"
+      constructprop       QName(PackageNamespace("io.decagames.rotmg.ui.tabs"), "UITab"), 1
+      coerce              QName(PackageNamespace("io.decagames.rotmg.ui.tabs"), "UITab")
+      setlocal2
+
+      findpropstrict      QName(PackageNamespace("flash.display"), "Sprite")
+      constructprop       QName(PackageNamespace("flash.display"), "Sprite"), 0
+      coerce              QName(PackageNamespace("flash.display"), "Sprite")
+      setlocal1
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("flash.display"), "Sprite")
+      constructprop       QName(PackageNamespace("flash.display"), "Sprite"), 0
+      setproperty         QName(PrivateNamespace("kabam.rotmg.shop:ShopOffersModal"), "limitedBuyContainer")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.shop:ShopOffersModal"), "limitedBuyContainer")
+      pushbyte            85
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.shop:ShopOffersModal"), "limitedBuyContainer")
+      pushbyte            10
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.shop:ShopOffersModal"), "limitedBuyContainer")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      findpropstrict      QName(PackageNamespace("io.decagames.rotmg.ui.scroll"), "UIScrollbar")
+      pushshort           420
+      constructprop       QName(PackageNamespace("io.decagames.rotmg.ui.scroll"), "UIScrollbar"), 1
+      coerce              QName(PackageNamespace("io.decagames.rotmg.ui.scroll"), "UIScrollbar")
+      dup
+      setlocal            4
+
+      pushbyte            1
+      setproperty         QName(PackageNamespace(""), "mouseRollSpeedFactor")
+
+      getlocal            4
+      getlocal2
+      setproperty         QName(PackageNamespace(""), "scrollObject")
+
+      getlocal            4
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.shop:ShopOffersModal"), "limitedBuyContainer")
+      setproperty         QName(PackageNamespace(""), "content")
+
+      getlocal            4
+      pushshort           580
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal            4
+      pushbyte            5
+      setproperty         QName(PackageNamespace(""), "y")
+
+      findpropstrict      QName(PackageNamespace("flash.display"), "Sprite")
+      constructprop       QName(PackageNamespace("flash.display"), "Sprite"), 0
+      coerce              QName(PackageNamespace("flash.display"), "Sprite")
+      setlocal3
+
+      getlocal3
+      getproperty         QName(PackageNamespace(""), "graphics")
+      pushbyte            0
+      callpropvoid        QName(PackageNamespace(""), "beginFill"), 1
+
+      getlocal3
+      getproperty         QName(PackageNamespace(""), "graphics")
+      pushbyte            0
+      pushbyte            0
+      pushshort           500
+      pushshort           440
+      callpropvoid        QName(PackageNamespace(""), "drawRect"), 4
+
+      getlocal3
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.shop:ShopOffersModal"), "limitedBuyContainer")
+      getproperty         QName(PackageNamespace(""), "x")
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal3
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.shop:ShopOffersModal"), "limitedBuyContainer")
+      getproperty         QName(PackageNamespace(""), "y")
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.shop:ShopOffersModal"), "limitedBuyContainer")
+      getlocal3
+      setproperty         QName(PackageNamespace(""), "mask")
+
+      getlocal1
+      getlocal3
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      getlocal2
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "addContent"), 1
+
+      getlocal2
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.shop:ShopOffersModal"), "createNormalTab")
+   method
+    name "createNormalTab"
+    refid "kabam.rotmg.shop:ShopOffersModal/instance/kabam.rotmg.shop:ShopOffersModal/instance/createNormalTab"
+    returns QName(PackageNamespace("io.decagames.rotmg.ui.tabs"), "UITab")
+    body
+     maxstack 5
+     localcount 5
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      setlocal2
+
+      pushnull
+      setlocal3
+
+      findpropstrict      QName(PackageNamespace("io.decagames.rotmg.ui.tabs"), "UITab")
+      pushstring          "Regular"
+      constructprop       QName(PackageNamespace("io.decagames.rotmg.ui.tabs"), "UITab"), 1
+      coerce              QName(PackageNamespace("io.decagames.rotmg.ui.tabs"), "UITab")
+      setlocal2
+
+      findpropstrict      QName(PackageNamespace("flash.display"), "Sprite")
+      constructprop       QName(PackageNamespace("flash.display"), "Sprite"), 0
+      coerce              QName(PackageNamespace("flash.display"), "Sprite")
+      setlocal1
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("flash.display"), "Sprite")
+      constructprop       QName(PackageNamespace("flash.display"), "Sprite"), 0
+      setproperty         QName(PrivateNamespace("kabam.rotmg.shop:ShopOffersModal"), "normalBuyContainer")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.shop:ShopOffersModal"), "normalBuyContainer")
+      pushbyte            85
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.shop:ShopOffersModal"), "normalBuyContainer")
+      pushbyte            10
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.shop:ShopOffersModal"), "normalBuyContainer")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      findpropstrict      QName(PackageNamespace("io.decagames.rotmg.ui.scroll"), "UIScrollbar")
+      pushshort           420
+      constructprop       QName(PackageNamespace("io.decagames.rotmg.ui.scroll"), "UIScrollbar"), 1
+      coerce              QName(PackageNamespace("io.decagames.rotmg.ui.scroll"), "UIScrollbar")
+      dup
+      setlocal            4
+
+      pushbyte            1
+      setproperty         QName(PackageNamespace(""), "mouseRollSpeedFactor")
+
+      getlocal            4
+      getlocal2
+      setproperty         QName(PackageNamespace(""), "scrollObject")
+
+      getlocal            4
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.shop:ShopOffersModal"), "normalBuyContainer")
+      setproperty         QName(PackageNamespace(""), "content")
+
+      getlocal            4
+      pushshort           580
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal            4
+      pushbyte            5
+      setproperty         QName(PackageNamespace(""), "y")
+
+      findpropstrict      QName(PackageNamespace("flash.display"), "Sprite")
+      constructprop       QName(PackageNamespace("flash.display"), "Sprite"), 0
+      coerce              QName(PackageNamespace("flash.display"), "Sprite")
+      setlocal3
+
+      getlocal3
+      getproperty         QName(PackageNamespace(""), "graphics")
+      pushbyte            0
+      callpropvoid        QName(PackageNamespace(""), "beginFill"), 1
+
+      getlocal3
+      getproperty         QName(PackageNamespace(""), "graphics")
+      pushbyte            0
+      pushbyte            0
+      pushshort           500
+      pushshort           440
+      callpropvoid        QName(PackageNamespace(""), "drawRect"), 4
+
+      getlocal3
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.shop:ShopOffersModal"), "normalBuyContainer")
+      getproperty         QName(PackageNamespace(""), "x")
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal3
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.shop:ShopOffersModal"), "normalBuyContainer")
+      getproperty         QName(PackageNamespace(""), "y")
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.shop:ShopOffersModal"), "normalBuyContainer")
+      getlocal3
+      setproperty         QName(PackageNamespace(""), "mask")
+
+      getlocal1
+      getlocal3
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      getlocal2
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "addContent"), 1
+
+      getlocal2
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "addShopToList")
+   method
+    name "addShopToList"
+    refid "kabam.rotmg.shop:ShopOffersModal/instance/addShopToList"
+    param QName(PackageNamespace("kabam.rotmg.shop"), "ShopListElements")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg_1"
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      pushbyte            10
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.shop:ShopOffersModal"), "normalLinesPosition")
+      pushbyte            125
+      multiply
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.shop:ShopOffersModal"), "normalBuyContainer")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      getlocal0
+      dup
+      getproperty         QName(PrivateNamespace("kabam.rotmg.shop:ShopOffersModal"), "normalLinesPosition")
+      convert_d
+      increment
+      setproperty         QName(PrivateNamespace("kabam.rotmg.shop:ShopOffersModal"), "normalLinesPosition")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "addLimitedToList")
+   method
+    name "addLimitedToList"
+    refid "kabam.rotmg.shop:ShopOffersModal/instance/addLimitedToList"
+    param QName(PackageNamespace("kabam.rotmg.shop"), "ShopListElements")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg_1"
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      pushbyte            10
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.shop:ShopOffersModal"), "limitedLinesPosition")
+      pushbyte            125
+      multiply
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.shop:ShopOffersModal"), "limitedBuyContainer")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      getlocal0
+      dup
+      getproperty         QName(PrivateNamespace("kabam.rotmg.shop:ShopOffersModal"), "limitedLinesPosition")
+      convert_d
+      increment
+      setproperty         QName(PrivateNamespace("kabam.rotmg.shop:ShopOffersModal"), "limitedLinesPosition")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.shop:ShopOffersModal"), "onClose")
+   method
+    name "onClose"
+    refid "kabam.rotmg.shop:ShopOffersModal/instance/kabam.rotmg.shop:ShopOffersModal/instance/onClose"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "e"
+    body
+     maxstack 1
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "close")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.shop:ShopOffersModal/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PackageNamespace(""), "MODAL_WIDTH") type QName(PackageNamespace(""), "int") value Integer(640) end
+ trait const QName(PackageNamespace(""), "MODAL_HEIGHT") type QName(PackageNamespace(""), "int") value Integer(500) end
+ trait slot QName(PackageNamespace(""), "modalWidth") type QName(PackageNamespace(""), "int") value Integer(640) end
+ trait slot QName(PackageNamespace(""), "modalHeight") type QName(PackageNamespace(""), "int") value Integer(500) end
+ trait method QName(PackageNamespace(""), "getText")
+  method
+   name "getText"
+   refid "kabam.rotmg.shop:ShopOffersModal/class/getText"
+   param QName(PackageNamespace(""), "String")
+   param QName(PackageNamespace(""), "int")
+   param QName(PackageNamespace(""), "int")
+   param QName(PackageNamespace(""), "Boolean")
+   returns QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete")
+   flag HAS_PARAM_NAMES
+   paramname "_arg1"
+   paramname "_arg2"
+   paramname "_arg3"
+   paramname "_arg4"
+   body
+    maxstack 5
+    localcount 6
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete")
+     constructprop       QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete"), 0
+     pushbyte            18
+     callproperty        QName(PackageNamespace(""), "setSize"), 1
+     pushint             16777215
+     callproperty        QName(PackageNamespace(""), "setColor"), 1
+     getlex              QName(PackageNamespace("kabam.rotmg.raidLauncher"), "RaidLauncherModal")
+     getproperty         QName(PackageNamespace(""), "modalWidth")
+     pushbyte            40
+     subtract
+     pushbyte            10
+     subtract
+     callproperty        QName(PackageNamespace(""), "setTextWidth"), 1
+     coerce              QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete")
+     dup
+     setlocal            5
+
+     pushtrue
+     callpropvoid        QName(PackageNamespace(""), "setBold"), 1
+
+     getlocal            4
+     iffalse             L28
+
+     getlocal            5
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "StaticStringBuilder")
+     getlocal1
+     constructprop       QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "StaticStringBuilder"), 1
+     callpropvoid        QName(PackageNamespace(""), "setStringBuilder"), 1
+
+     jump                L34
+
+L28:
+     getlocal            5
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder")
+     constructprop       QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder"), 0
+     getlocal1
+     callproperty        QName(PackageNamespace(""), "setParams"), 1
+     callpropvoid        QName(PackageNamespace(""), "setStringBuilder"), 1
+
+L34:
+     getlocal            5
+     pushtrue
+     callpropvoid        QName(PackageNamespace(""), "setWordWrap"), 1
+
+     getlocal            5
+     pushtrue
+     callpropvoid        QName(PackageNamespace(""), "setMultiLine"), 1
+
+     getlocal            5
+     pushstring          "center"
+     callpropvoid        QName(PackageNamespace(""), "setAutoSize"), 1
+
+     getlocal            5
+     pushstring          "center"
+     callpropvoid        QName(PackageNamespace(""), "setHorizontalAlign"), 1
+
+     getlocal            5
+     findpropstrict      QName(PackageNamespace("flash.filters"), "DropShadowFilter")
+     pushbyte            0
+     pushbyte            0
+     pushbyte            0
+     constructprop       QName(PackageNamespace("flash.filters"), "DropShadowFilter"), 3
+     newarray            1
+     setproperty         QName(PackageNamespace(""), "filters")
+
+     getlocal            5
+     getlocal2
+     setproperty         QName(PackageNamespace(""), "x")
+
+     getlocal            5
+     getlocal3
+     setproperty         QName(PackageNamespace(""), "y")
+
+     getlocal            5
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+end ; class

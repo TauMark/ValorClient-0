@@ -1,0 +1,311 @@
+class
+ refid "com.company.assembleegameclient.houseeditor:HousePlaceableChooser"
+ instance QName(PackageNamespace("com.company.assembleegameclient.houseeditor"), "HousePlaceableChooser")
+  extends QName(PackageInternalNs("com.company.assembleegameclient.houseeditor"), "HouseChooser")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.company.assembleegameclient.houseeditor:HousePlaceableChooser")
+  iinit
+   name "HousePlaceableChooser"
+   refid "com.company.assembleegameclient.houseeditor:HousePlaceableChooser/instance/init"
+   param QName(PackageNamespace("flash.utils"), "Dictionary")
+   flag HAS_PARAM_NAMES
+   paramname "_arg1"
+   body
+    maxstack 3
+    localcount 2
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     pushbyte            1
+     constructsuper      1
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("flash.utils"), "Dictionary")
+     constructprop       QName(PackageNamespace("flash.utils"), "Dictionary"), 0
+     setproperty         QName(PrivateNamespace("com.company.assembleegameclient.houseeditor:HousePlaceableChooser"), "cache")
+
+     getlocal0
+     getlocal1
+     setproperty         QName(PrivateNamespace("com.company.assembleegameclient.houseeditor:HousePlaceableChooser"), "valids")
+
+     getlocal0
+     pushstring          ""
+     pushtrue
+     callpropvoid        QName(PackageNamespace(""), "reloadObjects"), 2
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.houseeditor:HousePlaceableChooser"), "cache") type QName(PackageNamespace("flash.utils"), "Dictionary") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.houseeditor:HousePlaceableChooser"), "lastSearch") type QName(PackageNamespace(""), "String") value Utf8("") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.houseeditor:HousePlaceableChooser"), "valids") type QName(PackageNamespace("flash.utils"), "Dictionary") end
+  trait method QName(PackageNamespace(""), "getLastSearch")
+   method
+    name "getLastSearch"
+    refid "com.company.assembleegameclient.houseeditor:HousePlaceableChooser/instance/getLastSearch"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.houseeditor:HousePlaceableChooser"), "lastSearch")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "reloadObjects")
+   method
+    name "reloadObjects"
+    refid "com.company.assembleegameclient.houseeditor:HousePlaceableChooser/instance/reloadObjects"
+    param QName(PackageNamespace(""), "String")
+    param QName(PackageNamespace(""), "Boolean")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_OPTIONAL
+    flag HAS_PARAM_NAMES
+    optional Utf8("")
+    optional False()
+    paramname "_arg1"
+    paramname "_arg2"
+    body
+     maxstack 4
+     localcount 16
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      setlocal            10
+
+      pushnull
+      setlocal            8
+
+      pushnull
+      setlocal            9
+
+      pushbyte            0
+      setlocal            6
+
+      pushnull
+      setlocal            7
+
+      pushnull
+      setlocal            5
+
+      pushnull
+      setlocal            4
+
+      getlocal2
+      iftrue              L20
+
+      findpropstrict      QName(ProtectedNamespace("com.company.assembleegameclient.houseeditor:HouseChooser"), "removeElements")
+      callpropvoid        QName(ProtectedNamespace("com.company.assembleegameclient.houseeditor:HouseChooser"), "removeElements"), 0
+
+L20:
+      getlocal0
+      getlocal1
+      setproperty         QName(PrivateNamespace("com.company.assembleegameclient.houseeditor:HousePlaceableChooser"), "lastSearch")
+
+      getlex              QName(PackageNamespace("__AS3__.vec"), "Vector")
+      getlex              QName(PackageNamespace(""), "String")
+      applytype           1
+      construct           0
+      coerce              TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace(""), "String")>)
+      setlocal3
+
+      getlocal1
+      pushstring          ""
+      ifeq                L38
+
+      findpropstrict      QName(PackageNamespace(""), "RegExp")
+      getlocal1
+      pushstring          "gix"
+      constructprop       QName(PackageNamespace(""), "RegExp"), 2
+      coerce              QName(PackageNamespace(""), "RegExp")
+      setlocal            10
+
+L38:
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.houseeditor"), "HouseGroupDivider")
+      getproperty         QName(PackageNamespace(""), "GROUPS")
+      pushstring          "Placeables"
+      getproperty         MultinameL([PrivateNamespace("com.company.assembleegameclient.houseeditor:HousePlaceableChooser"), ProtectedNamespace("com.company.assembleegameclient.houseeditor:HousePlaceableChooser"), StaticProtectedNs("com.company.assembleegameclient.houseeditor:HousePlaceableChooser"), StaticProtectedNs("com.company.assembleegameclient.houseeditor:HouseChooser"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.houseeditor"), PackageInternalNs("com.company.assembleegameclient.houseeditor"), PrivateNamespace("FilePrivateNS:HousePlaceableChooser"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      coerce              QName(PackageNamespace("flash.utils"), "Dictionary")
+      setlocal            11
+
+      pushbyte            0
+      setlocal            13
+
+      getlocal            11
+      setlocal            12
+
+      jump                L83
+
+L49:
+      label
+      getlocal            12
+      getlocal            13
+      nextvalue
+      coerce              QName(PackageNamespace(""), "XML")
+      dup
+      setlocal            9
+
+      getproperty         MultinameA("id", [PrivateNamespace("com.company.assembleegameclient.houseeditor:HousePlaceableChooser"), ProtectedNamespace("com.company.assembleegameclient.houseeditor:HousePlaceableChooser"), StaticProtectedNs("com.company.assembleegameclient.houseeditor:HousePlaceableChooser"), StaticProtectedNs("com.company.assembleegameclient.houseeditor:HouseChooser"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.houseeditor"), PackageInternalNs("com.company.assembleegameclient.houseeditor"), PrivateNamespace("FilePrivateNS:HousePlaceableChooser"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      convert_s
+      coerce_s
+      setlocal            8
+
+      getlex              QName(PrivateNamespace("com.company.assembleegameclient.houseeditor:HousePlaceableChooser"), "valids")
+      getlocal            8
+      getproperty         MultinameL([PrivateNamespace("com.company.assembleegameclient.houseeditor:HousePlaceableChooser"), ProtectedNamespace("com.company.assembleegameclient.houseeditor:HousePlaceableChooser"), StaticProtectedNs("com.company.assembleegameclient.houseeditor:HousePlaceableChooser"), StaticProtectedNs("com.company.assembleegameclient.houseeditor:HouseChooser"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.houseeditor"), PackageInternalNs("com.company.assembleegameclient.houseeditor"), PrivateNamespace("FilePrivateNS:HousePlaceableChooser"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.houseeditor"), "ValidMapDataCachedObject")
+      dup
+      setlocal            5
+
+      pushnull
+      ifeq                L83
+
+      getlocal            10
+      pushnull
+      equals
+      dup
+      iftrue              L79
+
+      pop
+      getlocal            8
+      getlocal            10
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "search"), 1
+      pushbyte            0
+      greaterequals
+L79:
+      iffalse             L83
+
+      getlocal3
+      getlocal            8
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+
+L83:
+      hasnext2            12, 13
+      iftrue              L49
+
+      getlocal3
+      getlex              QName(PackageNamespace("com.company.util"), "MoreStringUtil")
+      getproperty         QName(PackageNamespace(""), "cmp")
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "sort"), 1
+
+      pushbyte            0
+      setlocal            15
+
+      getlocal3
+      setlocal            14
+
+      jump                L146
+
+L94:
+      label
+      getlocal            14
+      getlocal            15
+      nextvalue
+      coerce_s
+      setlocal            8
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.objects"), "ObjectLibrary")
+      getproperty         QName(PackageNamespace(""), "idToType_")
+      getlocal            8
+      getproperty         MultinameL([PrivateNamespace("com.company.assembleegameclient.houseeditor:HousePlaceableChooser"), ProtectedNamespace("com.company.assembleegameclient.houseeditor:HousePlaceableChooser"), StaticProtectedNs("com.company.assembleegameclient.houseeditor:HousePlaceableChooser"), StaticProtectedNs("com.company.assembleegameclient.houseeditor:HouseChooser"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.houseeditor"), PackageInternalNs("com.company.assembleegameclient.houseeditor"), PrivateNamespace("FilePrivateNS:HousePlaceableChooser"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      convert_i
+      setlocal            6
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.objects"), "ObjectLibrary")
+      getproperty         QName(PackageNamespace(""), "xmlLibrary_")
+      getlocal            6
+      getproperty         MultinameL([PrivateNamespace("com.company.assembleegameclient.houseeditor:HousePlaceableChooser"), ProtectedNamespace("com.company.assembleegameclient.houseeditor:HousePlaceableChooser"), StaticProtectedNs("com.company.assembleegameclient.houseeditor:HousePlaceableChooser"), StaticProtectedNs("com.company.assembleegameclient.houseeditor:HouseChooser"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.houseeditor"), PackageInternalNs("com.company.assembleegameclient.houseeditor"), PrivateNamespace("FilePrivateNS:HousePlaceableChooser"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      coerce              QName(PackageNamespace(""), "XML")
+      setlocal            9
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.houseeditor:HousePlaceableChooser"), "cache")
+      getlocal            6
+      getproperty         MultinameL([PrivateNamespace("com.company.assembleegameclient.houseeditor:HousePlaceableChooser"), ProtectedNamespace("com.company.assembleegameclient.houseeditor:HousePlaceableChooser"), StaticProtectedNs("com.company.assembleegameclient.houseeditor:HousePlaceableChooser"), StaticProtectedNs("com.company.assembleegameclient.houseeditor:HouseChooser"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.houseeditor"), PackageInternalNs("com.company.assembleegameclient.houseeditor"), PrivateNamespace("FilePrivateNS:HousePlaceableChooser"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      iftrue              L137
+
+      getlex              QName(PrivateNamespace("com.company.assembleegameclient.houseeditor:HousePlaceableChooser"), "valids")
+      getlocal            8
+      getproperty         MultinameL([PrivateNamespace("com.company.assembleegameclient.houseeditor:HousePlaceableChooser"), ProtectedNamespace("com.company.assembleegameclient.houseeditor:HousePlaceableChooser"), StaticProtectedNs("com.company.assembleegameclient.houseeditor:HousePlaceableChooser"), StaticProtectedNs("com.company.assembleegameclient.houseeditor:HouseChooser"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.houseeditor"), PackageInternalNs("com.company.assembleegameclient.houseeditor"), PrivateNamespace("FilePrivateNS:HousePlaceableChooser"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.houseeditor"), "ValidMapDataCachedObject")
+      setlocal            4
+
+      findpropstrict      QName(PackageInternalNs("com.company.assembleegameclient.houseeditor"), "HouseObjectElement")
+      getlocal            9
+      getlocal            4
+      getproperty         QName(PackageNamespace(""), "maxCount_")
+      getlocal            4
+      getproperty         QName(PackageNamespace(""), "used_")
+      constructprop       QName(PackageInternalNs("com.company.assembleegameclient.houseeditor"), "HouseObjectElement"), 3
+      coerce              QName(PackageInternalNs("com.company.assembleegameclient.houseeditor"), "HouseObjectElement")
+      setlocal            7
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.houseeditor:HousePlaceableChooser"), "cache")
+      getlocal            6
+      getlocal            7
+      setproperty         MultinameL([PrivateNamespace("com.company.assembleegameclient.houseeditor:HousePlaceableChooser"), ProtectedNamespace("com.company.assembleegameclient.houseeditor:HousePlaceableChooser"), StaticProtectedNs("com.company.assembleegameclient.houseeditor:HousePlaceableChooser"), StaticProtectedNs("com.company.assembleegameclient.houseeditor:HouseChooser"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.houseeditor"), PackageInternalNs("com.company.assembleegameclient.houseeditor"), PrivateNamespace("FilePrivateNS:HousePlaceableChooser"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      jump                L143
+
+L137:
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.houseeditor:HousePlaceableChooser"), "cache")
+      getlocal            6
+      getproperty         MultinameL([PrivateNamespace("com.company.assembleegameclient.houseeditor:HousePlaceableChooser"), ProtectedNamespace("com.company.assembleegameclient.houseeditor:HousePlaceableChooser"), StaticProtectedNs("com.company.assembleegameclient.houseeditor:HousePlaceableChooser"), StaticProtectedNs("com.company.assembleegameclient.houseeditor:HouseChooser"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.houseeditor"), PackageInternalNs("com.company.assembleegameclient.houseeditor"), PrivateNamespace("FilePrivateNS:HousePlaceableChooser"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      coerce              QName(PackageInternalNs("com.company.assembleegameclient.houseeditor"), "HouseObjectElement")
+      setlocal            7
+
+L143:
+      findpropstrict      QName(ProtectedNamespace("com.company.assembleegameclient.houseeditor:HouseChooser"), "addElement")
+      getlocal            7
+      callpropvoid        QName(ProtectedNamespace("com.company.assembleegameclient.houseeditor:HouseChooser"), "addElement"), 1
+
+L146:
+      hasnext2            14, 15
+      iftrue              L94
+
+      getlex              QName(ProtectedNamespace("com.company.assembleegameclient.houseeditor:HouseChooser"), "scrollBar_")
+      pushshort           510
+      getlex              QName(ProtectedNamespace("com.company.assembleegameclient.houseeditor:HouseChooser"), "elementSprite_")
+      getproperty         QName(PackageNamespace(""), "height")
+      pushtrue
+      callpropvoid        QName(PackageNamespace(""), "setIndicatorSize"), 3
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.houseeditor:HousePlaceableChooser/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

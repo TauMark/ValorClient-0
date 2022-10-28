@@ -1,0 +1,110 @@
+class
+ refid "kabam.rotmg.ui.model:HUDModel"
+ instance QName(PackageNamespace("kabam.rotmg.ui.model"), "HUDModel")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  iinit
+   refid "kabam.rotmg.ui.model:HUDModel/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "gameSprite") type QName(PackageNamespace("com.company.assembleegameclient.game"), "GameSprite") end
+  trait method QName(PackageNamespace(""), "getPlayerName")
+   method
+    name "getPlayerName"
+    refid "kabam.rotmg.ui.model:HUDModel/instance/getPlayerName"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "gameSprite")
+      getproperty         QName(PackageNamespace(""), "model")
+      callproperty        QName(PackageNamespace(""), "getName"), 0
+      iffalse             L12
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "gameSprite")
+      getproperty         QName(PackageNamespace(""), "model")
+      callproperty        QName(PackageNamespace(""), "getName"), 0
+      jump                L18
+
+L12:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "gameSprite")
+      getproperty         QName(PackageNamespace(""), "map")
+      getproperty         QName(PackageNamespace(""), "player")
+      getproperty         QName(PackageNamespace(""), "name_")
+      coerce_s
+L18:
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getButtonType")
+   method
+    name "getButtonType"
+    refid "kabam.rotmg.ui.model:HUDModel/instance/getButtonType"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "gameSprite")
+      getproperty         QName(PackageNamespace(""), "gsc_")
+      getproperty         QName(PackageNamespace(""), "gameId_")
+      pushbyte            -2
+      ifne                L10
+
+      pushstring          "OPTIONS_BUTTON"
+      jump                L12
+
+L10:
+      pushstring          "NEXUS_BUTTON"
+      coerce_s
+L12:
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.ui.model:HUDModel/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

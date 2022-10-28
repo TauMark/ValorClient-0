@@ -1,0 +1,358 @@
+class
+ refid "kabam.rotmg.messaging.impl:JitterWatcher"
+ instance QName(PackageNamespace("kabam.rotmg.messaging.impl"), "JitterWatcher")
+  extends QName(PackageNamespace("flash.display"), "Sprite")
+  flag SEALED
+  iinit
+   name "JitterWatcher"
+   refid "kabam.rotmg.messaging.impl:JitterWatcher/instance/init"
+   body
+    maxstack 5
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     getlex              QName(PackageNamespace("__AS3__.vec"), "Vector")
+     getlex              QName(PackageNamespace(""), "int")
+     applytype           1
+     construct           0
+     setproperty         QName(PrivateNamespace("kabam.rotmg.messaging.impl:JitterWatcher"), "ticks_")
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete")
+     constructprop       QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete"), 0
+     pushbyte            14
+     callproperty        QName(PackageNamespace(""), "setSize"), 1
+     pushint             16777215
+     callproperty        QName(PackageNamespace(""), "setColor"), 1
+     setproperty         QName(PrivateNamespace("kabam.rotmg.messaging.impl:JitterWatcher"), "text_")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.messaging.impl:JitterWatcher"), "text_")
+     pushstring          "left"
+     callpropvoid        QName(PackageNamespace(""), "setAutoSize"), 1
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.messaging.impl:JitterWatcher"), "text_")
+     findpropstrict      QName(PackageNamespace("flash.filters"), "DropShadowFilter")
+     pushbyte            0
+     pushbyte            0
+     pushbyte            0
+     constructprop       QName(PackageNamespace("flash.filters"), "DropShadowFilter"), 3
+     newarray            1
+     setproperty         QName(PackageNamespace(""), "filters")
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.messaging.impl:JitterWatcher"), "text_")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     findpropstrict      QName(PackageNamespace(""), "addEventListener")
+     pushstring          "addedToStage"
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.messaging.impl:JitterWatcher"), "onAddedToStage")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     findpropstrict      QName(PackageNamespace(""), "addEventListener")
+     pushstring          "removedFromStage"
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.messaging.impl:JitterWatcher"), "onRemovedFromStage")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace("kabam.rotmg.messaging.impl:JitterWatcher"), "text_") type QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete") value Null() end
+  trait slot QName(PrivateNamespace("kabam.rotmg.messaging.impl:JitterWatcher"), "lastRecord_") type QName(PackageNamespace(""), "int") value Integer(-1) end
+  trait slot QName(PrivateNamespace("kabam.rotmg.messaging.impl:JitterWatcher"), "ticks_") type TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace(""), "int")>) end
+  trait slot QName(PrivateNamespace("kabam.rotmg.messaging.impl:JitterWatcher"), "sum_") type QName(PackageNamespace(""), "int") end
+  trait method QName(PackageNamespace(""), "record")
+   method
+    name "record"
+    refid "kabam.rotmg.messaging.impl:JitterWatcher/instance/record"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 4
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushbyte            0
+      setlocal3
+
+      getlex              QName(PackageNamespace("flash.utils"), "getTimer")
+      getglobalscope
+      call                0
+      convert_i
+      setlocal1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.messaging.impl:JitterWatcher"), "lastRecord_")
+      pushbyte            -1
+      ifne                L17
+
+      getlocal0
+      getlocal1
+      setproperty         QName(PrivateNamespace("kabam.rotmg.messaging.impl:JitterWatcher"), "lastRecord_")
+
+      returnvoid
+
+L17:
+      getlocal1
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.messaging.impl:JitterWatcher"), "lastRecord_")
+      subtract
+      convert_i
+      setlocal2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.messaging.impl:JitterWatcher"), "ticks_")
+      getlocal2
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.messaging.impl:JitterWatcher"), "sum_")
+      getlocal2
+      add
+      setproperty         QName(PrivateNamespace("kabam.rotmg.messaging.impl:JitterWatcher"), "sum_")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.messaging.impl:JitterWatcher"), "ticks_")
+      getproperty         QName(PackageNamespace(""), "length")
+      pushbyte            50
+      ifngt               L49
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.messaging.impl:JitterWatcher"), "ticks_")
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "shift"), 0
+      convert_i
+      setlocal3
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.messaging.impl:JitterWatcher"), "sum_")
+      getlocal3
+      subtract
+      setproperty         QName(PrivateNamespace("kabam.rotmg.messaging.impl:JitterWatcher"), "sum_")
+
+L49:
+      getlocal0
+      getlocal1
+      setproperty         QName(PrivateNamespace("kabam.rotmg.messaging.impl:JitterWatcher"), "lastRecord_")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.messaging.impl:JitterWatcher"), "onAddedToStage")
+   method
+    name "onAddedToStage"
+    refid "kabam.rotmg.messaging.impl:JitterWatcher/instance/kabam.rotmg.messaging.impl:JitterWatcher/onAddedToStage"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace(""), "stage")
+      pushstring          "enterFrame"
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.messaging.impl:JitterWatcher"), "onEnterFrame")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.messaging.impl:JitterWatcher"), "onRemovedFromStage")
+   method
+    name "onRemovedFromStage"
+    refid "kabam.rotmg.messaging.impl:JitterWatcher/instance/kabam.rotmg.messaging.impl:JitterWatcher/onRemovedFromStage"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace(""), "stage")
+      pushstring          "enterFrame"
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.messaging.impl:JitterWatcher"), "onEnterFrame")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.messaging.impl:JitterWatcher"), "onEnterFrame")
+   method
+    name "onEnterFrame"
+    refid "kabam.rotmg.messaging.impl:JitterWatcher/instance/kabam.rotmg.messaging.impl:JitterWatcher/onEnterFrame"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 5
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.messaging.impl:JitterWatcher"), "text_")
+      getlex              QName(PrivateNamespace("kabam.rotmg.messaging.impl:JitterWatcher"), "lineBuilder")
+      pushstring          "JitterWatcher.desc"
+      pushstring          "jitter"
+      getlocal0
+      callproperty        QName(PrivateNamespace("kabam.rotmg.messaging.impl:JitterWatcher"), "jitter"), 0
+      newobject           1
+      callproperty        QName(PackageNamespace(""), "setParams"), 2
+      callpropvoid        QName(PackageNamespace(""), "setStringBuilder"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.messaging.impl:JitterWatcher"), "jitter")
+   method
+    name "jitter"
+    refid "kabam.rotmg.messaging.impl:JitterWatcher/instance/kabam.rotmg.messaging.impl:JitterWatcher/jitter"
+    returns QName(PackageNamespace(""), "Number")
+    body
+     maxstack 4
+     localcount 7
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.messaging.impl:JitterWatcher"), "ticks_")
+      getproperty         QName(PackageNamespace(""), "length")
+      convert_i
+      setlocal3
+
+      getlocal3
+      pushbyte            0
+      ifne                L12
+
+      pushbyte            0
+      returnvalue
+
+L12:
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.messaging.impl:JitterWatcher"), "sum_")
+      getlocal3
+      divide
+      convert_d
+      setlocal1
+
+      pushdouble          0
+      setlocal            4
+
+      pushbyte            0
+      setlocal            6
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.messaging.impl:JitterWatcher"), "ticks_")
+      setlocal            5
+
+      jump                L43
+
+L26:
+      label
+      getlocal            5
+      getlocal            6
+      nextvalue
+      convert_i
+      setlocal2
+
+      getlocal            4
+      getlocal2
+      getlocal1
+      subtract
+      getlocal2
+      getlocal1
+      subtract
+      multiply
+      add
+      convert_d
+      setlocal            4
+
+L43:
+      hasnext2            5, 6
+      iftrue              L26
+
+      getlex              QName(PackageNamespace(""), "Math")
+      getlocal            4
+      getlocal3
+      divide
+      callproperty        QName(PackageNamespace(""), "sqrt"), 1
+      pushbyte            10
+      multiply
+      convert_i
+      pushbyte            10
+      divide
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.messaging.impl:JitterWatcher/class/init"
+  body
+   maxstack 2
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 1
+   code
+    getlocal0
+    pushscope
+
+    findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder")
+    constructprop       QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder"), 0
+    findproperty        QName(PrivateNamespace("kabam.rotmg.messaging.impl:JitterWatcher"), "lineBuilder")
+    swap
+    initproperty        QName(PrivateNamespace("kabam.rotmg.messaging.impl:JitterWatcher"), "lineBuilder")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PrivateNamespace("kabam.rotmg.messaging.impl:JitterWatcher"), "lineBuilder") type QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder") end
+end ; class

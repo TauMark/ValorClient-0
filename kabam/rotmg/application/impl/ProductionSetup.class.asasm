@@ -1,0 +1,141 @@
+class
+ refid "kabam.rotmg.application.impl:ProductionSetup"
+ instance QName(PackageNamespace("kabam.rotmg.application.impl"), "ProductionSetup")
+  extends QName(PackageNamespace(""), "Object")
+  implements QName(PackageNamespace("kabam.rotmg.application.api"), "ApplicationSetup")
+  flag SEALED
+  iinit
+   name "ProductionSetup"
+   refid "kabam.rotmg.application.impl:ProductionSetup/instance/init"
+   body
+    maxstack 4
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     pushstring          "HTTP"
+     pushstring          "http"
+     pushstring          "HTTPS"
+     pushstring          "https"
+     newobject           2
+     findproperty        QName(PrivateNamespace("kabam.rotmg.application.impl:ProductionSetup"), "HOST_PROTOCOLS")
+     swap
+     setproperty         QName(PrivateNamespace("kabam.rotmg.application.impl:ProductionSetup"), "HOST_PROTOCOLS")
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait const QName(PrivateNamespace("kabam.rotmg.application.impl:ProductionSetup"), "HOST_DOMAIN") type QName(PackageNamespace(""), "String") value Utf8("valor-prod.realmdex.com") end
+  trait const QName(PrivateNamespace("kabam.rotmg.application.impl:ProductionSetup"), "BUILD_LABEL") type QName(PackageNamespace(""), "String") value Utf8("<font color='#FFA500'>Valor v{VERSION}.{MINOR}</font>") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.application.impl:ProductionSetup"), "HOST_PROTOCOLS") type QName(PackageNamespace(""), "Object") end
+  trait getter QName(PackageNamespace(""), "getDomain")
+   method
+    name "getDomain"
+    refid "kabam.rotmg.application.impl:ProductionSetup/instance/getDomain/getter"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushstring          "valor-prod.realmdex.com"
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getAppEngineUrl")
+   method
+    name "getAppEngineUrl"
+    refid "kabam.rotmg.application.impl:ProductionSetup/instance/getAppEngineUrl"
+    param QName(PackageNamespace(""), "Boolean")
+    returns QName(PackageNamespace(""), "String")
+    flag HAS_OPTIONAL
+    flag HAS_PARAM_NAMES
+    optional True()
+    paramname "enableSsl"
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      iffalse             L8
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.application.impl:ProductionSetup"), "HOST_PROTOCOLS")
+      getproperty         Multiname("HTTPS", [PrivateNamespace("kabam.rotmg.application.impl:ProductionSetup"), ProtectedNamespace("kabam.rotmg.application.impl:ProductionSetup"), StaticProtectedNs("kabam.rotmg.application.impl:ProductionSetup"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.application.impl"), PackageInternalNs("kabam.rotmg.application.impl"), PrivateNamespace("FilePrivateNS:ProductionSetup"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      jump                L11
+
+L8:
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.application.impl:ProductionSetup"), "HOST_PROTOCOLS")
+      getproperty         Multiname("HTTP", [PrivateNamespace("kabam.rotmg.application.impl:ProductionSetup"), ProtectedNamespace("kabam.rotmg.application.impl:ProductionSetup"), StaticProtectedNs("kabam.rotmg.application.impl:ProductionSetup"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.application.impl"), PackageInternalNs("kabam.rotmg.application.impl"), PrivateNamespace("FilePrivateNS:ProductionSetup"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+L11:
+      coerce_s
+      setlocal2
+
+      getlex              QName(PackageNamespace("kabam.rotmg.application"), "DynamicSettings")
+      getlocal2
+      pushstring          "valor-prod.realmdex.com"
+      callproperty        QName(PackageNamespace(""), "buildURIDNS"), 2
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getBuildLabel")
+   method
+    name "getBuildLabel"
+    refid "kabam.rotmg.application.impl:ProductionSetup/instance/getBuildLabel"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushstring          "<font color='#FFA500'>Valor v{VERSION}.{MINOR}</font>"
+      pushstring          "{VERSION}"
+      pushstring          "4"
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "replace"), 2
+      pushstring          "{MINOR}"
+      pushstring          "3.1"
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "replace"), 2
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.application.impl:ProductionSetup/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

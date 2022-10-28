@@ -1,0 +1,181 @@
+class
+ refid "com.company.assembleegameclient.account.ui.Unboxing:UnboxResultBox"
+ instance QName(PackageNamespace("com.company.assembleegameclient.account.ui.Unboxing"), "UnboxResultBox")
+  extends QName(PackageNamespace("com.company.assembleegameclient.account.ui"), "FrameuBox")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.company.assembleegameclient.account.ui.Unboxing:UnboxResultBox")
+  iinit
+   name "UnboxResultBox"
+   refid "com.company.assembleegameclient.account.ui.Unboxing:UnboxResultBox/instance/init"
+   param QName(PackageNamespace("com.company.assembleegameclient.game"), "AGameSprite")
+   param TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace(""), "int")>)
+   flag HAS_PARAM_NAMES
+   paramname "_gs"
+   paramname "_items"
+   body
+    maxstack 5
+    localcount 3
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     findpropstrict      QName(PackageNamespace("org.osflash.signals"), "Signal")
+     constructprop       QName(PackageNamespace("org.osflash.signals"), "Signal"), 0
+     findproperty        QName(PackageNamespace(""), "cancel")
+     swap
+     initproperty        QName(PackageNamespace(""), "cancel")
+
+     findpropstrict      QName(PackageNamespace("org.osflash.signals"), "Signal")
+     constructprop       QName(PackageNamespace("org.osflash.signals"), "Signal"), 0
+     findproperty        QName(PackageNamespace(""), "completed")
+     swap
+     initproperty        QName(PackageNamespace(""), "completed")
+
+     findpropstrict      QName(PackageNamespace("org.osflash.signals"), "Signal")
+     constructprop       QName(PackageNamespace("org.osflash.signals"), "Signal"), 0
+     findproperty        QName(PackageNamespace(""), "hideInventory")
+     swap
+     initproperty        QName(PackageNamespace(""), "hideInventory")
+
+     getlocal0
+     pushstring          "Unboxing..."
+     pushstring          ""
+     pushshort           300
+     constructsuper      3
+
+     getlocal0
+     getlocal1
+     setproperty         QName(PackageNamespace(""), "gameSprite")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.account.ui.Unboxing"), "UnboxScroll")
+     pushshort           444
+     getlex              QName(PackageNamespace(""), "Math")
+     callproperty        QName(PackageNamespace(""), "random"), 0
+     pushbyte            8
+     multiply
+     add
+     getlocal2
+     constructprop       QName(PackageNamespace("com.company.assembleegameclient.account.ui.Unboxing"), "UnboxScroll"), 2
+     setproperty         QName(PackageNamespace(""), "unboxScroll_")
+
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "unboxScroll_")
+     getlocal0
+     getproperty         QName(ProtectedNamespace("com.company.assembleegameclient.account.ui:FrameuBox"), "w_")
+     pushbyte            2
+     divide
+     pushshort           250
+     pushbyte            2
+     divide
+     subtract
+     pushbyte            4
+     subtract
+     setproperty         QName(PackageNamespace(""), "x")
+
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "unboxScroll_")
+     getlocal0
+     getproperty         QName(ProtectedNamespace("com.company.assembleegameclient.account.ui:FrameuBox"), "h_")
+     pushbyte            66
+     subtract
+     setproperty         QName(PackageNamespace(""), "y")
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "unboxScroll_")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     getlocal0
+     pushbyte            85
+     callpropvoid        QName(PackageNamespace(""), "offsetH"), 1
+
+     findpropstrict      QName(PackageNamespace(""), "addEventListener")
+     pushstring          "enterFrame"
+     getlex              QName(PrivateNamespace("com.company.assembleegameclient.account.ui.Unboxing:UnboxResultBox"), "hideInventory_")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "unboxScroll_")
+     pushstring          "complete"
+     getlex              QName(PrivateNamespace("com.company.assembleegameclient.account.ui.Unboxing:UnboxResultBox"), "onComplete")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait const QName(PackageNamespace(""), "cancel") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait const QName(PackageNamespace(""), "completed") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait const QName(PackageNamespace(""), "hideInventory") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait slot QName(PackageNamespace(""), "gameSprite") type QName(PackageNamespace("com.company.assembleegameclient.game"), "AGameSprite") end
+  trait slot QName(PackageNamespace(""), "unboxScroll_") type QName(PackageNamespace("com.company.assembleegameclient.account.ui.Unboxing"), "UnboxScroll") end
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.account.ui.Unboxing:UnboxResultBox"), "onComplete")
+   method
+    name "onComplete"
+    refid "com.company.assembleegameclient.account.ui.Unboxing:UnboxResultBox/instance/com.company.assembleegameclient.account.ui.Unboxing:UnboxResultBox/instance/init/onComplete"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "event"
+    body
+     maxstack 1
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "completed")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.account.ui.Unboxing:UnboxResultBox"), "hideInventory_")
+   method
+    name "hideInventory_"
+    refid "com.company.assembleegameclient.account.ui.Unboxing:UnboxResultBox/instance/com.company.assembleegameclient.account.ui.Unboxing:UnboxResultBox/instance/init/hideInventory_"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "event"
+    body
+     maxstack 1
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hideInventory")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.account.ui.Unboxing:UnboxResultBox/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

@@ -1,0 +1,496 @@
+class
+ refid "io.decagames.rotmg.ui.scroll:UIScrollbar"
+ instance QName(PackageNamespace("io.decagames.rotmg.ui.scroll"), "UIScrollbar")
+  extends QName(PackageNamespace("flash.display"), "Sprite")
+  flag SEALED
+  iinit
+   name "UIScrollbar"
+   refid "io.decagames.rotmg.ui.scroll:UIScrollbar/instance/init"
+   param QName(PackageNamespace(""), "int")
+   flag HAS_PARAM_NAMES
+   paramname "param1"
+   body
+    maxstack 5
+    localcount 2
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     getlocal1
+     setproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.scroll:UIScrollbar"), "contentHeight")
+
+     getlocal0
+     getlex              QName(PackageNamespace("io.decagames.rotmg.ui.texture"), "TextureParser")
+     getproperty         QName(PackageNamespace(""), "instance")
+     pushstring          "UI"
+     pushstring          "scrollbar_background"
+     pushbyte            17
+     callproperty        QName(PackageNamespace(""), "getSliceScalingBitmap"), 3
+     setproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.scroll:UIScrollbar"), "background")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.scroll:UIScrollbar"), "background")
+     getlocal1
+     setproperty         QName(PackageNamespace(""), "height")
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.scroll:UIScrollbar"), "background")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("flash.display"), "Sprite")
+     constructprop       QName(PackageNamespace("flash.display"), "Sprite"), 0
+     setproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.scroll:UIScrollbar"), "_slider")
+
+     getlocal0
+     getlex              QName(PackageNamespace("io.decagames.rotmg.ui.texture"), "TextureParser")
+     getproperty         QName(PackageNamespace(""), "instance")
+     pushstring          "UI"
+     pushstring          "scrollbar_slider"
+     callproperty        QName(PackageNamespace(""), "getSliceScalingBitmap"), 2
+     setproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.scroll:UIScrollbar"), "sliderAsset")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.scroll:UIScrollbar"), "sliderAsset")
+     pushbyte            10
+     setproperty         QName(PackageNamespace(""), "height")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.scroll:UIScrollbar"), "_slider")
+     getlocal0
+     getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.scroll:UIScrollbar"), "sliderAsset")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.scroll:UIScrollbar"), "_slider")
+     pushbyte            1
+     setproperty         QName(PackageNamespace(""), "x")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.scroll:UIScrollbar"), "_slider")
+     pushbyte            1
+     setproperty         QName(PackageNamespace(""), "y")
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.scroll:UIScrollbar"), "_slider")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace("io.decagames.rotmg.ui.scroll:UIScrollbar"), "_slider") type QName(PackageNamespace("flash.display"), "Sprite") end
+  trait slot QName(PrivateNamespace("io.decagames.rotmg.ui.scroll:UIScrollbar"), "background") type QName(PackageNamespace("io.decagames.rotmg.ui.sliceScaling"), "SliceScalingBitmap") end
+  trait slot QName(PrivateNamespace("io.decagames.rotmg.ui.scroll:UIScrollbar"), "sliderAsset") type QName(PackageNamespace("io.decagames.rotmg.ui.sliceScaling"), "SliceScalingBitmap") end
+  trait slot QName(PrivateNamespace("io.decagames.rotmg.ui.scroll:UIScrollbar"), "_content") type QName(PackageNamespace("flash.display"), "DisplayObject") end
+  trait slot QName(PrivateNamespace("io.decagames.rotmg.ui.scroll:UIScrollbar"), "_scrollObject") type QName(PackageNamespace("flash.display"), "DisplayObject") end
+  trait slot QName(PrivateNamespace("io.decagames.rotmg.ui.scroll:UIScrollbar"), "contentHeight") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PrivateNamespace("io.decagames.rotmg.ui.scroll:UIScrollbar"), "percent") type QName(PackageNamespace(""), "Number") end
+  trait slot QName(PrivateNamespace("io.decagames.rotmg.ui.scroll:UIScrollbar"), "initalPosition") type QName(PackageNamespace(""), "int") value Integer(0) end
+  trait slot QName(PrivateNamespace("io.decagames.rotmg.ui.scroll:UIScrollbar"), "_mouseRollSpeedFactor") type QName(PackageNamespace(""), "Number") value Double(1.3) end
+  trait setter QName(PackageNamespace(""), "content")
+   method
+    name "content"
+    refid "io.decagames.rotmg.ui.scroll:UIScrollbar/instance/content/setter"
+    param QName(PackageNamespace("flash.display"), "DisplayObject")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "param1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      setproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.scroll:UIScrollbar"), "_content")
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.scroll:UIScrollbar"), "_content")
+      getproperty         QName(PackageNamespace(""), "y")
+      setproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.scroll:UIScrollbar"), "initalPosition")
+
+      getlocal0
+      callpropvoid        QName(PackageNamespace(""), "update"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "update")
+   method
+    name "update"
+    refid "io.decagames.rotmg.ui.scroll:UIScrollbar/instance/update"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushbyte            0
+      setlocal1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.scroll:UIScrollbar"), "_content")
+      getproperty         QName(PackageNamespace(""), "height")
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.scroll:UIScrollbar"), "contentHeight")
+      ifnle               L20
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.scroll:UIScrollbar"), "sliderAsset")
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.scroll:UIScrollbar"), "contentHeight")
+      setproperty         QName(PackageNamespace(""), "height")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.scroll:UIScrollbar"), "_slider")
+      pushbyte            1
+      setproperty         QName(PackageNamespace(""), "y")
+
+      jump                L51
+
+L20:
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.scroll:UIScrollbar"), "_content")
+      getproperty         QName(PackageNamespace(""), "height")
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.scroll:UIScrollbar"), "contentHeight")
+      subtract
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.scroll:UIScrollbar"), "contentHeight")
+      divide
+      setproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.scroll:UIScrollbar"), "percent")
+
+      pushbyte            1
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.scroll:UIScrollbar"), "percent")
+      pushdouble          0.5
+      multiply
+      subtract
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.scroll:UIScrollbar"), "contentHeight")
+      multiply
+      convert_i
+      setlocal1
+
+      getlocal1
+      pushbyte            39
+      ifnlt               L47
+
+      pushbyte            39
+      setlocal1
+
+L47:
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.scroll:UIScrollbar"), "sliderAsset")
+      getlocal1
+      setproperty         QName(PackageNamespace(""), "height")
+
+L51:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "updatePosition")
+   method
+    name "updatePosition"
+    refid "io.decagames.rotmg.ui.scroll:UIScrollbar/instance/updatePosition"
+    param QName(PackageNamespace(""), "Number")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "param1"
+    body
+     maxstack 5
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.scroll:UIScrollbar"), "_slider")
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.scroll:UIScrollbar"), "_slider")
+      getproperty         QName(PackageNamespace(""), "y")
+      getlex              QName(PackageNamespace(""), "Math")
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "round"), 1
+      add
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.scroll:UIScrollbar"), "_slider")
+      getproperty         QName(PackageNamespace(""), "y")
+      pushbyte            0
+      ifnlt               L21
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.scroll:UIScrollbar"), "_slider")
+      pushbyte            0
+      setproperty         QName(PackageNamespace(""), "y")
+
+L21:
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.scroll:UIScrollbar"), "contentHeight")
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.scroll:UIScrollbar"), "_slider")
+      getproperty         QName(PackageNamespace(""), "height")
+      subtract
+      convert_i
+      setlocal2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.scroll:UIScrollbar"), "_slider")
+      getproperty         QName(PackageNamespace(""), "y")
+      getlocal2
+      ifngt               L38
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.scroll:UIScrollbar"), "_slider")
+      getlocal2
+      setproperty         QName(PackageNamespace(""), "y")
+
+L38:
+      getlocal2
+      pushbyte            0
+      ifngt               L62
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.scroll:UIScrollbar"), "_content")
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.scroll:UIScrollbar"), "initalPosition")
+      getlex              QName(PackageNamespace(""), "Math")
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.scroll:UIScrollbar"), "_content")
+      getproperty         QName(PackageNamespace(""), "height")
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.scroll:UIScrollbar"), "contentHeight")
+      subtract
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.scroll:UIScrollbar"), "_slider")
+      getproperty         QName(PackageNamespace(""), "y")
+      multiply
+      getlocal2
+      divide
+      callproperty        QName(PackageNamespace(""), "round"), 1
+      negate
+      add
+      setproperty         QName(PackageNamespace(""), "y")
+
+L62:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait getter QName(PackageNamespace(""), "content")
+   method
+    name "content"
+    refid "io.decagames.rotmg.ui.scroll:UIScrollbar/instance/content/getter"
+    returns QName(PackageNamespace("flash.display"), "DisplayObject")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.scroll:UIScrollbar"), "_content")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait getter QName(PackageNamespace(""), "slider")
+   method
+    name "slider"
+    refid "io.decagames.rotmg.ui.scroll:UIScrollbar/instance/slider/getter"
+    returns QName(PackageNamespace("flash.display"), "Sprite")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.scroll:UIScrollbar"), "_slider")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait getter QName(PackageNamespace(""), "scrollObject")
+   method
+    name "scrollObject"
+    refid "io.decagames.rotmg.ui.scroll:UIScrollbar/instance/scrollObject/getter"
+    returns QName(PackageNamespace("flash.display"), "DisplayObject")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.scroll:UIScrollbar"), "_scrollObject")
+      iffalse             L8
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.scroll:UIScrollbar"), "_scrollObject")
+      returnvalue
+
+L8:
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.scroll:UIScrollbar"), "_content")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait setter QName(PackageNamespace(""), "scrollObject")
+   method
+    name "scrollObject"
+    refid "io.decagames.rotmg.ui.scroll:UIScrollbar/instance/scrollObject/setter"
+    param QName(PackageNamespace("flash.display"), "DisplayObject")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "param1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      setproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.scroll:UIScrollbar"), "_scrollObject")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "dispose")
+   method
+    name "dispose"
+    refid "io.decagames.rotmg.ui.scroll:UIScrollbar/instance/dispose"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.scroll:UIScrollbar"), "background")
+      callpropvoid        QName(PackageNamespace(""), "dispose"), 0
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.scroll:UIScrollbar"), "sliderAsset")
+      callpropvoid        QName(PackageNamespace(""), "dispose"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait getter QName(PackageNamespace(""), "mouseRollSpeedFactor")
+   method
+    name "mouseRollSpeedFactor"
+    refid "io.decagames.rotmg.ui.scroll:UIScrollbar/instance/mouseRollSpeedFactor/getter"
+    returns QName(PackageNamespace(""), "Number")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.scroll:UIScrollbar"), "_mouseRollSpeedFactor")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait setter QName(PackageNamespace(""), "mouseRollSpeedFactor")
+   method
+    name "mouseRollSpeedFactor"
+    refid "io.decagames.rotmg.ui.scroll:UIScrollbar/instance/mouseRollSpeedFactor/setter"
+    param QName(PackageNamespace(""), "Number")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "param1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      setproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.scroll:UIScrollbar"), "_mouseRollSpeedFactor")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "io.decagames.rotmg.ui.scroll:UIScrollbar/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PackageNamespace(""), "SCROLL_SLIDER_MINIMUM_HEIGHT") type QName(PackageNamespace(""), "int") value Integer(39) end
+ trait const QName(PackageNamespace(""), "SCROLL_SLIDER_WIDTH") type QName(PackageNamespace(""), "int") value Integer(17) end
+ trait const QName(PackageNamespace(""), "SCROLL_SLIDER_SCALE_FACTOR") type QName(PackageNamespace(""), "Number") value Double(0.5) end
+end ; class

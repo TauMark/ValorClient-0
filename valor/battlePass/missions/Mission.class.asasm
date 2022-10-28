@@ -1,0 +1,380 @@
+class
+ refid "valor.battlePass.missions:Mission"
+ instance QName(PackageNamespace("valor.battlePass.missions"), "Mission")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  iinit
+   name "Mission"
+   refid "valor.battlePass.missions:Mission/instance/init"
+   param QName(PackageNamespace(""), "String")
+   flag HAS_OPTIONAL
+   flag HAS_PARAM_NAMES
+   optional Null()
+   paramname "data"
+   body
+    maxstack 2
+    localcount 3
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal1
+     pushnull
+     ifne                L8
+
+     returnvoid
+
+L8:
+     getlocal0
+     getlocal1
+     setproperty         QName(PackageNamespace(""), "str")
+
+     getlex              QName(PackageNamespace("com.adobe.serialization.json"), "JSON")
+     getlocal1
+     callproperty        QName(PackageNamespace(""), "decode"), 1
+     coerce              QName(PackageNamespace(""), "Object")
+     setlocal2
+
+     getlocal2
+     pushnull
+     ifne                L20
+
+     returnvoid
+
+L20:
+     findpropstrict      QName(PackageNamespace(""), "setValues")
+     getlocal2
+     callpropvoid        QName(PackageNamespace(""), "setValues"), 1
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "missionId") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PackageNamespace(""), "amount") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PackageNamespace(""), "endTime") type QName(PackageNamespace(""), "uint") end
+  trait slot QName(PackageNamespace(""), "str") type QName(PackageNamespace(""), "String") end
+  trait method QName(PackageNamespace(""), "setValues")
+   method
+    name "setValues"
+    refid "valor.battlePass.missions:Mission/instance/setValues"
+    param QName(PackageNamespace(""), "Object")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "obj"
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      pushstring          "id"
+      getproperty         MultinameL([PrivateNamespace("valor.battlePass.missions:Mission"), ProtectedNamespace("valor.battlePass.missions:Mission"), StaticProtectedNs("valor.battlePass.missions:Mission"), StaticProtectedNs("Object"), PackageNamespace("valor.battlePass.missions"), PackageInternalNs("valor.battlePass.missions"), PrivateNamespace("FilePrivateNS:Mission"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      pushundefined
+      ifeq                L12
+
+      getlocal1
+      pushstring          "id"
+      getproperty         MultinameL([PrivateNamespace("valor.battlePass.missions:Mission"), ProtectedNamespace("valor.battlePass.missions:Mission"), StaticProtectedNs("valor.battlePass.missions:Mission"), StaticProtectedNs("Object"), PackageNamespace("valor.battlePass.missions"), PackageInternalNs("valor.battlePass.missions"), PrivateNamespace("FilePrivateNS:Mission"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      jump                L14
+
+L12:
+      pushbyte            0
+      coerce_a
+L14:
+      setproperty         QName(PackageNamespace(""), "missionId")
+
+      getlocal0
+      getlocal1
+      pushstring          "amount"
+      getproperty         MultinameL([PrivateNamespace("valor.battlePass.missions:Mission"), ProtectedNamespace("valor.battlePass.missions:Mission"), StaticProtectedNs("valor.battlePass.missions:Mission"), StaticProtectedNs("Object"), PackageNamespace("valor.battlePass.missions"), PackageInternalNs("valor.battlePass.missions"), PrivateNamespace("FilePrivateNS:Mission"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      pushundefined
+      ifeq                L25
+
+      getlocal1
+      pushstring          "amount"
+      getproperty         MultinameL([PrivateNamespace("valor.battlePass.missions:Mission"), ProtectedNamespace("valor.battlePass.missions:Mission"), StaticProtectedNs("valor.battlePass.missions:Mission"), StaticProtectedNs("Object"), PackageNamespace("valor.battlePass.missions"), PackageInternalNs("valor.battlePass.missions"), PrivateNamespace("FilePrivateNS:Mission"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      jump                L27
+
+L25:
+      pushbyte            0
+      coerce_a
+L27:
+      setproperty         QName(PackageNamespace(""), "amount")
+
+      getlocal0
+      getlocal1
+      pushstring          "endTime"
+      getproperty         MultinameL([PrivateNamespace("valor.battlePass.missions:Mission"), ProtectedNamespace("valor.battlePass.missions:Mission"), StaticProtectedNs("valor.battlePass.missions:Mission"), StaticProtectedNs("Object"), PackageNamespace("valor.battlePass.missions"), PackageInternalNs("valor.battlePass.missions"), PrivateNamespace("FilePrivateNS:Mission"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      pushundefined
+      ifeq                L38
+
+      getlocal1
+      pushstring          "endTime"
+      getproperty         MultinameL([PrivateNamespace("valor.battlePass.missions:Mission"), ProtectedNamespace("valor.battlePass.missions:Mission"), StaticProtectedNs("valor.battlePass.missions:Mission"), StaticProtectedNs("Object"), PackageNamespace("valor.battlePass.missions"), PackageInternalNs("valor.battlePass.missions"), PrivateNamespace("FilePrivateNS:Mission"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      jump                L41
+
+L38:
+      getlex              QName(PackageNamespace("valor.battlePass"), "BattlePassModel")
+      getproperty         QName(PackageNamespace(""), "endTime")
+      coerce_a
+L41:
+      setproperty         QName(PackageNamespace(""), "endTime")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getMissionName")
+   method
+    name "getMissionName"
+    refid "valor.battlePass.missions:Mission/instance/getMissionName"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace("valor.battlePass"), "BattlePassModel")
+      getproperty         QName(PackageNamespace(""), "missionsData")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "missionId")
+      getproperty         MultinameL([PrivateNamespace("valor.battlePass.missions:Mission"), ProtectedNamespace("valor.battlePass.missions:Mission"), StaticProtectedNs("valor.battlePass.missions:Mission"), StaticProtectedNs("Object"), PackageNamespace("valor.battlePass.missions"), PackageInternalNs("valor.battlePass.missions"), PrivateNamespace("FilePrivateNS:Mission"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      iffalse             L15
+
+      getlex              QName(PackageNamespace("valor.battlePass"), "BattlePassModel")
+      getproperty         QName(PackageNamespace(""), "missionsData")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "missionId")
+      getproperty         MultinameL([PrivateNamespace("valor.battlePass.missions:Mission"), ProtectedNamespace("valor.battlePass.missions:Mission"), StaticProtectedNs("valor.battlePass.missions:Mission"), StaticProtectedNs("Object"), PackageNamespace("valor.battlePass.missions"), PackageInternalNs("valor.battlePass.missions"), PrivateNamespace("FilePrivateNS:Mission"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getproperty         Multiname("name", [PrivateNamespace("valor.battlePass.missions:Mission"), ProtectedNamespace("valor.battlePass.missions:Mission"), StaticProtectedNs("valor.battlePass.missions:Mission"), StaticProtectedNs("Object"), PackageNamespace("valor.battlePass.missions"), PackageInternalNs("valor.battlePass.missions"), PrivateNamespace("FilePrivateNS:Mission"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      jump                L17
+
+L15:
+      pushstring          ""
+      coerce_a
+L17:
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getMissionDescription")
+   method
+    name "getMissionDescription"
+    refid "valor.battlePass.missions:Mission/instance/getMissionDescription"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace("valor.battlePass"), "BattlePassModel")
+      getproperty         QName(PackageNamespace(""), "missionsData")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "missionId")
+      getproperty         MultinameL([PrivateNamespace("valor.battlePass.missions:Mission"), ProtectedNamespace("valor.battlePass.missions:Mission"), StaticProtectedNs("valor.battlePass.missions:Mission"), StaticProtectedNs("Object"), PackageNamespace("valor.battlePass.missions"), PackageInternalNs("valor.battlePass.missions"), PrivateNamespace("FilePrivateNS:Mission"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      iffalse             L15
+
+      getlex              QName(PackageNamespace("valor.battlePass"), "BattlePassModel")
+      getproperty         QName(PackageNamespace(""), "missionsData")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "missionId")
+      getproperty         MultinameL([PrivateNamespace("valor.battlePass.missions:Mission"), ProtectedNamespace("valor.battlePass.missions:Mission"), StaticProtectedNs("valor.battlePass.missions:Mission"), StaticProtectedNs("Object"), PackageNamespace("valor.battlePass.missions"), PackageInternalNs("valor.battlePass.missions"), PrivateNamespace("FilePrivateNS:Mission"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getproperty         Multiname("description", [PrivateNamespace("valor.battlePass.missions:Mission"), ProtectedNamespace("valor.battlePass.missions:Mission"), StaticProtectedNs("valor.battlePass.missions:Mission"), StaticProtectedNs("Object"), PackageNamespace("valor.battlePass.missions"), PackageInternalNs("valor.battlePass.missions"), PrivateNamespace("FilePrivateNS:Mission"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      jump                L17
+
+L15:
+      pushstring          ""
+      coerce_a
+L17:
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getExperience")
+   method
+    name "getExperience"
+    refid "valor.battlePass.missions:Mission/instance/getExperience"
+    returns QName(PackageNamespace(""), "int")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace("valor.battlePass"), "BattlePassModel")
+      getproperty         QName(PackageNamespace(""), "missionsData")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "missionId")
+      getproperty         MultinameL([PrivateNamespace("valor.battlePass.missions:Mission"), ProtectedNamespace("valor.battlePass.missions:Mission"), StaticProtectedNs("valor.battlePass.missions:Mission"), StaticProtectedNs("Object"), PackageNamespace("valor.battlePass.missions"), PackageInternalNs("valor.battlePass.missions"), PrivateNamespace("FilePrivateNS:Mission"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      iffalse             L15
+
+      getlex              QName(PackageNamespace("valor.battlePass"), "BattlePassModel")
+      getproperty         QName(PackageNamespace(""), "missionsData")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "missionId")
+      getproperty         MultinameL([PrivateNamespace("valor.battlePass.missions:Mission"), ProtectedNamespace("valor.battlePass.missions:Mission"), StaticProtectedNs("valor.battlePass.missions:Mission"), StaticProtectedNs("Object"), PackageNamespace("valor.battlePass.missions"), PackageInternalNs("valor.battlePass.missions"), PrivateNamespace("FilePrivateNS:Mission"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getproperty         Multiname("experience", [PrivateNamespace("valor.battlePass.missions:Mission"), ProtectedNamespace("valor.battlePass.missions:Mission"), StaticProtectedNs("valor.battlePass.missions:Mission"), StaticProtectedNs("Object"), PackageNamespace("valor.battlePass.missions"), PackageInternalNs("valor.battlePass.missions"), PrivateNamespace("FilePrivateNS:Mission"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      jump                L17
+
+L15:
+      pushbyte            0
+      coerce_a
+L17:
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getMax")
+   method
+    name "getMax"
+    refid "valor.battlePass.missions:Mission/instance/getMax"
+    returns QName(PackageNamespace(""), "int")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace("valor.battlePass"), "BattlePassModel")
+      getproperty         QName(PackageNamespace(""), "missionsData")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "missionId")
+      getproperty         MultinameL([PrivateNamespace("valor.battlePass.missions:Mission"), ProtectedNamespace("valor.battlePass.missions:Mission"), StaticProtectedNs("valor.battlePass.missions:Mission"), StaticProtectedNs("Object"), PackageNamespace("valor.battlePass.missions"), PackageInternalNs("valor.battlePass.missions"), PrivateNamespace("FilePrivateNS:Mission"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      iffalse             L15
+
+      getlex              QName(PackageNamespace("valor.battlePass"), "BattlePassModel")
+      getproperty         QName(PackageNamespace(""), "missionsData")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "missionId")
+      getproperty         MultinameL([PrivateNamespace("valor.battlePass.missions:Mission"), ProtectedNamespace("valor.battlePass.missions:Mission"), StaticProtectedNs("valor.battlePass.missions:Mission"), StaticProtectedNs("Object"), PackageNamespace("valor.battlePass.missions"), PackageInternalNs("valor.battlePass.missions"), PrivateNamespace("FilePrivateNS:Mission"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getproperty         Multiname("max", [PrivateNamespace("valor.battlePass.missions:Mission"), ProtectedNamespace("valor.battlePass.missions:Mission"), StaticProtectedNs("valor.battlePass.missions:Mission"), StaticProtectedNs("Object"), PackageNamespace("valor.battlePass.missions"), PackageInternalNs("valor.battlePass.missions"), PrivateNamespace("FilePrivateNS:Mission"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      jump                L17
+
+L15:
+      pushbyte            0
+      coerce_a
+L17:
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getDuration")
+   method
+    name "getDuration"
+    refid "valor.battlePass.missions:Mission/instance/getDuration"
+    returns QName(PackageNamespace(""), "int")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace("valor.battlePass"), "BattlePassModel")
+      getproperty         QName(PackageNamespace(""), "missionsData")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "missionId")
+      getproperty         MultinameL([PrivateNamespace("valor.battlePass.missions:Mission"), ProtectedNamespace("valor.battlePass.missions:Mission"), StaticProtectedNs("valor.battlePass.missions:Mission"), StaticProtectedNs("Object"), PackageNamespace("valor.battlePass.missions"), PackageInternalNs("valor.battlePass.missions"), PrivateNamespace("FilePrivateNS:Mission"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      iffalse             L15
+
+      getlex              QName(PackageNamespace("valor.battlePass"), "BattlePassModel")
+      getproperty         QName(PackageNamespace(""), "missionsData")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "missionId")
+      getproperty         MultinameL([PrivateNamespace("valor.battlePass.missions:Mission"), ProtectedNamespace("valor.battlePass.missions:Mission"), StaticProtectedNs("valor.battlePass.missions:Mission"), StaticProtectedNs("Object"), PackageNamespace("valor.battlePass.missions"), PackageInternalNs("valor.battlePass.missions"), PrivateNamespace("FilePrivateNS:Mission"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getproperty         Multiname("duration", [PrivateNamespace("valor.battlePass.missions:Mission"), ProtectedNamespace("valor.battlePass.missions:Mission"), StaticProtectedNs("valor.battlePass.missions:Mission"), StaticProtectedNs("Object"), PackageNamespace("valor.battlePass.missions"), PackageInternalNs("valor.battlePass.missions"), PrivateNamespace("FilePrivateNS:Mission"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      jump                L17
+
+L15:
+      pushbyte            0
+      coerce_a
+L17:
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getTimeLeft")
+   method
+    name "getTimeLeft"
+    refid "valor.battlePass.missions:Mission/instance/getTimeLeft"
+    returns QName(PackageNamespace(""), "int")
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace(""), "Date")
+      constructprop       QName(PackageNamespace(""), "Date"), 0
+      coerce              QName(PackageNamespace(""), "Date")
+      setlocal2
+
+      getlocal2
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "getTime"), 0
+      pushshort           1000
+      divide
+      convert_u
+      setlocal1
+
+      getlex              QName(PackageNamespace(""), "Math")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "endTime")
+      getlocal1
+      subtract
+      pushbyte            0
+      callproperty        QName(PackageNamespace(""), "max"), 2
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "valor.battlePass.missions:Mission/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

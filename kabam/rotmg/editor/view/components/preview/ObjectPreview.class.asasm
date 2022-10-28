@@ -1,0 +1,89 @@
+class
+ refid "kabam.rotmg.editor.view.components.preview:ObjectPreview"
+ instance QName(PackageNamespace("kabam.rotmg.editor.view.components.preview"), "ObjectPreview")
+  extends QName(PackageNamespace("kabam.rotmg.editor.view.components.preview"), "Preview")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.editor.view.components.preview:ObjectPreview")
+  iinit
+   name "ObjectPreview"
+   refid "kabam.rotmg.editor.view.components.preview:ObjectPreview/instance/init"
+   param QName(PackageNamespace(""), "int")
+   param QName(PackageNamespace(""), "int")
+   flag HAS_PARAM_NAMES
+   paramname "_arg_1"
+   paramname "_arg_2"
+   body
+    maxstack 3
+    localcount 3
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     getlocal1
+     getlocal2
+     constructsuper      2
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait method QName(PackageNamespace(""), "redraw") flag OVERRIDE
+   method
+    name "redraw"
+    refid "kabam.rotmg.editor.view.components.preview:ObjectPreview/instance/redraw"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 6
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      callsupervoid       QName(PackageNamespace(""), "redraw"), 0
+      getlex              QName(ProtectedNamespace("kabam.rotmg.editor.view.components.preview:Preview"), "origBitmapData_")
+      pushnull
+      ifne                L8
+
+      returnvoid
+
+L8:
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "TextureRedrawer")
+      getlex              QName(ProtectedNamespace("kabam.rotmg.editor.view.components.preview:Preview"), "origBitmapData_")
+      getlex              QName(ProtectedNamespace("kabam.rotmg.editor.view.components.preview:Preview"), "size_")
+      pushtrue
+      pushbyte            0
+      pushfalse
+      callproperty        QName(PackageNamespace(""), "redraw"), 5
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      setlocal1
+
+      getlex              QName(ProtectedNamespace("kabam.rotmg.editor.view.components.preview:Preview"), "bitmap_")
+      getlocal1
+      setproperty         QName(PackageNamespace(""), "bitmapData")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.editor.view.components.preview:ObjectPreview/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

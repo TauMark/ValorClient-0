@@ -1,0 +1,593 @@
+class
+ refid "kabam.rotmg.minimap.view:MiniMapZoomButtons"
+ instance QName(PackageNamespace("kabam.rotmg.minimap.view"), "MiniMapZoomButtons")
+  extends QName(PackageNamespace("flash.display"), "Sprite")
+  flag SEALED
+  iinit
+   name "MiniMapZoomButtons"
+   refid "kabam.rotmg.minimap.view:MiniMapZoomButtons/instance/init"
+   body
+    maxstack 4
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     findpropstrict      QName(PackageNamespace("flash.geom"), "ColorTransform")
+     pushdouble          0.5
+     pushdouble          0.5
+     pushdouble          0.5
+     constructprop       QName(PackageNamespace("flash.geom"), "ColorTransform"), 3
+     findproperty        QName(PrivateNamespace("kabam.rotmg.minimap.view:MiniMapZoomButtons"), "FADE")
+     swap
+     initproperty        QName(PrivateNamespace("kabam.rotmg.minimap.view:MiniMapZoomButtons"), "FADE")
+
+     findpropstrict      QName(PackageNamespace("flash.geom"), "ColorTransform")
+     pushbyte            1
+     pushbyte            1
+     pushbyte            1
+     constructprop       QName(PackageNamespace("flash.geom"), "ColorTransform"), 3
+     findproperty        QName(PrivateNamespace("kabam.rotmg.minimap.view:MiniMapZoomButtons"), "NORM")
+     swap
+     initproperty        QName(PrivateNamespace("kabam.rotmg.minimap.view:MiniMapZoomButtons"), "NORM")
+
+     findpropstrict      QName(PackageNamespace("org.osflash.signals"), "Signal")
+     getlex              QName(PackageNamespace(""), "int")
+     constructprop       QName(PackageNamespace("org.osflash.signals"), "Signal"), 1
+     findproperty        QName(PackageNamespace(""), "zoom")
+     swap
+     initproperty        QName(PackageNamespace(""), "zoom")
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     pushbyte            0
+     setproperty         QName(PrivateNamespace("kabam.rotmg.minimap.view:MiniMapZoomButtons"), "zoomLevel")
+
+     getlocal0
+     callpropvoid        QName(PrivateNamespace("kabam.rotmg.minimap.view:MiniMapZoomButtons"), "makeZoomOut"), 0
+
+     getlocal0
+     callpropvoid        QName(PrivateNamespace("kabam.rotmg.minimap.view:MiniMapZoomButtons"), "makeZoomIn"), 0
+
+     getlocal0
+     callpropvoid        QName(PrivateNamespace("kabam.rotmg.minimap.view:MiniMapZoomButtons"), "updateButtons"), 0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait const QName(PrivateNamespace("kabam.rotmg.minimap.view:MiniMapZoomButtons"), "FADE") type QName(PackageNamespace("flash.geom"), "ColorTransform") end
+  trait const QName(PrivateNamespace("kabam.rotmg.minimap.view:MiniMapZoomButtons"), "NORM") type QName(PackageNamespace("flash.geom"), "ColorTransform") end
+  trait const QName(PackageNamespace(""), "zoom") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.minimap.view:MiniMapZoomButtons"), "zoomOut") type QName(PackageNamespace("flash.display"), "Sprite") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.minimap.view:MiniMapZoomButtons"), "zoomIn") type QName(PackageNamespace("flash.display"), "Sprite") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.minimap.view:MiniMapZoomButtons"), "zoomLevels") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.minimap.view:MiniMapZoomButtons"), "zoomLevel") type QName(PackageNamespace(""), "int") end
+  trait method QName(PackageNamespace(""), "getZoomLevel")
+   method
+    name "getZoomLevel"
+    refid "kabam.rotmg.minimap.view:MiniMapZoomButtons/instance/getZoomLevel"
+    returns QName(PackageNamespace(""), "int")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.minimap.view:MiniMapZoomButtons"), "zoomLevel")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setZoomLevel")
+   method
+    name "setZoomLevel"
+    refid "kabam.rotmg.minimap.view:MiniMapZoomButtons/instance/setZoomLevel"
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "int")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.minimap.view:MiniMapZoomButtons"), "zoomLevels")
+      pushbyte            0
+      ifne                L9
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.minimap.view:MiniMapZoomButtons"), "zoomLevel")
+      returnvalue
+
+L9:
+      getlocal1
+      pushbyte            0
+      ifnlt               L15
+
+      pushbyte            0
+      setlocal1
+
+      jump                L27
+
+L15:
+      getlocal1
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.minimap.view:MiniMapZoomButtons"), "zoomLevels")
+      pushbyte            1
+      subtract
+      ifnge               L27
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.minimap.view:MiniMapZoomButtons"), "zoomLevels")
+      pushbyte            1
+      subtract
+      convert_i
+      setlocal1
+
+L27:
+      getlocal0
+      getlocal1
+      setproperty         QName(PrivateNamespace("kabam.rotmg.minimap.view:MiniMapZoomButtons"), "zoomLevel")
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.minimap.view:MiniMapZoomButtons"), "updateButtons"), 0
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.minimap.view:MiniMapZoomButtons"), "zoomLevel")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setZoomLevels")
+   method
+    name "setZoomLevels"
+    refid "kabam.rotmg.minimap.view:MiniMapZoomButtons/instance/setZoomLevels"
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "int")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      setproperty         QName(PrivateNamespace("kabam.rotmg.minimap.view:MiniMapZoomButtons"), "zoomLevels")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.minimap.view:MiniMapZoomButtons"), "zoomLevel")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.minimap.view:MiniMapZoomButtons"), "zoomLevels")
+      ifnge               L16
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.minimap.view:MiniMapZoomButtons"), "zoomLevels")
+      pushbyte            1
+      subtract
+      setproperty         QName(PrivateNamespace("kabam.rotmg.minimap.view:MiniMapZoomButtons"), "zoomLevel")
+
+L16:
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.minimap.view:MiniMapZoomButtons"), "updateButtons"), 0
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.minimap.view:MiniMapZoomButtons"), "zoomLevels")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.minimap.view:MiniMapZoomButtons"), "makeZoomOut")
+   method
+    name "makeZoomOut"
+    refid "kabam.rotmg.minimap.view:MiniMapZoomButtons/instance/kabam.rotmg.minimap.view:MiniMapZoomButtons/instance/makeZoomOut"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      setlocal1
+
+      getlex              QName(PackageNamespace("com.company.util"), "AssetLibrary")
+      pushstring          "lofiInterface"
+      pushbyte            54
+      callproperty        QName(PackageNamespace(""), "getImageFromSet"), 2
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      setlocal2
+
+      findpropstrict      QName(PackageNamespace("flash.display"), "Bitmap")
+      getlocal2
+      constructprop       QName(PackageNamespace("flash.display"), "Bitmap"), 1
+      coerce              QName(PackageNamespace("flash.display"), "Bitmap")
+      setlocal1
+
+      getlocal1
+      pushbyte            2
+      setproperty         QName(PackageNamespace(""), "scaleX")
+
+      getlocal1
+      pushbyte            2
+      setproperty         QName(PackageNamespace(""), "scaleY")
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("flash.display"), "Sprite")
+      constructprop       QName(PackageNamespace("flash.display"), "Sprite"), 0
+      setproperty         QName(PrivateNamespace("kabam.rotmg.minimap.view:MiniMapZoomButtons"), "zoomOut")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.minimap.view:MiniMapZoomButtons"), "zoomOut")
+      pushbyte            0
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.minimap.view:MiniMapZoomButtons"), "zoomOut")
+      pushbyte            4
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.minimap.view:MiniMapZoomButtons"), "zoomOut")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.minimap.view:MiniMapZoomButtons"), "zoomOut")
+      pushstring          "click"
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.minimap.view:MiniMapZoomButtons"), "onZoomOut")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.minimap.view:MiniMapZoomButtons"), "zoomOut")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.minimap.view:MiniMapZoomButtons"), "makeZoomIn")
+   method
+    name "makeZoomIn"
+    refid "kabam.rotmg.minimap.view:MiniMapZoomButtons/instance/kabam.rotmg.minimap.view:MiniMapZoomButtons/instance/makeZoomIn"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      setlocal1
+
+      getlex              QName(PackageNamespace("com.company.util"), "AssetLibrary")
+      pushstring          "lofiInterface"
+      pushbyte            55
+      callproperty        QName(PackageNamespace(""), "getImageFromSet"), 2
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      setlocal2
+
+      findpropstrict      QName(PackageNamespace("flash.display"), "Bitmap")
+      getlocal2
+      constructprop       QName(PackageNamespace("flash.display"), "Bitmap"), 1
+      coerce              QName(PackageNamespace("flash.display"), "Bitmap")
+      setlocal1
+
+      getlocal1
+      pushbyte            2
+      setproperty         QName(PackageNamespace(""), "scaleX")
+
+      getlocal1
+      pushbyte            2
+      setproperty         QName(PackageNamespace(""), "scaleY")
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("flash.display"), "Sprite")
+      constructprop       QName(PackageNamespace("flash.display"), "Sprite"), 0
+      setproperty         QName(PrivateNamespace("kabam.rotmg.minimap.view:MiniMapZoomButtons"), "zoomIn")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.minimap.view:MiniMapZoomButtons"), "zoomIn")
+      pushbyte            0
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.minimap.view:MiniMapZoomButtons"), "zoomIn")
+      pushbyte            14
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.minimap.view:MiniMapZoomButtons"), "zoomIn")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.minimap.view:MiniMapZoomButtons"), "zoomIn")
+      pushstring          "click"
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.minimap.view:MiniMapZoomButtons"), "onZoomIn")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.minimap.view:MiniMapZoomButtons"), "zoomIn")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.minimap.view:MiniMapZoomButtons"), "onZoomOut")
+   method
+    name "onZoomOut"
+    refid "kabam.rotmg.minimap.view:MiniMapZoomButtons/instance/kabam.rotmg.minimap.view:MiniMapZoomButtons/instance/onZoomOut"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 4
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "stopPropagation"), 0
+
+      getlocal0
+      callproperty        QName(PrivateNamespace("kabam.rotmg.minimap.view:MiniMapZoomButtons"), "canZoomOut"), 0
+      iffalse             L31
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "zoom")
+      getlocal0
+      dup
+      getproperty         QName(PrivateNamespace("kabam.rotmg.minimap.view:MiniMapZoomButtons"), "zoomLevel")
+      decrement
+      dup
+      setlocal2
+
+      setproperty         QName(PrivateNamespace("kabam.rotmg.minimap.view:MiniMapZoomButtons"), "zoomLevel")
+
+      getlocal2
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.minimap.view:MiniMapZoomButtons"), "zoomOut")
+      getproperty         QName(PackageNamespace(""), "transform")
+      getlocal0
+      callproperty        QName(PrivateNamespace("kabam.rotmg.minimap.view:MiniMapZoomButtons"), "canZoomOut"), 0
+      iffalse             L27
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.minimap.view:MiniMapZoomButtons"), "NORM")
+      jump                L30
+
+L27:
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.minimap.view:MiniMapZoomButtons"), "FADE")
+      coerce              QName(PackageNamespace("flash.geom"), "ColorTransform")
+L30:
+      setproperty         QName(PackageNamespace(""), "colorTransform")
+
+L31:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.minimap.view:MiniMapZoomButtons"), "canZoomOut")
+   method
+    name "canZoomOut"
+    refid "kabam.rotmg.minimap.view:MiniMapZoomButtons/instance/kabam.rotmg.minimap.view:MiniMapZoomButtons/instance/canZoomOut"
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.minimap.view:MiniMapZoomButtons"), "zoomLevel")
+      pushbyte            0
+      greaterthan
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.minimap.view:MiniMapZoomButtons"), "onZoomIn")
+   method
+    name "onZoomIn"
+    refid "kabam.rotmg.minimap.view:MiniMapZoomButtons/instance/kabam.rotmg.minimap.view:MiniMapZoomButtons/instance/onZoomIn"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 4
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "stopPropagation"), 0
+
+      getlocal0
+      callproperty        QName(PrivateNamespace("kabam.rotmg.minimap.view:MiniMapZoomButtons"), "canZoomIn"), 0
+      iffalse             L31
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "zoom")
+      getlocal0
+      dup
+      getproperty         QName(PrivateNamespace("kabam.rotmg.minimap.view:MiniMapZoomButtons"), "zoomLevel")
+      increment
+      dup
+      setlocal2
+
+      setproperty         QName(PrivateNamespace("kabam.rotmg.minimap.view:MiniMapZoomButtons"), "zoomLevel")
+
+      getlocal2
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.minimap.view:MiniMapZoomButtons"), "zoomIn")
+      getproperty         QName(PackageNamespace(""), "transform")
+      getlocal0
+      callproperty        QName(PrivateNamespace("kabam.rotmg.minimap.view:MiniMapZoomButtons"), "canZoomIn"), 0
+      iffalse             L27
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.minimap.view:MiniMapZoomButtons"), "NORM")
+      jump                L30
+
+L27:
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.minimap.view:MiniMapZoomButtons"), "FADE")
+      coerce              QName(PackageNamespace("flash.geom"), "ColorTransform")
+L30:
+      setproperty         QName(PackageNamespace(""), "colorTransform")
+
+L31:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.minimap.view:MiniMapZoomButtons"), "canZoomIn")
+   method
+    name "canZoomIn"
+    refid "kabam.rotmg.minimap.view:MiniMapZoomButtons/instance/kabam.rotmg.minimap.view:MiniMapZoomButtons/instance/canZoomIn"
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.minimap.view:MiniMapZoomButtons"), "zoomLevel")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.minimap.view:MiniMapZoomButtons"), "zoomLevels")
+      pushbyte            1
+      subtract
+      lessthan
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.minimap.view:MiniMapZoomButtons"), "updateButtons")
+   method
+    name "updateButtons"
+    refid "kabam.rotmg.minimap.view:MiniMapZoomButtons/instance/kabam.rotmg.minimap.view:MiniMapZoomButtons/instance/updateButtons"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.minimap.view:MiniMapZoomButtons"), "zoomIn")
+      getproperty         QName(PackageNamespace(""), "transform")
+      getlocal0
+      callproperty        QName(PrivateNamespace("kabam.rotmg.minimap.view:MiniMapZoomButtons"), "canZoomIn"), 0
+      iffalse             L11
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.minimap.view:MiniMapZoomButtons"), "NORM")
+      jump                L14
+
+L11:
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.minimap.view:MiniMapZoomButtons"), "FADE")
+      coerce              QName(PackageNamespace("flash.geom"), "ColorTransform")
+L14:
+      setproperty         QName(PackageNamespace(""), "colorTransform")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.minimap.view:MiniMapZoomButtons"), "zoomOut")
+      getproperty         QName(PackageNamespace(""), "transform")
+      getlocal0
+      callproperty        QName(PrivateNamespace("kabam.rotmg.minimap.view:MiniMapZoomButtons"), "canZoomOut"), 0
+      iffalse             L24
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.minimap.view:MiniMapZoomButtons"), "NORM")
+      jump                L27
+
+L24:
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.minimap.view:MiniMapZoomButtons"), "FADE")
+      coerce              QName(PackageNamespace("flash.geom"), "ColorTransform")
+L27:
+      setproperty         QName(PackageNamespace(""), "colorTransform")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.minimap.view:MiniMapZoomButtons/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

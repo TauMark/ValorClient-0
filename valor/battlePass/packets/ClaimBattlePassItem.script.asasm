@@ -1,0 +1,37 @@
+script
+ sinit
+  refid "valor.battlePass.packets:ClaimBattlePassItem/init"
+  body
+   maxstack 3
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    getscopeobject      0
+    getlex              QName(PackageNamespace(""), "Object")
+    pushscope
+
+    getlex              QName(PackageNamespace("kabam.lib.net.impl"), "Message")
+    pushscope
+
+    getlex              QName(PackageNamespace("kabam.rotmg.messaging.impl.outgoing"), "OutgoingMessage")
+    dup
+    pushscope
+
+    newclass            "valor.battlePass.packets:ClaimBattlePassItem"
+    popscope
+    popscope
+    popscope
+    initproperty        QName(PackageNamespace("valor.battlePass.packets"), "ClaimBattlePassItem")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait class QName(PackageNamespace("valor.battlePass.packets"), "ClaimBattlePassItem")
+  #include "ClaimBattlePassItem.class.asasm"
+ end ; trait
+end ; script

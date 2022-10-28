@@ -1,0 +1,613 @@
+class
+ refid "kabam.rotmg.game.view.components:TabStripMediator"
+ instance QName(PackageNamespace("kabam.rotmg.game.view.components"), "TabStripMediator")
+  extends QName(PackageNamespace("robotlegs.bender.bundles.mvcs"), "Mediator")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.game.view.components:TabStripMediator")
+  iinit
+   refid "kabam.rotmg.game.view.components:TabStripMediator/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "view") flag METADATA type QName(PackageNamespace("kabam.rotmg.game.view.components"), "TabStripView")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "hudModel") flag METADATA type QName(PackageNamespace("kabam.rotmg.ui.model"), "HUDModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "tabStripModel") flag METADATA type QName(PackageNamespace("kabam.rotmg.ui.model"), "TabStripModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "updateHUD") flag METADATA type QName(PackageNamespace("kabam.rotmg.ui.signals"), "UpdateHUDSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "updateBackpack") flag METADATA type QName(PackageNamespace("kabam.rotmg.ui.signals"), "UpdateBackpackTabSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "updateMark") flag METADATA type QName(PackageNamespace("kabam.rotmg.ui.signals"), "UpdateMarkTabSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "iconFactory") flag METADATA type QName(PackageNamespace("kabam.rotmg.assets.services"), "IconFactory")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "imageFactory") flag METADATA type QName(PackageNamespace("com.company.assembleegameclient.objects"), "ImageFactory")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "iconButtonFactory") flag METADATA type QName(PackageNamespace("com.company.assembleegameclient.ui.icons"), "IconButtonFactory")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "statsUndocked") flag METADATA type QName(PackageNamespace("kabam.rotmg.game.view.components"), "StatsUndockedSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "statsDocked") flag METADATA type QName(PackageNamespace("kabam.rotmg.ui.view"), "StatsDockedSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "statsTabHotKeyInput") flag METADATA type QName(PackageNamespace("kabam.rotmg.game.view.components"), "StatsTabHotKeyInputSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "openDialog") flag METADATA type QName(PackageNamespace("kabam.rotmg.dialogs.control"), "OpenDialogSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PrivateNamespace("kabam.rotmg.game.view.components:TabStripMediator"), "doShowStats") type QName(PackageNamespace(""), "Boolean") value True() end
+  trait method QName(PackageNamespace(""), "initialize") flag OVERRIDE
+   method
+    name "initialize"
+    refid "kabam.rotmg.game.view.components:TabStripMediator/instance/initialize"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "imageFactory")
+      setproperty         QName(PackageNamespace(""), "imageFactory")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "iconButtonFactory")
+      setproperty         QName(PackageNamespace(""), "iconButtonFactory")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "tabSelected")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.game.view.components:TabStripMediator"), "onTabSelected")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "updateHUD")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.game.view.components:TabStripMediator"), "addTabs")
+      callpropvoid        QName(PackageNamespace(""), "addOnce"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "statsUndocked")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.game.view.components:TabStripMediator"), "onStatsUndocked")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "statsDocked")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.game.view.components:TabStripMediator"), "onStatsDocked")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "statsTabHotKeyInput")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.game.view.components:TabStripMediator"), "onTabHotkey")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.game.view.components:TabStripMediator"), "onStatsUndocked")
+   method
+    name "onStatsUndocked"
+    refid "kabam.rotmg.game.view.components:TabStripMediator/instance/kabam.rotmg.game.view.components:TabStripMediator/instance/onStatsUndocked"
+    param QName(PackageNamespace("kabam.rotmg.game.view.components"), "StatsView")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      pushfalse
+      setproperty         QName(PrivateNamespace("kabam.rotmg.game.view.components:TabStripMediator"), "doShowStats")
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.game.view.components:TabStripMediator"), "clearTabs"), 0
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hudModel")
+      getproperty         QName(PackageNamespace(""), "gameSprite")
+      getproperty         QName(PackageNamespace(""), "map")
+      getproperty         QName(PackageNamespace(""), "player")
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.game.view.components:TabStripMediator"), "addTabs"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.game.view.components:TabStripMediator"), "onStatsDocked")
+   method
+    name "onStatsDocked"
+    refid "kabam.rotmg.game.view.components:TabStripMediator/instance/kabam.rotmg.game.view.components:TabStripMediator/instance/onStatsDocked"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      pushtrue
+      setproperty         QName(PrivateNamespace("kabam.rotmg.game.view.components:TabStripMediator"), "doShowStats")
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.game.view.components:TabStripMediator"), "clearTabs"), 0
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hudModel")
+      getproperty         QName(PackageNamespace(""), "gameSprite")
+      getproperty         QName(PackageNamespace(""), "map")
+      getproperty         QName(PackageNamespace(""), "player")
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.game.view.components:TabStripMediator"), "addTabs"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      pushbyte            1
+      callpropvoid        QName(PackageNamespace(""), "setSelectedTab"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.game.view.components:TabStripMediator"), "onTabHotkey")
+   method
+    name "onTabHotkey"
+    refid "kabam.rotmg.game.view.components:TabStripMediator/instance/kabam.rotmg.game.view.components:TabStripMediator/instance/onTabHotkey"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "currentTabIndex")
+      pushbyte            1
+      add
+      convert_i
+      setlocal1
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "tabs")
+      getproperty         QName(PackageNamespace(""), "length")
+      modulo
+      convert_i
+      setlocal1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "setSelectedTab"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "destroy") flag OVERRIDE
+   method
+    name "destroy"
+    refid "kabam.rotmg.game.view.components:TabStripMediator/instance/destroy"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "tabSelected")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.game.view.components:TabStripMediator"), "onTabSelected")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "updateBackpack")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.game.view.components:TabStripMediator"), "onUpdateBackPack")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "updateMark")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.game.view.components:TabStripMediator"), "onUpdateMark")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.game.view.components:TabStripMediator"), "addTabs")
+   method
+    name "addTabs"
+    refid "kabam.rotmg.game.view.components:TabStripMediator/instance/kabam.rotmg.game.view.components:TabStripMediator/instance/addTabs"
+    param QName(PackageNamespace("com.company.assembleegameclient.objects"), "Player")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 4
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      iftrue              L5
+
+      returnvoid
+
+L5:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "iconFactory")
+      pushbyte            24
+      callproperty        QName(PackageNamespace(""), "makeIconBitmap"), 1
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.game.view.components"), "InventoryTabContent")
+      getlocal1
+      constructprop       QName(PackageNamespace("kabam.rotmg.game.view.components"), "InventoryTabContent"), 1
+      callpropvoid        QName(PackageNamespace(""), "addTab"), 2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.game.view.components:TabStripMediator"), "doShowStats")
+      iffalse             L28
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "iconFactory")
+      pushbyte            25
+      callproperty        QName(PackageNamespace(""), "makeIconBitmap"), 1
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.game.view.components"), "StatsTabContent")
+      pushshort           153
+      constructprop       QName(PackageNamespace("kabam.rotmg.game.view.components"), "StatsTabContent"), 1
+      callpropvoid        QName(PackageNamespace(""), "addTab"), 2
+
+L28:
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "hasBackpack_")
+      iffalse             L42
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "iconFactory")
+      pushbyte            26
+      callproperty        QName(PackageNamespace(""), "makeIconBitmap"), 1
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.game.view.components"), "BackpackTabContent")
+      getlocal1
+      constructprop       QName(PackageNamespace("kabam.rotmg.game.view.components"), "BackpackTabContent"), 1
+      callpropvoid        QName(PackageNamespace(""), "addTab"), 2
+
+      jump                L47
+
+L42:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "updateBackpack")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.game.view.components:TabStripMediator"), "onUpdateBackPack")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+L47:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "iconFactory")
+      pushbyte            29
+      callproperty        QName(PackageNamespace(""), "makeIconBitmap"), 1
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.game.view.components"), "SorTabContent")
+      getlocal1
+      constructprop       QName(PackageNamespace("kabam.rotmg.game.view.components"), "SorTabContent"), 1
+      callpropvoid        QName(PackageNamespace(""), "addTab"), 2
+
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "marksEnabled_")
+      iffalse             L71
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "iconFactory")
+      pushbyte            28
+      callproperty        QName(PackageNamespace(""), "makeIconBitmap"), 1
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.game.view.components"), "MarksTabContent")
+      getlocal1
+      constructprop       QName(PackageNamespace("kabam.rotmg.game.view.components"), "MarksTabContent"), 1
+      callpropvoid        QName(PackageNamespace(""), "addTab"), 2
+
+      jump                L76
+
+L71:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "updateMark")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.game.view.components:TabStripMediator"), "onUpdateMark")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+L76:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.game.view.components:TabStripMediator"), "clearTabs")
+   method
+    name "clearTabs"
+    refid "kabam.rotmg.game.view.components:TabStripMediator/instance/kabam.rotmg.game.view.components:TabStripMediator/instance/clearTabs"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      callpropvoid        QName(PackageNamespace(""), "clearTabs"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.game.view.components:TabStripMediator"), "onTabSelected")
+   method
+    name "onTabSelected"
+    refid "kabam.rotmg.game.view.components:TabStripMediator/instance/kabam.rotmg.game.view.components:TabStripMediator/instance/onTabSelected"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "tabStripModel")
+      getlocal1
+      setproperty         QName(PackageNamespace(""), "currentSelection")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.game.view.components:TabStripMediator"), "onUpdateBackPack")
+   method
+    name "onUpdateBackPack"
+    refid "kabam.rotmg.game.view.components:TabStripMediator/instance/kabam.rotmg.game.view.components:TabStripMediator/instance/onUpdateBackPack"
+    param QName(PackageNamespace(""), "Boolean")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 4
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      setlocal2
+
+      getlocal1
+      iffalse             L28
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hudModel")
+      getproperty         QName(PackageNamespace(""), "gameSprite")
+      getproperty         QName(PackageNamespace(""), "map")
+      getproperty         QName(PackageNamespace(""), "player")
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.objects"), "Player")
+      setlocal2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "iconFactory")
+      pushbyte            26
+      callproperty        QName(PackageNamespace(""), "makeIconBitmap"), 1
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.game.view.components"), "BackpackTabContent")
+      getlocal2
+      constructprop       QName(PackageNamespace("kabam.rotmg.game.view.components"), "BackpackTabContent"), 1
+      callpropvoid        QName(PackageNamespace(""), "addTab"), 2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "updateBackpack")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.game.view.components:TabStripMediator"), "onUpdateBackPack")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+L28:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.game.view.components:TabStripMediator"), "onUpdateMark")
+   method
+    name "onUpdateMark"
+    refid "kabam.rotmg.game.view.components:TabStripMediator/instance/kabam.rotmg.game.view.components:TabStripMediator/instance/onUpdateMark"
+    param QName(PackageNamespace(""), "Boolean")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 4
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      setlocal2
+
+      getlocal1
+      iffalse             L28
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hudModel")
+      getproperty         QName(PackageNamespace(""), "gameSprite")
+      getproperty         QName(PackageNamespace(""), "map")
+      getproperty         QName(PackageNamespace(""), "player")
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.objects"), "Player")
+      setlocal2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "iconFactory")
+      pushbyte            28
+      callproperty        QName(PackageNamespace(""), "makeIconBitmap"), 1
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.game.view.components"), "MarksTabContent")
+      getlocal2
+      constructprop       QName(PackageNamespace("kabam.rotmg.game.view.components"), "MarksTabContent"), 1
+      callpropvoid        QName(PackageNamespace(""), "addTab"), 2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "updateMark")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.game.view.components:TabStripMediator"), "onUpdateMark")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+L28:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.game.view.components:TabStripMediator"), "onNotifyActivePetUpdated")
+   method
+    name "onNotifyActivePetUpdated"
+    refid "kabam.rotmg.game.view.components:TabStripMediator/instance/kabam.rotmg.game.view.components:TabStripMediator/instance/onNotifyActivePetUpdated"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.game.view.components:TabStripMediator"), "clearTabs"), 0
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hudModel")
+      getproperty         QName(PackageNamespace(""), "gameSprite")
+      getproperty         QName(PackageNamespace(""), "map")
+      getproperty         QName(PackageNamespace(""), "player")
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.game.view.components:TabStripMediator"), "addTabs"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.game.view.components:TabStripMediator/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

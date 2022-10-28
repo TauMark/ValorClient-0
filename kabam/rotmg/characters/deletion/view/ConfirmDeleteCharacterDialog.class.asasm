@@ -1,0 +1,163 @@
+class
+ refid "kabam.rotmg.characters.deletion.view:ConfirmDeleteCharacterDialog"
+ instance QName(PackageNamespace("kabam.rotmg.characters.deletion.view"), "ConfirmDeleteCharacterDialog")
+  extends QName(PackageNamespace("flash.display"), "Sprite")
+  flag SEALED
+  iinit
+   name "ConfirmDeleteCharacterDialog"
+   refid "kabam.rotmg.characters.deletion.view:ConfirmDeleteCharacterDialog/instance/init"
+   body
+    maxstack 2
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("org.osflash.signals"), "Signal")
+     constructprop       QName(PackageNamespace("org.osflash.signals"), "Signal"), 0
+     setproperty         QName(PackageNamespace(""), "deleteCharacter")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("org.osflash.signals"), "Signal")
+     constructprop       QName(PackageNamespace("org.osflash.signals"), "Signal"), 0
+     setproperty         QName(PackageNamespace(""), "cancel")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait const QName(PrivateNamespace("kabam.rotmg.characters.deletion.view:ConfirmDeleteCharacterDialog"), "CANCEL_EVENT") type QName(PackageNamespace(""), "String") value Utf8("dialogLeftButton") end
+  trait const QName(PrivateNamespace("kabam.rotmg.characters.deletion.view:ConfirmDeleteCharacterDialog"), "DELETE_EVENT") type QName(PackageNamespace(""), "String") value Utf8("dialogRightButton") end
+  trait slot QName(PackageNamespace(""), "deleteCharacter") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait slot QName(PackageNamespace(""), "cancel") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait method QName(PackageNamespace(""), "setText")
+   method
+    name "setText"
+    refid "kabam.rotmg.characters.deletion.view:ConfirmDeleteCharacterDialog/instance/setText"
+    param QName(PackageNamespace(""), "String")
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    paramname "_arg2"
+    body
+     maxstack 6
+     localcount 4
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.ui.dialogs"), "Dialog")
+      pushstring          "Delete this character?"
+      pushstring          ""
+      pushstring          "Cancel"
+      pushstring          "Delete"
+      pushstring          "/deleteDialog"
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.ui.dialogs"), "Dialog"), 5
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.ui.dialogs"), "Dialog")
+      setlocal3
+
+      getlocal3
+      pushstring          "ConfirmDeleteCharacterDialog"
+      pushstring          "name"
+      getlocal1
+      pushstring          "displayID"
+      getlocal2
+      newobject           2
+      callpropvoid        QName(PackageNamespace(""), "setTextParams"), 2
+
+      getlocal3
+      pushstring          "dialogLeftButton"
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.characters.deletion.view:ConfirmDeleteCharacterDialog"), "onCancel")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      getlocal3
+      pushstring          "dialogRightButton"
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.characters.deletion.view:ConfirmDeleteCharacterDialog"), "onDelete")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal3
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.characters.deletion.view:ConfirmDeleteCharacterDialog"), "onCancel")
+   method
+    name "onCancel"
+    refid "kabam.rotmg.characters.deletion.view:ConfirmDeleteCharacterDialog/instance/kabam.rotmg.characters.deletion.view:ConfirmDeleteCharacterDialog/instance/setText/onCancel"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 1
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "cancel")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.characters.deletion.view:ConfirmDeleteCharacterDialog"), "onDelete")
+   method
+    name "onDelete"
+    refid "kabam.rotmg.characters.deletion.view:ConfirmDeleteCharacterDialog/instance/kabam.rotmg.characters.deletion.view:ConfirmDeleteCharacterDialog/instance/setText/onDelete"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 1
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "deleteCharacter")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.characters.deletion.view:ConfirmDeleteCharacterDialog/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

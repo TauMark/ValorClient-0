@@ -1,0 +1,264 @@
+class
+ refid "kabam.rotmg.game.view:NewsModalButton"
+ instance QName(PackageNamespace("kabam.rotmg.game.view"), "NewsModalButton")
+  extends QName(PackageNamespace("flash.display"), "Sprite")
+  flag SEALED
+  iinit
+   name "NewsModalButton"
+   refid "kabam.rotmg.game.view:NewsModalButton/instance/init"
+   body
+    maxstack 9
+    localcount 3
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     pushfalse
+     findproperty        QName(PackageNamespace(""), "mouseChildren")
+     swap
+     setproperty         QName(PackageNamespace(""), "mouseChildren")
+
+     getlocal0
+     getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "TextureRedrawer")
+     getlex              QName(PackageNamespace("com.company.util"), "AssetLibrary")
+     pushstring          "lofiObj2"
+     pushshort           345
+     callproperty        QName(PackageNamespace(""), "getImageFromSet"), 2
+     pushbyte            40
+     pushtrue
+     pushbyte            0
+     callproperty        QName(PackageNamespace(""), "redraw"), 4
+     setproperty         QName(PrivateNamespace("kabam.rotmg.game.view:NewsModalButton"), "icon")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("flash.display"), "Bitmap")
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:NewsModalButton"), "icon")
+     constructprop       QName(PackageNamespace("flash.display"), "Bitmap"), 1
+     setproperty         QName(PrivateNamespace("kabam.rotmg.game.view:NewsModalButton"), "bitmap")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:NewsModalButton"), "bitmap")
+     pushbyte            -5
+     setproperty         QName(PackageNamespace(""), "x")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:NewsModalButton"), "bitmap")
+     pushbyte            -8
+     setproperty         QName(PackageNamespace(""), "y")
+
+     getlocal0
+     getlex              QName(PackageNamespace("kabam.rotmg.ui"), "UIUtils")
+     callproperty        QName(PackageNamespace(""), "makeStaticHUDBackground"), 0
+     setproperty         QName(PrivateNamespace("kabam.rotmg.game.view:NewsModalButton"), "background")
+
+     getlocal0
+     getlex              QName(PackageNamespace("kabam.rotmg.ui"), "UIUtils")
+     pushbyte            31
+     pushbyte            25
+     callproperty        QName(PackageNamespace(""), "makeHUDBackground"), 2
+     setproperty         QName(PrivateNamespace("kabam.rotmg.game.view:NewsModalButton"), "background2")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete")
+     constructprop       QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete"), 0
+     pushbyte            16
+     callproperty        QName(PackageNamespace(""), "setSize"), 1
+     pushint             16777215
+     callproperty        QName(PackageNamespace(""), "setColor"), 1
+     setproperty         QName(PrivateNamespace("kabam.rotmg.game.view:NewsModalButton"), "text")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:NewsModalButton"), "text")
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "StaticStringBuilder")
+     pushstring          "Update!"
+     constructprop       QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "StaticStringBuilder"), 1
+     callpropvoid        QName(PackageNamespace(""), "setStringBuilder"), 1
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:NewsModalButton"), "text")
+     findpropstrict      QName(PackageNamespace("flash.filters"), "DropShadowFilter")
+     pushbyte            0
+     pushbyte            0
+     pushbyte            0
+     pushbyte            1
+     pushbyte            4
+     pushbyte            4
+     pushbyte            2
+     constructprop       QName(PackageNamespace("flash.filters"), "DropShadowFilter"), 7
+     newarray            1
+     setproperty         QName(PackageNamespace(""), "filters")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:NewsModalButton"), "text")
+     pushstring          "bottom"
+     callpropvoid        QName(PackageNamespace(""), "setVerticalAlign"), 1
+
+     getlocal0
+     callpropvoid        QName(PackageNamespace(""), "drawAsOpen"), 0
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:NewsModalButton"), "bitmap")
+     getlocal0
+     callproperty        QName(PackageNamespace(""), "getBounds"), 1
+     coerce              QName(PackageNamespace("flash.geom"), "Rectangle")
+     setlocal2
+
+     pushbyte            10
+     setlocal1
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:NewsModalButton"), "text")
+     getlocal2
+     getproperty         QName(PackageNamespace(""), "right")
+     getlocal1
+     subtract
+     setproperty         QName(PackageNamespace(""), "x")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:NewsModalButton"), "text")
+     getlocal2
+     getproperty         QName(PackageNamespace(""), "bottom")
+     getlocal1
+     subtract
+     setproperty         QName(PackageNamespace(""), "y")
+
+     findpropstrict      QName(PackageNamespace(""), "addEventListener")
+     pushstring          "click"
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "onClick")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace("kabam.rotmg.game.view:NewsModalButton"), "bitmap") type QName(PackageNamespace("flash.display"), "Bitmap") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.game.view:NewsModalButton"), "background") type QName(PackageNamespace("flash.display"), "Sprite") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.game.view:NewsModalButton"), "background2") type QName(PackageNamespace("flash.display"), "Sprite") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.game.view:NewsModalButton"), "icon") type QName(PackageNamespace("flash.display"), "BitmapData") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.game.view:NewsModalButton"), "text") type QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete") end
+  trait method QName(PackageNamespace(""), "onClick")
+   method
+    name "onClick"
+    refid "kabam.rotmg.game.view:NewsModalButton/instance/onClick"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace("kabam.rotmg.core"), "StaticInjectorContext")
+      callproperty        QName(PackageNamespace(""), "getInjector"), 0
+      getlex              QName(PackageNamespace("kabam.rotmg.dialogs.control"), "OpenDialogSignal")
+      callproperty        QName(PackageNamespace(""), "getInstance"), 1
+      coerce              QName(PackageNamespace("kabam.rotmg.dialogs.control"), "OpenDialogSignal")
+      setlocal2
+
+      getlocal2
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.news.view"), "NewsModal")
+      constructprop       QName(PackageNamespace("kabam.rotmg.news.view"), "NewsModal"), 0
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.sound"), "SoundEffectLibrary")
+      pushstring          "button_click"
+      callpropvoid        QName(PackageNamespace(""), "play"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "drawAsOpen")
+   method
+    name "drawAsOpen"
+    refid "kabam.rotmg.game.view:NewsModalButton/instance/drawAsOpen"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace("kabam.rotmg.core"), "StaticInjectorContext")
+      callproperty        QName(PackageNamespace(""), "getInjector"), 0
+      getlex              QName(PackageNamespace("kabam.rotmg.news.model"), "NewsModel")
+      callproperty        QName(PackageNamespace(""), "getInstance"), 1
+      coerce              QName(PackageNamespace("kabam.rotmg.news.model"), "NewsModel")
+      setlocal1
+
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "hasUpdates"), 0
+      iffalse             L24
+
+      pushtrue
+      findproperty        QName(PackageNamespace(""), "showsHasUpdate")
+      swap
+      setproperty         QName(PackageNamespace(""), "showsHasUpdate")
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:NewsModalButton"), "background")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:NewsModalButton"), "text")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      jump                L32
+
+L24:
+      pushfalse
+      findproperty        QName(PackageNamespace(""), "showsHasUpdate")
+      swap
+      setproperty         QName(PackageNamespace(""), "showsHasUpdate")
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:NewsModalButton"), "background2")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+L32:
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:NewsModalButton"), "bitmap")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.game.view:NewsModalButton/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PackageNamespace(""), "IMAGE_NAME") type QName(PackageNamespace(""), "String") value Utf8("lofiObj2") end
+ trait const QName(PackageNamespace(""), "IMAGE_ID") type QName(PackageNamespace(""), "int") value Integer(345) end
+ trait slot QName(PackageNamespace(""), "showsHasUpdate") type QName(PackageNamespace(""), "Boolean") value False() end
+end ; class

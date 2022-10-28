@@ -1,0 +1,216 @@
+class
+ refid "com.company.assembleegameclient.util:AnimatedChars"
+ instance QName(PackageNamespace("com.company.assembleegameclient.util"), "AnimatedChars")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  iinit
+   refid "com.company.assembleegameclient.util:AnimatedChars/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.util:AnimatedChars/class/init"
+  body
+   maxstack 2
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 1
+   code
+    getlocal0
+    pushscope
+
+    findpropstrict      QName(PackageNamespace("flash.utils"), "Dictionary")
+    constructprop       QName(PackageNamespace("flash.utils"), "Dictionary"), 0
+    findproperty        QName(PrivateNamespace("com.company.assembleegameclient.util:AnimatedChars"), "nameMap_")
+    swap
+    setproperty         QName(PrivateNamespace("com.company.assembleegameclient.util:AnimatedChars"), "nameMap_")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait slot QName(PrivateNamespace("com.company.assembleegameclient.util:AnimatedChars"), "nameMap_") type QName(PackageNamespace("flash.utils"), "Dictionary") end
+ trait method QName(PackageNamespace(""), "getAnimatedChar")
+  method
+   name "getAnimatedChar"
+   refid "com.company.assembleegameclient.util:AnimatedChars/class/getAnimatedChar"
+   param QName(PackageNamespace(""), "String")
+   param QName(PackageNamespace(""), "int")
+   returns QName(PackageNamespace("com.company.assembleegameclient.util"), "AnimatedChar")
+   flag HAS_PARAM_NAMES
+   paramname "_arg1"
+   paramname "_arg2"
+   body
+    maxstack 2
+    localcount 4
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PrivateNamespace("com.company.assembleegameclient.util:AnimatedChars"), "nameMap_")
+     getlocal1
+     getproperty         MultinameL([PrivateNamespace("com.company.assembleegameclient.util:AnimatedChars"), StaticProtectedNs("com.company.assembleegameclient.util:AnimatedChars"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.util"), PackageInternalNs("com.company.assembleegameclient.util"), PrivateNamespace("FilePrivateNS:AnimatedChars"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     coerce              TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("com.company.assembleegameclient.util"), "AnimatedChar")>)
+     setlocal3
+
+     getlocal3
+     pushnull
+     equals
+     dup
+     iftrue              L17
+
+     pop
+     getlocal2
+     getlocal3
+     getproperty         QName(PackageNamespace(""), "length")
+     greaterequals
+L17:
+     iffalse             L20
+
+     pushnull
+     returnvalue
+
+L20:
+     getlocal3
+     getlocal2
+     getproperty         MultinameL([PrivateNamespace("com.company.assembleegameclient.util:AnimatedChars"), StaticProtectedNs("com.company.assembleegameclient.util:AnimatedChars"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.util"), PackageInternalNs("com.company.assembleegameclient.util"), PrivateNamespace("FilePrivateNS:AnimatedChars"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "add")
+  method
+   name "add"
+   refid "com.company.assembleegameclient.util:AnimatedChars/class/add"
+   param QName(PackageNamespace(""), "String")
+   param QName(PackageNamespace("flash.display"), "BitmapData")
+   param QName(PackageNamespace("flash.display"), "BitmapData")
+   param QName(PackageNamespace(""), "int")
+   param QName(PackageNamespace(""), "int")
+   param QName(PackageNamespace(""), "int")
+   param QName(PackageNamespace(""), "int")
+   param QName(PackageNamespace(""), "int")
+   returns QName(PackageNamespace(""), "void")
+   flag HAS_PARAM_NAMES
+   paramname "_arg1"
+   paramname "_arg2"
+   paramname "_arg3"
+   paramname "_arg4"
+   paramname "_arg5"
+   paramname "_arg6"
+   paramname "_arg7"
+   paramname "_arg8"
+   body
+    maxstack 6
+    localcount 14
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     pushnull
+     setlocal            10
+
+     getlex              QName(PackageNamespace("__AS3__.vec"), "Vector")
+     getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "AnimatedChar")
+     applytype           1
+     construct           0
+     coerce              TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("com.company.assembleegameclient.util"), "AnimatedChar")>)
+     setlocal            11
+
+     findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.util"), "MaskedImageSet")
+     constructprop       QName(PackageNamespace("com.company.assembleegameclient.util"), "MaskedImageSet"), 0
+     coerce              QName(PackageNamespace("com.company.assembleegameclient.util"), "MaskedImageSet")
+     dup
+     setlocal            9
+
+     getlocal2
+     getlocal3
+     getlocal            6
+     getlocal            7
+     callpropvoid        QName(PackageNamespace(""), "addFromBitmapData"), 4
+
+     pushbyte            0
+     setlocal            13
+
+     getlocal            9
+     getproperty         QName(PackageNamespace(""), "images_")
+     setlocal            12
+
+     jump                L40
+
+L26:
+     label
+     getlocal            12
+     getlocal            13
+     nextvalue
+     coerce              QName(PackageNamespace("com.company.assembleegameclient.util"), "MaskedImage")
+     setlocal            10
+
+     getlocal            11
+     findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.util"), "AnimatedChar")
+     getlocal            10
+     getlocal            4
+     getlocal            5
+     getlocal            8
+     constructprop       QName(PackageNamespace("com.company.assembleegameclient.util"), "AnimatedChar"), 4
+     callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+
+L40:
+     hasnext2            12, 13
+     iftrue              L26
+
+     getlex              QName(PrivateNamespace("com.company.assembleegameclient.util:AnimatedChars"), "nameMap_")
+     getlocal1
+     getlocal            11
+     setproperty         MultinameL([PrivateNamespace("com.company.assembleegameclient.util:AnimatedChars"), StaticProtectedNs("com.company.assembleegameclient.util:AnimatedChars"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.util"), PackageInternalNs("com.company.assembleegameclient.util"), PrivateNamespace("FilePrivateNS:AnimatedChars"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "getAllAnimatedChar")
+  method
+   name "getAllAnimatedChar"
+   refid "com.company.assembleegameclient.util:AnimatedChars/class/getAllAnimatedChar"
+   param QName(PackageNamespace(""), "String")
+   returns TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("com.company.assembleegameclient.util"), "AnimatedChar")>)
+   flag HAS_PARAM_NAMES
+   paramname "_arg1"
+   body
+    maxstack 2
+    localcount 2
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PrivateNamespace("com.company.assembleegameclient.util:AnimatedChars"), "nameMap_")
+     getlocal1
+     getproperty         MultinameL([PrivateNamespace("com.company.assembleegameclient.util:AnimatedChars"), StaticProtectedNs("com.company.assembleegameclient.util:AnimatedChars"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.util"), PackageInternalNs("com.company.assembleegameclient.util"), PrivateNamespace("FilePrivateNS:AnimatedChars"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+end ; class

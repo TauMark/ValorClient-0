@@ -1,0 +1,628 @@
+class
+ refid "kabam.rotmg.classes.control:ParseClassesXmlCommand"
+ instance QName(PackageNamespace("kabam.rotmg.classes.control"), "ParseClassesXmlCommand")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  iinit
+   refid "kabam.rotmg.classes.control:ParseClassesXmlCommand/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "data") flag METADATA type QName(PackageNamespace(""), "XML")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "classes") flag METADATA type QName(PackageNamespace("kabam.rotmg.classes.model"), "ClassesModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PackageNamespace(""), "execute")
+   method
+    name "execute"
+    refid "kabam.rotmg.classes.control:ParseClassesXmlCommand/instance/execute"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 5
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      setlocal1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "data")
+      getproperty         Multiname("Object", [PrivateNamespace("kabam.rotmg.classes.control:ParseClassesXmlCommand"), ProtectedNamespace("kabam.rotmg.classes.control:ParseClassesXmlCommand"), StaticProtectedNs("kabam.rotmg.classes.control:ParseClassesXmlCommand"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.classes.control"), PackageInternalNs("kabam.rotmg.classes.control"), PrivateNamespace("FilePrivateNS:ParseClassesXmlCommand"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      coerce              QName(PackageNamespace(""), "XMLList")
+      setlocal2
+
+      pushbyte            0
+      setlocal            4
+
+      getlocal2
+      setlocal3
+
+      jump                L23
+
+L14:
+      label
+      getlocal3
+      getlocal            4
+      nextvalue
+      coerce              QName(PackageNamespace(""), "XML")
+      setlocal1
+
+      getlocal0
+      getlocal1
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.classes.control:ParseClassesXmlCommand"), "parseCharacterClass"), 1
+
+L23:
+      hasnext2            3, 4
+      iftrue              L14
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.classes.control:ParseClassesXmlCommand"), "parseCharacterClass")
+   method
+    name "parseCharacterClass"
+    refid "kabam.rotmg.classes.control:ParseClassesXmlCommand/instance/kabam.rotmg.classes.control:ParseClassesXmlCommand/instance/parseCharacterClass"
+    param QName(PackageNamespace(""), "XML")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 3
+     localcount 4
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      getproperty         MultinameA("type", [PrivateNamespace("kabam.rotmg.classes.control:ParseClassesXmlCommand"), ProtectedNamespace("kabam.rotmg.classes.control:ParseClassesXmlCommand"), StaticProtectedNs("kabam.rotmg.classes.control:ParseClassesXmlCommand"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.classes.control"), PackageInternalNs("kabam.rotmg.classes.control"), PrivateNamespace("FilePrivateNS:ParseClassesXmlCommand"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      convert_i
+      setlocal2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "classes")
+      getlocal2
+      callproperty        QName(PackageNamespace(""), "getCharacterClass"), 1
+      coerce              QName(PackageNamespace("kabam.rotmg.classes.model"), "CharacterClass")
+      setlocal3
+
+      getlocal0
+      getlocal3
+      getlocal1
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.classes.control:ParseClassesXmlCommand"), "populateCharacter"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.classes.control:ParseClassesXmlCommand"), "populateCharacter")
+   method
+    name "populateCharacter"
+    refid "kabam.rotmg.classes.control:ParseClassesXmlCommand/instance/kabam.rotmg.classes.control:ParseClassesXmlCommand/instance/populateCharacter"
+    param QName(PackageNamespace("kabam.rotmg.classes.model"), "CharacterClass")
+    param QName(PackageNamespace(""), "XML")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    paramname "_arg2"
+    body
+     maxstack 4
+     localcount 6
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      setlocal3
+
+      getlocal1
+      getlocal2
+      getproperty         MultinameA("type", [PrivateNamespace("kabam.rotmg.classes.control:ParseClassesXmlCommand"), ProtectedNamespace("kabam.rotmg.classes.control:ParseClassesXmlCommand"), StaticProtectedNs("kabam.rotmg.classes.control:ParseClassesXmlCommand"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.classes.control"), PackageInternalNs("kabam.rotmg.classes.control"), PrivateNamespace("FilePrivateNS:ParseClassesXmlCommand"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      setproperty         QName(PackageNamespace(""), "id")
+
+      getlocal1
+      getlocal2
+      getproperty         Multiname("DisplayId", [PrivateNamespace("kabam.rotmg.classes.control:ParseClassesXmlCommand"), ProtectedNamespace("kabam.rotmg.classes.control:ParseClassesXmlCommand"), StaticProtectedNs("kabam.rotmg.classes.control:ParseClassesXmlCommand"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.classes.control"), PackageInternalNs("kabam.rotmg.classes.control"), PrivateNamespace("FilePrivateNS:ParseClassesXmlCommand"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      pushundefined
+      ifne                L16
+
+      getlocal2
+      getproperty         MultinameA("id", [PrivateNamespace("kabam.rotmg.classes.control:ParseClassesXmlCommand"), ProtectedNamespace("kabam.rotmg.classes.control:ParseClassesXmlCommand"), StaticProtectedNs("kabam.rotmg.classes.control:ParseClassesXmlCommand"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.classes.control"), PackageInternalNs("kabam.rotmg.classes.control"), PrivateNamespace("FilePrivateNS:ParseClassesXmlCommand"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      jump                L19
+
+L16:
+      getlocal2
+      getproperty         Multiname("DisplayId", [PrivateNamespace("kabam.rotmg.classes.control:ParseClassesXmlCommand"), ProtectedNamespace("kabam.rotmg.classes.control:ParseClassesXmlCommand"), StaticProtectedNs("kabam.rotmg.classes.control:ParseClassesXmlCommand"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.classes.control"), PackageInternalNs("kabam.rotmg.classes.control"), PrivateNamespace("FilePrivateNS:ParseClassesXmlCommand"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      coerce_a
+L19:
+      setproperty         QName(PackageNamespace(""), "name")
+
+      getlocal1
+      getlocal2
+      getproperty         Multiname("Description", [PrivateNamespace("kabam.rotmg.classes.control:ParseClassesXmlCommand"), ProtectedNamespace("kabam.rotmg.classes.control:ParseClassesXmlCommand"), StaticProtectedNs("kabam.rotmg.classes.control:ParseClassesXmlCommand"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.classes.control"), PackageInternalNs("kabam.rotmg.classes.control"), PrivateNamespace("FilePrivateNS:ParseClassesXmlCommand"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      setproperty         QName(PackageNamespace(""), "description")
+
+      getlocal1
+      getlocal2
+      getproperty         Multiname("HitSound", [PrivateNamespace("kabam.rotmg.classes.control:ParseClassesXmlCommand"), ProtectedNamespace("kabam.rotmg.classes.control:ParseClassesXmlCommand"), StaticProtectedNs("kabam.rotmg.classes.control:ParseClassesXmlCommand"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.classes.control"), PackageInternalNs("kabam.rotmg.classes.control"), PrivateNamespace("FilePrivateNS:ParseClassesXmlCommand"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      setproperty         QName(PackageNamespace(""), "hitSound")
+
+      getlocal1
+      getlocal2
+      getproperty         Multiname("DeathSound", [PrivateNamespace("kabam.rotmg.classes.control:ParseClassesXmlCommand"), ProtectedNamespace("kabam.rotmg.classes.control:ParseClassesXmlCommand"), StaticProtectedNs("kabam.rotmg.classes.control:ParseClassesXmlCommand"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.classes.control"), PackageInternalNs("kabam.rotmg.classes.control"), PrivateNamespace("FilePrivateNS:ParseClassesXmlCommand"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      setproperty         QName(PackageNamespace(""), "deathSound")
+
+      getlocal1
+      getlocal2
+      getproperty         Multiname("BloodProb", [PrivateNamespace("kabam.rotmg.classes.control:ParseClassesXmlCommand"), ProtectedNamespace("kabam.rotmg.classes.control:ParseClassesXmlCommand"), StaticProtectedNs("kabam.rotmg.classes.control:ParseClassesXmlCommand"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.classes.control"), PackageInternalNs("kabam.rotmg.classes.control"), PrivateNamespace("FilePrivateNS:ParseClassesXmlCommand"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      setproperty         QName(PackageNamespace(""), "bloodProb")
+
+      getlocal1
+      getlocal0
+      getlocal2
+      getproperty         Multiname("SlotTypes", [PrivateNamespace("kabam.rotmg.classes.control:ParseClassesXmlCommand"), ProtectedNamespace("kabam.rotmg.classes.control:ParseClassesXmlCommand"), StaticProtectedNs("kabam.rotmg.classes.control:ParseClassesXmlCommand"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.classes.control"), PackageInternalNs("kabam.rotmg.classes.control"), PrivateNamespace("FilePrivateNS:ParseClassesXmlCommand"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      callproperty        QName(PrivateNamespace("kabam.rotmg.classes.control:ParseClassesXmlCommand"), "parseIntList"), 1
+      setproperty         QName(PackageNamespace(""), "slotTypes")
+
+      getlocal1
+      getlocal0
+      getlocal2
+      getproperty         Multiname("Equipment", [PrivateNamespace("kabam.rotmg.classes.control:ParseClassesXmlCommand"), ProtectedNamespace("kabam.rotmg.classes.control:ParseClassesXmlCommand"), StaticProtectedNs("kabam.rotmg.classes.control:ParseClassesXmlCommand"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.classes.control"), PackageInternalNs("kabam.rotmg.classes.control"), PrivateNamespace("FilePrivateNS:ParseClassesXmlCommand"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      callproperty        QName(PrivateNamespace("kabam.rotmg.classes.control:ParseClassesXmlCommand"), "parseIntList"), 1
+      setproperty         QName(PackageNamespace(""), "defaultEquipment")
+
+      getlocal1
+      getlocal0
+      getlocal2
+      pushstring          "MaxHitPoints"
+      callproperty        QName(PrivateNamespace("kabam.rotmg.classes.control:ParseClassesXmlCommand"), "parseCharacterStat"), 2
+      setproperty         QName(PackageNamespace(""), "hp")
+
+      getlocal1
+      getlocal0
+      getlocal2
+      pushstring          "MaxMagicPoints"
+      callproperty        QName(PrivateNamespace("kabam.rotmg.classes.control:ParseClassesXmlCommand"), "parseCharacterStat"), 2
+      setproperty         QName(PackageNamespace(""), "mp")
+
+      getlocal1
+      getlocal0
+      getlocal2
+      pushstring          "Attack"
+      callproperty        QName(PrivateNamespace("kabam.rotmg.classes.control:ParseClassesXmlCommand"), "parseCharacterStat"), 2
+      setproperty         QName(PackageNamespace(""), "attack")
+
+      getlocal1
+      getlocal0
+      getlocal2
+      pushstring          "Defense"
+      callproperty        QName(PrivateNamespace("kabam.rotmg.classes.control:ParseClassesXmlCommand"), "parseCharacterStat"), 2
+      setproperty         QName(PackageNamespace(""), "defense")
+
+      getlocal1
+      getlocal0
+      getlocal2
+      pushstring          "Speed"
+      callproperty        QName(PrivateNamespace("kabam.rotmg.classes.control:ParseClassesXmlCommand"), "parseCharacterStat"), 2
+      setproperty         QName(PackageNamespace(""), "speed")
+
+      getlocal1
+      getlocal0
+      getlocal2
+      pushstring          "Dexterity"
+      callproperty        QName(PrivateNamespace("kabam.rotmg.classes.control:ParseClassesXmlCommand"), "parseCharacterStat"), 2
+      setproperty         QName(PackageNamespace(""), "dexterity")
+
+      getlocal1
+      getlocal0
+      getlocal2
+      pushstring          "HpRegen"
+      callproperty        QName(PrivateNamespace("kabam.rotmg.classes.control:ParseClassesXmlCommand"), "parseCharacterStat"), 2
+      setproperty         QName(PackageNamespace(""), "hpRegeneration")
+
+      getlocal1
+      getlocal0
+      getlocal2
+      pushstring          "MpRegen"
+      callproperty        QName(PrivateNamespace("kabam.rotmg.classes.control:ParseClassesXmlCommand"), "parseCharacterStat"), 2
+      setproperty         QName(PackageNamespace(""), "mpRegeneration")
+
+      getlocal1
+      getlocal0
+      getlocal2
+      pushstring          "Might"
+      callproperty        QName(PrivateNamespace("kabam.rotmg.classes.control:ParseClassesXmlCommand"), "parseCharacterStat"), 2
+      setproperty         QName(PackageNamespace(""), "might")
+
+      getlocal1
+      getlocal0
+      getlocal2
+      pushstring          "Luck"
+      callproperty        QName(PrivateNamespace("kabam.rotmg.classes.control:ParseClassesXmlCommand"), "parseCharacterStat"), 2
+      setproperty         QName(PackageNamespace(""), "luck")
+
+      getlocal1
+      getlocal0
+      getlocal2
+      pushstring          "Restoration"
+      callproperty        QName(PrivateNamespace("kabam.rotmg.classes.control:ParseClassesXmlCommand"), "parseCharacterStat"), 2
+      setproperty         QName(PackageNamespace(""), "restoration")
+
+      getlocal1
+      getlocal0
+      getlocal2
+      pushstring          "Protection"
+      callproperty        QName(PrivateNamespace("kabam.rotmg.classes.control:ParseClassesXmlCommand"), "parseCharacterStat"), 2
+      setproperty         QName(PackageNamespace(""), "protection")
+
+      getlocal1
+      getlocal2
+      getproperty         Multiname("UnlockCost", [PrivateNamespace("kabam.rotmg.classes.control:ParseClassesXmlCommand"), ProtectedNamespace("kabam.rotmg.classes.control:ParseClassesXmlCommand"), StaticProtectedNs("kabam.rotmg.classes.control:ParseClassesXmlCommand"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.classes.control"), PackageInternalNs("kabam.rotmg.classes.control"), PrivateNamespace("FilePrivateNS:ParseClassesXmlCommand"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      setproperty         QName(PackageNamespace(""), "unlockCost")
+
+      pushbyte            0
+      setlocal            5
+
+      getlocal2
+      getproperty         Multiname("UnlockLevel", [PrivateNamespace("kabam.rotmg.classes.control:ParseClassesXmlCommand"), ProtectedNamespace("kabam.rotmg.classes.control:ParseClassesXmlCommand"), StaticProtectedNs("kabam.rotmg.classes.control:ParseClassesXmlCommand"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.classes.control"), PackageInternalNs("kabam.rotmg.classes.control"), PrivateNamespace("FilePrivateNS:ParseClassesXmlCommand"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      setlocal            4
+
+      jump                L142
+
+L130:
+      label
+      getlocal            4
+      getlocal            5
+      nextvalue
+      coerce              QName(PackageNamespace(""), "XML")
+      setlocal3
+
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "unlocks")
+      getlocal0
+      getlocal3
+      callproperty        QName(PrivateNamespace("kabam.rotmg.classes.control:ParseClassesXmlCommand"), "parseUnlock"), 1
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+
+L142:
+      hasnext2            4, 5
+      iftrue              L130
+
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "skins")
+      getlocal0
+      getlocal2
+      callproperty        QName(PrivateNamespace("kabam.rotmg.classes.control:ParseClassesXmlCommand"), "makeDefaultSkin"), 1
+      pushtrue
+      callpropvoid        QName(PackageNamespace(""), "addSkin"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.classes.control:ParseClassesXmlCommand"), "makeDefaultSkin")
+   method
+    name "makeDefaultSkin"
+    refid "kabam.rotmg.classes.control:ParseClassesXmlCommand/instance/kabam.rotmg.classes.control:ParseClassesXmlCommand/instance/makeDefaultSkin"
+    param QName(PackageNamespace(""), "XML")
+    returns QName(PackageNamespace("kabam.rotmg.classes.model"), "CharacterSkin")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 4
+     localcount 5
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      getproperty         Multiname("AnimatedTexture", [PrivateNamespace("kabam.rotmg.classes.control:ParseClassesXmlCommand"), ProtectedNamespace("kabam.rotmg.classes.control:ParseClassesXmlCommand"), StaticProtectedNs("kabam.rotmg.classes.control:ParseClassesXmlCommand"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.classes.control"), PackageInternalNs("kabam.rotmg.classes.control"), PrivateNamespace("FilePrivateNS:ParseClassesXmlCommand"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getproperty         Multiname("File", [PrivateNamespace("kabam.rotmg.classes.control:ParseClassesXmlCommand"), ProtectedNamespace("kabam.rotmg.classes.control:ParseClassesXmlCommand"), StaticProtectedNs("kabam.rotmg.classes.control:ParseClassesXmlCommand"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.classes.control"), PackageInternalNs("kabam.rotmg.classes.control"), PrivateNamespace("FilePrivateNS:ParseClassesXmlCommand"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      coerce_s
+      setlocal2
+
+      getlocal1
+      getproperty         Multiname("AnimatedTexture", [PrivateNamespace("kabam.rotmg.classes.control:ParseClassesXmlCommand"), ProtectedNamespace("kabam.rotmg.classes.control:ParseClassesXmlCommand"), StaticProtectedNs("kabam.rotmg.classes.control:ParseClassesXmlCommand"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.classes.control"), PackageInternalNs("kabam.rotmg.classes.control"), PrivateNamespace("FilePrivateNS:ParseClassesXmlCommand"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getproperty         Multiname("Index", [PrivateNamespace("kabam.rotmg.classes.control:ParseClassesXmlCommand"), ProtectedNamespace("kabam.rotmg.classes.control:ParseClassesXmlCommand"), StaticProtectedNs("kabam.rotmg.classes.control:ParseClassesXmlCommand"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.classes.control"), PackageInternalNs("kabam.rotmg.classes.control"), PrivateNamespace("FilePrivateNS:ParseClassesXmlCommand"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      convert_i
+      setlocal3
+
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.classes.model"), "CharacterSkin")
+      constructprop       QName(PackageNamespace("kabam.rotmg.classes.model"), "CharacterSkin"), 0
+      coerce              QName(PackageNamespace("kabam.rotmg.classes.model"), "CharacterSkin")
+      dup
+      setlocal            4
+
+      pushbyte            0
+      setproperty         QName(PackageNamespace(""), "id")
+
+      getlocal            4
+      pushstring          "Skins.Classic"
+      setproperty         QName(PackageNamespace(""), "name")
+
+      getlocal            4
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.assets.model"), "CharacterTemplate")
+      getlocal2
+      getlocal3
+      constructprop       QName(PackageNamespace("kabam.rotmg.assets.model"), "CharacterTemplate"), 2
+      setproperty         QName(PackageNamespace(""), "template")
+
+      getlocal            4
+      getlex              QName(PackageNamespace("kabam.rotmg.classes.model"), "CharacterSkinState")
+      getproperty         QName(PackageNamespace(""), "OWNED")
+      callpropvoid        QName(PackageNamespace(""), "setState"), 1
+
+      getlocal            4
+      pushtrue
+      callpropvoid        QName(PackageNamespace(""), "setIsSelected"), 1
+
+      getlocal            4
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.classes.control:ParseClassesXmlCommand"), "parseUnlock")
+   method
+    name "parseUnlock"
+    refid "kabam.rotmg.classes.control:ParseClassesXmlCommand/instance/kabam.rotmg.classes.control:ParseClassesXmlCommand/instance/parseUnlock"
+    param QName(PackageNamespace(""), "XML")
+    returns QName(PackageNamespace("kabam.rotmg.classes.model"), "CharacterClassUnlock")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.classes.model"), "CharacterClassUnlock")
+      constructprop       QName(PackageNamespace("kabam.rotmg.classes.model"), "CharacterClassUnlock"), 0
+      coerce              QName(PackageNamespace("kabam.rotmg.classes.model"), "CharacterClassUnlock")
+      setlocal2
+
+      getlocal2
+      getlocal1
+      getproperty         MultinameA("level", [PrivateNamespace("kabam.rotmg.classes.control:ParseClassesXmlCommand"), ProtectedNamespace("kabam.rotmg.classes.control:ParseClassesXmlCommand"), StaticProtectedNs("kabam.rotmg.classes.control:ParseClassesXmlCommand"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.classes.control"), PackageInternalNs("kabam.rotmg.classes.control"), PrivateNamespace("FilePrivateNS:ParseClassesXmlCommand"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      setproperty         QName(PackageNamespace(""), "level")
+
+      getlocal2
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "classes")
+      getlocal1
+      getproperty         MultinameA("type", [PrivateNamespace("kabam.rotmg.classes.control:ParseClassesXmlCommand"), ProtectedNamespace("kabam.rotmg.classes.control:ParseClassesXmlCommand"), StaticProtectedNs("kabam.rotmg.classes.control:ParseClassesXmlCommand"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.classes.control"), PackageInternalNs("kabam.rotmg.classes.control"), PrivateNamespace("FilePrivateNS:ParseClassesXmlCommand"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      callproperty        QName(PackageNamespace(""), "getCharacterClass"), 1
+      setproperty         QName(PackageNamespace(""), "character")
+
+      getlocal2
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.classes.control:ParseClassesXmlCommand"), "parseCharacterStat")
+   method
+    name "parseCharacterStat"
+    refid "kabam.rotmg.classes.control:ParseClassesXmlCommand/instance/kabam.rotmg.classes.control:ParseClassesXmlCommand/instance/parseCharacterStat"
+    param QName(PackageNamespace(""), "XML")
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace("kabam.rotmg.classes.model"), "CharacterClassStat")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    paramname "_arg2"
+    body
+     maxstack 2
+     localcount 9
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      setlocal            5
+
+      pushnull
+      setlocal            6
+
+      pushnull
+      setlocal            4
+
+      getlocal1
+      getlocal2
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.classes.control:ParseClassesXmlCommand"), ProtectedNamespace("kabam.rotmg.classes.control:ParseClassesXmlCommand"), StaticProtectedNs("kabam.rotmg.classes.control:ParseClassesXmlCommand"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.classes.control"), PackageInternalNs("kabam.rotmg.classes.control"), PrivateNamespace("FilePrivateNS:ParseClassesXmlCommand"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      pushbyte            0
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.classes.control:ParseClassesXmlCommand"), ProtectedNamespace("kabam.rotmg.classes.control:ParseClassesXmlCommand"), StaticProtectedNs("kabam.rotmg.classes.control:ParseClassesXmlCommand"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.classes.control"), PackageInternalNs("kabam.rotmg.classes.control"), PrivateNamespace("FilePrivateNS:ParseClassesXmlCommand"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      coerce              QName(PackageNamespace(""), "XML")
+      setlocal3
+
+      pushbyte            0
+      setlocal            8
+
+      getlocal1
+      getproperty         Multiname("LevelIncrease", [PrivateNamespace("kabam.rotmg.classes.control:ParseClassesXmlCommand"), ProtectedNamespace("kabam.rotmg.classes.control:ParseClassesXmlCommand"), StaticProtectedNs("kabam.rotmg.classes.control:ParseClassesXmlCommand"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.classes.control"), PackageInternalNs("kabam.rotmg.classes.control"), PrivateNamespace("FilePrivateNS:ParseClassesXmlCommand"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      setlocal            7
+
+      jump                L33
+
+L21:
+      label
+      getlocal            7
+      getlocal            8
+      nextvalue
+      coerce              QName(PackageNamespace(""), "XML")
+      dup
+      setlocal            6
+
+      callproperty        Multiname("text", [PrivateNamespace("kabam.rotmg.classes.control:ParseClassesXmlCommand"), ProtectedNamespace("kabam.rotmg.classes.control:ParseClassesXmlCommand"), StaticProtectedNs("kabam.rotmg.classes.control:ParseClassesXmlCommand"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.classes.control"), PackageInternalNs("kabam.rotmg.classes.control"), PrivateNamespace("FilePrivateNS:ParseClassesXmlCommand"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 0
+      getlocal2
+      ifne                L33
+
+      getlocal            6
+      setlocal            5
+
+L33:
+      hasnext2            7, 8
+      iftrue              L21
+
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.classes.model"), "CharacterClassStat")
+      constructprop       QName(PackageNamespace("kabam.rotmg.classes.model"), "CharacterClassStat"), 0
+      coerce              QName(PackageNamespace("kabam.rotmg.classes.model"), "CharacterClassStat")
+      dup
+      setlocal            4
+
+      getlocal3
+      callproperty        Multiname("toString", [PrivateNamespace("kabam.rotmg.classes.control:ParseClassesXmlCommand"), ProtectedNamespace("kabam.rotmg.classes.control:ParseClassesXmlCommand"), StaticProtectedNs("kabam.rotmg.classes.control:ParseClassesXmlCommand"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.classes.control"), PackageInternalNs("kabam.rotmg.classes.control"), PrivateNamespace("FilePrivateNS:ParseClassesXmlCommand"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 0
+      convert_i
+      setproperty         QName(PackageNamespace(""), "initial")
+
+      getlocal            4
+      getlocal3
+      getproperty         MultinameA("max", [PrivateNamespace("kabam.rotmg.classes.control:ParseClassesXmlCommand"), ProtectedNamespace("kabam.rotmg.classes.control:ParseClassesXmlCommand"), StaticProtectedNs("kabam.rotmg.classes.control:ParseClassesXmlCommand"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.classes.control"), PackageInternalNs("kabam.rotmg.classes.control"), PrivateNamespace("FilePrivateNS:ParseClassesXmlCommand"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      setproperty         QName(PackageNamespace(""), "max")
+
+      getlocal            4
+      getlocal            5
+      iffalse             L54
+
+      getlocal            5
+      getproperty         MultinameA("min", [PrivateNamespace("kabam.rotmg.classes.control:ParseClassesXmlCommand"), ProtectedNamespace("kabam.rotmg.classes.control:ParseClassesXmlCommand"), StaticProtectedNs("kabam.rotmg.classes.control:ParseClassesXmlCommand"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.classes.control"), PackageInternalNs("kabam.rotmg.classes.control"), PrivateNamespace("FilePrivateNS:ParseClassesXmlCommand"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      jump                L56
+
+L54:
+      pushbyte            0
+      coerce_a
+L56:
+      setproperty         QName(PackageNamespace(""), "rampMin")
+
+      getlocal            4
+      getlocal            5
+      iffalse             L63
+
+      getlocal            5
+      getproperty         MultinameA("max", [PrivateNamespace("kabam.rotmg.classes.control:ParseClassesXmlCommand"), ProtectedNamespace("kabam.rotmg.classes.control:ParseClassesXmlCommand"), StaticProtectedNs("kabam.rotmg.classes.control:ParseClassesXmlCommand"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.classes.control"), PackageInternalNs("kabam.rotmg.classes.control"), PrivateNamespace("FilePrivateNS:ParseClassesXmlCommand"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      jump                L65
+
+L63:
+      pushbyte            0
+      coerce_a
+L65:
+      setproperty         QName(PackageNamespace(""), "rampMax")
+
+      getlocal            4
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.classes.control:ParseClassesXmlCommand"), "parseIntList")
+   method
+    name "parseIntList"
+    refid "kabam.rotmg.classes.control:ParseClassesXmlCommand/instance/kabam.rotmg.classes.control:ParseClassesXmlCommand/instance/parseIntList"
+    param QName(PackageNamespace(""), "String")
+    returns TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace(""), "int")>)
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 4
+     localcount 6
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushbyte            0
+      setlocal            5
+
+      getlocal1
+      pushstring          ","
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "split"), 1
+      coerce              QName(PackageNamespace(""), "Array")
+      setlocal2
+
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "length")
+      convert_i
+      setlocal3
+
+      getlex              QName(PackageNamespace("__AS3__.vec"), "Vector")
+      getlex              QName(PackageNamespace(""), "int")
+      applytype           1
+      getlocal3
+      pushtrue
+      construct           2
+      coerce              TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace(""), "int")>)
+      setlocal            4
+
+      jump                L31
+
+L22:
+      label
+      getlocal            4
+      getlocal            5
+      getlocal2
+      getlocal            5
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.classes.control:ParseClassesXmlCommand"), ProtectedNamespace("kabam.rotmg.classes.control:ParseClassesXmlCommand"), StaticProtectedNs("kabam.rotmg.classes.control:ParseClassesXmlCommand"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.classes.control"), PackageInternalNs("kabam.rotmg.classes.control"), PrivateNamespace("FilePrivateNS:ParseClassesXmlCommand"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      convert_i
+      setproperty         MultinameL([PrivateNamespace("kabam.rotmg.classes.control:ParseClassesXmlCommand"), ProtectedNamespace("kabam.rotmg.classes.control:ParseClassesXmlCommand"), StaticProtectedNs("kabam.rotmg.classes.control:ParseClassesXmlCommand"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.classes.control"), PackageInternalNs("kabam.rotmg.classes.control"), PrivateNamespace("FilePrivateNS:ParseClassesXmlCommand"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      inclocal_i          5
+L31:
+      getlocal            5
+      getlocal3
+      iflt                L22
+
+      getlocal            4
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.classes.control:ParseClassesXmlCommand/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

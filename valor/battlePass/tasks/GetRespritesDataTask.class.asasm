@@ -1,0 +1,494 @@
+class
+ refid "valor.battlePass.tasks:GetRespritesDataTask"
+ instance QName(PackageNamespace("valor.battlePass.tasks"), "GetRespritesDataTask")
+  extends QName(PackageNamespace("kabam.lib.tasks"), "BaseTask")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("valor.battlePass.tasks:GetRespritesDataTask")
+  iinit
+   refid "valor.battlePass.tasks:GetRespritesDataTask/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "account") flag METADATA type QName(PackageNamespace("kabam.rotmg.account.core"), "Account")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "logger") flag METADATA type QName(PackageNamespace("robotlegs.bender.framework.api"), "ILogger")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "client") flag METADATA type QName(PackageNamespace("kabam.rotmg.appengine.api"), "AppEngineClient")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PrivateNamespace("valor.battlePass.tasks:GetRespritesDataTask"), "requestData") type QName(PackageNamespace(""), "Object") end
+  trait method QName(ProtectedNamespace("valor.battlePass.tasks:GetRespritesDataTask"), "startTask") flag OVERRIDE
+   method
+    name "startTask"
+    refid "valor.battlePass.tasks:GetRespritesDataTask/instance/valor.battlePass.tasks:GetRespritesDataTask:startTask"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "logger")
+      pushstring          "GetRespritesDataTask start"
+      callpropvoid        QName(Namespace("robotlegs.bender.framework.api:ILogger"), "info"), 1
+
+      getlocal0
+      getlocal0
+      callproperty        QName(PackageNamespace(""), "makeRequestData"), 0
+      setproperty         QName(PrivateNamespace("valor.battlePass.tasks:GetRespritesDataTask"), "requestData")
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("valor.battlePass.tasks:GetRespritesDataTask"), "sendRequest"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("valor.battlePass.tasks:GetRespritesDataTask"), "sendRequest")
+   method
+    name "sendRequest"
+    refid "valor.battlePass.tasks:GetRespritesDataTask/instance/valor.battlePass.tasks:GetRespritesDataTask/instance/sendRequest"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "client")
+      getproperty         QName(Namespace("kabam.rotmg.appengine.api:AppEngineClient"), "complete")
+      getlocal0
+      getproperty         QName(PrivateNamespace("valor.battlePass.tasks:GetRespritesDataTask"), "onComplete")
+      callpropvoid        QName(PackageNamespace(""), "addOnce"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "client")
+      pushstring          "/battlePass/getRespritesData"
+      getlocal0
+      getproperty         QName(PrivateNamespace("valor.battlePass.tasks:GetRespritesDataTask"), "requestData")
+      callpropvoid        QName(Namespace("kabam.rotmg.appengine.api:AppEngineClient"), "sendRequest"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("valor.battlePass.tasks:GetRespritesDataTask"), "onComplete")
+   method
+    name "onComplete"
+    refid "valor.battlePass.tasks:GetRespritesDataTask/instance/valor.battlePass.tasks:GetRespritesDataTask/instance/onComplete"
+    param QName(PackageNamespace(""), "Boolean")
+    param null
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "noError"
+    paramname "data"
+    body
+     maxstack 9
+     localcount 20
+     initscopedepth 0
+     maxscopedepth 2
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      setlocal            13
+
+      pushbyte            0
+      setlocal            5
+
+      pushbyte            0
+      setlocal            10
+
+      pushbyte            0
+      setlocal3
+
+      pushnull
+      setlocal            4
+
+      pushundefined
+      setlocal            12
+
+      pushnan
+      setlocal            8
+
+      pushnull
+      setlocal            9
+
+      pushnull
+      setlocal            11
+
+      getlocal1
+      iftrue              L26
+
+      findpropstrict      QName(ProtectedNamespace("kabam.lib.tasks:BaseTask"), "completeTask")
+      pushtrue
+      callpropvoid        QName(ProtectedNamespace("kabam.lib.tasks:BaseTask"), "completeTask"), 1
+
+      returnvoid
+
+L26:
+      findpropstrict      QName(PackageNamespace(""), "XML")
+      getlocal2
+      constructprop       QName(PackageNamespace(""), "XML"), 1
+      coerce              QName(PackageNamespace(""), "XML")
+      setlocal            13
+
+L31:
+      jump                L47
+
+L32:
+      getlocal0
+      pushscope
+
+      newcatch            0
+      dup
+      setlocal            15
+
+      dup
+      pushscope
+
+      swap
+      setslot             1
+
+      findpropstrict      QName(ProtectedNamespace("kabam.lib.tasks:BaseTask"), "completeTask")
+      pushtrue
+      callpropvoid        QName(ProtectedNamespace("kabam.lib.tasks:BaseTask"), "completeTask"), 1
+
+      popscope
+      kill                15
+      returnvoid
+
+L47:
+      getlex              QName(PackageNamespace("valor.battlePass"), "BattlePassModel")
+      findpropstrict      QName(PackageNamespace("flash.utils"), "Dictionary")
+      constructprop       QName(PackageNamespace("flash.utils"), "Dictionary"), 0
+      setproperty         QName(PackageNamespace(""), "respritesData")
+
+      pushbyte            0
+      setlocal            19
+
+      getlocal            13
+      getproperty         Multiname("Resprite", [PrivateNamespace("valor.battlePass.tasks:GetRespritesDataTask"), ProtectedNamespace("valor.battlePass.tasks:GetRespritesDataTask"), StaticProtectedNs("valor.battlePass.tasks:GetRespritesDataTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("valor.battlePass.tasks"), PackageInternalNs("valor.battlePass.tasks"), PrivateNamespace("FilePrivateNS:GetRespritesDataTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      setlocal            18
+
+      jump                L218
+
+L57:
+      label
+      getlocal            18
+      getlocal            19
+      nextvalue
+      coerce              QName(PackageNamespace(""), "XML")
+      dup
+      setlocal            6
+
+      pushstring          "id"
+      callproperty        Multiname("attribute", [PrivateNamespace("valor.battlePass.tasks:GetRespritesDataTask"), ProtectedNamespace("valor.battlePass.tasks:GetRespritesDataTask"), StaticProtectedNs("valor.battlePass.tasks:GetRespritesDataTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("valor.battlePass.tasks"), PackageInternalNs("valor.battlePass.tasks"), PrivateNamespace("FilePrivateNS:GetRespritesDataTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 1
+      convert_i
+      setlocal            5
+
+      getlex              QName(PackageNamespace("valor.battlePass.resprites"), "RespriteThemes")
+      getlocal            6
+      getproperty         Multiname("Theme", [PrivateNamespace("valor.battlePass.tasks:GetRespritesDataTask"), ProtectedNamespace("valor.battlePass.tasks:GetRespritesDataTask"), StaticProtectedNs("valor.battlePass.tasks:GetRespritesDataTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("valor.battlePass.tasks"), PackageInternalNs("valor.battlePass.tasks"), PrivateNamespace("FilePrivateNS:GetRespritesDataTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      callproperty        QName(PackageNamespace(""), "getRespriteThemeFromString"), 1
+      convert_i
+      setlocal            10
+
+      getlex              QName(PackageNamespace("valor.battlePass.resprites"), "RespriteTypes")
+      getlocal            6
+      getproperty         Multiname("Type", [PrivateNamespace("valor.battlePass.tasks:GetRespritesDataTask"), ProtectedNamespace("valor.battlePass.tasks:GetRespritesDataTask"), StaticProtectedNs("valor.battlePass.tasks:GetRespritesDataTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("valor.battlePass.tasks"), PackageInternalNs("valor.battlePass.tasks"), PrivateNamespace("FilePrivateNS:GetRespritesDataTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      callproperty        QName(PackageNamespace(""), "getRespriteTypeFromString"), 1
+      convert_i
+      setlocal3
+
+      getlex              QName(PackageNamespace("com.company.util"), "AssetLibrary")
+      getlex              QName(PrivateNamespace("valor.battlePass.tasks:GetRespritesDataTask"), "FILE_NAME")
+      getlocal            6
+      getproperty         Multiname("Texture", [PrivateNamespace("valor.battlePass.tasks:GetRespritesDataTask"), ProtectedNamespace("valor.battlePass.tasks:GetRespritesDataTask"), StaticProtectedNs("valor.battlePass.tasks:GetRespritesDataTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("valor.battlePass.tasks"), PackageInternalNs("valor.battlePass.tasks"), PrivateNamespace("FilePrivateNS:GetRespritesDataTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getproperty         Multiname("Index", [PrivateNamespace("valor.battlePass.tasks:GetRespritesDataTask"), ProtectedNamespace("valor.battlePass.tasks:GetRespritesDataTask"), StaticProtectedNs("valor.battlePass.tasks:GetRespritesDataTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("valor.battlePass.tasks"), PackageInternalNs("valor.battlePass.tasks"), PrivateNamespace("FilePrivateNS:GetRespritesDataTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      callproperty        QName(PackageNamespace(""), "getImageFromSet"), 2
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      setlocal            4
+
+      getlex              QName(PackageNamespace("__AS3__.vec"), "Vector")
+      getlex              QName(PackageNamespace("flash.display"), "BitmapData")
+      applytype           1
+      construct           0
+      coerce              TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("flash.display"), "BitmapData")>)
+      setlocal            12
+
+      getlocal            6
+      pushstring          "ProjectileTexture"
+      callproperty        Multiname("hasOwnProperty", [PrivateNamespace("valor.battlePass.tasks:GetRespritesDataTask"), ProtectedNamespace("valor.battlePass.tasks:GetRespritesDataTask"), StaticProtectedNs("valor.battlePass.tasks:GetRespritesDataTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("valor.battlePass.tasks"), PackageInternalNs("valor.battlePass.tasks"), PrivateNamespace("FilePrivateNS:GetRespritesDataTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 1
+      iffalse             L144
+
+      getlocal            6
+      getproperty         Multiname("ProjectileTexture", [PrivateNamespace("valor.battlePass.tasks:GetRespritesDataTask"), ProtectedNamespace("valor.battlePass.tasks:GetRespritesDataTask"), StaticProtectedNs("valor.battlePass.tasks:GetRespritesDataTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("valor.battlePass.tasks"), PackageInternalNs("valor.battlePass.tasks"), PrivateNamespace("FilePrivateNS:GetRespritesDataTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      coerce              QName(PackageNamespace(""), "XMLList")
+      setlocal            9
+
+      pushbyte            0
+      setlocal            17
+
+      getlocal            9
+      getproperty         Multiname("Index", [PrivateNamespace("valor.battlePass.tasks:GetRespritesDataTask"), ProtectedNamespace("valor.battlePass.tasks:GetRespritesDataTask"), StaticProtectedNs("valor.battlePass.tasks:GetRespritesDataTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("valor.battlePass.tasks"), PackageInternalNs("valor.battlePass.tasks"), PrivateNamespace("FilePrivateNS:GetRespritesDataTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      setlocal            16
+
+      jump                L127
+
+L108:
+      label
+      getlocal            16
+      getlocal            17
+      nextvalue
+      convert_i
+      setlocal            7
+
+      getlocal            12
+      getlex              QName(PackageNamespace("com.company.util"), "AssetLibrary")
+      getlocal            9
+      pushstring          "Is16"
+      callproperty        Multiname("hasOwnProperty", [PrivateNamespace("valor.battlePass.tasks:GetRespritesDataTask"), ProtectedNamespace("valor.battlePass.tasks:GetRespritesDataTask"), StaticProtectedNs("valor.battlePass.tasks:GetRespritesDataTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("valor.battlePass.tasks"), PackageInternalNs("valor.battlePass.tasks"), PrivateNamespace("FilePrivateNS:GetRespritesDataTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 1
+      iffalse             L122
+
+      getlex              QName(PrivateNamespace("valor.battlePass.tasks:GetRespritesDataTask"), "FILE_NAME_16")
+      jump                L124
+
+L122:
+      getlex              QName(PrivateNamespace("valor.battlePass.tasks:GetRespritesDataTask"), "FILE_NAME")
+      coerce_s
+L124:
+      getlocal            7
+      callproperty        QName(PackageNamespace(""), "getImageFromSet"), 2
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+
+L127:
+      hasnext2            16, 17
+      iftrue              L108
+
+      getlocal            9
+      pushstring          "AngleCorrection"
+      callproperty        Multiname("hasOwnProperty", [PrivateNamespace("valor.battlePass.tasks:GetRespritesDataTask"), ProtectedNamespace("valor.battlePass.tasks:GetRespritesDataTask"), StaticProtectedNs("valor.battlePass.tasks:GetRespritesDataTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("valor.battlePass.tasks"), PackageInternalNs("valor.battlePass.tasks"), PrivateNamespace("FilePrivateNS:GetRespritesDataTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 1
+      iffalse             L141
+
+      getlocal            9
+      getproperty         Multiname("AngleCorrection", [PrivateNamespace("valor.battlePass.tasks:GetRespritesDataTask"), ProtectedNamespace("valor.battlePass.tasks:GetRespritesDataTask"), StaticProtectedNs("valor.battlePass.tasks:GetRespritesDataTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("valor.battlePass.tasks"), PackageInternalNs("valor.battlePass.tasks"), PrivateNamespace("FilePrivateNS:GetRespritesDataTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      convert_d
+      pushdouble          3.141592653589793
+      multiply
+      pushbyte            4
+      divide
+      jump                L142
+
+L141:
+      pushdouble          0
+L142:
+      convert_d
+      setlocal            8
+
+L144:
+      getlex              QName(PackageNamespace("valor.battlePass"), "BattlePassModel")
+      getproperty         QName(PackageNamespace(""), "respritesData")
+      getlocal            5
+      findpropstrict      QName(PackageNamespace("valor.battlePass.resprites"), "RespriteData")
+      getlocal            5
+      getlocal            10
+      getlocal3
+      getlocal            4
+      getlocal            12
+      getlocal            8
+      constructprop       QName(PackageNamespace("valor.battlePass.resprites"), "RespriteData"), 6
+      setproperty         MultinameL([PrivateNamespace("valor.battlePass.tasks:GetRespritesDataTask"), ProtectedNamespace("valor.battlePass.tasks:GetRespritesDataTask"), StaticProtectedNs("valor.battlePass.tasks:GetRespritesDataTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("valor.battlePass.tasks"), PackageInternalNs("valor.battlePass.tasks"), PrivateNamespace("FilePrivateNS:GetRespritesDataTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      getlocal            6
+      pushstring          "SpecialTexture"
+      callproperty        Multiname("hasOwnProperty", [PrivateNamespace("valor.battlePass.tasks:GetRespritesDataTask"), ProtectedNamespace("valor.battlePass.tasks:GetRespritesDataTask"), StaticProtectedNs("valor.battlePass.tasks:GetRespritesDataTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("valor.battlePass.tasks"), PackageInternalNs("valor.battlePass.tasks"), PrivateNamespace("FilePrivateNS:GetRespritesDataTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 1
+      iffalse             L218
+
+      getlocal            6
+      getproperty         Multiname("SpecialTexture", [PrivateNamespace("valor.battlePass.tasks:GetRespritesDataTask"), ProtectedNamespace("valor.battlePass.tasks:GetRespritesDataTask"), StaticProtectedNs("valor.battlePass.tasks:GetRespritesDataTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("valor.battlePass.tasks"), PackageInternalNs("valor.battlePass.tasks"), PrivateNamespace("FilePrivateNS:GetRespritesDataTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      pushbyte            0
+      getproperty         MultinameL([PrivateNamespace("valor.battlePass.tasks:GetRespritesDataTask"), ProtectedNamespace("valor.battlePass.tasks:GetRespritesDataTask"), StaticProtectedNs("valor.battlePass.tasks:GetRespritesDataTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("valor.battlePass.tasks"), PackageInternalNs("valor.battlePass.tasks"), PrivateNamespace("FilePrivateNS:GetRespritesDataTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      coerce              QName(PackageNamespace(""), "XML")
+      dup
+      setlocal            11
+
+      pushstring          "Is16"
+      callproperty        Multiname("hasOwnProperty", [PrivateNamespace("valor.battlePass.tasks:GetRespritesDataTask"), ProtectedNamespace("valor.battlePass.tasks:GetRespritesDataTask"), StaticProtectedNs("valor.battlePass.tasks:GetRespritesDataTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("valor.battlePass.tasks"), PackageInternalNs("valor.battlePass.tasks"), PrivateNamespace("FilePrivateNS:GetRespritesDataTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 1
+      iffalse             L181
+
+      getlex              QName(PackageNamespace("valor.battlePass"), "BattlePassModel")
+      getproperty         QName(PackageNamespace(""), "respritesData")
+      getlocal            5
+      getproperty         MultinameL([PrivateNamespace("valor.battlePass.tasks:GetRespritesDataTask"), ProtectedNamespace("valor.battlePass.tasks:GetRespritesDataTask"), StaticProtectedNs("valor.battlePass.tasks:GetRespritesDataTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("valor.battlePass.tasks"), PackageInternalNs("valor.battlePass.tasks"), PrivateNamespace("FilePrivateNS:GetRespritesDataTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getlex              QName(PackageNamespace("com.company.util"), "AssetLibrary")
+      getlex              QName(PrivateNamespace("valor.battlePass.tasks:GetRespritesDataTask"), "FILE_NAME_16")
+      getlocal            11
+      getproperty         Multiname("Index", [PrivateNamespace("valor.battlePass.tasks:GetRespritesDataTask"), ProtectedNamespace("valor.battlePass.tasks:GetRespritesDataTask"), StaticProtectedNs("valor.battlePass.tasks:GetRespritesDataTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("valor.battlePass.tasks"), PackageInternalNs("valor.battlePass.tasks"), PrivateNamespace("FilePrivateNS:GetRespritesDataTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      callproperty        QName(PackageNamespace(""), "getImageFromSet"), 2
+      setproperty         Multiname("specialTexture", [PrivateNamespace("valor.battlePass.tasks:GetRespritesDataTask"), ProtectedNamespace("valor.battlePass.tasks:GetRespritesDataTask"), StaticProtectedNs("valor.battlePass.tasks:GetRespritesDataTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("valor.battlePass.tasks"), PackageInternalNs("valor.battlePass.tasks"), PrivateNamespace("FilePrivateNS:GetRespritesDataTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      jump                L206
+
+L181:
+      getlocal            11
+      pushstring          "IsAnimated"
+      callproperty        Multiname("hasOwnProperty", [PrivateNamespace("valor.battlePass.tasks:GetRespritesDataTask"), ProtectedNamespace("valor.battlePass.tasks:GetRespritesDataTask"), StaticProtectedNs("valor.battlePass.tasks:GetRespritesDataTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("valor.battlePass.tasks"), PackageInternalNs("valor.battlePass.tasks"), PrivateNamespace("FilePrivateNS:GetRespritesDataTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 1
+      iffalse             L196
+
+      getlex              QName(PackageNamespace("valor.battlePass"), "BattlePassModel")
+      getproperty         QName(PackageNamespace(""), "respritesData")
+      getlocal            5
+      getproperty         MultinameL([PrivateNamespace("valor.battlePass.tasks:GetRespritesDataTask"), ProtectedNamespace("valor.battlePass.tasks:GetRespritesDataTask"), StaticProtectedNs("valor.battlePass.tasks:GetRespritesDataTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("valor.battlePass.tasks"), PackageInternalNs("valor.battlePass.tasks"), PrivateNamespace("FilePrivateNS:GetRespritesDataTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "AnimatedChars")
+      getlex              QName(PrivateNamespace("valor.battlePass.tasks:GetRespritesDataTask"), "FILE_NAME_ANIMATED")
+      getlocal            11
+      getproperty         Multiname("Index", [PrivateNamespace("valor.battlePass.tasks:GetRespritesDataTask"), ProtectedNamespace("valor.battlePass.tasks:GetRespritesDataTask"), StaticProtectedNs("valor.battlePass.tasks:GetRespritesDataTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("valor.battlePass.tasks"), PackageInternalNs("valor.battlePass.tasks"), PrivateNamespace("FilePrivateNS:GetRespritesDataTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      callproperty        QName(PackageNamespace(""), "getAnimatedChar"), 2
+      setproperty         Multiname("specialAnimatedCharTexture", [PrivateNamespace("valor.battlePass.tasks:GetRespritesDataTask"), ProtectedNamespace("valor.battlePass.tasks:GetRespritesDataTask"), StaticProtectedNs("valor.battlePass.tasks:GetRespritesDataTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("valor.battlePass.tasks"), PackageInternalNs("valor.battlePass.tasks"), PrivateNamespace("FilePrivateNS:GetRespritesDataTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      jump                L206
+
+L196:
+      getlex              QName(PackageNamespace("valor.battlePass"), "BattlePassModel")
+      getproperty         QName(PackageNamespace(""), "respritesData")
+      getlocal            5
+      getproperty         MultinameL([PrivateNamespace("valor.battlePass.tasks:GetRespritesDataTask"), ProtectedNamespace("valor.battlePass.tasks:GetRespritesDataTask"), StaticProtectedNs("valor.battlePass.tasks:GetRespritesDataTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("valor.battlePass.tasks"), PackageInternalNs("valor.battlePass.tasks"), PrivateNamespace("FilePrivateNS:GetRespritesDataTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getlex              QName(PackageNamespace("com.company.util"), "AssetLibrary")
+      getlex              QName(PrivateNamespace("valor.battlePass.tasks:GetRespritesDataTask"), "FILE_NAME")
+      getlocal            11
+      getproperty         Multiname("Index", [PrivateNamespace("valor.battlePass.tasks:GetRespritesDataTask"), ProtectedNamespace("valor.battlePass.tasks:GetRespritesDataTask"), StaticProtectedNs("valor.battlePass.tasks:GetRespritesDataTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("valor.battlePass.tasks"), PackageInternalNs("valor.battlePass.tasks"), PrivateNamespace("FilePrivateNS:GetRespritesDataTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      callproperty        QName(PackageNamespace(""), "getImageFromSet"), 2
+      setproperty         Multiname("specialTexture", [PrivateNamespace("valor.battlePass.tasks:GetRespritesDataTask"), ProtectedNamespace("valor.battlePass.tasks:GetRespritesDataTask"), StaticProtectedNs("valor.battlePass.tasks:GetRespritesDataTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("valor.battlePass.tasks"), PackageInternalNs("valor.battlePass.tasks"), PrivateNamespace("FilePrivateNS:GetRespritesDataTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+L206:
+      getlocal            11
+      pushstring          "Animation"
+      callproperty        Multiname("hasOwnProperty", [PrivateNamespace("valor.battlePass.tasks:GetRespritesDataTask"), ProtectedNamespace("valor.battlePass.tasks:GetRespritesDataTask"), StaticProtectedNs("valor.battlePass.tasks:GetRespritesDataTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("valor.battlePass.tasks"), PackageInternalNs("valor.battlePass.tasks"), PrivateNamespace("FilePrivateNS:GetRespritesDataTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 1
+      iffalse             L218
+
+      getlex              QName(PackageNamespace("valor.battlePass"), "BattlePassModel")
+      getproperty         QName(PackageNamespace(""), "respritesData")
+      getlocal            5
+      getproperty         MultinameL([PrivateNamespace("valor.battlePass.tasks:GetRespritesDataTask"), ProtectedNamespace("valor.battlePass.tasks:GetRespritesDataTask"), StaticProtectedNs("valor.battlePass.tasks:GetRespritesDataTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("valor.battlePass.tasks"), PackageInternalNs("valor.battlePass.tasks"), PrivateNamespace("FilePrivateNS:GetRespritesDataTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.objects.animation"), "AnimationsData")
+      getlocal            11
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.objects.animation"), "AnimationsData"), 1
+      setproperty         Multiname("specialAnimationsData", [PrivateNamespace("valor.battlePass.tasks:GetRespritesDataTask"), ProtectedNamespace("valor.battlePass.tasks:GetRespritesDataTask"), StaticProtectedNs("valor.battlePass.tasks:GetRespritesDataTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("valor.battlePass.tasks"), PackageInternalNs("valor.battlePass.tasks"), PrivateNamespace("FilePrivateNS:GetRespritesDataTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+L218:
+      hasnext2            18, 19
+      iftrue              L57
+
+      findpropstrict      QName(ProtectedNamespace("kabam.lib.tasks:BaseTask"), "completeTask")
+      pushtrue
+      callpropvoid        QName(ProtectedNamespace("kabam.lib.tasks:BaseTask"), "completeTask"), 1
+
+      returnvoid
+     end ; code
+     try from L26 to L31 target L32 type QName(PackageNamespace(""), "Error") name QName(PackageInternalNs("valor.battlePass.tasks"), "e") end
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "makeRequestData")
+   method
+    name "makeRequestData"
+    refid "valor.battlePass.tasks:GetRespritesDataTask/instance/makeRequestData"
+    returns QName(PackageNamespace(""), "Object")
+    body
+     maxstack 4
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      newobject           0
+      coerce              QName(PackageNamespace(""), "Object")
+      setlocal1
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "account")
+      callproperty        QName(Namespace("kabam.rotmg.account.core:Account"), "gameNetworkUserId"), 0
+      setproperty         Multiname("game_net_user_id", [PrivateNamespace("valor.battlePass.tasks:GetRespritesDataTask"), ProtectedNamespace("valor.battlePass.tasks:GetRespritesDataTask"), StaticProtectedNs("valor.battlePass.tasks:GetRespritesDataTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("valor.battlePass.tasks"), PackageInternalNs("valor.battlePass.tasks"), PrivateNamespace("FilePrivateNS:GetRespritesDataTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "account")
+      callproperty        QName(Namespace("kabam.rotmg.account.core:Account"), "gameNetwork"), 0
+      setproperty         Multiname("game_net", [PrivateNamespace("valor.battlePass.tasks:GetRespritesDataTask"), ProtectedNamespace("valor.battlePass.tasks:GetRespritesDataTask"), StaticProtectedNs("valor.battlePass.tasks:GetRespritesDataTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("valor.battlePass.tasks"), PackageInternalNs("valor.battlePass.tasks"), PrivateNamespace("FilePrivateNS:GetRespritesDataTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "account")
+      callproperty        QName(Namespace("kabam.rotmg.account.core:Account"), "playPlatform"), 0
+      setproperty         Multiname("play_platform", [PrivateNamespace("valor.battlePass.tasks:GetRespritesDataTask"), ProtectedNamespace("valor.battlePass.tasks:GetRespritesDataTask"), StaticProtectedNs("valor.battlePass.tasks:GetRespritesDataTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("valor.battlePass.tasks"), PackageInternalNs("valor.battlePass.tasks"), PrivateNamespace("FilePrivateNS:GetRespritesDataTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      getlocal1
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.parameters"), "Parameters")
+      getproperty         QName(PackageNamespace(""), "sendLogin_")
+      setproperty         Multiname("do_login", [PrivateNamespace("valor.battlePass.tasks:GetRespritesDataTask"), ProtectedNamespace("valor.battlePass.tasks:GetRespritesDataTask"), StaticProtectedNs("valor.battlePass.tasks:GetRespritesDataTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("valor.battlePass.tasks"), PackageInternalNs("valor.battlePass.tasks"), PrivateNamespace("FilePrivateNS:GetRespritesDataTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      getlex              QName(PackageNamespace("com.company.util"), "MoreObjectUtil")
+      getlocal1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "account")
+      pushtrue
+      callproperty        QName(Namespace("kabam.rotmg.account.core:Account"), "getCredentials"), 1
+      callpropvoid        QName(PackageNamespace(""), "addToObject"), 2
+
+      getlocal1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "valor.battlePass.tasks:GetRespritesDataTask/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait slot QName(PrivateNamespace("valor.battlePass.tasks:GetRespritesDataTask"), "FILE_NAME") type QName(PackageNamespace(""), "String") value Utf8("resprites8x8") end
+ trait slot QName(PrivateNamespace("valor.battlePass.tasks:GetRespritesDataTask"), "FILE_NAME_16") type QName(PackageNamespace(""), "String") value Utf8("resprites16x16") end
+ trait slot QName(PrivateNamespace("valor.battlePass.tasks:GetRespritesDataTask"), "FILE_NAME_ANIMATED") type QName(PackageNamespace(""), "String") value Utf8("respritesAnimated8x8") end
+end ; class

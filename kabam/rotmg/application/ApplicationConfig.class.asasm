@@ -1,0 +1,126 @@
+class
+ refid "kabam.rotmg.application:ApplicationConfig"
+ instance QName(PackageNamespace("kabam.rotmg.application"), "ApplicationConfig")
+  extends QName(PackageNamespace(""), "Object")
+  implements QName(PackageNamespace("robotlegs.bender.framework.api"), "IConfig")
+  flag SEALED
+  iinit
+   refid "kabam.rotmg.application:ApplicationConfig/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "injector") flag METADATA type QName(PackageNamespace("org.swiftsuspenders"), "Injector")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "data") flag METADATA type QName(PackageNamespace("kabam.rotmg.build.api"), "BuildData")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PackageNamespace(""), "configure")
+   method
+    name "configure"
+    refid "kabam.rotmg.application:ApplicationConfig/instance/configure"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      setlocal1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "data")
+      callproperty        QName(Namespace("kabam.rotmg.build.api:BuildData"), "getEnvironment"), 0
+      getlex              QName(PackageNamespace("kabam.rotmg.build.api"), "BuildEnvironment")
+      getproperty         QName(PackageNamespace(""), "LOCALHOST")
+      ifne                L15
+
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.application.impl"), "LocalhostSetup")
+      constructprop       QName(PackageNamespace("kabam.rotmg.application.impl"), "LocalhostSetup"), 0
+      coerce              QName(PackageNamespace("kabam.rotmg.application.api"), "ApplicationSetup")
+      setlocal1
+
+      jump                L41
+
+L15:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "data")
+      callproperty        QName(Namespace("kabam.rotmg.build.api:BuildData"), "getEnvironment"), 0
+      getlex              QName(PackageNamespace("kabam.rotmg.build.api"), "BuildEnvironment")
+      getproperty         QName(PackageNamespace(""), "TESTING")
+      ifne                L26
+
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.application.impl"), "TestingSetup")
+      constructprop       QName(PackageNamespace("kabam.rotmg.application.impl"), "TestingSetup"), 0
+      coerce              QName(PackageNamespace("kabam.rotmg.application.api"), "ApplicationSetup")
+      setlocal1
+
+      jump                L41
+
+L26:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "data")
+      callproperty        QName(Namespace("kabam.rotmg.build.api:BuildData"), "getEnvironment"), 0
+      getlex              QName(PackageNamespace("kabam.rotmg.build.api"), "BuildEnvironment")
+      getproperty         QName(PackageNamespace(""), "SANDBOX")
+      ifne                L37
+
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.application.impl"), "SandboxSetup")
+      constructprop       QName(PackageNamespace("kabam.rotmg.application.impl"), "SandboxSetup"), 0
+      coerce              QName(PackageNamespace("kabam.rotmg.application.api"), "ApplicationSetup")
+      setlocal1
+
+      jump                L41
+
+L37:
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.application.impl"), "ProductionSetup")
+      constructprop       QName(PackageNamespace("kabam.rotmg.application.impl"), "ProductionSetup"), 0
+      coerce              QName(PackageNamespace("kabam.rotmg.application.api"), "ApplicationSetup")
+      setlocal1
+
+L41:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "injector")
+      getlex              QName(PackageNamespace("kabam.rotmg.application.api"), "ApplicationSetup")
+      callproperty        QName(PackageNamespace(""), "map"), 1
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "toValue"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.application:ApplicationConfig/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

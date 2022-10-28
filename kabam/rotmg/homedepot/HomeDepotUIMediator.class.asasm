@@ -1,0 +1,1014 @@
+class
+ refid "kabam.rotmg.homedepot:HomeDepotUIMediator"
+ instance QName(PackageNamespace("kabam.rotmg.homedepot"), "HomeDepotUIMediator")
+  extends QName(PackageNamespace("robotlegs.bender.bundles.mvcs"), "Mediator")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator")
+  iinit
+   refid "kabam.rotmg.homedepot:HomeDepotUIMediator/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "injector") flag METADATA type QName(PackageNamespace("org.swiftsuspenders"), "Injector")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "closeDialogs") flag METADATA type QName(PackageNamespace("kabam.rotmg.dialogs.control"), "CloseDialogsSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "view") flag METADATA type QName(PackageNamespace("kabam.rotmg.homedepot"), "HomeDepotUI")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "gameSprite") flag METADATA type QName(PackageNamespace("com.company.assembleegameclient.game"), "AGameSprite")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "openNoModalDialog") flag METADATA type QName(PackageNamespace("kabam.rotmg.dialogs.control"), "OpenDialogNoModalSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "addTextLine") flag METADATA type QName(PackageNamespace("kabam.rotmg.game.signals"), "AddTextLineSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "messages") flag METADATA type QName(PackageNamespace("kabam.lib.net.api"), "MessageProvider")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "socketServer") flag METADATA type QName(PackageNamespace("kabam.lib.net.impl"), "SocketServer")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "closePopupSignal") flag METADATA type QName(PackageNamespace("io.decagames.rotmg.ui.popups.signals"), "ClosePopupSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "client") flag METADATA type QName(PackageNamespace("kabam.rotmg.appengine.api"), "AppEngineClient")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "account") flag METADATA type QName(PackageNamespace("kabam.rotmg.account.core"), "Account")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "server") flag METADATA type QName(PackageNamespace("kabam.lib.net.impl"), "SocketServer")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), "forgeItemTab") type QName(PackageNamespace("kabam.rotmg.homedepot.tabs"), "TilesTab") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), "renameItemTab") type QName(PackageNamespace("kabam.rotmg.homedepot.tabs"), "ObjectsTab") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), "inventoryTab") type QName(PackageNamespace("kabam.rotmg.homedepot.tabs"), "InventoryTab") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), "closeButton") type QName(PackageNamespace("io.decagames.rotmg.ui.buttons"), "SliceScalingButton") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), "tabs") type QName(PackageNamespace("io.decagames.rotmg.ui.tabs"), "UITabs") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), "upgradeButton") type QName(PackageNamespace("io.decagames.rotmg.ui.buttons"), "SliceScalingButton") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), "dialog") type QName(PackageNamespace("kabam.rotmg.homedepot"), "HomeDepotUpgradeDialog") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), "dialogPurchase_") type QName(PackageNamespace("kabam.rotmg.homedepot"), "HomeDepotPurchaseDialog") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), "darkBox_") type QName(PackageNamespace("flash.display"), "Shape") end
+  trait method QName(PackageNamespace(""), "initialize") flag OVERRIDE
+   method
+    name "initialize"
+    refid "kabam.rotmg.homedepot:HomeDepotUIMediator/instance/initialize"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 5
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "header")
+      pushstring          "Home Depot"
+      pushshort           519
+      getlex              QName(PackageNamespace("io.decagames.rotmg.ui.defaults"), "DefaultLabelFormat")
+      getproperty         QName(PackageNamespace(""), "defaultPopupTitle")
+      callpropvoid        QName(PackageNamespace(""), "setTitle"), 3
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.homedepot.tabs"), "TilesTab")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "POPUP_WIDTH")
+      constructprop       QName(PackageNamespace("kabam.rotmg.homedepot.tabs"), "TilesTab"), 1
+      setproperty         QName(PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), "forgeItemTab")
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.homedepot.tabs"), "ObjectsTab")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "POPUP_WIDTH")
+      constructprop       QName(PackageNamespace("kabam.rotmg.homedepot.tabs"), "ObjectsTab"), 1
+      setproperty         QName(PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), "renameItemTab")
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.homedepot.tabs"), "InventoryTab")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "POPUP_WIDTH")
+      constructprop       QName(PackageNamespace("kabam.rotmg.homedepot.tabs"), "InventoryTab"), 1
+      setproperty         QName(PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), "inventoryTab")
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("io.decagames.rotmg.ui.tabs"), "UITabs")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "POPUP_WIDTH")
+      pushbyte            10
+      subtract
+      constructprop       QName(PackageNamespace("io.decagames.rotmg.ui.tabs"), "UITabs"), 1
+      setproperty         QName(PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), "tabs")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), "tabs")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), "forgeItemTab")
+      pushtrue
+      callpropvoid        QName(PackageNamespace(""), "addTab"), 2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), "tabs")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), "renameItemTab")
+      pushfalse
+      callpropvoid        QName(PackageNamespace(""), "addTab"), 2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), "tabs")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), "inventoryTab")
+      pushfalse
+      callpropvoid        QName(PackageNamespace(""), "addTab"), 2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), "tabs")
+      pushbyte            115
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), "tabs")
+      pushbyte            3
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("io.decagames.rotmg.ui.buttons"), "SliceScalingButton")
+      getlex              QName(PackageNamespace("io.decagames.rotmg.ui.texture"), "TextureParser")
+      getproperty         QName(PackageNamespace(""), "instance")
+      pushstring          "UI"
+      pushstring          "close_button"
+      callproperty        QName(PackageNamespace(""), "getSliceScalingBitmap"), 2
+      constructprop       QName(PackageNamespace("io.decagames.rotmg.ui.buttons"), "SliceScalingButton"), 1
+      setproperty         QName(PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), "closeButton")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), "closeButton")
+      getproperty         QName(PackageNamespace(""), "clicked")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "onClose")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "header")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), "closeButton")
+      pushstring          "right_button"
+      callpropvoid        QName(PackageNamespace(""), "addButton"), 2
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("io.decagames.rotmg.ui.buttons"), "SliceScalingButton")
+      getlex              QName(PackageNamespace("io.decagames.rotmg.ui.texture"), "TextureParser")
+      getproperty         QName(PackageNamespace(""), "instance")
+      pushstring          "UI"
+      pushstring          "upgrade_button"
+      callproperty        QName(PackageNamespace(""), "getSliceScalingBitmap"), 2
+      constructprop       QName(PackageNamespace("io.decagames.rotmg.ui.buttons"), "SliceScalingButton"), 1
+      setproperty         QName(PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), "upgradeButton")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), "upgradeButton")
+      getproperty         QName(PackageNamespace(""), "clicked")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), "onUpgrade")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), "upgradeButton")
+      pushfalse
+      setproperty         QName(PackageNamespace(""), "visible")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "header")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), "upgradeButton")
+      pushstring          "left_button"
+      callpropvoid        QName(PackageNamespace(""), "addButton"), 2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "client")
+      getproperty         QName(Namespace("kabam.rotmg.appengine.api:AppEngineClient"), "complete")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), "onComplete")
+      callpropvoid        QName(PackageNamespace(""), "addOnce"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "client")
+      pushstring          "/house/fetchStore"
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "account")
+      pushtrue
+      callproperty        QName(Namespace("kabam.rotmg.account.core:Account"), "getCredentials"), 1
+      callpropvoid        QName(Namespace("kabam.rotmg.appengine.api:AppEngineClient"), "sendRequest"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), "onComplete")
+   method
+    name "onComplete"
+    refid "kabam.rotmg.homedepot:HomeDepotUIMediator/instance/kabam.rotmg.homedepot:HomeDepotUIMediator/instance/onComplete"
+    param QName(PackageNamespace(""), "Boolean")
+    param null
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    paramname "_arg2"
+    body
+     maxstack 6
+     localcount 19
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      setlocal            11
+
+      pushnull
+      setlocal            9
+
+      pushbyte            0
+      setlocal            5
+
+      pushbyte            0
+      setlocal            7
+
+      pushnull
+      setlocal            10
+
+      pushbyte            0
+      setlocal            6
+
+      pushnull
+      setlocal3
+
+      getlocal1
+      iffalse             L261
+
+      getlex              QName(PackageNamespace(""), "XML")
+      getglobalscope
+      getlocal2
+      call                1
+      coerce              QName(PackageNamespace(""), "XML")
+      setlocal            11
+
+      getlex              QName(PackageNamespace(""), "XML")
+      getglobalscope
+      getlocal            11
+      getproperty         Multiname("Store", [PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), ProtectedNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), StaticProtectedNs("kabam.rotmg.homedepot:HomeDepotUIMediator"), StaticProtectedNs("robotlegs.bender.bundles.mvcs:Mediator"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.homedepot"), PackageInternalNs("kabam.rotmg.homedepot"), PrivateNamespace("FilePrivateNS:HomeDepotUIMediator"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      call                1
+      coerce              QName(PackageNamespace(""), "XML")
+      dup
+      setlocal            9
+
+      getproperty         Multiname("GoldUpgradeCost", [PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), ProtectedNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), StaticProtectedNs("kabam.rotmg.homedepot:HomeDepotUIMediator"), StaticProtectedNs("robotlegs.bender.bundles.mvcs:Mediator"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.homedepot"), PackageInternalNs("kabam.rotmg.homedepot"), PrivateNamespace("FilePrivateNS:HomeDepotUIMediator"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      convert_i
+      setlocal            5
+
+      getlocal            9
+      getproperty         Multiname("KantosUpgradeCost", [PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), ProtectedNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), StaticProtectedNs("kabam.rotmg.homedepot:HomeDepotUIMediator"), StaticProtectedNs("robotlegs.bender.bundles.mvcs:Mediator"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.homedepot"), PackageInternalNs("kabam.rotmg.homedepot"), PrivateNamespace("FilePrivateNS:HomeDepotUIMediator"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      convert_i
+      setlocal            7
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.homedepot"), "HomeDepotPurchaseDialog")
+      getlocal0
+      constructprop       QName(PackageNamespace("kabam.rotmg.homedepot"), "HomeDepotPurchaseDialog"), 1
+      setproperty         QName(PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), "dialogPurchase_")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), "dialogPurchase_")
+      pushshort           800
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), "dialogPurchase_")
+      getproperty         QName(PackageNamespace(""), "width")
+      subtract
+      pushbyte            2
+      divide
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), "dialogPurchase_")
+      pushshort           600
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), "dialogPurchase_")
+      getproperty         QName(PackageNamespace(""), "height")
+      subtract
+      pushbyte            2
+      divide
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), "dialogPurchase_")
+      pushfalse
+      setproperty         QName(PackageNamespace(""), "visible")
+
+      pushbyte            0
+      setlocal            14
+
+      getlocal            9
+      getproperty         Multiname("Grounds", [PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), ProtectedNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), StaticProtectedNs("kabam.rotmg.homedepot:HomeDepotUIMediator"), StaticProtectedNs("robotlegs.bender.bundles.mvcs:Mediator"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.homedepot"), PackageInternalNs("kabam.rotmg.homedepot"), PrivateNamespace("FilePrivateNS:HomeDepotUIMediator"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getproperty         Multiname("Item", [PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), ProtectedNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), StaticProtectedNs("kabam.rotmg.homedepot:HomeDepotUIMediator"), StaticProtectedNs("robotlegs.bender.bundles.mvcs:Mediator"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.homedepot"), PackageInternalNs("kabam.rotmg.homedepot"), PrivateNamespace("FilePrivateNS:HomeDepotUIMediator"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      setlocal            13
+
+      jump                L96
+
+L75:
+      label
+      getlocal            13
+      getlocal            14
+      nextvalue
+      coerce              QName(PackageNamespace(""), "XML")
+      setlocal            8
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), "forgeItemTab")
+      getlocal            8
+      getproperty         MultinameA("id", [PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), ProtectedNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), StaticProtectedNs("kabam.rotmg.homedepot:HomeDepotUIMediator"), StaticProtectedNs("robotlegs.bender.bundles.mvcs:Mediator"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.homedepot"), PackageInternalNs("kabam.rotmg.homedepot"), PrivateNamespace("FilePrivateNS:HomeDepotUIMediator"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getlocal            8
+      getproperty         Multiname("Currency", [PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), ProtectedNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), StaticProtectedNs("kabam.rotmg.homedepot:HomeDepotUIMediator"), StaticProtectedNs("robotlegs.bender.bundles.mvcs:Mediator"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.homedepot"), PackageInternalNs("kabam.rotmg.homedepot"), PrivateNamespace("FilePrivateNS:HomeDepotUIMediator"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getlocal            8
+      getproperty         Multiname("Price", [PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), ProtectedNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), StaticProtectedNs("kabam.rotmg.homedepot:HomeDepotUIMediator"), StaticProtectedNs("robotlegs.bender.bundles.mvcs:Mediator"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.homedepot"), PackageInternalNs("kabam.rotmg.homedepot"), PrivateNamespace("FilePrivateNS:HomeDepotUIMediator"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      convert_i
+      getlocal            8
+      getproperty         Multiname("Stack", [PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), ProtectedNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), StaticProtectedNs("kabam.rotmg.homedepot:HomeDepotUIMediator"), StaticProtectedNs("robotlegs.bender.bundles.mvcs:Mediator"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.homedepot"), PackageInternalNs("kabam.rotmg.homedepot"), PrivateNamespace("FilePrivateNS:HomeDepotUIMediator"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      convert_i
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), "dialogPurchase_")
+      callpropvoid        QName(PackageNamespace(""), "addBox"), 5
+
+L96:
+      hasnext2            13, 14
+      iftrue              L75
+
+      pushbyte            0
+      setlocal            16
+
+      getlocal            9
+      getproperty         Multiname("Objects", [PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), ProtectedNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), StaticProtectedNs("kabam.rotmg.homedepot:HomeDepotUIMediator"), StaticProtectedNs("robotlegs.bender.bundles.mvcs:Mediator"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.homedepot"), PackageInternalNs("kabam.rotmg.homedepot"), PrivateNamespace("FilePrivateNS:HomeDepotUIMediator"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getproperty         Multiname("Item", [PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), ProtectedNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), StaticProtectedNs("kabam.rotmg.homedepot:HomeDepotUIMediator"), StaticProtectedNs("robotlegs.bender.bundles.mvcs:Mediator"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.homedepot"), PackageInternalNs("kabam.rotmg.homedepot"), PrivateNamespace("FilePrivateNS:HomeDepotUIMediator"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      setlocal            15
+
+      jump                L126
+
+L105:
+      label
+      getlocal            15
+      getlocal            16
+      nextvalue
+      coerce              QName(PackageNamespace(""), "XML")
+      setlocal            12
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), "renameItemTab")
+      getlocal            12
+      getproperty         MultinameA("id", [PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), ProtectedNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), StaticProtectedNs("kabam.rotmg.homedepot:HomeDepotUIMediator"), StaticProtectedNs("robotlegs.bender.bundles.mvcs:Mediator"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.homedepot"), PackageInternalNs("kabam.rotmg.homedepot"), PrivateNamespace("FilePrivateNS:HomeDepotUIMediator"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getlocal            12
+      getproperty         Multiname("Currency", [PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), ProtectedNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), StaticProtectedNs("kabam.rotmg.homedepot:HomeDepotUIMediator"), StaticProtectedNs("robotlegs.bender.bundles.mvcs:Mediator"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.homedepot"), PackageInternalNs("kabam.rotmg.homedepot"), PrivateNamespace("FilePrivateNS:HomeDepotUIMediator"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getlocal            12
+      getproperty         Multiname("Price", [PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), ProtectedNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), StaticProtectedNs("kabam.rotmg.homedepot:HomeDepotUIMediator"), StaticProtectedNs("robotlegs.bender.bundles.mvcs:Mediator"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.homedepot"), PackageInternalNs("kabam.rotmg.homedepot"), PrivateNamespace("FilePrivateNS:HomeDepotUIMediator"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      convert_i
+      getlocal            12
+      getproperty         Multiname("Stack", [PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), ProtectedNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), StaticProtectedNs("kabam.rotmg.homedepot:HomeDepotUIMediator"), StaticProtectedNs("robotlegs.bender.bundles.mvcs:Mediator"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.homedepot"), PackageInternalNs("kabam.rotmg.homedepot"), PrivateNamespace("FilePrivateNS:HomeDepotUIMediator"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      convert_i
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), "dialogPurchase_")
+      callpropvoid        QName(PackageNamespace(""), "addBox"), 5
+
+L126:
+      hasnext2            15, 16
+      iftrue              L105
+
+      getlex              QName(PackageNamespace(""), "XML")
+      getglobalscope
+      getlocal            11
+      getproperty         Multiname("Inventory", [PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), ProtectedNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), StaticProtectedNs("kabam.rotmg.homedepot:HomeDepotUIMediator"), StaticProtectedNs("robotlegs.bender.bundles.mvcs:Mediator"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.homedepot"), PackageInternalNs("kabam.rotmg.homedepot"), PrivateNamespace("FilePrivateNS:HomeDepotUIMediator"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      call                1
+      coerce              QName(PackageNamespace(""), "XML")
+      dup
+      setlocal            10
+
+      getproperty         MultinameA("size", [PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), ProtectedNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), StaticProtectedNs("kabam.rotmg.homedepot:HomeDepotUIMediator"), StaticProtectedNs("robotlegs.bender.bundles.mvcs:Mediator"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.homedepot"), PackageInternalNs("kabam.rotmg.homedepot"), PrivateNamespace("FilePrivateNS:HomeDepotUIMediator"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      convert_i
+      setlocal            6
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), "upgradeButton")
+      getlocal            6
+      pushbyte            96
+      equals
+      not
+      setproperty         QName(PackageNamespace(""), "visible")
+
+      pushbyte            0
+      setlocal            18
+
+      getlocal            10
+      getproperty         Multiname("Item", [PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), ProtectedNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), StaticProtectedNs("kabam.rotmg.homedepot:HomeDepotUIMediator"), StaticProtectedNs("robotlegs.bender.bundles.mvcs:Mediator"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.homedepot"), PackageInternalNs("kabam.rotmg.homedepot"), PrivateNamespace("FilePrivateNS:HomeDepotUIMediator"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      setlocal            17
+
+      jump                L166
+
+L152:
+      label
+      getlocal            17
+      getlocal            18
+      nextvalue
+      coerce              QName(PackageNamespace(""), "XML")
+      setlocal            4
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), "inventoryTab")
+      getlocal            4
+      pushstring          "Fame"
+      pushbyte            1
+      getlocal            4
+      getproperty         MultinameA("stack", [PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), ProtectedNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), StaticProtectedNs("kabam.rotmg.homedepot:HomeDepotUIMediator"), StaticProtectedNs("robotlegs.bender.bundles.mvcs:Mediator"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.homedepot"), PackageInternalNs("kabam.rotmg.homedepot"), PrivateNamespace("FilePrivateNS:HomeDepotUIMediator"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      callpropvoid        QName(PackageNamespace(""), "addBox"), 4
+
+L166:
+      hasnext2            17, 18
+      iftrue              L152
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), "tabs")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.homedepot"), "HomeDepotUpgradeDialog")
+      getlocal            6
+      getlocal            5
+      getlocal            7
+      getlocal0
+      constructprop       QName(PackageNamespace("kabam.rotmg.homedepot"), "HomeDepotUpgradeDialog"), 4
+      setproperty         QName(PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), "dialog")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), "dialog")
+      pushshort           800
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), "dialog")
+      getproperty         QName(PackageNamespace(""), "width")
+      subtract
+      pushbyte            2
+      divide
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), "dialog")
+      pushshort           600
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), "dialog")
+      getproperty         QName(PackageNamespace(""), "height")
+      subtract
+      pushbyte            2
+      divide
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), "dialog")
+      pushfalse
+      setproperty         QName(PackageNamespace(""), "visible")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), "dialog")
+      getproperty         QName(PackageNamespace(""), "upgradeGoldButton")
+      getproperty         QName(PackageNamespace(""), "clicked")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), "onBuyWithGold")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), "dialog")
+      getproperty         QName(PackageNamespace(""), "upgradeKantosButton")
+      getproperty         QName(PackageNamespace(""), "clicked")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), "onBuyWithKantos")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("flash.display"), "Shape")
+      constructprop       QName(PackageNamespace("flash.display"), "Shape"), 0
+      setproperty         QName(PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), "darkBox_")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), "darkBox_")
+      pushfalse
+      setproperty         QName(PackageNamespace(""), "visible")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), "darkBox_")
+      getproperty         QName(PackageNamespace(""), "graphics")
+      coerce              QName(PackageNamespace("flash.display"), "Graphics")
+      setlocal3
+
+      getlocal3
+      callpropvoid        QName(PackageNamespace(""), "clear"), 0
+
+      getlocal3
+      pushbyte            0
+      pushdouble          0.4
+      callpropvoid        QName(PackageNamespace(""), "beginFill"), 2
+
+      getlocal3
+      pushbyte            0
+      pushbyte            0
+      pushshort           800
+      pushshort           600
+      callpropvoid        QName(PackageNamespace(""), "drawRect"), 4
+
+      getlocal3
+      callpropvoid        QName(PackageNamespace(""), "endFill"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), "darkBox_")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), "dialog")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), "dialogPurchase_")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+L261:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "destroy") flag OVERRIDE
+   method
+    name "destroy"
+    refid "kabam.rotmg.homedepot:HomeDepotUIMediator/instance/destroy"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      callpropvoid        QName(PackageNamespace(""), "dispose"), 0
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), "upgradeButton")
+      callpropvoid        QName(PackageNamespace(""), "dispose"), 0
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), "closeButton")
+      callpropvoid        QName(PackageNamespace(""), "dispose"), 0
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), "tabs")
+      callpropvoid        QName(PackageNamespace(""), "dispose"), 0
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), "dialog")
+      getproperty         QName(PackageNamespace(""), "upgradeGoldButton")
+      getproperty         QName(PackageNamespace(""), "clicked")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), "onBuyWithGold")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), "dialog")
+      getproperty         QName(PackageNamespace(""), "upgradeKantosButton")
+      getproperty         QName(PackageNamespace(""), "clicked")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), "onBuyWithKantos")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), "dialogPurchase_")
+      callpropvoid        QName(PackageNamespace(""), "dispose"), 0
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), "dialog")
+      callpropvoid        QName(PackageNamespace(""), "dispose"), 0
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), "inventoryTab")
+      callpropvoid        QName(PackageNamespace(""), "destroy"), 0
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), "inventoryTab")
+      callpropvoid        QName(PackageNamespace(""), "dispose"), 0
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), "renameItemTab")
+      callpropvoid        QName(PackageNamespace(""), "destroy"), 0
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), "renameItemTab")
+      callpropvoid        QName(PackageNamespace(""), "dispose"), 0
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), "forgeItemTab")
+      callpropvoid        QName(PackageNamespace(""), "destroy"), 0
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), "forgeItemTab")
+      callpropvoid        QName(PackageNamespace(""), "dispose"), 0
+
+      getlocal0
+      callsupervoid       QName(PackageNamespace(""), "destroy"), 0
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), "onUpgrade")
+   method
+    name "onUpgrade"
+    refid "kabam.rotmg.homedepot:HomeDepotUIMediator/instance/kabam.rotmg.homedepot:HomeDepotUIMediator/instance/onUpgrade"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), "dialog")
+      pushtrue
+      setproperty         QName(PackageNamespace(""), "visible")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), "darkBox_")
+      pushtrue
+      setproperty         QName(PackageNamespace(""), "visible")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), "dialogPurchase_")
+      pushfalse
+      setproperty         QName(PackageNamespace(""), "visible")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), "tabs")
+      pushfalse
+      setproperty         QName(PackageNamespace(""), "visible")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), "closeButton")
+      pushfalse
+      setproperty         QName(PackageNamespace(""), "visible")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), "upgradeButton")
+      pushfalse
+      setproperty         QName(PackageNamespace(""), "visible")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "onPurchase")
+   method
+    name "onPurchase"
+    refid "kabam.rotmg.homedepot:HomeDepotUIMediator/instance/onPurchase"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), "dialog")
+      pushfalse
+      setproperty         QName(PackageNamespace(""), "visible")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), "darkBox_")
+      pushtrue
+      setproperty         QName(PackageNamespace(""), "visible")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), "dialogPurchase_")
+      pushtrue
+      setproperty         QName(PackageNamespace(""), "visible")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), "tabs")
+      pushfalse
+      setproperty         QName(PackageNamespace(""), "visible")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), "closeButton")
+      pushfalse
+      setproperty         QName(PackageNamespace(""), "visible")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), "upgradeButton")
+      pushfalse
+      setproperty         QName(PackageNamespace(""), "visible")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "onPurchaseClose")
+   method
+    name "onPurchaseClose"
+    refid "kabam.rotmg.homedepot:HomeDepotUIMediator/instance/onPurchaseClose"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), "dialog")
+      pushfalse
+      setproperty         QName(PackageNamespace(""), "visible")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), "darkBox_")
+      pushfalse
+      setproperty         QName(PackageNamespace(""), "visible")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), "dialogPurchase_")
+      pushfalse
+      setproperty         QName(PackageNamespace(""), "visible")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), "tabs")
+      pushtrue
+      setproperty         QName(PackageNamespace(""), "visible")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), "closeButton")
+      pushtrue
+      setproperty         QName(PackageNamespace(""), "visible")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), "upgradeButton")
+      pushtrue
+      setproperty         QName(PackageNamespace(""), "visible")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), "onBuyWithGold")
+   method
+    name "onBuyWithGold"
+    refid "kabam.rotmg.homedepot:HomeDepotUIMediator/instance/kabam.rotmg.homedepot:HomeDepotUIMediator/instance/onBuyWithGold"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), "doUpgradeBuy")
+      pushbyte            0
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), "doUpgradeBuy"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), "onBuyWithKantos")
+   method
+    name "onBuyWithKantos"
+    refid "kabam.rotmg.homedepot:HomeDepotUIMediator/instance/kabam.rotmg.homedepot:HomeDepotUIMediator/instance/onBuyWithKantos"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), "doUpgradeBuy")
+      pushbyte            1
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), "doUpgradeBuy"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), "doUpgradeBuy")
+   method
+    name "doUpgradeBuy"
+    refid "kabam.rotmg.homedepot:HomeDepotUIMediator/instance/kabam.rotmg.homedepot:HomeDepotUIMediator/instance/doUpgradeBuy"
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "messages")
+      pushshort           176
+      callproperty        QName(Namespace("kabam.lib.net.api:MessageProvider"), "require"), 1
+      getlex              QName(PackageNamespace("kabam.rotmg.messaging.impl.outgoing"), "HomeDepotInteraction")
+      astypelate
+      coerce              QName(PackageNamespace("kabam.rotmg.messaging.impl.outgoing"), "HomeDepotInteraction")
+      setlocal2
+
+      getlocal2
+      pushbyte            0
+      setproperty         QName(PackageNamespace(""), "type_")
+
+      getlocal2
+      pushstring          ""
+      setproperty         QName(PackageNamespace(""), "name_")
+
+      getlocal2
+      getlocal1
+      setproperty         QName(PackageNamespace(""), "stack_")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "server")
+      getlocal2
+      callpropvoid        QName(PackageNamespace(""), "sendMessage"), 1
+
+      getlocal0
+      callpropvoid        QName(PackageNamespace(""), "onClose"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "onUpgradeClosed")
+   method
+    name "onUpgradeClosed"
+    refid "kabam.rotmg.homedepot:HomeDepotUIMediator/instance/onUpgradeClosed"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), "dialog")
+      pushfalse
+      setproperty         QName(PackageNamespace(""), "visible")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), "darkBox_")
+      pushfalse
+      setproperty         QName(PackageNamespace(""), "visible")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), "dialogPurchase_")
+      pushfalse
+      setproperty         QName(PackageNamespace(""), "visible")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), "tabs")
+      pushtrue
+      setproperty         QName(PackageNamespace(""), "visible")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), "closeButton")
+      pushtrue
+      setproperty         QName(PackageNamespace(""), "visible")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot:HomeDepotUIMediator"), "upgradeButton")
+      pushtrue
+      setproperty         QName(PackageNamespace(""), "visible")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "onClose")
+   method
+    name "onClose"
+    refid "kabam.rotmg.homedepot:HomeDepotUIMediator/instance/onClose"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      callpropvoid        QName(PackageNamespace(""), "destroy"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "closePopupSignal")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "closeDialogs")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.homedepot:HomeDepotUIMediator/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

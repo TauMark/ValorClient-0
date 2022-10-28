@@ -1,0 +1,354 @@
+class
+ refid "kabam.rotmg.markPurchaser:NodeListElementsMediator"
+ instance QName(PackageNamespace("kabam.rotmg.markPurchaser"), "NodeListElementsMediator")
+  extends QName(PackageNamespace("robotlegs.bender.bundles.mvcs"), "Mediator")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.markPurchaser:NodeListElementsMediator")
+  iinit
+   refid "kabam.rotmg.markPurchaser:NodeListElementsMediator/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "view") flag METADATA type QName(PackageNamespace("kabam.rotmg.markPurchaser"), "NodeListElements")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "showInfoSignal") flag METADATA type QName(PackageNamespace("io.decagames.rotmg.dailyQuests.signal"), "ShowQuestInfoSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "closeDialogs") flag METADATA type QName(PackageNamespace("kabam.rotmg.dialogs.control"), "CloseDialogsSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "socketServer") flag METADATA type QName(PackageNamespace("kabam.lib.net.impl"), "SocketServer")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "messages") flag METADATA type QName(PackageNamespace("kabam.lib.net.api"), "MessageProvider")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PackageNamespace(""), "initialize") flag OVERRIDE
+   method
+    name "initialize"
+    refid "kabam.rotmg.markPurchaser:NodeListElementsMediator/instance/initialize"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      pushstring          "click"
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.markPurchaser:NodeListElementsMediator"), "onClickHandler")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      pushstring          "mouseOver"
+      getlocal0
+      getproperty         QName(ProtectedNamespace("kabam.rotmg.markPurchaser:NodeListElementsMediator"), "onMouseOver")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      pushstring          "mouseOut"
+      getlocal0
+      getproperty         QName(ProtectedNamespace("kabam.rotmg.markPurchaser:NodeListElementsMediator"), "onMouseOut")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(ProtectedNamespace("kabam.rotmg.markPurchaser:NodeListElementsMediator"), "onMouseOver")
+   method
+    name "onMouseOver"
+    refid "kabam.rotmg.markPurchaser:NodeListElementsMediator/instance/kabam.rotmg.markPurchaser:NodeListElementsMediator:onMouseOver"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlex              QName(StaticProtectedNs("kabam.rotmg.markPurchaser:NodeListElementsMediator"), "mouseOverCT")
+      callpropvoid        QName(PackageNamespace(""), "setColorTransform"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(ProtectedNamespace("kabam.rotmg.markPurchaser:NodeListElementsMediator"), "onMouseOut")
+   method
+    name "onMouseOut"
+    refid "kabam.rotmg.markPurchaser:NodeListElementsMediator/instance/kabam.rotmg.markPurchaser:NodeListElementsMediator:onMouseOut"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      pushnull
+      callpropvoid        QName(PackageNamespace(""), "setColorTransform"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "destroy") flag OVERRIDE
+   method
+    name "destroy"
+    refid "kabam.rotmg.markPurchaser:NodeListElementsMediator/instance/destroy"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      pushstring          "click"
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.markPurchaser:NodeListElementsMediator"), "onClickHandler")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.markPurchaser:NodeListElementsMediator"), "onPurchaseHandler")
+   method
+    name "onPurchaseHandler"
+    refid "kabam.rotmg.markPurchaser:NodeListElementsMediator/instance/kabam.rotmg.markPurchaser:NodeListElementsMediator/instance/onPurchaseHandler"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg_1"
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      setlocal2
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.sound"), "SoundEffectLibrary")
+      pushstring          "button_click"
+      callpropvoid        QName(PackageNamespace(""), "play"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "messages")
+      pushshort           164
+      callproperty        QName(Namespace("kabam.lib.net.api:MessageProvider"), "require"), 1
+      getlex              QName(PackageNamespace("kabam.rotmg.messaging.impl.outgoing"), "MarkRequest")
+      astypelate
+      coerce              QName(PackageNamespace("kabam.rotmg.messaging.impl.outgoing"), "MarkRequest")
+      setlocal2
+
+      getlocal2
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "markid")
+      pushbyte            1
+      add
+      setproperty         QName(PackageNamespace(""), "markId_")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "socketServer")
+      getlocal2
+      callpropvoid        QName(PackageNamespace(""), "sendMessage"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "closeDialogs")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.markPurchaser:NodeListElementsMediator"), "onClickHandler")
+   method
+    name "onClickHandler"
+    refid "kabam.rotmg.markPurchaser:NodeListElementsMediator/instance/kabam.rotmg.markPurchaser:NodeListElementsMediator/instance/onClickHandler"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg_1"
+    body
+     maxstack 6
+     localcount 4
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      setlocal3
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.sound"), "SoundEffectLibrary")
+      pushstring          "button_click"
+      callpropvoid        QName(PackageNamespace(""), "play"), 1
+
+      getlex              QName(PackageNamespace("kabam.rotmg.core"), "StaticInjectorContext")
+      callproperty        QName(PackageNamespace(""), "getInjector"), 0
+      getlex              QName(PackageNamespace("kabam.rotmg.dialogs.control"), "OpenDialogSignal")
+      callproperty        QName(PackageNamespace(""), "getInstance"), 1
+      coerce              QName(PackageNamespace("kabam.rotmg.dialogs.control"), "OpenDialogSignal")
+      setlocal3
+
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.ui.dialogs"), "Dialog")
+      pushstring          "Buy Mark/Node"
+      pushstring          "Are you sure you would like to purchase this mark/node? Doing so will take up the next open mark/node slot."
+      pushstring          "Yes"
+      pushstring          "No"
+      pushnull
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.ui.dialogs"), "Dialog"), 5
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.ui.dialogs"), "Dialog")
+      setlocal2
+
+      getlocal2
+      pushstring          "dialogLeftButton"
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.markPurchaser:NodeListElementsMediator"), "onPurchaseHandler")
+      pushfalse
+      pushbyte            0
+      pushtrue
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 5
+
+      getlocal2
+      pushstring          "dialogRightButton"
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.markPurchaser:NodeListElementsMediator"), "onCancelRemove")
+      pushfalse
+      pushbyte            0
+      pushtrue
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 5
+
+      getlocal3
+      getlocal2
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.markPurchaser:NodeListElementsMediator"), "onCancelRemove")
+   method
+    name "onCancelRemove"
+    refid "kabam.rotmg.markPurchaser:NodeListElementsMediator/instance/kabam.rotmg.markPurchaser:NodeListElementsMediator/instance/onCancelRemove"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg_1"
+    body
+     maxstack 2
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      setlocal2
+
+      getlex              QName(PackageNamespace("kabam.rotmg.core"), "StaticInjectorContext")
+      callproperty        QName(PackageNamespace(""), "getInjector"), 0
+      getlex              QName(PackageNamespace("kabam.rotmg.dialogs.control"), "CloseDialogsSignal")
+      callproperty        QName(PackageNamespace(""), "getInstance"), 1
+      coerce              QName(PackageNamespace("kabam.rotmg.dialogs.control"), "CloseDialogsSignal")
+      setlocal2
+
+      getlocal2
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.markPurchaser:NodeListElementsMediator/class/init"
+  body
+   maxstack 8
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 1
+   code
+    getlocal0
+    pushscope
+
+    findpropstrict      QName(PackageNamespace("flash.geom"), "ColorTransform")
+    pushbyte            1
+    pushbyte            1
+    pushbyte            1
+    pushdouble          0.5
+    pushshort           224
+    pushshort           224
+    pushshort           224
+    constructprop       QName(PackageNamespace("flash.geom"), "ColorTransform"), 7
+    findproperty        QName(StaticProtectedNs("kabam.rotmg.markPurchaser:NodeListElementsMediator"), "mouseOverCT")
+    swap
+    initproperty        QName(StaticProtectedNs("kabam.rotmg.markPurchaser:NodeListElementsMediator"), "mouseOverCT")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(StaticProtectedNs("kabam.rotmg.markPurchaser:NodeListElementsMediator"), "mouseOverCT") type QName(PackageNamespace("flash.geom"), "ColorTransform") end
+end ; class

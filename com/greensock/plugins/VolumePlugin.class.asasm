@@ -1,0 +1,148 @@
+class
+ refid "com.greensock.plugins:VolumePlugin"
+ instance QName(PackageNamespace("com.greensock.plugins"), "VolumePlugin")
+  extends QName(PackageNamespace("com.greensock.plugins"), "TweenPlugin")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.greensock.plugins:VolumePlugin")
+  iinit
+   name "VolumePlugin"
+   refid "com.greensock.plugins:VolumePlugin/instance/init"
+   body
+    maxstack 2
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     pushstring          "volume"
+     constructsuper      1
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(ProtectedNamespace("com.greensock.plugins:VolumePlugin"), "_target") type QName(PackageNamespace(""), "Object") end
+  trait slot QName(ProtectedNamespace("com.greensock.plugins:VolumePlugin"), "_st") type QName(PackageNamespace("flash.media"), "SoundTransform") end
+  trait method QName(PackageNamespace(""), "_onInitTween") flag OVERRIDE
+   method
+    name "_onInitTween"
+    refid "com.greensock.plugins:VolumePlugin/instance/_onInitTween"
+    param QName(PackageNamespace(""), "Object")
+    param null
+    param QName(PackageNamespace("com.greensock"), "TweenLite")
+    returns QName(PackageNamespace(""), "Boolean")
+    flag HAS_PARAM_NAMES
+    paramname "target"
+    paramname "value"
+    paramname "tween"
+    body
+     maxstack 6
+     localcount 4
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace(""), "isNaN")
+      getglobalscope
+      getlocal2
+      call                1
+      dup
+      iftrue              L13
+
+      pop
+      getlocal1
+      pushstring          "volume"
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "hasOwnProperty"), 1
+      convert_b
+L13:
+      dup
+      iftrue              L20
+
+      pop
+      getlocal1
+      pushstring          "soundTransform"
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "hasOwnProperty"), 1
+      not
+L20:
+      iffalse             L23
+
+      pushfalse
+      returnvalue
+
+L23:
+      getlocal1
+      findproperty        QName(ProtectedNamespace("com.greensock.plugins:VolumePlugin"), "_target")
+      swap
+      setproperty         QName(ProtectedNamespace("com.greensock.plugins:VolumePlugin"), "_target")
+
+      getlex              QName(ProtectedNamespace("com.greensock.plugins:VolumePlugin"), "_target")
+      getproperty         Multiname("soundTransform", [PrivateNamespace("com.greensock.plugins:VolumePlugin"), ProtectedNamespace("com.greensock.plugins:VolumePlugin"), StaticProtectedNs("com.greensock.plugins:VolumePlugin"), StaticProtectedNs("com.greensock.plugins:TweenPlugin"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageNamespace("com.greensock.plugins"), PackageInternalNs("com.greensock.plugins"), PrivateNamespace("FilePrivateNS:VolumePlugin"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      findproperty        QName(ProtectedNamespace("com.greensock.plugins:VolumePlugin"), "_st")
+      swap
+      setproperty         QName(ProtectedNamespace("com.greensock.plugins:VolumePlugin"), "_st")
+
+      findpropstrict      QName(ProtectedNamespace("com.greensock.plugins:TweenPlugin"), "_addTween")
+      getlex              QName(ProtectedNamespace("com.greensock.plugins:VolumePlugin"), "_st")
+      pushstring          "volume"
+      getlex              QName(ProtectedNamespace("com.greensock.plugins:VolumePlugin"), "_st")
+      getproperty         QName(PackageNamespace(""), "volume")
+      getlocal2
+      pushstring          "volume"
+      callpropvoid        QName(ProtectedNamespace("com.greensock.plugins:TweenPlugin"), "_addTween"), 5
+
+      pushtrue
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setRatio") flag OVERRIDE
+   method
+    name "setRatio"
+    refid "com.greensock.plugins:VolumePlugin/instance/setRatio"
+    param QName(PackageNamespace(""), "Number")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "v"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      callsupervoid       QName(PackageNamespace(""), "setRatio"), 1
+      getlex              QName(ProtectedNamespace("com.greensock.plugins:VolumePlugin"), "_target")
+      getlex              QName(ProtectedNamespace("com.greensock.plugins:VolumePlugin"), "_st")
+      setproperty         Multiname("soundTransform", [PrivateNamespace("com.greensock.plugins:VolumePlugin"), ProtectedNamespace("com.greensock.plugins:VolumePlugin"), StaticProtectedNs("com.greensock.plugins:VolumePlugin"), StaticProtectedNs("com.greensock.plugins:TweenPlugin"), StaticProtectedNs("Object"), PackageNamespace("com.greensock"), PackageNamespace("com.greensock.plugins"), PackageInternalNs("com.greensock.plugins"), PrivateNamespace("FilePrivateNS:VolumePlugin"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.greensock.plugins:VolumePlugin/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PackageNamespace(""), "API") type QName(PackageNamespace(""), "Number") value Integer(2) end
+end ; class

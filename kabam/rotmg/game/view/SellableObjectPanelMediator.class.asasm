@@ -1,0 +1,226 @@
+class
+ refid "kabam.rotmg.game.view:SellableObjectPanelMediator"
+ instance QName(PackageNamespace("kabam.rotmg.game.view"), "SellableObjectPanelMediator")
+  extends QName(PackageNamespace("robotlegs.bender.bundles.mvcs"), "Mediator")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.game.view:SellableObjectPanelMediator")
+  iinit
+   refid "kabam.rotmg.game.view:SellableObjectPanelMediator/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "account") flag METADATA type QName(PackageNamespace("kabam.rotmg.account.core"), "Account")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "gameModel") flag METADATA type QName(PackageNamespace("kabam.rotmg.game.model"), "GameModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "view") flag METADATA type QName(PackageNamespace("kabam.rotmg.game.view"), "SellableObjectPanel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "openDialog") flag METADATA type QName(PackageNamespace("kabam.rotmg.dialogs.control"), "OpenDialogSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PackageNamespace(""), "initialize") flag OVERRIDE
+   method
+    name "initialize"
+    refid "kabam.rotmg.game.view:SellableObjectPanelMediator/instance/initialize"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "gameModel")
+      getproperty         QName(PackageNamespace(""), "player")
+      callproperty        QName(PackageNamespace(""), "numberOfAvailableSlots"), 0
+      callpropvoid        QName(PackageNamespace(""), "setInventorySpaceAmount"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "buyItem")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:SellableObjectPanelMediator"), "onBuyItem")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "destroy") flag OVERRIDE
+   method
+    name "destroy"
+    refid "kabam.rotmg.game.view:SellableObjectPanelMediator/instance/destroy"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "buyItem")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:SellableObjectPanelMediator"), "onBuyItem")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.game.view:SellableObjectPanelMediator"), "onBuyItem")
+   method
+    name "onBuyItem"
+    refid "kabam.rotmg.game.view:SellableObjectPanelMediator/instance/kabam.rotmg.game.view:SellableObjectPanelMediator/instance/onBuyItem"
+    param QName(PackageNamespace("com.company.assembleegameclient.objects"), "SellableObject")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "account")
+      callproperty        QName(Namespace("kabam.rotmg.account.core:Account"), "isRegistered"), 0
+      iffalse             L40
+
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "currency_")
+      pushbyte            0
+      equals
+      dup
+      iffalse             L23
+
+      pop
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "getQuantity"), 0
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "price_")
+      multiply
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "gameModel")
+      getproperty         QName(PackageNamespace(""), "player")
+      getproperty         QName(PackageNamespace(""), "credits_")
+      greaterthan
+L23:
+      iffalse             L30
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "openDialog")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.ui.view"), "NotEnoughGoldDialog")
+      constructprop       QName(PackageNamespace("kabam.rotmg.ui.view"), "NotEnoughGoldDialog"), 0
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      jump                L39
+
+L30:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "gs_")
+      getproperty         QName(PackageNamespace(""), "gsc_")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "objectId")
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "getQuantity"), 0
+      callpropvoid        QName(PackageNamespace(""), "buy"), 2
+
+L39:
+      jump                L46
+
+L40:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "openDialog")
+      getlocal0
+      getlocal1
+      callproperty        QName(PrivateNamespace("kabam.rotmg.game.view:SellableObjectPanelMediator"), "makeRegisterDialog"), 1
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+L46:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.game.view:SellableObjectPanelMediator"), "makeRegisterDialog")
+   method
+    name "makeRegisterDialog"
+    refid "kabam.rotmg.game.view:SellableObjectPanelMediator/instance/kabam.rotmg.game.view:SellableObjectPanelMediator/instance/makeRegisterDialog"
+    param QName(PackageNamespace("com.company.assembleegameclient.objects"), "SellableObject")
+    returns QName(PackageNamespace("kabam.rotmg.account.core.view"), "RegisterPromptDialog")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 5
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.account.core.view"), "RegisterPromptDialog")
+      pushstring          "SellableObjectPanelMediator.text"
+      pushstring          "type"
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "Currency")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "currency_")
+      callproperty        QName(PackageNamespace(""), "typeToName"), 1
+      newobject           1
+      constructprop       QName(PackageNamespace("kabam.rotmg.account.core.view"), "RegisterPromptDialog"), 2
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.game.view:SellableObjectPanelMediator/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PackageNamespace(""), "TEXT") type QName(PackageNamespace(""), "String") value Utf8("SellableObjectPanelMediator.text") end
+end ; class

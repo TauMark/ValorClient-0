@@ -1,0 +1,224 @@
+class
+ refid "kabam.rotmg.death.view:ZombifyGameMediator"
+ instance QName(PackageNamespace("kabam.rotmg.death.view"), "ZombifyGameMediator")
+  extends QName(PackageNamespace("robotlegs.bender.bundles.mvcs"), "Mediator")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.death.view:ZombifyGameMediator")
+  iinit
+   refid "kabam.rotmg.death.view:ZombifyGameMediator/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "view") flag METADATA type QName(PackageNamespace("com.company.assembleegameclient.game"), "GameSprite")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "zombify") flag METADATA type QName(PackageNamespace("kabam.rotmg.death.control"), "ZombifySignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "setWorldInteraction") flag METADATA type QName(PackageNamespace("kabam.rotmg.game.signals"), "SetWorldInteractionSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PackageNamespace(""), "initialize") flag OVERRIDE
+   method
+    name "initialize"
+    refid "kabam.rotmg.death.view:ZombifyGameMediator/instance/initialize"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "zombify")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.death.view:ZombifyGameMediator"), "onZombify")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "destroy") flag OVERRIDE
+   method
+    name "destroy"
+    refid "kabam.rotmg.death.view:ZombifyGameMediator/instance/destroy"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "zombify")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.death.view:ZombifyGameMediator"), "onZombify")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.death.view:ZombifyGameMediator"), "onZombify")
+   method
+    name "onZombify"
+    refid "kabam.rotmg.death.view:ZombifyGameMediator/instance/kabam.rotmg.death.view:ZombifyGameMediator/instance/onZombify"
+    param QName(PackageNamespace("kabam.rotmg.messaging.impl.incoming"), "Death")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.death.view:ZombifyGameMediator"), "removePlayer"), 0
+
+      getlocal0
+      getlocal1
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.death.view:ZombifyGameMediator"), "setZombieAsViewFocus"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "setWorldInteraction")
+      pushfalse
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.death.view:ZombifyGameMediator"), "removePlayer")
+   method
+    name "removePlayer"
+    refid "kabam.rotmg.death.view:ZombifyGameMediator/instance/kabam.rotmg.death.view:ZombifyGameMediator/instance/removePlayer"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "map")
+      getproperty         QName(PackageNamespace(""), "player")
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.objects"), "Player")
+      setlocal1
+
+      getlocal1
+      dup
+      iffalse             L19
+
+      pop
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "map")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "objectId")
+      callproperty        QName(PackageNamespace(""), "removeObj"), 1
+      coerce_a
+L19:
+      pop
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "map")
+      pushnull
+      setproperty         QName(PackageNamespace(""), "player")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.death.view:ZombifyGameMediator"), "setZombieAsViewFocus")
+   method
+    name "setZombieAsViewFocus"
+    refid "kabam.rotmg.death.view:ZombifyGameMediator/instance/kabam.rotmg.death.view:ZombifyGameMediator/instance/setZombieAsViewFocus"
+    param QName(PackageNamespace("kabam.rotmg.messaging.impl.incoming"), "Death")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "map")
+      getproperty         QName(PackageNamespace(""), "goDict")
+      coerce              QName(PackageNamespace("flash.utils"), "Dictionary")
+      setlocal2
+
+      getlocal2
+      dup
+      iffalse             L20
+
+      pop
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlocal2
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "zombieId")
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.death.view:ZombifyGameMediator"), ProtectedNamespace("kabam.rotmg.death.view:ZombifyGameMediator"), StaticProtectedNs("kabam.rotmg.death.view:ZombifyGameMediator"), StaticProtectedNs("robotlegs.bender.bundles.mvcs:Mediator"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.death.view"), PackageInternalNs("kabam.rotmg.death.view"), PrivateNamespace("FilePrivateNS:ZombifyGameMediator"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      callproperty        QName(PackageNamespace(""), "setFocus"), 1
+      coerce_a
+L20:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.death.view:ZombifyGameMediator/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

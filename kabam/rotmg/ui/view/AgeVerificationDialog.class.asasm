@@ -1,0 +1,632 @@
+class
+ refid "kabam.rotmg.ui.view:AgeVerificationDialog"
+ instance QName(PackageNamespace("kabam.rotmg.ui.view"), "AgeVerificationDialog")
+  extends QName(PackageNamespace("com.company.assembleegameclient.ui.dialogs"), "Dialog")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.ui.view:AgeVerificationDialog")
+  iinit
+   name "AgeVerificationDialog"
+   refid "kabam.rotmg.ui.view:AgeVerificationDialog/instance/init"
+   body
+    maxstack 6
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     findpropstrict      QName(PackageNamespace("org.osflash.signals"), "Signal")
+     getlex              QName(PackageNamespace(""), "Boolean")
+     constructprop       QName(PackageNamespace("org.osflash.signals"), "Signal"), 1
+     findproperty        QName(PackageNamespace(""), "response")
+     swap
+     initproperty        QName(PackageNamespace(""), "response")
+
+     getlocal0
+     pushstring          "AgeVerificationDialog.title"
+     pushstring          ""
+     pushstring          "AgeVerificationDialog.left"
+     pushstring          "AgeVerificationDialog.right"
+     pushstring          "/ageVerificationDialog"
+     constructsuper      5
+
+     findpropstrict      QName(PackageNamespace(""), "addEventListener")
+     pushstring          "dialogLeftButton"
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.ui.view:AgeVerificationDialog"), "onCancel")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     findpropstrict      QName(PackageNamespace(""), "addEventListener")
+     pushstring          "dialogRightButton"
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.ui.view:AgeVerificationDialog"), "onVerify")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait const QName(PrivateNamespace("kabam.rotmg.ui.view:AgeVerificationDialog"), "BIRTH_DATE_BELOW_MINIMUM_ERROR") type QName(PackageNamespace(""), "String") value Utf8("AgeVerificationDialog.tooYoung") end
+  trait const QName(PrivateNamespace("kabam.rotmg.ui.view:AgeVerificationDialog"), "BIRTH_DATE_INVALID_ERROR") type QName(PackageNamespace(""), "String") value Utf8("AgeVerificationDialog.invalidBirthDate") end
+  trait const QName(PrivateNamespace("kabam.rotmg.ui.view:AgeVerificationDialog"), "MINIMUM_AGE") type QName(PackageNamespace(""), "uint") value Integer(13) end
+  trait const QName(PackageNamespace(""), "response") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.ui.view:AgeVerificationDialog"), "ageVerificationField") type QName(PackageNamespace("kabam.rotmg.account.ui.components"), "DateField") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.ui.view:AgeVerificationDialog"), "errorLabel") type QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete") end
+  trait method QName(ProtectedNamespace("kabam.rotmg.ui.view:AgeVerificationDialog"), "makeUIAndAdd") flag OVERRIDE
+   method
+    name "makeUIAndAdd"
+    refid "kabam.rotmg.ui.view:AgeVerificationDialog/instance/kabam.rotmg.ui.view:AgeVerificationDialog:makeUIAndAdd"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.ui.view:AgeVerificationDialog"), "makeAgeVerificationAndErrorLabel"), 0
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.ui.view:AgeVerificationDialog"), "addChildren"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.ui.view:AgeVerificationDialog"), "makeAgeVerificationAndErrorLabel")
+   method
+    name "makeAgeVerificationAndErrorLabel"
+    refid "kabam.rotmg.ui.view:AgeVerificationDialog/instance/kabam.rotmg.ui.view:AgeVerificationDialog/instance/makeAgeVerificationAndErrorLabel"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.ui.view:AgeVerificationDialog"), "makeAgeVerificationField"), 0
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.ui.view:AgeVerificationDialog"), "makeErrorLabel"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.ui.view:AgeVerificationDialog"), "addChildren")
+   method
+    name "addChildren"
+    refid "kabam.rotmg.ui.view:AgeVerificationDialog/instance/kabam.rotmg.ui.view:AgeVerificationDialog/instance/addChildren"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(ProtectedNamespace("com.company.assembleegameclient.ui.dialogs:Dialog"), "uiWaiter")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.ui.view:AgeVerificationDialog"), "ageVerificationField")
+      callproperty        QName(PackageNamespace(""), "getTextChanged"), 0
+      callpropvoid        QName(PackageNamespace(""), "pushArgs"), 1
+
+      getlex              QName(PackageNamespace(""), "box_")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.ui.view:AgeVerificationDialog"), "ageVerificationField")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      getlex              QName(PackageNamespace(""), "box_")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.ui.view:AgeVerificationDialog"), "errorLabel")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(ProtectedNamespace("kabam.rotmg.ui.view:AgeVerificationDialog"), "initText") flag OVERRIDE
+   method
+    name "initText"
+    refid "kabam.rotmg.ui.view:AgeVerificationDialog/instance/kabam.rotmg.ui.view:AgeVerificationDialog:initText"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 9
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete")
+      constructprop       QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete"), 0
+      pushbyte            14
+      callproperty        QName(PackageNamespace(""), "setSize"), 1
+      pushint             11776947
+      callproperty        QName(PackageNamespace(""), "setColor"), 1
+      findproperty        QName(PackageNamespace(""), "textText_")
+      swap
+      setproperty         QName(PackageNamespace(""), "textText_")
+
+      getlex              QName(PackageNamespace(""), "textText_")
+      pushshort           300
+      pushbyte            40
+      subtract
+      callpropvoid        QName(PackageNamespace(""), "setTextWidth"), 1
+
+      getlex              QName(PackageNamespace(""), "textText_")
+      pushbyte            20
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlex              QName(PackageNamespace(""), "textText_")
+      pushtrue
+      callproperty        QName(PackageNamespace(""), "setMultiLine"), 1
+      pushtrue
+      callproperty        QName(PackageNamespace(""), "setWordWrap"), 1
+      pushtrue
+      callpropvoid        QName(PackageNamespace(""), "setHTML"), 1
+
+      getlex              QName(PackageNamespace(""), "textText_")
+      pushstring          "left"
+      callpropvoid        QName(PackageNamespace(""), "setAutoSize"), 1
+
+      getlex              QName(PackageNamespace(""), "textText_")
+      pushtrue
+      setproperty         QName(PackageNamespace(""), "mouseEnabled")
+
+      getlex              QName(PackageNamespace(""), "textText_")
+      findpropstrict      QName(PackageNamespace("flash.filters"), "DropShadowFilter")
+      pushbyte            0
+      pushbyte            0
+      pushbyte            0
+      pushbyte            1
+      pushbyte            6
+      pushbyte            6
+      pushbyte            1
+      constructprop       QName(PackageNamespace("flash.filters"), "DropShadowFilter"), 7
+      newarray            1
+      setproperty         QName(PackageNamespace(""), "filters")
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.ui.view:AgeVerificationDialog"), "setText"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.ui.view:AgeVerificationDialog"), "setText")
+   method
+    name "setText"
+    refid "kabam.rotmg.ui.view:AgeVerificationDialog/instance/kabam.rotmg.ui.view:AgeVerificationDialog/instance/setText"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 11
+     localcount 4
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushstring          "<font color=\"#7777EE\"><a href=\"\" target=\"_blank\">"
+      coerce_s
+      setlocal3
+
+      pushstring          "<font color=\"#7777EE\"><a href=\"\" target=\"_blank\">"
+      coerce_s
+      setlocal1
+
+      pushstring          "</a></font>"
+      coerce_s
+      setlocal2
+
+      getlex              QName(PackageNamespace(""), "textText_")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder")
+      constructprop       QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder"), 0
+      pushstring          "AgeVerificationDialog.text"
+      pushstring          "tou"
+      getlocal3
+      pushstring          "_tou"
+      getlocal2
+      pushstring          "policy"
+      getlocal1
+      pushstring          "_policy"
+      getlocal2
+      newobject           4
+      callproperty        QName(PackageNamespace(""), "setParams"), 2
+      callpropvoid        QName(PackageNamespace(""), "setStringBuilder"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(ProtectedNamespace("kabam.rotmg.ui.view:AgeVerificationDialog"), "drawAdditionalUI") flag OVERRIDE
+   method
+    name "drawAdditionalUI"
+    refid "kabam.rotmg.ui.view:AgeVerificationDialog/instance/kabam.rotmg.ui.view:AgeVerificationDialog:drawAdditionalUI"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.ui.view:AgeVerificationDialog"), "ageVerificationField")
+      getlex              QName(PackageNamespace(""), "textText_")
+      getlex              QName(PackageNamespace(""), "box_")
+      callproperty        QName(PackageNamespace(""), "getBounds"), 1
+      getproperty         QName(PackageNamespace(""), "bottom")
+      pushbyte            8
+      add
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.ui.view:AgeVerificationDialog"), "ageVerificationField")
+      pushbyte            20
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.ui.view:AgeVerificationDialog"), "errorLabel")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.ui.view:AgeVerificationDialog"), "ageVerificationField")
+      getproperty         QName(PackageNamespace(""), "y")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.ui.view:AgeVerificationDialog"), "ageVerificationField")
+      getproperty         QName(PackageNamespace(""), "height")
+      add
+      pushbyte            8
+      add
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.ui.view:AgeVerificationDialog"), "errorLabel")
+      pushbyte            20
+      setproperty         QName(PackageNamespace(""), "x")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.ui.view:AgeVerificationDialog"), "makeAgeVerificationField")
+   method
+    name "makeAgeVerificationField"
+    refid "kabam.rotmg.ui.view:AgeVerificationDialog/instance/kabam.rotmg.ui.view:AgeVerificationDialog/instance/makeAgeVerificationField"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.account.ui.components"), "DateField")
+      constructprop       QName(PackageNamespace("kabam.rotmg.account.ui.components"), "DateField"), 0
+      setproperty         QName(PrivateNamespace("kabam.rotmg.ui.view:AgeVerificationDialog"), "ageVerificationField")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.ui.view:AgeVerificationDialog"), "ageVerificationField")
+      pushstring          "WebRegister.birthday"
+      callpropvoid        QName(PackageNamespace(""), "setTitle"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.ui.view:AgeVerificationDialog"), "makeErrorLabel")
+   method
+    name "makeErrorLabel"
+    refid "kabam.rotmg.ui.view:AgeVerificationDialog/instance/kabam.rotmg.ui.view:AgeVerificationDialog/instance/makeErrorLabel"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 8
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete")
+      constructprop       QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete"), 0
+      pushbyte            12
+      callproperty        QName(PackageNamespace(""), "setSize"), 1
+      pushint             16549442
+      callproperty        QName(PackageNamespace(""), "setColor"), 1
+      setproperty         QName(PrivateNamespace("kabam.rotmg.ui.view:AgeVerificationDialog"), "errorLabel")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.ui.view:AgeVerificationDialog"), "errorLabel")
+      pushtrue
+      callpropvoid        QName(PackageNamespace(""), "setMultiLine"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.ui.view:AgeVerificationDialog"), "errorLabel")
+      findpropstrict      QName(PackageNamespace("flash.filters"), "DropShadowFilter")
+      pushbyte            0
+      pushbyte            0
+      pushbyte            0
+      pushdouble          0.5
+      pushbyte            12
+      pushbyte            12
+      constructprop       QName(PackageNamespace("flash.filters"), "DropShadowFilter"), 6
+      newarray            1
+      setproperty         QName(PackageNamespace(""), "filters")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.ui.view:AgeVerificationDialog"), "onCancel")
+   method
+    name "onCancel"
+    refid "kabam.rotmg.ui.view:AgeVerificationDialog/instance/kabam.rotmg.ui.view:AgeVerificationDialog/instance/onCancel"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "response")
+      pushfalse
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.ui.view:AgeVerificationDialog"), "onVerify")
+   method
+    name "onVerify"
+    refid "kabam.rotmg.ui.view:AgeVerificationDialog/instance/kabam.rotmg.ui.view:AgeVerificationDialog/instance/onVerify"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 3
+     localcount 5
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushfalse
+      setlocal3
+
+      getlocal0
+      callproperty        QName(PrivateNamespace("kabam.rotmg.ui.view:AgeVerificationDialog"), "getPlayerAge"), 0
+      convert_u
+      setlocal2
+
+      pushstring          ""
+      coerce_s
+      setlocal            4
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.ui.view:AgeVerificationDialog"), "ageVerificationField")
+      callproperty        QName(PackageNamespace(""), "isValidDate"), 0
+      iftrue              L21
+
+      pushstring          "AgeVerificationDialog.invalidBirthDate"
+      coerce_s
+      setlocal            4
+
+      pushtrue
+      setlocal3
+
+      jump                L45
+
+L21:
+      getlocal2
+      pushbyte            13
+      lessthan
+      dup
+      iffalse             L29
+
+      pop
+      getlocal3
+      not
+L29:
+      iffalse             L36
+
+      pushstring          "AgeVerificationDialog.tooYoung"
+      coerce_s
+      setlocal            4
+
+      pushtrue
+      setlocal3
+
+      jump                L45
+
+L36:
+      pushstring          ""
+      coerce_s
+      setlocal            4
+
+      pushfalse
+      setlocal3
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "response")
+      pushtrue
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+L45:
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.ui.view:AgeVerificationDialog"), "errorLabel")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder")
+      constructprop       QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder"), 0
+      getlocal            4
+      callproperty        QName(PackageNamespace(""), "setParams"), 1
+      callpropvoid        QName(PackageNamespace(""), "setStringBuilder"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.ui.view:AgeVerificationDialog"), "ageVerificationField")
+      getlocal3
+      callpropvoid        QName(PackageNamespace(""), "setErrorHighlight"), 1
+
+      findpropstrict      QName(ProtectedNamespace("com.company.assembleegameclient.ui.dialogs:Dialog"), "drawButtonsAndBackground")
+      callpropvoid        QName(ProtectedNamespace("com.company.assembleegameclient.ui.dialogs:Dialog"), "drawButtonsAndBackground"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.ui.view:AgeVerificationDialog"), "getPlayerAge")
+   method
+    name "getPlayerAge"
+    refid "kabam.rotmg.ui.view:AgeVerificationDialog/instance/kabam.rotmg.ui.view:AgeVerificationDialog/instance/getPlayerAge"
+    returns QName(PackageNamespace(""), "uint")
+    body
+     maxstack 2
+     localcount 4
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace(""), "Date")
+      getlocal0
+      callproperty        QName(PrivateNamespace("kabam.rotmg.ui.view:AgeVerificationDialog"), "getBirthDate"), 0
+      constructprop       QName(PackageNamespace(""), "Date"), 1
+      coerce              QName(PackageNamespace(""), "Date")
+      setlocal3
+
+      findpropstrict      QName(PackageNamespace(""), "Date")
+      constructprop       QName(PackageNamespace(""), "Date"), 0
+      coerce              QName(PackageNamespace(""), "Date")
+      setlocal1
+
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "fullYear")
+      convert_d
+      getlocal3
+      getproperty         QName(PackageNamespace(""), "fullYear")
+      convert_d
+      subtract
+      convert_u
+      setlocal2
+
+      getlocal3
+      getproperty         QName(PackageNamespace(""), "month")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "month")
+      greaterthan
+      dup
+      iftrue              L43
+
+      pop
+      getlocal3
+      getproperty         QName(PackageNamespace(""), "month")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "month")
+      equals
+      dup
+      iffalse             L42
+
+      pop
+      getlocal3
+      getproperty         QName(PackageNamespace(""), "date")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "date")
+      greaterthan
+L42:
+      convert_b
+L43:
+      iffalse             L49
+
+      getlocal2
+      convert_d
+      decrement
+      convert_u
+      setlocal2
+
+L49:
+      getlocal2
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.ui.view:AgeVerificationDialog"), "getBirthDate")
+   method
+    name "getBirthDate"
+    refid "kabam.rotmg.ui.view:AgeVerificationDialog/instance/kabam.rotmg.ui.view:AgeVerificationDialog/instance/getBirthDate"
+    returns QName(PackageNamespace(""), "Number")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace(""), "Date")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.ui.view:AgeVerificationDialog"), "ageVerificationField")
+      callproperty        QName(PackageNamespace(""), "getDate"), 0
+      callproperty        QName(PackageNamespace(""), "parse"), 1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.ui.view:AgeVerificationDialog/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PrivateNamespace("kabam.rotmg.ui.view:AgeVerificationDialog"), "WIDTH") type QName(PackageNamespace(""), "int") value Integer(300) end
+end ; class

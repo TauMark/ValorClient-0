@@ -1,0 +1,923 @@
+class
+ refid "io.decagames.rotmg.ui.tabs:UITabs"
+ instance QName(PackageNamespace("io.decagames.rotmg.ui.tabs"), "UITabs")
+  extends QName(PackageNamespace("flash.display"), "Sprite")
+  flag SEALED
+  iinit
+   name "UITabs"
+   refid "io.decagames.rotmg.ui.tabs:UITabs/instance/init"
+   param QName(PackageNamespace(""), "int")
+   param QName(PackageNamespace(""), "Boolean")
+   flag HAS_OPTIONAL
+   flag HAS_PARAM_NAMES
+   optional False()
+   paramname "_arg_1"
+   paramname "_arg_2"
+   body
+    maxstack 3
+    localcount 3
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     findpropstrict      QName(PackageNamespace("org.osflash.signals"), "Signal")
+     constructprop       QName(PackageNamespace("org.osflash.signals"), "Signal"), 0
+     findproperty        QName(PackageNamespace(""), "buttonsRenderedSignal")
+     swap
+     setproperty         QName(PackageNamespace(""), "buttonsRenderedSignal")
+
+     findpropstrict      QName(PackageNamespace("io.decagames.rotmg.social.signals"), "TabSelectedSignal")
+     constructprop       QName(PackageNamespace("io.decagames.rotmg.social.signals"), "TabSelectedSignal"), 0
+     findproperty        QName(PackageNamespace(""), "tabSelectedSignal")
+     swap
+     setproperty         QName(PackageNamespace(""), "tabSelectedSignal")
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     getlocal1
+     setproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:UITabs"), "tabsWidth")
+
+     getlocal0
+     getlocal2
+     setproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:UITabs"), "borderlessMode")
+
+     getlocal0
+     pushstring          "addedToStage"
+     getlocal0
+     getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:UITabs"), "onAddedHandler")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     getlocal0
+     getlex              QName(PackageNamespace("__AS3__.vec"), "Vector")
+     getlex              QName(PackageNamespace("io.decagames.rotmg.ui.tabs"), "UITab")
+     applytype           1
+     pushbyte            0
+     construct           1
+     setproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:UITabs"), "content")
+
+     getlocal0
+     getlex              QName(PackageNamespace("__AS3__.vec"), "Vector")
+     getlex              QName(PackageNamespace("io.decagames.rotmg.ui.tabs"), "TabButton")
+     applytype           1
+     pushbyte            0
+     construct           1
+     setproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:UITabs"), "buttons")
+
+     getlocal2
+     iftrue              L71
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("io.decagames.rotmg.ui.tabs"), "TabContentBackground")
+     constructprop       QName(PackageNamespace("io.decagames.rotmg.ui.tabs"), "TabContentBackground"), 0
+     setproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:UITabs"), "background")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:UITabs"), "background")
+     pushbyte            0
+     pushbyte            3
+     callpropvoid        QName(PackageNamespace(""), "addMargin"), 2
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:UITabs"), "background")
+     getlocal1
+     setproperty         QName(PackageNamespace(""), "width")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:UITabs"), "background")
+     pushshort           405
+     setproperty         QName(PackageNamespace(""), "height")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:UITabs"), "background")
+     pushbyte            0
+     setproperty         QName(PackageNamespace(""), "x")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:UITabs"), "background")
+     pushbyte            41
+     setproperty         QName(PackageNamespace(""), "y")
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:UITabs"), "background")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     jump                L74
+
+L71:
+     getlocal0
+     pushbyte            3
+     setproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:UITabs"), "tabsButtonMargin")
+
+L74:
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "buttonsRenderedSignal") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait slot QName(PackageNamespace(""), "tabSelectedSignal") type QName(PackageNamespace("io.decagames.rotmg.social.signals"), "TabSelectedSignal") end
+  trait slot QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:UITabs"), "tabsXSpace") type QName(PackageNamespace(""), "int") value Integer(3) end
+  trait slot QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:UITabs"), "tabsButtonMargin") type QName(PackageNamespace(""), "int") value Integer(14) end
+  trait slot QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:UITabs"), "content") type TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("io.decagames.rotmg.ui.tabs"), "UITab")>) end
+  trait slot QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:UITabs"), "buttons") type TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("io.decagames.rotmg.ui.tabs"), "TabButton")>) end
+  trait slot QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:UITabs"), "tabsWidth") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:UITabs"), "background") type QName(PackageNamespace("io.decagames.rotmg.ui.tabs"), "TabContentBackground") end
+  trait slot QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:UITabs"), "currentContent") type QName(PackageNamespace("io.decagames.rotmg.ui.tabs"), "UITab") end
+  trait slot QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:UITabs"), "defaultSelectedIndex") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:UITabs"), "borderlessMode") type QName(PackageNamespace(""), "Boolean") end
+  trait method QName(PackageNamespace(""), "addTab")
+   method
+    name "addTab"
+    refid "io.decagames.rotmg.ui.tabs:UITabs/instance/addTab"
+    param QName(PackageNamespace("io.decagames.rotmg.ui.tabs"), "UITab")
+    param QName(PackageNamespace(""), "Boolean")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_OPTIONAL
+    flag HAS_PARAM_NAMES
+    optional False()
+    paramname "_arg_1"
+    paramname "_arg_2"
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:UITabs"), "content")
+      getlocal1
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:UITabs"), "borderlessMode")
+      iffalse             L12
+
+      pushbyte            34
+      jump                L13
+
+L12:
+      pushdouble          56
+L13:
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal2
+      iffalse             L29
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:UITabs"), "content")
+      getproperty         QName(PackageNamespace(""), "length")
+      pushbyte            1
+      subtract
+      setproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:UITabs"), "defaultSelectedIndex")
+
+      getlocal0
+      getlocal1
+      setproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:UITabs"), "currentContent")
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+L29:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:UITabs"), "createTabButtons")
+   method
+    name "createTabButtons"
+    refid "io.decagames.rotmg.ui.tabs:UITabs/instance/io.decagames.rotmg.ui.tabs:UITabs/instance/createTabButtons"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 5
+     localcount 9
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushbyte            0
+      setlocal2
+
+      pushnull
+      setlocal            6
+
+      pushnull
+      setlocal            5
+
+      pushnull
+      setlocal            4
+
+      pushnull
+      setlocal3
+
+      pushbyte            1
+      setlocal2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:UITabs"), "tabsWidth")
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:UITabs"), "content")
+      getproperty         QName(PackageNamespace(""), "length")
+      pushbyte            1
+      subtract
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:UITabs"), "tabsXSpace")
+      multiply
+      subtract
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:UITabs"), "tabsButtonMargin")
+      pushbyte            2
+      multiply
+      subtract
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:UITabs"), "content")
+      getproperty         QName(PackageNamespace(""), "length")
+      divide
+      convert_i
+      setlocal1
+
+      pushbyte            0
+      setlocal            8
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:UITabs"), "content")
+      setlocal            7
+
+      jump                L123
+
+L42:
+      label
+      getlocal            7
+      getlocal            8
+      nextvalue
+      coerce              QName(PackageNamespace("io.decagames.rotmg.ui.tabs"), "UITab")
+      setlocal            4
+
+      getlocal2
+      pushbyte            1
+      ifne                L55
+
+      pushstring          "left"
+      coerce_s
+      setlocal            6
+
+      jump                L67
+
+L55:
+      getlocal2
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:UITabs"), "content")
+      getproperty         QName(PackageNamespace(""), "length")
+      ifne                L64
+
+      pushstring          "right"
+      coerce_s
+      setlocal            6
+
+      jump                L67
+
+L64:
+      pushstring          "center"
+      coerce_s
+      setlocal            6
+
+L67:
+      getlocal0
+      getlocal            4
+      getproperty         QName(PackageNamespace(""), "tabName")
+      getlocal            6
+      callproperty        QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:UITabs"), "createTabButton"), 2
+      coerce              QName(PackageNamespace("io.decagames.rotmg.ui.tabs"), "TabButton")
+      setlocal3
+
+      getlocal3
+      getlocal1
+      setproperty         QName(PackageNamespace(""), "width")
+
+      getlocal3
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:UITabs"), "defaultSelectedIndex")
+      getlocal2
+      pushbyte            1
+      subtract
+      equals
+      setproperty         QName(PackageNamespace(""), "selected")
+
+      getlocal3
+      getproperty         QName(PackageNamespace(""), "selected")
+      iffalse             L90
+
+      getlocal3
+      setlocal            5
+
+L90:
+      getlocal3
+      pushbyte            3
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal3
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:UITabs"), "tabsButtonMargin")
+      getlocal1
+      getlocal2
+      pushbyte            1
+      subtract
+      multiply
+      add
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:UITabs"), "tabsXSpace")
+      getlocal2
+      pushbyte            1
+      subtract
+      multiply
+      add
+      setproperty         QName(PackageNamespace(""), "x")
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal3
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      getlocal3
+      getproperty         QName(PackageNamespace(""), "clickSignal")
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:UITabs"), "onButtonSelected")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:UITabs"), "buttons")
+      getlocal3
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+
+      inclocal_i          2
+L123:
+      hasnext2            7, 8
+      iftrue              L42
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:UITabs"), "background")
+      iffalse             L147
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:UITabs"), "background")
+      getlocal            5
+      getproperty         QName(PackageNamespace(""), "x")
+      pushbyte            4
+      subtract
+      getlocal            5
+      getproperty         QName(PackageNamespace(""), "x")
+      getlocal            5
+      getproperty         QName(PackageNamespace(""), "width")
+      add
+      pushbyte            12
+      subtract
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:UITabs"), "defaultSelectedIndex")
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:UITabs"), "buttons")
+      getproperty         QName(PackageNamespace(""), "length")
+      callpropvoid        QName(PackageNamespace(""), "addDecor"), 4
+
+L147:
+      getlocal0
+      getlocal            5
+      callpropvoid        QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:UITabs"), "onButtonSelected"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "buttonsRenderedSignal")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:UITabs"), "onButtonSelected")
+   method
+    name "onButtonSelected"
+    refid "io.decagames.rotmg.ui.tabs:UITabs/instance/io.decagames.rotmg.ui.tabs:UITabs/instance/onButtonSelected"
+    param QName(PackageNamespace("io.decagames.rotmg.ui.tabs"), "TabButton")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg_1"
+    body
+     maxstack 5
+     localcount 6
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      setlocal3
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:UITabs"), "buttons")
+      getlocal1
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "indexOf"), 1
+      convert_i
+      setlocal2
+
+      getlocal1
+      pushbyte            0
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "tabSelectedSignal")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "label")
+      getproperty         QName(PackageNamespace(""), "text")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      pushbyte            0
+      setlocal            5
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:UITabs"), "buttons")
+      setlocal            4
+
+      jump                L48
+
+L25:
+      label
+      getlocal            4
+      getlocal            5
+      nextvalue
+      coerce              QName(PackageNamespace("io.decagames.rotmg.ui.tabs"), "TabButton")
+      setlocal3
+
+      getlocal3
+      getlocal1
+      ifeq                L45
+
+      getlocal3
+      pushfalse
+      setproperty         QName(PackageNamespace(""), "selected")
+
+      getlocal3
+      pushbyte            3
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal0
+      getlocal3
+      getlocal2
+      callpropvoid        QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:UITabs"), "updateTabButtonGraphicState"), 2
+
+      jump                L48
+
+L45:
+      getlocal3
+      pushtrue
+      setproperty         QName(PackageNamespace(""), "selected")
+
+L48:
+      hasnext2            4, 5
+      iftrue              L25
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:UITabs"), "currentContent")
+      iffalse             L65
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:UITabs"), "currentContent")
+      pushbyte            0
+      setproperty         QName(PackageNamespace(""), "alpha")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:UITabs"), "currentContent")
+      pushfalse
+      setproperty         QName(PackageNamespace(""), "mouseChildren")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:UITabs"), "currentContent")
+      pushfalse
+      setproperty         QName(PackageNamespace(""), "mouseEnabled")
+
+L65:
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:UITabs"), "content")
+      getlocal2
+      getproperty         MultinameL([PrivateNamespace("io.decagames.rotmg.ui.tabs:UITabs"), ProtectedNamespace("io.decagames.rotmg.ui.tabs:UITabs"), StaticProtectedNs("io.decagames.rotmg.ui.tabs:UITabs"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("io.decagames.rotmg.ui.tabs"), PackageInternalNs("io.decagames.rotmg.ui.tabs"), PrivateNamespace("FilePrivateNS:UITabs"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      setproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:UITabs"), "currentContent")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:UITabs"), "background")
+      iffalse             L92
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:UITabs"), "background")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "x")
+      pushbyte            5
+      subtract
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "x")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "width")
+      add
+      pushbyte            12
+      subtract
+      getlocal2
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:UITabs"), "buttons")
+      getproperty         QName(PackageNamespace(""), "length")
+      callpropvoid        QName(PackageNamespace(""), "addDecor"), 4
+
+L92:
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:UITabs"), "currentContent")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:UITabs"), "currentContent")
+      pushbyte            1
+      setproperty         QName(PackageNamespace(""), "alpha")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:UITabs"), "currentContent")
+      pushtrue
+      setproperty         QName(PackageNamespace(""), "mouseChildren")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:UITabs"), "currentContent")
+      pushtrue
+      setproperty         QName(PackageNamespace(""), "mouseEnabled")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:UITabs"), "updateTabButtonGraphicState")
+   method
+    name "updateTabButtonGraphicState"
+    refid "io.decagames.rotmg.ui.tabs:UITabs/instance/io.decagames.rotmg.ui.tabs:UITabs/instance/updateTabButtonGraphicState"
+    param QName(PackageNamespace("io.decagames.rotmg.ui.tabs"), "TabButton")
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg_1"
+    paramname "_arg_2"
+    body
+     maxstack 5
+     localcount 4
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:UITabs"), "buttons")
+      getlocal1
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "indexOf"), 1
+      convert_i
+      setlocal3
+
+      getlex              QName(PackageNamespace(""), "Math")
+      getlocal3
+      getlocal2
+      subtract
+      callproperty        QName(PackageNamespace(""), "abs"), 1
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:UITabs"), "buttons")
+      getproperty         QName(PackageNamespace(""), "length")
+      pushbyte            1
+      subtract
+      ifnle               L70
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:UITabs"), "borderlessMode")
+      iffalse             L40
+
+      getlocal1
+      pushstring          "tab_button_borderless_idle"
+      findpropstrict      QName(PackageNamespace("flash.geom"), "Point")
+      pushbyte            0
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:UITabs"), "borderlessMode")
+      iffalse             L31
+
+      pushbyte            0
+      jump                L33
+
+L31:
+      pushbyte            3
+      coerce_a
+L33:
+      constructprop       QName(PackageNamespace("flash.geom"), "Point"), 2
+      callpropvoid        QName(PackageNamespace(""), "changeBitmap"), 2
+
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "bitmap")
+      pushbyte            0
+      setproperty         QName(PackageNamespace(""), "alpha")
+
+      jump                L70
+
+L40:
+      getlocal3
+      getlocal2
+      ifngt               L57
+
+      getlocal1
+      pushstring          "tab_button_right_idle"
+      findpropstrict      QName(PackageNamespace("flash.geom"), "Point")
+      pushbyte            0
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:UITabs"), "borderlessMode")
+      iffalse             L52
+
+      pushbyte            0
+      jump                L54
+
+L52:
+      pushbyte            3
+      coerce_a
+L54:
+      constructprop       QName(PackageNamespace("flash.geom"), "Point"), 2
+      callpropvoid        QName(PackageNamespace(""), "changeBitmap"), 2
+
+      jump                L70
+
+L57:
+      getlocal1
+      pushstring          "tab_button_left_idle"
+      findpropstrict      QName(PackageNamespace("flash.geom"), "Point")
+      pushbyte            0
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:UITabs"), "borderlessMode")
+      iffalse             L66
+
+      pushbyte            0
+      jump                L68
+
+L66:
+      pushbyte            3
+      coerce_a
+L68:
+      constructprop       QName(PackageNamespace("flash.geom"), "Point"), 2
+      callpropvoid        QName(PackageNamespace(""), "changeBitmap"), 2
+
+L70:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getTabButtonByLabel")
+   method
+    name "getTabButtonByLabel"
+    refid "io.decagames.rotmg.ui.tabs:UITabs/instance/getTabButtonByLabel"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace("io.decagames.rotmg.ui.tabs"), "TabButton")
+    flag HAS_PARAM_NAMES
+    paramname "_arg_1"
+    body
+     maxstack 2
+     localcount 5
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      setlocal2
+
+      pushbyte            0
+      setlocal            4
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:UITabs"), "buttons")
+      setlocal3
+
+      jump                L23
+
+L10:
+      label
+      getlocal3
+      getlocal            4
+      nextvalue
+      coerce              QName(PackageNamespace("io.decagames.rotmg.ui.tabs"), "TabButton")
+      setlocal2
+
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "label")
+      getproperty         QName(PackageNamespace(""), "text")
+      getlocal1
+      ifne                L23
+
+      getlocal2
+      returnvalue
+
+L23:
+      hasnext2            3, 4
+      iftrue              L10
+
+      pushnull
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:UITabs"), "createTabButton")
+   method
+    name "createTabButton"
+    refid "io.decagames.rotmg.ui.tabs:UITabs/instance/io.decagames.rotmg.ui.tabs:UITabs/instance/createTabButton"
+    param QName(PackageNamespace(""), "String")
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace("io.decagames.rotmg.ui.tabs"), "TabButton")
+    flag HAS_PARAM_NAMES
+    paramname "_arg_1"
+    paramname "_arg_2"
+    body
+     maxstack 3
+     localcount 4
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("io.decagames.rotmg.ui.tabs"), "TabButton")
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:UITabs"), "borderlessMode")
+      iffalse             L8
+
+      pushstring          "borderless"
+      jump                L10
+
+L8:
+      getlocal2
+      coerce_s
+L10:
+      constructprop       QName(PackageNamespace("io.decagames.rotmg.ui.tabs"), "TabButton"), 1
+      coerce              QName(PackageNamespace("io.decagames.rotmg.ui.tabs"), "TabButton")
+      setlocal3
+
+      getlocal3
+      getlocal1
+      getlex              QName(PackageNamespace("io.decagames.rotmg.ui.defaults"), "DefaultLabelFormat")
+      getproperty         QName(PackageNamespace(""), "defaultInactiveTab")
+      callpropvoid        QName(PackageNamespace(""), "setLabel"), 2
+
+      getlocal3
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:UITabs"), "onAddedHandler")
+   method
+    name "onAddedHandler"
+    refid "io.decagames.rotmg.ui.tabs:UITabs/instance/io.decagames.rotmg.ui.tabs:UITabs/instance/onAddedHandler"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg_1"
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      pushstring          "addedToStage"
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:UITabs"), "onAddedHandler")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:UITabs"), "createTabButtons"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "dispose")
+   method
+    name "dispose"
+    refid "io.decagames.rotmg.ui.tabs:UITabs/instance/dispose"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 7
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      setlocal2
+
+      pushnull
+      setlocal1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:UITabs"), "background")
+      iffalse             L12
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:UITabs"), "background")
+      callpropvoid        QName(PackageNamespace(""), "dispose"), 0
+
+L12:
+      pushbyte            0
+      setlocal            4
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:UITabs"), "buttons")
+      setlocal3
+
+      jump                L26
+
+L18:
+      label
+      getlocal3
+      getlocal            4
+      nextvalue
+      coerce              QName(PackageNamespace("io.decagames.rotmg.ui.tabs"), "TabButton")
+      setlocal2
+
+      getlocal2
+      callpropvoid        QName(PackageNamespace(""), "dispose"), 0
+
+L26:
+      hasnext2            3, 4
+      iftrue              L18
+
+      pushbyte            0
+      setlocal            6
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:UITabs"), "content")
+      setlocal            5
+
+      jump                L42
+
+L34:
+      label
+      getlocal            5
+      getlocal            6
+      nextvalue
+      coerce              QName(PackageNamespace("io.decagames.rotmg.ui.tabs"), "UITab")
+      setlocal1
+
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "dispose"), 0
+
+L42:
+      hasnext2            5, 6
+      iftrue              L34
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:UITabs"), "currentContent")
+      callpropvoid        QName(PackageNamespace(""), "dispose"), 0
+
+      getlocal0
+      pushnull
+      setproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:UITabs"), "content")
+
+      getlocal0
+      pushnull
+      setproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:UITabs"), "buttons")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "io.decagames.rotmg.ui.tabs:UITabs/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

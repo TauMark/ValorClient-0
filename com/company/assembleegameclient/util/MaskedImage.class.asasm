@@ -1,0 +1,175 @@
+class
+ refid "com.company.assembleegameclient.util:MaskedImage"
+ instance QName(PackageNamespace("com.company.assembleegameclient.util"), "MaskedImage")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  iinit
+   name "MaskedImage"
+   refid "com.company.assembleegameclient.util:MaskedImage/instance/init"
+   param QName(PackageNamespace("flash.display"), "BitmapData")
+   param QName(PackageNamespace("flash.display"), "BitmapData")
+   flag HAS_PARAM_NAMES
+   paramname "_arg1"
+   paramname "_arg2"
+   body
+    maxstack 2
+    localcount 3
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     getlocal1
+     setproperty         QName(PackageNamespace(""), "image_")
+
+     getlocal0
+     getlocal2
+     setproperty         QName(PackageNamespace(""), "mask_")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "image_") type QName(PackageNamespace("flash.display"), "BitmapData") end
+  trait slot QName(PackageNamespace(""), "mask_") type QName(PackageNamespace("flash.display"), "BitmapData") end
+  trait method QName(PackageNamespace(""), "width")
+   method
+    name "width"
+    refid "com.company.assembleegameclient.util:MaskedImage/instance/width"
+    returns QName(PackageNamespace(""), "int")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "image_")
+      getproperty         QName(PackageNamespace(""), "width")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "height")
+   method
+    name "height"
+    refid "com.company.assembleegameclient.util:MaskedImage/instance/height"
+    returns QName(PackageNamespace(""), "int")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "image_")
+      getproperty         QName(PackageNamespace(""), "height")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "mirror")
+   method
+    name "mirror"
+    refid "com.company.assembleegameclient.util:MaskedImage/instance/mirror"
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace("com.company.assembleegameclient.util"), "MaskedImage")
+    flag HAS_OPTIONAL
+    flag HAS_PARAM_NAMES
+    optional Integer(0)
+    paramname "_arg1"
+    body
+     maxstack 3
+     localcount 4
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace("com.company.util"), "BitmapUtil")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "image_")
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "mirror"), 2
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      setlocal2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "mask_")
+      pushnull
+      ifne                L15
+
+      pushnull
+      jump                L21
+
+L15:
+      getlex              QName(PackageNamespace("com.company.util"), "BitmapUtil")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "mask_")
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "mirror"), 2
+      coerce_a
+L21:
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      setlocal3
+
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.util"), "MaskedImage")
+      getlocal2
+      getlocal3
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.util"), "MaskedImage"), 2
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "amountTransparent")
+   method
+    name "amountTransparent"
+    refid "com.company.assembleegameclient.util:MaskedImage/instance/amountTransparent"
+    returns QName(PackageNamespace(""), "Number")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace("com.company.util"), "BitmapUtil")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "image_")
+      callproperty        QName(PackageNamespace(""), "amountTransparent"), 1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.util:MaskedImage/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

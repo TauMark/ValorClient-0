@@ -1,0 +1,101 @@
+class
+ refid "valor.battlePass.missions:MissionDuration"
+ instance QName(PackageNamespace("valor.battlePass.missions"), "MissionDuration")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  iinit
+   refid "valor.battlePass.missions:MissionDuration/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; instance
+ cinit
+  refid "valor.battlePass.missions:MissionDuration/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait slot QName(PackageNamespace(""), "UNDEFINED") type QName(PackageNamespace(""), "int") value Integer(-1) end
+ trait slot QName(PackageNamespace(""), "DAILY") type QName(PackageNamespace(""), "int") value Integer(0) end
+ trait slot QName(PackageNamespace(""), "WEEKLY") type QName(PackageNamespace(""), "int") value Integer(1) end
+ trait slot QName(PackageNamespace(""), "SEASONAL") type QName(PackageNamespace(""), "int") value Integer(2) end
+ trait method QName(PackageNamespace(""), "getDurationIdFromString")
+  method
+   name "getDurationIdFromString"
+   refid "valor.battlePass.missions:MissionDuration/class/getDurationIdFromString"
+   param QName(PackageNamespace(""), "String")
+   returns QName(PackageNamespace(""), "int")
+   flag HAS_PARAM_NAMES
+   paramname "str"
+   body
+    maxstack 2
+    localcount 3
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal1
+     setlocal2
+
+     jump                L17
+
+L5:
+     label
+     getlex              QName(PackageNamespace(""), "DAILY")
+     returnvalue
+
+L8:
+     label
+     getlex              QName(PackageNamespace(""), "WEEKLY")
+     returnvalue
+
+L11:
+     label
+     getlex              QName(PackageNamespace(""), "SEASONAL")
+     returnvalue
+
+L14:
+     label
+     getlex              QName(PackageNamespace(""), "UNDEFINED")
+     returnvalue
+
+L17:
+     pushstring          "Daily"
+     getlocal2
+     ifstricteq          L5
+
+     pushstring          "Weekly"
+     getlocal2
+     ifstricteq          L8
+
+     pushstring          "Seasonal"
+     getlocal2
+     ifstricteq          L11
+
+     jump                L14
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+end ; class

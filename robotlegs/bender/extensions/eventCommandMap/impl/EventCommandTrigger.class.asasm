@@ -1,0 +1,327 @@
+class
+ refid "robotlegs.bender.extensions.eventCommandMap.impl:EventCommandTrigger"
+ instance QName(PackageNamespace("robotlegs.bender.extensions.eventCommandMap.impl"), "EventCommandTrigger")
+  extends QName(PackageNamespace(""), "Object")
+  implements Multiname("ICommandTrigger", [PackageNamespace("robotlegs.bender.extensions.commandCenter.api")])
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("robotlegs.bender.extensions.eventCommandMap.impl:EventCommandTrigger")
+  iinit
+   name "robotlegs.bender.extensions.eventCommandMap.impl:EventCommandTrigger/EventCommandTrigger"
+   refid "robotlegs.bender.extensions.eventCommandMap.impl:EventCommandTrigger/instance/init"
+   param QName(PackageNamespace("org.swiftsuspenders"), "Injector")
+   param QName(PackageNamespace("flash.events"), "IEventDispatcher")
+   param QName(PackageNamespace(""), "String")
+   param QName(PackageNamespace(""), "Class")
+   flag HAS_OPTIONAL
+   flag HAS_PARAM_NAMES
+   optional Null()
+   paramname "_arg_1"
+   paramname "_arg_2"
+   paramname "_arg_3"
+   paramname "_arg_4"
+   body
+    maxstack 6
+    localcount 5
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     getlex              Multiname("Vector", [PrivateNamespace("robotlegs.bender.extensions.eventCommandMap.impl:EventCommandTrigger"), PrivateNamespace("EventCommandTrigger.as$67"), PackageNamespace(""), PackageNamespace("robotlegs.bender.extensions.eventCommandMap.impl"), PackageInternalNs("robotlegs.bender.extensions.eventCommandMap.impl"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("robotlegs.bender.extensions.eventCommandMap.impl:EventCommandTrigger"), StaticProtectedNs("robotlegs.bender.extensions.eventCommandMap.impl:EventCommandTrigger"), PackageNamespace("__AS3__.vec")])
+     getlex              QName(PackageNamespace("robotlegs.bender.extensions.commandCenter.api"), "ICommandMapping")
+     applytype           1
+     construct           0
+     initproperty        QName(PrivateNamespace("robotlegs.bender.extensions.eventCommandMap.impl:EventCommandTrigger"), "_mappings")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("robotlegs.bender.extensions.commandCenter.impl"), "CommandMappingList")
+     constructprop       QName(PackageNamespace("robotlegs.bender.extensions.commandCenter.impl"), "CommandMappingList"), 0
+     initproperty        QName(PrivateNamespace("robotlegs.bender.extensions.eventCommandMap.impl:EventCommandTrigger"), "_mappingList")
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     getlocal2
+     initproperty        QName(PrivateNamespace("robotlegs.bender.extensions.eventCommandMap.impl:EventCommandTrigger"), "_dispatcher")
+
+     getlocal0
+     getlocal3
+     initproperty        QName(PrivateNamespace("robotlegs.bender.extensions.eventCommandMap.impl:EventCommandTrigger"), "_type")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("robotlegs.bender.extensions.eventCommandMap.impl"), "EventCommandExecutor")
+     getlocal0
+     getlocal0
+     getproperty         QName(PrivateNamespace("robotlegs.bender.extensions.eventCommandMap.impl:EventCommandTrigger"), "_mappingList")
+     getlocal1
+     getlocal            4
+     constructprop       QName(PackageNamespace("robotlegs.bender.extensions.eventCommandMap.impl"), "EventCommandExecutor"), 4
+     initproperty        QName(PrivateNamespace("robotlegs.bender.extensions.eventCommandMap.impl:EventCommandTrigger"), "_executor")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait const QName(PrivateNamespace("robotlegs.bender.extensions.eventCommandMap.impl:EventCommandTrigger"), "_mappings") type TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("robotlegs.bender.extensions.commandCenter.api"), "ICommandMapping")>) end
+  trait const QName(PrivateNamespace("robotlegs.bender.extensions.eventCommandMap.impl:EventCommandTrigger"), "_mappingList") type QName(PackageNamespace("robotlegs.bender.extensions.commandCenter.impl"), "CommandMappingList") end
+  trait slot QName(PrivateNamespace("robotlegs.bender.extensions.eventCommandMap.impl:EventCommandTrigger"), "_dispatcher") type QName(PackageNamespace("flash.events"), "IEventDispatcher") end
+  trait slot QName(PrivateNamespace("robotlegs.bender.extensions.eventCommandMap.impl:EventCommandTrigger"), "_type") type QName(PackageNamespace(""), "String") end
+  trait slot QName(PrivateNamespace("robotlegs.bender.extensions.eventCommandMap.impl:EventCommandTrigger"), "_executor") type QName(PackageNamespace("robotlegs.bender.extensions.eventCommandMap.impl"), "EventCommandExecutor") end
+  trait method QName(PackageNamespace(""), "addMapping")
+   method
+    name "robotlegs.bender.extensions.eventCommandMap.impl:EventCommandTrigger/addMapping"
+    refid "robotlegs.bender.extensions.eventCommandMap.impl:EventCommandTrigger/instance/addMapping"
+    param QName(PackageNamespace("robotlegs.bender.extensions.commandCenter.api"), "ICommandMapping")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg_1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      callpropvoid        QName(PrivateNamespace("robotlegs.bender.extensions.eventCommandMap.impl:EventCommandTrigger"), "verifyCommandClass"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("robotlegs.bender.extensions.eventCommandMap.impl:EventCommandTrigger"), "_mappingList")
+      getproperty         QName(PackageNamespace(""), "tail")
+      iffalse             L15
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("robotlegs.bender.extensions.eventCommandMap.impl:EventCommandTrigger"), "_mappingList")
+      getproperty         QName(PackageNamespace(""), "tail")
+      getlocal1
+      setproperty         QName(Namespace("robotlegs.bender.extensions.commandCenter.api:ICommandMapping"), "next")
+
+      jump                L21
+
+L15:
+      getlocal0
+      getproperty         QName(PrivateNamespace("robotlegs.bender.extensions.eventCommandMap.impl:EventCommandTrigger"), "_mappingList")
+      getlocal1
+      setproperty         QName(PackageNamespace(""), "head")
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("robotlegs.bender.extensions.eventCommandMap.impl:EventCommandTrigger"), "addListener"), 0
+
+L21:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "removeMapping")
+   method
+    name "robotlegs.bender.extensions.eventCommandMap.impl:EventCommandTrigger/removeMapping"
+    refid "robotlegs.bender.extensions.eventCommandMap.impl:EventCommandTrigger/instance/removeMapping"
+    param QName(PackageNamespace("robotlegs.bender.extensions.commandCenter.api"), "ICommandMapping")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg_1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("robotlegs.bender.extensions.eventCommandMap.impl:EventCommandTrigger"), "_mappingList")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("robotlegs.bender.extensions.eventCommandMap.impl:EventCommandTrigger"), "_mappingList")
+      getproperty         QName(PackageNamespace(""), "head")
+      iftrue              L12
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("robotlegs.bender.extensions.eventCommandMap.impl:EventCommandTrigger"), "removeListener"), 0
+
+L12:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("robotlegs.bender.extensions.eventCommandMap.impl:EventCommandTrigger"), "verifyCommandClass")
+   method
+    name "robotlegs.bender.extensions.eventCommandMap.impl:EventCommandTrigger/private:verifyCommandClass"
+    refid "robotlegs.bender.extensions.eventCommandMap.impl:EventCommandTrigger/instance/robotlegs.bender.extensions.eventCommandMap.impl:EventCommandTrigger/instance/verifyCommandClass"
+    param QName(PackageNamespace("robotlegs.bender.extensions.commandCenter.api"), "ICommandMapping")
+    returns QName(PackageNamespace(""), "void")
+    flag NEED_ACTIVATION
+    flag HAS_PARAM_NAMES
+    paramname "mapping"
+    body
+     maxstack 3
+     localcount 8
+     initscopedepth 5
+     maxscopedepth 8
+     code
+      getlocal0
+      pushscope
+
+      newactivation
+      dup
+      setlocal2
+
+      pushscope
+
+      getscopeobject      1
+      getlocal1
+      setslot             1
+
+      pushbyte            0
+      setlocal            4
+
+      findpropstrict      QName(PackageNamespace("flash.utils"), "describeType")
+      getscopeobject      1
+      getslot             1
+      getproperty         QName(Namespace("robotlegs.bender.extensions.commandCenter.api:ICommandMapping"), "commandClass")
+      callproperty        QName(PackageNamespace("flash.utils"), "describeType"), 1
+      getproperty         Multiname("factory", [PrivateNamespace("robotlegs.bender.extensions.eventCommandMap.impl:EventCommandTrigger"), PrivateNamespace("EventCommandTrigger.as$67"), PackageNamespace(""), PackageNamespace("robotlegs.bender.extensions.eventCommandMap.impl"), PackageInternalNs("robotlegs.bender.extensions.eventCommandMap.impl"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("robotlegs.bender.extensions.eventCommandMap.impl:EventCommandTrigger"), StaticProtectedNs("robotlegs.bender.extensions.eventCommandMap.impl:EventCommandTrigger")])
+      getproperty         Multiname("method", [PrivateNamespace("robotlegs.bender.extensions.eventCommandMap.impl:EventCommandTrigger"), PrivateNamespace("EventCommandTrigger.as$67"), PackageNamespace(""), PackageNamespace("robotlegs.bender.extensions.eventCommandMap.impl"), PackageInternalNs("robotlegs.bender.extensions.eventCommandMap.impl"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("robotlegs.bender.extensions.eventCommandMap.impl:EventCommandTrigger"), StaticProtectedNs("robotlegs.bender.extensions.eventCommandMap.impl:EventCommandTrigger")])
+      checkfilter
+      coerce_a
+      setlocal            5
+
+      getlex              QName(PackageNamespace(""), "XMLList")
+      pushstring          ""
+      construct           1
+      setlocal3
+
+      jump                L45
+
+L26:
+      label
+      getlocal            5
+      getlocal            4
+      nextvalue
+      dup
+      setlocal            6
+
+      dup
+      setlocal            7
+
+      pushwith
+      getlex              MultinameA("name", [PrivateNamespace("robotlegs.bender.extensions.eventCommandMap.impl:EventCommandTrigger"), PrivateNamespace("EventCommandTrigger.as$67"), PackageNamespace(""), PackageNamespace("robotlegs.bender.extensions.eventCommandMap.impl"), PackageInternalNs("robotlegs.bender.extensions.eventCommandMap.impl"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("robotlegs.bender.extensions.eventCommandMap.impl:EventCommandTrigger"), StaticProtectedNs("robotlegs.bender.extensions.eventCommandMap.impl:EventCommandTrigger")])
+      pushstring          "execute"
+      ifne                L42
+
+      getlocal3
+      getlocal            4
+      getlocal            6
+      setproperty         MultinameL([PrivateNamespace("robotlegs.bender.extensions.eventCommandMap.impl:EventCommandTrigger"), PrivateNamespace("EventCommandTrigger.as$67"), PackageNamespace(""), PackageNamespace("robotlegs.bender.extensions.eventCommandMap.impl"), PackageInternalNs("robotlegs.bender.extensions.eventCommandMap.impl"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("robotlegs.bender.extensions.eventCommandMap.impl:EventCommandTrigger"), StaticProtectedNs("robotlegs.bender.extensions.eventCommandMap.impl:EventCommandTrigger")])
+
+L42:
+      popscope
+      kill                7
+      kill                6
+L45:
+      hasnext2            5, 4
+      iftrue              L26
+
+      kill                5
+      kill                4
+      getlocal3
+      kill                3
+      callproperty        Multiname("length", [PrivateNamespace("robotlegs.bender.extensions.eventCommandMap.impl:EventCommandTrigger"), PrivateNamespace("EventCommandTrigger.as$67"), PackageNamespace(""), PackageNamespace("robotlegs.bender.extensions.eventCommandMap.impl"), PackageInternalNs("robotlegs.bender.extensions.eventCommandMap.impl"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("robotlegs.bender.extensions.eventCommandMap.impl:EventCommandTrigger"), StaticProtectedNs("robotlegs.bender.extensions.eventCommandMap.impl:EventCommandTrigger")]), 0
+      pushbyte            0
+      ifne                L58
+
+      findpropstrict      QName(PackageNamespace(""), "Error")
+      pushstring          "Command Class must expose an execute method"
+      constructprop       QName(PackageNamespace(""), "Error"), 1
+      throw
+
+L58:
+      returnvoid
+     end ; code
+     trait slot QName(PackageInternalNs("robotlegs.bender.extensions.eventCommandMap.impl"), "mapping") slotid 1 type QName(PackageNamespace("robotlegs.bender.extensions.commandCenter.api"), "ICommandMapping") end
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("robotlegs.bender.extensions.eventCommandMap.impl:EventCommandTrigger"), "addListener")
+   method
+    name "robotlegs.bender.extensions.eventCommandMap.impl:EventCommandTrigger/private:addListener"
+    refid "robotlegs.bender.extensions.eventCommandMap.impl:EventCommandTrigger/instance/robotlegs.bender.extensions.eventCommandMap.impl:EventCommandTrigger/instance/addListener"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("robotlegs.bender.extensions.eventCommandMap.impl:EventCommandTrigger"), "_dispatcher")
+      getlocal0
+      getproperty         QName(PrivateNamespace("robotlegs.bender.extensions.eventCommandMap.impl:EventCommandTrigger"), "_type")
+      getlocal0
+      getproperty         QName(PrivateNamespace("robotlegs.bender.extensions.eventCommandMap.impl:EventCommandTrigger"), "_executor")
+      getproperty         QName(PackageNamespace(""), "execute")
+      callpropvoid        QName(Namespace("flash.events:IEventDispatcher"), "addEventListener"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("robotlegs.bender.extensions.eventCommandMap.impl:EventCommandTrigger"), "removeListener")
+   method
+    name "robotlegs.bender.extensions.eventCommandMap.impl:EventCommandTrigger/private:removeListener"
+    refid "robotlegs.bender.extensions.eventCommandMap.impl:EventCommandTrigger/instance/robotlegs.bender.extensions.eventCommandMap.impl:EventCommandTrigger/instance/removeListener"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("robotlegs.bender.extensions.eventCommandMap.impl:EventCommandTrigger"), "_dispatcher")
+      getlocal0
+      getproperty         QName(PrivateNamespace("robotlegs.bender.extensions.eventCommandMap.impl:EventCommandTrigger"), "_type")
+      getlocal0
+      getproperty         QName(PrivateNamespace("robotlegs.bender.extensions.eventCommandMap.impl:EventCommandTrigger"), "_executor")
+      getproperty         QName(PackageNamespace(""), "execute")
+      callpropvoid        QName(Namespace("flash.events:IEventDispatcher"), "removeEventListener"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  name ""
+  refid "robotlegs.bender.extensions.eventCommandMap.impl:EventCommandTrigger/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

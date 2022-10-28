@@ -1,0 +1,118 @@
+class
+ refid "kabam.rotmg.stage3D.Object3D:OBJGroup"
+ instance QName(PackageNamespace("kabam.rotmg.stage3D.Object3D"), "OBJGroup")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  iinit
+   name "OBJGroup"
+   refid "kabam.rotmg.stage3D.Object3D:OBJGroup/instance/init"
+   param QName(PackageNamespace(""), "String")
+   param QName(PackageNamespace(""), "String")
+   flag HAS_OPTIONAL
+   flag HAS_PARAM_NAMES
+   optional Null()
+   optional Null()
+   paramname "_arg1"
+   paramname "_arg2"
+   body
+    maxstack 4
+    localcount 3
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     getlocal1
+     setproperty         QName(PackageNamespace(""), "name")
+
+     getlocal0
+     getlocal2
+     setproperty         QName(PackageNamespace(""), "materialName")
+
+     getlocal0
+     getlex              QName(PackageNamespace("__AS3__.vec"), "Vector")
+     getlex              QName(PackageNamespace("__AS3__.vec"), "Vector")
+     getlex              QName(PackageNamespace(""), "String")
+     applytype           1
+     applytype           1
+     construct           0
+     setproperty         QName(PackageInternalNs("kabam.rotmg.stage3D.Object3D"), "_faces")
+
+     getlocal0
+     getlex              QName(PackageNamespace("__AS3__.vec"), "Vector")
+     getlex              QName(PackageNamespace(""), "uint")
+     applytype           1
+     construct           0
+     setproperty         QName(PackageInternalNs("kabam.rotmg.stage3D.Object3D"), "_indices")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "name") type QName(PackageNamespace(""), "String") end
+  trait slot QName(PackageNamespace(""), "materialName") type QName(PackageNamespace(""), "String") end
+  trait slot QName(PackageNamespace(""), "indexBuffer") type QName(PackageNamespace("flash.display3D"), "IndexBuffer3D") end
+  trait slot QName(PackageInternalNs("kabam.rotmg.stage3D.Object3D"), "_faces") type TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace(""), "String")>)>) end
+  trait slot QName(PackageInternalNs("kabam.rotmg.stage3D.Object3D"), "_indices") type TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace(""), "uint")>) end
+  trait method QName(PackageNamespace(""), "dispose")
+   method
+    name "dispose"
+    refid "kabam.rotmg.stage3D.Object3D:OBJGroup/instance/dispose"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "indexBuffer")
+      pushnull
+      ifeq                L12
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "indexBuffer")
+      callpropvoid        QName(PackageNamespace(""), "dispose"), 0
+
+      getlocal0
+      pushnull
+      setproperty         QName(PackageNamespace(""), "indexBuffer")
+
+L12:
+      getlocal0
+      getproperty         QName(PackageInternalNs("kabam.rotmg.stage3D.Object3D"), "_faces")
+      pushbyte            0
+      setproperty         QName(PackageNamespace(""), "length")
+
+      getlocal0
+      getproperty         QName(PackageInternalNs("kabam.rotmg.stage3D.Object3D"), "_indices")
+      pushbyte            0
+      setproperty         QName(PackageNamespace(""), "length")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.stage3D.Object3D:OBJGroup/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

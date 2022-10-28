@@ -1,0 +1,202 @@
+class
+ refid "kabam.rotmg.arena.view:ArenaQueryPanelMediator"
+ instance QName(PackageNamespace("kabam.rotmg.arena.view"), "ArenaQueryPanelMediator")
+  extends QName(PackageNamespace("robotlegs.bender.bundles.mvcs"), "Mediator")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.arena.view:ArenaQueryPanelMediator")
+  iinit
+   refid "kabam.rotmg.arena.view:ArenaQueryPanelMediator/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "view") flag METADATA type QName(PackageNamespace("kabam.rotmg.arena.view"), "ArenaQueryPanel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "openDialog") flag METADATA type QName(PackageNamespace("kabam.rotmg.dialogs.control"), "OpenDialogSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "account") flag METADATA type QName(PackageNamespace("kabam.rotmg.account.core"), "Account")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PackageNamespace(""), "initialize") flag OVERRIDE
+   method
+    name "initialize"
+    refid "kabam.rotmg.arena.view:ArenaQueryPanelMediator/instance/initialize"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaQueryPanelMediator"), "setEventListeners"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaQueryPanelMediator"), "setEventListeners")
+   method
+    name "setEventListeners"
+    refid "kabam.rotmg.arena.view:ArenaQueryPanelMediator/instance/kabam.rotmg.arena.view:ArenaQueryPanelMediator/instance/initialize/setEventListeners"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageInternalNs("kabam.rotmg.arena.view"), "enterButton")
+      iffalse             L21
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageInternalNs("kabam.rotmg.arena.view"), "enterButton")
+      pushstring          "click"
+      getlocal0
+      getproperty         QName(ProtectedNamespace("kabam.rotmg.arena.view:ArenaQueryPanelMediator"), "onButtonLeftClick")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageInternalNs("kabam.rotmg.arena.view"), "infoButton")
+      pushstring          "click"
+      getlocal0
+      getproperty         QName(ProtectedNamespace("kabam.rotmg.arena.view:ArenaQueryPanelMediator"), "onButtonRightClick")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      jump                L28
+
+L21:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageInternalNs("kabam.rotmg.arena.view"), "infoButton")
+      pushstring          "click"
+      getlocal0
+      getproperty         QName(ProtectedNamespace("kabam.rotmg.arena.view:ArenaQueryPanelMediator"), "onButtonRightClick")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+L28:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "destroy") flag OVERRIDE
+   method
+    name "destroy"
+    refid "kabam.rotmg.arena.view:ArenaQueryPanelMediator/instance/destroy"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      callsupervoid       QName(PackageNamespace(""), "destroy"), 0
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(ProtectedNamespace("kabam.rotmg.arena.view:ArenaQueryPanelMediator"), "onButtonRightClick")
+   method
+    name "onButtonRightClick"
+    refid "kabam.rotmg.arena.view:ArenaQueryPanelMediator/instance/kabam.rotmg.arena.view:ArenaQueryPanelMediator:onButtonRightClick"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "openDialog")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.arena.view"), "HostQueryDialog")
+      constructprop       QName(PackageNamespace("kabam.rotmg.arena.view"), "HostQueryDialog"), 0
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(ProtectedNamespace("kabam.rotmg.arena.view:ArenaQueryPanelMediator"), "onButtonLeftClick")
+   method
+    name "onButtonLeftClick"
+    refid "kabam.rotmg.arena.view:ArenaQueryPanelMediator/instance/kabam.rotmg.arena.view:ArenaQueryPanelMediator:onButtonLeftClick"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "openDialog")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.arena.view"), "ArenaLeaderboard")
+      constructprop       QName(PackageNamespace("kabam.rotmg.arena.view"), "ArenaLeaderboard"), 0
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.arena.view:ArenaQueryPanelMediator/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

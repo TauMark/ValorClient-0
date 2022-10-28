@@ -1,0 +1,286 @@
+class
+ refid "kabam.rotmg.text.model:FontInfo"
+ instance QName(PackageNamespace("kabam.rotmg.text.model"), "FontInfo")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.text.model:FontInfo")
+  iinit
+   refid "kabam.rotmg.text.model:FontInfo/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(ProtectedNamespace("kabam.rotmg.text.model:FontInfo"), "name") type QName(PackageNamespace(""), "String") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.text.model:FontInfo"), "textColor") type QName(PackageNamespace(""), "uint") value Integer(0) end
+  trait slot QName(PrivateNamespace("kabam.rotmg.text.model:FontInfo"), "xHeightRatio") type QName(PackageNamespace(""), "Number") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.text.model:FontInfo"), "verticalSpaceRatio") type QName(PackageNamespace(""), "Number") end
+  trait method QName(PackageNamespace(""), "setName")
+   method
+    name "setName"
+    refid "kabam.rotmg.text.model:FontInfo/instance/setName"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      setproperty         QName(ProtectedNamespace("kabam.rotmg.text.model:FontInfo"), "name")
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.text.model:FontInfo"), "computeRatiosByRendering"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getName")
+   method
+    name "getName"
+    refid "kabam.rotmg.text.model:FontInfo/instance/getName"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("kabam.rotmg.text.model:FontInfo"), "name")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getXHeight")
+   method
+    name "getXHeight"
+    refid "kabam.rotmg.text.model:FontInfo/instance/getXHeight"
+    param QName(PackageNamespace(""), "Number")
+    returns QName(PackageNamespace(""), "Number")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.text.model:FontInfo"), "xHeightRatio")
+      getlocal1
+      multiply
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getVerticalSpace")
+   method
+    name "getVerticalSpace"
+    refid "kabam.rotmg.text.model:FontInfo/instance/getVerticalSpace"
+    param QName(PackageNamespace(""), "Number")
+    returns QName(PackageNamespace(""), "Number")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.text.model:FontInfo"), "verticalSpaceRatio")
+      getlocal1
+      multiply
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.text.model:FontInfo"), "computeRatiosByRendering")
+   method
+    name "computeRatiosByRendering"
+    refid "kabam.rotmg.text.model:FontInfo/instance/kabam.rotmg.text.model:FontInfo/instance/computeRatiosByRendering"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 5
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      callproperty        QName(PrivateNamespace("kabam.rotmg.text.model:FontInfo"), "makeTextField"), 0
+      coerce              QName(PackageNamespace("flash.text"), "TextField")
+      setlocal3
+
+      findpropstrict      QName(PackageNamespace(""), "BitmapDataSpy")
+      getlocal3
+      getproperty         QName(PackageNamespace(""), "width")
+      getlocal3
+      getproperty         QName(PackageNamespace(""), "height")
+      constructprop       QName(PackageNamespace(""), "BitmapDataSpy"), 2
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      setlocal1
+
+      getlocal1
+      getlocal3
+      callpropvoid        QName(PackageNamespace(""), "draw"), 1
+
+      pushuint            16777215
+      setlocal2
+
+      getlocal1
+      getlocal2
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.text.model:FontInfo"), "textColor")
+      pushtrue
+      callproperty        QName(PackageNamespace(""), "getColorBoundsRect"), 3
+      coerce              QName(PackageNamespace("flash.geom"), "Rectangle")
+      setlocal            4
+
+      getlocal0
+      getlocal0
+      getlocal            4
+      getproperty         QName(PackageNamespace(""), "height")
+      callproperty        QName(PrivateNamespace("kabam.rotmg.text.model:FontInfo"), "deNormalize"), 1
+      setproperty         QName(PrivateNamespace("kabam.rotmg.text.model:FontInfo"), "xHeightRatio")
+
+      getlocal0
+      getlocal0
+      getlocal3
+      getproperty         QName(PackageNamespace(""), "height")
+      getlocal            4
+      getproperty         QName(PackageNamespace(""), "bottom")
+      subtract
+      pushbyte            2
+      subtract
+      callproperty        QName(PrivateNamespace("kabam.rotmg.text.model:FontInfo"), "deNormalize"), 1
+      setproperty         QName(PrivateNamespace("kabam.rotmg.text.model:FontInfo"), "verticalSpaceRatio")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.text.model:FontInfo"), "makeTextField")
+   method
+    name "makeTextField"
+    refid "kabam.rotmg.text.model:FontInfo/instance/kabam.rotmg.text.model:FontInfo/instance/makeTextField"
+    returns QName(PackageNamespace("flash.text"), "TextField")
+    body
+     maxstack 4
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("flash.text"), "TextField")
+      constructprop       QName(PackageNamespace("flash.text"), "TextField"), 0
+      coerce              QName(PackageNamespace("flash.text"), "TextField")
+      setlocal1
+
+      getlocal1
+      pushstring          "left"
+      setproperty         QName(PackageNamespace(""), "autoSize")
+
+      getlocal1
+      pushstring          "x"
+      setproperty         QName(PackageNamespace(""), "text")
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.text.model:FontInfo"), "textColor")
+      setproperty         QName(PackageNamespace(""), "textColor")
+
+      getlocal1
+      findpropstrict      QName(PackageNamespace("flash.text"), "TextFormat")
+      getlocal0
+      getproperty         QName(ProtectedNamespace("kabam.rotmg.text.model:FontInfo"), "name")
+      pushshort           200
+      constructprop       QName(PackageNamespace("flash.text"), "TextFormat"), 2
+      callpropvoid        QName(PackageNamespace(""), "setTextFormat"), 1
+
+      getlocal1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.text.model:FontInfo"), "deNormalize")
+   method
+    name "deNormalize"
+    refid "kabam.rotmg.text.model:FontInfo/instance/kabam.rotmg.text.model:FontInfo/instance/deNormalize"
+    param QName(PackageNamespace(""), "Number")
+    returns QName(PackageNamespace(""), "Number")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      pushshort           200
+      divide
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.text.model:FontInfo/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PrivateNamespace("kabam.rotmg.text.model:FontInfo"), "renderingFontSize") type QName(PackageNamespace(""), "Number") value Integer(200) end
+ trait const QName(PrivateNamespace("kabam.rotmg.text.model:FontInfo"), "GUTTER") type QName(PackageNamespace(""), "Number") value Integer(2) end
+end ; class

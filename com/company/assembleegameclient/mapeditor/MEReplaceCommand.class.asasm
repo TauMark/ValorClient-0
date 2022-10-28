@@ -1,0 +1,178 @@
+class
+ refid "com.company.assembleegameclient.mapeditor:MEReplaceCommand"
+ instance QName(PackageNamespace("com.company.assembleegameclient.mapeditor"), "MEReplaceCommand")
+  extends QName(PackageNamespace("com.company.assembleegameclient.editor"), "Command")
+  flag SEALED
+  iinit
+   name "MEReplaceCommand"
+   refid "com.company.assembleegameclient.mapeditor:MEReplaceCommand/instance/init"
+   param QName(PackageInternalNs("com.company.assembleegameclient.mapeditor"), "MEMap")
+   param QName(PackageNamespace(""), "int")
+   param QName(PackageNamespace(""), "int")
+   param QName(PackageNamespace("com.company.assembleegameclient.mapeditor"), "METile")
+   param QName(PackageNamespace("com.company.assembleegameclient.mapeditor"), "METile")
+   flag HAS_PARAM_NAMES
+   paramname "_arg1"
+   paramname "_arg2"
+   paramname "_arg3"
+   paramname "_arg4"
+   paramname "_arg5"
+   body
+    maxstack 2
+    localcount 6
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     getlocal1
+     setproperty         QName(PrivateNamespace("com.company.assembleegameclient.mapeditor:MEReplaceCommand"), "map_")
+
+     getlocal0
+     getlocal2
+     setproperty         QName(PrivateNamespace("com.company.assembleegameclient.mapeditor:MEReplaceCommand"), "x_")
+
+     getlocal0
+     getlocal3
+     setproperty         QName(PrivateNamespace("com.company.assembleegameclient.mapeditor:MEReplaceCommand"), "y_")
+
+     getlocal            4
+     pushnull
+     ifeq                L20
+
+     getlocal0
+     getlocal            4
+     callproperty        QName(PackageNamespace(""), "clone"), 0
+     setproperty         QName(PrivateNamespace("com.company.assembleegameclient.mapeditor:MEReplaceCommand"), "oldTile_")
+
+L20:
+     getlocal            5
+     pushnull
+     ifeq                L27
+
+     getlocal0
+     getlocal            5
+     callproperty        QName(PackageNamespace(""), "clone"), 0
+     setproperty         QName(PrivateNamespace("com.company.assembleegameclient.mapeditor:MEReplaceCommand"), "newTile_")
+
+L27:
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.mapeditor:MEReplaceCommand"), "map_") type QName(PackageInternalNs("com.company.assembleegameclient.mapeditor"), "MEMap") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.mapeditor:MEReplaceCommand"), "x_") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.mapeditor:MEReplaceCommand"), "y_") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.mapeditor:MEReplaceCommand"), "oldTile_") type QName(PackageNamespace("com.company.assembleegameclient.mapeditor"), "METile") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.mapeditor:MEReplaceCommand"), "newTile_") type QName(PackageNamespace("com.company.assembleegameclient.mapeditor"), "METile") end
+  trait method QName(PackageNamespace(""), "execute") flag OVERRIDE
+   method
+    name "execute"
+    refid "com.company.assembleegameclient.mapeditor:MEReplaceCommand/instance/execute"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.mapeditor:MEReplaceCommand"), "newTile_")
+      pushnull
+      ifne                L14
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.mapeditor:MEReplaceCommand"), "map_")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.mapeditor:MEReplaceCommand"), "x_")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.mapeditor:MEReplaceCommand"), "y_")
+      callpropvoid        QName(PackageNamespace(""), "eraseTile"), 2
+
+      jump                L23
+
+L14:
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.mapeditor:MEReplaceCommand"), "map_")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.mapeditor:MEReplaceCommand"), "x_")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.mapeditor:MEReplaceCommand"), "y_")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.mapeditor:MEReplaceCommand"), "newTile_")
+      callpropvoid        QName(PackageNamespace(""), "setTile"), 3
+
+L23:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "unexecute") flag OVERRIDE
+   method
+    name "unexecute"
+    refid "com.company.assembleegameclient.mapeditor:MEReplaceCommand/instance/unexecute"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.mapeditor:MEReplaceCommand"), "oldTile_")
+      pushnull
+      ifne                L14
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.mapeditor:MEReplaceCommand"), "map_")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.mapeditor:MEReplaceCommand"), "x_")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.mapeditor:MEReplaceCommand"), "y_")
+      callpropvoid        QName(PackageNamespace(""), "eraseTile"), 2
+
+      jump                L23
+
+L14:
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.mapeditor:MEReplaceCommand"), "map_")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.mapeditor:MEReplaceCommand"), "x_")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.mapeditor:MEReplaceCommand"), "y_")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.mapeditor:MEReplaceCommand"), "oldTile_")
+      callpropvoid        QName(PackageNamespace(""), "setTile"), 3
+
+L23:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.mapeditor:MEReplaceCommand/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

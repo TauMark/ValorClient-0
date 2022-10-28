@@ -1,0 +1,149 @@
+class
+ refid "com.company.assembleegameclient.objects.particles:QuadSpaceConcentrate"
+ instance QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "QuadSpaceConcentrate")
+  extends QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "ParticleEffect")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.company.assembleegameclient.objects.particles:QuadSpaceConcentrate")
+  iinit
+   name "QuadSpaceConcentrate"
+   refid "com.company.assembleegameclient.objects.particles:QuadSpaceConcentrate/instance/init"
+   param QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "EffectProperties")
+   param QName(PackageNamespace("com.company.assembleegameclient.objects"), "GameObject")
+   flag HAS_PARAM_NAMES
+   paramname "_arg1"
+   paramname "_arg2"
+   body
+    maxstack 2
+    localcount 3
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     getlocal2
+     setproperty         QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:QuadSpaceConcentrate"), "host")
+
+     getlocal0
+     getlocal1
+     setproperty         QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:QuadSpaceConcentrate"), "properties")
+
+     getlocal0
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:QuadSpaceConcentrate"), "properties")
+     getproperty         QName(PackageNamespace(""), "size")
+     setproperty         QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:QuadSpaceConcentrate"), "squareArea")
+
+     getlocal0
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:QuadSpaceConcentrate"), "properties")
+     getproperty         QName(PackageNamespace(""), "intensity")
+     setproperty         QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:QuadSpaceConcentrate"), "intensity")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:QuadSpaceConcentrate"), "squareArea") type QName(PackageNamespace(""), "Number") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:QuadSpaceConcentrate"), "intensity") type QName(PackageNamespace(""), "Number") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:QuadSpaceConcentrate"), "host") type QName(PackageNamespace("com.company.assembleegameclient.objects"), "GameObject") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:QuadSpaceConcentrate"), "properties") type QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "EffectProperties") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:QuadSpaceConcentrate"), "time") type QName(PackageNamespace(""), "Number") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:QuadSpaceConcentrate"), "TLParticle") type QName(PackageNamespace("com.company.assembleegameclient.objects"), "BasicObject") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:QuadSpaceConcentrate"), "TRParticle") type QName(PackageNamespace("com.company.assembleegameclient.objects"), "BasicObject") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:QuadSpaceConcentrate"), "BRParticle") type QName(PackageNamespace("com.company.assembleegameclient.objects"), "BasicObject") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:QuadSpaceConcentrate"), "BLParticle") type QName(PackageNamespace("com.company.assembleegameclient.objects"), "BasicObject") end
+  trait method QName(PackageNamespace(""), "update") flag OVERRIDE
+   method
+    name "update"
+    refid "com.company.assembleegameclient.objects.particles:QuadSpaceConcentrate/instance/update"
+    param QName(PackageNamespace(""), "int")
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "Boolean")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    paramname "_arg2"
+    body
+     maxstack 3
+     localcount 5
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      pushshort           1000
+      divide
+      convert_d
+      setlocal3
+
+      getlocal2
+      pushshort           1000
+      divide
+      convert_d
+      setlocal            4
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:QuadSpaceConcentrate"), "host")
+      getproperty         QName(PackageNamespace(""), "map_")
+      pushnull
+      ifne                L19
+
+      pushfalse
+      returnvalue
+
+L19:
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:QuadSpaceConcentrate"), "host")
+      getproperty         QName(PackageNamespace(""), "x_")
+      findproperty        QName(PackageNamespace(""), "x_")
+      swap
+      setproperty         QName(PackageNamespace(""), "x_")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:QuadSpaceConcentrate"), "host")
+      getproperty         QName(PackageNamespace(""), "y_")
+      findproperty        QName(PackageNamespace(""), "y_")
+      swap
+      setproperty         QName(PackageNamespace(""), "y_")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:QuadSpaceConcentrate"), "host")
+      getproperty         QName(PackageNamespace(""), "z_")
+      findproperty        QName(PackageNamespace(""), "z_")
+      swap
+      setproperty         QName(PackageNamespace(""), "z_")
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:QuadSpaceConcentrate"), "time")
+      getlocal            4
+      add
+      setproperty         QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:QuadSpaceConcentrate"), "time")
+
+      pushtrue
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.objects.particles:QuadSpaceConcentrate/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

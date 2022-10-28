@@ -1,0 +1,629 @@
+class
+ refid "com.company.assembleegameclient.objects.particles:ParticleField"
+ instance QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "ParticleField")
+  extends QName(PackageNamespace("com.company.assembleegameclient.objects.thrown"), "BitmapParticle")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.company.assembleegameclient.objects.particles:ParticleField")
+  iinit
+   name "ParticleField"
+   refid "com.company.assembleegameclient.objects.particles:ParticleField/instance/init"
+   param QName(PackageNamespace(""), "Number")
+   param QName(PackageNamespace(""), "Number")
+   flag HAS_PARAM_NAMES
+   paramname "_arg1"
+   paramname "_arg2"
+   body
+    maxstack 5
+    localcount 4
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("flash.display"), "Sprite")
+     constructprop       QName(PackageNamespace("flash.display"), "Sprite"), 0
+     setproperty         QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ParticleField"), "spriteSource")
+
+     getlocal0
+     newarray            0
+     setproperty         QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ParticleField"), "squares")
+
+     getlocal0
+     getlocal2
+     getlocal1
+     callpropvoid        QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ParticleField"), "setDimensions"), 2
+
+     getlocal0
+     callpropvoid        QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ParticleField"), "setBitmapSize"), 0
+
+     getlocal0
+     callpropvoid        QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ParticleField"), "createTimer"), 0
+
+     findpropstrict      QName(PackageNamespace("flash.display"), "BitmapData")
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ParticleField"), "width")
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ParticleField"), "height")
+     pushtrue
+     pushbyte            0
+     constructprop       QName(PackageNamespace("flash.display"), "BitmapData"), 4
+     coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+     setlocal3
+
+     getlocal3
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ParticleField"), "spriteSource")
+     callpropvoid        QName(PackageNamespace(""), "draw"), 1
+
+     getlocal0
+     getlocal3
+     pushbyte            0
+     constructsuper      2
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait const QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ParticleField"), "SMALL") type QName(PackageNamespace(""), "String") value Utf8("SMALL") end
+  trait const QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ParticleField"), "LARGE") type QName(PackageNamespace(""), "String") value Utf8("LARGE") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ParticleField"), "bitmapSize") type QName(PackageNamespace(""), "String") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ParticleField"), "width") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ParticleField"), "height") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PackageNamespace(""), "lifetime_") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PackageNamespace(""), "timeLeft_") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ParticleField"), "spriteSource") type QName(PackageNamespace("flash.display"), "Sprite") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ParticleField"), "squares") type QName(PackageNamespace(""), "Array") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ParticleField"), "visibleHeight") type QName(PackageNamespace(""), "Number") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ParticleField"), "offset") type QName(PackageNamespace(""), "Number") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ParticleField"), "timer") type QName(PackageNamespace("flash.utils"), "Timer") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ParticleField"), "doDestroy") type QName(PackageNamespace(""), "Boolean") end
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ParticleField"), "createTimer")
+   method
+    name "createTimer"
+    refid "com.company.assembleegameclient.objects.particles:ParticleField/instance/com.company.assembleegameclient.objects.particles:ParticleField/instance/createTimer"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("flash.utils"), "Timer")
+      getlocal0
+      callproperty        QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ParticleField"), "getInterval"), 0
+      constructprop       QName(PackageNamespace("flash.utils"), "Timer"), 1
+      setproperty         QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ParticleField"), "timer")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ParticleField"), "timer")
+      pushstring          "timer"
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ParticleField"), "onTimer")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ParticleField"), "timer")
+      callpropvoid        QName(PackageNamespace(""), "start"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ParticleField"), "setDimensions")
+   method
+    name "setDimensions"
+    refid "com.company.assembleegameclient.objects.particles:ParticleField/instance/com.company.assembleegameclient.objects.particles:ParticleField/instance/setDimensions"
+    param QName(PackageNamespace(""), "Number")
+    param QName(PackageNamespace(""), "Number")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    paramname "_arg2"
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      pushbyte            5
+      multiply
+      pushbyte            40
+      add
+      setproperty         QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ParticleField"), "visibleHeight")
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ParticleField"), "visibleHeight")
+      pushdouble          0.5
+      multiply
+      setproperty         QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ParticleField"), "offset")
+
+      getlocal0
+      getlocal2
+      pushbyte            5
+      multiply
+      pushbyte            40
+      add
+      setproperty         QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ParticleField"), "width")
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ParticleField"), "visibleHeight")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ParticleField"), "offset")
+      add
+      setproperty         QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ParticleField"), "height")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ParticleField"), "setBitmapSize")
+   method
+    name "setBitmapSize"
+    refid "com.company.assembleegameclient.objects.particles:ParticleField/instance/com.company.assembleegameclient.objects.particles:ParticleField/instance/setBitmapSize"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ParticleField"), "width")
+      pushbyte            8
+      ifne                L9
+
+      pushstring          "SMALL"
+      jump                L11
+
+L9:
+      pushstring          "LARGE"
+      coerce_s
+L11:
+      setproperty         QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ParticleField"), "bitmapSize")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "update") flag OVERRIDE
+   method
+    name "update"
+    refid "com.company.assembleegameclient.objects.particles:ParticleField/instance/update"
+    param QName(PackageNamespace(""), "int")
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "Boolean")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    paramname "_arg2"
+    body
+     maxstack 5
+     localcount 5
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushbyte            0
+      setlocal3
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ParticleField"), "doDestroy")
+      iffalse             L9
+
+      pushfalse
+      returnvalue
+
+L9:
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ParticleField"), "squares")
+      getproperty         QName(PackageNamespace(""), "length")
+      convert_u
+      setlocal            4
+
+      pushbyte            0
+      convert_u
+      setlocal3
+
+      jump                L34
+
+L18:
+      label
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ParticleField"), "squares")
+      getlocal3
+      getproperty         MultinameL([PrivateNamespace("com.company.assembleegameclient.objects.particles:ParticleField"), ProtectedNamespace("com.company.assembleegameclient.objects.particles:ParticleField"), StaticProtectedNs("com.company.assembleegameclient.objects.particles:ParticleField"), StaticProtectedNs("com.company.assembleegameclient.objects.thrown:BitmapParticle"), StaticProtectedNs("com.company.assembleegameclient.objects:BasicObject"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.objects.particles"), PackageInternalNs("com.company.assembleegameclient.objects.particles"), PrivateNamespace("FilePrivateNS:ParticleField"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      iffalse             L29
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ParticleField"), "squares")
+      getlocal3
+      getproperty         MultinameL([PrivateNamespace("com.company.assembleegameclient.objects.particles:ParticleField"), ProtectedNamespace("com.company.assembleegameclient.objects.particles:ParticleField"), StaticProtectedNs("com.company.assembleegameclient.objects.particles:ParticleField"), StaticProtectedNs("com.company.assembleegameclient.objects.thrown:BitmapParticle"), StaticProtectedNs("com.company.assembleegameclient.objects:BasicObject"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.objects.particles"), PackageInternalNs("com.company.assembleegameclient.objects.particles"), PrivateNamespace("FilePrivateNS:ParticleField"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      callpropvoid        Multiname("move", [PrivateNamespace("com.company.assembleegameclient.objects.particles:ParticleField"), ProtectedNamespace("com.company.assembleegameclient.objects.particles:ParticleField"), StaticProtectedNs("com.company.assembleegameclient.objects.particles:ParticleField"), StaticProtectedNs("com.company.assembleegameclient.objects.thrown:BitmapParticle"), StaticProtectedNs("com.company.assembleegameclient.objects:BasicObject"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.objects.particles"), PackageInternalNs("com.company.assembleegameclient.objects.particles"), PrivateNamespace("FilePrivateNS:ParticleField"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 0
+
+L29:
+      getlocal3
+      convert_d
+      increment
+      convert_u
+      setlocal3
+
+L34:
+      getlocal3
+      getlocal            4
+      iflt                L18
+
+      findpropstrict      QName(PackageNamespace("flash.display"), "BitmapData")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ParticleField"), "width")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ParticleField"), "height")
+      pushtrue
+      pushbyte            0
+      constructprop       QName(PackageNamespace("flash.display"), "BitmapData"), 4
+      findproperty        QName(PackageNamespace(""), "_bitmapData")
+      swap
+      setproperty         QName(PackageNamespace(""), "_bitmapData")
+
+      getlex              QName(PackageNamespace(""), "_bitmapData")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ParticleField"), "spriteSource")
+      callpropvoid        QName(PackageNamespace(""), "draw"), 1
+
+      pushtrue
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ParticleField"), "onTimer")
+   method
+    name "onTimer"
+    refid "com.company.assembleegameclient.objects.particles:ParticleField/instance/com.company.assembleegameclient.objects.particles:ParticleField/instance/onTimer"
+    param QName(PackageNamespace("flash.events"), "TimerEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 4
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PrivateNamespace("FilePrivateNS:ParticleField"), "Square")
+      getlocal0
+      callproperty        QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ParticleField"), "getStartPoint"), 0
+      getlocal0
+      callproperty        QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ParticleField"), "getEndPoint"), 0
+      getlocal0
+      callproperty        QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ParticleField"), "getLifespan"), 0
+      constructprop       QName(PrivateNamespace("FilePrivateNS:ParticleField"), "Square"), 3
+      coerce              QName(PrivateNamespace("FilePrivateNS:ParticleField"), "Square")
+      setlocal2
+
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "complete")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ParticleField"), "onSquareComplete")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ParticleField"), "squares")
+      getlocal2
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ParticleField"), "spriteSource")
+      getlocal2
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ParticleField"), "getLifespan")
+   method
+    name "getLifespan"
+    refid "com.company.assembleegameclient.objects.particles:ParticleField/instance/com.company.assembleegameclient.objects.particles:ParticleField/instance/getLifespan"
+    returns QName(PackageNamespace(""), "uint")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ParticleField"), "bitmapSize")
+      pushstring          "SMALL"
+      ifne                L8
+
+      pushbyte            15
+      jump                L9
+
+L8:
+      pushdouble          30
+L9:
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ParticleField"), "getInterval")
+   method
+    name "getInterval"
+    refid "com.company.assembleegameclient.objects.particles:ParticleField/instance/com.company.assembleegameclient.objects.particles:ParticleField/instance/getInterval"
+    returns QName(PackageNamespace(""), "uint")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ParticleField"), "bitmapSize")
+      pushstring          "SMALL"
+      ifne                L8
+
+      pushbyte            100
+      jump                L9
+
+L8:
+      pushdouble          50
+L9:
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ParticleField"), "onSquareComplete")
+   method
+    name "onSquareComplete"
+    refid "com.company.assembleegameclient.objects.particles:ParticleField/instance/com.company.assembleegameclient.objects.particles:ParticleField/instance/onSquareComplete"
+    param QName(PrivateNamespace("FilePrivateNS:ParticleField"), "Square")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "complete")
+      callpropvoid        QName(PackageNamespace(""), "removeAll"), 0
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ParticleField"), "spriteSource")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "removeChild"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ParticleField"), "squares")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ParticleField"), "squares")
+      getlocal1
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "indexOf"), 1
+      pushbyte            1
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "splice"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ParticleField"), "getStartPoint")
+   method
+    name "getStartPoint"
+    refid "com.company.assembleegameclient.objects.particles:ParticleField/instance/com.company.assembleegameclient.objects.particles:ParticleField/instance/getStartPoint"
+    returns QName(PackageNamespace("flash.geom"), "Point")
+    body
+     maxstack 6
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace(""), "Math")
+      callproperty        QName(PackageNamespace(""), "random"), 0
+      pushdouble          0.5
+      ifnlt               L12
+
+      pushstring          "x"
+      pushstring          "y"
+      pushstring          "width"
+      pushstring          "visibleHeight"
+      newarray            4
+      jump                L18
+
+L12:
+      pushstring          "y"
+      pushstring          "x"
+      pushstring          "visibleHeight"
+      pushstring          "width"
+      newarray            4
+      coerce              QName(PackageNamespace(""), "Array")
+L18:
+      coerce              QName(PackageNamespace(""), "Array")
+      setlocal2
+
+      findpropstrict      QName(PackageNamespace("flash.geom"), "Point")
+      pushbyte            0
+      pushbyte            0
+      constructprop       QName(PackageNamespace("flash.geom"), "Point"), 2
+      coerce              QName(PackageNamespace("flash.geom"), "Point")
+      setlocal1
+
+      getlocal1
+      getlocal2
+      pushbyte            0
+      getproperty         MultinameL([PrivateNamespace("com.company.assembleegameclient.objects.particles:ParticleField"), ProtectedNamespace("com.company.assembleegameclient.objects.particles:ParticleField"), StaticProtectedNs("com.company.assembleegameclient.objects.particles:ParticleField"), StaticProtectedNs("com.company.assembleegameclient.objects.thrown:BitmapParticle"), StaticProtectedNs("com.company.assembleegameclient.objects:BasicObject"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.objects.particles"), PackageInternalNs("com.company.assembleegameclient.objects.particles"), PrivateNamespace("FilePrivateNS:ParticleField"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getlex              QName(PackageNamespace(""), "Math")
+      callproperty        QName(PackageNamespace(""), "random"), 0
+      getlocal0
+      getlocal2
+      pushbyte            2
+      getproperty         MultinameL([PrivateNamespace("com.company.assembleegameclient.objects.particles:ParticleField"), ProtectedNamespace("com.company.assembleegameclient.objects.particles:ParticleField"), StaticProtectedNs("com.company.assembleegameclient.objects.particles:ParticleField"), StaticProtectedNs("com.company.assembleegameclient.objects.thrown:BitmapParticle"), StaticProtectedNs("com.company.assembleegameclient.objects:BasicObject"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.objects.particles"), PackageInternalNs("com.company.assembleegameclient.objects.particles"), PrivateNamespace("FilePrivateNS:ParticleField"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getproperty         MultinameL([PrivateNamespace("com.company.assembleegameclient.objects.particles:ParticleField"), ProtectedNamespace("com.company.assembleegameclient.objects.particles:ParticleField"), StaticProtectedNs("com.company.assembleegameclient.objects.particles:ParticleField"), StaticProtectedNs("com.company.assembleegameclient.objects.thrown:BitmapParticle"), StaticProtectedNs("com.company.assembleegameclient.objects:BasicObject"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.objects.particles"), PackageInternalNs("com.company.assembleegameclient.objects.particles"), PrivateNamespace("FilePrivateNS:ParticleField"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      multiply
+      setproperty         MultinameL([PrivateNamespace("com.company.assembleegameclient.objects.particles:ParticleField"), ProtectedNamespace("com.company.assembleegameclient.objects.particles:ParticleField"), StaticProtectedNs("com.company.assembleegameclient.objects.particles:ParticleField"), StaticProtectedNs("com.company.assembleegameclient.objects.thrown:BitmapParticle"), StaticProtectedNs("com.company.assembleegameclient.objects:BasicObject"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.objects.particles"), PackageInternalNs("com.company.assembleegameclient.objects.particles"), PrivateNamespace("FilePrivateNS:ParticleField"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      getlocal1
+      getlocal2
+      pushbyte            1
+      getproperty         MultinameL([PrivateNamespace("com.company.assembleegameclient.objects.particles:ParticleField"), ProtectedNamespace("com.company.assembleegameclient.objects.particles:ParticleField"), StaticProtectedNs("com.company.assembleegameclient.objects.particles:ParticleField"), StaticProtectedNs("com.company.assembleegameclient.objects.thrown:BitmapParticle"), StaticProtectedNs("com.company.assembleegameclient.objects:BasicObject"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.objects.particles"), PackageInternalNs("com.company.assembleegameclient.objects.particles"), PrivateNamespace("FilePrivateNS:ParticleField"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getlex              QName(PackageNamespace(""), "Math")
+      callproperty        QName(PackageNamespace(""), "random"), 0
+      pushdouble          0.5
+      ifnlt               L49
+
+      pushbyte            0
+      jump                L55
+
+L49:
+      getlocal0
+      getlocal2
+      pushbyte            3
+      getproperty         MultinameL([PrivateNamespace("com.company.assembleegameclient.objects.particles:ParticleField"), ProtectedNamespace("com.company.assembleegameclient.objects.particles:ParticleField"), StaticProtectedNs("com.company.assembleegameclient.objects.particles:ParticleField"), StaticProtectedNs("com.company.assembleegameclient.objects.thrown:BitmapParticle"), StaticProtectedNs("com.company.assembleegameclient.objects:BasicObject"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.objects.particles"), PackageInternalNs("com.company.assembleegameclient.objects.particles"), PrivateNamespace("FilePrivateNS:ParticleField"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getproperty         MultinameL([PrivateNamespace("com.company.assembleegameclient.objects.particles:ParticleField"), ProtectedNamespace("com.company.assembleegameclient.objects.particles:ParticleField"), StaticProtectedNs("com.company.assembleegameclient.objects.particles:ParticleField"), StaticProtectedNs("com.company.assembleegameclient.objects.thrown:BitmapParticle"), StaticProtectedNs("com.company.assembleegameclient.objects:BasicObject"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.objects.particles"), PackageInternalNs("com.company.assembleegameclient.objects.particles"), PrivateNamespace("FilePrivateNS:ParticleField"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      coerce_a
+L55:
+      setproperty         MultinameL([PrivateNamespace("com.company.assembleegameclient.objects.particles:ParticleField"), ProtectedNamespace("com.company.assembleegameclient.objects.particles:ParticleField"), StaticProtectedNs("com.company.assembleegameclient.objects.particles:ParticleField"), StaticProtectedNs("com.company.assembleegameclient.objects.thrown:BitmapParticle"), StaticProtectedNs("com.company.assembleegameclient.objects:BasicObject"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.objects.particles"), PackageInternalNs("com.company.assembleegameclient.objects.particles"), PrivateNamespace("FilePrivateNS:ParticleField"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      getlocal1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ParticleField"), "getEndPoint")
+   method
+    name "getEndPoint"
+    refid "com.company.assembleegameclient.objects.particles:ParticleField/instance/com.company.assembleegameclient.objects.particles:ParticleField/instance/getEndPoint"
+    returns QName(PackageNamespace("flash.geom"), "Point")
+    body
+     maxstack 4
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("flash.geom"), "Point")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ParticleField"), "width")
+      pushbyte            2
+      divide
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ParticleField"), "visibleHeight")
+      pushbyte            2
+      divide
+      constructprop       QName(PackageNamespace("flash.geom"), "Point"), 2
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "destroy")
+   method
+    name "destroy"
+    refid "com.company.assembleegameclient.objects.particles:ParticleField/instance/destroy"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ParticleField"), "timer")
+      pushnull
+      ifeq                L18
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ParticleField"), "timer")
+      pushstring          "timer"
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ParticleField"), "onTimer")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ParticleField"), "timer")
+      callpropvoid        QName(PackageNamespace(""), "stop"), 0
+
+      getlocal0
+      pushnull
+      setproperty         QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ParticleField"), "timer")
+
+L18:
+      getlocal0
+      pushnull
+      setproperty         QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ParticleField"), "spriteSource")
+
+      getlocal0
+      newarray            0
+      setproperty         QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ParticleField"), "squares")
+
+      getlocal0
+      pushtrue
+      setproperty         QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ParticleField"), "doDestroy")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.objects.particles:ParticleField/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

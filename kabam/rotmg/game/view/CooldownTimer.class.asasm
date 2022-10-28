@@ -1,0 +1,486 @@
+class
+ refid "kabam.rotmg.game.view:CooldownTimer"
+ instance QName(PackageNamespace("kabam.rotmg.game.view"), "CooldownTimer")
+  extends QName(PackageNamespace("flash.display"), "Sprite")
+  flag SEALED
+  iinit
+   name "CooldownTimer"
+   refid "kabam.rotmg.game.view:CooldownTimer/instance/init"
+   body
+    maxstack 7
+    localcount 2
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     findpropstrict      QName(PackageNamespace("flash.display"), "Sprite")
+     constructprop       QName(PackageNamespace("flash.display"), "Sprite"), 0
+     coerce              QName(PackageNamespace("flash.display"), "Sprite")
+     setlocal1
+
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "graphics")
+     pushbyte            0
+     pushdouble          0.7
+     callpropvoid        QName(PackageNamespace(""), "beginFill"), 2
+
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "graphics")
+     pushbyte            0
+     pushbyte            0
+     pushbyte            40
+     pushbyte            40
+     callpropvoid        QName(PackageNamespace(""), "drawRect"), 4
+
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "graphics")
+     callpropvoid        QName(PackageNamespace(""), "endFill"), 0
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal1
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     findpropstrict      QName(PackageNamespace("flash.display"), "Sprite")
+     constructprop       QName(PackageNamespace("flash.display"), "Sprite"), 0
+     findproperty        QName(PrivateNamespace("kabam.rotmg.game.view:CooldownTimer"), "circleMask")
+     swap
+     setproperty         QName(PrivateNamespace("kabam.rotmg.game.view:CooldownTimer"), "circleMask")
+
+     getlex              QName(PrivateNamespace("kabam.rotmg.game.view:CooldownTimer"), "circleMask")
+     pushbyte            20
+     setproperty         QName(PackageNamespace(""), "x")
+
+     getlex              QName(PrivateNamespace("kabam.rotmg.game.view:CooldownTimer"), "circleMask")
+     pushbyte            20
+     setproperty         QName(PackageNamespace(""), "y")
+
+     getlocal1
+     getlex              QName(PrivateNamespace("kabam.rotmg.game.view:CooldownTimer"), "circleMask")
+     setproperty         QName(PackageNamespace(""), "mask")
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlex              QName(PrivateNamespace("kabam.rotmg.game.view:CooldownTimer"), "circleMask")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("com.company.ui"), "BaseSimpleText")
+     pushbyte            15
+     pushint             16777215
+     pushfalse
+     pushbyte            0
+     pushbyte            0
+     constructprop       QName(PackageNamespace("com.company.ui"), "BaseSimpleText"), 5
+     setproperty         QName(PrivateNamespace("kabam.rotmg.game.view:CooldownTimer"), "cdText")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:CooldownTimer"), "cdText")
+     pushtrue
+     callpropvoid        QName(PackageNamespace(""), "setBold"), 1
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:CooldownTimer"), "cdText")
+     callpropvoid        QName(PackageNamespace(""), "updateMetrics"), 0
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:CooldownTimer"), "cdText")
+     findpropstrict      QName(PackageNamespace("flash.filters"), "DropShadowFilter")
+     pushbyte            0
+     pushbyte            0
+     pushbyte            0
+     constructprop       QName(PackageNamespace("flash.filters"), "DropShadowFilter"), 3
+     newarray            1
+     setproperty         QName(PackageNamespace(""), "filters")
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:CooldownTimer"), "cdText")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace("kabam.rotmg.game.view:CooldownTimer"), "cdText") type QName(PackageNamespace("com.company.ui"), "BaseSimpleText") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.game.view:CooldownTimer"), "circleMask") type QName(PackageNamespace("flash.display"), "Sprite") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.game.view:CooldownTimer"), "cd") type QName(PackageNamespace(""), "int") value Integer(500) end
+  trait method QName(PackageNamespace(""), "update")
+   method
+    name "update"
+    refid "kabam.rotmg.game.view:CooldownTimer/instance/update"
+    param QName(PackageNamespace("com.company.assembleegameclient.objects"), "Player")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "player"
+    body
+     maxstack 8
+     localcount 4
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      setlocal2
+
+      getlex              QName(PackageNamespace("flash.utils"), "getTimer")
+      getglobalscope
+      call                0
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "lastAltAttack_")
+      subtract
+      getlex              QName(PrivateNamespace("kabam.rotmg.game.view:CooldownTimer"), "cd")
+      divide
+      convert_d
+      setlocal3
+
+      getlocal3
+      pushbyte            1
+      ifnlt               L79
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:CooldownTimer"), "cdText")
+      getlex              QName(PrivateNamespace("kabam.rotmg.game.view:CooldownTimer"), "cd")
+      getlex              QName(PrivateNamespace("kabam.rotmg.game.view:CooldownTimer"), "cd")
+      getlocal3
+      multiply
+      subtract
+      pushshort           1000
+      divide
+      pushbyte            1
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "toFixed"), 1
+      pushstring          "s"
+      add
+      setproperty         QName(PackageNamespace(""), "text")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:CooldownTimer"), "cdText")
+      callpropvoid        QName(PackageNamespace(""), "updateMetrics"), 0
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:CooldownTimer"), "cdText")
+      pushbyte            40
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:CooldownTimer"), "cdText")
+      getproperty         QName(PackageNamespace(""), "actualWidth_")
+      subtract
+      pushbyte            2
+      divide
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:CooldownTimer"), "cdText")
+      pushbyte            40
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:CooldownTimer"), "cdText")
+      getproperty         QName(PackageNamespace(""), "actualHeight_")
+      subtract
+      pushbyte            2
+      divide
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlex              QName(PrivateNamespace("kabam.rotmg.game.view:CooldownTimer"), "circleMask")
+      getproperty         QName(PackageNamespace(""), "graphics")
+      callpropvoid        QName(PackageNamespace(""), "clear"), 0
+
+      getlex              QName(PrivateNamespace("kabam.rotmg.game.view:CooldownTimer"), "circleMask")
+      getproperty         QName(PackageNamespace(""), "graphics")
+      pushbyte            0
+      callpropvoid        QName(PackageNamespace(""), "beginFill"), 1
+
+      findpropstrict      QName(PrivateNamespace("kabam.rotmg.game.view:CooldownTimer"), "drawPieMask")
+      getlex              QName(PrivateNamespace("kabam.rotmg.game.view:CooldownTimer"), "circleMask")
+      getproperty         QName(PackageNamespace(""), "graphics")
+      getlocal3
+      pushbyte            20
+      getlex              QName(PackageNamespace(""), "Math")
+      pushbyte            2
+      callproperty        QName(PackageNamespace(""), "sqrt"), 1
+      multiply
+      pushbyte            0
+      pushbyte            0
+      pushdouble          -1.5707963267948966
+      pushbyte            3
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.game.view:CooldownTimer"), "drawPieMask"), 7
+
+      getlex              QName(PrivateNamespace("kabam.rotmg.game.view:CooldownTimer"), "circleMask")
+      getproperty         QName(PackageNamespace(""), "graphics")
+      callpropvoid        QName(PackageNamespace(""), "endFill"), 0
+
+      jump                L130
+
+L79:
+      getlex              QName(PrivateNamespace("kabam.rotmg.game.view:CooldownTimer"), "circleMask")
+      getproperty         QName(PackageNamespace(""), "graphics")
+      callpropvoid        QName(PackageNamespace(""), "clear"), 0
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:CooldownTimer"), "cdText")
+      pushstring          ""
+      setproperty         QName(PackageNamespace(""), "text")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:CooldownTimer"), "cdText")
+      callpropvoid        QName(PackageNamespace(""), "updateMetrics"), 0
+
+      pushshort           500
+      findproperty        QName(PrivateNamespace("kabam.rotmg.game.view:CooldownTimer"), "cd")
+      swap
+      setproperty         QName(PrivateNamespace("kabam.rotmg.game.view:CooldownTimer"), "cd")
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.objects"), "ObjectLibrary")
+      getproperty         QName(PackageNamespace(""), "xmlLibrary_")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "equipment_")
+      pushbyte            1
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.game.view:CooldownTimer"), ProtectedNamespace("kabam.rotmg.game.view:CooldownTimer"), StaticProtectedNs("kabam.rotmg.game.view:CooldownTimer"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.game.view"), PackageInternalNs("kabam.rotmg.game.view"), PrivateNamespace("FilePrivateNS:CooldownTimer"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getproperty         QName(PackageNamespace(""), "objectType")
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.game.view:CooldownTimer"), ProtectedNamespace("kabam.rotmg.game.view:CooldownTimer"), StaticProtectedNs("kabam.rotmg.game.view:CooldownTimer"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.game.view"), PackageInternalNs("kabam.rotmg.game.view"), PrivateNamespace("FilePrivateNS:CooldownTimer"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      coerce              QName(PackageNamespace(""), "XML")
+      setlocal2
+
+      getlocal2
+      pushnull
+      equals
+      not
+      dup
+      iffalse             L114
+
+      pop
+      getlocal2
+      pushstring          "Cooldown"
+      callproperty        Multiname("hasOwnProperty", [PrivateNamespace("kabam.rotmg.game.view:CooldownTimer"), ProtectedNamespace("kabam.rotmg.game.view:CooldownTimer"), StaticProtectedNs("kabam.rotmg.game.view:CooldownTimer"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.game.view"), PackageInternalNs("kabam.rotmg.game.view"), PrivateNamespace("FilePrivateNS:CooldownTimer"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 1
+      coerce_a
+L114:
+      iffalse             L130
+
+      getlocal2
+      getproperty         Multiname("Cooldown", [PrivateNamespace("kabam.rotmg.game.view:CooldownTimer"), ProtectedNamespace("kabam.rotmg.game.view:CooldownTimer"), StaticProtectedNs("kabam.rotmg.game.view:CooldownTimer"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.game.view"), PackageInternalNs("kabam.rotmg.game.view"), PrivateNamespace("FilePrivateNS:CooldownTimer"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      convert_d
+      pushshort           1000
+      multiply
+      findproperty        QName(PrivateNamespace("kabam.rotmg.game.view:CooldownTimer"), "cd")
+      swap
+      setproperty         QName(PrivateNamespace("kabam.rotmg.game.view:CooldownTimer"), "cd")
+
+      getlocal1
+      getlex              QName(PackageNamespace("flash.utils"), "getTimer")
+      getglobalscope
+      call                0
+      getlex              QName(PrivateNamespace("kabam.rotmg.game.view:CooldownTimer"), "cd")
+      subtract
+      setproperty         QName(PackageNamespace(""), "lastAltAttack_")
+
+L130:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.game.view:CooldownTimer"), "drawPieMask")
+   method
+    name "drawPieMask"
+    refid "kabam.rotmg.game.view:CooldownTimer/instance/kabam.rotmg.game.view:CooldownTimer/instance/drawPieMask"
+    param QName(PackageNamespace("flash.display"), "Graphics")
+    param QName(PackageNamespace(""), "Number")
+    param QName(PackageNamespace(""), "Number")
+    param QName(PackageNamespace(""), "Number")
+    param QName(PackageNamespace(""), "Number")
+    param QName(PackageNamespace(""), "Number")
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "void")
+    flag NEED_ACTIVATION
+    flag HAS_OPTIONAL
+    flag HAS_PARAM_NAMES
+    optional Integer(0)
+    optional Integer(0)
+    optional Integer(0)
+    optional Integer(6)
+    paramname "graphics"
+    paramname "p"
+    paramname "radius"
+    paramname "x"
+    paramname "y"
+    paramname "rotation"
+    paramname "sides"
+    body
+     maxstack 5
+     localcount 9
+     initscopedepth 0
+     maxscopedepth 2
+     code
+      getlocal0
+      pushscope
+
+      newactivation
+      dup
+      setlocal            8
+
+      pushscope
+
+      findpropstrict      QName(PackageInternalNs("kabam.rotmg.game.view"), "graphics")
+      getlocal1
+      setproperty         QName(PackageInternalNs("kabam.rotmg.game.view"), "graphics")
+
+      findpropstrict      QName(PackageInternalNs("kabam.rotmg.game.view"), "p")
+      getlocal2
+      setproperty         QName(PackageInternalNs("kabam.rotmg.game.view"), "p")
+
+      findpropstrict      QName(PackageInternalNs("kabam.rotmg.game.view"), "radius")
+      getlocal3
+      setproperty         QName(PackageInternalNs("kabam.rotmg.game.view"), "radius")
+
+      findpropstrict      QName(PackageInternalNs("kabam.rotmg.game.view"), "x")
+      getlocal            4
+      setproperty         QName(PackageInternalNs("kabam.rotmg.game.view"), "x")
+
+      findpropstrict      QName(PackageInternalNs("kabam.rotmg.game.view"), "y")
+      getlocal            5
+      setproperty         QName(PackageInternalNs("kabam.rotmg.game.view"), "y")
+
+      findpropstrict      QName(PackageInternalNs("kabam.rotmg.game.view"), "rotation")
+      getlocal            6
+      setproperty         QName(PackageInternalNs("kabam.rotmg.game.view"), "rotation")
+
+      findpropstrict      QName(PackageInternalNs("kabam.rotmg.game.view"), "sides")
+      getlocal            7
+      setproperty         QName(PackageInternalNs("kabam.rotmg.game.view"), "sides")
+
+      pushbyte            1
+      getlex              QName(PackageInternalNs("kabam.rotmg.game.view"), "p")
+      subtract
+      convert_d
+      getlocal            8
+      swap
+      setslot             2
+
+      getlex              QName(PackageInternalNs("kabam.rotmg.game.view"), "graphics")
+      getlex              QName(PackageInternalNs("kabam.rotmg.game.view"), "x")
+      getlex              QName(PackageInternalNs("kabam.rotmg.game.view"), "y")
+      callpropvoid        QName(PackageNamespace(""), "moveTo"), 2
+
+      getlex              QName(PackageInternalNs("kabam.rotmg.game.view"), "sides")
+      pushbyte            3
+      ifnlt               L45
+
+      pushbyte            3
+      getlocal            8
+      swap
+      setslot             7
+
+L45:
+      findpropstrict      QName(PackageInternalNs("kabam.rotmg.game.view"), "radius")
+      dup
+      getproperty         QName(PackageInternalNs("kabam.rotmg.game.view"), "radius")
+      getlex              QName(PackageNamespace(""), "Math")
+      pushbyte            1
+      getlex              QName(PackageInternalNs("kabam.rotmg.game.view"), "sides")
+      divide
+      pushdouble          3.141592653589793
+      multiply
+      callproperty        QName(PackageNamespace(""), "cos"), 1
+      divide
+      setproperty         QName(PackageInternalNs("kabam.rotmg.game.view"), "radius")
+
+      newfunction         "kabam.rotmg.game.view:CooldownTimer/instance/kabam.rotmg.game.view:CooldownTimer/instance/drawPieMask/inline_method"
+      coerce              QName(PackageNamespace(""), "Function")
+      getlocal            8
+      swap
+      setslot             8
+
+      getlex              QName(PackageNamespace(""), "Math")
+      getlex              QName(PackageInternalNs("kabam.rotmg.game.view"), "p")
+      getlex              QName(PackageInternalNs("kabam.rotmg.game.view"), "sides")
+      multiply
+      callproperty        QName(PackageNamespace(""), "floor"), 1
+      convert_i
+      getlocal            8
+      swap
+      setslot             9
+
+      pushbyte            0
+      getlocal            8
+      swap
+      setslot             10
+
+      jump                L96
+
+L76:
+      label
+      getlex              QName(PackageInternalNs("kabam.rotmg.game.view"), "lineToRadians")
+      getglobalscope
+      getlex              QName(PackageInternalNs("kabam.rotmg.game.view"), "i")
+      getlex              QName(PackageInternalNs("kabam.rotmg.game.view"), "sides")
+      divide
+      pushdouble          3.141592653589793
+      pushbyte            2
+      multiply
+      multiply
+      getlex              QName(PackageInternalNs("kabam.rotmg.game.view"), "rotation")
+      add
+      call                1
+      pop
+      getlex              QName(PackageInternalNs("kabam.rotmg.game.view"), "i")
+      convert_d
+      increment
+      findpropstrict      QName(PackageInternalNs("kabam.rotmg.game.view"), "i")
+      swap
+      setproperty         QName(PackageInternalNs("kabam.rotmg.game.view"), "i")
+
+L96:
+      getlex              QName(PackageInternalNs("kabam.rotmg.game.view"), "i")
+      getlex              QName(PackageInternalNs("kabam.rotmg.game.view"), "sidesToDraw")
+      ifle                L76
+
+      getlex              QName(PackageInternalNs("kabam.rotmg.game.view"), "p")
+      getlex              QName(PackageInternalNs("kabam.rotmg.game.view"), "sides")
+      multiply
+      getlex              QName(PackageInternalNs("kabam.rotmg.game.view"), "sidesToDraw")
+      ifeq                L115
+
+      getlex              QName(PackageInternalNs("kabam.rotmg.game.view"), "lineToRadians")
+      getglobalscope
+      getlex              QName(PackageInternalNs("kabam.rotmg.game.view"), "p")
+      pushdouble          3.141592653589793
+      pushbyte            2
+      multiply
+      multiply
+      getlex              QName(PackageInternalNs("kabam.rotmg.game.view"), "rotation")
+      add
+      call                1
+      pop
+L115:
+      returnvoid
+     end ; code
+     trait slot QName(PackageInternalNs("kabam.rotmg.game.view"), "graphics") slotid 1 type QName(PackageNamespace("flash.display"), "Graphics") end
+     trait slot QName(PackageInternalNs("kabam.rotmg.game.view"), "p") slotid 2 type QName(PackageNamespace(""), "Number") end
+     trait slot QName(PackageInternalNs("kabam.rotmg.game.view"), "radius") slotid 3 type QName(PackageNamespace(""), "Number") end
+     trait slot QName(PackageInternalNs("kabam.rotmg.game.view"), "x") slotid 4 type QName(PackageNamespace(""), "Number") end
+     trait slot QName(PackageInternalNs("kabam.rotmg.game.view"), "y") slotid 5 type QName(PackageNamespace(""), "Number") end
+     trait slot QName(PackageInternalNs("kabam.rotmg.game.view"), "rotation") slotid 6 type QName(PackageNamespace(""), "Number") end
+     trait slot QName(PackageInternalNs("kabam.rotmg.game.view"), "sides") slotid 7 type QName(PackageNamespace(""), "int") end
+     trait slot QName(PackageInternalNs("kabam.rotmg.game.view"), "lineToRadians") slotid 8 type QName(PackageNamespace(""), "Function") end
+     trait slot QName(PackageInternalNs("kabam.rotmg.game.view"), "sidesToDraw") slotid 9 type QName(PackageNamespace(""), "int") end
+     trait slot QName(PackageInternalNs("kabam.rotmg.game.view"), "i") slotid 10 type QName(PackageNamespace(""), "int") end
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.game.view:CooldownTimer/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

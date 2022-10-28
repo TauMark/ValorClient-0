@@ -1,0 +1,343 @@
+class
+ refid "com.greensock.plugins:EndArrayPlugin"
+ instance QName(PackageNamespace("com.greensock.plugins"), "EndArrayPlugin")
+  extends QName(PackageNamespace("com.greensock.plugins"), "TweenPlugin")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.greensock.plugins:EndArrayPlugin")
+  iinit
+   name "EndArrayPlugin"
+   refid "com.greensock.plugins:EndArrayPlugin/instance/init"
+   body
+    maxstack 2
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     newarray            0
+     findproperty        QName(ProtectedNamespace("com.greensock.plugins:EndArrayPlugin"), "_info")
+     swap
+     setproperty         QName(ProtectedNamespace("com.greensock.plugins:EndArrayPlugin"), "_info")
+
+     getlocal0
+     pushstring          "endArray"
+     constructsuper      1
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(ProtectedNamespace("com.greensock.plugins:EndArrayPlugin"), "_a") type QName(PackageNamespace(""), "Array") end
+  trait slot QName(ProtectedNamespace("com.greensock.plugins:EndArrayPlugin"), "_round") type QName(PackageNamespace(""), "Boolean") end
+  trait slot QName(ProtectedNamespace("com.greensock.plugins:EndArrayPlugin"), "_info") type QName(PackageNamespace(""), "Array") end
+  trait method QName(PackageNamespace(""), "_onInitTween") flag OVERRIDE
+   method
+    name "_onInitTween"
+    refid "com.greensock.plugins:EndArrayPlugin/instance/_onInitTween"
+    param QName(PackageNamespace(""), "Object")
+    param null
+    param QName(PackageNamespace("com.greensock"), "TweenLite")
+    returns QName(PackageNamespace(""), "Boolean")
+    flag HAS_PARAM_NAMES
+    paramname "target"
+    paramname "value"
+    paramname "tween"
+    body
+     maxstack 3
+     localcount 4
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      getlex              QName(PackageNamespace(""), "Array")
+      istypelate
+      not
+      dup
+      iftrue              L13
+
+      pop
+      getlocal2
+      getlex              QName(PackageNamespace(""), "Array")
+      istypelate
+      not
+L13:
+      iffalse             L16
+
+      pushfalse
+      returnvalue
+
+L16:
+      findpropstrict      QName(PackageNamespace(""), "_init")
+      getlocal1
+      getlex              QName(PackageNamespace(""), "Array")
+      astypelate
+      getlocal2
+      callpropvoid        QName(PackageNamespace(""), "_init"), 2
+
+      pushtrue
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "_init")
+   method
+    name "_init"
+    refid "com.greensock.plugins:EndArrayPlugin/instance/_init"
+    param QName(PackageNamespace(""), "Array")
+    param QName(PackageNamespace(""), "Array")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "start"
+    paramname "end"
+    body
+     maxstack 8
+     localcount 5
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      findproperty        QName(ProtectedNamespace("com.greensock.plugins:EndArrayPlugin"), "_a")
+      swap
+      setproperty         QName(ProtectedNamespace("com.greensock.plugins:EndArrayPlugin"), "_a")
+
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "length")
+      convert_i
+      setlocal            4
+
+      pushbyte            0
+      setlocal3
+
+      jump                L49
+
+L13:
+      label
+      getlocal1
+      getlocal            4
+      getproperty         MultinameL([PrivateNamespace("com.greensock.plugins:EndArrayPlugin"), ProtectedNamespace("com.greensock.plugins:EndArrayPlugin"), StaticProtectedNs("com.greensock.plugins:EndArrayPlugin"), StaticProtectedNs("com.greensock.plugins:TweenPlugin"), StaticProtectedNs("Object"), PackageNamespace("com.greensock.plugins"), PackageInternalNs("com.greensock.plugins"), PrivateNamespace("FilePrivateNS:EndArrayPlugin"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getlocal2
+      getlocal            4
+      getproperty         MultinameL([PrivateNamespace("com.greensock.plugins:EndArrayPlugin"), ProtectedNamespace("com.greensock.plugins:EndArrayPlugin"), StaticProtectedNs("com.greensock.plugins:EndArrayPlugin"), StaticProtectedNs("com.greensock.plugins:TweenPlugin"), StaticProtectedNs("Object"), PackageNamespace("com.greensock.plugins"), PackageInternalNs("com.greensock.plugins"), PrivateNamespace("FilePrivateNS:EndArrayPlugin"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      equals
+      not
+      dup
+      iffalse             L31
+
+      pop
+      getlocal1
+      getlocal            4
+      getproperty         MultinameL([PrivateNamespace("com.greensock.plugins:EndArrayPlugin"), ProtectedNamespace("com.greensock.plugins:EndArrayPlugin"), StaticProtectedNs("com.greensock.plugins:EndArrayPlugin"), StaticProtectedNs("com.greensock.plugins:TweenPlugin"), StaticProtectedNs("Object"), PackageNamespace("com.greensock.plugins"), PackageInternalNs("com.greensock.plugins"), PrivateNamespace("FilePrivateNS:EndArrayPlugin"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      pushnull
+      equals
+      not
+L31:
+      iffalse             L49
+
+      getlex              QName(ProtectedNamespace("com.greensock.plugins:EndArrayPlugin"), "_info")
+      getlocal3
+      inclocal_i          3
+      findpropstrict      QName(PrivateNamespace("FilePrivateNS:EndArrayPlugin"), "ArrayTweenInfo")
+      getlocal            4
+      getlex              QName(ProtectedNamespace("com.greensock.plugins:EndArrayPlugin"), "_a")
+      getlocal            4
+      getproperty         MultinameL([PrivateNamespace("com.greensock.plugins:EndArrayPlugin"), ProtectedNamespace("com.greensock.plugins:EndArrayPlugin"), StaticProtectedNs("com.greensock.plugins:EndArrayPlugin"), StaticProtectedNs("com.greensock.plugins:TweenPlugin"), StaticProtectedNs("Object"), PackageNamespace("com.greensock.plugins"), PackageInternalNs("com.greensock.plugins"), PrivateNamespace("FilePrivateNS:EndArrayPlugin"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getlocal2
+      getlocal            4
+      getproperty         MultinameL([PrivateNamespace("com.greensock.plugins:EndArrayPlugin"), ProtectedNamespace("com.greensock.plugins:EndArrayPlugin"), StaticProtectedNs("com.greensock.plugins:EndArrayPlugin"), StaticProtectedNs("com.greensock.plugins:TweenPlugin"), StaticProtectedNs("Object"), PackageNamespace("com.greensock.plugins"), PackageInternalNs("com.greensock.plugins"), PrivateNamespace("FilePrivateNS:EndArrayPlugin"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getlex              QName(ProtectedNamespace("com.greensock.plugins:EndArrayPlugin"), "_a")
+      getlocal            4
+      getproperty         MultinameL([PrivateNamespace("com.greensock.plugins:EndArrayPlugin"), ProtectedNamespace("com.greensock.plugins:EndArrayPlugin"), StaticProtectedNs("com.greensock.plugins:EndArrayPlugin"), StaticProtectedNs("com.greensock.plugins:TweenPlugin"), StaticProtectedNs("Object"), PackageNamespace("com.greensock.plugins"), PackageInternalNs("com.greensock.plugins"), PrivateNamespace("FilePrivateNS:EndArrayPlugin"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      subtract
+      constructprop       QName(PrivateNamespace("FilePrivateNS:EndArrayPlugin"), "ArrayTweenInfo"), 3
+      setproperty         MultinameL([PrivateNamespace("com.greensock.plugins:EndArrayPlugin"), ProtectedNamespace("com.greensock.plugins:EndArrayPlugin"), StaticProtectedNs("com.greensock.plugins:EndArrayPlugin"), StaticProtectedNs("com.greensock.plugins:TweenPlugin"), StaticProtectedNs("Object"), PackageNamespace("com.greensock.plugins"), PackageInternalNs("com.greensock.plugins"), PrivateNamespace("FilePrivateNS:EndArrayPlugin"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+L49:
+      declocal_i          4
+      getlocal            4
+      pushbyte            -1
+      ifgt                L13
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "_roundProps") flag OVERRIDE
+   method
+    name "_roundProps"
+    refid "com.greensock.plugins:EndArrayPlugin/instance/_roundProps"
+    param QName(PackageNamespace(""), "Object")
+    param QName(PackageNamespace(""), "Boolean")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_OPTIONAL
+    flag HAS_PARAM_NAMES
+    optional True()
+    paramname "lookup"
+    paramname "value"
+    body
+     maxstack 2
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushstring          "endArray"
+      getlocal1
+      in
+      iffalse             L10
+
+      getlocal2
+      findproperty        QName(ProtectedNamespace("com.greensock.plugins:EndArrayPlugin"), "_round")
+      swap
+      setproperty         QName(ProtectedNamespace("com.greensock.plugins:EndArrayPlugin"), "_round")
+
+L10:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setRatio") flag OVERRIDE
+   method
+    name "setRatio"
+    refid "com.greensock.plugins:EndArrayPlugin/instance/setRatio"
+    param QName(PackageNamespace(""), "Number")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "v"
+    body
+     maxstack 4
+     localcount 5
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      setlocal3
+
+      pushnan
+      setlocal2
+
+      getlex              QName(ProtectedNamespace("com.greensock.plugins:EndArrayPlugin"), "_info")
+      getproperty         QName(PackageNamespace(""), "length")
+      convert_i
+      setlocal            4
+
+      getlex              QName(ProtectedNamespace("com.greensock.plugins:EndArrayPlugin"), "_round")
+      iffalse             L51
+
+      jump                L46
+
+L13:
+      label
+      getlex              QName(ProtectedNamespace("com.greensock.plugins:EndArrayPlugin"), "_info")
+      getlocal            4
+      getproperty         MultinameL([PrivateNamespace("com.greensock.plugins:EndArrayPlugin"), ProtectedNamespace("com.greensock.plugins:EndArrayPlugin"), StaticProtectedNs("com.greensock.plugins:EndArrayPlugin"), StaticProtectedNs("com.greensock.plugins:TweenPlugin"), StaticProtectedNs("Object"), PackageNamespace("com.greensock.plugins"), PackageInternalNs("com.greensock.plugins"), PrivateNamespace("FilePrivateNS:EndArrayPlugin"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      coerce              QName(PrivateNamespace("FilePrivateNS:EndArrayPlugin"), "ArrayTweenInfo")
+      setlocal3
+
+      getlex              QName(ProtectedNamespace("com.greensock.plugins:EndArrayPlugin"), "_a")
+      getlocal3
+      getproperty         QName(PackageNamespace(""), "i")
+      getlocal3
+      getproperty         QName(PackageNamespace(""), "c")
+      getlocal1
+      multiply
+      getlocal3
+      getproperty         QName(PackageNamespace(""), "s")
+      add
+      dup
+      convert_d
+      setlocal2
+
+      pushbyte            0
+      ifngt               L40
+
+      getlocal2
+      pushdouble          0.5
+      add
+      pushbyte            0
+      rshift
+      jump                L45
+
+L40:
+      getlocal2
+      pushdouble          0.5
+      subtract
+      pushbyte            0
+      rshift
+L45:
+      setproperty         MultinameL([PrivateNamespace("com.greensock.plugins:EndArrayPlugin"), ProtectedNamespace("com.greensock.plugins:EndArrayPlugin"), StaticProtectedNs("com.greensock.plugins:EndArrayPlugin"), StaticProtectedNs("com.greensock.plugins:TweenPlugin"), StaticProtectedNs("Object"), PackageNamespace("com.greensock.plugins"), PackageInternalNs("com.greensock.plugins"), PrivateNamespace("FilePrivateNS:EndArrayPlugin"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+L46:
+      declocal_i          4
+      getlocal            4
+      pushbyte            -1
+      ifgt                L13
+
+      jump                L73
+
+L51:
+      jump                L69
+
+L52:
+      label
+      getlex              QName(ProtectedNamespace("com.greensock.plugins:EndArrayPlugin"), "_info")
+      getlocal            4
+      getproperty         MultinameL([PrivateNamespace("com.greensock.plugins:EndArrayPlugin"), ProtectedNamespace("com.greensock.plugins:EndArrayPlugin"), StaticProtectedNs("com.greensock.plugins:EndArrayPlugin"), StaticProtectedNs("com.greensock.plugins:TweenPlugin"), StaticProtectedNs("Object"), PackageNamespace("com.greensock.plugins"), PackageInternalNs("com.greensock.plugins"), PrivateNamespace("FilePrivateNS:EndArrayPlugin"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      coerce              QName(PrivateNamespace("FilePrivateNS:EndArrayPlugin"), "ArrayTweenInfo")
+      setlocal3
+
+      getlex              QName(ProtectedNamespace("com.greensock.plugins:EndArrayPlugin"), "_a")
+      getlocal3
+      getproperty         QName(PackageNamespace(""), "i")
+      getlocal3
+      getproperty         QName(PackageNamespace(""), "c")
+      getlocal1
+      multiply
+      getlocal3
+      getproperty         QName(PackageNamespace(""), "s")
+      add
+      setproperty         MultinameL([PrivateNamespace("com.greensock.plugins:EndArrayPlugin"), ProtectedNamespace("com.greensock.plugins:EndArrayPlugin"), StaticProtectedNs("com.greensock.plugins:EndArrayPlugin"), StaticProtectedNs("com.greensock.plugins:TweenPlugin"), StaticProtectedNs("Object"), PackageNamespace("com.greensock.plugins"), PackageInternalNs("com.greensock.plugins"), PrivateNamespace("FilePrivateNS:EndArrayPlugin"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+L69:
+      declocal_i          4
+      getlocal            4
+      pushbyte            -1
+      ifgt                L52
+
+L73:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.greensock.plugins:EndArrayPlugin/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PackageNamespace(""), "API") type QName(PackageNamespace(""), "Number") value Integer(2) end
+end ; class

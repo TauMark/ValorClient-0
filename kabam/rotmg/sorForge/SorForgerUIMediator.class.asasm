@@ -1,0 +1,741 @@
+class
+ refid "kabam.rotmg.sorForge:SorForgerUIMediator"
+ instance QName(PackageNamespace("kabam.rotmg.sorForge"), "SorForgerUIMediator")
+  extends QName(PackageNamespace("robotlegs.bender.bundles.mvcs"), "Mediator")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.sorForge:SorForgerUIMediator")
+  iinit
+   refid "kabam.rotmg.sorForge:SorForgerUIMediator/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "injector") flag METADATA type QName(PackageNamespace("org.swiftsuspenders"), "Injector")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "closeDialogs") flag METADATA type QName(PackageNamespace("kabam.rotmg.dialogs.control"), "CloseDialogsSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "view") flag METADATA type QName(PackageNamespace("kabam.rotmg.sorForge"), "SorForgerUI")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "gameSprite") flag METADATA type QName(PackageNamespace("com.company.assembleegameclient.game"), "AGameSprite")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "openNoModalDialog") flag METADATA type QName(PackageNamespace("kabam.rotmg.dialogs.control"), "OpenDialogNoModalSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "addTextLine") flag METADATA type QName(PackageNamespace("kabam.rotmg.game.signals"), "AddTextLineSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "messages") flag METADATA type QName(PackageNamespace("kabam.lib.net.api"), "MessageProvider")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "socketServer") flag METADATA type QName(PackageNamespace("kabam.lib.net.impl"), "SocketServer")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "closePopupSignal") flag METADATA type QName(PackageNamespace("io.decagames.rotmg.ui.popups.signals"), "ClosePopupSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PrivateNamespace("kabam.rotmg.sorForge:SorForgerUIMediator"), "forgeItemTab") type QName(PackageNamespace("kabam.rotmg.sorForge.tabs"), "ForgeItemTab") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.sorForge:SorForgerUIMediator"), "editItemTab") type QName(PackageNamespace("kabam.rotmg.sorForge.tabs"), "EditItemTab") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.sorForge:SorForgerUIMediator"), "closeButton") type QName(PackageNamespace("io.decagames.rotmg.ui.buttons"), "SliceScalingButton") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.sorForge:SorForgerUIMediator"), "tabs") type QName(PackageNamespace("io.decagames.rotmg.ui.tabs"), "UITabs") end
+  trait method QName(PackageNamespace(""), "initialize") flag OVERRIDE
+   method
+    name "initialize"
+    refid "kabam.rotmg.sorForge:SorForgerUIMediator/instance/initialize"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 5
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "header")
+      pushstring          "Forge Station"
+      pushshort           519
+      getlex              QName(PackageNamespace("io.decagames.rotmg.ui.defaults"), "DefaultLabelFormat")
+      getproperty         QName(PackageNamespace(""), "defaultPopupTitle")
+      callpropvoid        QName(PackageNamespace(""), "setTitle"), 3
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.sorForge.tabs"), "ForgeItemTab")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "POPUP_WIDTH")
+      constructprop       QName(PackageNamespace("kabam.rotmg.sorForge.tabs"), "ForgeItemTab"), 1
+      setproperty         QName(PrivateNamespace("kabam.rotmg.sorForge:SorForgerUIMediator"), "forgeItemTab")
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.sorForge.tabs"), "EditItemTab")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "POPUP_WIDTH")
+      constructprop       QName(PackageNamespace("kabam.rotmg.sorForge.tabs"), "EditItemTab"), 1
+      setproperty         QName(PrivateNamespace("kabam.rotmg.sorForge:SorForgerUIMediator"), "editItemTab")
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("io.decagames.rotmg.ui.tabs"), "UITabs")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "POPUP_WIDTH")
+      pushbyte            10
+      subtract
+      constructprop       QName(PackageNamespace("io.decagames.rotmg.ui.tabs"), "UITabs"), 1
+      setproperty         QName(PrivateNamespace("kabam.rotmg.sorForge:SorForgerUIMediator"), "tabs")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.sorForge:SorForgerUIMediator"), "tabs")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.sorForge:SorForgerUIMediator"), "forgeItemTab")
+      pushtrue
+      callpropvoid        QName(PackageNamespace(""), "addTab"), 2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.sorForge:SorForgerUIMediator"), "tabs")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.sorForge:SorForgerUIMediator"), "editItemTab")
+      pushfalse
+      callpropvoid        QName(PackageNamespace(""), "addTab"), 2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.sorForge:SorForgerUIMediator"), "tabs")
+      pushbyte            115
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.sorForge:SorForgerUIMediator"), "tabs")
+      pushbyte            3
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.sorForge:SorForgerUIMediator"), "tabs")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("io.decagames.rotmg.ui.buttons"), "SliceScalingButton")
+      getlex              QName(PackageNamespace("io.decagames.rotmg.ui.texture"), "TextureParser")
+      getproperty         QName(PackageNamespace(""), "instance")
+      pushstring          "UI"
+      pushstring          "close_button"
+      callproperty        QName(PackageNamespace(""), "getSliceScalingBitmap"), 2
+      constructprop       QName(PackageNamespace("io.decagames.rotmg.ui.buttons"), "SliceScalingButton"), 1
+      setproperty         QName(PrivateNamespace("kabam.rotmg.sorForge:SorForgerUIMediator"), "closeButton")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.sorForge:SorForgerUIMediator"), "closeButton")
+      getproperty         QName(PackageNamespace(""), "clicked")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.sorForge:SorForgerUIMediator"), "onClose")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "header")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.sorForge:SorForgerUIMediator"), "closeButton")
+      pushstring          "right_button"
+      callpropvoid        QName(PackageNamespace(""), "addButton"), 2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.sorForge:SorForgerUIMediator"), "forgeItemTab")
+      getproperty         QName(PackageNamespace(""), "button")
+      pushstring          "click"
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.sorForge:SorForgerUIMediator"), "onButtonForge")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.sorForge:SorForgerUIMediator"), "editItemTab")
+      getproperty         QName(PackageNamespace(""), "button1")
+      pushstring          "click"
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.sorForge:SorForgerUIMediator"), "onButtonRename")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.sorForge:SorForgerUIMediator"), "editItemTab")
+      getproperty         QName(PackageNamespace(""), "button2")
+      pushstring          "click"
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.sorForge:SorForgerUIMediator"), "onButtonResprite")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.sorForge:SorForgerUIMediator"), "onButtonRename")
+   method
+    name "onButtonRename"
+    refid "kabam.rotmg.sorForge:SorForgerUIMediator/instance/kabam.rotmg.sorForge:SorForgerUIMediator/instance/onButtonRename"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "arg1"
+    body
+     maxstack 2
+     localcount 4
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.sorForge:SorForgerUIMediator"), "editItemTab")
+      getproperty         QName(PackageNamespace(""), "typeNameBar")
+      callproperty        QName(PackageNamespace(""), "text"), 0
+      coerce_s
+      setlocal2
+
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "length")
+      pushbyte            5
+      lessthan
+      dup
+      iftrue              L19
+
+      pop
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "length")
+      pushbyte            30
+      greaterthan
+L19:
+      iffalse             L21
+
+      returnvoid
+
+L21:
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.sorForge:SorForgerUIMediator"), "editItemTab")
+      getproperty         QName(PackageNamespace(""), "slot1")
+      getproperty         QName(PackageNamespace(""), "itemData")
+      getproperty         QName(PackageNamespace(""), "objectType")
+      pushbyte            -1
+      ifne                L29
+
+      returnvoid
+
+L29:
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.sorForge:SorForgerUIMediator"), "editItemTab")
+      getproperty         QName(PackageNamespace(""), "slot2")
+      getproperty         QName(PackageNamespace(""), "itemData")
+      getproperty         QName(PackageNamespace(""), "objectType")
+      pushshort           6786
+      ifeq                L37
+
+      returnvoid
+
+L37:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "messages")
+      pushshort           175
+      callproperty        QName(Namespace("kabam.lib.net.api:MessageProvider"), "require"), 1
+      getlex              QName(PackageNamespace("kabam.rotmg.messaging.impl.outgoing"), "RenameItem")
+      astypelate
+      coerce              QName(PackageNamespace("kabam.rotmg.messaging.impl.outgoing"), "RenameItem")
+      setlocal3
+
+      getlocal3
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "SlotObjectData")
+      constructprop       QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "SlotObjectData"), 0
+      setproperty         QName(PackageNamespace(""), "slot1")
+
+      getlocal3
+      getproperty         QName(PackageNamespace(""), "slot1")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.sorForge:SorForgerUIMediator"), "editItemTab")
+      getproperty         QName(PackageNamespace(""), "slot1")
+      getproperty         QName(PackageNamespace(""), "objectId")
+      setproperty         QName(PackageNamespace(""), "objectId_")
+
+      getlocal3
+      getproperty         QName(PackageNamespace(""), "slot1")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.sorForge:SorForgerUIMediator"), "editItemTab")
+      getproperty         QName(PackageNamespace(""), "slot1")
+      getproperty         QName(PackageNamespace(""), "itemData")
+      callproperty        QName(PackageNamespace(""), "toString"), 0
+      setproperty         QName(PackageNamespace(""), "itemData_")
+
+      getlocal3
+      getproperty         QName(PackageNamespace(""), "slot1")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.sorForge:SorForgerUIMediator"), "editItemTab")
+      getproperty         QName(PackageNamespace(""), "slot1")
+      getproperty         QName(PackageNamespace(""), "slotId")
+      setproperty         QName(PackageNamespace(""), "slotId_")
+
+      getlocal3
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "SlotObjectData")
+      constructprop       QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "SlotObjectData"), 0
+      setproperty         QName(PackageNamespace(""), "slot2")
+
+      getlocal3
+      getproperty         QName(PackageNamespace(""), "slot2")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.sorForge:SorForgerUIMediator"), "editItemTab")
+      getproperty         QName(PackageNamespace(""), "slot2")
+      getproperty         QName(PackageNamespace(""), "objectId")
+      setproperty         QName(PackageNamespace(""), "objectId_")
+
+      getlocal3
+      getproperty         QName(PackageNamespace(""), "slot2")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.sorForge:SorForgerUIMediator"), "editItemTab")
+      getproperty         QName(PackageNamespace(""), "slot2")
+      getproperty         QName(PackageNamespace(""), "itemData")
+      callproperty        QName(PackageNamespace(""), "toString"), 0
+      setproperty         QName(PackageNamespace(""), "itemData_")
+
+      getlocal3
+      getproperty         QName(PackageNamespace(""), "slot2")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.sorForge:SorForgerUIMediator"), "editItemTab")
+      getproperty         QName(PackageNamespace(""), "slot2")
+      getproperty         QName(PackageNamespace(""), "slotId")
+      setproperty         QName(PackageNamespace(""), "slotId_")
+
+      getlocal3
+      getlocal2
+      setproperty         QName(PackageNamespace(""), "name")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "socketServer")
+      getlocal3
+      callpropvoid        QName(PackageNamespace(""), "sendMessage"), 1
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.sorForge:SorForgerUIMediator"), "onClose"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.sorForge:SorForgerUIMediator"), "onButtonResprite")
+   method
+    name "onButtonResprite"
+    refid "kabam.rotmg.sorForge:SorForgerUIMediator/instance/kabam.rotmg.sorForge:SorForgerUIMediator/instance/onButtonResprite"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "arg1"
+    body
+     maxstack 3
+     localcount 4
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.sorForge:SorForgerUIMediator"), "editItemTab")
+      getproperty         QName(PackageNamespace(""), "slot2")
+      getproperty         QName(PackageNamespace(""), "itemData")
+      getproperty         QName(PackageNamespace(""), "objectType")
+      convert_i
+      setlocal3
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.sorForge:SorForgerUIMediator"), "editItemTab")
+      getproperty         QName(PackageNamespace(""), "chosenObj")
+      pushnull
+      equals
+      dup
+      iffalse             L21
+
+      pop
+      getlocal3
+      pushshort           16356
+      equals
+      not
+L21:
+      iffalse             L23
+
+      returnvoid
+
+L23:
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.sorForge:SorForgerUIMediator"), "editItemTab")
+      getproperty         QName(PackageNamespace(""), "slot1")
+      getproperty         QName(PackageNamespace(""), "itemData")
+      getproperty         QName(PackageNamespace(""), "objectType")
+      pushbyte            -1
+      ifne                L31
+
+      returnvoid
+
+L31:
+      getlocal3
+      pushshort           16356
+      equals
+      not
+      dup
+      iffalse             L42
+
+      pop
+      getlocal3
+      pushshort           8178
+      equals
+      not
+L42:
+      dup
+      iffalse             L49
+
+      pop
+      getlocal3
+      pushshort           286
+      equals
+      not
+L49:
+      iffalse             L51
+
+      returnvoid
+
+L51:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "messages")
+      pushshort           181
+      callproperty        QName(Namespace("kabam.lib.net.api:MessageProvider"), "require"), 1
+      getlex              QName(PackageNamespace("valor.battlePass.packets"), "RespriteItem")
+      astypelate
+      coerce              QName(PackageNamespace("valor.battlePass.packets"), "RespriteItem")
+      setlocal2
+
+      getlocal2
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "SlotObjectData")
+      constructprop       QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "SlotObjectData"), 0
+      setproperty         QName(PackageNamespace(""), "slot1")
+
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "slot1")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.sorForge:SorForgerUIMediator"), "editItemTab")
+      getproperty         QName(PackageNamespace(""), "slot1")
+      getproperty         QName(PackageNamespace(""), "objectId")
+      setproperty         QName(PackageNamespace(""), "objectId_")
+
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "slot1")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.sorForge:SorForgerUIMediator"), "editItemTab")
+      getproperty         QName(PackageNamespace(""), "slot1")
+      getproperty         QName(PackageNamespace(""), "itemData")
+      callproperty        QName(PackageNamespace(""), "toString"), 0
+      setproperty         QName(PackageNamespace(""), "itemData_")
+
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "slot1")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.sorForge:SorForgerUIMediator"), "editItemTab")
+      getproperty         QName(PackageNamespace(""), "slot1")
+      getproperty         QName(PackageNamespace(""), "slotId")
+      setproperty         QName(PackageNamespace(""), "slotId_")
+
+      getlocal2
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "SlotObjectData")
+      constructprop       QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "SlotObjectData"), 0
+      setproperty         QName(PackageNamespace(""), "slot2")
+
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "slot2")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.sorForge:SorForgerUIMediator"), "editItemTab")
+      getproperty         QName(PackageNamespace(""), "slot2")
+      getproperty         QName(PackageNamespace(""), "objectId")
+      setproperty         QName(PackageNamespace(""), "objectId_")
+
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "slot2")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.sorForge:SorForgerUIMediator"), "editItemTab")
+      getproperty         QName(PackageNamespace(""), "slot2")
+      getproperty         QName(PackageNamespace(""), "itemData")
+      callproperty        QName(PackageNamespace(""), "toString"), 0
+      setproperty         QName(PackageNamespace(""), "itemData_")
+
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "slot2")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.sorForge:SorForgerUIMediator"), "editItemTab")
+      getproperty         QName(PackageNamespace(""), "slot2")
+      getproperty         QName(PackageNamespace(""), "slotId")
+      setproperty         QName(PackageNamespace(""), "slotId_")
+
+      getlocal2
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.sorForge:SorForgerUIMediator"), "editItemTab")
+      getproperty         QName(PackageNamespace(""), "chosenObj")
+      pushnull
+      ifeq                L122
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.sorForge:SorForgerUIMediator"), "editItemTab")
+      getproperty         QName(PackageNamespace(""), "chosenObj")
+      getproperty         QName(PackageNamespace(""), "respriteId")
+      jump                L124
+
+L122:
+      pushbyte            -1
+      coerce_a
+L124:
+      setproperty         QName(PackageNamespace(""), "respriteId")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "socketServer")
+      getlocal2
+      callpropvoid        QName(PackageNamespace(""), "sendMessage"), 1
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.sorForge:SorForgerUIMediator"), "onClose"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.sorForge:SorForgerUIMediator"), "onButtonForge")
+   method
+    name "onButtonForge"
+    refid "kabam.rotmg.sorForge:SorForgerUIMediator/instance/kabam.rotmg.sorForge:SorForgerUIMediator/instance/onButtonForge"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "arg1"
+    body
+     maxstack 2
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "messages")
+      pushshort           160
+      callproperty        QName(Namespace("kabam.lib.net.api:MessageProvider"), "require"), 1
+      getlex              QName(PackageNamespace("kabam.rotmg.messaging.impl.outgoing"), "ForgeItem")
+      astypelate
+      coerce              QName(PackageNamespace("kabam.rotmg.messaging.impl.outgoing"), "ForgeItem")
+      setlocal2
+
+      getlocal2
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "SlotObjectData")
+      constructprop       QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "SlotObjectData"), 0
+      setproperty         QName(PackageNamespace(""), "sor_")
+
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "sor_")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.sorForge:SorForgerUIMediator"), "forgeItemTab")
+      getproperty         QName(PackageNamespace(""), "slot1")
+      getproperty         QName(PackageNamespace(""), "objectId")
+      setproperty         QName(PackageNamespace(""), "objectId_")
+
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "sor_")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.sorForge:SorForgerUIMediator"), "forgeItemTab")
+      getproperty         QName(PackageNamespace(""), "slot1")
+      getproperty         QName(PackageNamespace(""), "itemData")
+      callproperty        QName(PackageNamespace(""), "toString"), 0
+      setproperty         QName(PackageNamespace(""), "itemData_")
+
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "sor_")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.sorForge:SorForgerUIMediator"), "forgeItemTab")
+      getproperty         QName(PackageNamespace(""), "slot1")
+      getproperty         QName(PackageNamespace(""), "slotId")
+      setproperty         QName(PackageNamespace(""), "slotId_")
+
+      getlocal2
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "SlotObjectData")
+      constructprop       QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "SlotObjectData"), 0
+      setproperty         QName(PackageNamespace(""), "shard_")
+
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "shard_")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.sorForge:SorForgerUIMediator"), "forgeItemTab")
+      getproperty         QName(PackageNamespace(""), "slot2")
+      getproperty         QName(PackageNamespace(""), "objectId")
+      setproperty         QName(PackageNamespace(""), "objectId_")
+
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "shard_")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.sorForge:SorForgerUIMediator"), "forgeItemTab")
+      getproperty         QName(PackageNamespace(""), "slot2")
+      getproperty         QName(PackageNamespace(""), "itemData")
+      callproperty        QName(PackageNamespace(""), "toString"), 0
+      setproperty         QName(PackageNamespace(""), "itemData_")
+
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "shard_")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.sorForge:SorForgerUIMediator"), "forgeItemTab")
+      getproperty         QName(PackageNamespace(""), "slot2")
+      getproperty         QName(PackageNamespace(""), "slotId")
+      setproperty         QName(PackageNamespace(""), "slotId_")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "socketServer")
+      getlocal2
+      callpropvoid        QName(PackageNamespace(""), "sendMessage"), 1
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.sorForge:SorForgerUIMediator"), "onClose"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "destroy") flag OVERRIDE
+   method
+    name "destroy"
+    refid "kabam.rotmg.sorForge:SorForgerUIMediator/instance/destroy"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      callpropvoid        QName(PackageNamespace(""), "dispose"), 0
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.sorForge:SorForgerUIMediator"), "closeButton")
+      callpropvoid        QName(PackageNamespace(""), "dispose"), 0
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.sorForge:SorForgerUIMediator"), "tabs")
+      callpropvoid        QName(PackageNamespace(""), "dispose"), 0
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.sorForge:SorForgerUIMediator"), "editItemTab")
+      getproperty         QName(PackageNamespace(""), "button1")
+      pushstring          "click"
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.sorForge:SorForgerUIMediator"), "onButtonRename")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.sorForge:SorForgerUIMediator"), "editItemTab")
+      callpropvoid        QName(PackageNamespace(""), "destroy"), 0
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.sorForge:SorForgerUIMediator"), "editItemTab")
+      callpropvoid        QName(PackageNamespace(""), "dispose"), 0
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.sorForge:SorForgerUIMediator"), "forgeItemTab")
+      getproperty         QName(PackageNamespace(""), "button")
+      pushstring          "click"
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.sorForge:SorForgerUIMediator"), "onButtonForge")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.sorForge:SorForgerUIMediator"), "forgeItemTab")
+      callpropvoid        QName(PackageNamespace(""), "destroy"), 0
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.sorForge:SorForgerUIMediator"), "forgeItemTab")
+      callpropvoid        QName(PackageNamespace(""), "dispose"), 0
+
+      getlocal0
+      callsupervoid       QName(PackageNamespace(""), "destroy"), 0
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.sorForge:SorForgerUIMediator"), "onClose")
+   method
+    name "onClose"
+    refid "kabam.rotmg.sorForge:SorForgerUIMediator/instance/kabam.rotmg.sorForge:SorForgerUIMediator/instance/onClose"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      callpropvoid        QName(PackageNamespace(""), "destroy"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "closePopupSignal")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "closeDialogs")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.sorForge:SorForgerUIMediator/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

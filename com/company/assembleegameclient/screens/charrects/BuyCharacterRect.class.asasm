@@ -1,0 +1,268 @@
+class
+ refid "com.company.assembleegameclient.screens.charrects:BuyCharacterRect"
+ instance QName(PackageNamespace("com.company.assembleegameclient.screens.charrects"), "BuyCharacterRect")
+  extends QName(PackageNamespace("com.company.assembleegameclient.screens.charrects"), "CharacterRect")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.company.assembleegameclient.screens.charrects:BuyCharacterRect")
+  iinit
+   name "BuyCharacterRect"
+   refid "com.company.assembleegameclient.screens.charrects:BuyCharacterRect/instance/init"
+   param QName(PackageNamespace("kabam.rotmg.core.model"), "PlayerModel")
+   flag HAS_PARAM_NAMES
+   paramname "_arg1"
+   body
+    maxstack 5
+    localcount 2
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     getlocal1
+     setproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens.charrects:BuyCharacterRect"), "model")
+
+     pushint             2039583
+     findproperty        QName(PackageNamespace(""), "color")
+     swap
+     setsuper            QName(PackageNamespace(""), "color")
+
+     pushint             4342338
+     findproperty        QName(PackageNamespace(""), "overColor")
+     swap
+     setsuper            QName(PackageNamespace(""), "overColor")
+
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder")
+     constructprop       QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder"), 0
+     pushstring          "BuyCharacterRect.classNameText"
+     pushstring          "nth"
+     getlocal1
+     callproperty        QName(PackageNamespace(""), "getMaxCharacters"), 0
+     pushbyte            1
+     add
+     newobject           1
+     callproperty        QName(PackageNamespace(""), "setParams"), 2
+     findproperty        QName(ProtectedNamespace("com.company.assembleegameclient.screens.charrects:CharacterRect"), "className")
+     swap
+     setproperty         QName(ProtectedNamespace("com.company.assembleegameclient.screens.charrects:CharacterRect"), "className")
+
+     getlocal0
+     callsupervoid       QName(PackageNamespace(""), "init"), 0
+     getlocal0
+     callpropvoid        QName(PrivateNamespace("com.company.assembleegameclient.screens.charrects:BuyCharacterRect"), "makeIcon"), 0
+
+     getlocal0
+     callpropvoid        QName(PrivateNamespace("com.company.assembleegameclient.screens.charrects:BuyCharacterRect"), "makePriceText"), 0
+
+     getlocal0
+     callpropvoid        QName(PrivateNamespace("com.company.assembleegameclient.screens.charrects:BuyCharacterRect"), "makeCurrency"), 0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.screens.charrects:BuyCharacterRect"), "model") type QName(PackageNamespace("kabam.rotmg.core.model"), "PlayerModel") end
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.screens.charrects:BuyCharacterRect"), "makeCurrency")
+   method
+    name "makeCurrency"
+    refid "com.company.assembleegameclient.screens.charrects:BuyCharacterRect/instance/com.company.assembleegameclient.screens.charrects:BuyCharacterRect/instance/makeCurrency"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 4
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens.charrects:BuyCharacterRect"), "model")
+      callproperty        QName(PackageNamespace(""), "getCharSlotCurrency"), 0
+      pushbyte            0
+      ifne                L10
+
+      getlex              QName(PackageNamespace("kabam.rotmg.assets.services"), "IconFactory")
+      callproperty        QName(PackageNamespace(""), "makeCoin"), 0
+      jump                L13
+
+L10:
+      getlex              QName(PackageNamespace("kabam.rotmg.assets.services"), "IconFactory")
+      callproperty        QName(PackageNamespace(""), "makeFame"), 0
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+L13:
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      setlocal2
+
+      findpropstrict      QName(PackageNamespace("flash.display"), "Bitmap")
+      getlocal2
+      constructprop       QName(PackageNamespace("flash.display"), "Bitmap"), 1
+      coerce              QName(PackageNamespace("flash.display"), "Bitmap")
+      setlocal1
+
+      getlocal1
+      getlocal1
+      pushdouble          0.8
+      dup
+      setlocal3
+
+      setproperty         QName(PackageNamespace(""), "scaleY")
+
+      getlocal3
+      setproperty         QName(PackageNamespace(""), "scaleX")
+
+      getlocal1
+      pushshort           130
+      pushbyte            52
+      add
+      pushbyte            8
+      subtract
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal1
+      pushbyte            38
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlex              QName(PackageNamespace(""), "selectContainer")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.screens.charrects:BuyCharacterRect"), "makePriceText")
+   method
+    name "makePriceText"
+    refid "com.company.assembleegameclient.screens.charrects:BuyCharacterRect/instance/com.company.assembleegameclient.screens.charrects:BuyCharacterRect/instance/makePriceText"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 8
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      setlocal1
+
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete")
+      constructprop       QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete"), 0
+      pushbyte            14
+      callproperty        QName(PackageNamespace(""), "setSize"), 1
+      pushint             16777215
+      callproperty        QName(PackageNamespace(""), "setColor"), 1
+      pushstring          "right"
+      callproperty        QName(PackageNamespace(""), "setAutoSize"), 1
+      coerce              QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete")
+      setlocal1
+
+      getlocal1
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "StaticStringBuilder")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens.charrects:BuyCharacterRect"), "model")
+      callproperty        QName(PackageNamespace(""), "getCharSlotPrice"), 0
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "toString"), 0
+      constructprop       QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "StaticStringBuilder"), 1
+      callpropvoid        QName(PackageNamespace(""), "setStringBuilder"), 1
+
+      getlocal1
+      findpropstrict      QName(PackageNamespace("flash.filters"), "DropShadowFilter")
+      pushbyte            0
+      pushbyte            0
+      pushbyte            0
+      pushbyte            1
+      pushbyte            8
+      pushbyte            8
+      constructprop       QName(PackageNamespace("flash.filters"), "DropShadowFilter"), 6
+      newarray            1
+      setproperty         QName(PackageNamespace(""), "filters")
+
+      getlocal1
+      pushshort           130
+      pushbyte            52
+      add
+      pushbyte            8
+      subtract
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal1
+      pushbyte            38
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlex              QName(PackageNamespace(""), "selectContainer")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.screens.charrects:BuyCharacterRect"), "makeIcon")
+   method
+    name "makeIcon"
+    refid "com.company.assembleegameclient.screens.charrects:BuyCharacterRect/instance/com.company.assembleegameclient.screens.charrects:BuyCharacterRect/instance/makeIcon"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      setlocal1
+
+      findpropstrict      QName(PackageNamespace("io.decagames.rotmg.ui.buttons"), "SliceScalingButton")
+      getlex              QName(PackageNamespace("io.decagames.rotmg.ui.texture"), "TextureParser")
+      getproperty         QName(PackageNamespace(""), "instance")
+      pushstring          "UI"
+      pushstring          "add_button"
+      callproperty        QName(PackageNamespace(""), "getSliceScalingBitmap"), 2
+      constructprop       QName(PackageNamespace("io.decagames.rotmg.ui.buttons"), "SliceScalingButton"), 1
+      coerce              QName(PackageNamespace("io.decagames.rotmg.ui.buttons"), "SliceScalingButton")
+      setlocal1
+
+      getlocal1
+      pushbyte            100
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal1
+      pushbyte            18
+      setproperty         QName(PackageNamespace(""), "y")
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.screens.charrects:BuyCharacterRect/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PackageNamespace(""), "BUY_CHARACTER_RECT_CLASS_NAME_TEXT") type QName(PackageNamespace(""), "String") value Utf8("BuyCharacterRect.classNameText") end
+end ; class

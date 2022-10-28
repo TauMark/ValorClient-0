@@ -1,0 +1,589 @@
+class
+ refid "kabam.rotmg.util.components:VerticalScrollbar"
+ instance QName(PackageNamespace("kabam.rotmg.util.components"), "VerticalScrollbar")
+  extends QName(PackageNamespace("flash.display"), "Sprite")
+  implements QName(PackageNamespace("kabam.lib.ui.api"), "Scrollbar")
+  flag SEALED
+  iinit
+   name "VerticalScrollbar"
+   refid "kabam.rotmg.util.components:VerticalScrollbar/instance/init"
+   body
+    maxstack 2
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     findpropstrict      QName(PackageInternalNs("kabam.rotmg.util.components"), "VerticalScrollbarGroove")
+     constructprop       QName(PackageInternalNs("kabam.rotmg.util.components"), "VerticalScrollbarGroove"), 0
+     findproperty        QName(PackageNamespace(""), "groove")
+     swap
+     initproperty        QName(PackageNamespace(""), "groove")
+
+     findpropstrict      QName(PackageInternalNs("kabam.rotmg.util.components"), "VerticalScrollbarBar")
+     constructprop       QName(PackageInternalNs("kabam.rotmg.util.components"), "VerticalScrollbarBar"), 0
+     findproperty        QName(PackageNamespace(""), "bar")
+     swap
+     initproperty        QName(PackageNamespace(""), "bar")
+
+     getlocal0
+     constructsuper      0
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "groove")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "bar")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     getlocal0
+     callpropvoid        QName(PrivateNamespace("kabam.rotmg.util.components:VerticalScrollbar"), "addMouseListeners"), 0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait const QName(PackageNamespace(""), "groove") type QName(PackageInternalNs("kabam.rotmg.util.components"), "VerticalScrollbarGroove") end
+  trait const QName(PackageNamespace(""), "bar") type QName(PackageInternalNs("kabam.rotmg.util.components"), "VerticalScrollbarBar") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.util.components:VerticalScrollbar"), "_positionChanged") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.util.components:VerticalScrollbar"), "position") type QName(PackageNamespace(""), "Number") value Integer(0) end
+  trait slot QName(PrivateNamespace("kabam.rotmg.util.components:VerticalScrollbar"), "range") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.util.components:VerticalScrollbar"), "invRange") type QName(PackageNamespace(""), "Number") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.util.components:VerticalScrollbar"), "isEnabled") type QName(PackageNamespace(""), "Boolean") value True() end
+  trait getter QName(PackageNamespace(""), "positionChanged")
+   method
+    name "positionChanged"
+    refid "kabam.rotmg.util.components:VerticalScrollbar/instance/positionChanged/getter"
+    returns QName(PackageNamespace("org.osflash.signals"), "Signal")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.util.components:VerticalScrollbar"), "_positionChanged")
+      dup
+      iftrue              L12
+
+      pop
+      findpropstrict      QName(PackageNamespace("org.osflash.signals"), "Signal")
+      getlex              QName(PackageNamespace(""), "Number")
+      constructprop       QName(PackageNamespace("org.osflash.signals"), "Signal"), 1
+      coerce              QName(PackageNamespace("org.osflash.signals"), "Signal")
+L12:
+      dup
+      setlocal1
+
+      setproperty         QName(PrivateNamespace("kabam.rotmg.util.components:VerticalScrollbar"), "_positionChanged")
+
+      getlocal1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getIsEnabled")
+   method
+    name "getIsEnabled"
+    refid "kabam.rotmg.util.components:VerticalScrollbar/instance/getIsEnabled"
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.util.components:VerticalScrollbar"), "isEnabled")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setIsEnabled")
+   method
+    name "setIsEnabled"
+    refid "kabam.rotmg.util.components:VerticalScrollbar/instance/setIsEnabled"
+    param QName(PackageNamespace(""), "Boolean")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.util.components:VerticalScrollbar"), "isEnabled")
+      getlocal1
+      ifeq                L16
+
+      getlocal0
+      getlocal1
+      setproperty         QName(PrivateNamespace("kabam.rotmg.util.components:VerticalScrollbar"), "isEnabled")
+
+      getlocal1
+      iffalse             L14
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.util.components:VerticalScrollbar"), "addMouseListeners"), 0
+
+      jump                L16
+
+L14:
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.util.components:VerticalScrollbar"), "removeMouseListeners"), 0
+
+L16:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.util.components:VerticalScrollbar"), "addMouseListeners")
+   method
+    name "addMouseListeners"
+    refid "kabam.rotmg.util.components:VerticalScrollbar/instance/kabam.rotmg.util.components:VerticalScrollbar/instance/addMouseListeners"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "groove")
+      callpropvoid        QName(PackageNamespace(""), "addMouseListeners"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "groove")
+      getproperty         QName(PackageNamespace(""), "clicked")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.util.components:VerticalScrollbar"), "onGrooveClicked")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "bar")
+      callpropvoid        QName(PackageNamespace(""), "addMouseListeners"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "bar")
+      getproperty         QName(PackageNamespace(""), "dragging")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.util.components:VerticalScrollbar"), "onBarDrag")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "bar")
+      getproperty         QName(PackageNamespace(""), "scrolling")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "scrollPosition")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.util.components:VerticalScrollbar"), "removeMouseListeners")
+   method
+    name "removeMouseListeners"
+    refid "kabam.rotmg.util.components:VerticalScrollbar/instance/kabam.rotmg.util.components:VerticalScrollbar/instance/removeMouseListeners"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "groove")
+      callpropvoid        QName(PackageNamespace(""), "removeMouseListeners"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "groove")
+      getproperty         QName(PackageNamespace(""), "clicked")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.util.components:VerticalScrollbar"), "onGrooveClicked")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "bar")
+      callpropvoid        QName(PackageNamespace(""), "removeMouseListeners"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "bar")
+      getproperty         QName(PackageNamespace(""), "dragging")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.util.components:VerticalScrollbar"), "onBarDrag")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "bar")
+      getproperty         QName(PackageNamespace(""), "scrolling")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "scrollPosition")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setSize")
+   method
+    name "setSize"
+    refid "kabam.rotmg.util.components:VerticalScrollbar/instance/setSize"
+    param QName(PackageNamespace(""), "int")
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    paramname "_arg2"
+    body
+     maxstack 4
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "bar")
+      getproperty         QName(PackageNamespace(""), "rect")
+      getlocal1
+      setproperty         QName(PackageNamespace(""), "height")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "groove")
+      getproperty         QName(PackageNamespace(""), "rect")
+      getlocal2
+      setproperty         QName(PackageNamespace(""), "height")
+
+      getlocal0
+      getlocal2
+      getlocal1
+      subtract
+      pushbyte            0
+      pushbyte            2
+      multiply
+      subtract
+      setproperty         QName(PrivateNamespace("kabam.rotmg.util.components:VerticalScrollbar"), "range")
+
+      getlocal0
+      pushbyte            1
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.util.components:VerticalScrollbar"), "range")
+      divide
+      setproperty         QName(PrivateNamespace("kabam.rotmg.util.components:VerticalScrollbar"), "invRange")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "groove")
+      callpropvoid        QName(PackageNamespace(""), "redraw"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "bar")
+      callpropvoid        QName(PackageNamespace(""), "redraw"), 0
+
+      getlocal0
+      getlocal0
+      callproperty        QName(PackageNamespace(""), "getPosition"), 0
+      callpropvoid        QName(PackageNamespace(""), "setPosition"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getBarSize")
+   method
+    name "getBarSize"
+    refid "kabam.rotmg.util.components:VerticalScrollbar/instance/getBarSize"
+    returns QName(PackageNamespace(""), "int")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "bar")
+      getproperty         QName(PackageNamespace(""), "rect")
+      getproperty         QName(PackageNamespace(""), "height")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getGrooveSize")
+   method
+    name "getGrooveSize"
+    refid "kabam.rotmg.util.components:VerticalScrollbar/instance/getGrooveSize"
+    returns QName(PackageNamespace(""), "int")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "groove")
+      getproperty         QName(PackageNamespace(""), "rect")
+      getproperty         QName(PackageNamespace(""), "height")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getPosition")
+   method
+    name "getPosition"
+    refid "kabam.rotmg.util.components:VerticalScrollbar/instance/getPosition"
+    returns QName(PackageNamespace(""), "Number")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.util.components:VerticalScrollbar"), "position")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setPosition")
+   method
+    name "setPosition"
+    refid "kabam.rotmg.util.components:VerticalScrollbar/instance/setPosition"
+    param QName(PackageNamespace(""), "Number")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 4
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      pushbyte            0
+      ifnlt               L8
+
+      pushdouble          0
+      setlocal1
+
+      jump                L13
+
+L8:
+      getlocal1
+      pushbyte            1
+      ifngt               L13
+
+      pushdouble          1
+      setlocal1
+
+L13:
+      getlocal0
+      getlocal1
+      setproperty         QName(PrivateNamespace("kabam.rotmg.util.components:VerticalScrollbar"), "position")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "bar")
+      pushbyte            0
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.util.components:VerticalScrollbar"), "range")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.util.components:VerticalScrollbar"), "position")
+      multiply
+      add
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.util.components:VerticalScrollbar"), "_positionChanged")
+      dup
+      iffalse             L37
+
+      pop
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.util.components:VerticalScrollbar"), "_positionChanged")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.util.components:VerticalScrollbar"), "position")
+      callproperty        QName(PackageNamespace(""), "dispatch"), 1
+      coerce_a
+L37:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "scrollPosition")
+   method
+    name "scrollPosition"
+    refid "kabam.rotmg.util.components:VerticalScrollbar/instance/scrollPosition"
+    param QName(PackageNamespace(""), "Number")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.util.components:VerticalScrollbar"), "position")
+      getlocal1
+      add
+      convert_d
+      setlocal2
+
+      getlocal0
+      getlocal2
+      callpropvoid        QName(PackageNamespace(""), "setPosition"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.util.components:VerticalScrollbar"), "onBarDrag")
+   method
+    name "onBarDrag"
+    refid "kabam.rotmg.util.components:VerticalScrollbar/instance/kabam.rotmg.util.components:VerticalScrollbar/instance/onBarDrag"
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      pushbyte            0
+      subtract
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.util.components:VerticalScrollbar"), "invRange")
+      multiply
+      callpropvoid        QName(PackageNamespace(""), "setPosition"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.util.components:VerticalScrollbar"), "onGrooveClicked")
+   method
+    name "onGrooveClicked"
+    refid "kabam.rotmg.util.components:VerticalScrollbar/instance/kabam.rotmg.util.components:VerticalScrollbar/instance/onGrooveClicked"
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 3
+     localcount 5
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "bar")
+      getproperty         QName(PackageNamespace(""), "rect")
+      getproperty         QName(PackageNamespace(""), "height")
+      convert_i
+      setlocal2
+
+      getlocal1
+      getlocal2
+      pushdouble          0.5
+      multiply
+      subtract
+      convert_i
+      setlocal3
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "groove")
+      getproperty         QName(PackageNamespace(""), "rect")
+      getproperty         QName(PackageNamespace(""), "height")
+      getlocal2
+      subtract
+      convert_i
+      setlocal            4
+
+      getlocal0
+      getlocal3
+      getlocal            4
+      divide
+      callpropvoid        QName(PackageNamespace(""), "setPosition"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.util.components:VerticalScrollbar/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PackageNamespace(""), "WIDTH") type QName(PackageNamespace(""), "int") value Integer(20) end
+ trait const QName(PackageNamespace(""), "BEVEL") type QName(PackageNamespace(""), "int") value Integer(4) end
+ trait const QName(PackageNamespace(""), "PADDING") type QName(PackageNamespace(""), "int") value Integer(0) end
+end ; class

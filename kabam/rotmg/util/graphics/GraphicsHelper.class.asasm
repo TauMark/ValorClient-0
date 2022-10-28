@@ -1,0 +1,192 @@
+class
+ refid "kabam.rotmg.util.graphics:GraphicsHelper"
+ instance QName(PackageNamespace("kabam.rotmg.util.graphics"), "GraphicsHelper")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  iinit
+   refid "kabam.rotmg.util.graphics:GraphicsHelper/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait method QName(PackageNamespace(""), "drawBevelRect")
+   method
+    name "drawBevelRect"
+    refid "kabam.rotmg.util.graphics:GraphicsHelper/instance/drawBevelRect"
+    param QName(PackageNamespace(""), "int")
+    param QName(PackageNamespace(""), "int")
+    param QName(PackageNamespace("kabam.rotmg.util.graphics"), "BevelRect")
+    param QName(PackageNamespace("flash.display"), "Graphics")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    paramname "_arg2"
+    paramname "_arg3"
+    paramname "_arg4"
+    body
+     maxstack 4
+     localcount 8
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      getlocal3
+      getproperty         QName(PackageNamespace(""), "width")
+      add
+      convert_i
+      setlocal            7
+
+      getlocal2
+      getlocal3
+      getproperty         QName(PackageNamespace(""), "height")
+      add
+      convert_i
+      setlocal            5
+
+      getlocal3
+      getproperty         QName(PackageNamespace(""), "bevel")
+      convert_i
+      setlocal            6
+
+      getlocal3
+      getproperty         QName(PackageNamespace(""), "topLeftBevel")
+      iffalse             L34
+
+      getlocal            4
+      getlocal1
+      getlocal2
+      getlocal            6
+      add
+      callpropvoid        QName(PackageNamespace(""), "moveTo"), 2
+
+      getlocal            4
+      getlocal1
+      getlocal            6
+      add
+      getlocal2
+      callpropvoid        QName(PackageNamespace(""), "lineTo"), 2
+
+      jump                L38
+
+L34:
+      getlocal            4
+      getlocal1
+      getlocal2
+      callpropvoid        QName(PackageNamespace(""), "moveTo"), 2
+
+L38:
+      getlocal3
+      getproperty         QName(PackageNamespace(""), "topRightBevel")
+      iffalse             L54
+
+      getlocal            4
+      getlocal            7
+      getlocal            6
+      subtract
+      getlocal2
+      callpropvoid        QName(PackageNamespace(""), "lineTo"), 2
+
+      getlocal            4
+      getlocal            7
+      getlocal2
+      getlocal            6
+      add
+      callpropvoid        QName(PackageNamespace(""), "lineTo"), 2
+
+      jump                L58
+
+L54:
+      getlocal            4
+      getlocal            7
+      getlocal2
+      callpropvoid        QName(PackageNamespace(""), "lineTo"), 2
+
+L58:
+      getlocal3
+      getproperty         QName(PackageNamespace(""), "bottomRightBevel")
+      iffalse             L74
+
+      getlocal            4
+      getlocal            7
+      getlocal            5
+      getlocal            6
+      subtract
+      callpropvoid        QName(PackageNamespace(""), "lineTo"), 2
+
+      getlocal            4
+      getlocal            7
+      getlocal            6
+      subtract
+      getlocal            5
+      callpropvoid        QName(PackageNamespace(""), "lineTo"), 2
+
+      jump                L78
+
+L74:
+      getlocal            4
+      getlocal            7
+      getlocal            5
+      callpropvoid        QName(PackageNamespace(""), "lineTo"), 2
+
+L78:
+      getlocal3
+      getproperty         QName(PackageNamespace(""), "bottomLeftBevel")
+      iffalse             L94
+
+      getlocal            4
+      getlocal1
+      getlocal            6
+      add
+      getlocal            5
+      callpropvoid        QName(PackageNamespace(""), "lineTo"), 2
+
+      getlocal            4
+      getlocal1
+      getlocal            5
+      getlocal            6
+      subtract
+      callpropvoid        QName(PackageNamespace(""), "lineTo"), 2
+
+      jump                L98
+
+L94:
+      getlocal            4
+      getlocal1
+      getlocal            5
+      callpropvoid        QName(PackageNamespace(""), "lineTo"), 2
+
+L98:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.util.graphics:GraphicsHelper/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

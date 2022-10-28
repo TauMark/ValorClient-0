@@ -1,0 +1,150 @@
+class
+ refid "kabam.rotmg.homedepot.components:HomeDepotPanel"
+ instance QName(PackageNamespace("kabam.rotmg.homedepot.components"), "HomeDepotPanel")
+  extends QName(PackageNamespace("com.company.assembleegameclient.ui.panels"), "Panel")
+  flag SEALED
+  iinit
+   name "HomeDepotPanel"
+   refid "kabam.rotmg.homedepot.components:HomeDepotPanel/instance/init#1"
+   param QName(PackageNamespace("com.company.assembleegameclient.game"), "GameSprite")
+   param QName(PackageNamespace(""), "int")
+   flag HAS_PARAM_NAMES
+   paramname "_arg_1"
+   paramname "_arg_2"
+   body
+    maxstack 5
+    localcount 3
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PackageNamespace("kabam.rotmg.pets.util"), "PetsViewAssetFactory")
+     pushint             16777215
+     pushbyte            16
+     pushtrue
+     callproperty        QName(PackageNamespace(""), "returnTextfield"), 3
+     findproperty        QName(PrivateNamespace("kabam.rotmg.homedepot.components:HomeDepotPanel"), "titleText")
+     swap
+     initproperty        QName(PrivateNamespace("kabam.rotmg.homedepot.components:HomeDepotPanel"), "titleText")
+
+     getlocal0
+     getlocal1
+     constructsuper      1
+
+     getlocal0
+     getlocal2
+     setproperty         QName(PrivateNamespace("kabam.rotmg.homedepot.components:HomeDepotPanel"), "objectType")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot.components:HomeDepotPanel"), "titleText")
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder")
+     constructprop       QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder"), 0
+     pushstring          "Home Depot"
+     callproperty        QName(PackageNamespace(""), "setParams"), 1
+     callpropvoid        QName(PackageNamespace(""), "setStringBuilder"), 1
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot.components:HomeDepotPanel"), "titleText")
+     pushbyte            48
+     setproperty         QName(PackageNamespace(""), "x")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot.components:HomeDepotPanel"), "titleText")
+     pushbyte            28
+     setproperty         QName(PackageNamespace(""), "y")
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot.components:HomeDepotPanel"), "titleText")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("io.decagames.rotmg.ui.buttons"), "SliceScalingButton")
+     getlex              QName(PackageNamespace("io.decagames.rotmg.ui.texture"), "TextureParser")
+     getproperty         QName(PackageNamespace(""), "instance")
+     pushstring          "UI"
+     pushstring          "generic_green_button"
+     callproperty        QName(PackageNamespace(""), "getSliceScalingBitmap"), 2
+     constructprop       QName(PackageNamespace("io.decagames.rotmg.ui.buttons"), "SliceScalingButton"), 1
+     setproperty         QName(PackageInternalNs("kabam.rotmg.homedepot.components"), "button")
+
+     getlocal0
+     getproperty         QName(PackageInternalNs("kabam.rotmg.homedepot.components"), "button")
+     pushstring          "Open"
+     getlex              QName(PackageNamespace("io.decagames.rotmg.ui.defaults"), "DefaultLabelFormat")
+     getproperty         QName(PackageNamespace(""), "questButtonCompleteLabel")
+     callpropvoid        QName(PackageNamespace(""), "setLabel"), 2
+
+     getlocal0
+     getproperty         QName(PackageInternalNs("kabam.rotmg.homedepot.components"), "button")
+     pushbyte            100
+     setproperty         QName(PackageNamespace(""), "width")
+
+     getlocal0
+     getproperty         QName(PackageInternalNs("kabam.rotmg.homedepot.components"), "button")
+     pushshort           188
+     pushbyte            2
+     divide
+     getlocal0
+     getproperty         QName(PackageInternalNs("kabam.rotmg.homedepot.components"), "button")
+     getproperty         QName(PackageNamespace(""), "width")
+     pushbyte            2
+     divide
+     subtract
+     setproperty         QName(PackageNamespace(""), "x")
+
+     getlocal0
+     getproperty         QName(PackageInternalNs("kabam.rotmg.homedepot.components"), "button")
+     pushbyte            84
+     getlocal0
+     getproperty         QName(PackageInternalNs("kabam.rotmg.homedepot.components"), "button")
+     getproperty         QName(PackageNamespace(""), "height")
+     subtract
+     pushbyte            4
+     subtract
+     setproperty         QName(PackageNamespace(""), "y")
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PackageInternalNs("kabam.rotmg.homedepot.components"), "button")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait const QName(PrivateNamespace("kabam.rotmg.homedepot.components:HomeDepotPanel"), "titleText") type QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.homedepot.components:HomeDepotPanel"), "objectType") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PackageInternalNs("kabam.rotmg.homedepot.components"), "button") type QName(PackageNamespace("io.decagames.rotmg.ui.buttons"), "SliceScalingButton") end
+  trait method QName(PackageNamespace(""), "init")
+   method
+    name "init"
+    refid "kabam.rotmg.homedepot.components:HomeDepotPanel/instance/init#0"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.homedepot.components:HomeDepotPanel/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

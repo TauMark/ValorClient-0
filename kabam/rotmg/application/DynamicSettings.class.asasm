@@ -1,0 +1,220 @@
+class
+ refid "kabam.rotmg.application:DynamicSettings"
+ instance QName(PackageNamespace("kabam.rotmg.application"), "DynamicSettings")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  iinit
+   refid "kabam.rotmg.application:DynamicSettings/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; instance
+ cinit
+  refid "kabam.rotmg.application:DynamicSettings/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PrivateNamespace("kabam.rotmg.application:DynamicSettings"), "URI_HOST_PROTOCOL") type QName(PackageNamespace(""), "String") value Utf8("{URI_HOST_PROTOCOL}") end
+ trait const QName(PrivateNamespace("kabam.rotmg.application:DynamicSettings"), "URI_HOST_DOMAIN") type QName(PackageNamespace(""), "String") value Utf8("{URI_HOST_DOMAIN}") end
+ trait const QName(PrivateNamespace("kabam.rotmg.application:DynamicSettings"), "URI_HOST_PORT") type QName(PackageNamespace(""), "String") value Utf8("{URI_HOST_PORT}") end
+ trait const QName(PrivateNamespace("kabam.rotmg.application:DynamicSettings"), "URI_PATTERN") type QName(PackageNamespace(""), "String") value Utf8("{URI_HOST_PROTOCOL}://{URI_HOST_DOMAIN}:{URI_HOST_PORT}") end
+ trait const QName(PrivateNamespace("kabam.rotmg.application:DynamicSettings"), "URI_PATTERN_DNS") type QName(PackageNamespace(""), "String") value Utf8("{URI_HOST_PROTOCOL}://{URI_HOST_DOMAIN}") end
+ trait slot QName(PrivateNamespace("kabam.rotmg.application:DynamicSettings"), "_xml") type QName(PackageNamespace(""), "XML") end
+ trait getter QName(PackageNamespace(""), "xml")
+  method
+   name "xml"
+   refid "kabam.rotmg.application:DynamicSettings/class/xml/getter"
+   returns QName(PackageNamespace(""), "XML")
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PrivateNamespace("kabam.rotmg.application:DynamicSettings"), "_xml")
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait setter QName(PackageNamespace(""), "xml")
+  method
+   name "xml"
+   refid "kabam.rotmg.application:DynamicSettings/class/xml/setter"
+   param QName(PackageNamespace(""), "XML")
+   returns QName(PackageNamespace(""), "void")
+   flag HAS_PARAM_NAMES
+   paramname "_arg1"
+   body
+    maxstack 2
+    localcount 2
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal1
+     findproperty        QName(PrivateNamespace("kabam.rotmg.application:DynamicSettings"), "_xml")
+     swap
+     setproperty         QName(PrivateNamespace("kabam.rotmg.application:DynamicSettings"), "_xml")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "buildURI")
+  method
+   name "buildURI"
+   refid "kabam.rotmg.application:DynamicSettings/class/buildURI"
+   param QName(PackageNamespace(""), "String")
+   param QName(PackageNamespace(""), "String")
+   param QName(PackageNamespace(""), "Number")
+   returns QName(PackageNamespace(""), "String")
+   flag HAS_PARAM_NAMES
+   paramname "hostProtocol"
+   paramname "hostDomain"
+   paramname "hostPort"
+   body
+    maxstack 3
+    localcount 4
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     pushstring          "{URI_HOST_PROTOCOL}://{URI_HOST_DOMAIN}:{URI_HOST_PORT}"
+     pushstring          "{URI_HOST_PROTOCOL}"
+     getlocal1
+     callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "replace"), 2
+     pushstring          "{URI_HOST_DOMAIN}"
+     getlocal2
+     callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "replace"), 2
+     pushstring          "{URI_HOST_PORT}"
+     getlocal3
+     callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "toString"), 0
+     callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "replace"), 2
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "buildURIDNS")
+  method
+   name "buildURIDNS"
+   refid "kabam.rotmg.application:DynamicSettings/class/buildURIDNS"
+   param QName(PackageNamespace(""), "String")
+   param QName(PackageNamespace(""), "String")
+   returns QName(PackageNamespace(""), "String")
+   flag HAS_PARAM_NAMES
+   paramname "hostProtocol"
+   paramname "hostDomain"
+   body
+    maxstack 3
+    localcount 3
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     pushstring          "{URI_HOST_PROTOCOL}://{URI_HOST_DOMAIN}"
+     pushstring          "{URI_HOST_PROTOCOL}"
+     getlocal1
+     callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "replace"), 2
+     pushstring          "{URI_HOST_DOMAIN}"
+     getlocal2
+     callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "replace"), 2
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "settingExists")
+  method
+   name "settingExists"
+   refid "kabam.rotmg.application:DynamicSettings/class/settingExists"
+   param QName(PackageNamespace(""), "String")
+   returns QName(PackageNamespace(""), "Boolean")
+   flag HAS_PARAM_NAMES
+   paramname "_arg1"
+   body
+    maxstack 2
+    localcount 2
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PrivateNamespace("kabam.rotmg.application:DynamicSettings"), "_xml")
+     pushnull
+     equals
+     not
+     dup
+     iffalse             L13
+
+     pop
+     getlex              QName(PrivateNamespace("kabam.rotmg.application:DynamicSettings"), "_xml")
+     getlocal1
+     callproperty        Multiname("hasOwnProperty", [PrivateNamespace("kabam.rotmg.application:DynamicSettings"), StaticProtectedNs("kabam.rotmg.application:DynamicSettings"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.application"), PackageInternalNs("kabam.rotmg.application"), PrivateNamespace("FilePrivateNS:DynamicSettings"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 1
+     coerce_a
+L13:
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "getSettingValue")
+  method
+   name "getSettingValue"
+   refid "kabam.rotmg.application:DynamicSettings/class/getSettingValue"
+   param QName(PackageNamespace(""), "String")
+   returns QName(PackageNamespace(""), "Number")
+   flag HAS_PARAM_NAMES
+   paramname "_arg1"
+   body
+    maxstack 2
+    localcount 2
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PrivateNamespace("kabam.rotmg.application:DynamicSettings"), "_xml")
+     getlocal1
+     callproperty        Multiname("child", [PrivateNamespace("kabam.rotmg.application:DynamicSettings"), StaticProtectedNs("kabam.rotmg.application:DynamicSettings"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.application"), PackageInternalNs("kabam.rotmg.application"), PrivateNamespace("FilePrivateNS:DynamicSettings"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 1
+     callproperty        Multiname("toString", [PrivateNamespace("kabam.rotmg.application:DynamicSettings"), StaticProtectedNs("kabam.rotmg.application:DynamicSettings"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.application"), PackageInternalNs("kabam.rotmg.application"), PrivateNamespace("FilePrivateNS:DynamicSettings"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 0
+     convert_d
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+end ; class

@@ -1,0 +1,179 @@
+class
+ refid "com.company.assembleegameclient.objects.particles:FountainEffect"
+ instance QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "FountainEffect")
+  extends QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "ParticleEffect")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.company.assembleegameclient.objects.particles:FountainEffect")
+  iinit
+   name "FountainEffect"
+   refid "com.company.assembleegameclient.objects.particles:FountainEffect/instance/init"
+   param QName(PackageNamespace("com.company.assembleegameclient.objects"), "GameObject")
+   param QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "EffectProperties")
+   flag HAS_PARAM_NAMES
+   paramname "_arg1"
+   paramname "_arg2"
+   body
+    maxstack 2
+    localcount 3
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     getlocal1
+     setproperty         QName(PackageNamespace(""), "go_")
+
+     getlocal0
+     pushint             4285909
+     setproperty         QName(PackageNamespace(""), "color_")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "go_") type QName(PackageNamespace("com.company.assembleegameclient.objects"), "GameObject") end
+  trait slot QName(PackageNamespace(""), "color_") type QName(PackageNamespace(""), "uint") end
+  trait slot QName(PackageNamespace(""), "lastUpdate_") type QName(PackageNamespace(""), "int") value Integer(-1) end
+  trait method QName(PackageNamespace(""), "update") flag OVERRIDE
+   method
+    name "update"
+    refid "com.company.assembleegameclient.objects.particles:FountainEffect/instance/update"
+    param QName(PackageNamespace(""), "int")
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "Boolean")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    paramname "_arg2"
+    body
+     maxstack 5
+     localcount 6
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushbyte            0
+      setlocal            4
+
+      pushnull
+      setlocal            5
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "go_")
+      getproperty         QName(PackageNamespace(""), "map_")
+      pushnull
+      ifne                L13
+
+      pushfalse
+      returnvalue
+
+L13:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "lastUpdate_")
+      pushbyte            0
+      ifnlt               L25
+
+      getlocal0
+      getlex              QName(PackageNamespace(""), "Math")
+      pushbyte            0
+      getlocal1
+      pushshort           400
+      subtract
+      callproperty        QName(PackageNamespace(""), "max"), 2
+      setproperty         QName(PackageNamespace(""), "lastUpdate_")
+
+L25:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "go_")
+      getproperty         QName(PackageNamespace(""), "x_")
+      findproperty        QName(PackageNamespace(""), "x_")
+      swap
+      setproperty         QName(PackageNamespace(""), "x_")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "go_")
+      getproperty         QName(PackageNamespace(""), "y_")
+      findproperty        QName(PackageNamespace(""), "y_")
+      swap
+      setproperty         QName(PackageNamespace(""), "y_")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "lastUpdate_")
+      pushbyte            50
+      divide
+      convert_i
+      setlocal3
+
+      jump                L71
+
+L44:
+      label
+      getlocal3
+      pushbyte            50
+      multiply
+      convert_i
+      setlocal            4
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "FreeList")
+      getlex              QName(PrivateNamespace("FilePrivateNS:FountainEffect"), "FountainParticle")
+      callproperty        QName(PackageNamespace(""), "newObject"), 1
+      getlex              QName(PrivateNamespace("FilePrivateNS:FountainEffect"), "FountainParticle")
+      astypelate
+      coerce              QName(PrivateNamespace("FilePrivateNS:FountainEffect"), "FountainParticle")
+      dup
+      setlocal            5
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "color_")
+      callpropvoid        QName(PackageNamespace(""), "setColor"), 1
+
+      getlocal            5
+      getlocal            4
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "restart"), 2
+
+      getlex              QName(PackageNamespace(""), "map_")
+      getlocal            5
+      getlex              QName(PackageNamespace(""), "x_")
+      getlex              QName(PackageNamespace(""), "y_")
+      callpropvoid        QName(PackageNamespace(""), "addObj"), 3
+
+      inclocal_i          3
+L71:
+      getlocal3
+      getlocal1
+      pushbyte            50
+      divide
+      iflt                L44
+
+      getlocal0
+      getlocal1
+      setproperty         QName(PackageNamespace(""), "lastUpdate_")
+
+      pushtrue
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.objects.particles:FountainEffect/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

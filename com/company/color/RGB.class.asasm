@@ -1,0 +1,444 @@
+class
+ refid "com.company.color:RGB"
+ instance QName(PackageNamespace("com.company.color"), "RGB")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.company.color:RGB")
+  iinit
+   name "com.company.color:RGB/RGB"
+   refid "com.company.color:RGB/instance/init"
+   param QName(PackageNamespace(""), "Number")
+   param QName(PackageNamespace(""), "Number")
+   param QName(PackageNamespace(""), "Number")
+   flag HAS_PARAM_NAMES
+   paramname "_arg_1"
+   paramname "_arg_2"
+   paramname "_arg_3"
+   body
+    maxstack 6
+    localcount 4
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     getlex              QName(PackageNamespace(""), "Math")
+     pushbyte            0
+     getlex              QName(PackageNamespace(""), "Math")
+     pushbyte            1
+     getlocal1
+     callproperty        QName(PackageNamespace(""), "min"), 2
+     callproperty        QName(PackageNamespace(""), "max"), 2
+     initproperty        QName(PackageNamespace(""), "r_")
+
+     getlocal0
+     getlex              QName(PackageNamespace(""), "Math")
+     pushbyte            0
+     getlex              QName(PackageNamespace(""), "Math")
+     pushbyte            1
+     getlocal2
+     callproperty        QName(PackageNamespace(""), "min"), 2
+     callproperty        QName(PackageNamespace(""), "max"), 2
+     initproperty        QName(PackageNamespace(""), "g_")
+
+     getlocal0
+     getlex              QName(PackageNamespace(""), "Math")
+     pushbyte            0
+     getlex              QName(PackageNamespace(""), "Math")
+     pushbyte            1
+     getlocal3
+     callproperty        QName(PackageNamespace(""), "min"), 2
+     callproperty        QName(PackageNamespace(""), "max"), 2
+     initproperty        QName(PackageNamespace(""), "b_")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "r_") type QName(PackageNamespace(""), "Number") end
+  trait slot QName(PackageNamespace(""), "g_") type QName(PackageNamespace(""), "Number") end
+  trait slot QName(PackageNamespace(""), "b_") type QName(PackageNamespace(""), "Number") end
+  trait method QName(PackageNamespace(""), "toHSV")
+   method
+    name "com.company.color:RGB/toHSV"
+    refid "com.company.color:RGB/instance/toHSV"
+    returns QName(PackageNamespace("com.company.color"), "HSV")
+    body
+     maxstack 4
+     localcount 7
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      pushnan
+      setlocal1
+
+      getlex              QName(PackageNamespace(""), "Math")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "r_")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "g_")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "b_")
+      callproperty        QName(PackageNamespace(""), "min"), 3
+      convert_d
+      setlocal2
+
+      getlex              QName(PackageNamespace(""), "Math")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "r_")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "g_")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "b_")
+      callproperty        QName(PackageNamespace(""), "max"), 3
+      convert_d
+      setlocal3
+
+      getlocal3
+      convert_d
+      setlocal            4
+
+      getlocal3
+      getlocal2
+      subtract
+      convert_d
+      setlocal            5
+
+      getlocal3
+      pushbyte            0
+      ifne                L41
+
+      findpropstrict      QName(PackageNamespace("com.company.color"), "HSV")
+      pushbyte            0
+      pushbyte            0
+      pushbyte            0
+      constructprop       QName(PackageNamespace("com.company.color"), "HSV"), 3
+      returnvalue
+
+L41:
+      getlocal            5
+      getlocal3
+      divide
+      convert_d
+      setlocal            6
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "r_")
+      getlocal3
+      ifne                L60
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "g_")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "b_")
+      subtract
+      getlocal            5
+      divide
+      convert_d
+      setlocal1
+
+      jump                L87
+
+L60:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "g_")
+      getlocal3
+      ifne                L76
+
+      pushbyte            2
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "b_")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "r_")
+      subtract
+      getlocal            5
+      divide
+      add
+      convert_d
+      setlocal1
+
+      jump                L87
+
+L76:
+      pushbyte            4
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "r_")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "g_")
+      subtract
+      getlocal            5
+      divide
+      add
+      convert_d
+      setlocal1
+
+L87:
+      getlocal1
+      pushbyte            60
+      multiply
+      convert_d
+      setlocal1
+
+      getlocal1
+      pushbyte            0
+      ifnlt               L100
+
+      getlocal1
+      pushshort           360
+      add
+      convert_d
+      setlocal1
+
+L100:
+      findpropstrict      QName(PackageNamespace("com.company.color"), "HSV")
+      getlocal1
+      getlocal            6
+      getlocal            4
+      constructprop       QName(PackageNamespace("com.company.color"), "HSV"), 3
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "toColor")
+   method
+    name "com.company.color:RGB/toColor"
+    refid "com.company.color:RGB/instance/toColor"
+    returns QName(PackageNamespace(""), "uint")
+    body
+     maxstack 7
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace(""), "int")
+      getlex              QName(PackageNamespace(""), "Math")
+      pushshort           255
+      getlex              QName(PackageNamespace(""), "Math")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "r_")
+      pushshort           255
+      multiply
+      callproperty        QName(PackageNamespace(""), "floor"), 1
+      callproperty        QName(PackageNamespace(""), "min"), 2
+      callproperty        QName(PackageNamespace(""), "int"), 1
+      pushbyte            16
+      lshift
+      findpropstrict      QName(PackageNamespace(""), "int")
+      getlex              QName(PackageNamespace(""), "Math")
+      pushshort           255
+      getlex              QName(PackageNamespace(""), "Math")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "g_")
+      pushshort           255
+      multiply
+      callproperty        QName(PackageNamespace(""), "floor"), 1
+      callproperty        QName(PackageNamespace(""), "min"), 2
+      callproperty        QName(PackageNamespace(""), "int"), 1
+      pushbyte            8
+      lshift
+      bitor
+      findpropstrict      QName(PackageNamespace(""), "int")
+      getlex              QName(PackageNamespace(""), "Math")
+      pushshort           255
+      getlex              QName(PackageNamespace(""), "Math")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "b_")
+      pushshort           255
+      multiply
+      callproperty        QName(PackageNamespace(""), "floor"), 1
+      callproperty        QName(PackageNamespace(""), "min"), 2
+      callproperty        QName(PackageNamespace(""), "int"), 1
+      bitor
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "toString")
+   method
+    name "com.company.color:RGB/toString"
+    refid "com.company.color:RGB/instance/toString"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 6
+     localcount 4
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace(""), "int")
+      getlex              QName(PackageNamespace(""), "Math")
+      pushshort           255
+      getlex              QName(PackageNamespace(""), "Math")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "r_")
+      pushshort           255
+      multiply
+      callproperty        QName(PackageNamespace(""), "floor"), 1
+      callproperty        QName(PackageNamespace(""), "min"), 2
+      callproperty        QName(PackageNamespace(""), "int"), 1
+      convert_i
+      setlocal1
+
+      findpropstrict      QName(PackageNamespace(""), "int")
+      getlex              QName(PackageNamespace(""), "Math")
+      pushshort           255
+      getlex              QName(PackageNamespace(""), "Math")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "g_")
+      pushshort           255
+      multiply
+      callproperty        QName(PackageNamespace(""), "floor"), 1
+      callproperty        QName(PackageNamespace(""), "min"), 2
+      callproperty        QName(PackageNamespace(""), "int"), 1
+      convert_i
+      setlocal2
+
+      findpropstrict      QName(PackageNamespace(""), "int")
+      getlex              QName(PackageNamespace(""), "Math")
+      pushshort           255
+      getlex              QName(PackageNamespace(""), "Math")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "b_")
+      pushshort           255
+      multiply
+      callproperty        QName(PackageNamespace(""), "floor"), 1
+      callproperty        QName(PackageNamespace(""), "min"), 2
+      callproperty        QName(PackageNamespace(""), "int"), 1
+      convert_i
+      setlocal3
+
+      getlocal1
+      pushbyte            15
+      ifnle               L51
+
+      pushstring          "0"
+      getlocal1
+      pushbyte            16
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "toString"), 1
+      add
+      coerce_a
+      jump                L55
+
+L51:
+      getlocal1
+      pushbyte            16
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "toString"), 1
+      coerce_a
+L55:
+      getlocal2
+      pushbyte            15
+      ifnle               L65
+
+      pushstring          "0"
+      getlocal2
+      pushbyte            16
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "toString"), 1
+      add
+      coerce_a
+      jump                L69
+
+L65:
+      getlocal2
+      pushbyte            16
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "toString"), 1
+      coerce_a
+L69:
+      add
+      getlocal3
+      pushbyte            15
+      ifnle               L80
+
+      pushstring          "0"
+      getlocal3
+      pushbyte            16
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "toString"), 1
+      add
+      coerce_a
+      jump                L84
+
+L80:
+      getlocal3
+      pushbyte            16
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "toString"), 1
+      coerce_a
+L84:
+      add
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  name ""
+  refid "com.company.color:RGB/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait method QName(PackageNamespace(""), "fromColor") flag FINAL dispid 3
+  method
+   name "com.company.color:RGB/fromColor"
+   refid "com.company.color:RGB/class/fromColor"
+   param QName(PackageNamespace(""), "uint")
+   returns QName(PackageNamespace("com.company.color"), "RGB")
+   flag HAS_PARAM_NAMES
+   paramname "_arg_1"
+   body
+    maxstack 5
+    localcount 2
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     getlocal1
+     pushbyte            16
+     rshift
+     pushshort           255
+     bitand
+     pushshort           255
+     divide
+     getlocal1
+     pushbyte            8
+     rshift
+     pushshort           255
+     bitand
+     pushshort           255
+     divide
+     getlocal1
+     pushshort           255
+     bitand
+     pushshort           255
+     divide
+     construct           3
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+end ; class

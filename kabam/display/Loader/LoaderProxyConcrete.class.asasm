@@ -1,0 +1,165 @@
+class
+ refid "kabam.display.Loader:LoaderProxyConcrete"
+ instance QName(PackageNamespace("kabam.display.Loader"), "LoaderProxyConcrete")
+  extends QName(PackageNamespace("kabam.display.Loader"), "LoaderProxy")
+  flag SEALED
+  iinit
+   name "LoaderProxyConcrete"
+   refid "kabam.display.Loader:LoaderProxyConcrete/instance/init"
+   body
+    maxstack 3
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     findpropstrict      QName(PackageNamespace("flash.display"), "Loader")
+     constructprop       QName(PackageNamespace("flash.display"), "Loader"), 0
+     callproperty        QName(PackageNamespace(""), "addChild"), 1
+     getlex              QName(PackageNamespace("flash.display"), "Loader")
+     astypelate
+     setproperty         QName(PrivateNamespace("kabam.display.Loader:LoaderProxyConcrete"), "loader")
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace("kabam.display.Loader:LoaderProxyConcrete"), "loader") type QName(PackageNamespace("flash.display"), "Loader") end
+  trait slot QName(PrivateNamespace("kabam.display.Loader:LoaderProxyConcrete"), "_contentLoaderInfo") type QName(PackageNamespace("kabam.display.LoaderInfo"), "LoaderInfoProxy") end
+  trait getter QName(PackageNamespace(""), "content") flag OVERRIDE
+   method
+    name "content"
+    refid "kabam.display.Loader:LoaderProxyConcrete/instance/content/getter"
+    returns QName(PackageNamespace("flash.display"), "DisplayObject")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.display.Loader:LoaderProxyConcrete"), "loader")
+      getproperty         QName(PackageNamespace(""), "content")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait getter QName(PackageNamespace(""), "contentLoaderInfo") flag OVERRIDE
+   method
+    name "contentLoaderInfo"
+    refid "kabam.display.Loader:LoaderProxyConcrete/instance/contentLoaderInfo/getter"
+    returns QName(PackageNamespace("kabam.display.LoaderInfo"), "LoaderInfoProxy")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.display.Loader:LoaderProxyConcrete"), "_contentLoaderInfo")
+      pushnull
+      ifne                L16
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("kabam.display.LoaderInfo"), "LoaderInfoProxyConcrete")
+      constructprop       QName(PackageNamespace("kabam.display.LoaderInfo"), "LoaderInfoProxyConcrete"), 0
+      setproperty         QName(PrivateNamespace("kabam.display.Loader:LoaderProxyConcrete"), "_contentLoaderInfo")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.display.Loader:LoaderProxyConcrete"), "_contentLoaderInfo")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.display.Loader:LoaderProxyConcrete"), "loader")
+      getproperty         QName(PackageNamespace(""), "contentLoaderInfo")
+      setproperty         QName(Namespace("kabam.display.LoaderInfo:LoaderInfoProxy"), "loaderInfo")
+
+L16:
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.display.Loader:LoaderProxyConcrete"), "_contentLoaderInfo")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "load") flag OVERRIDE
+   method
+    name "load"
+    refid "kabam.display.Loader:LoaderProxyConcrete/instance/load"
+    param QName(PackageNamespace("flash.net"), "URLRequest")
+    param QName(PackageNamespace("flash.system"), "LoaderContext")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_OPTIONAL
+    flag HAS_PARAM_NAMES
+    optional Null()
+    paramname "_arg1"
+    paramname "_arg2"
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.display.Loader:LoaderProxyConcrete"), "loader")
+      getlocal1
+      getlocal2
+      callpropvoid        QName(PackageNamespace(""), "load"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "unload") flag OVERRIDE
+   method
+    name "unload"
+    refid "kabam.display.Loader:LoaderProxyConcrete/instance/unload"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.display.Loader:LoaderProxyConcrete"), "loader")
+      callpropvoid        QName(PackageNamespace(""), "unload"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.display.Loader:LoaderProxyConcrete/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

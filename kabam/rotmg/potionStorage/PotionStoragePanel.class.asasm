@@ -1,0 +1,127 @@
+class
+ refid "kabam.rotmg.potionStorage:PotionStoragePanel"
+ instance QName(PackageNamespace("kabam.rotmg.potionStorage"), "PotionStoragePanel")
+  extends QName(PackageNamespace("com.company.assembleegameclient.ui.panels"), "ButtonPanel")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.potionStorage:PotionStoragePanel")
+  iinit
+   name "PotionStoragePanel"
+   refid "kabam.rotmg.potionStorage:PotionStoragePanel/instance/init"
+   param QName(PackageNamespace("com.company.assembleegameclient.game"), "GameSprite")
+   flag HAS_PARAM_NAMES
+   paramname "gs"
+   body
+    maxstack 4
+    localcount 2
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     getlocal1
+     pushstring          "Potion Storage"
+     pushstring          "View"
+     constructsuper      3
+
+     getlocal0
+     getlocal1
+     setproperty         QName(PrivateNamespace("kabam.rotmg.potionStorage:PotionStoragePanel"), "gameSprite_")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace("kabam.rotmg.potionStorage:PotionStoragePanel"), "gameSprite_") type QName(PackageNamespace("com.company.assembleegameclient.game"), "GameSprite") end
+  trait method QName(ProtectedNamespace("kabam.rotmg.potionStorage:PotionStoragePanel"), "onButtonClick") flag OVERRIDE
+   method
+    name "onButtonClick"
+    refid "kabam.rotmg.potionStorage:PotionStoragePanel/instance/kabam.rotmg.potionStorage:PotionStoragePanel:onButtonClick"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "evt"
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PrivateNamespace("kabam.rotmg.potionStorage:PotionStoragePanel"), "gameSprite_")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.potionStorage"), "PotionStorageModel")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.potionStorage:PotionStoragePanel"), "gameSprite_")
+      constructprop       QName(PackageNamespace("kabam.rotmg.potionStorage"), "PotionStorageModel"), 1
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(ProtectedNamespace("kabam.rotmg.potionStorage:PotionStoragePanel"), "onKeyDown")
+   method
+    name "onKeyDown"
+    refid "kabam.rotmg.potionStorage:PotionStoragePanel/instance/kabam.rotmg.potionStorage:PotionStoragePanel:onKeyDown"
+    param QName(PackageNamespace("flash.events"), "KeyboardEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "evt"
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "keyCode")
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.parameters"), "Parameters")
+      getproperty         QName(PackageNamespace(""), "data")
+      getproperty         Multiname("interact", [PrivateNamespace("kabam.rotmg.potionStorage:PotionStoragePanel"), ProtectedNamespace("kabam.rotmg.potionStorage:PotionStoragePanel"), StaticProtectedNs("kabam.rotmg.potionStorage:PotionStoragePanel"), StaticProtectedNs("com.company.assembleegameclient.ui.panels:ButtonPanel"), StaticProtectedNs("com.company.assembleegameclient.ui.panels:Panel"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.potionStorage"), PackageInternalNs("kabam.rotmg.potionStorage"), PrivateNamespace("FilePrivateNS:PotionStoragePanel"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      equals
+      dup
+      iffalse             L15
+
+      pop
+      getlex              QName(PackageNamespace(""), "stage")
+      getproperty         QName(PackageNamespace(""), "focus")
+      pushnull
+      equals
+L15:
+      iffalse             L22
+
+      getlex              QName(PrivateNamespace("kabam.rotmg.potionStorage:PotionStoragePanel"), "gameSprite_")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.potionStorage"), "PotionStorageModel")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.potionStorage:PotionStoragePanel"), "gameSprite_")
+      constructprop       QName(PackageNamespace("kabam.rotmg.potionStorage"), "PotionStorageModel"), 1
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+L22:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.potionStorage:PotionStoragePanel/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

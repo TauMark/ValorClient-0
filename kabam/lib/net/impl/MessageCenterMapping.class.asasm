@@ -1,0 +1,264 @@
+class
+ refid "kabam.lib.net.impl:MessageCenterMapping"
+ instance QName(PackageNamespace("kabam.lib.net.impl"), "MessageCenterMapping")
+  extends QName(PackageNamespace(""), "Object")
+  implements QName(PackageNamespace("kabam.lib.net.api"), "MessageMapping")
+  flag SEALED
+  iinit
+   name "MessageCenterMapping"
+   refid "kabam.lib.net.impl:MessageCenterMapping/instance/init"
+   body
+    maxstack 2
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     findpropstrict      QName(PrivateNamespace("FilePrivateNS:MessageCenterMapping"), "NullHandlerProxy")
+     constructprop       QName(PrivateNamespace("FilePrivateNS:MessageCenterMapping"), "NullHandlerProxy"), 0
+     findproperty        QName(PrivateNamespace("kabam.lib.net.impl:MessageCenterMapping"), "nullHandler")
+     swap
+     initproperty        QName(PrivateNamespace("kabam.lib.net.impl:MessageCenterMapping"), "nullHandler")
+
+     getlocal0
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.lib.net.impl:MessageCenterMapping"), "nullHandler")
+     setproperty         QName(PrivateNamespace("kabam.lib.net.impl:MessageCenterMapping"), "handler")
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait const QName(PrivateNamespace("kabam.lib.net.impl:MessageCenterMapping"), "nullHandler") type QName(PrivateNamespace("FilePrivateNS:MessageCenterMapping"), "NullHandlerProxy") end
+  trait slot QName(PrivateNamespace("kabam.lib.net.impl:MessageCenterMapping"), "id") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PrivateNamespace("kabam.lib.net.impl:MessageCenterMapping"), "injector") type QName(PackageNamespace("org.swiftsuspenders"), "Injector") end
+  trait slot QName(PrivateNamespace("kabam.lib.net.impl:MessageCenterMapping"), "messageType") type QName(PackageNamespace(""), "Class") end
+  trait slot QName(PrivateNamespace("kabam.lib.net.impl:MessageCenterMapping"), "population") type QName(PackageNamespace(""), "int") value Integer(1) end
+  trait slot QName(PrivateNamespace("kabam.lib.net.impl:MessageCenterMapping"), "handler") type QName(PackageNamespace("kabam.lib.net.api"), "MessageHandlerProxy") end
+  trait method QName(PackageNamespace(""), "setID")
+   method
+    name "setID"
+    refid "kabam.lib.net.impl:MessageCenterMapping/instance/setID"
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace("kabam.lib.net.api"), "MessageMapping")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      setproperty         QName(PrivateNamespace("kabam.lib.net.impl:MessageCenterMapping"), "id")
+
+      getlocal0
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setInjector")
+   method
+    name "setInjector"
+    refid "kabam.lib.net.impl:MessageCenterMapping/instance/setInjector"
+    param QName(PackageNamespace("org.swiftsuspenders"), "Injector")
+    returns QName(PackageNamespace("kabam.lib.net.impl"), "MessageCenterMapping")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      setproperty         QName(PrivateNamespace("kabam.lib.net.impl:MessageCenterMapping"), "injector")
+
+      getlocal0
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "toMessage")
+   method
+    name "toMessage"
+    refid "kabam.lib.net.impl:MessageCenterMapping/instance/toMessage"
+    param QName(PackageNamespace(""), "Class")
+    returns QName(PackageNamespace("kabam.lib.net.api"), "MessageMapping")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      setproperty         QName(PrivateNamespace("kabam.lib.net.impl:MessageCenterMapping"), "messageType")
+
+      getlocal0
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "toHandler")
+   method
+    name "toHandler"
+    refid "kabam.lib.net.impl:MessageCenterMapping/instance/toHandler"
+    param QName(PackageNamespace(""), "Class")
+    returns QName(PackageNamespace("kabam.lib.net.api"), "MessageMapping")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("kabam.lib.net.impl"), "ClassHandlerProxy")
+      constructprop       QName(PackageNamespace("kabam.lib.net.impl"), "ClassHandlerProxy"), 0
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "setType"), 1
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.lib.net.impl:MessageCenterMapping"), "injector")
+      callproperty        QName(PackageNamespace(""), "setInjector"), 1
+      setproperty         QName(PrivateNamespace("kabam.lib.net.impl:MessageCenterMapping"), "handler")
+
+      getlocal0
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "toMethod")
+   method
+    name "toMethod"
+    refid "kabam.lib.net.impl:MessageCenterMapping/instance/toMethod"
+    param QName(PackageNamespace(""), "Function")
+    returns QName(PackageNamespace("kabam.lib.net.api"), "MessageMapping")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("kabam.lib.net.impl"), "MethodHandlerProxy")
+      constructprop       QName(PackageNamespace("kabam.lib.net.impl"), "MethodHandlerProxy"), 0
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "setMethod"), 1
+      setproperty         QName(PrivateNamespace("kabam.lib.net.impl:MessageCenterMapping"), "handler")
+
+      getlocal0
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setPopulation")
+   method
+    name "setPopulation"
+    refid "kabam.lib.net.impl:MessageCenterMapping/instance/setPopulation"
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace("kabam.lib.net.api"), "MessageMapping")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      setproperty         QName(PrivateNamespace("kabam.lib.net.impl:MessageCenterMapping"), "population")
+
+      getlocal0
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "makePool")
+   method
+    name "makePool"
+    refid "kabam.lib.net.impl:MessageCenterMapping/instance/makePool"
+    returns QName(PackageNamespace("kabam.lib.net.impl"), "MessagePool")
+    body
+     maxstack 4
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("kabam.lib.net.impl"), "MessagePool")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.lib.net.impl:MessageCenterMapping"), "id")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.lib.net.impl:MessageCenterMapping"), "messageType")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.lib.net.impl:MessageCenterMapping"), "handler")
+      callproperty        QName(Namespace("kabam.lib.net.api:MessageHandlerProxy"), "getMethod"), 0
+      constructprop       QName(PackageNamespace("kabam.lib.net.impl"), "MessagePool"), 3
+      coerce              QName(PackageNamespace("kabam.lib.net.impl"), "MessagePool")
+      setlocal1
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.lib.net.impl:MessageCenterMapping"), "population")
+      callpropvoid        QName(PackageNamespace(""), "populate"), 1
+
+      getlocal1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.lib.net.impl:MessageCenterMapping/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

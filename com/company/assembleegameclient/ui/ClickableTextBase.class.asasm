@@ -1,0 +1,364 @@
+class
+ refid "com.company.assembleegameclient.ui:ClickableTextBase"
+ instance QName(PackageNamespace("com.company.assembleegameclient.ui"), "ClickableTextBase")
+  extends QName(PackageNamespace("flash.display"), "Sprite")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.company.assembleegameclient.ui:ClickableTextBase")
+  iinit
+   name "ClickableTextBase"
+   refid "com.company.assembleegameclient.ui:ClickableTextBase/instance/init"
+   param QName(PackageNamespace(""), "int")
+   param QName(PackageNamespace(""), "Boolean")
+   param QName(PackageNamespace(""), "String")
+   flag HAS_PARAM_NAMES
+   paramname "_arg1"
+   paramname "_arg2"
+   paramname "_arg3"
+   body
+    maxstack 5
+    localcount 4
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     getlocal0
+     callproperty        QName(ProtectedNamespace("com.company.assembleegameclient.ui:ClickableTextBase"), "makeText"), 0
+     getlocal1
+     callproperty        QName(PackageNamespace(""), "setSize"), 1
+     pushint             16777215
+     callproperty        QName(PackageNamespace(""), "setColor"), 1
+     setproperty         QName(PackageNamespace(""), "text_")
+
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "text_")
+     getlocal2
+     callpropvoid        QName(PackageNamespace(""), "setBold"), 1
+
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "text_")
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder")
+     constructprop       QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder"), 0
+     getlocal3
+     callproperty        QName(PackageNamespace(""), "setParams"), 1
+     callpropvoid        QName(PackageNamespace(""), "setStringBuilder"), 1
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "text_")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "text_")
+     findpropstrict      QName(PackageNamespace("flash.filters"), "DropShadowFilter")
+     pushbyte            0
+     pushbyte            0
+     pushbyte            0
+     constructprop       QName(PackageNamespace("flash.filters"), "DropShadowFilter"), 3
+     newarray            1
+     setproperty         QName(PackageNamespace(""), "filters")
+
+     findpropstrict      QName(PackageNamespace(""), "addEventListener")
+     pushstring          "mouseOver"
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui:ClickableTextBase"), "onMouseOver")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     findpropstrict      QName(PackageNamespace(""), "addEventListener")
+     pushstring          "mouseOut"
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui:ClickableTextBase"), "onMouseOut")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     findpropstrict      QName(PackageNamespace(""), "addEventListener")
+     pushstring          "click"
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui:ClickableTextBase"), "onMouseClick")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "text_") type QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete") end
+  trait slot QName(PackageNamespace(""), "defaultColor_") type QName(PackageNamespace(""), "uint") value Integer(16777215) end
+  trait method QName(PackageNamespace(""), "removeOnHoverEvents")
+   method
+    name "removeOnHoverEvents"
+    refid "com.company.assembleegameclient.ui:ClickableTextBase/instance/removeOnHoverEvents"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace(""), "removeEventListener")
+      pushstring          "mouseOver"
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui:ClickableTextBase"), "onMouseOver")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      findpropstrict      QName(PackageNamespace(""), "removeEventListener")
+      pushstring          "mouseOut"
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui:ClickableTextBase"), "onMouseOut")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(ProtectedNamespace("com.company.assembleegameclient.ui:ClickableTextBase"), "makeText")
+   method
+    name "makeText"
+    refid "com.company.assembleegameclient.ui:ClickableTextBase/instance/com.company.assembleegameclient.ui:ClickableTextBase:makeText"
+    returns QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete")
+      constructprop       QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete"), 0
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setAutoSize")
+   method
+    name "setAutoSize"
+    refid "com.company.assembleegameclient.ui:ClickableTextBase/instance/setAutoSize"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "text_")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "setAutoSize"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "makeStatic")
+   method
+    name "makeStatic"
+    refid "com.company.assembleegameclient.ui:ClickableTextBase/instance/makeStatic"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "text_")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder")
+      constructprop       QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder"), 0
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "setParams"), 1
+      callpropvoid        QName(PackageNamespace(""), "setStringBuilder"), 1
+
+      getlocal0
+      pushint             11776947
+      callpropvoid        QName(PackageNamespace(""), "setDefaultColor"), 1
+
+      pushfalse
+      findproperty        QName(PackageNamespace(""), "mouseEnabled")
+      swap
+      setproperty         QName(PackageNamespace(""), "mouseEnabled")
+
+      pushfalse
+      findproperty        QName(PackageNamespace(""), "mouseChildren")
+      swap
+      setproperty         QName(PackageNamespace(""), "mouseChildren")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setColor")
+   method
+    name "setColor"
+    refid "com.company.assembleegameclient.ui:ClickableTextBase/instance/setColor"
+    param QName(PackageNamespace(""), "uint")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "text_")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "setColor"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setDefaultColor")
+   method
+    name "setDefaultColor"
+    refid "com.company.assembleegameclient.ui:ClickableTextBase/instance/setDefaultColor"
+    param QName(PackageNamespace(""), "uint")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      setproperty         QName(PackageNamespace(""), "defaultColor_")
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "defaultColor_")
+      callpropvoid        QName(PackageNamespace(""), "setColor"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.ui:ClickableTextBase"), "onMouseOver")
+   method
+    name "onMouseOver"
+    refid "com.company.assembleegameclient.ui:ClickableTextBase/instance/com.company.assembleegameclient.ui:ClickableTextBase/instance/onMouseOver"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      pushint             16768133
+      callpropvoid        QName(PackageNamespace(""), "setColor"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.ui:ClickableTextBase"), "onMouseOut")
+   method
+    name "onMouseOut"
+    refid "com.company.assembleegameclient.ui:ClickableTextBase/instance/com.company.assembleegameclient.ui:ClickableTextBase/instance/onMouseOut"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "defaultColor_")
+      callpropvoid        QName(PackageNamespace(""), "setColor"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.ui:ClickableTextBase"), "onMouseClick")
+   method
+    name "onMouseClick"
+    refid "com.company.assembleegameclient.ui:ClickableTextBase/instance/com.company.assembleegameclient.ui:ClickableTextBase/instance/onMouseClick"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.sound"), "SoundEffectLibrary")
+      pushstring          "button_click"
+      callpropvoid        QName(PackageNamespace(""), "play"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.ui:ClickableTextBase/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

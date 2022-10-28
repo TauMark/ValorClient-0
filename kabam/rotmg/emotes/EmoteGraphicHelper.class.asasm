@@ -1,0 +1,347 @@
+class
+ refid "kabam.rotmg.emotes:EmoteGraphicHelper"
+ instance QName(PackageNamespace("kabam.rotmg.emotes"), "EmoteGraphicHelper")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  iinit
+   name "EmoteGraphicHelper"
+   refid "kabam.rotmg.emotes:EmoteGraphicHelper/instance/init"
+   body
+    maxstack 3
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     getlex              QName(PackageNamespace("__AS3__.vec"), "Vector")
+     getlex              QName(PackageNamespace("flash.display"), "DisplayObject")
+     applytype           1
+     construct           0
+     setproperty         QName(PrivateNamespace("kabam.rotmg.emotes:EmoteGraphicHelper"), "buffer")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace("kabam.rotmg.emotes:EmoteGraphicHelper"), "buffer") type TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("flash.display"), "DisplayObject")>) end
+  trait method QName(PackageNamespace(""), "getChatBubbleText")
+   method
+    name "getChatBubbleText"
+    refid "kabam.rotmg.emotes:EmoteGraphicHelper/instance/getChatBubbleText"
+    param QName(PackageNamespace(""), "String")
+    param QName(PackageNamespace(""), "Boolean")
+    param QName(PackageNamespace(""), "uint")
+    returns QName(PackageNamespace("flash.display"), "Sprite")
+    flag HAS_PARAM_NAMES
+    paramname "param1"
+    paramname "param2"
+    paramname "param3"
+    body
+     maxstack 4
+     localcount 4
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      getlocal2
+      getlocal3
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.emotes:EmoteGraphicHelper"), "add"), 3
+
+      findpropstrict      QName(PrivateNamespace("FilePrivateNS:EmoteGraphicHelper"), "Drawer")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.emotes:EmoteGraphicHelper"), "buffer")
+      pushshort           150
+      pushbyte            17
+      constructprop       QName(PrivateNamespace("FilePrivateNS:EmoteGraphicHelper"), "Drawer"), 3
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.emotes:EmoteGraphicHelper"), "getAllWords")
+   method
+    name "getAllWords"
+    refid "kabam.rotmg.emotes:EmoteGraphicHelper/instance/kabam.rotmg.emotes:EmoteGraphicHelper/getAllWords"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "Array")
+    flag HAS_PARAM_NAMES
+    paramname "param1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      pushstring          " "
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "split"), 1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.emotes:EmoteGraphicHelper"), "add")
+   method
+    name "add"
+    refid "kabam.rotmg.emotes:EmoteGraphicHelper/instance/kabam.rotmg.emotes:EmoteGraphicHelper/add"
+    param QName(PackageNamespace(""), "String")
+    param QName(PackageNamespace(""), "Boolean")
+    param QName(PackageNamespace(""), "uint")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "param1"
+    paramname "param2"
+    paramname "param3"
+    body
+     maxstack 5
+     localcount 8
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      coerce              QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "StringBuilder")
+      setlocal            5
+
+      pushnull
+      coerce_s
+      setlocal            4
+
+      pushbyte            0
+      setlocal            7
+
+      getlocal0
+      getlocal1
+      callproperty        QName(PrivateNamespace("kabam.rotmg.emotes:EmoteGraphicHelper"), "getAllWords"), 1
+      setlocal            6
+
+      jump                L45
+
+L15:
+      label
+      getlocal            6
+      getlocal            7
+      nextvalue
+      coerce_s
+      setlocal            4
+
+      getlex              QName(PackageNamespace("kabam.rotmg.emotes"), "Emotes")
+      getlocal            4
+      callproperty        QName(PackageNamespace(""), "hasEmote"), 1
+      iffalse             L32
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.emotes:EmoteGraphicHelper"), "buffer")
+      getlex              QName(PackageNamespace("kabam.rotmg.emotes"), "Emotes")
+      getlocal            4
+      callproperty        QName(PackageNamespace(""), "getEmote"), 1
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+
+      jump                L45
+
+L32:
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "StaticStringBuilder")
+      getlocal            4
+      constructprop       QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "StaticStringBuilder"), 1
+      coerce              QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "StringBuilder")
+      setlocal            5
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.emotes:EmoteGraphicHelper"), "buffer")
+      getlocal0
+      getlocal            5
+      getlocal2
+      getlocal3
+      callproperty        QName(PrivateNamespace("kabam.rotmg.emotes:EmoteGraphicHelper"), "makeNormalText"), 3
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+
+L45:
+      hasnext2            6, 7
+      iftrue              L15
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.emotes:EmoteGraphicHelper"), "makeNormalText")
+   method
+    name "makeNormalText"
+    refid "kabam.rotmg.emotes:EmoteGraphicHelper/instance/kabam.rotmg.emotes:EmoteGraphicHelper/makeNormalText"
+    param QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "StringBuilder")
+    param QName(PackageNamespace(""), "Boolean")
+    param QName(PackageNamespace(""), "uint")
+    returns QName(PackageNamespace("flash.text"), "TextField")
+    flag HAS_PARAM_NAMES
+    paramname "param1"
+    paramname "param2"
+    paramname "param3"
+    body
+     maxstack 2
+     localcount 6
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      coerce              QName(PackageNamespace("flash.text"), "TextField")
+      setlocal            5
+
+      findpropstrict      QName(PackageNamespace("flash.text"), "TextField")
+      constructprop       QName(PackageNamespace("flash.text"), "TextField"), 0
+      coerce              QName(PackageNamespace("flash.text"), "TextField")
+      dup
+      setlocal            5
+
+      pushstring          "left"
+      setproperty         QName(PackageNamespace(""), "autoSize")
+
+      getlocal            5
+      pushtrue
+      setproperty         QName(PackageNamespace(""), "embedFonts")
+
+      findpropstrict      QName(PackageNamespace("flash.text"), "TextFormat")
+      constructprop       QName(PackageNamespace("flash.text"), "TextFormat"), 0
+      coerce              QName(PackageNamespace("flash.text"), "TextFormat")
+      dup
+      setlocal            4
+
+      pushstring          "Myriad Pro"
+      setproperty         QName(PackageNamespace(""), "font")
+
+      getlocal            4
+      pushbyte            14
+      setproperty         QName(PackageNamespace(""), "size")
+
+      getlocal            4
+      getlocal2
+      setproperty         QName(PackageNamespace(""), "bold")
+
+      getlocal            4
+      getlocal3
+      setproperty         QName(PackageNamespace(""), "color")
+
+      getlocal            5
+      getlocal            4
+      setproperty         QName(PackageNamespace(""), "defaultTextFormat")
+
+      getlocal            5
+      pushfalse
+      setproperty         QName(PackageNamespace(""), "selectable")
+
+      getlocal            5
+      pushfalse
+      setproperty         QName(PackageNamespace(""), "mouseEnabled")
+
+      getlocal            5
+      getlocal1
+      callproperty        QName(Namespace("kabam.rotmg.text.view.stringBuilder:StringBuilder"), "getString"), 0
+      setproperty         QName(PackageNamespace(""), "text")
+
+      getlocal            5
+      getproperty         QName(PackageNamespace(""), "textWidth")
+      pushshort           150
+      ifngt               L57
+
+      getlocal            5
+      pushtrue
+      setproperty         QName(PackageNamespace(""), "multiline")
+
+      getlocal            5
+      pushtrue
+      setproperty         QName(PackageNamespace(""), "wordWrap")
+
+      getlocal            5
+      pushshort           150
+      setproperty         QName(PackageNamespace(""), "width")
+
+L57:
+      getlocal            5
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.emotes:EmoteGraphicHelper/class/init"
+  body
+   maxstack 2
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 1
+   code
+    getlocal0
+    pushscope
+
+    findpropstrict      QName(PrivateNamespace("kabam.rotmg.emotes:EmoteGraphicHelper"), "_J_R_")
+    callproperty        QName(PrivateNamespace("kabam.rotmg.emotes:EmoteGraphicHelper"), "_J_R_"), 0
+    findproperty        QName(PrivateNamespace("kabam.rotmg.emotes:EmoteGraphicHelper"), "tField")
+    swap
+    initproperty        QName(PrivateNamespace("kabam.rotmg.emotes:EmoteGraphicHelper"), "tField")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PrivateNamespace("kabam.rotmg.emotes:EmoteGraphicHelper"), "tField") type QName(PackageNamespace("flash.text"), "TextField") end
+ trait method QName(PrivateNamespace("kabam.rotmg.emotes:EmoteGraphicHelper"), "_J_R_")
+  method
+   name "_J_R_"
+   refid "kabam.rotmg.emotes:EmoteGraphicHelper/class/kabam.rotmg.emotes:EmoteGraphicHelper/_J_R_"
+   returns QName(PackageNamespace("flash.text"), "TextField")
+   body
+    maxstack 2
+    localcount 3
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     findpropstrict      QName(PackageNamespace("flash.text"), "TextField")
+     constructprop       QName(PackageNamespace("flash.text"), "TextField"), 0
+     coerce              QName(PackageNamespace("flash.text"), "TextField")
+     setlocal2
+
+     findpropstrict      QName(PackageNamespace("flash.text"), "TextFormat")
+     constructprop       QName(PackageNamespace("flash.text"), "TextFormat"), 0
+     coerce              QName(PackageNamespace("flash.text"), "TextFormat")
+     setlocal1
+
+     getlocal1
+     pushbyte            14
+     setproperty         QName(PackageNamespace(""), "size")
+
+     getlocal1
+     pushfalse
+     setproperty         QName(PackageNamespace(""), "bold")
+
+     getlocal2
+     getlocal1
+     setproperty         QName(PackageNamespace(""), "defaultTextFormat")
+
+     getlocal2
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+end ; class

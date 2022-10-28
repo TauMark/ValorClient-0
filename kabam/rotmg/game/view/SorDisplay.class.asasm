@@ -1,0 +1,212 @@
+class
+ refid "kabam.rotmg.game.view:SorDisplay"
+ instance QName(PackageNamespace("kabam.rotmg.game.view"), "SorDisplay")
+  extends QName(PackageNamespace("flash.display"), "Sprite")
+  flag SEALED
+  iinit
+   name "SorDisplay"
+   refid "kabam.rotmg.game.view:SorDisplay/instance/init"
+   param QName(PackageNamespace("com.company.assembleegameclient.objects"), "Player")
+   flag HAS_PARAM_NAMES
+   paramname "_arg1"
+   body
+    maxstack 6
+    localcount 2
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     getlocal1
+     setproperty         QName(PrivateNamespace("kabam.rotmg.game.view:SorDisplay"), "player")
+
+     getlocal0
+     getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "TextureRedrawer")
+     getlex              QName(PackageNamespace("com.company.util"), "AssetLibrary")
+     pushstring          "d3LofiObjEmbed"
+     pushshort           438
+     callproperty        QName(PackageNamespace(""), "getImageFromSet"), 2
+     pushbyte            64
+     pushtrue
+     pushbyte            0
+     callproperty        QName(PackageNamespace(""), "redraw"), 4
+     setproperty         QName(PrivateNamespace("kabam.rotmg.game.view:SorDisplay"), "sorTexture")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete")
+     constructprop       QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete"), 0
+     pushbyte            11
+     callproperty        QName(PackageNamespace(""), "setSize"), 1
+     pushtrue
+     callproperty        QName(PackageNamespace(""), "setBold"), 1
+     pushint             16777215
+     callproperty        QName(PackageNamespace(""), "setColor"), 1
+     setproperty         QName(PrivateNamespace("kabam.rotmg.game.view:SorDisplay"), "sorFragments")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:SorDisplay"), "sorFragments")
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "StaticStringBuilder")
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:SorDisplay"), "player")
+     getproperty         QName(PackageNamespace(""), "sorStorage_")
+     pushstring          "/60"
+     add
+     constructprop       QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "StaticStringBuilder"), 1
+     callpropvoid        QName(PackageNamespace(""), "setStringBuilder"), 1
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:SorDisplay"), "sorFragments")
+     pushbyte            18
+     setproperty         QName(PackageNamespace(""), "x")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:SorDisplay"), "sorFragments")
+     pushbyte            40
+     setproperty         QName(PackageNamespace(""), "y")
+
+     getlocal0
+     constructsuper      0
+
+     pushfalse
+     findproperty        QName(PackageNamespace(""), "mouseChildren")
+     swap
+     setproperty         QName(PackageNamespace(""), "mouseChildren")
+
+     getlocal0
+     getlex              QName(PackageNamespace("kabam.rotmg.ui"), "UIUtils")
+     pushbyte            32
+     pushbyte            32
+     callproperty        QName(PackageNamespace(""), "makeHUDBackground"), 2
+     setproperty         QName(PrivateNamespace("kabam.rotmg.game.view:SorDisplay"), "background")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:SorDisplay"), "background")
+     pushbyte            17
+     setproperty         QName(PackageNamespace(""), "x")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:SorDisplay"), "background")
+     pushbyte            5
+     setproperty         QName(PackageNamespace(""), "y")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("flash.display"), "Bitmap")
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:SorDisplay"), "sorTexture")
+     constructprop       QName(PackageNamespace("flash.display"), "Bitmap"), 1
+     setproperty         QName(PrivateNamespace("kabam.rotmg.game.view:SorDisplay"), "bitmap")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:SorDisplay"), "bitmap")
+     pushbyte            7
+     setproperty         QName(PackageNamespace(""), "x")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:SorDisplay"), "bitmap")
+     pushbyte            -5
+     setproperty         QName(PackageNamespace(""), "y")
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:SorDisplay"), "background")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:SorDisplay"), "bitmap")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:SorDisplay"), "sorFragments")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace("kabam.rotmg.game.view:SorDisplay"), "bitmap") type QName(PackageNamespace("flash.display"), "Bitmap") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.game.view:SorDisplay"), "background") type QName(PackageNamespace("flash.display"), "Sprite") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.game.view:SorDisplay"), "sorTexture") type QName(PackageNamespace("flash.display"), "BitmapData") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.game.view:SorDisplay"), "sorFragments") type QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete") end
+  trait slot QName(PackageNamespace(""), "gs_") type QName(PackageNamespace("com.company.assembleegameclient.game"), "AGameSprite") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.game.view:SorDisplay"), "player") type QName(PackageNamespace("com.company.assembleegameclient.objects"), "Player") end
+  trait method QName(PackageNamespace(""), "drawAsClosed")
+   method
+    name "drawAsClosed"
+    refid "kabam.rotmg.game.view:SorDisplay/instance/drawAsClosed"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:SorDisplay"), "background")
+      dup
+      iffalse             L13
+
+      pop
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:SorDisplay"), "background")
+      getproperty         QName(PackageNamespace(""), "parent")
+      getlocal0
+      equals
+      coerce_a
+L13:
+      iffalse             L18
+
+      findpropstrict      QName(PackageNamespace(""), "removeChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:SorDisplay"), "background")
+      callpropvoid        QName(PackageNamespace(""), "removeChild"), 1
+
+L18:
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:SorDisplay"), "bitmap")
+      dup
+      iffalse             L29
+
+      pop
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:SorDisplay"), "bitmap")
+      getproperty         QName(PackageNamespace(""), "parent")
+      getlocal0
+      equals
+      coerce_a
+L29:
+      iffalse             L34
+
+      findpropstrict      QName(PackageNamespace(""), "removeChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:SorDisplay"), "bitmap")
+      callpropvoid        QName(PackageNamespace(""), "removeChild"), 1
+
+L34:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.game.view:SorDisplay/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PackageNamespace(""), "IMAGE_NAME") type QName(PackageNamespace(""), "String") value Utf8("d3LofiObjEmbed") end
+ trait const QName(PackageNamespace(""), "IMAGE_ID") type QName(PackageNamespace(""), "int") value Integer(438) end
+end ; class

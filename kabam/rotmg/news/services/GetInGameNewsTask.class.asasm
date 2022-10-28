@@ -1,0 +1,366 @@
+class
+ refid "kabam.rotmg.news.services:GetInGameNewsTask"
+ instance QName(PackageNamespace("kabam.rotmg.news.services"), "GetInGameNewsTask")
+  extends QName(PackageNamespace("kabam.lib.tasks"), "BaseTask")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.news.services:GetInGameNewsTask")
+  iinit
+   refid "kabam.rotmg.news.services:GetInGameNewsTask/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "logger") flag METADATA type QName(PackageNamespace("robotlegs.bender.framework.api"), "ILogger")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "client") flag METADATA type QName(PackageNamespace("kabam.rotmg.appengine.api"), "AppEngineClient")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "model") flag METADATA type QName(PackageNamespace("kabam.rotmg.news.model"), "NewsModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "addToQueueSignal") flag METADATA type QName(PackageNamespace("kabam.rotmg.dialogs.control"), "AddPopupToStartupQueueSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "openDialogSignal") flag METADATA type QName(PackageNamespace("kabam.rotmg.dialogs.control"), "OpenDialogSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PrivateNamespace("kabam.rotmg.news.services:GetInGameNewsTask"), "requestData") type QName(PackageNamespace(""), "Object") end
+  trait method QName(ProtectedNamespace("kabam.rotmg.news.services:GetInGameNewsTask"), "startTask") flag OVERRIDE
+   method
+    name "startTask"
+    refid "kabam.rotmg.news.services:GetInGameNewsTask/instance/kabam.rotmg.news.services:GetInGameNewsTask:startTask"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "logger")
+      pushstring          "GetInGameNewsTask start"
+      callpropvoid        QName(Namespace("robotlegs.bender.framework.api:ILogger"), "info"), 1
+
+      getlocal0
+      getlocal0
+      callproperty        QName(PackageNamespace(""), "makeRequestData"), 0
+      setproperty         QName(PrivateNamespace("kabam.rotmg.news.services:GetInGameNewsTask"), "requestData")
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.news.services:GetInGameNewsTask"), "sendRequest"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "makeRequestData")
+   method
+    name "makeRequestData"
+    refid "kabam.rotmg.news.services:GetInGameNewsTask/instance/makeRequestData"
+    returns QName(PackageNamespace(""), "Object")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      newobject           0
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.news.services:GetInGameNewsTask"), "sendRequest")
+   method
+    name "sendRequest"
+    refid "kabam.rotmg.news.services:GetInGameNewsTask/instance/kabam.rotmg.news.services:GetInGameNewsTask/instance/sendRequest"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "client")
+      getproperty         QName(Namespace("kabam.rotmg.appengine.api:AppEngineClient"), "complete")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.news.services:GetInGameNewsTask"), "onComplete")
+      callpropvoid        QName(PackageNamespace(""), "addOnce"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "client")
+      pushstring          "/inGameNews/getNews"
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.news.services:GetInGameNewsTask"), "requestData")
+      callpropvoid        QName(Namespace("kabam.rotmg.appengine.api:AppEngineClient"), "sendRequest"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.news.services:GetInGameNewsTask"), "onComplete")
+   method
+    name "onComplete"
+    refid "kabam.rotmg.news.services:GetInGameNewsTask/instance/kabam.rotmg.news.services:GetInGameNewsTask/instance/onComplete"
+    param QName(PackageNamespace(""), "Boolean")
+    param null
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    paramname "_arg2"
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "logger")
+      pushstring          "String response from GetInGameNewsTask: "
+      getlocal2
+      add
+      callpropvoid        QName(Namespace("robotlegs.bender.framework.api:ILogger"), "info"), 1
+
+      getlocal1
+      iffalse             L14
+
+      getlocal0
+      getlocal2
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.news.services:GetInGameNewsTask"), "parseNews"), 1
+
+      jump                L17
+
+L14:
+      findpropstrict      QName(ProtectedNamespace("kabam.lib.tasks:BaseTask"), "completeTask")
+      pushtrue
+      callpropvoid        QName(ProtectedNamespace("kabam.lib.tasks:BaseTask"), "completeTask"), 1
+
+L17:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.news.services:GetInGameNewsTask"), "parseNews")
+   method
+    name "parseNews"
+    refid "kabam.rotmg.news.services:GetInGameNewsTask/instance/kabam.rotmg.news.services:GetInGameNewsTask/instance/parseNews"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 6
+     localcount 9
+     initscopedepth 0
+     maxscopedepth 2
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      setlocal3
+
+      pushnull
+      setlocal            4
+
+      pushnull
+      setlocal            5
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "logger")
+      pushstring          "Parsing news"
+      callpropvoid        QName(Namespace("robotlegs.bender.framework.api:ILogger"), "info"), 1
+
+L12:
+      getlex              QName(PackageNamespace(""), "JSON")
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "parse"), 1
+      coerce              QName(PackageNamespace(""), "Object")
+      setlocal3
+
+      pushbyte            0
+      setlocal            8
+
+      getlocal3
+      setlocal            7
+
+      jump                L68
+
+L22:
+      label
+      getlocal            7
+      getlocal            8
+      nextvalue
+      coerce              QName(PackageNamespace(""), "Object")
+      setlocal            4
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "logger")
+      pushstring          "Parse single news"
+      callpropvoid        QName(Namespace("robotlegs.bender.framework.api:ILogger"), "info"), 1
+
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.news.model"), "InGameNews")
+      constructprop       QName(PackageNamespace("kabam.rotmg.news.model"), "InGameNews"), 0
+      coerce              QName(PackageNamespace("kabam.rotmg.news.model"), "InGameNews")
+      dup
+      setlocal            5
+
+      getlocal            4
+      getproperty         Multiname("newsKey", [PrivateNamespace("kabam.rotmg.news.services:GetInGameNewsTask"), ProtectedNamespace("kabam.rotmg.news.services:GetInGameNewsTask"), StaticProtectedNs("kabam.rotmg.news.services:GetInGameNewsTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.news.services"), PackageInternalNs("kabam.rotmg.news.services"), PrivateNamespace("FilePrivateNS:GetInGameNewsTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      setproperty         QName(PackageNamespace(""), "newsKey")
+
+      getlocal            5
+      getlocal            4
+      getproperty         Multiname("showAtStartup", [PrivateNamespace("kabam.rotmg.news.services:GetInGameNewsTask"), ProtectedNamespace("kabam.rotmg.news.services:GetInGameNewsTask"), StaticProtectedNs("kabam.rotmg.news.services:GetInGameNewsTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.news.services"), PackageInternalNs("kabam.rotmg.news.services"), PrivateNamespace("FilePrivateNS:GetInGameNewsTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      setproperty         QName(PackageNamespace(""), "showAtStartup")
+
+      getlocal            5
+      getlocal            4
+      getproperty         Multiname("startTime", [PrivateNamespace("kabam.rotmg.news.services:GetInGameNewsTask"), ProtectedNamespace("kabam.rotmg.news.services:GetInGameNewsTask"), StaticProtectedNs("kabam.rotmg.news.services:GetInGameNewsTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.news.services"), PackageInternalNs("kabam.rotmg.news.services"), PrivateNamespace("FilePrivateNS:GetInGameNewsTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      setproperty         QName(PackageNamespace(""), "startTime")
+
+      getlocal            5
+      getlocal            4
+      getproperty         Multiname("text", [PrivateNamespace("kabam.rotmg.news.services:GetInGameNewsTask"), ProtectedNamespace("kabam.rotmg.news.services:GetInGameNewsTask"), StaticProtectedNs("kabam.rotmg.news.services:GetInGameNewsTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.news.services"), PackageInternalNs("kabam.rotmg.news.services"), PrivateNamespace("FilePrivateNS:GetInGameNewsTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      setproperty         QName(PackageNamespace(""), "text")
+
+      getlocal            5
+      getlocal            4
+      getproperty         Multiname("title", [PrivateNamespace("kabam.rotmg.news.services:GetInGameNewsTask"), ProtectedNamespace("kabam.rotmg.news.services:GetInGameNewsTask"), StaticProtectedNs("kabam.rotmg.news.services:GetInGameNewsTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.news.services"), PackageInternalNs("kabam.rotmg.news.services"), PrivateNamespace("FilePrivateNS:GetInGameNewsTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      setproperty         QName(PackageNamespace(""), "title")
+
+      getlocal            5
+      getlocal            4
+      getproperty         Multiname("platform", [PrivateNamespace("kabam.rotmg.news.services:GetInGameNewsTask"), ProtectedNamespace("kabam.rotmg.news.services:GetInGameNewsTask"), StaticProtectedNs("kabam.rotmg.news.services:GetInGameNewsTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.news.services"), PackageInternalNs("kabam.rotmg.news.services"), PrivateNamespace("FilePrivateNS:GetInGameNewsTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      setproperty         QName(PackageNamespace(""), "platform")
+
+      getlocal            5
+      getlocal            4
+      getproperty         Multiname("weight", [PrivateNamespace("kabam.rotmg.news.services:GetInGameNewsTask"), ProtectedNamespace("kabam.rotmg.news.services:GetInGameNewsTask"), StaticProtectedNs("kabam.rotmg.news.services:GetInGameNewsTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.news.services"), PackageInternalNs("kabam.rotmg.news.services"), PrivateNamespace("FilePrivateNS:GetInGameNewsTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      setproperty         QName(PackageNamespace(""), "weight")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "model")
+      getlocal            5
+      callpropvoid        QName(PackageNamespace(""), "addInGameNews"), 1
+
+L68:
+      hasnext2            7, 8
+      iftrue              L22
+
+L70:
+      jump                L81
+
+L71:
+      getlocal0
+      pushscope
+
+      newcatch            0
+      dup
+      setlocal            8
+
+      dup
+      pushscope
+
+      swap
+      setslot             1
+
+      popscope
+L81:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "model")
+      callproperty        QName(PackageNamespace(""), "getFirstNews"), 0
+      coerce              QName(PackageNamespace("kabam.rotmg.news.model"), "InGameNews")
+      setlocal2
+
+      getlocal2
+      dup
+      iffalse             L93
+
+      pop
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "showAtStartup")
+      coerce_a
+L93:
+      dup
+      iffalse             L100
+
+      pop
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "model")
+      callproperty        QName(PackageNamespace(""), "hasUpdates"), 0
+      coerce_a
+L100:
+      iffalse             L111
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "addToQueueSignal")
+      pushstring          "news_popup"
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "openDialogSignal")
+      pushbyte            -1
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.news.view"), "NewsModal")
+      pushtrue
+      constructprop       QName(PackageNamespace("kabam.rotmg.news.view"), "NewsModal"), 1
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 4
+
+L111:
+      findpropstrict      QName(ProtectedNamespace("kabam.lib.tasks:BaseTask"), "completeTask")
+      pushtrue
+      callpropvoid        QName(ProtectedNamespace("kabam.lib.tasks:BaseTask"), "completeTask"), 1
+
+      returnvoid
+     end ; code
+     try from L12 to L70 target L71 type QName(PackageNamespace(""), "Error") name QName(PackageInternalNs("kabam.rotmg.news.services"), "e") end
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.news.services:GetInGameNewsTask/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

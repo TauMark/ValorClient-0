@@ -1,0 +1,398 @@
+class
+ refid "com.company.assembleegameclient.mapeditor:Element"
+ instance QName(PackageNamespace("com.company.assembleegameclient.mapeditor"), "Element")
+  extends QName(PackageNamespace("flash.display"), "Sprite")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.company.assembleegameclient.mapeditor:Element")
+  iinit
+   name "Element"
+   refid "com.company.assembleegameclient.mapeditor:Element/instance/init"
+   param QName(PackageNamespace(""), "int")
+   flag HAS_PARAM_NAMES
+   paramname "_arg1"
+   body
+    maxstack 3
+    localcount 2
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     getlocal1
+     setproperty         QName(PackageNamespace(""), "type_")
+
+     findpropstrict      QName(PackageNamespace(""), "addEventListener")
+     pushstring          "addedToStage"
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.mapeditor:Element"), "onAddedToStage")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     findpropstrict      QName(PackageNamespace(""), "addEventListener")
+     pushstring          "removedFromStage"
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.mapeditor:Element"), "onRemovedFromStage")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "type_") type QName(PackageNamespace(""), "int") end
+  trait slot QName(ProtectedNamespace("com.company.assembleegameclient.mapeditor:Element"), "selected_") type QName(PackageNamespace(""), "Boolean") value False() end
+  trait slot QName(ProtectedNamespace("com.company.assembleegameclient.mapeditor:Element"), "mouseOver_") type QName(PackageNamespace(""), "Boolean") value False() end
+  trait method QName(PackageNamespace(""), "setSelected")
+   method
+    name "setSelected"
+    refid "com.company.assembleegameclient.mapeditor:Element/instance/setSelected"
+    param QName(PackageNamespace(""), "Boolean")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      setproperty         QName(ProtectedNamespace("com.company.assembleegameclient.mapeditor:Element"), "selected_")
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("com.company.assembleegameclient.mapeditor:Element"), "draw"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.mapeditor:Element"), "onAddedToStage")
+   method
+    name "onAddedToStage"
+    refid "com.company.assembleegameclient.mapeditor:Element/instance/com.company.assembleegameclient.mapeditor:Element/instance/onAddedToStage"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace(""), "addEventListener")
+      pushstring          "mouseOver"
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.mapeditor:Element"), "onMouseOver")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      findpropstrict      QName(PackageNamespace(""), "addEventListener")
+      pushstring          "rollOut"
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.mapeditor:Element"), "onRollOut")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.mapeditor:Element"), "onRemovedFromStage")
+   method
+    name "onRemovedFromStage"
+    refid "com.company.assembleegameclient.mapeditor:Element/instance/com.company.assembleegameclient.mapeditor:Element/instance/onRemovedFromStage"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace(""), "removeEventListener")
+      pushstring          "mouseOver"
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.mapeditor:Element"), "onMouseOver")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      findpropstrict      QName(PackageNamespace(""), "removeEventListener")
+      pushstring          "rollOut"
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.mapeditor:Element"), "onRollOut")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.mapeditor:Element"), "onMouseOver")
+   method
+    name "onMouseOver"
+    refid "com.company.assembleegameclient.mapeditor:Element/instance/com.company.assembleegameclient.mapeditor:Element/instance/onMouseOver"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      pushtrue
+      setproperty         QName(ProtectedNamespace("com.company.assembleegameclient.mapeditor:Element"), "mouseOver_")
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("com.company.assembleegameclient.mapeditor:Element"), "draw"), 0
+
+      getlocal0
+      getlocal0
+      callproperty        QName(ProtectedNamespace("com.company.assembleegameclient.mapeditor:Element"), "getToolTip"), 0
+      callpropvoid        QName(ProtectedNamespace("com.company.assembleegameclient.mapeditor:Element"), "setToolTip"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.mapeditor:Element"), "onRollOut")
+   method
+    name "onRollOut"
+    refid "com.company.assembleegameclient.mapeditor:Element/instance/com.company.assembleegameclient.mapeditor:Element/instance/onRollOut"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      pushfalse
+      setproperty         QName(ProtectedNamespace("com.company.assembleegameclient.mapeditor:Element"), "mouseOver_")
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("com.company.assembleegameclient.mapeditor:Element"), "draw"), 0
+
+      getlocal0
+      callpropvoid        QName(ProtectedNamespace("com.company.assembleegameclient.mapeditor:Element"), "removeTooltip"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(ProtectedNamespace("com.company.assembleegameclient.mapeditor:Element"), "setToolTip")
+   method
+    name "setToolTip"
+    refid "com.company.assembleegameclient.mapeditor:Element/instance/com.company.assembleegameclient.mapeditor:Element:setToolTip"
+    param QName(PackageNamespace("com.company.assembleegameclient.ui.tooltip"), "ToolTip")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      callpropvoid        QName(ProtectedNamespace("com.company.assembleegameclient.mapeditor:Element"), "removeTooltip"), 0
+
+      getlocal1
+      findproperty        QName(StaticProtectedNs("com.company.assembleegameclient.mapeditor:Element"), "toolTip_")
+      swap
+      setproperty         QName(StaticProtectedNs("com.company.assembleegameclient.mapeditor:Element"), "toolTip_")
+
+      getlex              QName(StaticProtectedNs("com.company.assembleegameclient.mapeditor:Element"), "toolTip_")
+      pushnull
+      ifeq                L14
+
+      getlex              QName(PackageNamespace(""), "stage")
+      getlex              QName(StaticProtectedNs("com.company.assembleegameclient.mapeditor:Element"), "toolTip_")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+L14:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(ProtectedNamespace("com.company.assembleegameclient.mapeditor:Element"), "removeTooltip")
+   method
+    name "removeTooltip"
+    refid "com.company.assembleegameclient.mapeditor:Element/instance/com.company.assembleegameclient.mapeditor:Element:removeTooltip"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(StaticProtectedNs("com.company.assembleegameclient.mapeditor:Element"), "toolTip_")
+      pushnull
+      ifeq                L17
+
+      getlex              QName(StaticProtectedNs("com.company.assembleegameclient.mapeditor:Element"), "toolTip_")
+      getproperty         QName(PackageNamespace(""), "parent")
+      pushnull
+      ifeq                L13
+
+      getlex              QName(StaticProtectedNs("com.company.assembleegameclient.mapeditor:Element"), "toolTip_")
+      getproperty         QName(PackageNamespace(""), "parent")
+      getlex              QName(StaticProtectedNs("com.company.assembleegameclient.mapeditor:Element"), "toolTip_")
+      callpropvoid        QName(PackageNamespace(""), "removeChild"), 1
+
+L13:
+      pushnull
+      findproperty        QName(StaticProtectedNs("com.company.assembleegameclient.mapeditor:Element"), "toolTip_")
+      swap
+      setproperty         QName(StaticProtectedNs("com.company.assembleegameclient.mapeditor:Element"), "toolTip_")
+
+L17:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(ProtectedNamespace("com.company.assembleegameclient.mapeditor:Element"), "getToolTip")
+   method
+    name "getToolTip"
+    refid "com.company.assembleegameclient.mapeditor:Element/instance/com.company.assembleegameclient.mapeditor:Element:getToolTip"
+    returns QName(PackageNamespace("com.company.assembleegameclient.ui.tooltip"), "ToolTip")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.mapeditor:Element"), "draw")
+   method
+    name "draw"
+    refid "com.company.assembleegameclient.mapeditor:Element/instance/com.company.assembleegameclient.mapeditor:Element/instance/draw"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 6
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace(""), "graphics")
+      callpropvoid        QName(PackageNamespace(""), "clear"), 0
+
+      pushuint            3552822
+      setlocal1
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("com.company.assembleegameclient.mapeditor:Element"), "selected_")
+      iffalse             L13
+
+      getlex              QName(PackageNamespace(""), "graphics")
+      pushbyte            1
+      pushint             16777215
+      callpropvoid        QName(PackageNamespace(""), "lineStyle"), 2
+
+L13:
+      getlex              QName(PackageNamespace(""), "graphics")
+      getlocal0
+      getproperty         QName(ProtectedNamespace("com.company.assembleegameclient.mapeditor:Element"), "mouseOver_")
+      iffalse             L19
+
+      pushint             5658198
+      jump                L20
+
+L19:
+      pushdouble          3552822
+L20:
+      pushbyte            1
+      callpropvoid        QName(PackageNamespace(""), "beginFill"), 2
+
+      getlex              QName(PackageNamespace(""), "graphics")
+      pushbyte            2
+      pushbyte            2
+      pushbyte            50
+      pushbyte            4
+      subtract
+      pushbyte            50
+      pushbyte            4
+      subtract
+      callpropvoid        QName(PackageNamespace(""), "drawRect"), 4
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("com.company.assembleegameclient.mapeditor:Element"), "selected_")
+      iffalse             L37
+
+      getlex              QName(PackageNamespace(""), "graphics")
+      callpropvoid        QName(PackageNamespace(""), "lineStyle"), 0
+
+L37:
+      getlex              QName(PackageNamespace(""), "graphics")
+      callpropvoid        QName(PackageNamespace(""), "endFill"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.mapeditor:Element/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PackageNamespace(""), "WIDTH") type QName(PackageNamespace(""), "int") value Integer(50) end
+ trait const QName(PackageNamespace(""), "HEIGHT") type QName(PackageNamespace(""), "int") value Integer(50) end
+ trait slot QName(StaticProtectedNs("com.company.assembleegameclient.mapeditor:Element"), "toolTip_") type QName(PackageNamespace("com.company.assembleegameclient.ui.tooltip"), "ToolTip") value Null() end
+end ; class

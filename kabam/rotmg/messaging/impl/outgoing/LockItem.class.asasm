@@ -1,0 +1,101 @@
+class
+ refid "kabam.rotmg.messaging.impl.outgoing:LockItem"
+ instance QName(PackageNamespace("kabam.rotmg.messaging.impl.outgoing"), "LockItem")
+  extends QName(PackageNamespace("kabam.rotmg.messaging.impl.outgoing"), "OutgoingMessage")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.messaging.impl.outgoing:LockItem")
+  iinit
+   name "LockItem"
+   refid "kabam.rotmg.messaging.impl.outgoing:LockItem/instance/init"
+   param QName(PackageNamespace(""), "uint")
+   param QName(PackageNamespace(""), "Function")
+   flag HAS_PARAM_NAMES
+   paramname "id"
+   paramname "callback"
+   body
+    maxstack 3
+    localcount 3
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "SlotObjectData")
+     constructprop       QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "SlotObjectData"), 0
+     findproperty        QName(PackageNamespace(""), "slotObject_")
+     swap
+     setproperty         QName(PackageNamespace(""), "slotObject_")
+
+     getlocal0
+     getlocal1
+     getlocal2
+     constructsuper      2
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "slotObject_") type QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "SlotObjectData") end
+  trait method QName(PackageNamespace(""), "writeToOutput") flag OVERRIDE
+   method
+    name "writeToOutput"
+    refid "kabam.rotmg.messaging.impl.outgoing:LockItem/instance/writeToOutput"
+    param QName(PackageNamespace("flash.utils"), "IDataOutput")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "slotObject_")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "writeToOutput"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "toString") flag OVERRIDE
+   method
+    name "toString"
+    refid "kabam.rotmg.messaging.impl.outgoing:LockItem/instance/toString"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushstring          ""
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.messaging.impl.outgoing:LockItem/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

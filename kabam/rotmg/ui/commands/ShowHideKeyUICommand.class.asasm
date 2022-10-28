@@ -1,0 +1,108 @@
+class
+ refid "kabam.rotmg.ui.commands:ShowHideKeyUICommand"
+ instance QName(PackageNamespace("kabam.rotmg.ui.commands"), "ShowHideKeyUICommand")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  iinit
+   refid "kabam.rotmg.ui.commands:ShowHideKeyUICommand/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "contextView") flag METADATA type QName(PackageNamespace("flash.display"), "DisplayObjectContainer")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PackageNamespace(""), "execute")
+   method
+    name "execute"
+    refid "kabam.rotmg.ui.commands:ShowHideKeyUICommand/instance/execute"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PrivateNamespace("kabam.rotmg.ui.commands:ShowHideKeyUICommand"), "show")
+      iffalse             L24
+
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.ui.view"), "KeysView")
+      constructprop       QName(PackageNamespace("kabam.rotmg.ui.view"), "KeysView"), 0
+      findproperty        QName(PrivateNamespace("kabam.rotmg.ui.commands:ShowHideKeyUICommand"), "view")
+      swap
+      setproperty         QName(PrivateNamespace("kabam.rotmg.ui.commands:ShowHideKeyUICommand"), "view")
+
+      getlex              QName(PrivateNamespace("kabam.rotmg.ui.commands:ShowHideKeyUICommand"), "view")
+      pushbyte            4
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlex              QName(PrivateNamespace("kabam.rotmg.ui.commands:ShowHideKeyUICommand"), "view")
+      pushbyte            4
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "contextView")
+      getlex              QName(PrivateNamespace("kabam.rotmg.ui.commands:ShowHideKeyUICommand"), "view")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      pushfalse
+      findproperty        QName(PrivateNamespace("kabam.rotmg.ui.commands:ShowHideKeyUICommand"), "show")
+      swap
+      setproperty         QName(PrivateNamespace("kabam.rotmg.ui.commands:ShowHideKeyUICommand"), "show")
+
+      jump                L36
+
+L24:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "contextView")
+      getlex              QName(PrivateNamespace("kabam.rotmg.ui.commands:ShowHideKeyUICommand"), "view")
+      callpropvoid        QName(PackageNamespace(""), "removeChild"), 1
+
+      pushnull
+      findproperty        QName(PrivateNamespace("kabam.rotmg.ui.commands:ShowHideKeyUICommand"), "view")
+      swap
+      setproperty         QName(PrivateNamespace("kabam.rotmg.ui.commands:ShowHideKeyUICommand"), "view")
+
+      pushtrue
+      findproperty        QName(PrivateNamespace("kabam.rotmg.ui.commands:ShowHideKeyUICommand"), "show")
+      swap
+      setproperty         QName(PrivateNamespace("kabam.rotmg.ui.commands:ShowHideKeyUICommand"), "show")
+
+L36:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.ui.commands:ShowHideKeyUICommand/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait slot QName(PrivateNamespace("kabam.rotmg.ui.commands:ShowHideKeyUICommand"), "show") type QName(PackageNamespace(""), "Boolean") value True() end
+ trait slot QName(PrivateNamespace("kabam.rotmg.ui.commands:ShowHideKeyUICommand"), "view") type QName(PackageNamespace("kabam.rotmg.ui.view"), "KeysView") end
+end ; class

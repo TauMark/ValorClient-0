@@ -1,0 +1,190 @@
+class
+ refid "kabam.rotmg.game.view:MoneyChangerPanel"
+ instance QName(PackageNamespace("kabam.rotmg.game.view"), "MoneyChangerPanel")
+  extends QName(PackageNamespace("com.company.assembleegameclient.ui.panels"), "ButtonPanel")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.game.view:MoneyChangerPanel")
+  iinit
+   name "MoneyChangerPanel"
+   refid "kabam.rotmg.game.view:MoneyChangerPanel/instance/init"
+   param QName(PackageNamespace("com.company.assembleegameclient.game"), "GameSprite")
+   flag HAS_PARAM_NAMES
+   paramname "_arg1"
+   body
+    maxstack 4
+    localcount 2
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     getlocal1
+     pushstring          "MoneyChangerPanel.title"
+     pushstring          "MoneyChangerPanel.button"
+     constructsuper      3
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("org.osflash.signals"), "Signal")
+     constructprop       QName(PackageNamespace("org.osflash.signals"), "Signal"), 0
+     setproperty         QName(PackageNamespace(""), "triggered")
+
+     findpropstrict      QName(PackageNamespace(""), "addEventListener")
+     pushstring          "addedToStage"
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:MoneyChangerPanel"), "onAddedToStage")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     findpropstrict      QName(PackageNamespace(""), "addEventListener")
+     pushstring          "removedFromStage"
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:MoneyChangerPanel"), "onRemovedFromStage")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "triggered") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait method QName(PrivateNamespace("kabam.rotmg.game.view:MoneyChangerPanel"), "onAddedToStage")
+   method
+    name "onAddedToStage"
+    refid "kabam.rotmg.game.view:MoneyChangerPanel/instance/kabam.rotmg.game.view:MoneyChangerPanel/instance/onAddedToStage"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace(""), "stage")
+      pushstring          "keyDown"
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:MoneyChangerPanel"), "onKeyDown")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.game.view:MoneyChangerPanel"), "onRemovedFromStage")
+   method
+    name "onRemovedFromStage"
+    refid "kabam.rotmg.game.view:MoneyChangerPanel/instance/kabam.rotmg.game.view:MoneyChangerPanel/instance/onRemovedFromStage"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace(""), "stage")
+      pushstring          "keyDown"
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:MoneyChangerPanel"), "onKeyDown")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(ProtectedNamespace("kabam.rotmg.game.view:MoneyChangerPanel"), "onButtonClick") flag OVERRIDE
+   method
+    name "onButtonClick"
+    refid "kabam.rotmg.game.view:MoneyChangerPanel/instance/kabam.rotmg.game.view:MoneyChangerPanel:onButtonClick"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 1
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "triggered")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.game.view:MoneyChangerPanel"), "onKeyDown")
+   method
+    name "onKeyDown"
+    refid "kabam.rotmg.game.view:MoneyChangerPanel/instance/kabam.rotmg.game.view:MoneyChangerPanel/instance/onKeyDown"
+    param QName(PackageNamespace("flash.events"), "KeyboardEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "keyCode")
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.parameters"), "Parameters")
+      getproperty         QName(PackageNamespace(""), "data")
+      getproperty         Multiname("interact", [PrivateNamespace("kabam.rotmg.game.view:MoneyChangerPanel"), ProtectedNamespace("kabam.rotmg.game.view:MoneyChangerPanel"), StaticProtectedNs("kabam.rotmg.game.view:MoneyChangerPanel"), StaticProtectedNs("com.company.assembleegameclient.ui.panels:ButtonPanel"), StaticProtectedNs("com.company.assembleegameclient.ui.panels:Panel"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.game.view"), PackageInternalNs("kabam.rotmg.game.view"), PrivateNamespace("FilePrivateNS:MoneyChangerPanel"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      equals
+      dup
+      iffalse             L15
+
+      pop
+      getlex              QName(PackageNamespace(""), "stage")
+      getproperty         QName(PackageNamespace(""), "focus")
+      pushnull
+      equals
+L15:
+      iffalse             L19
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "triggered")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+L19:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.game.view:MoneyChangerPanel/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

@@ -1,0 +1,258 @@
+class
+ refid "kabam.rotmg.aspectStatues:PriestAltarPanel"
+ instance QName(PackageNamespace("kabam.rotmg.aspectStatues"), "PriestAltarPanel")
+  extends QName(PackageNamespace("com.company.assembleegameclient.ui.panels"), "Panel")
+  flag SEALED
+  iinit
+   name "PriestAltarPanel"
+   refid "kabam.rotmg.aspectStatues:PriestAltarPanel/instance/init#1"
+   param QName(PackageNamespace("com.company.assembleegameclient.game"), "GameSprite")
+   param QName(PackageNamespace(""), "int")
+   param QName(PackageNamespace(""), "int")
+   param QName(PackageNamespace(""), "String")
+   param QName(PackageNamespace(""), "Boolean")
+   flag HAS_OPTIONAL
+   flag HAS_PARAM_NAMES
+   optional False()
+   paramname "_arg_1"
+   paramname "_arg_2"
+   paramname "type"
+   paramname "name"
+   paramname "multipleLines"
+   body
+    maxstack 7
+    localcount 6
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PackageNamespace("kabam.rotmg.pets.util"), "PetsViewAssetFactory")
+     pushint             16777215
+     pushbyte            16
+     pushtrue
+     callproperty        QName(PackageNamespace(""), "returnTextfield"), 3
+     findproperty        QName(PrivateNamespace("kabam.rotmg.aspectStatues:PriestAltarPanel"), "titleText")
+     swap
+     initproperty        QName(PrivateNamespace("kabam.rotmg.aspectStatues:PriestAltarPanel"), "titleText")
+
+     getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "TextureRedrawer")
+     getlex              QName(PackageNamespace("com.company.util"), "AssetLibrary")
+     pushstring          "ancient8x8Embed"
+     pushshort           160
+     callproperty        QName(PackageNamespace(""), "getImageFromSet"), 2
+     pushnull
+     pushbyte            100
+     pushtrue
+     pushbyte            0
+     pushbyte            0
+     callproperty        QName(PackageNamespace(""), "resize"), 6
+     findproperty        QName(PackageInternalNs("kabam.rotmg.aspectStatues"), "sorIcon")
+     swap
+     setproperty         QName(PackageInternalNs("kabam.rotmg.aspectStatues"), "sorIcon")
+
+     getlocal0
+     getlocal1
+     constructsuper      1
+
+     getlocal0
+     getlocal3
+     setproperty         QName(PackageInternalNs("kabam.rotmg.aspectStatues"), "aspectType")
+
+     getlocal0
+     getlocal2
+     setproperty         QName(PrivateNamespace("kabam.rotmg.aspectStatues:PriestAltarPanel"), "objectType")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.aspectStatues:PriestAltarPanel"), "titleText")
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder")
+     constructprop       QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder"), 0
+     getlocal            4
+     callproperty        QName(PackageNamespace(""), "setParams"), 1
+     callpropvoid        QName(PackageNamespace(""), "setStringBuilder"), 1
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.aspectStatues:PriestAltarPanel"), "titleText")
+     pushbyte            48
+     setproperty         QName(PackageNamespace(""), "x")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.aspectStatues:PriestAltarPanel"), "titleText")
+     getlocal            5
+     iffalse             L50
+
+     pushbyte            18
+     jump                L51
+
+L50:
+     pushdouble          28
+L51:
+     setproperty         QName(PackageNamespace(""), "y")
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.aspectStatues:PriestAltarPanel"), "titleText")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("io.decagames.rotmg.ui.buttons"), "SliceScalingButton")
+     getlex              QName(PackageNamespace("io.decagames.rotmg.ui.texture"), "TextureParser")
+     getproperty         QName(PackageNamespace(""), "instance")
+     pushstring          "UI"
+     pushstring          "generic_green_button"
+     callproperty        QName(PackageNamespace(""), "getSliceScalingBitmap"), 2
+     constructprop       QName(PackageNamespace("io.decagames.rotmg.ui.buttons"), "SliceScalingButton"), 1
+     setproperty         QName(PackageInternalNs("kabam.rotmg.aspectStatues"), "forgeButton")
+
+     getlocal0
+     getproperty         QName(PackageInternalNs("kabam.rotmg.aspectStatues"), "forgeButton")
+     getlex              QName(PrivateNamespace("kabam.rotmg.aspectStatues:PriestAltarPanel"), "buttonText")
+     getlex              QName(PackageNamespace("io.decagames.rotmg.ui.defaults"), "DefaultLabelFormat")
+     getproperty         QName(PackageNamespace(""), "questButtonCompleteLabel")
+     callpropvoid        QName(PackageNamespace(""), "setLabel"), 2
+
+     getlocal0
+     getproperty         QName(PackageInternalNs("kabam.rotmg.aspectStatues"), "forgeButton")
+     pushbyte            100
+     setproperty         QName(PackageNamespace(""), "width")
+
+     getlocal0
+     getproperty         QName(PackageInternalNs("kabam.rotmg.aspectStatues"), "forgeButton")
+     pushshort           188
+     pushbyte            2
+     divide
+     getlocal0
+     getproperty         QName(PackageInternalNs("kabam.rotmg.aspectStatues"), "forgeButton")
+     getproperty         QName(PackageNamespace(""), "width")
+     pushbyte            2
+     divide
+     subtract
+     setproperty         QName(PackageNamespace(""), "x")
+
+     getlocal0
+     getproperty         QName(PackageInternalNs("kabam.rotmg.aspectStatues"), "forgeButton")
+     pushbyte            84
+     getlocal0
+     getproperty         QName(PackageInternalNs("kabam.rotmg.aspectStatues"), "forgeButton")
+     getproperty         QName(PackageNamespace(""), "height")
+     subtract
+     pushbyte            4
+     subtract
+     setproperty         QName(PackageNamespace(""), "y")
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PackageInternalNs("kabam.rotmg.aspectStatues"), "forgeButton")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait const QName(PrivateNamespace("kabam.rotmg.aspectStatues:PriestAltarPanel"), "titleText") type QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete") end
+  trait slot QName(PackageInternalNs("kabam.rotmg.aspectStatues"), "sorIcon") type QName(PackageNamespace("flash.display"), "BitmapData") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.aspectStatues:PriestAltarPanel"), "icon") type QName(PackageNamespace("flash.display"), "Bitmap") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.aspectStatues:PriestAltarPanel"), "buttonText") type QName(PackageNamespace(""), "String") value Utf8("Choose") end
+  trait slot QName(PackageInternalNs("kabam.rotmg.aspectStatues"), "aspectType") type QName(PackageNamespace(""), "int") value Integer(0) end
+  trait slot QName(PrivateNamespace("kabam.rotmg.aspectStatues:PriestAltarPanel"), "objectType") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PackageInternalNs("kabam.rotmg.aspectStatues"), "forgeButton") type QName(PackageNamespace("io.decagames.rotmg.ui.buttons"), "SliceScalingButton") end
+  trait method QName(PackageNamespace(""), "init")
+   method
+    name "init"
+    refid "kabam.rotmg.aspectStatues:PriestAltarPanel/instance/init#0"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("flash.display"), "Bitmap")
+      findpropstrict      QName(PrivateNamespace("kabam.rotmg.aspectStatues:PriestAltarPanel"), "cropAndGlowIcon")
+      getlocal0
+      getproperty         QName(PackageInternalNs("kabam.rotmg.aspectStatues"), "sorIcon")
+      callproperty        QName(PrivateNamespace("kabam.rotmg.aspectStatues:PriestAltarPanel"), "cropAndGlowIcon"), 1
+      constructprop       QName(PackageNamespace("flash.display"), "Bitmap"), 1
+      setproperty         QName(PrivateNamespace("kabam.rotmg.aspectStatues:PriestAltarPanel"), "icon")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.aspectStatues:PriestAltarPanel"), "icon")
+      pushbyte            -4
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.aspectStatues:PriestAltarPanel"), "icon")
+      pushbyte            -8
+      setproperty         QName(PackageNamespace(""), "y")
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.aspectStatues:PriestAltarPanel"), "icon")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.aspectStatues:PriestAltarPanel/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait method QName(PrivateNamespace("kabam.rotmg.aspectStatues:PriestAltarPanel"), "cropAndGlowIcon")
+  method
+   name "cropAndGlowIcon"
+   refid "kabam.rotmg.aspectStatues:PriestAltarPanel/class/kabam.rotmg.aspectStatues:PriestAltarPanel/instance/cropAndGlowIcon"
+   param QName(PackageNamespace("flash.display"), "BitmapData")
+   returns QName(PackageNamespace("flash.display"), "BitmapData")
+   flag HAS_PARAM_NAMES
+   paramname "_arg_1"
+   body
+    maxstack 7
+    localcount 2
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PackageNamespace("com.company.assembleegameclient.util.redrawers"), "GlowRedrawer")
+     getlocal1
+     pushdouble          4294967295
+     callproperty        QName(PackageNamespace(""), "outlineGlow"), 2
+     coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+     setlocal1
+
+     getlex              QName(PackageNamespace("com.company.util"), "BitmapUtil")
+     getlocal1
+     pushbyte            10
+     pushbyte            10
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "width")
+     pushbyte            20
+     subtract
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "height")
+     pushbyte            20
+     subtract
+     callproperty        QName(PackageNamespace(""), "cropToBitmapData"), 5
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+end ; class

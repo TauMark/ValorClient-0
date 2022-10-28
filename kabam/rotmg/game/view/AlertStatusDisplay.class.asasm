@@ -1,0 +1,435 @@
+class
+ refid "kabam.rotmg.game.view:AlertStatusDisplay"
+ instance QName(PackageNamespace("kabam.rotmg.game.view"), "AlertStatusDisplay")
+  extends QName(PackageNamespace("flash.display"), "Sprite")
+  implements QName(PackageNamespace("kabam.rotmg.tooltips"), "TooltipAble")
+  flag SEALED
+  iinit
+   name "AlertStatusDisplay"
+   refid "kabam.rotmg.game.view:AlertStatusDisplay/instance/init"
+   body
+    maxstack 9
+    localcount 2
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.tooltips"), "HoverTooltipDelegate")
+     constructprop       QName(PackageNamespace("kabam.rotmg.tooltips"), "HoverTooltipDelegate"), 0
+     setproperty         QName(PackageNamespace(""), "hoverTooltipDelegate")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.ui.tooltip"), "TextToolTip")
+     pushint             3552822
+     pushint             10197915
+     pushnull
+     pushstring          "This launches an alert if you have any. Dying in an alert will cause you to lose 10% of your gold, but your character won't be lost."
+     pushshort           200
+     constructprop       QName(PackageNamespace("com.company.assembleegameclient.ui.tooltip"), "TextToolTip"), 5
+     setproperty         QName(PrivateNamespace("kabam.rotmg.game.view:AlertStatusDisplay"), "tooltip")
+
+     getlocal0
+     constructsuper      0
+
+     pushfalse
+     findproperty        QName(PackageNamespace(""), "mouseChildren")
+     swap
+     setproperty         QName(PackageNamespace(""), "mouseChildren")
+
+     getlocal0
+     getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "TextureRedrawer")
+     getlex              QName(PackageNamespace("com.company.util"), "AssetLibrary")
+     pushstring          "legendaries8x8Embed"
+     pushshort           208
+     callproperty        QName(PackageNamespace(""), "getImageFromSet"), 2
+     pushbyte            40
+     pushtrue
+     pushbyte            0
+     callproperty        QName(PackageNamespace(""), "redraw"), 4
+     setproperty         QName(PrivateNamespace("kabam.rotmg.game.view:AlertStatusDisplay"), "bitmapData")
+
+     getlocal0
+     getlex              QName(PackageNamespace("kabam.rotmg.ui"), "UIUtils")
+     callproperty        QName(PackageNamespace(""), "makeStaticHUDBackground"), 0
+     setproperty         QName(PrivateNamespace("kabam.rotmg.game.view:AlertStatusDisplay"), "background")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("flash.display"), "Bitmap")
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:AlertStatusDisplay"), "bitmapData")
+     constructprop       QName(PackageNamespace("flash.display"), "Bitmap"), 1
+     setproperty         QName(PrivateNamespace("kabam.rotmg.game.view:AlertStatusDisplay"), "bitmap")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:AlertStatusDisplay"), "bitmap")
+     pushbyte            -5
+     setproperty         QName(PackageNamespace(""), "x")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:AlertStatusDisplay"), "bitmap")
+     pushbyte            -8
+     setproperty         QName(PackageNamespace(""), "y")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete")
+     constructprop       QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete"), 0
+     pushbyte            16
+     callproperty        QName(PackageNamespace(""), "setSize"), 1
+     pushint             16777215
+     callproperty        QName(PackageNamespace(""), "setColor"), 1
+     setproperty         QName(PrivateNamespace("kabam.rotmg.game.view:AlertStatusDisplay"), "text")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:AlertStatusDisplay"), "text")
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "StaticStringBuilder")
+     pushstring          "Alerts"
+     constructprop       QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "StaticStringBuilder"), 1
+     callpropvoid        QName(PackageNamespace(""), "setStringBuilder"), 1
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:AlertStatusDisplay"), "text")
+     findpropstrict      QName(PackageNamespace("flash.filters"), "DropShadowFilter")
+     pushbyte            0
+     pushbyte            0
+     pushbyte            0
+     pushbyte            1
+     pushbyte            4
+     pushbyte            4
+     pushbyte            2
+     constructprop       QName(PackageNamespace("flash.filters"), "DropShadowFilter"), 7
+     newarray            1
+     setproperty         QName(PackageNamespace(""), "filters")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:AlertStatusDisplay"), "text")
+     pushstring          "bottom"
+     callpropvoid        QName(PackageNamespace(""), "setVerticalAlign"), 1
+
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "hoverTooltipDelegate")
+     getlocal0
+     callpropvoid        QName(PackageNamespace(""), "setDisplayObject"), 1
+
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "hoverTooltipDelegate")
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:AlertStatusDisplay"), "tooltip")
+     setproperty         QName(PackageNamespace(""), "tooltip")
+
+     getlocal0
+     callpropvoid        QName(PackageNamespace(""), "drawAsOpen"), 0
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:AlertStatusDisplay"), "bitmap")
+     getlocal0
+     callproperty        QName(PackageNamespace(""), "getBounds"), 1
+     coerce              QName(PackageNamespace("flash.geom"), "Rectangle")
+     setlocal1
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:AlertStatusDisplay"), "text")
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "right")
+     pushbyte            10
+     subtract
+     setproperty         QName(PackageNamespace(""), "x")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:AlertStatusDisplay"), "text")
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "bottom")
+     pushbyte            12
+     subtract
+     setproperty         QName(PackageNamespace(""), "y")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "hoverTooltipDelegate") type QName(PackageNamespace("kabam.rotmg.tooltips"), "HoverTooltipDelegate") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.game.view:AlertStatusDisplay"), "bitmap") type QName(PackageNamespace("flash.display"), "Bitmap") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.game.view:AlertStatusDisplay"), "background") type QName(PackageNamespace("flash.display"), "Sprite") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.game.view:AlertStatusDisplay"), "bitmapData") type QName(PackageNamespace("flash.display"), "BitmapData") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.game.view:AlertStatusDisplay"), "text") type QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.game.view:AlertStatusDisplay"), "tooltip") type QName(PackageNamespace("com.company.assembleegameclient.ui.tooltip"), "TextToolTip") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.game.view:AlertStatusDisplay"), "alertNum") type QName(PackageNamespace(""), "int") value Integer(0) end
+  trait method QName(PackageInternalNs("kabam.rotmg.game.view"), "updateAlertNum")
+   method
+    name "updateAlertNum"
+    refid "kabam.rotmg.game.view:AlertStatusDisplay/instance/kabam.rotmg.game.view:updateAlertNum"
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "alertNum"
+    body
+     maxstack 6
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:AlertStatusDisplay"), "alertNum")
+      getlocal1
+      ifne                L7
+
+      returnvoid
+
+L7:
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:AlertStatusDisplay"), "tooltip")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "StaticStringBuilder")
+      pushstring          "This launches an alert if you have any. Dying in an alert will cause you to lose 10% of your gold, but your character won't be lost.\n\nCurrent amount of alerts: "
+      getlocal0
+      getlocal1
+      dup
+      setlocal2
+
+      setproperty         QName(PrivateNamespace("kabam.rotmg.game.view:AlertStatusDisplay"), "alertNum")
+
+      getlocal2
+      add
+      constructprop       QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "StaticStringBuilder"), 1
+      callpropvoid        QName(PackageNamespace(""), "setText"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setShowToolTipSignal")
+   method
+    name "setShowToolTipSignal"
+    refid "kabam.rotmg.game.view:AlertStatusDisplay/instance/setShowToolTipSignal"
+    param QName(PackageNamespace("kabam.rotmg.core.signals"), "ShowTooltipSignal")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "showTooltip"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hoverTooltipDelegate")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "setShowToolTipSignal"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getShowToolTip")
+   method
+    name "getShowToolTip"
+    refid "kabam.rotmg.game.view:AlertStatusDisplay/instance/getShowToolTip"
+    returns QName(PackageNamespace("kabam.rotmg.core.signals"), "ShowTooltipSignal")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hoverTooltipDelegate")
+      callproperty        QName(PackageNamespace(""), "getShowToolTip"), 0
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setHideToolTipsSignal")
+   method
+    name "setHideToolTipsSignal"
+    refid "kabam.rotmg.game.view:AlertStatusDisplay/instance/setHideToolTipsSignal"
+    param QName(PackageNamespace("kabam.rotmg.core.signals"), "HideTooltipsSignal")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "hideTooltips"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hoverTooltipDelegate")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "setHideToolTipsSignal"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getHideToolTips")
+   method
+    name "getHideToolTips"
+    refid "kabam.rotmg.game.view:AlertStatusDisplay/instance/getHideToolTips"
+    returns QName(PackageNamespace("kabam.rotmg.core.signals"), "HideTooltipsSignal")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hoverTooltipDelegate")
+      callproperty        QName(PackageNamespace(""), "getHideToolTips"), 0
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "drawAsOpen")
+   method
+    name "drawAsOpen"
+    refid "kabam.rotmg.game.view:AlertStatusDisplay/instance/drawAsOpen"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:AlertStatusDisplay"), "background")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:AlertStatusDisplay"), "text")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:AlertStatusDisplay"), "bitmap")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "drawAsClosed")
+   method
+    name "drawAsClosed"
+    refid "kabam.rotmg.game.view:AlertStatusDisplay/instance/drawAsClosed"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:AlertStatusDisplay"), "background")
+      dup
+      iffalse             L13
+
+      pop
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:AlertStatusDisplay"), "background")
+      getproperty         QName(PackageNamespace(""), "parent")
+      getlocal0
+      equals
+      coerce_a
+L13:
+      iffalse             L18
+
+      findpropstrict      QName(PackageNamespace(""), "removeChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:AlertStatusDisplay"), "background")
+      callpropvoid        QName(PackageNamespace(""), "removeChild"), 1
+
+L18:
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:AlertStatusDisplay"), "text")
+      dup
+      iffalse             L29
+
+      pop
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:AlertStatusDisplay"), "text")
+      getproperty         QName(PackageNamespace(""), "parent")
+      getlocal0
+      equals
+      coerce_a
+L29:
+      iffalse             L34
+
+      findpropstrict      QName(PackageNamespace(""), "removeChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:AlertStatusDisplay"), "text")
+      callpropvoid        QName(PackageNamespace(""), "removeChild"), 1
+
+L34:
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:AlertStatusDisplay"), "bitmap")
+      dup
+      iffalse             L45
+
+      pop
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:AlertStatusDisplay"), "bitmap")
+      getproperty         QName(PackageNamespace(""), "parent")
+      getlocal0
+      equals
+      coerce_a
+L45:
+      iffalse             L50
+
+      findpropstrict      QName(PackageNamespace(""), "removeChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:AlertStatusDisplay"), "bitmap")
+      callpropvoid        QName(PackageNamespace(""), "removeChild"), 1
+
+L50:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.game.view:AlertStatusDisplay/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PackageNamespace(""), "IMAGE_NAME") type QName(PackageNamespace(""), "String") value Utf8("legendaries8x8Embed") end
+ trait const QName(PackageNamespace(""), "IMAGE_ID") type QName(PackageNamespace(""), "int") value Integer(208) end
+ trait const QName(PrivateNamespace("kabam.rotmg.game.view:AlertStatusDisplay"), "ALERT_TEXT") type QName(PackageNamespace(""), "String") value Utf8("This launches an alert if you have any. Dying in an alert will cause you to lose 10% of your gold, but your character won't be lost.") end
+end ; class

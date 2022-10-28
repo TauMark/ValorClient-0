@@ -1,0 +1,350 @@
+class
+ refid "kabam.rotmg.game.view:DiscordButtonDisplay"
+ instance QName(PackageNamespace("kabam.rotmg.game.view"), "DiscordButtonDisplay")
+  extends QName(PackageNamespace("flash.display"), "Sprite")
+  implements QName(PackageNamespace("kabam.rotmg.tooltips"), "TooltipAble")
+  flag SEALED
+  iinit
+   name "DiscordButtonDisplay"
+   refid "kabam.rotmg.game.view:DiscordButtonDisplay/instance/init"
+   param QName(PackageNamespace("com.company.assembleegameclient.game"), "GameSprite")
+   flag HAS_PARAM_NAMES
+   paramname "gs"
+   body
+    maxstack 9
+    localcount 3
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     getlocal1
+     setproperty         QName(PrivateNamespace("kabam.rotmg.game.view:DiscordButtonDisplay"), "gs")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.tooltips"), "HoverTooltipDelegate")
+     constructprop       QName(PackageNamespace("kabam.rotmg.tooltips"), "HoverTooltipDelegate"), 0
+     setproperty         QName(PackageNamespace(""), "hoverTooltipDelegate")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.ui.tooltip"), "TextToolTip")
+     pushint             3552822
+     pushint             10197915
+     pushnull
+     pushstring          "Click here to join our Discord server."
+     pushshort           160
+     constructprop       QName(PackageNamespace("com.company.assembleegameclient.ui.tooltip"), "TextToolTip"), 5
+     setproperty         QName(PrivateNamespace("kabam.rotmg.game.view:DiscordButtonDisplay"), "tooltip")
+
+     getlocal0
+     constructsuper      0
+
+     pushfalse
+     findproperty        QName(PackageNamespace(""), "mouseChildren")
+     swap
+     setproperty         QName(PackageNamespace(""), "mouseChildren")
+
+     getlocal0
+     getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "TextureRedrawer")
+     getlex              QName(PackageNamespace("com.company.util"), "AssetLibrary")
+     pushstring          "lofiInterfaceBig"
+     pushbyte            31
+     callproperty        QName(PackageNamespace(""), "getImageFromSet"), 2
+     pushbyte            20
+     pushtrue
+     pushbyte            0
+     callproperty        QName(PackageNamespace(""), "redraw"), 4
+     setproperty         QName(PrivateNamespace("kabam.rotmg.game.view:DiscordButtonDisplay"), "iconBitmapData")
+
+     getlocal0
+     getlex              QName(PackageNamespace("kabam.rotmg.ui"), "UIUtils")
+     callproperty        QName(PackageNamespace(""), "makeStaticHUDBackground"), 0
+     setproperty         QName(PrivateNamespace("kabam.rotmg.game.view:DiscordButtonDisplay"), "background")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("flash.display"), "Bitmap")
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:DiscordButtonDisplay"), "iconBitmapData")
+     constructprop       QName(PackageNamespace("flash.display"), "Bitmap"), 1
+     setproperty         QName(PrivateNamespace("kabam.rotmg.game.view:DiscordButtonDisplay"), "icon")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:DiscordButtonDisplay"), "icon")
+     pushbyte            -5
+     setproperty         QName(PackageNamespace(""), "x")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:DiscordButtonDisplay"), "icon")
+     pushbyte            -8
+     setproperty         QName(PackageNamespace(""), "y")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete")
+     constructprop       QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete"), 0
+     pushbyte            16
+     callproperty        QName(PackageNamespace(""), "setSize"), 1
+     pushint             16777215
+     callproperty        QName(PackageNamespace(""), "setColor"), 1
+     setproperty         QName(PrivateNamespace("kabam.rotmg.game.view:DiscordButtonDisplay"), "text")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:DiscordButtonDisplay"), "text")
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder")
+     constructprop       QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder"), 0
+     pushstring          "Discord"
+     callproperty        QName(PackageNamespace(""), "setParams"), 1
+     callpropvoid        QName(PackageNamespace(""), "setStringBuilder"), 1
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:DiscordButtonDisplay"), "text")
+     findpropstrict      QName(PackageNamespace("flash.filters"), "DropShadowFilter")
+     pushbyte            0
+     pushbyte            0
+     pushbyte            0
+     pushbyte            1
+     pushbyte            4
+     pushbyte            4
+     pushbyte            2
+     constructprop       QName(PackageNamespace("flash.filters"), "DropShadowFilter"), 7
+     newarray            1
+     setproperty         QName(PackageNamespace(""), "filters")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:DiscordButtonDisplay"), "text")
+     pushstring          "bottom"
+     callpropvoid        QName(PackageNamespace(""), "setVerticalAlign"), 1
+
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "hoverTooltipDelegate")
+     getlocal0
+     callpropvoid        QName(PackageNamespace(""), "setDisplayObject"), 1
+
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "hoverTooltipDelegate")
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:DiscordButtonDisplay"), "tooltip")
+     setproperty         QName(PackageNamespace(""), "tooltip")
+
+     getlocal0
+     callpropvoid        QName(PackageNamespace(""), "addChilds"), 0
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:DiscordButtonDisplay"), "icon")
+     getlocal0
+     callproperty        QName(PackageNamespace(""), "getBounds"), 1
+     coerce              QName(PackageNamespace("flash.geom"), "Rectangle")
+     setlocal2
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:DiscordButtonDisplay"), "text")
+     getlocal2
+     getproperty         QName(PackageNamespace(""), "right")
+     pushbyte            10
+     subtract
+     setproperty         QName(PackageNamespace(""), "x")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:DiscordButtonDisplay"), "text")
+     getlocal2
+     getproperty         QName(PackageNamespace(""), "bottom")
+     pushbyte            12
+     subtract
+     setproperty         QName(PackageNamespace(""), "y")
+
+     findpropstrict      QName(PackageNamespace(""), "addEventListener")
+     pushstring          "click"
+     getlex              QName(PrivateNamespace("kabam.rotmg.game.view:DiscordButtonDisplay"), "onClick")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "hoverTooltipDelegate") type QName(PackageNamespace("kabam.rotmg.tooltips"), "HoverTooltipDelegate") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.game.view:DiscordButtonDisplay"), "icon") type QName(PackageNamespace("flash.display"), "Bitmap") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.game.view:DiscordButtonDisplay"), "background") type QName(PackageNamespace("flash.display"), "Sprite") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.game.view:DiscordButtonDisplay"), "iconBitmapData") type QName(PackageNamespace("flash.display"), "BitmapData") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.game.view:DiscordButtonDisplay"), "text") type QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.game.view:DiscordButtonDisplay"), "tooltip") type QName(PackageNamespace("com.company.assembleegameclient.ui.tooltip"), "TextToolTip") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.game.view:DiscordButtonDisplay"), "gs") type QName(PackageNamespace("com.company.assembleegameclient.game"), "GameSprite") end
+  trait method QName(PackageNamespace(""), "setShowToolTipSignal")
+   method
+    name "setShowToolTipSignal"
+    refid "kabam.rotmg.game.view:DiscordButtonDisplay/instance/setShowToolTipSignal"
+    param QName(PackageNamespace("kabam.rotmg.core.signals"), "ShowTooltipSignal")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "signal"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hoverTooltipDelegate")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "setShowToolTipSignal"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getShowToolTip")
+   method
+    name "getShowToolTip"
+    refid "kabam.rotmg.game.view:DiscordButtonDisplay/instance/getShowToolTip"
+    returns QName(PackageNamespace("kabam.rotmg.core.signals"), "ShowTooltipSignal")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hoverTooltipDelegate")
+      callproperty        QName(PackageNamespace(""), "getShowToolTip"), 0
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setHideToolTipsSignal")
+   method
+    name "setHideToolTipsSignal"
+    refid "kabam.rotmg.game.view:DiscordButtonDisplay/instance/setHideToolTipsSignal"
+    param QName(PackageNamespace("kabam.rotmg.core.signals"), "HideTooltipsSignal")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "signal"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hoverTooltipDelegate")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "setHideToolTipsSignal"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getHideToolTips")
+   method
+    name "getHideToolTips"
+    refid "kabam.rotmg.game.view:DiscordButtonDisplay/instance/getHideToolTips"
+    returns QName(PackageNamespace("kabam.rotmg.core.signals"), "HideTooltipsSignal")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hoverTooltipDelegate")
+      callproperty        QName(PackageNamespace(""), "getHideToolTips"), 0
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "addChilds")
+   method
+    name "addChilds"
+    refid "kabam.rotmg.game.view:DiscordButtonDisplay/instance/addChilds"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:DiscordButtonDisplay"), "background")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:DiscordButtonDisplay"), "text")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:DiscordButtonDisplay"), "icon")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.game.view:DiscordButtonDisplay/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait method QName(PrivateNamespace("kabam.rotmg.game.view:DiscordButtonDisplay"), "onClick")
+  method
+   name "onClick"
+   refid "kabam.rotmg.game.view:DiscordButtonDisplay/class/kabam.rotmg.game.view:DiscordButtonDisplay/instance/onClick"
+   param QName(PackageNamespace("flash.events"), "MouseEvent")
+   returns QName(PackageNamespace(""), "void")
+   flag HAS_PARAM_NAMES
+   paramname "e"
+   body
+    maxstack 4
+    localcount 3
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     findpropstrict      QName(PackageNamespace("flash.net"), "URLRequest")
+     pushstring          "https://discord.gg/xFd3793QHC"
+     constructprop       QName(PackageNamespace("flash.net"), "URLRequest"), 1
+     coerce              QName(PackageNamespace("flash.net"), "URLRequest")
+     setlocal2
+
+     getlex              QName(PackageNamespace("flash.net"), "navigateToURL")
+     getglobalscope
+     getlocal2
+     pushstring          "_blank"
+     call                2
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+end ; class

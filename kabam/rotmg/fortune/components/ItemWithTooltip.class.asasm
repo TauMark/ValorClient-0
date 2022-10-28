@@ -1,0 +1,530 @@
+class
+ refid "kabam.rotmg.fortune.components:ItemWithTooltip"
+ instance QName(PackageNamespace("kabam.rotmg.fortune.components"), "ItemWithTooltip")
+  extends QName(PackageNamespace("flash.display"), "Sprite")
+  implements QName(PackageNamespace("kabam.rotmg.tooltips"), "TooltipAble")
+  flag SEALED
+  iinit
+   name "ItemWithTooltip"
+   refid "kabam.rotmg.fortune.components:ItemWithTooltip/instance/init"
+   param QName(PackageNamespace("valor"), "ItemData")
+   param QName(PackageNamespace(""), "int")
+   param QName(PackageNamespace(""), "Boolean")
+   flag HAS_OPTIONAL
+   flag HAS_PARAM_NAMES
+   optional Integer(100)
+   optional False()
+   paramname "_arg1"
+   paramname "_arg2"
+   paramname "_arg3"
+   body
+    maxstack 6
+    localcount 7
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.tooltips"), "HoverTooltipDelegate")
+     constructprop       QName(PackageNamespace("kabam.rotmg.tooltips"), "HoverTooltipDelegate"), 0
+     setproperty         QName(PackageNamespace(""), "hoverTooltipDelegate")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("org.osflash.signals"), "Signal")
+     constructprop       QName(PackageNamespace("org.osflash.signals"), "Signal"), 0
+     setproperty         QName(PackageNamespace(""), "onMouseOver")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("org.osflash.signals"), "Signal")
+     constructprop       QName(PackageNamespace("org.osflash.signals"), "Signal"), 0
+     setproperty         QName(PackageNamespace(""), "onMouseOut")
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     getlocal1
+     setproperty         QName(PrivateNamespace("kabam.rotmg.fortune.components:ItemWithTooltip"), "itemData")
+
+     getlex              QName(PackageNamespace("com.company.assembleegameclient.objects"), "ObjectLibrary")
+     getproperty         QName(PackageNamespace(""), "xmlLibrary_")
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "objectType")
+     getproperty         MultinameL([PrivateNamespace("kabam.rotmg.fortune.components:ItemWithTooltip"), ProtectedNamespace("kabam.rotmg.fortune.components:ItemWithTooltip"), StaticProtectedNs("kabam.rotmg.fortune.components:ItemWithTooltip"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.fortune.components"), PackageInternalNs("kabam.rotmg.fortune.components"), PrivateNamespace("FilePrivateNS:ItemWithTooltip"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     coerce              QName(PackageNamespace(""), "XML")
+     setlocal            4
+
+     pushbyte            5
+     setlocal            5
+
+     getlocal            4
+     dup
+     iffalse             L36
+
+     pop
+     getlocal            4
+     pushstring          "ScaleValue"
+     callproperty        Multiname("hasOwnProperty", [PrivateNamespace("kabam.rotmg.fortune.components:ItemWithTooltip"), ProtectedNamespace("kabam.rotmg.fortune.components:ItemWithTooltip"), StaticProtectedNs("kabam.rotmg.fortune.components:ItemWithTooltip"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.fortune.components"), PackageInternalNs("kabam.rotmg.fortune.components"), PrivateNamespace("FilePrivateNS:ItemWithTooltip"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 1
+     coerce_a
+L36:
+     iffalse             L41
+
+     getlocal            4
+     getproperty         Multiname("ScaleValue", [PrivateNamespace("kabam.rotmg.fortune.components:ItemWithTooltip"), ProtectedNamespace("kabam.rotmg.fortune.components:ItemWithTooltip"), StaticProtectedNs("kabam.rotmg.fortune.components:ItemWithTooltip"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.fortune.components"), PackageInternalNs("kabam.rotmg.fortune.components"), PrivateNamespace("FilePrivateNS:ItemWithTooltip"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     convert_i
+     setlocal            5
+
+L41:
+     getlex              QName(PackageNamespace("com.company.assembleegameclient.objects"), "ObjectLibrary")
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "objectType")
+     getlocal2
+     pushtrue
+     pushfalse
+     getlocal            5
+     callproperty        QName(PackageNamespace(""), "getRedrawnTextureFromType"), 5
+     coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+     setlocal            6
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("flash.display"), "Bitmap")
+     getlocal            6
+     constructprop       QName(PackageNamespace("flash.display"), "Bitmap"), 1
+     setproperty         QName(PackageNamespace(""), "itemBitmap")
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "itemBitmap")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "hoverTooltipDelegate")
+     getlocal0
+     callpropvoid        QName(PackageNamespace(""), "setDisplayObject"), 1
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.ui.tooltip"), "EquipmentToolTip")
+     getlocal1
+     pushnull
+     pushbyte            -1
+     pushstring          "NPC"
+     constructprop       QName(PackageNamespace("com.company.assembleegameclient.ui.tooltip"), "EquipmentToolTip"), 4
+     setproperty         QName(PrivateNamespace("kabam.rotmg.fortune.components:ItemWithTooltip"), "tooltip")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.fortune.components:ItemWithTooltip"), "tooltip")
+     callpropvoid        QName(PackageNamespace(""), "forcePostionLeft"), 0
+
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "hoverTooltipDelegate")
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.fortune.components:ItemWithTooltip"), "tooltip")
+     setproperty         QName(PackageNamespace(""), "tooltip")
+
+     getlocal3
+     iffalse             L97
+
+     findpropstrict      QName(PackageNamespace(""), "addEventListener")
+     pushstring          "removedFromStage"
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.fortune.components:ItemWithTooltip"), "onDestruct")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     findpropstrict      QName(PackageNamespace(""), "addEventListener")
+     pushstring          "rollOver"
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.fortune.components:ItemWithTooltip"), "onRollOver")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     findpropstrict      QName(PackageNamespace(""), "addEventListener")
+     pushstring          "rollOut"
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.fortune.components:ItemWithTooltip"), "onRollOut")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+L97:
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace("kabam.rotmg.fortune.components:ItemWithTooltip"), "itemData") type QName(PackageNamespace("valor"), "ItemData") end
+  trait slot QName(PackageNamespace(""), "hoverTooltipDelegate") type QName(PackageNamespace("kabam.rotmg.tooltips"), "HoverTooltipDelegate") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.fortune.components:ItemWithTooltip"), "tooltip") type QName(PackageNamespace("com.company.assembleegameclient.ui.tooltip"), "ToolTip") end
+  trait slot QName(PackageNamespace(""), "onMouseOver") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait slot QName(PackageNamespace(""), "onMouseOut") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait slot QName(PackageNamespace(""), "itemBitmap") type QName(PackageNamespace("flash.display"), "Bitmap") end
+  trait method QName(PackageNamespace(""), "disableTooltip")
+   method
+    name "disableTooltip"
+    refid "kabam.rotmg.fortune.components:ItemWithTooltip/instance/disableTooltip"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hoverTooltipDelegate")
+      callpropvoid        QName(PackageNamespace(""), "removeDisplayObject"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "enableTooltip")
+   method
+    name "enableTooltip"
+    refid "kabam.rotmg.fortune.components:ItemWithTooltip/instance/enableTooltip"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hoverTooltipDelegate")
+      getlocal0
+      callpropvoid        QName(PackageNamespace(""), "setDisplayObject"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.fortune.components:ItemWithTooltip"), "onDestruct")
+   method
+    name "onDestruct"
+    refid "kabam.rotmg.fortune.components:ItemWithTooltip/instance/kabam.rotmg.fortune.components:ItemWithTooltip/instance/onDestruct"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace(""), "removeEventListener")
+      pushstring          "removedFromStage"
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.fortune.components:ItemWithTooltip"), "onDestruct")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      findpropstrict      QName(PackageNamespace(""), "removeEventListener")
+      pushstring          "rollOver"
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.fortune.components:ItemWithTooltip"), "onRollOver")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      findpropstrict      QName(PackageNamespace(""), "removeEventListener")
+      pushstring          "rollOut"
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.fortune.components:ItemWithTooltip"), "onRollOut")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "onMouseOver")
+      callpropvoid        QName(PackageNamespace(""), "removeAll"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "onMouseOut")
+      callpropvoid        QName(PackageNamespace(""), "removeAll"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.fortune.components:ItemWithTooltip"), "onRollOver")
+   method
+    name "onRollOver"
+    refid "kabam.rotmg.fortune.components:ItemWithTooltip/instance/kabam.rotmg.fortune.components:ItemWithTooltip/instance/onRollOver"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 1
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "onMouseOver")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.fortune.components:ItemWithTooltip"), "onRollOut")
+   method
+    name "onRollOut"
+    refid "kabam.rotmg.fortune.components:ItemWithTooltip/instance/kabam.rotmg.fortune.components:ItemWithTooltip/instance/onRollOut"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 1
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "onMouseOut")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setShowToolTipSignal")
+   method
+    name "setShowToolTipSignal"
+    refid "kabam.rotmg.fortune.components:ItemWithTooltip/instance/setShowToolTipSignal"
+    param QName(PackageNamespace("kabam.rotmg.core.signals"), "ShowTooltipSignal")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hoverTooltipDelegate")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "setShowToolTipSignal"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getShowToolTip")
+   method
+    name "getShowToolTip"
+    refid "kabam.rotmg.fortune.components:ItemWithTooltip/instance/getShowToolTip"
+    returns QName(PackageNamespace("kabam.rotmg.core.signals"), "ShowTooltipSignal")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hoverTooltipDelegate")
+      callproperty        QName(PackageNamespace(""), "getShowToolTip"), 0
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setHideToolTipsSignal")
+   method
+    name "setHideToolTipsSignal"
+    refid "kabam.rotmg.fortune.components:ItemWithTooltip/instance/setHideToolTipsSignal"
+    param QName(PackageNamespace("kabam.rotmg.core.signals"), "HideTooltipsSignal")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hoverTooltipDelegate")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "setHideToolTipsSignal"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getHideToolTips")
+   method
+    name "getHideToolTips"
+    refid "kabam.rotmg.fortune.components:ItemWithTooltip/instance/getHideToolTips"
+    returns QName(PackageNamespace("kabam.rotmg.core.signals"), "HideTooltipsSignal")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hoverTooltipDelegate")
+      callproperty        QName(PackageNamespace(""), "getHideToolTips"), 0
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setXPos")
+   method
+    name "setXPos"
+    refid "kabam.rotmg.fortune.components:ItemWithTooltip/instance/setXPos"
+    param QName(PackageNamespace(""), "Number")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 4
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "width")
+      pushbyte            2
+      divide
+      subtract
+      setproperty         QName(PackageNamespace(""), "x")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setYPos")
+   method
+    name "setYPos"
+    refid "kabam.rotmg.fortune.components:ItemWithTooltip/instance/setYPos"
+    param QName(PackageNamespace(""), "Number")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 4
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "height")
+      pushbyte            2
+      divide
+      subtract
+      setproperty         QName(PackageNamespace(""), "y")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getCenterX")
+   method
+    name "getCenterX"
+    refid "kabam.rotmg.fortune.components:ItemWithTooltip/instance/getCenterX"
+    returns QName(PackageNamespace(""), "Number")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "x")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "width")
+      pushbyte            2
+      divide
+      add
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getCenterY")
+   method
+    name "getCenterY"
+    refid "kabam.rotmg.fortune.components:ItemWithTooltip/instance/getCenterY"
+    returns QName(PackageNamespace(""), "Number")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "y")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "height")
+      pushbyte            2
+      divide
+      add
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.fortune.components:ItemWithTooltip/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

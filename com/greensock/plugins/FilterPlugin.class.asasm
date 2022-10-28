@@ -1,0 +1,543 @@
+class
+ refid "com.greensock.plugins:FilterPlugin"
+ instance QName(PackageNamespace("com.greensock.plugins"), "FilterPlugin")
+  extends QName(PackageNamespace("com.greensock.plugins"), "TweenPlugin")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.greensock.plugins:FilterPlugin")
+  iinit
+   name "FilterPlugin"
+   refid "com.greensock.plugins:FilterPlugin/instance/init"
+   param QName(PackageNamespace(""), "String")
+   param QName(PackageNamespace(""), "Number")
+   flag HAS_OPTIONAL
+   flag HAS_PARAM_NAMES
+   optional Utf8("")
+   optional Integer(0)
+   paramname "props"
+   paramname "priority"
+   body
+    maxstack 3
+    localcount 3
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     getlocal1
+     getlocal2
+     constructsuper      2
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(ProtectedNamespace("com.greensock.plugins:FilterPlugin"), "_target") type QName(PackageNamespace(""), "Object") end
+  trait slot QName(ProtectedNamespace("com.greensock.plugins:FilterPlugin"), "_type") type QName(PackageNamespace(""), "Class") end
+  trait slot QName(ProtectedNamespace("com.greensock.plugins:FilterPlugin"), "_filter") type QName(PackageNamespace("flash.filters"), "BitmapFilter") end
+  trait slot QName(ProtectedNamespace("com.greensock.plugins:FilterPlugin"), "_index") type QName(PackageNamespace(""), "int") end
+  trait slot QName(ProtectedNamespace("com.greensock.plugins:FilterPlugin"), "_remove") type QName(PackageNamespace(""), "Boolean") end
+  trait slot QName(PrivateNamespace("com.greensock.plugins:FilterPlugin"), "_tween") type QName(PackageNamespace("com.greensock"), "TweenLite") end
+  trait method QName(ProtectedNamespace("com.greensock.plugins:FilterPlugin"), "_initFilter")
+   method
+    name "_initFilter"
+    refid "com.greensock.plugins:FilterPlugin/instance/com.greensock.plugins:FilterPlugin:_initFilter"
+    param null
+    param QName(PackageNamespace(""), "Object")
+    param QName(PackageNamespace("com.greensock"), "TweenLite")
+    param QName(PackageNamespace(""), "Class")
+    param QName(PackageNamespace("flash.filters"), "BitmapFilter")
+    param QName(PackageNamespace(""), "Array")
+    returns QName(PackageNamespace(""), "Boolean")
+    flag HAS_PARAM_NAMES
+    paramname "target"
+    paramname "props"
+    paramname "tween"
+    paramname "type"
+    paramname "defaultFilter"
+    paramname "propNames"
+    body
+     maxstack 6
+     localcount 12
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      setlocal            7
+
+      pushbyte            0
+      setlocal            8
+
+      pushnull
+      setlocal            11
+
+      getlocal1
+      findproperty        QName(ProtectedNamespace("com.greensock.plugins:FilterPlugin"), "_target")
+      swap
+      setproperty         QName(ProtectedNamespace("com.greensock.plugins:FilterPlugin"), "_target")
+
+      getlocal3
+      findproperty        QName(PrivateNamespace("com.greensock.plugins:FilterPlugin"), "_tween")
+      swap
+      setproperty         QName(PrivateNamespace("com.greensock.plugins:FilterPlugin"), "_tween")
+
+      getlocal            4
+      findproperty        QName(ProtectedNamespace("com.greensock.plugins:FilterPlugin"), "_type")
+      swap
+      setproperty         QName(ProtectedNamespace("com.greensock.plugins:FilterPlugin"), "_type")
+
+      getlex              QName(ProtectedNamespace("com.greensock.plugins:FilterPlugin"), "_target")
+      getproperty         Multiname("filters", [PrivateNamespace("com.greensock.plugins:FilterPlugin"), ProtectedNamespace("com.greensock.plugins:FilterPlugin"), StaticProtectedNs("com.greensock.plugins:FilterPlugin"), StaticProtectedNs("com.greensock.plugins:TweenPlugin"), StaticProtectedNs("Object"), PackageNamespace("com.greensock.plugins"), PackageInternalNs("com.greensock.plugins"), PrivateNamespace("FilePrivateNS:FilterPlugin"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      coerce              QName(PackageNamespace(""), "Array")
+      setlocal            10
+
+      getlocal2
+      getlex              QName(PackageNamespace("flash.filters"), "BitmapFilter")
+      istypelate
+      iffalse             L30
+
+      newobject           0
+      jump                L32
+
+L30:
+      getlocal2
+      coerce              QName(PackageNamespace(""), "Object")
+L32:
+      coerce              QName(PackageNamespace(""), "Object")
+      dup
+      setlocal            9
+
+      getproperty         Multiname("index", [PrivateNamespace("com.greensock.plugins:FilterPlugin"), ProtectedNamespace("com.greensock.plugins:FilterPlugin"), StaticProtectedNs("com.greensock.plugins:FilterPlugin"), StaticProtectedNs("com.greensock.plugins:TweenPlugin"), StaticProtectedNs("Object"), PackageNamespace("com.greensock.plugins"), PackageInternalNs("com.greensock.plugins"), PrivateNamespace("FilePrivateNS:FilterPlugin"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      pushnull
+      ifeq                L44
+
+      getlocal            9
+      getproperty         Multiname("index", [PrivateNamespace("com.greensock.plugins:FilterPlugin"), ProtectedNamespace("com.greensock.plugins:FilterPlugin"), StaticProtectedNs("com.greensock.plugins:FilterPlugin"), StaticProtectedNs("com.greensock.plugins:TweenPlugin"), StaticProtectedNs("Object"), PackageNamespace("com.greensock.plugins"), PackageInternalNs("com.greensock.plugins"), PrivateNamespace("FilePrivateNS:FilterPlugin"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      findproperty        QName(ProtectedNamespace("com.greensock.plugins:FilterPlugin"), "_index")
+      swap
+      setproperty         QName(ProtectedNamespace("com.greensock.plugins:FilterPlugin"), "_index")
+
+      jump                L73
+
+L44:
+      getlocal            10
+      getproperty         QName(PackageNamespace(""), "length")
+      findproperty        QName(ProtectedNamespace("com.greensock.plugins:FilterPlugin"), "_index")
+      swap
+      setproperty         QName(ProtectedNamespace("com.greensock.plugins:FilterPlugin"), "_index")
+
+      getlocal            9
+      getproperty         Multiname("addFilter", [PrivateNamespace("com.greensock.plugins:FilterPlugin"), ProtectedNamespace("com.greensock.plugins:FilterPlugin"), StaticProtectedNs("com.greensock.plugins:FilterPlugin"), StaticProtectedNs("com.greensock.plugins:TweenPlugin"), StaticProtectedNs("Object"), PackageNamespace("com.greensock.plugins"), PackageInternalNs("com.greensock.plugins"), PrivateNamespace("FilePrivateNS:FilterPlugin"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      pushtrue
+      ifeq                L73
+
+      jump                L55
+
+L54:
+      label
+L55:
+      getlex              QName(ProtectedNamespace("com.greensock.plugins:FilterPlugin"), "_index")
+      decrement
+      dup
+      findpropstrict      QName(ProtectedNamespace("com.greensock.plugins:FilterPlugin"), "_index")
+      swap
+      setproperty         QName(ProtectedNamespace("com.greensock.plugins:FilterPlugin"), "_index")
+
+      pushbyte            -1
+      greaterthan
+      dup
+      iffalse             L72
+
+      pop
+      getlocal            10
+      getlex              QName(ProtectedNamespace("com.greensock.plugins:FilterPlugin"), "_index")
+      getproperty         MultinameL([PrivateNamespace("com.greensock.plugins:FilterPlugin"), ProtectedNamespace("com.greensock.plugins:FilterPlugin"), StaticProtectedNs("com.greensock.plugins:FilterPlugin"), StaticProtectedNs("com.greensock.plugins:TweenPlugin"), StaticProtectedNs("Object"), PackageNamespace("com.greensock.plugins"), PackageInternalNs("com.greensock.plugins"), PrivateNamespace("FilePrivateNS:FilterPlugin"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getlex              QName(ProtectedNamespace("com.greensock.plugins:FilterPlugin"), "_type")
+      istypelate
+      not
+L72:
+      iftrue              L54
+
+L73:
+      getlex              QName(ProtectedNamespace("com.greensock.plugins:FilterPlugin"), "_index")
+      pushbyte            0
+      lessthan
+      dup
+      iftrue              L85
+
+      pop
+      getlocal            10
+      getlex              QName(ProtectedNamespace("com.greensock.plugins:FilterPlugin"), "_index")
+      getproperty         MultinameL([PrivateNamespace("com.greensock.plugins:FilterPlugin"), ProtectedNamespace("com.greensock.plugins:FilterPlugin"), StaticProtectedNs("com.greensock.plugins:FilterPlugin"), StaticProtectedNs("com.greensock.plugins:TweenPlugin"), StaticProtectedNs("Object"), PackageNamespace("com.greensock.plugins"), PackageInternalNs("com.greensock.plugins"), PrivateNamespace("FilePrivateNS:FilterPlugin"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getlex              QName(ProtectedNamespace("com.greensock.plugins:FilterPlugin"), "_type")
+      istypelate
+      not
+L85:
+      iffalse             L125
+
+      getlex              QName(ProtectedNamespace("com.greensock.plugins:FilterPlugin"), "_index")
+      pushbyte            0
+      ifnlt               L94
+
+      getlocal            10
+      getproperty         QName(PackageNamespace(""), "length")
+      findproperty        QName(ProtectedNamespace("com.greensock.plugins:FilterPlugin"), "_index")
+      swap
+      setproperty         QName(ProtectedNamespace("com.greensock.plugins:FilterPlugin"), "_index")
+
+L94:
+      getlex              QName(ProtectedNamespace("com.greensock.plugins:FilterPlugin"), "_index")
+      getlocal            10
+      getproperty         QName(PackageNamespace(""), "length")
+      ifngt               L118
+
+      getlocal            10
+      getproperty         QName(PackageNamespace(""), "length")
+      pushbyte            1
+      subtract
+      convert_i
+      setlocal            8
+
+      jump                L114
+
+L105:
+      label
+      getlocal            10
+      getlocal            8
+      findpropstrict      QName(PackageNamespace("flash.filters"), "BlurFilter")
+      pushbyte            0
+      pushbyte            0
+      pushbyte            1
+      constructprop       QName(PackageNamespace("flash.filters"), "BlurFilter"), 3
+      setproperty         MultinameL([PrivateNamespace("com.greensock.plugins:FilterPlugin"), ProtectedNamespace("com.greensock.plugins:FilterPlugin"), StaticProtectedNs("com.greensock.plugins:FilterPlugin"), StaticProtectedNs("com.greensock.plugins:TweenPlugin"), StaticProtectedNs("Object"), PackageNamespace("com.greensock.plugins"), PackageInternalNs("com.greensock.plugins"), PrivateNamespace("FilePrivateNS:FilterPlugin"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+L114:
+      inclocal_i          8
+      getlocal            8
+      getlex              QName(ProtectedNamespace("com.greensock.plugins:FilterPlugin"), "_index")
+      iflt                L105
+
+L118:
+      getlocal            10
+      getlex              QName(ProtectedNamespace("com.greensock.plugins:FilterPlugin"), "_index")
+      getlocal            5
+      setproperty         MultinameL([PrivateNamespace("com.greensock.plugins:FilterPlugin"), ProtectedNamespace("com.greensock.plugins:FilterPlugin"), StaticProtectedNs("com.greensock.plugins:FilterPlugin"), StaticProtectedNs("com.greensock.plugins:TweenPlugin"), StaticProtectedNs("Object"), PackageNamespace("com.greensock.plugins"), PackageInternalNs("com.greensock.plugins"), PrivateNamespace("FilePrivateNS:FilterPlugin"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      getlex              QName(ProtectedNamespace("com.greensock.plugins:FilterPlugin"), "_target")
+      getlocal            10
+      setproperty         Multiname("filters", [PrivateNamespace("com.greensock.plugins:FilterPlugin"), ProtectedNamespace("com.greensock.plugins:FilterPlugin"), StaticProtectedNs("com.greensock.plugins:FilterPlugin"), StaticProtectedNs("com.greensock.plugins:TweenPlugin"), StaticProtectedNs("Object"), PackageNamespace("com.greensock.plugins"), PackageInternalNs("com.greensock.plugins"), PrivateNamespace("FilePrivateNS:FilterPlugin"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+L125:
+      getlocal            10
+      getlex              QName(ProtectedNamespace("com.greensock.plugins:FilterPlugin"), "_index")
+      getproperty         MultinameL([PrivateNamespace("com.greensock.plugins:FilterPlugin"), ProtectedNamespace("com.greensock.plugins:FilterPlugin"), StaticProtectedNs("com.greensock.plugins:FilterPlugin"), StaticProtectedNs("com.greensock.plugins:TweenPlugin"), StaticProtectedNs("Object"), PackageNamespace("com.greensock.plugins"), PackageInternalNs("com.greensock.plugins"), PrivateNamespace("FilePrivateNS:FilterPlugin"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      findproperty        QName(ProtectedNamespace("com.greensock.plugins:FilterPlugin"), "_filter")
+      swap
+      setproperty         QName(ProtectedNamespace("com.greensock.plugins:FilterPlugin"), "_filter")
+
+      getlocal            9
+      getproperty         Multiname("remove", [PrivateNamespace("com.greensock.plugins:FilterPlugin"), ProtectedNamespace("com.greensock.plugins:FilterPlugin"), StaticProtectedNs("com.greensock.plugins:FilterPlugin"), StaticProtectedNs("com.greensock.plugins:TweenPlugin"), StaticProtectedNs("Object"), PackageNamespace("com.greensock.plugins"), PackageInternalNs("com.greensock.plugins"), PrivateNamespace("FilePrivateNS:FilterPlugin"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      pushtrue
+      equals
+      findproperty        QName(ProtectedNamespace("com.greensock.plugins:FilterPlugin"), "_remove")
+      swap
+      setproperty         QName(ProtectedNamespace("com.greensock.plugins:FilterPlugin"), "_remove")
+
+      getlocal            6
+      getproperty         QName(PackageNamespace(""), "length")
+      convert_i
+      setlocal            8
+
+      jump                L239
+
+L143:
+      label
+      getlocal            6
+      getlocal            8
+      getproperty         MultinameL([PrivateNamespace("com.greensock.plugins:FilterPlugin"), ProtectedNamespace("com.greensock.plugins:FilterPlugin"), StaticProtectedNs("com.greensock.plugins:FilterPlugin"), StaticProtectedNs("com.greensock.plugins:TweenPlugin"), StaticProtectedNs("Object"), PackageNamespace("com.greensock.plugins"), PackageInternalNs("com.greensock.plugins"), PrivateNamespace("FilePrivateNS:FilterPlugin"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      coerce_s
+      dup
+      setlocal            7
+
+      getlocal2
+      in
+      dup
+      iffalse             L163
+
+      pop
+      getlex              QName(ProtectedNamespace("com.greensock.plugins:FilterPlugin"), "_filter")
+      getlocal            7
+      getproperty         MultinameL([PrivateNamespace("com.greensock.plugins:FilterPlugin"), ProtectedNamespace("com.greensock.plugins:FilterPlugin"), StaticProtectedNs("com.greensock.plugins:FilterPlugin"), StaticProtectedNs("com.greensock.plugins:TweenPlugin"), StaticProtectedNs("Object"), PackageNamespace("com.greensock.plugins"), PackageInternalNs("com.greensock.plugins"), PrivateNamespace("FilePrivateNS:FilterPlugin"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getlocal2
+      getlocal            7
+      getproperty         MultinameL([PrivateNamespace("com.greensock.plugins:FilterPlugin"), ProtectedNamespace("com.greensock.plugins:FilterPlugin"), StaticProtectedNs("com.greensock.plugins:FilterPlugin"), StaticProtectedNs("com.greensock.plugins:TweenPlugin"), StaticProtectedNs("Object"), PackageNamespace("com.greensock.plugins"), PackageInternalNs("com.greensock.plugins"), PrivateNamespace("FilePrivateNS:FilterPlugin"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      equals
+      not
+L163:
+      iffalse             L239
+
+      getlocal            7
+      pushstring          "color"
+      equals
+      dup
+      iftrue              L173
+
+      pop
+      getlocal            7
+      pushstring          "highlightColor"
+      equals
+L173:
+      dup
+      iftrue              L179
+
+      pop
+      getlocal            7
+      pushstring          "shadowColor"
+      equals
+L179:
+      iffalse             L199
+
+      findpropstrict      QName(PackageNamespace("com.greensock.plugins"), "HexColorsPlugin")
+      constructprop       QName(PackageNamespace("com.greensock.plugins"), "HexColorsPlugin"), 0
+      coerce              QName(PackageNamespace("com.greensock.plugins"), "HexColorsPlugin")
+      dup
+      setlocal            11
+
+      getlex              QName(ProtectedNamespace("com.greensock.plugins:FilterPlugin"), "_filter")
+      getlocal            7
+      getlocal2
+      getlocal            7
+      getproperty         MultinameL([PrivateNamespace("com.greensock.plugins:FilterPlugin"), ProtectedNamespace("com.greensock.plugins:FilterPlugin"), StaticProtectedNs("com.greensock.plugins:FilterPlugin"), StaticProtectedNs("com.greensock.plugins:TweenPlugin"), StaticProtectedNs("Object"), PackageNamespace("com.greensock.plugins"), PackageInternalNs("com.greensock.plugins"), PrivateNamespace("FilePrivateNS:FilterPlugin"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      callpropvoid        QName(PackageNamespace(""), "_initColor"), 3
+
+      findpropstrict      QName(ProtectedNamespace("com.greensock.plugins:TweenPlugin"), "_addTween")
+      getlocal            11
+      pushstring          "setRatio"
+      pushbyte            0
+      pushbyte            1
+      getlex              QName(PackageNamespace(""), "_propName")
+      callpropvoid        QName(ProtectedNamespace("com.greensock.plugins:TweenPlugin"), "_addTween"), 5
+
+      jump                L239
+
+L199:
+      getlocal            7
+      pushstring          "quality"
+      equals
+      dup
+      iftrue              L208
+
+      pop
+      getlocal            7
+      pushstring          "inner"
+      equals
+L208:
+      dup
+      iftrue              L214
+
+      pop
+      getlocal            7
+      pushstring          "knockout"
+      equals
+L214:
+      dup
+      iftrue              L220
+
+      pop
+      getlocal            7
+      pushstring          "hideObject"
+      equals
+L220:
+      iffalse             L228
+
+      getlex              QName(ProtectedNamespace("com.greensock.plugins:FilterPlugin"), "_filter")
+      getlocal            7
+      getlocal2
+      getlocal            7
+      getproperty         MultinameL([PrivateNamespace("com.greensock.plugins:FilterPlugin"), ProtectedNamespace("com.greensock.plugins:FilterPlugin"), StaticProtectedNs("com.greensock.plugins:FilterPlugin"), StaticProtectedNs("com.greensock.plugins:TweenPlugin"), StaticProtectedNs("Object"), PackageNamespace("com.greensock.plugins"), PackageInternalNs("com.greensock.plugins"), PrivateNamespace("FilePrivateNS:FilterPlugin"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      setproperty         MultinameL([PrivateNamespace("com.greensock.plugins:FilterPlugin"), ProtectedNamespace("com.greensock.plugins:FilterPlugin"), StaticProtectedNs("com.greensock.plugins:FilterPlugin"), StaticProtectedNs("com.greensock.plugins:TweenPlugin"), StaticProtectedNs("Object"), PackageNamespace("com.greensock.plugins"), PackageInternalNs("com.greensock.plugins"), PrivateNamespace("FilePrivateNS:FilterPlugin"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      jump                L239
+
+L228:
+      findpropstrict      QName(ProtectedNamespace("com.greensock.plugins:TweenPlugin"), "_addTween")
+      getlex              QName(ProtectedNamespace("com.greensock.plugins:FilterPlugin"), "_filter")
+      getlocal            7
+      getlex              QName(ProtectedNamespace("com.greensock.plugins:FilterPlugin"), "_filter")
+      getlocal            7
+      getproperty         MultinameL([PrivateNamespace("com.greensock.plugins:FilterPlugin"), ProtectedNamespace("com.greensock.plugins:FilterPlugin"), StaticProtectedNs("com.greensock.plugins:FilterPlugin"), StaticProtectedNs("com.greensock.plugins:TweenPlugin"), StaticProtectedNs("Object"), PackageNamespace("com.greensock.plugins"), PackageInternalNs("com.greensock.plugins"), PrivateNamespace("FilePrivateNS:FilterPlugin"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getlocal2
+      getlocal            7
+      getproperty         MultinameL([PrivateNamespace("com.greensock.plugins:FilterPlugin"), ProtectedNamespace("com.greensock.plugins:FilterPlugin"), StaticProtectedNs("com.greensock.plugins:FilterPlugin"), StaticProtectedNs("com.greensock.plugins:TweenPlugin"), StaticProtectedNs("Object"), PackageNamespace("com.greensock.plugins"), PackageInternalNs("com.greensock.plugins"), PrivateNamespace("FilePrivateNS:FilterPlugin"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getlex              QName(PackageNamespace(""), "_propName")
+      callpropvoid        QName(ProtectedNamespace("com.greensock.plugins:TweenPlugin"), "_addTween"), 5
+
+L239:
+      declocal_i          8
+      getlocal            8
+      pushbyte            -1
+      ifgt                L143
+
+      pushtrue
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setRatio") flag OVERRIDE
+   method
+    name "setRatio"
+    refid "com.greensock.plugins:FilterPlugin/instance/setRatio"
+    param QName(PackageNamespace(""), "Number")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "v"
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      callsupervoid       QName(PackageNamespace(""), "setRatio"), 1
+      getlex              QName(ProtectedNamespace("com.greensock.plugins:FilterPlugin"), "_target")
+      getproperty         Multiname("filters", [PrivateNamespace("com.greensock.plugins:FilterPlugin"), ProtectedNamespace("com.greensock.plugins:FilterPlugin"), StaticProtectedNs("com.greensock.plugins:FilterPlugin"), StaticProtectedNs("com.greensock.plugins:TweenPlugin"), StaticProtectedNs("Object"), PackageNamespace("com.greensock.plugins"), PackageInternalNs("com.greensock.plugins"), PrivateNamespace("FilePrivateNS:FilterPlugin"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      coerce              QName(PackageNamespace(""), "Array")
+      setlocal2
+
+      getlocal2
+      getlex              QName(ProtectedNamespace("com.greensock.plugins:FilterPlugin"), "_index")
+      getproperty         MultinameL([PrivateNamespace("com.greensock.plugins:FilterPlugin"), ProtectedNamespace("com.greensock.plugins:FilterPlugin"), StaticProtectedNs("com.greensock.plugins:FilterPlugin"), StaticProtectedNs("com.greensock.plugins:TweenPlugin"), StaticProtectedNs("Object"), PackageNamespace("com.greensock.plugins"), PackageInternalNs("com.greensock.plugins"), PrivateNamespace("FilePrivateNS:FilterPlugin"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getlex              QName(ProtectedNamespace("com.greensock.plugins:FilterPlugin"), "_type")
+      istypelate
+      iftrue              L48
+
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "length")
+      findproperty        QName(ProtectedNamespace("com.greensock.plugins:FilterPlugin"), "_index")
+      swap
+      setproperty         QName(ProtectedNamespace("com.greensock.plugins:FilterPlugin"), "_index")
+
+      jump                L22
+
+L21:
+      label
+L22:
+      getlex              QName(ProtectedNamespace("com.greensock.plugins:FilterPlugin"), "_index")
+      decrement
+      dup
+      findpropstrict      QName(ProtectedNamespace("com.greensock.plugins:FilterPlugin"), "_index")
+      swap
+      setproperty         QName(ProtectedNamespace("com.greensock.plugins:FilterPlugin"), "_index")
+
+      pushbyte            -1
+      greaterthan
+      dup
+      iffalse             L39
+
+      pop
+      getlocal2
+      getlex              QName(ProtectedNamespace("com.greensock.plugins:FilterPlugin"), "_index")
+      getproperty         MultinameL([PrivateNamespace("com.greensock.plugins:FilterPlugin"), ProtectedNamespace("com.greensock.plugins:FilterPlugin"), StaticProtectedNs("com.greensock.plugins:FilterPlugin"), StaticProtectedNs("com.greensock.plugins:TweenPlugin"), StaticProtectedNs("Object"), PackageNamespace("com.greensock.plugins"), PackageInternalNs("com.greensock.plugins"), PrivateNamespace("FilePrivateNS:FilterPlugin"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getlex              QName(ProtectedNamespace("com.greensock.plugins:FilterPlugin"), "_type")
+      istypelate
+      not
+L39:
+      iftrue              L21
+
+      getlex              QName(ProtectedNamespace("com.greensock.plugins:FilterPlugin"), "_index")
+      pushbyte            -1
+      ifne                L48
+
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "length")
+      findproperty        QName(ProtectedNamespace("com.greensock.plugins:FilterPlugin"), "_index")
+      swap
+      setproperty         QName(ProtectedNamespace("com.greensock.plugins:FilterPlugin"), "_index")
+
+L48:
+      getlocal1
+      pushbyte            1
+      equals
+      dup
+      iffalse             L56
+
+      pop
+      getlex              QName(ProtectedNamespace("com.greensock.plugins:FilterPlugin"), "_remove")
+      convert_b
+L56:
+      dup
+      iffalse             L64
+
+      pop
+      getlex              QName(PrivateNamespace("com.greensock.plugins:FilterPlugin"), "_tween")
+      getproperty         QName(PackageNamespace(""), "_time")
+      getlex              QName(PrivateNamespace("com.greensock.plugins:FilterPlugin"), "_tween")
+      getproperty         QName(PackageNamespace(""), "_duration")
+      equals
+L64:
+      dup
+      iffalse             L72
+
+      pop
+      getlex              QName(PrivateNamespace("com.greensock.plugins:FilterPlugin"), "_tween")
+      getproperty         QName(PackageNamespace(""), "data")
+      pushstring          "isFromStart"
+      equals
+      not
+L72:
+      iffalse             L82
+
+      getlex              QName(ProtectedNamespace("com.greensock.plugins:FilterPlugin"), "_index")
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "length")
+      ifnlt               L81
+
+      getlocal2
+      getlex              QName(ProtectedNamespace("com.greensock.plugins:FilterPlugin"), "_index")
+      pushbyte            1
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "splice"), 2
+
+L81:
+      jump                L86
+
+L82:
+      getlocal2
+      getlex              QName(ProtectedNamespace("com.greensock.plugins:FilterPlugin"), "_index")
+      getlex              QName(ProtectedNamespace("com.greensock.plugins:FilterPlugin"), "_filter")
+      setproperty         MultinameL([PrivateNamespace("com.greensock.plugins:FilterPlugin"), ProtectedNamespace("com.greensock.plugins:FilterPlugin"), StaticProtectedNs("com.greensock.plugins:FilterPlugin"), StaticProtectedNs("com.greensock.plugins:TweenPlugin"), StaticProtectedNs("Object"), PackageNamespace("com.greensock.plugins"), PackageInternalNs("com.greensock.plugins"), PrivateNamespace("FilePrivateNS:FilterPlugin"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+L86:
+      getlex              QName(ProtectedNamespace("com.greensock.plugins:FilterPlugin"), "_target")
+      getlocal2
+      setproperty         Multiname("filters", [PrivateNamespace("com.greensock.plugins:FilterPlugin"), ProtectedNamespace("com.greensock.plugins:FilterPlugin"), StaticProtectedNs("com.greensock.plugins:FilterPlugin"), StaticProtectedNs("com.greensock.plugins:TweenPlugin"), StaticProtectedNs("Object"), PackageNamespace("com.greensock.plugins"), PackageInternalNs("com.greensock.plugins"), PrivateNamespace("FilePrivateNS:FilterPlugin"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.greensock.plugins:FilterPlugin/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PackageNamespace(""), "API") type QName(PackageNamespace(""), "Number") value Integer(2) end
+end ; class

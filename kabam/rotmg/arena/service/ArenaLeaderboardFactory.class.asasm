@@ -1,0 +1,607 @@
+class
+ refid "kabam.rotmg.arena.service:ArenaLeaderboardFactory"
+ instance QName(PackageNamespace("kabam.rotmg.arena.service"), "ArenaLeaderboardFactory")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  iinit
+   refid "kabam.rotmg.arena.service:ArenaLeaderboardFactory/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "classesModel") flag METADATA type QName(PackageNamespace("kabam.rotmg.classes.model"), "ClassesModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "factory") flag METADATA type QName(PackageNamespace("kabam.rotmg.assets.services"), "CharacterFactory")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "currentRunModel") flag METADATA type QName(PackageNamespace("kabam.rotmg.arena.model"), "CurrentArenaRunModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PackageNamespace(""), "makeEntries")
+   method
+    name "makeEntries"
+    refid "kabam.rotmg.arena.service:ArenaLeaderboardFactory/instance/makeEntries"
+    param QName(PackageNamespace(""), "XMLList")
+    returns TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("kabam.rotmg.arena.model"), "ArenaLeaderboardEntry")>)
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 4
+     localcount 7
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      setlocal            4
+
+      getlex              QName(PackageNamespace("__AS3__.vec"), "Vector")
+      getlex              QName(PackageNamespace("kabam.rotmg.arena.model"), "ArenaLeaderboardEntry")
+      applytype           1
+      construct           0
+      coerce              TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("kabam.rotmg.arena.model"), "ArenaLeaderboardEntry")>)
+      setlocal2
+
+      pushbyte            1
+      setlocal3
+
+      pushbyte            0
+      setlocal            6
+
+      getlocal1
+      setlocal            5
+
+      jump                L30
+
+L17:
+      label
+      getlocal            5
+      getlocal            6
+      nextvalue
+      coerce              QName(PackageNamespace(""), "XML")
+      setlocal            4
+
+      getlocal2
+      getlocal0
+      getlocal            4
+      getlocal3
+      callproperty        QName(PrivateNamespace("kabam.rotmg.arena.service:ArenaLeaderboardFactory"), "makeArenaEntry"), 2
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+
+      inclocal_i          3
+L30:
+      hasnext2            5, 6
+      iftrue              L17
+
+      getlocal0
+      getlocal2
+      callproperty        QName(PrivateNamespace("kabam.rotmg.arena.service:ArenaLeaderboardFactory"), "removeDuplicateUser"), 1
+      coerce              TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("kabam.rotmg.arena.model"), "ArenaLeaderboardEntry")>)
+      setlocal2
+
+      getlocal0
+      getlocal2
+      callproperty        QName(PrivateNamespace("kabam.rotmg.arena.service:ArenaLeaderboardFactory"), "addCurrentRun"), 1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.arena.service:ArenaLeaderboardFactory"), "addCurrentRun")
+   method
+    name "addCurrentRun"
+    refid "kabam.rotmg.arena.service:ArenaLeaderboardFactory/instance/kabam.rotmg.arena.service:ArenaLeaderboardFactory/instance/addCurrentRun"
+    param TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("kabam.rotmg.arena.model"), "ArenaLeaderboardEntry")>)
+    returns TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("kabam.rotmg.arena.model"), "ArenaLeaderboardEntry")>)
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 3
+     localcount 8
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushfalse
+      setlocal3
+
+      pushfalse
+      setlocal            4
+
+      pushnull
+      setlocal            5
+
+      getlex              QName(PackageNamespace("__AS3__.vec"), "Vector")
+      getlex              QName(PackageNamespace("kabam.rotmg.arena.model"), "ArenaLeaderboardEntry")
+      applytype           1
+      construct           0
+      coerce              TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("kabam.rotmg.arena.model"), "ArenaLeaderboardEntry")>)
+      setlocal2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "currentRunModel")
+      callproperty        QName(PackageNamespace(""), "hasEntry"), 0
+      iffalse             L104
+
+      pushfalse
+      setlocal3
+
+      pushfalse
+      setlocal            4
+
+      pushbyte            0
+      setlocal            7
+
+      getlocal1
+      setlocal            6
+
+      jump                L74
+
+L27:
+      label
+      getlocal            6
+      getlocal            7
+      nextvalue
+      coerce              QName(PackageNamespace("kabam.rotmg.arena.model"), "ArenaLeaderboardEntry")
+      setlocal            5
+
+      getlocal3
+      not
+      dup
+      iffalse             L44
+
+      pop
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "currentRunModel")
+      getproperty         QName(PackageNamespace(""), "entry")
+      getlocal            5
+      callproperty        QName(PackageNamespace(""), "isBetterThan"), 1
+      convert_b
+L44:
+      iffalse             L58
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "currentRunModel")
+      getproperty         QName(PackageNamespace(""), "entry")
+      getlocal            5
+      getproperty         QName(PackageNamespace(""), "rank")
+      setproperty         QName(PackageNamespace(""), "rank")
+
+      getlocal2
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "currentRunModel")
+      getproperty         QName(PackageNamespace(""), "entry")
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+
+      pushtrue
+      setlocal3
+
+L58:
+      getlocal            5
+      getproperty         QName(PackageNamespace(""), "isPersonalRecord")
+      iffalse             L63
+
+      pushtrue
+      setlocal            4
+
+L63:
+      getlocal3
+      iffalse             L71
+
+      getlocal            5
+      dup
+      getproperty         QName(PackageNamespace(""), "rank")
+      convert_d
+      increment
+      setproperty         QName(PackageNamespace(""), "rank")
+
+L71:
+      getlocal2
+      getlocal            5
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+
+L74:
+      hasnext2            6, 7
+      iftrue              L27
+
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "length")
+      pushbyte            20
+      lessthan
+      dup
+      iffalse             L85
+
+      pop
+      getlocal3
+      not
+L85:
+      dup
+      iffalse             L90
+
+      pop
+      getlocal            4
+      not
+L90:
+      iffalse             L104
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "currentRunModel")
+      getproperty         QName(PackageNamespace(""), "entry")
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "length")
+      pushbyte            1
+      add
+      setproperty         QName(PackageNamespace(""), "rank")
+
+      getlocal2
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "currentRunModel")
+      getproperty         QName(PackageNamespace(""), "entry")
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+
+L104:
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "length")
+      pushbyte            0
+      ifngt               L110
+
+      getlocal2
+      jump                L112
+
+L110:
+      getlocal1
+      coerce              TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("kabam.rotmg.arena.model"), "ArenaLeaderboardEntry")>)
+L112:
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.arena.service:ArenaLeaderboardFactory"), "removeDuplicateUser")
+   method
+    name "removeDuplicateUser"
+    refid "kabam.rotmg.arena.service:ArenaLeaderboardFactory/instance/kabam.rotmg.arena.service:ArenaLeaderboardFactory/instance/removeDuplicateUser"
+    param TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("kabam.rotmg.arena.model"), "ArenaLeaderboardEntry")>)
+    returns TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("kabam.rotmg.arena.model"), "ArenaLeaderboardEntry")>)
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 3
+     localcount 8
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushfalse
+      setlocal3
+
+      pushnull
+      setlocal            4
+
+      pushnull
+      setlocal            5
+
+      pushbyte            -1
+      setlocal2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "currentRunModel")
+      callproperty        QName(PackageNamespace(""), "hasEntry"), 0
+      iffalse             L61
+
+      pushfalse
+      setlocal3
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "currentRunModel")
+      getproperty         QName(PackageNamespace(""), "entry")
+      coerce              QName(PackageNamespace("kabam.rotmg.arena.model"), "ArenaLeaderboardEntry")
+      setlocal            4
+
+      pushbyte            0
+      setlocal            7
+
+      getlocal1
+      setlocal            6
+
+      jump                L59
+
+L26:
+      label
+      getlocal            6
+      getlocal            7
+      nextvalue
+      coerce              QName(PackageNamespace("kabam.rotmg.arena.model"), "ArenaLeaderboardEntry")
+      dup
+      setlocal            5
+
+      getproperty         QName(PackageNamespace(""), "isPersonalRecord")
+      dup
+      iffalse             L41
+
+      pop
+      getlocal            4
+      getlocal            5
+      callproperty        QName(PackageNamespace(""), "isBetterThan"), 1
+      convert_b
+L41:
+      iffalse             L51
+
+      getlocal            5
+      getproperty         QName(PackageNamespace(""), "rank")
+      pushbyte            1
+      subtract
+      convert_i
+      setlocal2
+
+      pushtrue
+      setlocal3
+
+      jump                L59
+
+L51:
+      getlocal3
+      iffalse             L59
+
+      getlocal            5
+      dup
+      getproperty         QName(PackageNamespace(""), "rank")
+      convert_d
+      decrement
+      setproperty         QName(PackageNamespace(""), "rank")
+
+L59:
+      hasnext2            6, 7
+      iftrue              L26
+
+L61:
+      getlocal2
+      pushbyte            -1
+      ifeq                L68
+
+      getlocal1
+      getlocal2
+      pushbyte            1
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "splice"), 2
+
+L68:
+      getlocal1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.arena.service:ArenaLeaderboardFactory"), "makeArenaEntry")
+   method
+    name "makeArenaEntry"
+    refid "kabam.rotmg.arena.service:ArenaLeaderboardFactory/instance/kabam.rotmg.arena.service:ArenaLeaderboardFactory/instance/makeArenaEntry"
+    param QName(PackageNamespace(""), "XML")
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace("kabam.rotmg.arena.model"), "ArenaLeaderboardEntry")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    paramname "_arg2"
+    body
+     maxstack 6
+     localcount 11
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      setlocal            4
+
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.arena.model"), "ArenaLeaderboardEntry")
+      constructprop       QName(PackageNamespace("kabam.rotmg.arena.model"), "ArenaLeaderboardEntry"), 0
+      coerce              QName(PackageNamespace("kabam.rotmg.arena.model"), "ArenaLeaderboardEntry")
+      setlocal3
+
+      getlocal3
+      getlocal1
+      pushstring          "IsPersonalRecord"
+      callproperty        Multiname("hasOwnProperty", [PrivateNamespace("kabam.rotmg.arena.service:ArenaLeaderboardFactory"), ProtectedNamespace("kabam.rotmg.arena.service:ArenaLeaderboardFactory"), StaticProtectedNs("kabam.rotmg.arena.service:ArenaLeaderboardFactory"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.arena.service"), PackageInternalNs("kabam.rotmg.arena.service"), PrivateNamespace("FilePrivateNS:ArenaLeaderboardFactory"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 1
+      setproperty         QName(PackageNamespace(""), "isPersonalRecord")
+
+      getlocal3
+      getlocal1
+      getproperty         Multiname("Time", [PrivateNamespace("kabam.rotmg.arena.service:ArenaLeaderboardFactory"), ProtectedNamespace("kabam.rotmg.arena.service:ArenaLeaderboardFactory"), StaticProtectedNs("kabam.rotmg.arena.service:ArenaLeaderboardFactory"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.arena.service"), PackageInternalNs("kabam.rotmg.arena.service"), PrivateNamespace("FilePrivateNS:ArenaLeaderboardFactory"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      setproperty         QName(PackageNamespace(""), "runtime")
+
+      getlocal3
+      getlocal1
+      getproperty         Multiname("PlayData", [PrivateNamespace("kabam.rotmg.arena.service:ArenaLeaderboardFactory"), ProtectedNamespace("kabam.rotmg.arena.service:ArenaLeaderboardFactory"), StaticProtectedNs("kabam.rotmg.arena.service:ArenaLeaderboardFactory"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.arena.service"), PackageInternalNs("kabam.rotmg.arena.service"), PrivateNamespace("FilePrivateNS:ArenaLeaderboardFactory"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getproperty         Multiname("CharacterData", [PrivateNamespace("kabam.rotmg.arena.service:ArenaLeaderboardFactory"), ProtectedNamespace("kabam.rotmg.arena.service:ArenaLeaderboardFactory"), StaticProtectedNs("kabam.rotmg.arena.service:ArenaLeaderboardFactory"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.arena.service"), PackageInternalNs("kabam.rotmg.arena.service"), PrivateNamespace("FilePrivateNS:ArenaLeaderboardFactory"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getproperty         Multiname("Name", [PrivateNamespace("kabam.rotmg.arena.service:ArenaLeaderboardFactory"), ProtectedNamespace("kabam.rotmg.arena.service:ArenaLeaderboardFactory"), StaticProtectedNs("kabam.rotmg.arena.service:ArenaLeaderboardFactory"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.arena.service"), PackageInternalNs("kabam.rotmg.arena.service"), PrivateNamespace("FilePrivateNS:ArenaLeaderboardFactory"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      setproperty         QName(PackageNamespace(""), "name")
+
+      getlocal3
+      getlocal1
+      pushstring          "Rank"
+      callproperty        Multiname("hasOwnProperty", [PrivateNamespace("kabam.rotmg.arena.service:ArenaLeaderboardFactory"), ProtectedNamespace("kabam.rotmg.arena.service:ArenaLeaderboardFactory"), StaticProtectedNs("kabam.rotmg.arena.service:ArenaLeaderboardFactory"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.arena.service"), PackageInternalNs("kabam.rotmg.arena.service"), PrivateNamespace("FilePrivateNS:ArenaLeaderboardFactory"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 1
+      iffalse             L31
+
+      getlocal1
+      getproperty         Multiname("Rank", [PrivateNamespace("kabam.rotmg.arena.service:ArenaLeaderboardFactory"), ProtectedNamespace("kabam.rotmg.arena.service:ArenaLeaderboardFactory"), StaticProtectedNs("kabam.rotmg.arena.service:ArenaLeaderboardFactory"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.arena.service"), PackageInternalNs("kabam.rotmg.arena.service"), PrivateNamespace("FilePrivateNS:ArenaLeaderboardFactory"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      jump                L33
+
+L31:
+      getlocal2
+      coerce_a
+L33:
+      setproperty         QName(PackageNamespace(""), "rank")
+
+      getlocal1
+      getproperty         Multiname("PlayData", [PrivateNamespace("kabam.rotmg.arena.service:ArenaLeaderboardFactory"), ProtectedNamespace("kabam.rotmg.arena.service:ArenaLeaderboardFactory"), StaticProtectedNs("kabam.rotmg.arena.service:ArenaLeaderboardFactory"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.arena.service"), PackageInternalNs("kabam.rotmg.arena.service"), PrivateNamespace("FilePrivateNS:ArenaLeaderboardFactory"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getproperty         Multiname("CharacterData", [PrivateNamespace("kabam.rotmg.arena.service:ArenaLeaderboardFactory"), ProtectedNamespace("kabam.rotmg.arena.service:ArenaLeaderboardFactory"), StaticProtectedNs("kabam.rotmg.arena.service:ArenaLeaderboardFactory"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.arena.service"), PackageInternalNs("kabam.rotmg.arena.service"), PrivateNamespace("FilePrivateNS:ArenaLeaderboardFactory"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getproperty         Multiname("Texture", [PrivateNamespace("kabam.rotmg.arena.service:ArenaLeaderboardFactory"), ProtectedNamespace("kabam.rotmg.arena.service:ArenaLeaderboardFactory"), StaticProtectedNs("kabam.rotmg.arena.service:ArenaLeaderboardFactory"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.arena.service"), PackageInternalNs("kabam.rotmg.arena.service"), PrivateNamespace("FilePrivateNS:ArenaLeaderboardFactory"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      convert_i
+      setlocal            9
+
+      getlocal1
+      getproperty         Multiname("PlayData", [PrivateNamespace("kabam.rotmg.arena.service:ArenaLeaderboardFactory"), ProtectedNamespace("kabam.rotmg.arena.service:ArenaLeaderboardFactory"), StaticProtectedNs("kabam.rotmg.arena.service:ArenaLeaderboardFactory"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.arena.service"), PackageInternalNs("kabam.rotmg.arena.service"), PrivateNamespace("FilePrivateNS:ArenaLeaderboardFactory"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getproperty         Multiname("CharacterData", [PrivateNamespace("kabam.rotmg.arena.service:ArenaLeaderboardFactory"), ProtectedNamespace("kabam.rotmg.arena.service:ArenaLeaderboardFactory"), StaticProtectedNs("kabam.rotmg.arena.service:ArenaLeaderboardFactory"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.arena.service"), PackageInternalNs("kabam.rotmg.arena.service"), PrivateNamespace("FilePrivateNS:ArenaLeaderboardFactory"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getproperty         Multiname("Class", [PrivateNamespace("kabam.rotmg.arena.service:ArenaLeaderboardFactory"), ProtectedNamespace("kabam.rotmg.arena.service:ArenaLeaderboardFactory"), StaticProtectedNs("kabam.rotmg.arena.service:ArenaLeaderboardFactory"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.arena.service"), PackageInternalNs("kabam.rotmg.arena.service"), PrivateNamespace("FilePrivateNS:ArenaLeaderboardFactory"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      convert_i
+      setlocal            10
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "classesModel")
+      getlocal            10
+      callproperty        QName(PackageNamespace(""), "getCharacterClass"), 1
+      coerce              QName(PackageNamespace("kabam.rotmg.classes.model"), "CharacterClass")
+      dup
+      setlocal            7
+
+      getproperty         QName(PackageNamespace(""), "skins")
+      getlocal            9
+      callproperty        QName(PackageNamespace(""), "getSkin"), 1
+      coerce              QName(PackageNamespace("kabam.rotmg.classes.model"), "CharacterSkin")
+      setlocal            8
+
+      getlocal1
+      getproperty         Multiname("PlayData", [PrivateNamespace("kabam.rotmg.arena.service:ArenaLeaderboardFactory"), ProtectedNamespace("kabam.rotmg.arena.service:ArenaLeaderboardFactory"), StaticProtectedNs("kabam.rotmg.arena.service:ArenaLeaderboardFactory"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.arena.service"), PackageInternalNs("kabam.rotmg.arena.service"), PrivateNamespace("FilePrivateNS:ArenaLeaderboardFactory"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getproperty         Multiname("CharacterData", [PrivateNamespace("kabam.rotmg.arena.service:ArenaLeaderboardFactory"), ProtectedNamespace("kabam.rotmg.arena.service:ArenaLeaderboardFactory"), StaticProtectedNs("kabam.rotmg.arena.service:ArenaLeaderboardFactory"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.arena.service"), PackageInternalNs("kabam.rotmg.arena.service"), PrivateNamespace("FilePrivateNS:ArenaLeaderboardFactory"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      pushstring          "Tex1"
+      callproperty        Multiname("hasOwnProperty", [PrivateNamespace("kabam.rotmg.arena.service:ArenaLeaderboardFactory"), ProtectedNamespace("kabam.rotmg.arena.service:ArenaLeaderboardFactory"), StaticProtectedNs("kabam.rotmg.arena.service:ArenaLeaderboardFactory"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.arena.service"), PackageInternalNs("kabam.rotmg.arena.service"), PrivateNamespace("FilePrivateNS:ArenaLeaderboardFactory"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 1
+      iffalse             L69
+
+      getlocal1
+      getproperty         Multiname("PlayData", [PrivateNamespace("kabam.rotmg.arena.service:ArenaLeaderboardFactory"), ProtectedNamespace("kabam.rotmg.arena.service:ArenaLeaderboardFactory"), StaticProtectedNs("kabam.rotmg.arena.service:ArenaLeaderboardFactory"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.arena.service"), PackageInternalNs("kabam.rotmg.arena.service"), PrivateNamespace("FilePrivateNS:ArenaLeaderboardFactory"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getproperty         Multiname("CharacterData", [PrivateNamespace("kabam.rotmg.arena.service:ArenaLeaderboardFactory"), ProtectedNamespace("kabam.rotmg.arena.service:ArenaLeaderboardFactory"), StaticProtectedNs("kabam.rotmg.arena.service:ArenaLeaderboardFactory"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.arena.service"), PackageInternalNs("kabam.rotmg.arena.service"), PrivateNamespace("FilePrivateNS:ArenaLeaderboardFactory"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getproperty         Multiname("Tex1", [PrivateNamespace("kabam.rotmg.arena.service:ArenaLeaderboardFactory"), ProtectedNamespace("kabam.rotmg.arena.service:ArenaLeaderboardFactory"), StaticProtectedNs("kabam.rotmg.arena.service:ArenaLeaderboardFactory"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.arena.service"), PackageInternalNs("kabam.rotmg.arena.service"), PrivateNamespace("FilePrivateNS:ArenaLeaderboardFactory"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      jump                L71
+
+L69:
+      pushbyte            0
+      coerce_a
+L71:
+      convert_i
+      setlocal            5
+
+      getlocal1
+      getproperty         Multiname("PlayData", [PrivateNamespace("kabam.rotmg.arena.service:ArenaLeaderboardFactory"), ProtectedNamespace("kabam.rotmg.arena.service:ArenaLeaderboardFactory"), StaticProtectedNs("kabam.rotmg.arena.service:ArenaLeaderboardFactory"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.arena.service"), PackageInternalNs("kabam.rotmg.arena.service"), PrivateNamespace("FilePrivateNS:ArenaLeaderboardFactory"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getproperty         Multiname("CharacterData", [PrivateNamespace("kabam.rotmg.arena.service:ArenaLeaderboardFactory"), ProtectedNamespace("kabam.rotmg.arena.service:ArenaLeaderboardFactory"), StaticProtectedNs("kabam.rotmg.arena.service:ArenaLeaderboardFactory"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.arena.service"), PackageInternalNs("kabam.rotmg.arena.service"), PrivateNamespace("FilePrivateNS:ArenaLeaderboardFactory"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      pushstring          "Tex2"
+      callproperty        Multiname("hasOwnProperty", [PrivateNamespace("kabam.rotmg.arena.service:ArenaLeaderboardFactory"), ProtectedNamespace("kabam.rotmg.arena.service:ArenaLeaderboardFactory"), StaticProtectedNs("kabam.rotmg.arena.service:ArenaLeaderboardFactory"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.arena.service"), PackageInternalNs("kabam.rotmg.arena.service"), PrivateNamespace("FilePrivateNS:ArenaLeaderboardFactory"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 1
+      iffalse             L84
+
+      getlocal1
+      getproperty         Multiname("PlayData", [PrivateNamespace("kabam.rotmg.arena.service:ArenaLeaderboardFactory"), ProtectedNamespace("kabam.rotmg.arena.service:ArenaLeaderboardFactory"), StaticProtectedNs("kabam.rotmg.arena.service:ArenaLeaderboardFactory"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.arena.service"), PackageInternalNs("kabam.rotmg.arena.service"), PrivateNamespace("FilePrivateNS:ArenaLeaderboardFactory"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getproperty         Multiname("CharacterData", [PrivateNamespace("kabam.rotmg.arena.service:ArenaLeaderboardFactory"), ProtectedNamespace("kabam.rotmg.arena.service:ArenaLeaderboardFactory"), StaticProtectedNs("kabam.rotmg.arena.service:ArenaLeaderboardFactory"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.arena.service"), PackageInternalNs("kabam.rotmg.arena.service"), PrivateNamespace("FilePrivateNS:ArenaLeaderboardFactory"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getproperty         Multiname("Tex2", [PrivateNamespace("kabam.rotmg.arena.service:ArenaLeaderboardFactory"), ProtectedNamespace("kabam.rotmg.arena.service:ArenaLeaderboardFactory"), StaticProtectedNs("kabam.rotmg.arena.service:ArenaLeaderboardFactory"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.arena.service"), PackageInternalNs("kabam.rotmg.arena.service"), PrivateNamespace("FilePrivateNS:ArenaLeaderboardFactory"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      jump                L86
+
+L84:
+      pushbyte            0
+      coerce_a
+L86:
+      convert_i
+      setlocal            6
+
+      getlocal3
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "factory")
+      getlocal            8
+      getproperty         QName(PackageNamespace(""), "template")
+      getlocal            8
+      getproperty         QName(PackageNamespace(""), "is32x32")
+      iffalse             L98
+
+      pushbyte            25
+      jump                L105
+
+L98:
+      getlocal            8
+      getproperty         QName(PackageNamespace(""), "is16x16")
+      iffalse             L103
+
+      pushbyte            50
+      jump                L104
+
+L103:
+      pushdouble          100
+L104:
+      convert_d
+L105:
+      getlocal            5
+      getlocal            6
+      callproperty        QName(PackageNamespace(""), "makeIcon"), 4
+      setproperty         QName(PackageNamespace(""), "playerBitmap")
+
+      getlocal3
+      getlex              QName(PackageNamespace("valor"), "ItemData")
+      getlocal1
+      getproperty         Multiname("PlayData", [PrivateNamespace("kabam.rotmg.arena.service:ArenaLeaderboardFactory"), ProtectedNamespace("kabam.rotmg.arena.service:ArenaLeaderboardFactory"), StaticProtectedNs("kabam.rotmg.arena.service:ArenaLeaderboardFactory"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.arena.service"), PackageInternalNs("kabam.rotmg.arena.service"), PrivateNamespace("FilePrivateNS:ArenaLeaderboardFactory"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getproperty         Multiname("CharacterData", [PrivateNamespace("kabam.rotmg.arena.service:ArenaLeaderboardFactory"), ProtectedNamespace("kabam.rotmg.arena.service:ArenaLeaderboardFactory"), StaticProtectedNs("kabam.rotmg.arena.service:ArenaLeaderboardFactory"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.arena.service"), PackageInternalNs("kabam.rotmg.arena.service"), PrivateNamespace("FilePrivateNS:ArenaLeaderboardFactory"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getproperty         Multiname("Inventory", [PrivateNamespace("kabam.rotmg.arena.service:ArenaLeaderboardFactory"), ProtectedNamespace("kabam.rotmg.arena.service:ArenaLeaderboardFactory"), StaticProtectedNs("kabam.rotmg.arena.service:ArenaLeaderboardFactory"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.arena.service"), PackageInternalNs("kabam.rotmg.arena.service"), PrivateNamespace("FilePrivateNS:ArenaLeaderboardFactory"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      callproperty        QName(PackageNamespace(""), "convertFromItemDataString"), 1
+      setproperty         QName(PackageNamespace(""), "equipment")
+
+      getlocal3
+      getlocal            7
+      getproperty         QName(PackageNamespace(""), "slotTypes")
+      setproperty         QName(PackageNamespace(""), "slotTypes")
+
+      getlocal3
+      getlocal1
+      getproperty         Multiname("PlayData", [PrivateNamespace("kabam.rotmg.arena.service:ArenaLeaderboardFactory"), ProtectedNamespace("kabam.rotmg.arena.service:ArenaLeaderboardFactory"), StaticProtectedNs("kabam.rotmg.arena.service:ArenaLeaderboardFactory"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.arena.service"), PackageInternalNs("kabam.rotmg.arena.service"), PrivateNamespace("FilePrivateNS:ArenaLeaderboardFactory"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getproperty         Multiname("CharacterData", [PrivateNamespace("kabam.rotmg.arena.service:ArenaLeaderboardFactory"), ProtectedNamespace("kabam.rotmg.arena.service:ArenaLeaderboardFactory"), StaticProtectedNs("kabam.rotmg.arena.service:ArenaLeaderboardFactory"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.arena.service"), PackageInternalNs("kabam.rotmg.arena.service"), PrivateNamespace("FilePrivateNS:ArenaLeaderboardFactory"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getproperty         Multiname("GuildName", [PrivateNamespace("kabam.rotmg.arena.service:ArenaLeaderboardFactory"), ProtectedNamespace("kabam.rotmg.arena.service:ArenaLeaderboardFactory"), StaticProtectedNs("kabam.rotmg.arena.service:ArenaLeaderboardFactory"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.arena.service"), PackageInternalNs("kabam.rotmg.arena.service"), PrivateNamespace("FilePrivateNS:ArenaLeaderboardFactory"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      setproperty         QName(PackageNamespace(""), "guildName")
+
+      getlocal3
+      getlocal1
+      getproperty         Multiname("PlayData", [PrivateNamespace("kabam.rotmg.arena.service:ArenaLeaderboardFactory"), ProtectedNamespace("kabam.rotmg.arena.service:ArenaLeaderboardFactory"), StaticProtectedNs("kabam.rotmg.arena.service:ArenaLeaderboardFactory"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.arena.service"), PackageInternalNs("kabam.rotmg.arena.service"), PrivateNamespace("FilePrivateNS:ArenaLeaderboardFactory"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getproperty         Multiname("CharacterData", [PrivateNamespace("kabam.rotmg.arena.service:ArenaLeaderboardFactory"), ProtectedNamespace("kabam.rotmg.arena.service:ArenaLeaderboardFactory"), StaticProtectedNs("kabam.rotmg.arena.service:ArenaLeaderboardFactory"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.arena.service"), PackageInternalNs("kabam.rotmg.arena.service"), PrivateNamespace("FilePrivateNS:ArenaLeaderboardFactory"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getproperty         Multiname("GuildRank", [PrivateNamespace("kabam.rotmg.arena.service:ArenaLeaderboardFactory"), ProtectedNamespace("kabam.rotmg.arena.service:ArenaLeaderboardFactory"), StaticProtectedNs("kabam.rotmg.arena.service:ArenaLeaderboardFactory"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.arena.service"), PackageInternalNs("kabam.rotmg.arena.service"), PrivateNamespace("FilePrivateNS:ArenaLeaderboardFactory"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      setproperty         QName(PackageNamespace(""), "guildRank")
+
+      getlocal3
+      getlocal1
+      getproperty         Multiname("WaveNumber", [PrivateNamespace("kabam.rotmg.arena.service:ArenaLeaderboardFactory"), ProtectedNamespace("kabam.rotmg.arena.service:ArenaLeaderboardFactory"), StaticProtectedNs("kabam.rotmg.arena.service:ArenaLeaderboardFactory"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.arena.service"), PackageInternalNs("kabam.rotmg.arena.service"), PrivateNamespace("FilePrivateNS:ArenaLeaderboardFactory"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      setproperty         QName(PackageNamespace(""), "currentWave")
+
+      getlocal3
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.arena.service:ArenaLeaderboardFactory/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

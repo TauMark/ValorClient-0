@@ -1,0 +1,581 @@
+class
+ refid "kabam.rotmg.markPurchaser:MarkOffersMediator"
+ instance QName(PackageNamespace("kabam.rotmg.markPurchaser"), "MarkOffersMediator")
+  extends QName(PackageNamespace("robotlegs.bender.bundles.mvcs"), "Mediator")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.markPurchaser:MarkOffersMediator")
+  iinit
+   refid "kabam.rotmg.markPurchaser:MarkOffersMediator/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "closeDialogs") flag METADATA type QName(PackageNamespace("kabam.rotmg.dialogs.control"), "CloseDialogsSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "view") flag METADATA type QName(PackageNamespace("kabam.rotmg.markPurchaser"), "MarkOffersModal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "hudModel") flag METADATA type QName(PackageNamespace("kabam.rotmg.ui.model"), "HUDModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PackageNamespace(""), "initialize") flag OVERRIDE
+   method
+    name "initialize"
+    refid "kabam.rotmg.markPurchaser:MarkOffersMediator/instance/initialize"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "close")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.markPurchaser:MarkOffersMediator"), "onCancel")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "nodeDisplay1")
+      pushstring          "click"
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.markPurchaser:MarkOffersMediator"), "removeNode1")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "nodeDisplay2")
+      pushstring          "click"
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.markPurchaser:MarkOffersMediator"), "removeNode2")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "nodeDisplay3")
+      pushstring          "click"
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.markPurchaser:MarkOffersMediator"), "removeNode3")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "nodeDisplay4")
+      pushstring          "click"
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.markPurchaser:MarkOffersMediator"), "removeNode4")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.markPurchaser:MarkOffersMediator"), "onCancelRemove")
+   method
+    name "onCancelRemove"
+    refid "kabam.rotmg.markPurchaser:MarkOffersMediator/instance/kabam.rotmg.markPurchaser:MarkOffersMediator/instance/onCancelRemove"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg_1"
+    body
+     maxstack 2
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      setlocal2
+
+      getlex              QName(PackageNamespace("kabam.rotmg.core"), "StaticInjectorContext")
+      callproperty        QName(PackageNamespace(""), "getInjector"), 0
+      getlex              QName(PackageNamespace("kabam.rotmg.dialogs.control"), "CloseDialogsSignal")
+      callproperty        QName(PackageNamespace(""), "getInstance"), 1
+      coerce              QName(PackageNamespace("kabam.rotmg.dialogs.control"), "CloseDialogsSignal")
+      setlocal2
+
+      getlocal2
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.markPurchaser:MarkOffersMediator"), "onRemoveNode1")
+   method
+    name "onRemoveNode1"
+    refid "kabam.rotmg.markPurchaser:MarkOffersMediator/instance/kabam.rotmg.markPurchaser:MarkOffersMediator/instance/onRemoveNode1"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg_1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hudModel")
+      getproperty         QName(PackageNamespace(""), "gameSprite")
+      getproperty         QName(PackageNamespace(""), "gsc_")
+      pushstring          "/removemynode 1"
+      callpropvoid        QName(PackageNamespace(""), "playerText"), 1
+
+      findpropstrict      QName(PrivateNamespace("kabam.rotmg.markPurchaser:MarkOffersMediator"), "onCancel")
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.markPurchaser:MarkOffersMediator"), "onCancel"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.markPurchaser:MarkOffersMediator"), "removeNode1")
+   method
+    name "removeNode1"
+    refid "kabam.rotmg.markPurchaser:MarkOffersMediator/instance/kabam.rotmg.markPurchaser:MarkOffersMediator/instance/removeNode1"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg_1"
+    body
+     maxstack 6
+     localcount 4
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      setlocal3
+
+      getlex              QName(PackageNamespace("kabam.rotmg.core"), "StaticInjectorContext")
+      callproperty        QName(PackageNamespace(""), "getInjector"), 0
+      getlex              QName(PackageNamespace("kabam.rotmg.dialogs.control"), "OpenDialogSignal")
+      callproperty        QName(PackageNamespace(""), "getInstance"), 1
+      coerce              QName(PackageNamespace("kabam.rotmg.dialogs.control"), "OpenDialogSignal")
+      setlocal3
+
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.ui.dialogs"), "Dialog")
+      pushstring          "Remove Node Slot 1"
+      pushstring          "Are you sure you would like to remove your 1st node slot for 5 onrane?"
+      pushstring          "Yes"
+      pushstring          "No"
+      pushnull
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.ui.dialogs"), "Dialog"), 5
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.ui.dialogs"), "Dialog")
+      setlocal2
+
+      getlocal2
+      pushstring          "dialogLeftButton"
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.markPurchaser:MarkOffersMediator"), "onRemoveNode1")
+      pushfalse
+      pushbyte            0
+      pushtrue
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 5
+
+      getlocal2
+      pushstring          "dialogRightButton"
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.markPurchaser:MarkOffersMediator"), "onCancelRemove")
+      pushfalse
+      pushbyte            0
+      pushtrue
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 5
+
+      getlocal3
+      getlocal2
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.markPurchaser:MarkOffersMediator"), "onRemoveNode2")
+   method
+    name "onRemoveNode2"
+    refid "kabam.rotmg.markPurchaser:MarkOffersMediator/instance/kabam.rotmg.markPurchaser:MarkOffersMediator/instance/onRemoveNode2"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg_1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hudModel")
+      getproperty         QName(PackageNamespace(""), "gameSprite")
+      getproperty         QName(PackageNamespace(""), "gsc_")
+      pushstring          "/removemynode 2"
+      callpropvoid        QName(PackageNamespace(""), "playerText"), 1
+
+      findpropstrict      QName(PrivateNamespace("kabam.rotmg.markPurchaser:MarkOffersMediator"), "onCancel")
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.markPurchaser:MarkOffersMediator"), "onCancel"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.markPurchaser:MarkOffersMediator"), "removeNode2")
+   method
+    name "removeNode2"
+    refid "kabam.rotmg.markPurchaser:MarkOffersMediator/instance/kabam.rotmg.markPurchaser:MarkOffersMediator/instance/removeNode2"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg_1"
+    body
+     maxstack 6
+     localcount 4
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      setlocal3
+
+      getlex              QName(PackageNamespace("kabam.rotmg.core"), "StaticInjectorContext")
+      callproperty        QName(PackageNamespace(""), "getInjector"), 0
+      getlex              QName(PackageNamespace("kabam.rotmg.dialogs.control"), "OpenDialogSignal")
+      callproperty        QName(PackageNamespace(""), "getInstance"), 1
+      coerce              QName(PackageNamespace("kabam.rotmg.dialogs.control"), "OpenDialogSignal")
+      setlocal3
+
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.ui.dialogs"), "Dialog")
+      pushstring          "Remove Node Slot 2"
+      pushstring          "Are you sure you would like to remove your 2nd node slot for 5 onrane?"
+      pushstring          "Yes"
+      pushstring          "No"
+      pushnull
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.ui.dialogs"), "Dialog"), 5
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.ui.dialogs"), "Dialog")
+      setlocal2
+
+      getlocal2
+      pushstring          "dialogLeftButton"
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.markPurchaser:MarkOffersMediator"), "onRemoveNode2")
+      pushfalse
+      pushbyte            0
+      pushtrue
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 5
+
+      getlocal2
+      pushstring          "dialogRightButton"
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.markPurchaser:MarkOffersMediator"), "onCancelRemove")
+      pushfalse
+      pushbyte            0
+      pushtrue
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 5
+
+      getlocal3
+      getlocal2
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.markPurchaser:MarkOffersMediator"), "onRemoveNode3")
+   method
+    name "onRemoveNode3"
+    refid "kabam.rotmg.markPurchaser:MarkOffersMediator/instance/kabam.rotmg.markPurchaser:MarkOffersMediator/instance/onRemoveNode3"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg_1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hudModel")
+      getproperty         QName(PackageNamespace(""), "gameSprite")
+      getproperty         QName(PackageNamespace(""), "gsc_")
+      pushstring          "/removemynode 3"
+      callpropvoid        QName(PackageNamespace(""), "playerText"), 1
+
+      findpropstrict      QName(PrivateNamespace("kabam.rotmg.markPurchaser:MarkOffersMediator"), "onCancel")
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.markPurchaser:MarkOffersMediator"), "onCancel"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.markPurchaser:MarkOffersMediator"), "removeNode3")
+   method
+    name "removeNode3"
+    refid "kabam.rotmg.markPurchaser:MarkOffersMediator/instance/kabam.rotmg.markPurchaser:MarkOffersMediator/instance/removeNode3"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg_1"
+    body
+     maxstack 6
+     localcount 4
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      setlocal3
+
+      getlex              QName(PackageNamespace("kabam.rotmg.core"), "StaticInjectorContext")
+      callproperty        QName(PackageNamespace(""), "getInjector"), 0
+      getlex              QName(PackageNamespace("kabam.rotmg.dialogs.control"), "OpenDialogSignal")
+      callproperty        QName(PackageNamespace(""), "getInstance"), 1
+      coerce              QName(PackageNamespace("kabam.rotmg.dialogs.control"), "OpenDialogSignal")
+      setlocal3
+
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.ui.dialogs"), "Dialog")
+      pushstring          "Remove Node Slot 3"
+      pushstring          "Are you sure you would like to remove your 3rd node slot for 5 onrane?"
+      pushstring          "Yes"
+      pushstring          "No"
+      pushnull
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.ui.dialogs"), "Dialog"), 5
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.ui.dialogs"), "Dialog")
+      setlocal2
+
+      getlocal2
+      pushstring          "dialogLeftButton"
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.markPurchaser:MarkOffersMediator"), "onRemoveNode3")
+      pushfalse
+      pushbyte            0
+      pushtrue
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 5
+
+      getlocal2
+      pushstring          "dialogRightButton"
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.markPurchaser:MarkOffersMediator"), "onCancelRemove")
+      pushfalse
+      pushbyte            0
+      pushtrue
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 5
+
+      getlocal3
+      getlocal2
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.markPurchaser:MarkOffersMediator"), "onRemoveNode4")
+   method
+    name "onRemoveNode4"
+    refid "kabam.rotmg.markPurchaser:MarkOffersMediator/instance/kabam.rotmg.markPurchaser:MarkOffersMediator/instance/onRemoveNode4"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg_1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hudModel")
+      getproperty         QName(PackageNamespace(""), "gameSprite")
+      getproperty         QName(PackageNamespace(""), "gsc_")
+      pushstring          "/removemynode 4"
+      callpropvoid        QName(PackageNamespace(""), "playerText"), 1
+
+      findpropstrict      QName(PrivateNamespace("kabam.rotmg.markPurchaser:MarkOffersMediator"), "onCancel")
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.markPurchaser:MarkOffersMediator"), "onCancel"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.markPurchaser:MarkOffersMediator"), "removeNode4")
+   method
+    name "removeNode4"
+    refid "kabam.rotmg.markPurchaser:MarkOffersMediator/instance/kabam.rotmg.markPurchaser:MarkOffersMediator/instance/removeNode4"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg_1"
+    body
+     maxstack 6
+     localcount 4
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      setlocal3
+
+      getlex              QName(PackageNamespace("kabam.rotmg.core"), "StaticInjectorContext")
+      callproperty        QName(PackageNamespace(""), "getInjector"), 0
+      getlex              QName(PackageNamespace("kabam.rotmg.dialogs.control"), "OpenDialogSignal")
+      callproperty        QName(PackageNamespace(""), "getInstance"), 1
+      coerce              QName(PackageNamespace("kabam.rotmg.dialogs.control"), "OpenDialogSignal")
+      setlocal3
+
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.ui.dialogs"), "Dialog")
+      pushstring          "Remove Node Slot 4"
+      pushstring          "Are you sure you would like to remove your 4th node slot for 5 onrane?"
+      pushstring          "Yes"
+      pushstring          "No"
+      pushnull
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.ui.dialogs"), "Dialog"), 5
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.ui.dialogs"), "Dialog")
+      setlocal2
+
+      getlocal2
+      pushstring          "dialogLeftButton"
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.markPurchaser:MarkOffersMediator"), "onRemoveNode4")
+      pushfalse
+      pushbyte            0
+      pushtrue
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 5
+
+      getlocal2
+      pushstring          "dialogRightButton"
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.markPurchaser:MarkOffersMediator"), "onCancelRemove")
+      pushfalse
+      pushbyte            0
+      pushtrue
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 5
+
+      getlocal3
+      getlocal2
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "destroy") flag OVERRIDE
+   method
+    name "destroy"
+    refid "kabam.rotmg.markPurchaser:MarkOffersMediator/instance/destroy"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "close")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.markPurchaser:MarkOffersMediator"), "onCancel")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.markPurchaser:MarkOffersMediator"), "onCancel")
+   method
+    name "onCancel"
+    refid "kabam.rotmg.markPurchaser:MarkOffersMediator/instance/kabam.rotmg.markPurchaser:MarkOffersMediator/instance/onCancel"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.sound"), "SoundEffectLibrary")
+      pushstring          "button_click"
+      callpropvoid        QName(PackageNamespace(""), "play"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "closeDialogs")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.markPurchaser:MarkOffersMediator/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

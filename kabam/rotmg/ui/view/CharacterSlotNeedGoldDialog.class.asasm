@@ -1,0 +1,215 @@
+class
+ refid "kabam.rotmg.ui.view:CharacterSlotNeedGoldDialog"
+ instance QName(PackageNamespace("kabam.rotmg.ui.view"), "CharacterSlotNeedGoldDialog")
+  extends QName(PackageNamespace("flash.display"), "Sprite")
+  flag SEALED
+  iinit
+   refid "kabam.rotmg.ui.view:CharacterSlotNeedGoldDialog/instance/init"
+   body
+    maxstack 2
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     findpropstrict      QName(PackageNamespace("org.osflash.signals"), "Signal")
+     constructprop       QName(PackageNamespace("org.osflash.signals"), "Signal"), 0
+     findproperty        QName(PackageNamespace(""), "buyGold")
+     swap
+     initproperty        QName(PackageNamespace(""), "buyGold")
+
+     findpropstrict      QName(PackageNamespace("org.osflash.signals"), "Signal")
+     constructprop       QName(PackageNamespace("org.osflash.signals"), "Signal"), 0
+     findproperty        QName(PackageNamespace(""), "cancel")
+     swap
+     initproperty        QName(PackageNamespace(""), "cancel")
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait const QName(PackageNamespace(""), "buyGold") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait const QName(PackageNamespace(""), "cancel") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.ui.view:CharacterSlotNeedGoldDialog"), "dialog") type QName(PackageNamespace("com.company.assembleegameclient.ui.dialogs"), "Dialog") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.ui.view:CharacterSlotNeedGoldDialog"), "price") type QName(PackageNamespace(""), "int") end
+  trait method QName(PackageNamespace(""), "setPrice")
+   method
+    name "setPrice"
+    refid "kabam.rotmg.ui.view:CharacterSlotNeedGoldDialog/instance/setPrice"
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      setproperty         QName(PrivateNamespace("kabam.rotmg.ui.view:CharacterSlotNeedGoldDialog"), "price")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.ui.view:CharacterSlotNeedGoldDialog"), "dialog")
+      dup
+      iffalse             L15
+
+      pop
+      findpropstrict      QName(PackageNamespace(""), "contains")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.ui.view:CharacterSlotNeedGoldDialog"), "dialog")
+      callproperty        QName(PackageNamespace(""), "contains"), 1
+      coerce_a
+L15:
+      dup
+      iffalse             L23
+
+      pop
+      findpropstrict      QName(PackageNamespace(""), "removeChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.ui.view:CharacterSlotNeedGoldDialog"), "dialog")
+      callproperty        QName(PackageNamespace(""), "removeChild"), 1
+      coerce_a
+L23:
+      pop
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.ui.view:CharacterSlotNeedGoldDialog"), "makeDialog"), 0
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.ui.view:CharacterSlotNeedGoldDialog"), "dialog")
+      pushstring          "dialogLeftButton"
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "onCancel")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.ui.view:CharacterSlotNeedGoldDialog"), "dialog")
+      pushstring          "dialogRightButton"
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "onBuyGold")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.ui.view:CharacterSlotNeedGoldDialog"), "makeDialog")
+   method
+    name "makeDialog"
+    refid "kabam.rotmg.ui.view:CharacterSlotNeedGoldDialog/instance/kabam.rotmg.ui.view:CharacterSlotNeedGoldDialog/instance/makeDialog"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 7
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.ui.dialogs"), "Dialog")
+      pushstring          "Not Enough"
+      pushstring          ""
+      pushstring          "Cancel"
+      pushstring          "Buy"
+      pushstring          "/charSlotNeedGold"
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.ui.dialogs"), "Dialog"), 5
+      setproperty         QName(PrivateNamespace("kabam.rotmg.ui.view:CharacterSlotNeedGoldDialog"), "dialog")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.ui.view:CharacterSlotNeedGoldDialog"), "dialog")
+      pushstring          "CharacterSlotNeedGoldDialog.price"
+      pushstring          "price"
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.ui.view:CharacterSlotNeedGoldDialog"), "price")
+      newobject           1
+      callpropvoid        QName(PackageNamespace(""), "setTextParams"), 2
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.ui.view:CharacterSlotNeedGoldDialog"), "dialog")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "onCancel")
+   method
+    name "onCancel"
+    refid "kabam.rotmg.ui.view:CharacterSlotNeedGoldDialog/instance/onCancel"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 1
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "cancel")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "onBuyGold")
+   method
+    name "onBuyGold"
+    refid "kabam.rotmg.ui.view:CharacterSlotNeedGoldDialog/instance/onBuyGold"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 1
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "buyGold")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.ui.view:CharacterSlotNeedGoldDialog/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PrivateNamespace("kabam.rotmg.ui.view:CharacterSlotNeedGoldDialog"), "ANALYTICS_PAGE") type QName(PackageNamespace(""), "String") value Utf8("/charSlotNeedGold") end
+end ; class

@@ -1,0 +1,186 @@
+class
+ refid "com.company.util:Extents2D"
+ instance QName(PackageNamespace("com.company.util"), "Extents2D")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  iinit
+   name "Extents2D"
+   refid "com.company.util:Extents2D/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     callpropvoid        QName(PackageNamespace(""), "clear"), 0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "minX_") type QName(PackageNamespace(""), "Number") end
+  trait slot QName(PackageNamespace(""), "minY_") type QName(PackageNamespace(""), "Number") end
+  trait slot QName(PackageNamespace(""), "maxX_") type QName(PackageNamespace(""), "Number") end
+  trait slot QName(PackageNamespace(""), "maxY_") type QName(PackageNamespace(""), "Number") end
+  trait method QName(PackageNamespace(""), "add")
+   method
+    name "add"
+    refid "com.company.util:Extents2D/instance/add"
+    param QName(PackageNamespace(""), "Number")
+    param QName(PackageNamespace(""), "Number")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    paramname "_arg2"
+    body
+     maxstack 2
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "minX_")
+      ifnlt               L9
+
+      getlocal0
+      getlocal1
+      setproperty         QName(PackageNamespace(""), "minX_")
+
+L9:
+      getlocal2
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "minY_")
+      ifnlt               L16
+
+      getlocal0
+      getlocal2
+      setproperty         QName(PackageNamespace(""), "minY_")
+
+L16:
+      getlocal1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "maxX_")
+      ifngt               L23
+
+      getlocal0
+      getlocal1
+      setproperty         QName(PackageNamespace(""), "maxX_")
+
+L23:
+      getlocal2
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "maxY_")
+      ifngt               L30
+
+      getlocal0
+      getlocal2
+      setproperty         QName(PackageNamespace(""), "maxY_")
+
+L30:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "clear")
+   method
+    name "clear"
+    refid "com.company.util:Extents2D/instance/clear"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      pushdouble          1.79769313486231571e+308
+      setproperty         QName(PackageNamespace(""), "minX_")
+
+      getlocal0
+      pushdouble          1.79769313486231571e+308
+      setproperty         QName(PackageNamespace(""), "minY_")
+
+      getlocal0
+      getlex              QName(PackageNamespace(""), "Number")
+      getproperty         QName(PackageNamespace(""), "MIN_VALUE")
+      setproperty         QName(PackageNamespace(""), "maxX_")
+
+      getlocal0
+      getlex              QName(PackageNamespace(""), "Number")
+      getproperty         QName(PackageNamespace(""), "MIN_VALUE")
+      setproperty         QName(PackageNamespace(""), "maxY_")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "toString")
+   method
+    name "toString"
+    refid "com.company.util:Extents2D/instance/toString"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushstring          "min:("
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "minX_")
+      add
+      pushstring          ", "
+      add
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "minY_")
+      add
+      pushstring          ") max:("
+      add
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "maxX_")
+      add
+      pushstring          ", "
+      add
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "maxY_")
+      add
+      pushstring          ")"
+      add
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.util:Extents2D/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

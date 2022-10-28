@@ -1,0 +1,267 @@
+class
+ refid "kabam.rotmg.game.view:AlertStatusMediator"
+ instance QName(PackageNamespace("kabam.rotmg.game.view"), "AlertStatusMediator")
+  extends QName(PackageNamespace("robotlegs.bender.bundles.mvcs"), "Mediator")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.game.view:AlertStatusMediator")
+  iinit
+   refid "kabam.rotmg.game.view:AlertStatusMediator/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "updateAlertStatusDisplay") flag METADATA type QName(PackageNamespace("kabam.rotmg.game.signals"), "UpdateAlertStatusDisplaySignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "view") flag METADATA type QName(PackageNamespace("kabam.rotmg.game.view"), "AlertStatusDisplay")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "account") flag METADATA type QName(PackageNamespace("kabam.rotmg.account.core"), "Account")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "updateHUD") flag METADATA type QName(PackageNamespace("kabam.rotmg.ui.signals"), "UpdateHUDSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "socketServer") flag METADATA type QName(PackageNamespace("kabam.lib.net.impl"), "SocketServer")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "messages") flag METADATA type QName(PackageNamespace("kabam.lib.net.api"), "MessageProvider")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PackageNamespace(""), "initialize") flag OVERRIDE
+   method
+    name "initialize"
+    refid "kabam.rotmg.game.view:AlertStatusMediator/instance/initialize"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "updateAlertStatusDisplay")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:AlertStatusMediator"), "onAlertUpdate")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "updateHUD")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:AlertStatusMediator"), "onUpdateHUD")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "account")
+      callproperty        QName(Namespace("kabam.rotmg.account.core:Account"), "isRegistered"), 0
+      iffalse             L20
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      callpropvoid        QName(PackageNamespace(""), "drawAsOpen"), 0
+
+      jump                L23
+
+L20:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      callpropvoid        QName(PackageNamespace(""), "drawAsClosed"), 0
+
+L23:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      pushstring          "click"
+      getlocal0
+      getproperty         QName(ProtectedNamespace("kabam.rotmg.game.view:AlertStatusMediator"), "onButtonClick")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "destroy") flag OVERRIDE
+   method
+    name "destroy"
+    refid "kabam.rotmg.game.view:AlertStatusMediator/instance/destroy"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      pushstring          "click"
+      getlocal0
+      getproperty         QName(ProtectedNamespace("kabam.rotmg.game.view:AlertStatusMediator"), "onButtonClick")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "updateAlertStatusDisplay")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:AlertStatusMediator"), "onAlertUpdate")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "updateHUD")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:AlertStatusMediator"), "onUpdateHUD")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.game.view:AlertStatusMediator"), "onUpdateHUD")
+   method
+    name "onUpdateHUD"
+    refid "kabam.rotmg.game.view:AlertStatusMediator/instance/kabam.rotmg.game.view:AlertStatusMediator/instance/onUpdateHUD"
+    param QName(PackageNamespace("com.company.assembleegameclient.objects"), "Player")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "plr"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "alertToken_")
+      callpropvoid        QName(PackageInternalNs("kabam.rotmg.game.view"), "updateAlertNum"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.game.view:AlertStatusMediator"), "onAlertUpdate")
+   method
+    name "onAlertUpdate"
+    refid "kabam.rotmg.game.view:AlertStatusMediator/instance/kabam.rotmg.game.view:AlertStatusMediator/instance/onAlertUpdate"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "account")
+      callproperty        QName(Namespace("kabam.rotmg.account.core:Account"), "isRegistered"), 0
+      iffalse             L10
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      callpropvoid        QName(PackageNamespace(""), "drawAsOpen"), 0
+
+      jump                L13
+
+L10:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      callpropvoid        QName(PackageNamespace(""), "drawAsClosed"), 0
+
+L13:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(ProtectedNamespace("kabam.rotmg.game.view:AlertStatusMediator"), "onButtonClick")
+   method
+    name "onButtonClick"
+    refid "kabam.rotmg.game.view:AlertStatusMediator/instance/kabam.rotmg.game.view:AlertStatusMediator:onButtonClick"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "e"
+    body
+     maxstack 2
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      setlocal2
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.sound"), "SoundEffectLibrary")
+      pushstring          "button_click"
+      callpropvoid        QName(PackageNamespace(""), "play"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "messages")
+      pushshort           163
+      callproperty        QName(Namespace("kabam.lib.net.api:MessageProvider"), "require"), 1
+      getlex              QName(PackageNamespace("kabam.rotmg.messaging.impl.outgoing"), "AlertNotice")
+      astypelate
+      coerce              QName(PackageNamespace("kabam.rotmg.messaging.impl.outgoing"), "AlertNotice")
+      setlocal2
+
+      getlocal2
+      pushtrue
+      setproperty         QName(PackageNamespace(""), "alert_")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "socketServer")
+      getlocal2
+      callpropvoid        QName(PackageNamespace(""), "sendMessage"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.game.view:AlertStatusMediator/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

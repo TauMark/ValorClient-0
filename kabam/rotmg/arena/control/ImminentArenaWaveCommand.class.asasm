@@ -1,0 +1,76 @@
+class
+ refid "kabam.rotmg.arena.control:ImminentArenaWaveCommand"
+ instance QName(PackageNamespace("kabam.rotmg.arena.control"), "ImminentArenaWaveCommand")
+  extends QName(PackageNamespace("robotlegs.bender.bundles.mvcs"), "Command")
+  flag SEALED
+  iinit
+   refid "kabam.rotmg.arena.control:ImminentArenaWaveCommand/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "wave") flag METADATA type QName(PackageNamespace(""), "int")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "model") flag METADATA type QName(PackageNamespace("kabam.rotmg.arena.model"), "CurrentArenaRunModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "layers") flag METADATA type QName(PackageNamespace("kabam.rotmg.core.view"), "Layers")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PackageNamespace(""), "execute") flag OVERRIDE
+   method
+    name "execute"
+    refid "kabam.rotmg.arena.control:ImminentArenaWaveCommand/instance/execute"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "layers")
+      getproperty         QName(PackageNamespace(""), "mouseDisabledTop")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.arena.view"), "ImminentWaveCountdownClock")
+      getlex              QName(PackageNamespace(""), "wave")
+      constructprop       QName(PackageNamespace("kabam.rotmg.arena.view"), "ImminentWaveCountdownClock"), 1
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.arena.control:ImminentArenaWaveCommand/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

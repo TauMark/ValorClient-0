@@ -1,0 +1,1189 @@
+class
+ refid "com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"
+ instance QName(PackageNamespace("com.company.assembleegameclient.screens"), "CharacterSelectionAndNewsScreen")
+  extends QName(PackageNamespace("flash.display"), "Sprite")
+  flag SEALED
+  iinit
+   name "CharacterSelectionAndNewsScreen"
+   refid "com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen/instance/init"
+   body
+    maxstack 7
+    localcount 2
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     findpropstrict      QName(PackageNamespace("flash.filters"), "DropShadowFilter")
+     pushbyte            0
+     pushbyte            0
+     pushbyte            0
+     pushbyte            1
+     pushbyte            8
+     pushbyte            8
+     constructprop       QName(PackageNamespace("flash.filters"), "DropShadowFilter"), 6
+     findproperty        QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "DROP_SHADOW")
+     swap
+     initproperty        QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "DROP_SHADOW")
+
+     getlocal0
+     getlex              QName(PackageNamespace("kabam.rotmg.core"), "StaticInjectorContext")
+     callproperty        QName(PackageNamespace(""), "getInjector"), 0
+     getlex              QName(PackageNamespace("robotlegs.bender.framework.api"), "ILogger")
+     callproperty        QName(PackageNamespace(""), "getInstance"), 1
+     setproperty         QName(PackageNamespace(""), "logger")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("org.osflash.signals"), "Signal")
+     constructprop       QName(PackageNamespace("org.osflash.signals"), "Signal"), 0
+     setproperty         QName(PackageNamespace(""), "newCharacter")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("org.osflash.signals"), "Signal")
+     constructprop       QName(PackageNamespace("org.osflash.signals"), "Signal"), 0
+     setproperty         QName(PackageNamespace(""), "chooseName")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("org.osflash.signals"), "Signal")
+     constructprop       QName(PackageNamespace("org.osflash.signals"), "Signal"), 0
+     setproperty         QName(PackageNamespace(""), "playGame")
+
+     getlocal0
+     getlex              QName(PackageNamespace("kabam.rotmg.ui.view"), "ButtonFactory")
+     callproperty        QName(PackageNamespace(""), "getPlayButton"), 0
+     setproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "playButton")
+
+     getlocal0
+     getlex              QName(PackageNamespace("kabam.rotmg.ui.view"), "ButtonFactory")
+     callproperty        QName(PackageNamespace(""), "getClassesButton"), 0
+     setproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "classesButton")
+
+     getlocal0
+     getlex              QName(PackageNamespace("kabam.rotmg.ui.view"), "ButtonFactory")
+     callproperty        QName(PackageNamespace(""), "getMainButton"), 0
+     setproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "backButton")
+
+     getlocal0
+     getlex              QName(PackageNamespace("kabam.rotmg.ui.view"), "ButtonFactory")
+     callproperty        QName(PackageNamespace(""), "getHouseEditorButton"), 0
+     setproperty         QName(PackageNamespace(""), "homeButton")
+
+     getlocal0
+     getlex              QName(PackageNamespace("io.decagames.rotmg.ui.texture"), "TextureParser")
+     getproperty         QName(PackageNamespace(""), "instance")
+     pushstring          "UI"
+     pushstring          "popup_header_title"
+     pushshort           800
+     callproperty        QName(PackageNamespace(""), "getSliceScalingBitmap"), 3
+     setproperty         QName(PackageInternalNs("com.company.assembleegameclient.screens"), "buttonsBackground")
+
+     getlocal0
+     getproperty         QName(PackageInternalNs("com.company.assembleegameclient.screens"), "buttonsBackground")
+     pushdouble          502.5
+     setproperty         QName(PackageNamespace(""), "y")
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "backButton")
+     getproperty         QName(PackageNamespace(""), "clicked")
+     setproperty         QName(PackageNamespace(""), "close")
+
+     getlocal0
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "classesButton")
+     getproperty         QName(PackageNamespace(""), "clicked")
+     setproperty         QName(PackageNamespace(""), "showClasses")
+
+     getlocal0
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "homeButton")
+     getproperty         QName(PackageNamespace(""), "clicked")
+     setproperty         QName(PackageNamespace(""), "homeEditor")
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.ui.view.components"), "ScreenBase")
+     constructprop       QName(PackageNamespace("kabam.rotmg.ui.view.components"), "ScreenBase"), 0
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.screens"), "AccountScreen")
+     constructprop       QName(PackageNamespace("com.company.assembleegameclient.screens"), "AccountScreen"), 0
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PackageInternalNs("com.company.assembleegameclient.screens"), "buttonsBackground")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     getlex              QName(PackageNamespace(""), "WebMain")
+     getproperty         QName(PackageNamespace(""), "RPC")
+     pushstring          "Character Select"
+     setproperty         QName(PackageNamespace(""), "details")
+
+     getlex              QName(PackageNamespace(""), "WebMain")
+     getproperty         QName(PackageNamespace(""), "RPC")
+     getlex              QName(PackageNamespace(""), "WebMain")
+     getproperty         QName(PackageNamespace(""), "RPC")
+     pushstring          ""
+     dup
+     setlocal1
+
+     setproperty         QName(PackageNamespace(""), "smallImageText")
+
+     getlocal1
+     setproperty         QName(PackageNamespace(""), "smallImageKey")
+
+     getlex              QName(PackageNamespace(""), "WebMain")
+     getproperty         QName(PackageNamespace(""), "RPC")
+     callpropvoid        QName(PackageNamespace(""), "updatePresence"), 0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "openDialog") flag METADATA type QName(PackageNamespace("kabam.rotmg.dialogs.control"), "OpenDialogSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "logger") flag METADATA type QName(PackageNamespace("robotlegs.bender.framework.api"), "ILogger")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait const QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "SCROLLBAR_REQUIREMENT_HEIGHT") type QName(PackageNamespace(""), "Number") value Integer(380) end
+  trait const QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "CHARACTER_LIST_Y_POS") type QName(PackageNamespace(""), "int") value Integer(108) end
+  trait const QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "CHARACTER_LIST_X_POS") type QName(PackageNamespace(""), "int") value Integer(0) end
+  trait const QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "DROP_SHADOW") type QName(PackageNamespace("flash.filters"), "DropShadowFilter") end
+  trait slot QName(PackageInternalNs("com.company.assembleegameclient.screens"), "buttonsBackground") type QName(PackageNamespace("io.decagames.rotmg.ui.sliceScaling"), "SliceScalingBitmap") end
+  trait slot QName(PackageNamespace(""), "close") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait slot QName(PackageNamespace(""), "showClasses") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait slot QName(PackageNamespace(""), "homeEditor") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait slot QName(PackageNamespace(""), "newCharacter") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait slot QName(PackageNamespace(""), "chooseName") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait slot QName(PackageNamespace(""), "playGame") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "model") type QName(PackageNamespace("kabam.rotmg.core.model"), "PlayerModel") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "isInitialized") type QName(PackageNamespace(""), "Boolean") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "nameText") type QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "nameChooseLink_") type QName(PackageNamespace("com.company.assembleegameclient.ui"), "DeprecatedClickableText") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "creditDisplay") type QName(PackageNamespace("kabam.rotmg.game.view"), "CreditDisplay") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "openCharactersText") type QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "openGraveyardText") type QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "characterList") type QName(PackageNamespace("com.company.assembleegameclient.screens"), "CharacterList") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "characterListType") type QName(PackageNamespace(""), "int") value Integer(1) end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "characterListHeight") type QName(PackageNamespace(""), "Number") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "scrollBar") type QName(PackageNamespace("io.decagames.rotmg.ui.scroll"), "UIScrollbar") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "playButton") type QName(PackageNamespace("io.decagames.rotmg.ui.buttons"), "SliceScalingButton") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "classesButton") type QName(PackageNamespace("io.decagames.rotmg.ui.buttons"), "SliceScalingButton") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "backButton") type QName(PackageNamespace("io.decagames.rotmg.ui.buttons"), "SliceScalingButton") end
+  trait slot QName(PackageNamespace(""), "homeButton") type QName(PackageNamespace("io.decagames.rotmg.ui.buttons"), "SliceScalingButton") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "menuOptionsBar") type QName(PackageNamespace("kabam.rotmg.ui.view.components"), "MenuOptionsBar") end
+  trait method QName(PackageNamespace(""), "initialize")
+   method
+    name "initialize"
+    refid "com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen/instance/initialize"
+    param QName(PackageNamespace("kabam.rotmg.core.model"), "PlayerModel")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "isInitialized")
+      iffalse             L6
+
+      returnvoid
+
+L6:
+      getlocal0
+      pushtrue
+      setproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "isInitialized")
+
+      getlocal0
+      getlocal1
+      setproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "model")
+
+      getlocal0
+      getlocal1
+      callpropvoid        QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "createDisplayAssets"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "createDisplayAssets")
+   method
+    name "createDisplayAssets"
+    refid "com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen/instance/com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen/instance/createDisplayAssets"
+    param QName(PackageNamespace("kabam.rotmg.core.model"), "PlayerModel")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      callpropvoid        QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "createNameText"), 1
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "createCreditDisplay"), 0
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "createOpenCharactersText"), 0
+
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.screens"), "Graveyard")
+      getlocal1
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.screens"), "Graveyard"), 1
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.screens"), "Graveyard")
+      setlocal2
+
+      getlocal2
+      callproperty        QName(PackageNamespace(""), "hasCharacters"), 0
+      iffalse             L23
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "openCharactersText")
+      pushuint            16777215
+      callpropvoid        QName(PackageNamespace(""), "setColor"), 1
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "createOpenGraveyardText"), 0
+
+L23:
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "createCharacterListChar"), 0
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "makeMenuOptionsBar"), 0
+
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "isNameChosen"), 0
+      iftrue              L32
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "createChooseNameLink"), 0
+
+L32:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "makeMenuOptionsBar")
+   method
+    name "makeMenuOptionsBar"
+    refid "com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen/instance/com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen/instance/makeMenuOptionsBar"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "playButton")
+      getproperty         QName(PackageNamespace(""), "clicked")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "onPlayClick")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.ui.view.components"), "MenuOptionsBar")
+      constructprop       QName(PackageNamespace("kabam.rotmg.ui.view.components"), "MenuOptionsBar"), 0
+      setproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "menuOptionsBar")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "menuOptionsBar")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "playButton")
+      pushstring          "CENTER"
+      callpropvoid        QName(PackageNamespace(""), "addButton"), 2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "menuOptionsBar")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "backButton")
+      pushstring          "LEFT"
+      callpropvoid        QName(PackageNamespace(""), "addButton"), 2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "menuOptionsBar")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "classesButton")
+      pushstring          "RIGHT"
+      callpropvoid        QName(PackageNamespace(""), "addButton"), 2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "menuOptionsBar")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "homeButton")
+      pushstring          "RIGHT"
+      callpropvoid        QName(PackageNamespace(""), "addButton"), 2
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "menuOptionsBar")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "createScrollbar")
+   method
+    name "createScrollbar"
+    refid "com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen/instance/com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen/instance/createScrollbar"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("io.decagames.rotmg.ui.scroll"), "UIScrollbar")
+      pushshort           362
+      constructprop       QName(PackageNamespace("io.decagames.rotmg.ui.scroll"), "UIScrollbar"), 1
+      setproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "scrollBar")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "scrollBar")
+      pushshort           783
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "scrollBar")
+      pushbyte            113
+      setproperty         QName(PackageNamespace(""), "y")
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "scrollBar")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "scrollBar")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "characterList")
+      setproperty         QName(PackageNamespace(""), "scrollObject")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "scrollBar")
+      pushbyte            4
+      setproperty         QName(PackageNamespace(""), "mouseRollSpeedFactor")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "scrollBar")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "characterList")
+      getproperty         QName(PackageNamespace(""), "charRectList_")
+      setproperty         QName(PackageNamespace(""), "content")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "createCharacterListChar")
+   method
+    name "createCharacterListChar"
+    refid "com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen/instance/com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen/instance/createCharacterListChar"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      pushbyte            1
+      setproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "characterListType")
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.screens"), "CharacterList")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "model")
+      pushbyte            1
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.screens"), "CharacterList"), 2
+      setproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "characterList")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "characterList")
+      pushbyte            0
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "characterList")
+      pushbyte            108
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "characterList")
+      getproperty         QName(PackageNamespace(""), "height")
+      setproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "characterListHeight")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "characterListHeight")
+      pushshort           380
+      ifngt               L31
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "createScrollbar"), 0
+
+L31:
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "characterList")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "createCharacterListGrave")
+   method
+    name "createCharacterListGrave"
+    refid "com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen/instance/com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen/instance/createCharacterListGrave"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      pushbyte            2
+      setproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "characterListType")
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.screens"), "CharacterList")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "model")
+      pushbyte            2
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.screens"), "CharacterList"), 2
+      setproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "characterList")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "characterList")
+      pushbyte            0
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "characterList")
+      pushbyte            108
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "characterList")
+      getproperty         QName(PackageNamespace(""), "height")
+      setproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "characterListHeight")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "characterListHeight")
+      pushshort           380
+      ifngt               L31
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "createScrollbar"), 0
+
+L31:
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "characterList")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "removeCharacterList")
+   method
+    name "removeCharacterList"
+    refid "com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen/instance/com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen/instance/removeCharacterList"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "characterList")
+      pushnull
+      ifeq                L13
+
+      findpropstrict      QName(PackageNamespace(""), "removeChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "characterList")
+      callpropvoid        QName(PackageNamespace(""), "removeChild"), 1
+
+      getlocal0
+      pushnull
+      setproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "characterList")
+
+L13:
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "scrollBar")
+      pushnull
+      ifeq                L24
+
+      findpropstrict      QName(PackageNamespace(""), "removeChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "scrollBar")
+      callpropvoid        QName(PackageNamespace(""), "removeChild"), 1
+
+      getlocal0
+      pushnull
+      setproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "scrollBar")
+
+L24:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "createOpenCharactersText")
+   method
+    name "createOpenCharactersText"
+    refid "com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen/instance/com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen/instance/createOpenCharactersText"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete")
+      constructprop       QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete"), 0
+      pushbyte            18
+      callproperty        QName(PackageNamespace(""), "setSize"), 1
+      pushuint            11776947
+      callproperty        QName(PackageNamespace(""), "setColor"), 1
+      setproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "openCharactersText")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "openCharactersText")
+      pushtrue
+      callpropvoid        QName(PackageNamespace(""), "setBold"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "openCharactersText")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder")
+      constructprop       QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder"), 0
+      pushstring          "CharacterSelection.characters"
+      callproperty        QName(PackageNamespace(""), "setParams"), 1
+      callpropvoid        QName(PackageNamespace(""), "setStringBuilder"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "openCharactersText")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "DROP_SHADOW")
+      newarray            1
+      setproperty         QName(PackageNamespace(""), "filters")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "openCharactersText")
+      pushbyte            0
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "openCharactersText")
+      pushbyte            79
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "openCharactersText")
+      pushstring          "click"
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "onOpenCharacters")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "openCharactersText")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "onOpenCharacters")
+   method
+    name "onOpenCharacters"
+    refid "com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen/instance/com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen/instance/onOpenCharacters"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "characterListType")
+      pushbyte            1
+      ifeq                L18
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "removeCharacterList"), 0
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "openCharactersText")
+      pushuint            16777215
+      callpropvoid        QName(PackageNamespace(""), "setColor"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "openGraveyardText")
+      pushuint            11776947
+      callpropvoid        QName(PackageNamespace(""), "setColor"), 1
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "createCharacterListChar"), 0
+
+L18:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "createOpenGraveyardText")
+   method
+    name "createOpenGraveyardText"
+    refid "com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen/instance/com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen/instance/createOpenGraveyardText"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete")
+      constructprop       QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete"), 0
+      pushbyte            18
+      callproperty        QName(PackageNamespace(""), "setSize"), 1
+      pushuint            11776947
+      callproperty        QName(PackageNamespace(""), "setColor"), 1
+      setproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "openGraveyardText")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "openGraveyardText")
+      pushtrue
+      callpropvoid        QName(PackageNamespace(""), "setBold"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "openGraveyardText")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder")
+      constructprop       QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder"), 0
+      pushstring          "CharacterSelection.graveyard"
+      callproperty        QName(PackageNamespace(""), "setParams"), 1
+      callpropvoid        QName(PackageNamespace(""), "setStringBuilder"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "openGraveyardText")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "DROP_SHADOW")
+      newarray            1
+      setproperty         QName(PackageNamespace(""), "filters")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "openGraveyardText")
+      pushbyte            0
+      pushshort           150
+      add
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "openGraveyardText")
+      pushbyte            79
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "openGraveyardText")
+      pushstring          "click"
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "onOpenGraveyard")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "openGraveyardText")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "onOpenGraveyard")
+   method
+    name "onOpenGraveyard"
+    refid "com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen/instance/com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen/instance/onOpenGraveyard"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "characterListType")
+      pushbyte            2
+      ifeq                L18
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "removeCharacterList"), 0
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "openCharactersText")
+      pushuint            11776947
+      callpropvoid        QName(PackageNamespace(""), "setColor"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "openGraveyardText")
+      pushuint            16777215
+      callpropvoid        QName(PackageNamespace(""), "setColor"), 1
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "createCharacterListGrave"), 0
+
+L18:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "createCreditDisplay")
+   method
+    name "createCreditDisplay"
+    refid "com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen/instance/com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen/instance/createCreditDisplay"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 5
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.game.view"), "CreditDisplay")
+      constructprop       QName(PackageNamespace("kabam.rotmg.game.view"), "CreditDisplay"), 0
+      setproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "creditDisplay")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "creditDisplay")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "model")
+      callproperty        QName(PackageNamespace(""), "getCredits"), 0
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "model")
+      callproperty        QName(PackageNamespace(""), "getFame"), 0
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "model")
+      callproperty        QName(PackageNamespace(""), "getOnrane"), 0
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "model")
+      callproperty        QName(PackageNamespace(""), "getKantos"), 0
+      callpropvoid        QName(PackageNamespace(""), "draw"), 4
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "creditDisplay")
+      getlocal0
+      callproperty        QName(PackageInternalNs("com.company.assembleegameclient.screens"), "getReferenceRectangle"), 0
+      getproperty         QName(PackageNamespace(""), "width")
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "creditDisplay")
+      pushbyte            20
+      setproperty         QName(PackageNamespace(""), "y")
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "creditDisplay")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "createChooseNameLink")
+   method
+    name "createChooseNameLink"
+    refid "com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen/instance/com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen/instance/createChooseNameLink"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 5
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.ui"), "DeprecatedClickableText")
+      pushbyte            16
+      pushfalse
+      pushstring          "CharacterSelectionAndNewsScreen.chooseName"
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.ui"), "DeprecatedClickableText"), 3
+      setproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "nameChooseLink_")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "nameChooseLink_")
+      pushbyte            30
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "nameChooseLink_")
+      pushstring          "center"
+      callpropvoid        QName(PackageNamespace(""), "setAutoSize"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "nameChooseLink_")
+      getlocal0
+      callproperty        QName(PackageInternalNs("com.company.assembleegameclient.screens"), "getReferenceRectangle"), 0
+      getproperty         QName(PackageNamespace(""), "width")
+      pushbyte            2
+      divide
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "nameChooseLink_")
+      pushstring          "click"
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "onChooseName")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "nameChooseLink_")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "createNameText")
+   method
+    name "createNameText"
+    refid "com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen/instance/com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen/instance/createNameText"
+    param QName(PackageNamespace("kabam.rotmg.core.model"), "PlayerModel")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete")
+      constructprop       QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete"), 0
+      pushbyte            22
+      callproperty        QName(PackageNamespace(""), "setSize"), 1
+      pushint             11776947
+      callproperty        QName(PackageNamespace(""), "setColor"), 1
+      setproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "nameText")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "nameText")
+      pushtrue
+      callproperty        QName(PackageNamespace(""), "setBold"), 1
+      pushstring          "center"
+      callpropvoid        QName(PackageNamespace(""), "setAutoSize"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "nameText")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "StaticStringBuilder")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "model")
+      callproperty        QName(PackageNamespace(""), "getName"), 0
+      constructprop       QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "StaticStringBuilder"), 1
+      callpropvoid        QName(PackageNamespace(""), "setStringBuilder"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "nameText")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "DROP_SHADOW")
+      newarray            1
+      setproperty         QName(PackageNamespace(""), "filters")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "nameText")
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "isNameChosen"), 0
+      iftrue              L37
+
+      pushbyte            4
+      jump                L38
+
+L37:
+      pushdouble          24
+L38:
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "nameText")
+      getlocal0
+      callproperty        QName(PackageInternalNs("com.company.assembleegameclient.screens"), "getReferenceRectangle"), 0
+      getproperty         QName(PackageNamespace(""), "width")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "nameText")
+      getproperty         QName(PackageNamespace(""), "width")
+      subtract
+      pushbyte            2
+      divide
+      setproperty         QName(PackageNamespace(""), "x")
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "nameText")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageInternalNs("com.company.assembleegameclient.screens"), "getReferenceRectangle")
+   method
+    name "getReferenceRectangle"
+    refid "com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen/instance/com.company.assembleegameclient.screens:getReferenceRectangle"
+    returns QName(PackageNamespace("flash.geom"), "Rectangle")
+    body
+     maxstack 5
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("flash.geom"), "Rectangle")
+      constructprop       QName(PackageNamespace("flash.geom"), "Rectangle"), 0
+      coerce              QName(PackageNamespace("flash.geom"), "Rectangle")
+      setlocal1
+
+      getlex              QName(PackageNamespace(""), "stage")
+      iffalse             L18
+
+      findpropstrict      QName(PackageNamespace("flash.geom"), "Rectangle")
+      pushbyte            0
+      pushbyte            0
+      getlex              QName(PackageNamespace(""), "stage")
+      getproperty         QName(PackageNamespace(""), "stageWidth")
+      getlex              QName(PackageNamespace(""), "stage")
+      getproperty         QName(PackageNamespace(""), "stageHeight")
+      constructprop       QName(PackageNamespace("flash.geom"), "Rectangle"), 4
+      coerce              QName(PackageNamespace("flash.geom"), "Rectangle")
+      setlocal1
+
+L18:
+      getlocal1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "onChooseName")
+   method
+    name "onChooseName"
+    refid "com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen/instance/com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen/instance/onChooseName"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 1
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "chooseName")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "onPlayClick")
+   method
+    name "onPlayClick"
+    refid "com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen/instance/com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen/instance/onPlayClick"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "model")
+      callproperty        QName(PackageNamespace(""), "getCharacterCount"), 0
+      pushbyte            0
+      ifne                L11
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "newCharacter")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      jump                L14
+
+L11:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "playGame")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+L14:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setName")
+   method
+    name "setName"
+    refid "com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen/instance/setName"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "nameText")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "StaticStringBuilder")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "model")
+      callproperty        QName(PackageNamespace(""), "getName"), 0
+      constructprop       QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "StaticStringBuilder"), 1
+      callpropvoid        QName(PackageNamespace(""), "setStringBuilder"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "nameText")
+      getlocal0
+      callproperty        QName(PackageInternalNs("com.company.assembleegameclient.screens"), "getReferenceRectangle"), 0
+      getproperty         QName(PackageNamespace(""), "width")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "nameText")
+      getproperty         QName(PackageNamespace(""), "width")
+      subtract
+      pushdouble          0.5
+      multiply
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "nameChooseLink_")
+      iffalse             L32
+
+      findpropstrict      QName(PackageNamespace(""), "removeChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "nameChooseLink_")
+      callpropvoid        QName(PackageNamespace(""), "removeChild"), 1
+
+      getlocal0
+      pushnull
+      setproperty         QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "nameChooseLink_")
+
+L32:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "TAB_UNSELECTED") type QName(PackageNamespace(""), "uint") value Integer(11776947) end
+ trait const QName(PrivateNamespace("com.company.assembleegameclient.screens:CharacterSelectionAndNewsScreen"), "TAB_SELECTED") type QName(PackageNamespace(""), "uint") value Integer(16777215) end
+end ; class

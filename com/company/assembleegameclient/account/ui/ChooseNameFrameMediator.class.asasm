@@ -1,0 +1,317 @@
+class
+ refid "com.company.assembleegameclient.account.ui:ChooseNameFrameMediator"
+ instance QName(PackageNamespace("com.company.assembleegameclient.account.ui"), "ChooseNameFrameMediator")
+  extends QName(PackageNamespace("robotlegs.bender.bundles.mvcs"), "Mediator")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.company.assembleegameclient.account.ui:ChooseNameFrameMediator")
+  iinit
+   refid "com.company.assembleegameclient.account.ui:ChooseNameFrameMediator/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "view") flag METADATA type QName(PackageNamespace("com.company.assembleegameclient.account.ui"), "ChooseNameFrame")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "closeDialogs") flag METADATA type QName(PackageNamespace("kabam.rotmg.dialogs.control"), "CloseDialogsSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "nameChanged") flag METADATA type QName(PackageNamespace("kabam.rotmg.ui.signals"), "NameChangedSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.account.ui:ChooseNameFrameMediator"), "gameSprite") type QName(PackageNamespace("com.company.assembleegameclient.game"), "AGameSprite") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.account.ui:ChooseNameFrameMediator"), "name") type QName(PackageNamespace(""), "String") end
+  trait method QName(PackageNamespace(""), "initialize") flag OVERRIDE
+   method
+    name "initialize"
+    refid "com.company.assembleegameclient.account.ui:ChooseNameFrameMediator/instance/initialize"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "gameSprite")
+      setproperty         QName(PrivateNamespace("com.company.assembleegameclient.account.ui:ChooseNameFrameMediator"), "gameSprite")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "choose")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.account.ui:ChooseNameFrameMediator"), "onChoose")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "cancel")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.account.ui:ChooseNameFrameMediator"), "onCancel")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "destroy") flag OVERRIDE
+   method
+    name "destroy"
+    refid "com.company.assembleegameclient.account.ui:ChooseNameFrameMediator/instance/destroy"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "choose")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.account.ui:ChooseNameFrameMediator"), "onChoose")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "cancel")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.account.ui:ChooseNameFrameMediator"), "onCancel")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.account.ui:ChooseNameFrameMediator"), "onChoose")
+   method
+    name "onChoose"
+    refid "com.company.assembleegameclient.account.ui:ChooseNameFrameMediator/instance/com.company.assembleegameclient.account.ui:ChooseNameFrameMediator/instance/onChoose"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      setproperty         QName(PrivateNamespace("com.company.assembleegameclient.account.ui:ChooseNameFrameMediator"), "name")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.account.ui:ChooseNameFrameMediator"), "gameSprite")
+      pushstring          "NAMERESULTEVENT"
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "onNameResult")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.account.ui:ChooseNameFrameMediator"), "gameSprite")
+      getproperty         QName(PackageNamespace(""), "gsc_")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "chooseName"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      callpropvoid        QName(PackageNamespace(""), "disable"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "onNameResult")
+   method
+    name "onNameResult"
+    refid "com.company.assembleegameclient.account.ui:ChooseNameFrameMediator/instance/onNameResult"
+    param QName(PackageNamespace("com.company.assembleegameclient.game.events"), "NameResultEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.account.ui:ChooseNameFrameMediator"), "gameSprite")
+      pushstring          "NAMERESULTEVENT"
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "onNameResult")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "m_")
+      getproperty         QName(PackageNamespace(""), "success_")
+      convert_b
+      setlocal2
+
+      getlocal2
+      iffalse             L18
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("com.company.assembleegameclient.account.ui:ChooseNameFrameMediator"), "handleSuccessfulNameChange"), 0
+
+      jump                L23
+
+L18:
+      getlocal0
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "m_")
+      getproperty         QName(PackageNamespace(""), "errorText_")
+      callpropvoid        QName(PrivateNamespace("com.company.assembleegameclient.account.ui:ChooseNameFrameMediator"), "handleFailedNameChange"), 1
+
+L23:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.account.ui:ChooseNameFrameMediator"), "handleSuccessfulNameChange")
+   method
+    name "handleSuccessfulNameChange"
+    refid "com.company.assembleegameclient.account.ui:ChooseNameFrameMediator/instance/com.company.assembleegameclient.account.ui:ChooseNameFrameMediator/instance/handleSuccessfulNameChange"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.account.ui:ChooseNameFrameMediator"), "gameSprite")
+      getproperty         QName(PackageNamespace(""), "model")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.account.ui:ChooseNameFrameMediator"), "name")
+      callpropvoid        QName(PackageNamespace(""), "setName"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.account.ui:ChooseNameFrameMediator"), "gameSprite")
+      getproperty         QName(PackageNamespace(""), "map")
+      getproperty         QName(PackageNamespace(""), "player")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.account.ui:ChooseNameFrameMediator"), "name")
+      setproperty         QName(PackageNamespace(""), "name_")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "closeDialogs")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "nameChanged")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.account.ui:ChooseNameFrameMediator"), "name")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.account.ui:ChooseNameFrameMediator"), "handleFailedNameChange")
+   method
+    name "handleFailedNameChange"
+    refid "com.company.assembleegameclient.account.ui:ChooseNameFrameMediator/instance/com.company.assembleegameclient.account.ui:ChooseNameFrameMediator/instance/handleFailedNameChange"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "setError"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      callpropvoid        QName(PackageNamespace(""), "enable"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.account.ui:ChooseNameFrameMediator"), "onCancel")
+   method
+    name "onCancel"
+    refid "com.company.assembleegameclient.account.ui:ChooseNameFrameMediator/instance/com.company.assembleegameclient.account.ui:ChooseNameFrameMediator/instance/onCancel"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "closeDialogs")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.account.ui:ChooseNameFrameMediator/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

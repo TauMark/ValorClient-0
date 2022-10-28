@@ -1,0 +1,109 @@
+class
+ refid "kabam.rotmg.ui.view:PotionInventoryView"
+ instance QName(PackageNamespace("kabam.rotmg.ui.view"), "PotionInventoryView")
+  extends QName(PackageNamespace("flash.display"), "Sprite")
+  flag SEALED
+  iinit
+   name "PotionInventoryView"
+   refid "kabam.rotmg.ui.view:PotionInventoryView/instance/init"
+   body
+    maxstack 4
+    localcount 3
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     pushnull
+     setlocal1
+
+     pushbyte            0
+     setlocal2
+
+     getlex              QName(PrivateNamespace("kabam.rotmg.ui.view:PotionInventoryView"), "LEFT_BUTTON_CUTS")
+     getlex              QName(PrivateNamespace("kabam.rotmg.ui.view:PotionInventoryView"), "RIGHT_BUTTON_CUTS")
+     newarray            2
+     findproperty        QName(PrivateNamespace("kabam.rotmg.ui.view:PotionInventoryView"), "cuts")
+     swap
+     initproperty        QName(PrivateNamespace("kabam.rotmg.ui.view:PotionInventoryView"), "cuts")
+
+     getlocal0
+     constructsuper      0
+
+     jump                L37
+
+L15:
+     label
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.ui.view.components"), "PotionSlotView")
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.ui.view:PotionInventoryView"), "cuts")
+     getlocal2
+     getproperty         MultinameL([PrivateNamespace("kabam.rotmg.ui.view:PotionInventoryView"), ProtectedNamespace("kabam.rotmg.ui.view:PotionInventoryView"), StaticProtectedNs("kabam.rotmg.ui.view:PotionInventoryView"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.ui.view"), PackageInternalNs("kabam.rotmg.ui.view"), PrivateNamespace("FilePrivateNS:PotionInventoryView"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     getlocal2
+     constructprop       QName(PackageNamespace("kabam.rotmg.ui.view.components"), "PotionSlotView"), 2
+     coerce              QName(PackageNamespace("kabam.rotmg.ui.view.components"), "PotionSlotView")
+     setlocal1
+
+     getlocal1
+     getlocal2
+     getlex              QName(PackageNamespace("kabam.rotmg.ui.view.components"), "PotionSlotView")
+     getproperty         QName(PackageNamespace(""), "BUTTON_WIDTH")
+     pushbyte            4
+     add
+     multiply
+     setproperty         QName(PackageNamespace(""), "x")
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal1
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     inclocal_i          2
+L37:
+     getlocal2
+     pushbyte            2
+     iflt                L15
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait const QName(PrivateNamespace("kabam.rotmg.ui.view:PotionInventoryView"), "cuts") type QName(PackageNamespace(""), "Array") end
+ end ; instance
+ cinit
+  refid "kabam.rotmg.ui.view:PotionInventoryView/class/init"
+  body
+   maxstack 4
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 1
+   code
+    getlocal0
+    pushscope
+
+    pushbyte            1
+    pushbyte            0
+    pushbyte            0
+    pushbyte            1
+    newarray            4
+    findproperty        QName(PrivateNamespace("kabam.rotmg.ui.view:PotionInventoryView"), "LEFT_BUTTON_CUTS")
+    swap
+    initproperty        QName(PrivateNamespace("kabam.rotmg.ui.view:PotionInventoryView"), "LEFT_BUTTON_CUTS")
+
+    pushbyte            0
+    pushbyte            1
+    pushbyte            1
+    pushbyte            0
+    newarray            4
+    findproperty        QName(PrivateNamespace("kabam.rotmg.ui.view:PotionInventoryView"), "RIGHT_BUTTON_CUTS")
+    swap
+    initproperty        QName(PrivateNamespace("kabam.rotmg.ui.view:PotionInventoryView"), "RIGHT_BUTTON_CUTS")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PrivateNamespace("kabam.rotmg.ui.view:PotionInventoryView"), "LEFT_BUTTON_CUTS") type QName(PackageNamespace(""), "Array") end
+ trait const QName(PrivateNamespace("kabam.rotmg.ui.view:PotionInventoryView"), "RIGHT_BUTTON_CUTS") type QName(PackageNamespace(""), "Array") end
+ trait const QName(PrivateNamespace("kabam.rotmg.ui.view:PotionInventoryView"), "BUTTON_SPACE") type QName(PackageNamespace(""), "int") value Integer(4) end
+end ; class

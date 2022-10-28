@@ -1,0 +1,925 @@
+class
+ refid "com.company.assembleegameclient.ui.menu:PlayerMenu"
+ instance QName(PackageNamespace("com.company.assembleegameclient.ui.menu"), "PlayerMenu")
+  extends QName(PackageNamespace("com.company.assembleegameclient.ui.menu"), "Menu")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.company.assembleegameclient.ui.menu:PlayerMenu")
+  iinit
+   name "PlayerMenu"
+   refid "com.company.assembleegameclient.ui.menu:PlayerMenu/instance/init#1"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "gs_") type QName(PackageNamespace("com.company.assembleegameclient.game"), "AGameSprite") end
+  trait slot QName(PackageNamespace(""), "playerName_") type QName(PackageNamespace(""), "String") end
+  trait slot QName(PackageNamespace(""), "player_") type QName(PackageNamespace("com.company.assembleegameclient.objects"), "Player") end
+  trait slot QName(PackageNamespace(""), "playerPanel_") type QName(PackageNamespace("com.company.assembleegameclient.ui"), "GameObjectListItem") end
+  trait method QName(PackageNamespace(""), "initDifferentServer")
+   method
+    name "initDifferentServer"
+    refid "com.company.assembleegameclient.ui.menu:PlayerMenu/instance/initDifferentServer"
+    param QName(PackageNamespace("com.company.assembleegameclient.game"), "AGameSprite")
+    param QName(PackageNamespace(""), "String")
+    param QName(PackageNamespace(""), "Boolean")
+    param QName(PackageNamespace(""), "Boolean")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_OPTIONAL
+    flag HAS_PARAM_NAMES
+    optional False()
+    optional False()
+    paramname "gs"
+    paramname "name"
+    paramname "isGuild"
+    paramname "isOther"
+    body
+     maxstack 4
+     localcount 6
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      setlocal            5
+
+      getlocal0
+      getlocal1
+      setproperty         QName(PackageNamespace(""), "gs_")
+
+      getlocal0
+      getlocal2
+      setproperty         QName(PackageNamespace(""), "playerName_")
+
+      getlocal0
+      pushnull
+      setproperty         QName(PackageNamespace(""), "player_")
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("com.company.assembleegameclient.ui.menu:Menu"), "yOffset")
+      pushbyte            25
+      subtract
+      getlocal0
+      swap
+      setproperty         QName(ProtectedNamespace("com.company.assembleegameclient.ui.menu:Menu"), "yOffset")
+
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.ui.menu"), "MenuOption")
+      getlex              QName(PackageNamespace("com.company.util"), "AssetLibrary")
+      pushstring          "lofiInterfaceBig"
+      pushbyte            21
+      callproperty        QName(PackageNamespace(""), "getImageFromSet"), 2
+      pushint             16777215
+      pushstring          "PlayerMenu.PM"
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.ui.menu"), "MenuOption"), 3
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.ui.menu"), "MenuOption")
+      dup
+      setlocal            5
+
+      pushstring          "click"
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.menu:PlayerMenu"), "onPrivateMessage")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      findpropstrict      QName(ProtectedNamespace("com.company.assembleegameclient.ui.menu:Menu"), "addOption")
+      getlocal            5
+      callpropvoid        QName(ProtectedNamespace("com.company.assembleegameclient.ui.menu:Menu"), "addOption"), 1
+
+      getlocal3
+      iffalse             L58
+
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.ui.menu"), "MenuOption")
+      getlex              QName(PackageNamespace("com.company.util"), "AssetLibrary")
+      pushstring          "lofiInterfaceBig"
+      pushbyte            21
+      callproperty        QName(PackageNamespace(""), "getImageFromSet"), 2
+      pushint             16777215
+      pushstring          "PlayerMenu.GuildChat"
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.ui.menu"), "MenuOption"), 3
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.ui.menu"), "MenuOption")
+      dup
+      setlocal            5
+
+      pushstring          "click"
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.menu:PlayerMenu"), "onGuildMessage")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      findpropstrict      QName(ProtectedNamespace("com.company.assembleegameclient.ui.menu:Menu"), "addOption")
+      getlocal            5
+      callpropvoid        QName(ProtectedNamespace("com.company.assembleegameclient.ui.menu:Menu"), "addOption"), 1
+
+L58:
+      getlocal            4
+      iffalse             L78
+
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.ui.menu"), "MenuOption")
+      getlex              QName(PackageNamespace("com.company.util"), "AssetLibrary")
+      pushstring          "lofiInterfaceBig"
+      pushbyte            7
+      callproperty        QName(PackageNamespace(""), "getImageFromSet"), 2
+      pushint             16777215
+      pushstring          "PlayerMenu.Trade"
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.ui.menu"), "MenuOption"), 3
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.ui.menu"), "MenuOption")
+      dup
+      setlocal            5
+
+      pushstring          "click"
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.menu:PlayerMenu"), "onTradeMessage")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      findpropstrict      QName(ProtectedNamespace("com.company.assembleegameclient.ui.menu:Menu"), "addOption")
+      getlocal            5
+      callpropvoid        QName(ProtectedNamespace("com.company.assembleegameclient.ui.menu:Menu"), "addOption"), 1
+
+L78:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "init")
+   method
+    name "init"
+    refid "com.company.assembleegameclient.ui.menu:PlayerMenu/instance/init#0"
+    param QName(PackageNamespace("com.company.assembleegameclient.game"), "AGameSprite")
+    param QName(PackageNamespace("com.company.assembleegameclient.objects"), "Player")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "gs"
+    paramname "plr"
+    body
+     maxstack 7
+     localcount 4
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      setlocal3
+
+      getlocal0
+      getlocal1
+      setproperty         QName(PackageNamespace(""), "gs_")
+
+      getlocal0
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "name_")
+      setproperty         QName(PackageNamespace(""), "playerName_")
+
+      getlocal0
+      getlocal2
+      setproperty         QName(PackageNamespace(""), "player_")
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.ui"), "GameObjectListItem")
+      pushint             11776947
+      pushtrue
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "player_")
+      pushfalse
+      pushtrue
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.ui"), "GameObjectListItem"), 5
+      setproperty         QName(PackageNamespace(""), "playerPanel_")
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("com.company.assembleegameclient.ui.menu:Menu"), "yOffset")
+      pushbyte            7
+      add
+      getlocal0
+      swap
+      setproperty         QName(ProtectedNamespace("com.company.assembleegameclient.ui.menu:Menu"), "yOffset")
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "playerPanel_")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "gs_")
+      getproperty         QName(PackageNamespace(""), "map")
+      callproperty        QName(PackageNamespace(""), "allowPlayerTeleport"), 0
+      dup
+      iffalse             L48
+
+      pop
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "player_")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "player_")
+      callproperty        QName(PackageNamespace(""), "isTeleportEligible"), 1
+      convert_b
+L48:
+      iffalse             L65
+
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.ui.menu"), "TeleportMenuOption")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "gs_")
+      getproperty         QName(PackageNamespace(""), "map")
+      getproperty         QName(PackageNamespace(""), "player")
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.ui.menu"), "TeleportMenuOption"), 1
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.ui.menu"), "MenuOption")
+      setlocal3
+
+      getlocal3
+      pushstring          "click"
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.menu:PlayerMenu"), "onTeleport")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      findpropstrict      QName(ProtectedNamespace("com.company.assembleegameclient.ui.menu:Menu"), "addOption")
+      getlocal3
+      callpropvoid        QName(ProtectedNamespace("com.company.assembleegameclient.ui.menu:Menu"), "addOption"), 1
+
+L65:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "gs_")
+      getproperty         QName(PackageNamespace(""), "map")
+      getproperty         QName(PackageNamespace(""), "player")
+      getproperty         QName(PackageNamespace(""), "guildRank_")
+      pushbyte            20
+      greaterequals
+      dup
+      iffalse             L79
+
+      pop
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "guildName_")
+      pushnull
+      equals
+L79:
+      dup
+      iftrue              L87
+
+      pop
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "guildName_")
+      getproperty         QName(PackageNamespace(""), "length")
+      pushbyte            0
+      equals
+L87:
+      iffalse             L106
+
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.ui.menu"), "MenuOption")
+      getlex              QName(PackageNamespace("com.company.util"), "AssetLibrary")
+      pushstring          "lofiInterfaceBig"
+      pushbyte            10
+      callproperty        QName(PackageNamespace(""), "getImageFromSet"), 2
+      pushint             16777215
+      pushstring          "PlayerMenu.Invite"
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.ui.menu"), "MenuOption"), 3
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.ui.menu"), "MenuOption")
+      setlocal3
+
+      getlocal3
+      pushstring          "click"
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.menu:PlayerMenu"), "onInvite")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      findpropstrict      QName(ProtectedNamespace("com.company.assembleegameclient.ui.menu:Menu"), "addOption")
+      getlocal3
+      callpropvoid        QName(ProtectedNamespace("com.company.assembleegameclient.ui.menu:Menu"), "addOption"), 1
+
+L106:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "player_")
+      getproperty         QName(PackageNamespace(""), "starred_")
+      iftrue              L129
+
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.ui.menu"), "MenuOption")
+      getlex              QName(PackageNamespace("com.company.util"), "AssetLibrary")
+      pushstring          "lofiInterface2"
+      pushbyte            5
+      callproperty        QName(PackageNamespace(""), "getImageFromSet"), 2
+      pushint             16777215
+      pushstring          "PlayerMenu.Lock"
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.ui.menu"), "MenuOption"), 3
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.ui.menu"), "MenuOption")
+      setlocal3
+
+      getlocal3
+      pushstring          "click"
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.menu:PlayerMenu"), "onLock")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      findpropstrict      QName(ProtectedNamespace("com.company.assembleegameclient.ui.menu:Menu"), "addOption")
+      getlocal3
+      callpropvoid        QName(ProtectedNamespace("com.company.assembleegameclient.ui.menu:Menu"), "addOption"), 1
+
+      jump                L147
+
+L129:
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.ui.menu"), "MenuOption")
+      getlex              QName(PackageNamespace("com.company.util"), "AssetLibrary")
+      pushstring          "lofiInterface2"
+      pushbyte            6
+      callproperty        QName(PackageNamespace(""), "getImageFromSet"), 2
+      pushint             16777215
+      pushstring          "PlayerMenu.UnLock"
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.ui.menu"), "MenuOption"), 3
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.ui.menu"), "MenuOption")
+      setlocal3
+
+      getlocal3
+      pushstring          "click"
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.menu:PlayerMenu"), "onUnlock")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      findpropstrict      QName(ProtectedNamespace("com.company.assembleegameclient.ui.menu:Menu"), "addOption")
+      getlocal3
+      callpropvoid        QName(ProtectedNamespace("com.company.assembleegameclient.ui.menu:Menu"), "addOption"), 1
+
+L147:
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.ui.menu"), "MenuOption")
+      getlex              QName(PackageNamespace("com.company.util"), "AssetLibrary")
+      pushstring          "lofiInterfaceBig"
+      pushbyte            7
+      callproperty        QName(PackageNamespace(""), "getImageFromSet"), 2
+      pushint             16777215
+      pushstring          "PlayerMenu.Trade"
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.ui.menu"), "MenuOption"), 3
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.ui.menu"), "MenuOption")
+      setlocal3
+
+      getlocal3
+      pushstring          "click"
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.menu:PlayerMenu"), "onTrade")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      findpropstrict      QName(ProtectedNamespace("com.company.assembleegameclient.ui.menu:Menu"), "addOption")
+      getlocal3
+      callpropvoid        QName(ProtectedNamespace("com.company.assembleegameclient.ui.menu:Menu"), "addOption"), 1
+
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.ui.menu"), "MenuOption")
+      getlex              QName(PackageNamespace("com.company.util"), "AssetLibrary")
+      pushstring          "lofiInterfaceBig"
+      pushbyte            21
+      callproperty        QName(PackageNamespace(""), "getImageFromSet"), 2
+      pushint             16777215
+      pushstring          "PlayerMenu.PM"
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.ui.menu"), "MenuOption"), 3
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.ui.menu"), "MenuOption")
+      setlocal3
+
+      getlocal3
+      pushstring          "click"
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.menu:PlayerMenu"), "onPrivateMessage")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      findpropstrict      QName(ProtectedNamespace("com.company.assembleegameclient.ui.menu:Menu"), "addOption")
+      getlocal3
+      callpropvoid        QName(ProtectedNamespace("com.company.assembleegameclient.ui.menu:Menu"), "addOption"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "player_")
+      getproperty         QName(PackageNamespace(""), "isFellowGuild_")
+      iffalse             L205
+
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.ui.menu"), "MenuOption")
+      getlex              QName(PackageNamespace("com.company.util"), "AssetLibrary")
+      pushstring          "lofiInterfaceBig"
+      pushbyte            21
+      callproperty        QName(PackageNamespace(""), "getImageFromSet"), 2
+      pushint             16777215
+      pushstring          "PlayerMenu.GuildChat"
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.ui.menu"), "MenuOption"), 3
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.ui.menu"), "MenuOption")
+      setlocal3
+
+      getlocal3
+      pushstring          "click"
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.menu:PlayerMenu"), "onGuildMessage")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      findpropstrict      QName(ProtectedNamespace("com.company.assembleegameclient.ui.menu:Menu"), "addOption")
+      getlocal3
+      callpropvoid        QName(ProtectedNamespace("com.company.assembleegameclient.ui.menu:Menu"), "addOption"), 1
+
+L205:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "player_")
+      getproperty         QName(PackageNamespace(""), "ignored_")
+      iftrue              L228
+
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.ui.menu"), "MenuOption")
+      getlex              QName(PackageNamespace("com.company.util"), "AssetLibrary")
+      pushstring          "lofiInterfaceBig"
+      pushbyte            8
+      callproperty        QName(PackageNamespace(""), "getImageFromSet"), 2
+      pushint             16777215
+      pushstring          "Block"
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.ui.menu"), "MenuOption"), 3
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.ui.menu"), "MenuOption")
+      setlocal3
+
+      getlocal3
+      pushstring          "click"
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.menu:PlayerMenu"), "onIgnore")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      findpropstrict      QName(ProtectedNamespace("com.company.assembleegameclient.ui.menu:Menu"), "addOption")
+      getlocal3
+      callpropvoid        QName(ProtectedNamespace("com.company.assembleegameclient.ui.menu:Menu"), "addOption"), 1
+
+      jump                L246
+
+L228:
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.ui.menu"), "MenuOption")
+      getlex              QName(PackageNamespace("com.company.util"), "AssetLibrary")
+      pushstring          "lofiInterfaceBig"
+      pushbyte            9
+      callproperty        QName(PackageNamespace(""), "getImageFromSet"), 2
+      pushint             16777215
+      pushstring          "PlayerMenu.Unignore"
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.ui.menu"), "MenuOption"), 3
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.ui.menu"), "MenuOption")
+      setlocal3
+
+      getlocal3
+      pushstring          "click"
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.menu:PlayerMenu"), "onUnignore")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      findpropstrict      QName(ProtectedNamespace("com.company.assembleegameclient.ui.menu:Menu"), "addOption")
+      getlocal3
+      callpropvoid        QName(ProtectedNamespace("com.company.assembleegameclient.ui.menu:Menu"), "addOption"), 1
+
+L246:
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.ui.menu"), "MenuOption")
+      getlex              QName(PackageNamespace("com.company.util"), "AssetLibrary")
+      pushstring          "lofiInterfaceBig"
+      pushbyte            12
+      callproperty        QName(PackageNamespace(""), "getImageFromSet"), 2
+      pushint             16777215
+      pushstring          "Party Invite"
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.ui.menu"), "MenuOption"), 3
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.ui.menu"), "MenuOption")
+      setlocal3
+
+      getlocal3
+      pushstring          "click"
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.menu:PlayerMenu"), "onPartyInvite")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      findpropstrict      QName(ProtectedNamespace("com.company.assembleegameclient.ui.menu:Menu"), "addOption")
+      getlocal3
+      callpropvoid        QName(ProtectedNamespace("com.company.assembleegameclient.ui.menu:Menu"), "addOption"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.ui.menu:PlayerMenu"), "onPrivateMessage")
+   method
+    name "onPrivateMessage"
+    refid "com.company.assembleegameclient.ui.menu:PlayerMenu/instance/com.company.assembleegameclient.ui.menu:PlayerMenu/instance/onPrivateMessage"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "e"
+    body
+     maxstack 4
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace("kabam.rotmg.core"), "StaticInjectorContext")
+      callproperty        QName(PackageNamespace(""), "getInjector"), 0
+      getlex              QName(PackageNamespace("kabam.rotmg.chat.control"), "ShowChatInputSignal")
+      callproperty        QName(PackageNamespace(""), "getInstance"), 1
+      coerce              QName(PackageNamespace("kabam.rotmg.chat.control"), "ShowChatInputSignal")
+      setlocal2
+
+      getlocal2
+      pushtrue
+      pushstring          "/tell "
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "playerName_")
+      add
+      pushstring          " "
+      add
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 2
+
+      findpropstrict      QName(PackageNamespace(""), "remove")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.ui.menu:PlayerMenu"), "onTradeMessage")
+   method
+    name "onTradeMessage"
+    refid "com.company.assembleegameclient.ui.menu:PlayerMenu/instance/com.company.assembleegameclient.ui.menu:PlayerMenu/instance/onTradeMessage"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "e"
+    body
+     maxstack 4
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace("kabam.rotmg.core"), "StaticInjectorContext")
+      callproperty        QName(PackageNamespace(""), "getInjector"), 0
+      getlex              QName(PackageNamespace("kabam.rotmg.chat.control"), "ShowChatInputSignal")
+      callproperty        QName(PackageNamespace(""), "getInstance"), 1
+      coerce              QName(PackageNamespace("kabam.rotmg.chat.control"), "ShowChatInputSignal")
+      setlocal2
+
+      getlocal2
+      pushtrue
+      pushstring          "/trade "
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "playerName_")
+      add
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 2
+
+      findpropstrict      QName(PackageNamespace(""), "remove")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.ui.menu:PlayerMenu"), "onGuildMessage")
+   method
+    name "onGuildMessage"
+    refid "com.company.assembleegameclient.ui.menu:PlayerMenu/instance/com.company.assembleegameclient.ui.menu:PlayerMenu/instance/onGuildMessage"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "e"
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace("kabam.rotmg.core"), "StaticInjectorContext")
+      callproperty        QName(PackageNamespace(""), "getInjector"), 0
+      getlex              QName(PackageNamespace("kabam.rotmg.chat.control"), "ShowChatInputSignal")
+      callproperty        QName(PackageNamespace(""), "getInstance"), 1
+      coerce              QName(PackageNamespace("kabam.rotmg.chat.control"), "ShowChatInputSignal")
+      setlocal2
+
+      getlocal2
+      pushtrue
+      pushstring          "/g "
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 2
+
+      findpropstrict      QName(PackageNamespace(""), "remove")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.ui.menu:PlayerMenu"), "onTeleport")
+   method
+    name "onTeleport"
+    refid "com.company.assembleegameclient.ui.menu:PlayerMenu/instance/com.company.assembleegameclient.ui.menu:PlayerMenu/instance/onTeleport"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "e"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "gs_")
+      getproperty         QName(PackageNamespace(""), "map")
+      getproperty         QName(PackageNamespace(""), "player")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "player_")
+      callpropvoid        QName(PackageNamespace(""), "teleportTo"), 1
+
+      findpropstrict      QName(PackageNamespace(""), "remove")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.ui.menu:PlayerMenu"), "onInvite")
+   method
+    name "onInvite"
+    refid "com.company.assembleegameclient.ui.menu:PlayerMenu/instance/com.company.assembleegameclient.ui.menu:PlayerMenu/instance/onInvite"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "e"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "gs_")
+      getproperty         QName(PackageNamespace(""), "gsc_")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "playerName_")
+      callpropvoid        QName(PackageNamespace(""), "guildInvite"), 1
+
+      findpropstrict      QName(PackageNamespace(""), "remove")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.ui.menu:PlayerMenu"), "onLock")
+   method
+    name "onLock"
+    refid "com.company.assembleegameclient.ui.menu:PlayerMenu/instance/com.company.assembleegameclient.ui.menu:PlayerMenu/instance/onLock"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "gs_")
+      getproperty         QName(PackageNamespace(""), "map")
+      getproperty         QName(PackageNamespace(""), "party")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "player_")
+      callpropvoid        QName(PackageNamespace(""), "lockPlayer"), 1
+
+      findpropstrict      QName(PackageNamespace(""), "remove")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.ui.menu:PlayerMenu"), "onUnlock")
+   method
+    name "onUnlock"
+    refid "com.company.assembleegameclient.ui.menu:PlayerMenu/instance/com.company.assembleegameclient.ui.menu:PlayerMenu/instance/onUnlock"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "e"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "gs_")
+      getproperty         QName(PackageNamespace(""), "map")
+      getproperty         QName(PackageNamespace(""), "party")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "player_")
+      callpropvoid        QName(PackageNamespace(""), "unlockPlayer"), 1
+
+      findpropstrict      QName(PackageNamespace(""), "remove")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.ui.menu:PlayerMenu"), "onTrade")
+   method
+    name "onTrade"
+    refid "com.company.assembleegameclient.ui.menu:PlayerMenu/instance/com.company.assembleegameclient.ui.menu:PlayerMenu/instance/onTrade"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "e"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "gs_")
+      getproperty         QName(PackageNamespace(""), "gsc_")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "playerName_")
+      callpropvoid        QName(PackageNamespace(""), "requestTrade"), 1
+
+      findpropstrict      QName(PackageNamespace(""), "remove")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.ui.menu:PlayerMenu"), "onPartyInvite")
+   method
+    name "onPartyInvite"
+    refid "com.company.assembleegameclient.ui.menu:PlayerMenu/instance/com.company.assembleegameclient.ui.menu:PlayerMenu/instance/onPartyInvite"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "e"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "gs_")
+      getproperty         QName(PackageNamespace(""), "gsc_")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "playerName_")
+      callpropvoid        QName(PackageNamespace(""), "requestPartyInvite"), 1
+
+      findpropstrict      QName(PackageNamespace(""), "remove")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.ui.menu:PlayerMenu"), "onGamble")
+   method
+    name "onGamble"
+    refid "com.company.assembleegameclient.ui.menu:PlayerMenu/instance/com.company.assembleegameclient.ui.menu:PlayerMenu/instance/onGamble"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "e"
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "gs_")
+      getproperty         QName(PackageNamespace(""), "gsc_")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "playerName_")
+      pushshort           1000
+      callpropvoid        QName(PackageNamespace(""), "requestGamble"), 2
+
+      findpropstrict      QName(PackageNamespace(""), "remove")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.ui.menu:PlayerMenu"), "onIgnore")
+   method
+    name "onIgnore"
+    refid "com.company.assembleegameclient.ui.menu:PlayerMenu/instance/com.company.assembleegameclient.ui.menu:PlayerMenu/instance/onIgnore"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "e"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "gs_")
+      getproperty         QName(PackageNamespace(""), "map")
+      getproperty         QName(PackageNamespace(""), "party")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "player_")
+      callpropvoid        QName(PackageNamespace(""), "ignorePlayer"), 1
+
+      findpropstrict      QName(PackageNamespace(""), "remove")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.ui.menu:PlayerMenu"), "onUnignore")
+   method
+    name "onUnignore"
+    refid "com.company.assembleegameclient.ui.menu:PlayerMenu/instance/com.company.assembleegameclient.ui.menu:PlayerMenu/instance/onUnignore"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "e"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "gs_")
+      getproperty         QName(PackageNamespace(""), "map")
+      getproperty         QName(PackageNamespace(""), "party")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "player_")
+      callpropvoid        QName(PackageNamespace(""), "unignorePlayer"), 1
+
+      findpropstrict      QName(PackageNamespace(""), "remove")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.ui.menu:PlayerMenu/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

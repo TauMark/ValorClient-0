@@ -1,0 +1,166 @@
+class
+ refid "kabam.rotmg.market.ui:MarketMediator"
+ instance QName(PackageNamespace("kabam.rotmg.market.ui"), "MarketMediator")
+  extends QName(PackageNamespace("robotlegs.bender.bundles.mvcs"), "Mediator")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.market.ui:MarketMediator")
+  iinit
+   name "MarketMediator"
+   refid "kabam.rotmg.market.ui:MarketMediator/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "view") flag METADATA type QName(PackageNamespace("kabam.rotmg.market.ui"), "MarketOverview")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "doAction") flag METADATA type QName(PackageNamespace("kabam.rotmg.market.ui"), "MarketActionSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "closeDialogs") flag METADATA type QName(PackageNamespace("kabam.rotmg.dialogs.control"), "CloseDialogsSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PrivateNamespace("kabam.rotmg.market.ui:MarketMediator"), "packetManager") type QName(PackageNamespace("kabam.rotmg.messaging.impl"), "GameServerConnectionConcrete") end
+  trait method QName(PackageNamespace(""), "initialize") flag OVERRIDE
+   method
+    name "initialize"
+    refid "kabam.rotmg.market.ui:MarketMediator/instance/initialize"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlex              QName(PackageNamespace("kabam.rotmg.messaging.impl"), "GameServerConnectionConcrete")
+      getproperty         QName(PackageNamespace(""), "instance")
+      setproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketMediator"), "packetManager")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "doAction")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketMediator"), "onAction")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "closeButton_")
+      getproperty         QName(PackageNamespace(""), "clicked")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketMediator"), "closeDialog")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.market.ui:MarketMediator"), "closeDialog")
+   method
+    name "closeDialog"
+    refid "kabam.rotmg.market.ui:MarketMediator/instance/kabam.rotmg.market.ui:MarketMediator/instance/closeDialog"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "closeDialogs")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.market.ui:MarketMediator"), "onAction")
+   method
+    name "onAction"
+    refid "kabam.rotmg.market.ui:MarketMediator/instance/kabam.rotmg.market.ui:MarketMediator/instance/onAction"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "param1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketMediator"), "packetManager")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "playerText"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "destroy") flag OVERRIDE
+   method
+    name "destroy"
+    refid "kabam.rotmg.market.ui:MarketMediator/instance/destroy"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "doAction")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketMediator"), "onAction")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.market.ui:MarketMediator/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

@@ -1,0 +1,124 @@
+class
+ refid "kabam.rotmg.protip.view:ProTipText"
+ instance QName(PackageNamespace("kabam.rotmg.protip.view"), "ProTipText")
+  extends QName(PackageNamespace("flash.display"), "Sprite")
+  flag SEALED
+  iinit
+   refid "kabam.rotmg.protip.view:ProTipText/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace("kabam.rotmg.protip.view:ProTipText"), "text") type QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete") end
+  trait method QName(PackageNamespace(""), "setTip")
+   method
+    name "setTip"
+    refid "kabam.rotmg.protip.view:ProTipText/instance/setTip"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 9
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete")
+      constructprop       QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete"), 0
+      pushbyte            18
+      callproperty        QName(PackageNamespace(""), "setSize"), 1
+      pushint             16777215
+      callproperty        QName(PackageNamespace(""), "setColor"), 1
+      pushtrue
+      callproperty        QName(PackageNamespace(""), "setWordWrap"), 1
+      pushtrue
+      callproperty        QName(PackageNamespace(""), "setMultiLine"), 1
+      pushshort           580
+      callproperty        QName(PackageNamespace(""), "setTextWidth"), 1
+      pushbyte            100
+      callproperty        QName(PackageNamespace(""), "setTextHeight"), 1
+      pushstring          "center"
+      callproperty        QName(PackageNamespace(""), "setHorizontalAlign"), 1
+      setproperty         QName(PrivateNamespace("kabam.rotmg.protip.view:ProTipText"), "text")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.protip.view:ProTipText"), "text")
+      findpropstrict      QName(PackageNamespace("flash.filters"), "DropShadowFilter")
+      pushbyte            0
+      pushbyte            0
+      pushbyte            0
+      pushbyte            1
+      pushbyte            4
+      pushbyte            4
+      pushbyte            2
+      constructprop       QName(PackageNamespace("flash.filters"), "DropShadowFilter"), 7
+      newarray            1
+      setproperty         QName(PackageNamespace(""), "filters")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.protip.view:ProTipText"), "text")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder")
+      constructprop       QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder"), 0
+      pushstring          "ProTipText.text"
+      pushstring          "tip"
+      getlocal1
+      newobject           1
+      callproperty        QName(PackageNamespace(""), "setParams"), 2
+      callpropvoid        QName(PackageNamespace(""), "setStringBuilder"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.protip.view:ProTipText"), "text")
+      pushshort           -290
+      setproperty         QName(PackageNamespace(""), "x")
+
+      pushfalse
+      findproperty        QName(PackageNamespace(""), "mouseEnabled")
+      swap
+      setproperty         QName(PackageNamespace(""), "mouseEnabled")
+
+      pushfalse
+      findproperty        QName(PackageNamespace(""), "mouseChildren")
+      swap
+      setproperty         QName(PackageNamespace(""), "mouseChildren")
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.protip.view:ProTipText"), "text")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.protip.view:ProTipText/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

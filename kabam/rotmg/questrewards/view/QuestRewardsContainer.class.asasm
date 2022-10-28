@@ -1,0 +1,78 @@
+class
+ refid "kabam.rotmg.questrewards.view:QuestRewardsContainer"
+ instance QName(PackageNamespace("kabam.rotmg.questrewards.view"), "QuestRewardsContainer")
+  extends QName(PackageNamespace("flash.display"), "Sprite")
+  flag SEALED
+  iinit
+   name "QuestRewardsContainer"
+   refid "kabam.rotmg.questrewards.view:QuestRewardsContainer/instance/init"
+   returns QName(PackageNamespace(""), "void")
+   body
+    maxstack 3
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     pushtrue
+     findproperty        QName(PackageNamespace(""), "modalIsOpen")
+     swap
+     setproperty         QName(PackageNamespace(""), "modalIsOpen")
+
+     findpropstrict      QName(PackageNamespace(""), "addEventListener")
+     pushstring          "removedFromStage"
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "removedFromStage")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait method QName(PackageNamespace(""), "removedFromStage")
+   method
+    name "removedFromStage"
+    refid "kabam.rotmg.questrewards.view:QuestRewardsContainer/instance/removedFromStage"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushfalse
+      findproperty        QName(PackageNamespace(""), "modalIsOpen")
+      swap
+      setproperty         QName(PackageNamespace(""), "modalIsOpen")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.questrewards.view:QuestRewardsContainer/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait slot QName(PackageNamespace(""), "modalIsOpen") type QName(PackageNamespace(""), "Boolean") value False() end
+end ; class

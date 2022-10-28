@@ -1,0 +1,454 @@
+class
+ refid "com.company.assembleegameclient.account.ui:OfferRadioButtons"
+ instance QName(PackageNamespace("com.company.assembleegameclient.account.ui"), "OfferRadioButtons")
+  extends QName(PackageNamespace("flash.display"), "Sprite")
+  flag SEALED
+  iinit
+   name "OfferRadioButtons"
+   refid "com.company.assembleegameclient.account.ui:OfferRadioButtons/instance/init"
+   param QName(PackageNamespace("com.company.assembleegameclient.util.offer"), "Offers")
+   param QName(PackageNamespace("kabam.rotmg.account.core.model"), "MoneyConfig")
+   flag HAS_PARAM_NAMES
+   paramname "_arg1"
+   paramname "_arg2"
+   body
+    maxstack 2
+    localcount 3
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     getlocal1
+     setproperty         QName(PrivateNamespace("com.company.assembleegameclient.account.ui:OfferRadioButtons"), "offers")
+
+     getlocal0
+     getlocal2
+     setproperty         QName(PrivateNamespace("com.company.assembleegameclient.account.ui:OfferRadioButtons"), "config")
+
+     getlocal0
+     callpropvoid        QName(PrivateNamespace("com.company.assembleegameclient.account.ui:OfferRadioButtons"), "makeGoldChoices"), 0
+
+     getlocal0
+     callpropvoid        QName(PrivateNamespace("com.company.assembleegameclient.account.ui:OfferRadioButtons"), "alignGoldChoices"), 0
+
+     getlocal0
+     callpropvoid        QName(PrivateNamespace("com.company.assembleegameclient.account.ui:OfferRadioButtons"), "makeSelectionGroup"), 0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.account.ui:OfferRadioButtons"), "offers") type QName(PackageNamespace("com.company.assembleegameclient.util.offer"), "Offers") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.account.ui:OfferRadioButtons"), "config") type QName(PackageNamespace("kabam.rotmg.account.core.model"), "MoneyConfig") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.account.ui:OfferRadioButtons"), "choices") type TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("com.company.assembleegameclient.account.ui"), "OfferRadioButton")>) end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.account.ui:OfferRadioButtons"), "group") type QName(PackageNamespace("com.company.assembleegameclient.account.ui.components"), "SelectionGroup") end
+  trait method QName(PackageNamespace(""), "getChoice")
+   method
+    name "getChoice"
+    refid "com.company.assembleegameclient.account.ui:OfferRadioButtons/instance/getChoice"
+    returns QName(PackageNamespace("com.company.assembleegameclient.account.ui"), "OfferRadioButton")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.account.ui:OfferRadioButtons"), "group")
+      callproperty        QName(PackageNamespace(""), "getSelected"), 0
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.account.ui"), "OfferRadioButton")
+      astypelate
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.account.ui:OfferRadioButtons"), "makeGoldChoices")
+   method
+    name "makeGoldChoices"
+    refid "com.company.assembleegameclient.account.ui:OfferRadioButtons/instance/com.company.assembleegameclient.account.ui:OfferRadioButtons/instance/makeGoldChoices"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 5
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushbyte            0
+      setlocal1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.account.ui:OfferRadioButtons"), "offers")
+      getproperty         QName(PackageNamespace(""), "offerList")
+      getproperty         QName(PackageNamespace(""), "length")
+      convert_i
+      setlocal2
+
+      getlocal0
+      getlex              QName(PackageNamespace("__AS3__.vec"), "Vector")
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.account.ui"), "OfferRadioButton")
+      applytype           1
+      getlocal2
+      pushtrue
+      construct           2
+      setproperty         QName(PrivateNamespace("com.company.assembleegameclient.account.ui:OfferRadioButtons"), "choices")
+
+      jump                L32
+
+L19:
+      label
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.account.ui:OfferRadioButtons"), "choices")
+      getlocal1
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.account.ui:OfferRadioButtons"), "offers")
+      getproperty         QName(PackageNamespace(""), "offerList")
+      getlocal1
+      getproperty         MultinameL([PrivateNamespace("com.company.assembleegameclient.account.ui:OfferRadioButtons"), ProtectedNamespace("com.company.assembleegameclient.account.ui:OfferRadioButtons"), StaticProtectedNs("com.company.assembleegameclient.account.ui:OfferRadioButtons"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.account.ui"), PackageInternalNs("com.company.assembleegameclient.account.ui"), PrivateNamespace("FilePrivateNS:OfferRadioButtons"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      callproperty        QName(PrivateNamespace("com.company.assembleegameclient.account.ui:OfferRadioButtons"), "makeGoldChoice"), 1
+      setproperty         MultinameL([PrivateNamespace("com.company.assembleegameclient.account.ui:OfferRadioButtons"), ProtectedNamespace("com.company.assembleegameclient.account.ui:OfferRadioButtons"), StaticProtectedNs("com.company.assembleegameclient.account.ui:OfferRadioButtons"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.account.ui"), PackageInternalNs("com.company.assembleegameclient.account.ui"), PrivateNamespace("FilePrivateNS:OfferRadioButtons"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      inclocal_i          1
+L32:
+      getlocal1
+      getlocal2
+      iflt                L19
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.account.ui:OfferRadioButtons"), "makeGoldChoice")
+   method
+    name "makeGoldChoice"
+    refid "com.company.assembleegameclient.account.ui:OfferRadioButtons/instance/com.company.assembleegameclient.account.ui:OfferRadioButtons/instance/makeGoldChoice"
+    param QName(PackageNamespace("com.company.assembleegameclient.util.offer"), "Offer")
+    returns QName(PackageNamespace("com.company.assembleegameclient.account.ui"), "OfferRadioButton")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.account.ui"), "OfferRadioButton")
+      getlocal1
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.account.ui:OfferRadioButtons"), "config")
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.account.ui"), "OfferRadioButton"), 2
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.account.ui"), "OfferRadioButton")
+      setlocal2
+
+      getlocal2
+      pushstring          "click"
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.account.ui:OfferRadioButtons"), "onSelected")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal2
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      getlocal2
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.account.ui:OfferRadioButtons"), "onSelected")
+   method
+    name "onSelected"
+    refid "com.company.assembleegameclient.account.ui:OfferRadioButtons/instance/com.company.assembleegameclient.account.ui:OfferRadioButtons/instance/onSelected"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "currentTarget")
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.account.ui.components"), "Selectable")
+      astypelate
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.account.ui.components"), "Selectable")
+      setlocal2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.account.ui:OfferRadioButtons"), "group")
+      getlocal2
+      callproperty        QName(Namespace("com.company.assembleegameclient.account.ui.components:Selectable"), "getValue"), 0
+      callpropvoid        QName(PackageNamespace(""), "setSelected"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.account.ui:OfferRadioButtons"), "alignGoldChoices")
+   method
+    name "alignGoldChoices"
+    refid "com.company.assembleegameclient.account.ui:OfferRadioButtons/instance/com.company.assembleegameclient.account.ui:OfferRadioButtons/instance/alignGoldChoices"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      callproperty        QName(PrivateNamespace("com.company.assembleegameclient.account.ui:OfferRadioButtons"), "castChoicesToDisplayList"), 0
+      coerce              TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("flash.display"), "DisplayObject")>)
+      setlocal2
+
+      findpropstrict      QName(PackageNamespace("kabam.lib.ui.impl"), "VerticalLayout")
+      constructprop       QName(PackageNamespace("kabam.lib.ui.impl"), "VerticalLayout"), 0
+      coerce              QName(PackageNamespace("kabam.lib.ui.api"), "Layout")
+      setlocal1
+
+      getlocal1
+      pushbyte            5
+      callpropvoid        QName(Namespace("kabam.lib.ui.api:Layout"), "setPadding"), 1
+
+      getlocal1
+      getlocal2
+      callpropvoid        QName(Namespace("kabam.lib.ui.api:Layout"), "layout"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.account.ui:OfferRadioButtons"), "castChoicesToDisplayList")
+   method
+    name "castChoicesToDisplayList"
+    refid "com.company.assembleegameclient.account.ui:OfferRadioButtons/instance/com.company.assembleegameclient.account.ui:OfferRadioButtons/instance/castChoicesToDisplayList"
+    returns TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("flash.display"), "DisplayObject")>)
+    body
+     maxstack 4
+     localcount 4
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushbyte            0
+      setlocal2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.account.ui:OfferRadioButtons"), "choices")
+      getproperty         QName(PackageNamespace(""), "length")
+      convert_i
+      setlocal3
+
+      getlex              QName(PackageNamespace("__AS3__.vec"), "Vector")
+      getlex              QName(PackageNamespace("flash.display"), "DisplayObject")
+      applytype           1
+      pushbyte            0
+      construct           1
+      coerce              TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("flash.display"), "DisplayObject")>)
+      setlocal1
+
+      jump                L26
+
+L17:
+      label
+      getlocal1
+      getlocal2
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.account.ui:OfferRadioButtons"), "choices")
+      getlocal2
+      getproperty         MultinameL([PrivateNamespace("com.company.assembleegameclient.account.ui:OfferRadioButtons"), ProtectedNamespace("com.company.assembleegameclient.account.ui:OfferRadioButtons"), StaticProtectedNs("com.company.assembleegameclient.account.ui:OfferRadioButtons"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.account.ui"), PackageInternalNs("com.company.assembleegameclient.account.ui"), PrivateNamespace("FilePrivateNS:OfferRadioButtons"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      setproperty         MultinameL([PrivateNamespace("com.company.assembleegameclient.account.ui:OfferRadioButtons"), ProtectedNamespace("com.company.assembleegameclient.account.ui:OfferRadioButtons"), StaticProtectedNs("com.company.assembleegameclient.account.ui:OfferRadioButtons"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.account.ui"), PackageInternalNs("com.company.assembleegameclient.account.ui"), PrivateNamespace("FilePrivateNS:OfferRadioButtons"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      inclocal_i          2
+L26:
+      getlocal2
+      getlocal3
+      iflt                L17
+
+      getlocal1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.account.ui:OfferRadioButtons"), "makeSelectionGroup")
+   method
+    name "makeSelectionGroup"
+    refid "com.company.assembleegameclient.account.ui:OfferRadioButtons/instance/com.company.assembleegameclient.account.ui:OfferRadioButtons/instance/makeSelectionGroup"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      callproperty        QName(PrivateNamespace("com.company.assembleegameclient.account.ui:OfferRadioButtons"), "castBoxesToSelectables"), 0
+      coerce              TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("com.company.assembleegameclient.account.ui.components"), "Selectable")>)
+      setlocal1
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.account.ui.components"), "SelectionGroup")
+      getlocal1
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.account.ui.components"), "SelectionGroup"), 1
+      setproperty         QName(PrivateNamespace("com.company.assembleegameclient.account.ui:OfferRadioButtons"), "group")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.account.ui:OfferRadioButtons"), "group")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.account.ui:OfferRadioButtons"), "choices")
+      pushbyte            0
+      getproperty         MultinameL([PrivateNamespace("com.company.assembleegameclient.account.ui:OfferRadioButtons"), ProtectedNamespace("com.company.assembleegameclient.account.ui:OfferRadioButtons"), StaticProtectedNs("com.company.assembleegameclient.account.ui:OfferRadioButtons"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.account.ui"), PackageInternalNs("com.company.assembleegameclient.account.ui"), PrivateNamespace("FilePrivateNS:OfferRadioButtons"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      callproperty        QName(PackageNamespace(""), "getValue"), 0
+      callpropvoid        QName(PackageNamespace(""), "setSelected"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.account.ui:OfferRadioButtons"), "castBoxesToSelectables")
+   method
+    name "castBoxesToSelectables"
+    refid "com.company.assembleegameclient.account.ui:OfferRadioButtons/instance/com.company.assembleegameclient.account.ui:OfferRadioButtons/instance/castBoxesToSelectables"
+    returns TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("com.company.assembleegameclient.account.ui.components"), "Selectable")>)
+    body
+     maxstack 4
+     localcount 4
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushbyte            0
+      setlocal2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.account.ui:OfferRadioButtons"), "choices")
+      getproperty         QName(PackageNamespace(""), "length")
+      convert_i
+      setlocal3
+
+      getlex              QName(PackageNamespace("__AS3__.vec"), "Vector")
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.account.ui.components"), "Selectable")
+      applytype           1
+      pushbyte            0
+      construct           1
+      coerce              TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("com.company.assembleegameclient.account.ui.components"), "Selectable")>)
+      setlocal1
+
+      jump                L26
+
+L17:
+      label
+      getlocal1
+      getlocal2
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.account.ui:OfferRadioButtons"), "choices")
+      getlocal2
+      getproperty         MultinameL([PrivateNamespace("com.company.assembleegameclient.account.ui:OfferRadioButtons"), ProtectedNamespace("com.company.assembleegameclient.account.ui:OfferRadioButtons"), StaticProtectedNs("com.company.assembleegameclient.account.ui:OfferRadioButtons"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.account.ui"), PackageInternalNs("com.company.assembleegameclient.account.ui"), PrivateNamespace("FilePrivateNS:OfferRadioButtons"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      setproperty         MultinameL([PrivateNamespace("com.company.assembleegameclient.account.ui:OfferRadioButtons"), ProtectedNamespace("com.company.assembleegameclient.account.ui:OfferRadioButtons"), StaticProtectedNs("com.company.assembleegameclient.account.ui:OfferRadioButtons"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.account.ui"), PackageInternalNs("com.company.assembleegameclient.account.ui"), PrivateNamespace("FilePrivateNS:OfferRadioButtons"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      inclocal_i          2
+L26:
+      getlocal2
+      getlocal3
+      iflt                L17
+
+      getlocal1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "showBonuses")
+   method
+    name "showBonuses"
+    refid "com.company.assembleegameclient.account.ui:OfferRadioButtons/instance/showBonuses"
+    param QName(PackageNamespace(""), "Boolean")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.account.ui:OfferRadioButtons"), "choices")
+      getproperty         QName(PackageNamespace(""), "length")
+      convert_i
+      setlocal2
+
+      jump                L15
+
+L8:
+      label
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.account.ui:OfferRadioButtons"), "choices")
+      getlocal2
+      getproperty         MultinameL([PrivateNamespace("com.company.assembleegameclient.account.ui:OfferRadioButtons"), ProtectedNamespace("com.company.assembleegameclient.account.ui:OfferRadioButtons"), StaticProtectedNs("com.company.assembleegameclient.account.ui:OfferRadioButtons"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.account.ui"), PackageInternalNs("com.company.assembleegameclient.account.ui"), PrivateNamespace("FilePrivateNS:OfferRadioButtons"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "showBonus"), 1
+
+L15:
+      getlocal2
+      declocal_i          2
+      iftrue              L8
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.account.ui:OfferRadioButtons/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

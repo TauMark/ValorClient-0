@@ -1,0 +1,497 @@
+class
+ refid "valor.battlePass.scrollBar:BattlePassScrollbar"
+ instance QName(PackageNamespace("valor.battlePass.scrollBar"), "BattlePassScrollbar")
+  extends QName(PackageNamespace("flash.display"), "Sprite")
+  flag SEALED
+  iinit
+   name "BattlePassScrollbar"
+   refid "valor.battlePass.scrollBar:BattlePassScrollbar/instance/init"
+   param QName(PackageNamespace(""), "int")
+   flag HAS_PARAM_NAMES
+   paramname "param1"
+   body
+    maxstack 5
+    localcount 2
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     getlocal1
+     setproperty         QName(PrivateNamespace("valor.battlePass.scrollBar:BattlePassScrollbar"), "contentWidth")
+
+     getlocal0
+     getlex              QName(PackageNamespace("io.decagames.rotmg.ui.texture"), "TextureParser")
+     getproperty         QName(PackageNamespace(""), "instance")
+     pushstring          "UI"
+     pushstring          "scrollbar_background"
+     getlocal1
+     callproperty        QName(PackageNamespace(""), "getSliceScalingBitmap"), 3
+     setproperty         QName(PrivateNamespace("valor.battlePass.scrollBar:BattlePassScrollbar"), "background")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("valor.battlePass.scrollBar:BattlePassScrollbar"), "background")
+     pushbyte            17
+     setproperty         QName(PackageNamespace(""), "height")
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PrivateNamespace("valor.battlePass.scrollBar:BattlePassScrollbar"), "background")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("flash.display"), "Sprite")
+     constructprop       QName(PackageNamespace("flash.display"), "Sprite"), 0
+     setproperty         QName(PrivateNamespace("valor.battlePass.scrollBar:BattlePassScrollbar"), "_slider")
+
+     getlocal0
+     getlex              QName(PackageNamespace("io.decagames.rotmg.ui.texture"), "TextureParser")
+     getproperty         QName(PackageNamespace(""), "instance")
+     pushstring          "UI"
+     pushstring          "scrollbar_slider"
+     callproperty        QName(PackageNamespace(""), "getSliceScalingBitmapRotated"), 2
+     setproperty         QName(PrivateNamespace("valor.battlePass.scrollBar:BattlePassScrollbar"), "sliderAsset")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("valor.battlePass.scrollBar:BattlePassScrollbar"), "_slider")
+     getlocal0
+     getproperty         QName(PrivateNamespace("valor.battlePass.scrollBar:BattlePassScrollbar"), "sliderAsset")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("valor.battlePass.scrollBar:BattlePassScrollbar"), "_slider")
+     pushbyte            1
+     setproperty         QName(PackageNamespace(""), "x")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("valor.battlePass.scrollBar:BattlePassScrollbar"), "_slider")
+     pushbyte            1
+     setproperty         QName(PackageNamespace(""), "y")
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PrivateNamespace("valor.battlePass.scrollBar:BattlePassScrollbar"), "_slider")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace("valor.battlePass.scrollBar:BattlePassScrollbar"), "_slider") type QName(PackageNamespace("flash.display"), "Sprite") end
+  trait slot QName(PrivateNamespace("valor.battlePass.scrollBar:BattlePassScrollbar"), "background") type QName(PackageNamespace("io.decagames.rotmg.ui.sliceScaling"), "SliceScalingBitmap") end
+  trait slot QName(PrivateNamespace("valor.battlePass.scrollBar:BattlePassScrollbar"), "sliderAsset") type QName(PackageNamespace("io.decagames.rotmg.ui.sliceScaling"), "SliceScalingBitmap") end
+  trait slot QName(PrivateNamespace("valor.battlePass.scrollBar:BattlePassScrollbar"), "_content") type QName(PackageNamespace("flash.display"), "DisplayObject") end
+  trait slot QName(PrivateNamespace("valor.battlePass.scrollBar:BattlePassScrollbar"), "_scrollObject") type QName(PackageNamespace("flash.display"), "DisplayObject") end
+  trait slot QName(PrivateNamespace("valor.battlePass.scrollBar:BattlePassScrollbar"), "contentWidth") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PrivateNamespace("valor.battlePass.scrollBar:BattlePassScrollbar"), "percent") type QName(PackageNamespace(""), "Number") end
+  trait slot QName(PrivateNamespace("valor.battlePass.scrollBar:BattlePassScrollbar"), "initialPosition") type QName(PackageNamespace(""), "int") value Integer(0) end
+  trait slot QName(PrivateNamespace("valor.battlePass.scrollBar:BattlePassScrollbar"), "_mouseRollSpeedFactor") type QName(PackageNamespace(""), "Number") value Double(1.3) end
+  trait setter QName(PackageNamespace(""), "content")
+   method
+    name "content"
+    refid "valor.battlePass.scrollBar:BattlePassScrollbar/instance/content/setter"
+    param QName(PackageNamespace("flash.display"), "DisplayObject")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "param1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      setproperty         QName(PrivateNamespace("valor.battlePass.scrollBar:BattlePassScrollbar"), "_content")
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace("valor.battlePass.scrollBar:BattlePassScrollbar"), "_content")
+      getproperty         QName(PackageNamespace(""), "x")
+      setproperty         QName(PrivateNamespace("valor.battlePass.scrollBar:BattlePassScrollbar"), "initialPosition")
+
+      getlocal0
+      callpropvoid        QName(PackageNamespace(""), "update"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "update")
+   method
+    name "update"
+    refid "valor.battlePass.scrollBar:BattlePassScrollbar/instance/update"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushbyte            0
+      setlocal1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("valor.battlePass.scrollBar:BattlePassScrollbar"), "_content")
+      getproperty         QName(PackageNamespace(""), "width")
+      getlocal0
+      getproperty         QName(PrivateNamespace("valor.battlePass.scrollBar:BattlePassScrollbar"), "contentWidth")
+      ifnle               L20
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("valor.battlePass.scrollBar:BattlePassScrollbar"), "sliderAsset")
+      getlocal0
+      getproperty         QName(PrivateNamespace("valor.battlePass.scrollBar:BattlePassScrollbar"), "contentWidth")
+      setproperty         QName(PackageNamespace(""), "width")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("valor.battlePass.scrollBar:BattlePassScrollbar"), "_slider")
+      pushbyte            1
+      setproperty         QName(PackageNamespace(""), "x")
+
+      jump                L51
+
+L20:
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace("valor.battlePass.scrollBar:BattlePassScrollbar"), "_content")
+      getproperty         QName(PackageNamespace(""), "width")
+      getlocal0
+      getproperty         QName(PrivateNamespace("valor.battlePass.scrollBar:BattlePassScrollbar"), "contentWidth")
+      subtract
+      getlocal0
+      getproperty         QName(PrivateNamespace("valor.battlePass.scrollBar:BattlePassScrollbar"), "contentWidth")
+      divide
+      setproperty         QName(PrivateNamespace("valor.battlePass.scrollBar:BattlePassScrollbar"), "percent")
+
+      pushbyte            1
+      getlocal0
+      getproperty         QName(PrivateNamespace("valor.battlePass.scrollBar:BattlePassScrollbar"), "percent")
+      pushdouble          0.5
+      multiply
+      subtract
+      getlocal0
+      getproperty         QName(PrivateNamespace("valor.battlePass.scrollBar:BattlePassScrollbar"), "contentWidth")
+      multiply
+      convert_i
+      setlocal1
+
+      getlocal1
+      pushbyte            39
+      ifnlt               L47
+
+      pushbyte            39
+      setlocal1
+
+L47:
+      getlocal0
+      getproperty         QName(PrivateNamespace("valor.battlePass.scrollBar:BattlePassScrollbar"), "sliderAsset")
+      getlocal1
+      setproperty         QName(PackageNamespace(""), "width")
+
+L51:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "updatePosition")
+   method
+    name "updatePosition"
+    refid "valor.battlePass.scrollBar:BattlePassScrollbar/instance/updatePosition"
+    param QName(PackageNamespace(""), "Number")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "param1"
+    body
+     maxstack 5
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("valor.battlePass.scrollBar:BattlePassScrollbar"), "_slider")
+      getlocal0
+      getproperty         QName(PrivateNamespace("valor.battlePass.scrollBar:BattlePassScrollbar"), "_slider")
+      getproperty         QName(PackageNamespace(""), "x")
+      getlex              QName(PackageNamespace(""), "Math")
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "round"), 1
+      add
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("valor.battlePass.scrollBar:BattlePassScrollbar"), "_slider")
+      getproperty         QName(PackageNamespace(""), "x")
+      pushbyte            0
+      ifnlt               L21
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("valor.battlePass.scrollBar:BattlePassScrollbar"), "_slider")
+      pushbyte            0
+      setproperty         QName(PackageNamespace(""), "x")
+
+L21:
+      getlocal0
+      getproperty         QName(PrivateNamespace("valor.battlePass.scrollBar:BattlePassScrollbar"), "contentWidth")
+      getlocal0
+      getproperty         QName(PrivateNamespace("valor.battlePass.scrollBar:BattlePassScrollbar"), "_slider")
+      getproperty         QName(PackageNamespace(""), "width")
+      subtract
+      convert_i
+      setlocal2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("valor.battlePass.scrollBar:BattlePassScrollbar"), "_slider")
+      getproperty         QName(PackageNamespace(""), "x")
+      getlocal2
+      ifngt               L38
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("valor.battlePass.scrollBar:BattlePassScrollbar"), "_slider")
+      getlocal2
+      setproperty         QName(PackageNamespace(""), "x")
+
+L38:
+      getlocal2
+      pushbyte            0
+      ifngt               L62
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("valor.battlePass.scrollBar:BattlePassScrollbar"), "_content")
+      getlocal0
+      getproperty         QName(PrivateNamespace("valor.battlePass.scrollBar:BattlePassScrollbar"), "initialPosition")
+      getlex              QName(PackageNamespace(""), "Math")
+      getlocal0
+      getproperty         QName(PrivateNamespace("valor.battlePass.scrollBar:BattlePassScrollbar"), "_content")
+      getproperty         QName(PackageNamespace(""), "width")
+      getlocal0
+      getproperty         QName(PrivateNamespace("valor.battlePass.scrollBar:BattlePassScrollbar"), "contentWidth")
+      subtract
+      getlocal0
+      getproperty         QName(PrivateNamespace("valor.battlePass.scrollBar:BattlePassScrollbar"), "_slider")
+      getproperty         QName(PackageNamespace(""), "x")
+      multiply
+      getlocal2
+      divide
+      callproperty        QName(PackageNamespace(""), "round"), 1
+      negate
+      add
+      setproperty         QName(PackageNamespace(""), "x")
+
+L62:
+      getlex              QName(PackageNamespace("valor.battlePass"), "BattlePassModel")
+      getlocal0
+      getproperty         QName(PrivateNamespace("valor.battlePass.scrollBar:BattlePassScrollbar"), "_slider")
+      getproperty         QName(PackageNamespace(""), "x")
+      setproperty         QName(PackageNamespace(""), "lastSliderX")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait getter QName(PackageNamespace(""), "content")
+   method
+    name "content"
+    refid "valor.battlePass.scrollBar:BattlePassScrollbar/instance/content/getter"
+    returns QName(PackageNamespace("flash.display"), "DisplayObject")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("valor.battlePass.scrollBar:BattlePassScrollbar"), "_content")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait getter QName(PackageNamespace(""), "slider")
+   method
+    name "slider"
+    refid "valor.battlePass.scrollBar:BattlePassScrollbar/instance/slider/getter"
+    returns QName(PackageNamespace("flash.display"), "Sprite")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("valor.battlePass.scrollBar:BattlePassScrollbar"), "_slider")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait getter QName(PackageNamespace(""), "scrollObject")
+   method
+    name "scrollObject"
+    refid "valor.battlePass.scrollBar:BattlePassScrollbar/instance/scrollObject/getter"
+    returns QName(PackageNamespace("flash.display"), "DisplayObject")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("valor.battlePass.scrollBar:BattlePassScrollbar"), "_scrollObject")
+      iffalse             L8
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("valor.battlePass.scrollBar:BattlePassScrollbar"), "_scrollObject")
+      returnvalue
+
+L8:
+      getlocal0
+      getproperty         QName(PrivateNamespace("valor.battlePass.scrollBar:BattlePassScrollbar"), "_content")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait setter QName(PackageNamespace(""), "scrollObject")
+   method
+    name "scrollObject"
+    refid "valor.battlePass.scrollBar:BattlePassScrollbar/instance/scrollObject/setter"
+    param QName(PackageNamespace("flash.display"), "DisplayObject")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "param1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      setproperty         QName(PrivateNamespace("valor.battlePass.scrollBar:BattlePassScrollbar"), "_scrollObject")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "dispose")
+   method
+    name "dispose"
+    refid "valor.battlePass.scrollBar:BattlePassScrollbar/instance/dispose"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("valor.battlePass.scrollBar:BattlePassScrollbar"), "background")
+      callpropvoid        QName(PackageNamespace(""), "dispose"), 0
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("valor.battlePass.scrollBar:BattlePassScrollbar"), "sliderAsset")
+      callpropvoid        QName(PackageNamespace(""), "dispose"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait getter QName(PackageNamespace(""), "mouseRollSpeedFactor")
+   method
+    name "mouseRollSpeedFactor"
+    refid "valor.battlePass.scrollBar:BattlePassScrollbar/instance/mouseRollSpeedFactor/getter"
+    returns QName(PackageNamespace(""), "Number")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("valor.battlePass.scrollBar:BattlePassScrollbar"), "_mouseRollSpeedFactor")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait setter QName(PackageNamespace(""), "mouseRollSpeedFactor")
+   method
+    name "mouseRollSpeedFactor"
+    refid "valor.battlePass.scrollBar:BattlePassScrollbar/instance/mouseRollSpeedFactor/setter"
+    param QName(PackageNamespace(""), "Number")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "param1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      setproperty         QName(PrivateNamespace("valor.battlePass.scrollBar:BattlePassScrollbar"), "_mouseRollSpeedFactor")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "valor.battlePass.scrollBar:BattlePassScrollbar/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PackageNamespace(""), "SCROLL_SLIDER_MINIMUM_WIDTH") type QName(PackageNamespace(""), "int") value Integer(39) end
+ trait const QName(PackageNamespace(""), "SCROLL_SLIDER_HEIGHT") type QName(PackageNamespace(""), "int") value Integer(17) end
+ trait const QName(PackageNamespace(""), "SCROLL_SLIDER_SCALE_FACTOR") type QName(PackageNamespace(""), "Number") value Double(0.5) end
+end ; class

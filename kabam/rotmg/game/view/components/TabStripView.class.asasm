@@ -1,0 +1,727 @@
+class
+ refid "kabam.rotmg.game.view.components:TabStripView"
+ instance QName(PackageNamespace("kabam.rotmg.game.view.components"), "TabStripView")
+  extends QName(PackageNamespace("flash.display"), "Sprite")
+  flag SEALED
+  iinit
+   name "TabStripView"
+   refid "kabam.rotmg.game.view.components:TabStripView/instance/init"
+   param QName(PackageNamespace(""), "Number")
+   param QName(PackageNamespace(""), "Number")
+   flag HAS_OPTIONAL
+   flag HAS_PARAM_NAMES
+   optional Integer(186)
+   optional Integer(153)
+   paramname "_arg1"
+   paramname "_arg2"
+   body
+    maxstack 3
+    localcount 3
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     findpropstrict      QName(PackageNamespace("org.osflash.signals"), "Signal")
+     getlex              QName(PackageNamespace(""), "String")
+     constructprop       QName(PackageNamespace("org.osflash.signals"), "Signal"), 1
+     findproperty        QName(PackageNamespace(""), "tabSelected")
+     swap
+     initproperty        QName(PackageNamespace(""), "tabSelected")
+
+     findpropstrict      QName(PackageNamespace("flash.display"), "Sprite")
+     constructprop       QName(PackageNamespace("flash.display"), "Sprite"), 0
+     findproperty        QName(PrivateNamespace("kabam.rotmg.game.view.components:TabStripView"), "tabSprite")
+     swap
+     initproperty        QName(PrivateNamespace("kabam.rotmg.game.view.components:TabStripView"), "tabSprite")
+
+     findpropstrict      QName(PackageNamespace("flash.display"), "Sprite")
+     constructprop       QName(PackageNamespace("flash.display"), "Sprite"), 0
+     findproperty        QName(PrivateNamespace("kabam.rotmg.game.view.components:TabStripView"), "background")
+     swap
+     initproperty        QName(PrivateNamespace("kabam.rotmg.game.view.components:TabStripView"), "background")
+
+     findpropstrict      QName(PackageNamespace("flash.display"), "Sprite")
+     constructprop       QName(PackageNamespace("flash.display"), "Sprite"), 0
+     findproperty        QName(PrivateNamespace("kabam.rotmg.game.view.components:TabStripView"), "containerSprite")
+     swap
+     initproperty        QName(PrivateNamespace("kabam.rotmg.game.view.components:TabStripView"), "containerSprite")
+
+     getlocal0
+     getlex              QName(PackageNamespace("__AS3__.vec"), "Vector")
+     getlex              QName(PackageNamespace("kabam.rotmg.game.view.components"), "TabView")
+     applytype           1
+     construct           0
+     setproperty         QName(PackageNamespace(""), "tabs")
+
+     getlocal0
+     getlex              QName(PackageNamespace("__AS3__.vec"), "Vector")
+     getlex              QName(PackageNamespace("flash.display"), "Sprite")
+     applytype           1
+     construct           0
+     setproperty         QName(PrivateNamespace("kabam.rotmg.game.view.components:TabStripView"), "contents")
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     getlocal1
+     setproperty         QName(PrivateNamespace("kabam.rotmg.game.view.components:TabStripView"), "_width")
+
+     getlocal0
+     getlocal2
+     setproperty         QName(PrivateNamespace("kabam.rotmg.game.view.components:TabStripView"), "_height")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.game.view.components:TabStripView"), "tabSprite")
+     pushstring          "click"
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.game.view.components:TabStripView"), "onTabClicked")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.game.view.components:TabStripView"), "tabSprite")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     getlocal0
+     callpropvoid        QName(PackageNamespace(""), "drawBackground"), 0
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.game.view.components:TabStripView"), "containerSprite")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.game.view.components:TabStripView"), "containerSprite")
+     pushbyte            27
+     setproperty         QName(PackageNamespace(""), "y")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait const QName(PackageNamespace(""), "tabSelected") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait const QName(PackageNamespace(""), "WIDTH") type QName(PackageNamespace(""), "Number") value Integer(186) end
+  trait const QName(PackageNamespace(""), "HEIGHT") type QName(PackageNamespace(""), "Number") value Integer(153) end
+  trait const QName(PrivateNamespace("kabam.rotmg.game.view.components:TabStripView"), "tabSprite") type QName(PackageNamespace("flash.display"), "Sprite") end
+  trait const QName(PrivateNamespace("kabam.rotmg.game.view.components:TabStripView"), "background") type QName(PackageNamespace("flash.display"), "Sprite") end
+  trait const QName(PrivateNamespace("kabam.rotmg.game.view.components:TabStripView"), "containerSprite") type QName(PackageNamespace("flash.display"), "Sprite") end
+  trait slot QName(PackageNamespace(""), "iconButtonFactory") type QName(PackageNamespace("com.company.assembleegameclient.ui.icons"), "IconButtonFactory") end
+  trait slot QName(PackageNamespace(""), "imageFactory") type QName(PackageNamespace("com.company.assembleegameclient.objects"), "ImageFactory") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.game.view.components:TabStripView"), "_width") type QName(PackageNamespace(""), "Number") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.game.view.components:TabStripView"), "_height") type QName(PackageNamespace(""), "Number") end
+  trait slot QName(PackageNamespace(""), "tabs") type TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("kabam.rotmg.game.view.components"), "TabView")>) end
+  trait slot QName(PrivateNamespace("kabam.rotmg.game.view.components:TabStripView"), "contents") type TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("flash.display"), "Sprite")>) end
+  trait slot QName(PackageNamespace(""), "currentTabIndex") type QName(PackageNamespace(""), "int") end
+  trait method QName(PrivateNamespace("kabam.rotmg.game.view.components:TabStripView"), "onTabClicked")
+   method
+    name "onTabClicked"
+    refid "kabam.rotmg.game.view.components:TabStripView/instance/kabam.rotmg.game.view.components:TabStripView/instance/onTabClicked"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "target")
+      getproperty         Multiname("parent", [PrivateNamespace("kabam.rotmg.game.view.components:TabStripView"), ProtectedNamespace("kabam.rotmg.game.view.components:TabStripView"), StaticProtectedNs("kabam.rotmg.game.view.components:TabStripView"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.game.view.components"), PackageInternalNs("kabam.rotmg.game.view.components"), PrivateNamespace("FilePrivateNS:TabStripView"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getlex              QName(PackageNamespace("kabam.rotmg.game.view.components"), "TabView")
+      astypelate
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.game.view.components:TabStripView"), "selectTab"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setSelectedTab")
+   method
+    name "setSelectedTab"
+    refid "kabam.rotmg.game.view.components:TabStripView/instance/setSelectedTab"
+    param QName(PackageNamespace(""), "uint")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "tabs")
+      getlocal1
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.game.view.components:TabStripView"), ProtectedNamespace("kabam.rotmg.game.view.components:TabStripView"), StaticProtectedNs("kabam.rotmg.game.view.components:TabStripView"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.game.view.components"), PackageInternalNs("kabam.rotmg.game.view.components"), PrivateNamespace("FilePrivateNS:TabStripView"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.game.view.components:TabStripView"), "selectTab"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.game.view.components:TabStripView"), "selectTab")
+   method
+    name "selectTab"
+    refid "kabam.rotmg.game.view.components:TabStripView/instance/kabam.rotmg.game.view.components:TabStripView/instance/selectTab"
+    param QName(PackageNamespace("kabam.rotmg.game.view.components"), "TabView")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      setlocal2
+
+      getlocal1
+      iffalse             L37
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "tabs")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "currentTabIndex")
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.game.view.components:TabStripView"), ProtectedNamespace("kabam.rotmg.game.view.components:TabStripView"), StaticProtectedNs("kabam.rotmg.game.view.components:TabStripView"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.game.view.components"), PackageInternalNs("kabam.rotmg.game.view.components"), PrivateNamespace("FilePrivateNS:TabStripView"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      coerce              QName(PackageNamespace("kabam.rotmg.game.view.components"), "TabView")
+      setlocal2
+
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "index")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "index")
+      ifeq                L37
+
+      getlocal2
+      pushfalse
+      callpropvoid        QName(PackageNamespace(""), "setSelected"), 1
+
+      getlocal1
+      pushtrue
+      callpropvoid        QName(PackageNamespace(""), "setSelected"), 1
+
+      getlocal0
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "index")
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.game.view.components:TabStripView"), "showContent"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "tabSelected")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.game.view.components:TabStripView"), "contents")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "index")
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.game.view.components:TabStripView"), ProtectedNamespace("kabam.rotmg.game.view.components:TabStripView"), StaticProtectedNs("kabam.rotmg.game.view.components:TabStripView"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.game.view.components"), PackageInternalNs("kabam.rotmg.game.view.components"), PrivateNamespace("FilePrivateNS:TabStripView"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getproperty         QName(PackageNamespace(""), "name")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+L37:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "drawBackground")
+   method
+    name "drawBackground"
+    refid "kabam.rotmg.game.view.components:TabStripView/instance/drawBackground"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 10
+     localcount 4
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("flash.display"), "GraphicsSolidFill")
+      pushuint            2368034
+      pushbyte            1
+      constructprop       QName(PackageNamespace("flash.display"), "GraphicsSolidFill"), 2
+      coerce              QName(PackageNamespace("flash.display"), "GraphicsSolidFill")
+      setlocal3
+
+      findpropstrict      QName(PackageNamespace("flash.display"), "GraphicsPath")
+      getlex              QName(PackageNamespace("__AS3__.vec"), "Vector")
+      getlex              QName(PackageNamespace(""), "int")
+      applytype           1
+      construct           0
+      getlex              QName(PackageNamespace("__AS3__.vec"), "Vector")
+      getlex              QName(PackageNamespace(""), "Number")
+      applytype           1
+      construct           0
+      constructprop       QName(PackageNamespace("flash.display"), "GraphicsPath"), 2
+      coerce              QName(PackageNamespace("flash.display"), "GraphicsPath")
+      setlocal1
+
+      getlex              QName(PackageNamespace("__AS3__.vec"), "Vector")
+      getlex              QName(PackageNamespace("flash.display"), "IGraphicsData")
+      applytype           1
+      pushbyte            3
+      construct           1
+      dup
+      pushbyte            0
+      getlocal3
+      setproperty         MultinameL([PrivateNamespace("kabam.rotmg.game.view.components:TabStripView"), ProtectedNamespace("kabam.rotmg.game.view.components:TabStripView"), StaticProtectedNs("kabam.rotmg.game.view.components:TabStripView"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.game.view.components"), PackageInternalNs("kabam.rotmg.game.view.components"), PrivateNamespace("FilePrivateNS:TabStripView"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      dup
+      pushbyte            1
+      getlocal1
+      setproperty         MultinameL([PrivateNamespace("kabam.rotmg.game.view.components:TabStripView"), ProtectedNamespace("kabam.rotmg.game.view.components:TabStripView"), StaticProtectedNs("kabam.rotmg.game.view.components:TabStripView"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.game.view.components"), PackageInternalNs("kabam.rotmg.game.view.components"), PrivateNamespace("FilePrivateNS:TabStripView"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      dup
+      pushbyte            2
+      getlex              QName(PackageNamespace("com.company.util"), "GraphicsUtil")
+      getproperty         QName(PackageNamespace(""), "END_FILL")
+      setproperty         MultinameL([PrivateNamespace("kabam.rotmg.game.view.components:TabStripView"), ProtectedNamespace("kabam.rotmg.game.view.components:TabStripView"), StaticProtectedNs("kabam.rotmg.game.view.components:TabStripView"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.game.view.components"), PackageInternalNs("kabam.rotmg.game.view.components"), PrivateNamespace("FilePrivateNS:TabStripView"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      coerce              TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("flash.display"), "IGraphicsData")>)
+      setlocal2
+
+      getlex              QName(PackageNamespace("com.company.util"), "GraphicsUtil")
+      pushbyte            0
+      pushbyte            0
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.game.view.components:TabStripView"), "_width")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.game.view.components:TabStripView"), "_height")
+      pushbyte            27
+      subtract
+      pushbyte            6
+      pushbyte            1
+      pushbyte            1
+      pushbyte            1
+      pushbyte            1
+      newarray            4
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "drawCutEdgeRect"), 7
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.game.view.components:TabStripView"), "background")
+      getproperty         QName(PackageNamespace(""), "graphics")
+      getlocal2
+      callpropvoid        QName(PackageNamespace(""), "drawGraphicsData"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.game.view.components:TabStripView"), "background")
+      pushbyte            27
+      setproperty         QName(PackageNamespace(""), "y")
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.game.view.components:TabStripView"), "background")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "clearTabs")
+   method
+    name "clearTabs"
+    refid "kabam.rotmg.game.view.components:TabStripView/instance/clearTabs"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushbyte            0
+      setlocal2
+
+      getlocal0
+      pushbyte            0
+      setproperty         QName(PackageNamespace(""), "currentTabIndex")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "tabs")
+      getproperty         QName(PackageNamespace(""), "length")
+      convert_u
+      setlocal1
+
+      pushbyte            0
+      convert_u
+      setlocal2
+
+      jump                L36
+
+L16:
+      label
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.game.view.components:TabStripView"), "tabSprite")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "tabs")
+      getlocal2
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.game.view.components:TabStripView"), ProtectedNamespace("kabam.rotmg.game.view.components:TabStripView"), StaticProtectedNs("kabam.rotmg.game.view.components:TabStripView"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.game.view.components"), PackageInternalNs("kabam.rotmg.game.view.components"), PrivateNamespace("FilePrivateNS:TabStripView"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      callpropvoid        QName(PackageNamespace(""), "removeChild"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.game.view.components:TabStripView"), "containerSprite")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.game.view.components:TabStripView"), "contents")
+      getlocal2
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.game.view.components:TabStripView"), ProtectedNamespace("kabam.rotmg.game.view.components:TabStripView"), StaticProtectedNs("kabam.rotmg.game.view.components:TabStripView"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.game.view.components"), PackageInternalNs("kabam.rotmg.game.view.components"), PrivateNamespace("FilePrivateNS:TabStripView"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      callpropvoid        QName(PackageNamespace(""), "removeChild"), 1
+
+      getlocal2
+      convert_d
+      increment
+      convert_u
+      setlocal2
+
+L36:
+      getlocal2
+      getlocal1
+      iflt                L16
+
+      getlocal0
+      getlex              QName(PackageNamespace("__AS3__.vec"), "Vector")
+      getlex              QName(PackageNamespace("kabam.rotmg.game.view.components"), "TabView")
+      applytype           1
+      construct           0
+      setproperty         QName(PackageNamespace(""), "tabs")
+
+      getlocal0
+      getlex              QName(PackageNamespace("__AS3__.vec"), "Vector")
+      getlex              QName(PackageNamespace("flash.display"), "Sprite")
+      applytype           1
+      construct           0
+      setproperty         QName(PrivateNamespace("kabam.rotmg.game.view.components:TabStripView"), "contents")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "addTab")
+   method
+    name "addTab"
+    refid "kabam.rotmg.game.view.components:TabStripView/instance/addTab"
+    param null
+    param QName(PackageNamespace("flash.display"), "Sprite")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    paramname "_arg2"
+    body
+     maxstack 4
+     localcount 5
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      setlocal            4
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "tabs")
+      getproperty         QName(PackageNamespace(""), "length")
+      convert_i
+      setlocal3
+
+      getlocal1
+      getlex              QName(PackageNamespace("flash.display"), "Bitmap")
+      istypelate
+      iffalse             L22
+
+      getlocal0
+      getlocal3
+      getlocal1
+      getlex              QName(PackageNamespace("flash.display"), "Bitmap")
+      astypelate
+      callproperty        QName(PrivateNamespace("kabam.rotmg.game.view.components:TabStripView"), "addIconTab"), 2
+      coerce              QName(PackageNamespace("kabam.rotmg.game.view.components"), "TabView")
+      setlocal            4
+
+      jump                L34
+
+L22:
+      getlocal1
+      getlex              QName(PackageNamespace("com.company.ui"), "BaseSimpleText")
+      istypelate
+      iffalse             L34
+
+      getlocal0
+      getlocal3
+      getlocal1
+      getlex              QName(PackageNamespace("com.company.ui"), "BaseSimpleText")
+      astypelate
+      callproperty        QName(PrivateNamespace("kabam.rotmg.game.view.components:TabStripView"), "addTextTab"), 2
+      coerce              QName(PackageNamespace("kabam.rotmg.game.view.components"), "TabView")
+      setlocal            4
+
+L34:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "tabs")
+      getlocal            4
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.game.view.components:TabStripView"), "tabSprite")
+      getlocal            4
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.game.view.components:TabStripView"), "contents")
+      getlocal2
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.game.view.components:TabStripView"), "containerSprite")
+      getlocal2
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      getlocal3
+      pushbyte            0
+      ifngt               L57
+
+      getlocal2
+      pushfalse
+      setproperty         QName(PackageNamespace(""), "visible")
+
+      jump                L68
+
+L57:
+      getlocal            4
+      pushtrue
+      callpropvoid        QName(PackageNamespace(""), "setSelected"), 1
+
+      getlocal0
+      pushbyte            0
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.game.view.components:TabStripView"), "showContent"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "tabSelected")
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "name")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+L68:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "removeTab")
+   method
+    name "removeTab"
+    refid "kabam.rotmg.game.view.components:TabStripView/instance/removeTab"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.game.view.components:TabStripView"), "addIconTab")
+   method
+    name "addIconTab"
+    refid "kabam.rotmg.game.view.components:TabStripView/instance/kabam.rotmg.game.view.components:TabStripView/instance/addIconTab"
+    param QName(PackageNamespace(""), "int")
+    param QName(PackageNamespace("flash.display"), "Bitmap")
+    returns QName(PackageNamespace("kabam.rotmg.game.view.components"), "TabIconView")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    paramname "_arg2"
+    body
+     maxstack 4
+     localcount 5
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      setlocal            4
+
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.game.view.components"), "TabBackground")
+      constructprop       QName(PackageNamespace("kabam.rotmg.game.view.components"), "TabBackground"), 0
+      coerce              QName(PackageNamespace("flash.display"), "Sprite")
+      setlocal3
+
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.game.view.components"), "TabIconView")
+      getlocal1
+      getlocal3
+      getlocal2
+      constructprop       QName(PackageNamespace("kabam.rotmg.game.view.components"), "TabIconView"), 3
+      coerce              QName(PackageNamespace("kabam.rotmg.game.view.components"), "TabIconView")
+      dup
+      setlocal            4
+
+      getlocal1
+      getlocal3
+      getproperty         QName(PackageNamespace(""), "width")
+      pushbyte            2
+      add
+      multiply
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal            4
+      pushbyte            8
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal            4
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.game.view.components:TabStripView"), "addTextTab")
+   method
+    name "addTextTab"
+    refid "kabam.rotmg.game.view.components:TabStripView/instance/kabam.rotmg.game.view.components:TabStripView/instance/addTextTab"
+    param QName(PackageNamespace(""), "int")
+    param QName(PackageNamespace("com.company.ui"), "BaseSimpleText")
+    returns QName(PackageNamespace("kabam.rotmg.game.view.components"), "TabTextView")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    paramname "_arg2"
+    body
+     maxstack 4
+     localcount 5
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.game.view.components"), "TabBackground")
+      constructprop       QName(PackageNamespace("kabam.rotmg.game.view.components"), "TabBackground"), 0
+      coerce              QName(PackageNamespace("flash.display"), "Sprite")
+      setlocal3
+
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.game.view.components"), "TabTextView")
+      getlocal1
+      getlocal3
+      getlocal2
+      constructprop       QName(PackageNamespace("kabam.rotmg.game.view.components"), "TabTextView"), 3
+      coerce              QName(PackageNamespace("kabam.rotmg.game.view.components"), "TabTextView")
+      dup
+      setlocal            4
+
+      getlocal1
+      getlocal3
+      getproperty         QName(PackageNamespace(""), "width")
+      pushbyte            2
+      add
+      multiply
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal            4
+      pushbyte            8
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal            4
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.game.view.components:TabStripView"), "showContent")
+   method
+    name "showContent"
+    refid "kabam.rotmg.game.view.components:TabStripView/instance/kabam.rotmg.game.view.components:TabStripView/instance/showContent"
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 4
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      setlocal2
+
+      pushnull
+      setlocal3
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "currentTabIndex")
+      ifeq                L32
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.game.view.components:TabStripView"), "contents")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "currentTabIndex")
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.game.view.components:TabStripView"), ProtectedNamespace("kabam.rotmg.game.view.components:TabStripView"), StaticProtectedNs("kabam.rotmg.game.view.components:TabStripView"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.game.view.components"), PackageInternalNs("kabam.rotmg.game.view.components"), PrivateNamespace("FilePrivateNS:TabStripView"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      coerce              QName(PackageNamespace("flash.display"), "Sprite")
+      setlocal2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.game.view.components:TabStripView"), "contents")
+      getlocal1
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.game.view.components:TabStripView"), ProtectedNamespace("kabam.rotmg.game.view.components:TabStripView"), StaticProtectedNs("kabam.rotmg.game.view.components:TabStripView"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.game.view.components"), PackageInternalNs("kabam.rotmg.game.view.components"), PrivateNamespace("FilePrivateNS:TabStripView"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      coerce              QName(PackageNamespace("flash.display"), "Sprite")
+      setlocal3
+
+      getlocal2
+      pushfalse
+      setproperty         QName(PackageNamespace(""), "visible")
+
+      getlocal3
+      pushtrue
+      setproperty         QName(PackageNamespace(""), "visible")
+
+      getlocal0
+      getlocal1
+      setproperty         QName(PackageNamespace(""), "currentTabIndex")
+
+L32:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.game.view.components:TabStripView/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

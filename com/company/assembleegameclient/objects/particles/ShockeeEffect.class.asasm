@@ -1,0 +1,125 @@
+class
+ refid "com.company.assembleegameclient.objects.particles:ShockeeEffect"
+ instance QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "ShockeeEffect")
+  extends QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "ParticleEffect")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.company.assembleegameclient.objects.particles:ShockeeEffect")
+  iinit
+   name "ShockeeEffect"
+   refid "com.company.assembleegameclient.objects.particles:ShockeeEffect/instance/init"
+   param QName(PackageNamespace("com.company.assembleegameclient.objects"), "GameObject")
+   flag HAS_PARAM_NAMES
+   paramname "_arg1"
+   body
+    maxstack 2
+    localcount 2
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     getlocal1
+     setproperty         QName(PackageNamespace(""), "go")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "start_") type QName(PackageNamespace("flash.geom"), "Point") end
+  trait slot QName(PackageNamespace(""), "go") type QName(PackageNamespace("com.company.assembleegameclient.objects"), "GameObject") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ShockeeEffect"), "isShocked") type QName(PackageNamespace(""), "Boolean") end
+  trait method QName(PackageNamespace(""), "update") flag OVERRIDE
+   method
+    name "update"
+    refid "com.company.assembleegameclient.objects.particles:ShockeeEffect/instance/update"
+    param QName(PackageNamespace(""), "int")
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "Boolean")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    paramname "_arg2"
+    body
+     maxstack 3
+     localcount 4
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("flash.utils"), "Timer")
+      pushbyte            50
+      pushbyte            12
+      constructprop       QName(PackageNamespace("flash.utils"), "Timer"), 2
+      coerce              QName(PackageNamespace("flash.utils"), "Timer")
+      setlocal3
+
+      getlocal3
+      pushstring          "timer"
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ShockeeEffect"), "onTimer")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      getlocal3
+      callpropvoid        QName(PackageNamespace(""), "start"), 0
+
+      pushfalse
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ShockeeEffect"), "onTimer")
+   method
+    name "onTimer"
+    refid "com.company.assembleegameclient.objects.particles:ShockeeEffect/instance/com.company.assembleegameclient.objects.particles:ShockeeEffect/instance/onTimer"
+    param QName(PackageNamespace("flash.events"), "TimerEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ShockeeEffect"), "isShocked")
+      not
+      setproperty         QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ShockeeEffect"), "isShocked")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "go")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ShockeeEffect"), "isShocked")
+      callpropvoid        QName(PackageNamespace(""), "toggleShockEffect"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.objects.particles:ShockeeEffect/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

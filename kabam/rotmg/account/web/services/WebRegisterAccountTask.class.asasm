@@ -1,0 +1,282 @@
+class
+ refid "kabam.rotmg.account.web.services:WebRegisterAccountTask"
+ instance QName(PackageNamespace("kabam.rotmg.account.web.services"), "WebRegisterAccountTask")
+  extends QName(PackageNamespace("kabam.lib.tasks"), "BaseTask")
+  implements QName(PackageNamespace("kabam.rotmg.account.core.services"), "RegisterAccountTask")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.account.web.services:WebRegisterAccountTask")
+  iinit
+   refid "kabam.rotmg.account.web.services:WebRegisterAccountTask/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "data") flag METADATA type QName(PackageNamespace("kabam.rotmg.account.web.model"), "AccountData")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "account") flag METADATA type QName(PackageNamespace("kabam.rotmg.account.core"), "Account")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "model") flag METADATA type QName(PackageNamespace("kabam.rotmg.core.model"), "PlayerModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "client") flag METADATA type QName(PackageNamespace("kabam.rotmg.appengine.api"), "AppEngineClient")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "nameChanged") flag METADATA type QName(PackageNamespace("kabam.rotmg.ui.signals"), "NameChangedSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(ProtectedNamespace("kabam.rotmg.account.web.services:WebRegisterAccountTask"), "startTask") flag OVERRIDE
+   method
+    name "startTask"
+    refid "kabam.rotmg.account.web.services:WebRegisterAccountTask/instance/kabam.rotmg.account.web.services:WebRegisterAccountTask:startTask"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "client")
+      getproperty         QName(Namespace("kabam.rotmg.appengine.api:AppEngineClient"), "complete")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.account.web.services:WebRegisterAccountTask"), "onComplete")
+      callpropvoid        QName(PackageNamespace(""), "addOnce"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "client")
+      pushstring          "/account/register"
+      getlocal0
+      callproperty        QName(PrivateNamespace("kabam.rotmg.account.web.services:WebRegisterAccountTask"), "makeDataPacket"), 0
+      callpropvoid        QName(Namespace("kabam.rotmg.appengine.api:AppEngineClient"), "sendRequest"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.account.web.services:WebRegisterAccountTask"), "makeDataPacket")
+   method
+    name "makeDataPacket"
+    refid "kabam.rotmg.account.web.services:WebRegisterAccountTask/instance/kabam.rotmg.account.web.services:WebRegisterAccountTask/instance/makeDataPacket"
+    returns QName(PackageNamespace(""), "Object")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      newobject           0
+      coerce              QName(PackageNamespace(""), "Object")
+      setlocal1
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "account")
+      callproperty        QName(Namespace("kabam.rotmg.account.core:Account"), "getUserId"), 0
+      setproperty         Multiname("guid", [PrivateNamespace("kabam.rotmg.account.web.services:WebRegisterAccountTask"), ProtectedNamespace("kabam.rotmg.account.web.services:WebRegisterAccountTask"), StaticProtectedNs("kabam.rotmg.account.web.services:WebRegisterAccountTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.account.web.services"), PackageInternalNs("kabam.rotmg.account.web.services"), PrivateNamespace("FilePrivateNS:WebRegisterAccountTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "data")
+      getproperty         QName(PackageNamespace(""), "username")
+      setproperty         Multiname("newGUID", [PrivateNamespace("kabam.rotmg.account.web.services:WebRegisterAccountTask"), ProtectedNamespace("kabam.rotmg.account.web.services:WebRegisterAccountTask"), StaticProtectedNs("kabam.rotmg.account.web.services:WebRegisterAccountTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.account.web.services"), PackageInternalNs("kabam.rotmg.account.web.services"), PrivateNamespace("FilePrivateNS:WebRegisterAccountTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "data")
+      getproperty         QName(PackageNamespace(""), "password")
+      setproperty         Multiname("newPassword", [PrivateNamespace("kabam.rotmg.account.web.services:WebRegisterAccountTask"), ProtectedNamespace("kabam.rotmg.account.web.services:WebRegisterAccountTask"), StaticProtectedNs("kabam.rotmg.account.web.services:WebRegisterAccountTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.account.web.services"), PackageInternalNs("kabam.rotmg.account.web.services"), PrivateNamespace("FilePrivateNS:WebRegisterAccountTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "account")
+      callproperty        QName(Namespace("kabam.rotmg.account.core:Account"), "getEntryTag"), 0
+      setproperty         Multiname("entrytag", [PrivateNamespace("kabam.rotmg.account.web.services:WebRegisterAccountTask"), ProtectedNamespace("kabam.rotmg.account.web.services:WebRegisterAccountTask"), StaticProtectedNs("kabam.rotmg.account.web.services:WebRegisterAccountTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.account.web.services"), PackageInternalNs("kabam.rotmg.account.web.services"), PrivateNamespace("FilePrivateNS:WebRegisterAccountTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "data")
+      getproperty         QName(PackageNamespace(""), "eliteAccount")
+      setproperty         Multiname("eliteAccount", [PrivateNamespace("kabam.rotmg.account.web.services:WebRegisterAccountTask"), ProtectedNamespace("kabam.rotmg.account.web.services:WebRegisterAccountTask"), StaticProtectedNs("kabam.rotmg.account.web.services:WebRegisterAccountTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.account.web.services"), PackageInternalNs("kabam.rotmg.account.web.services"), PrivateNamespace("FilePrivateNS:WebRegisterAccountTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      getlocal1
+      pushbyte            1
+      setproperty         Multiname("isAgeVerified", [PrivateNamespace("kabam.rotmg.account.web.services:WebRegisterAccountTask"), ProtectedNamespace("kabam.rotmg.account.web.services:WebRegisterAccountTask"), StaticProtectedNs("kabam.rotmg.account.web.services:WebRegisterAccountTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.account.web.services"), PackageInternalNs("kabam.rotmg.account.web.services"), PrivateNamespace("FilePrivateNS:WebRegisterAccountTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "data")
+      getproperty         QName(PackageNamespace(""), "name")
+      setproperty         Multiname("name", [PrivateNamespace("kabam.rotmg.account.web.services:WebRegisterAccountTask"), ProtectedNamespace("kabam.rotmg.account.web.services:WebRegisterAccountTask"), StaticProtectedNs("kabam.rotmg.account.web.services:WebRegisterAccountTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.account.web.services"), PackageInternalNs("kabam.rotmg.account.web.services"), PrivateNamespace("FilePrivateNS:WebRegisterAccountTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      getlocal1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.account.web.services:WebRegisterAccountTask"), "onComplete")
+   method
+    name "onComplete"
+    refid "kabam.rotmg.account.web.services:WebRegisterAccountTask/instance/kabam.rotmg.account.web.services:WebRegisterAccountTask/instance/onComplete"
+    param QName(PackageNamespace(""), "Boolean")
+    param null
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    paramname "_arg2"
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      dup
+      iffalse             L10
+
+      pop
+      getlocal0
+      getlocal2
+      callproperty        QName(PrivateNamespace("kabam.rotmg.account.web.services:WebRegisterAccountTask"), "onRegisterDone"), 1
+      coerce_a
+L10:
+      pop
+      findpropstrict      QName(ProtectedNamespace("kabam.lib.tasks:BaseTask"), "completeTask")
+      getlocal1
+      getlocal2
+      callpropvoid        QName(ProtectedNamespace("kabam.lib.tasks:BaseTask"), "completeTask"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.account.web.services:WebRegisterAccountTask"), "onRegisterDone")
+   method
+    name "onRegisterDone"
+    refid "kabam.rotmg.account.web.services:WebRegisterAccountTask/instance/kabam.rotmg.account.web.services:WebRegisterAccountTask/instance/onRegisterDone"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 4
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "model")
+      pushtrue
+      callpropvoid        QName(PackageNamespace(""), "setIsAgeVerified"), 1
+
+      findpropstrict      QName(PackageNamespace(""), "XML")
+      getlocal1
+      constructprop       QName(PackageNamespace(""), "XML"), 1
+      coerce              QName(PackageNamespace(""), "XML")
+      setlocal2
+
+      getlocal2
+      pushstring          "LoginToken"
+      callproperty        Multiname("hasOwnProperty", [PrivateNamespace("kabam.rotmg.account.web.services:WebRegisterAccountTask"), ProtectedNamespace("kabam.rotmg.account.web.services:WebRegisterAccountTask"), StaticProtectedNs("kabam.rotmg.account.web.services:WebRegisterAccountTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.account.web.services"), PackageInternalNs("kabam.rotmg.account.web.services"), PrivateNamespace("FilePrivateNS:WebRegisterAccountTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 1
+      iffalse             L27
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "account")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "data")
+      getproperty         QName(PackageNamespace(""), "username")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "data")
+      getproperty         QName(PackageNamespace(""), "password")
+      getlocal2
+      getproperty         Multiname("LoginToken", [PrivateNamespace("kabam.rotmg.account.web.services:WebRegisterAccountTask"), ProtectedNamespace("kabam.rotmg.account.web.services:WebRegisterAccountTask"), StaticProtectedNs("kabam.rotmg.account.web.services:WebRegisterAccountTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.account.web.services"), PackageInternalNs("kabam.rotmg.account.web.services"), PrivateNamespace("FilePrivateNS:WebRegisterAccountTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      callpropvoid        QName(Namespace("kabam.rotmg.account.core:Account"), "updateUser"), 3
+
+      jump                L37
+
+L27:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "account")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "data")
+      getproperty         QName(PackageNamespace(""), "username")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "data")
+      getproperty         QName(PackageNamespace(""), "password")
+      pushstring          ""
+      callpropvoid        QName(Namespace("kabam.rotmg.account.core:Account"), "updateUser"), 3
+
+L37:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "model")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "data")
+      getproperty         QName(PackageNamespace(""), "name")
+      callpropvoid        QName(PackageNamespace(""), "setName"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "nameChanged")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "data")
+      getproperty         QName(PackageNamespace(""), "name")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "model")
+      getproperty         QName(PackageNamespace(""), "charList")
+      pushtrue
+      setproperty         QName(PackageNamespace(""), "nameChosen_")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.account.web.services:WebRegisterAccountTask/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

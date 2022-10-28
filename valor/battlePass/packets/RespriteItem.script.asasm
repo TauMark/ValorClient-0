@@ -1,0 +1,37 @@
+script
+ sinit
+  refid "valor.battlePass.packets:RespriteItem/init"
+  body
+   maxstack 3
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    getscopeobject      0
+    getlex              QName(PackageNamespace(""), "Object")
+    pushscope
+
+    getlex              QName(PackageNamespace("kabam.lib.net.impl"), "Message")
+    pushscope
+
+    getlex              QName(PackageNamespace("kabam.rotmg.messaging.impl.outgoing"), "OutgoingMessage")
+    dup
+    pushscope
+
+    newclass            "valor.battlePass.packets:RespriteItem"
+    popscope
+    popscope
+    popscope
+    initproperty        QName(PackageNamespace("valor.battlePass.packets"), "RespriteItem")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait class QName(PackageNamespace("valor.battlePass.packets"), "RespriteItem")
+  #include "RespriteItem.class.asasm"
+ end ; trait
+end ; script

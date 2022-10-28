@@ -1,0 +1,467 @@
+class
+ refid "com.company.assembleegameclient.ui.tooltip:PlayerToolTip"
+ instance QName(PackageNamespace("com.company.assembleegameclient.ui.tooltip"), "PlayerToolTip")
+  extends QName(PackageNamespace("com.company.assembleegameclient.ui.tooltip"), "ToolTip")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.company.assembleegameclient.ui.tooltip:PlayerToolTip")
+  iinit
+   name "PlayerToolTip"
+   refid "com.company.assembleegameclient.ui.tooltip:PlayerToolTip/instance/init"
+   param QName(PackageNamespace("com.company.assembleegameclient.objects"), "Player")
+   flag HAS_PARAM_NAMES
+   paramname "_arg1"
+   body
+    maxstack 8
+    localcount 3
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     pushbyte            0
+     setlocal2
+
+     getlocal0
+     pushint             3552822
+     pushdouble          0.5
+     pushint             16777215
+     pushbyte            1
+     constructsuper      4
+
+     getlocal0
+     getlocal1
+     setproperty         QName(PackageNamespace(""), "player_")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.ui"), "GameObjectListItem")
+     pushint             11776947
+     pushtrue
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "player_")
+     pushfalse
+     pushtrue
+     constructprop       QName(PackageNamespace("com.company.assembleegameclient.ui"), "GameObjectListItem"), 5
+     setproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.tooltip:PlayerToolTip"), "playerPanel_")
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.tooltip:PlayerToolTip"), "playerPanel_")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     pushbyte            34
+     setlocal2
+
+     getlex              QName(PackageNamespace(""), "player_")
+     getproperty         QName(PackageNamespace(""), "elite_")
+     pushbyte            1
+     ifne                L64
+
+     getlocal0
+     getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "TextureRedrawer")
+     getlex              QName(PackageNamespace("com.company.util"), "AssetLibrary")
+     pushstring          "lofiCharBig"
+     pushbyte            100
+     callproperty        QName(PackageNamespace(""), "getImageFromSet"), 2
+     pushbyte            26
+     pushtrue
+     pushbyte            0
+     callproperty        QName(PackageNamespace(""), "redraw"), 4
+     setproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.tooltip:PlayerToolTip"), "raidBitmapData")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("flash.display"), "Bitmap")
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.tooltip:PlayerToolTip"), "raidBitmapData")
+     constructprop       QName(PackageNamespace("flash.display"), "Bitmap"), 1
+     setproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.tooltip:PlayerToolTip"), "raidBitmap")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.tooltip:PlayerToolTip"), "raidBitmap")
+     pushbyte            2
+     setproperty         QName(PackageNamespace(""), "x")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.tooltip:PlayerToolTip"), "raidBitmap")
+     getlocal2
+     pushbyte            8
+     subtract
+     setproperty         QName(PackageNamespace(""), "y")
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.tooltip:PlayerToolTip"), "raidBitmap")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+L64:
+     getlex              QName(PackageNamespace(""), "player_")
+     getproperty         QName(PackageNamespace(""), "aspect")
+     pushbyte            0
+     ifngt               L68
+
+L68:
+     getlocal0
+     findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.ui"), "RankText")
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "player_")
+     getproperty         QName(PackageNamespace(""), "numStars_")
+     pushfalse
+     pushtrue
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "player_")
+     getproperty         QName(PackageNamespace(""), "rank_")
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "player_")
+     getproperty         QName(PackageNamespace(""), "admin_")
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "player_")
+     getproperty         QName(PackageNamespace(""), "starIconType")
+     constructprop       QName(PackageNamespace("com.company.assembleegameclient.ui"), "RankText"), 6
+     setproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.tooltip:PlayerToolTip"), "rankText_")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.tooltip:PlayerToolTip"), "rankText_")
+     pushbyte            6
+     setproperty         QName(PackageNamespace(""), "x")
+
+     getlex              QName(PackageNamespace(""), "player_")
+     getproperty         QName(PackageNamespace(""), "elite_")
+     pushbyte            1
+     ifne                L102
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.tooltip:PlayerToolTip"), "rankText_")
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.tooltip:PlayerToolTip"), "raidBitmap")
+     getproperty         QName(PackageNamespace(""), "x")
+     pushbyte            30
+     add
+     setproperty         QName(PackageNamespace(""), "x")
+
+L102:
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.tooltip:PlayerToolTip"), "rankText_")
+     getlocal2
+     setproperty         QName(PackageNamespace(""), "y")
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.tooltip:PlayerToolTip"), "rankText_")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     getlocal2
+     pushbyte            30
+     add
+     convert_i
+     setlocal2
+
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "guildName_")
+     pushnull
+     equals
+     not
+     dup
+     iffalse             L128
+
+     pop
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "guildName_")
+     pushstring          ""
+     equals
+     not
+L128:
+     iffalse             L159
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.ui"), "GuildText")
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "player_")
+     getproperty         QName(PackageNamespace(""), "guildName_")
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "player_")
+     getproperty         QName(PackageNamespace(""), "guildRank_")
+     pushshort           136
+     constructprop       QName(PackageNamespace("com.company.assembleegameclient.ui"), "GuildText"), 3
+     setproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.tooltip:PlayerToolTip"), "guildText_")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.tooltip:PlayerToolTip"), "guildText_")
+     pushbyte            6
+     setproperty         QName(PackageNamespace(""), "x")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.tooltip:PlayerToolTip"), "guildText_")
+     getlocal2
+     pushbyte            2
+     subtract
+     setproperty         QName(PackageNamespace(""), "y")
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.tooltip:PlayerToolTip"), "guildText_")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     getlocal2
+     pushbyte            30
+     add
+     convert_i
+     setlocal2
+
+L159:
+     getlocal0
+     findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.ui"), "StatusBar")
+     pushshort           176
+     pushbyte            16
+     pushint             14693428
+     pushint             5526612
+     pushstring          "StatusBar.HealthPoints"
+     constructprop       QName(PackageNamespace("com.company.assembleegameclient.ui"), "StatusBar"), 5
+     setproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.tooltip:PlayerToolTip"), "hpBar_")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.tooltip:PlayerToolTip"), "hpBar_")
+     pushbyte            6
+     setproperty         QName(PackageNamespace(""), "x")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.tooltip:PlayerToolTip"), "hpBar_")
+     getlocal2
+     setproperty         QName(PackageNamespace(""), "y")
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.tooltip:PlayerToolTip"), "hpBar_")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     getlocal2
+     pushbyte            24
+     add
+     convert_i
+     setlocal2
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.ui"), "StatusBar")
+     pushshort           176
+     pushbyte            16
+     pushint             6325472
+     pushint             5526612
+     pushstring          "StatusBar.ManaPoints"
+     constructprop       QName(PackageNamespace("com.company.assembleegameclient.ui"), "StatusBar"), 5
+     setproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.tooltip:PlayerToolTip"), "mpBar_")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.tooltip:PlayerToolTip"), "mpBar_")
+     pushbyte            6
+     setproperty         QName(PackageNamespace(""), "x")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.tooltip:PlayerToolTip"), "mpBar_")
+     getlocal2
+     setproperty         QName(PackageNamespace(""), "y")
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.tooltip:PlayerToolTip"), "mpBar_")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     getlocal2
+     pushbyte            24
+     add
+     convert_i
+     setlocal2
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.ui.panels.itemgrids"), "EquippedGrid")
+     pushnull
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "player_")
+     getproperty         QName(PackageNamespace(""), "slotTypes_")
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "player_")
+     constructprop       QName(PackageNamespace("com.company.assembleegameclient.ui.panels.itemgrids"), "EquippedGrid"), 3
+     setproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.tooltip:PlayerToolTip"), "eGrid")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.tooltip:PlayerToolTip"), "eGrid")
+     pushbyte            8
+     setproperty         QName(PackageNamespace(""), "x")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.tooltip:PlayerToolTip"), "eGrid")
+     getlocal2
+     setproperty         QName(PackageNamespace(""), "y")
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.tooltip:PlayerToolTip"), "eGrid")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     getlocal2
+     pushbyte            52
+     add
+     convert_i
+     setlocal2
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete")
+     constructprop       QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete"), 0
+     pushbyte            12
+     callproperty        QName(PackageNamespace(""), "setSize"), 1
+     pushint             11776947
+     callproperty        QName(PackageNamespace(""), "setColor"), 1
+     setproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.tooltip:PlayerToolTip"), "clickMessage_")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.tooltip:PlayerToolTip"), "clickMessage_")
+     pushstring          "center"
+     callpropvoid        QName(PackageNamespace(""), "setAutoSize"), 1
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.tooltip:PlayerToolTip"), "clickMessage_")
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder")
+     constructprop       QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder"), 0
+     pushstring          "PlayerToolTip.clickMessage"
+     callproperty        QName(PackageNamespace(""), "setParams"), 1
+     callpropvoid        QName(PackageNamespace(""), "setStringBuilder"), 1
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.tooltip:PlayerToolTip"), "clickMessage_")
+     findpropstrict      QName(PackageNamespace("flash.filters"), "DropShadowFilter")
+     pushbyte            0
+     pushbyte            0
+     pushbyte            0
+     constructprop       QName(PackageNamespace("flash.filters"), "DropShadowFilter"), 3
+     newarray            1
+     setproperty         QName(PackageNamespace(""), "filters")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.tooltip:PlayerToolTip"), "clickMessage_")
+     getlex              QName(PackageNamespace(""), "width")
+     pushbyte            2
+     divide
+     setproperty         QName(PackageNamespace(""), "x")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.tooltip:PlayerToolTip"), "clickMessage_")
+     getlocal2
+     setproperty         QName(PackageNamespace(""), "y")
+
+     getlex              QName(ProtectedNamespace("com.company.assembleegameclient.ui.tooltip:ToolTip"), "waiter")
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.tooltip:PlayerToolTip"), "clickMessage_")
+     getproperty         QName(PackageNamespace(""), "textChanged")
+     callpropvoid        QName(PackageNamespace(""), "push"), 1
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.tooltip:PlayerToolTip"), "clickMessage_")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "player_") type QName(PackageNamespace("com.company.assembleegameclient.objects"), "Player") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.ui.tooltip:PlayerToolTip"), "playerPanel_") type QName(PackageNamespace("com.company.assembleegameclient.ui"), "GameObjectListItem") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.ui.tooltip:PlayerToolTip"), "rankText_") type QName(PackageNamespace("com.company.assembleegameclient.ui"), "RankText") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.ui.tooltip:PlayerToolTip"), "guildText_") type QName(PackageNamespace("com.company.assembleegameclient.ui"), "GuildText") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.ui.tooltip:PlayerToolTip"), "hpBar_") type QName(PackageNamespace("com.company.assembleegameclient.ui"), "StatusBar") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.ui.tooltip:PlayerToolTip"), "mpBar_") type QName(PackageNamespace("com.company.assembleegameclient.ui"), "StatusBar") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.ui.tooltip:PlayerToolTip"), "clickMessage_") type QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.ui.tooltip:PlayerToolTip"), "eGrid") type QName(PackageNamespace("com.company.assembleegameclient.ui.panels.itemgrids"), "EquippedGrid") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.ui.tooltip:PlayerToolTip"), "raidBitmap") type QName(PackageNamespace("flash.display"), "Bitmap") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.ui.tooltip:PlayerToolTip"), "raidBitmapData") type QName(PackageNamespace("flash.display"), "BitmapData") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.ui.tooltip:PlayerToolTip"), "aspectBitmap") type QName(PackageNamespace("flash.display"), "Bitmap") end
+  trait method QName(PackageNamespace(""), "draw") flag OVERRIDE
+   method
+    name "draw"
+    refid "com.company.assembleegameclient.ui.tooltip:PlayerToolTip/instance/draw"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 5
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.tooltip:PlayerToolTip"), "hpBar_")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "player_")
+      getproperty         QName(PackageNamespace(""), "hp_")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "player_")
+      getproperty         QName(PackageNamespace(""), "maxHP_")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "player_")
+      getproperty         QName(PackageNamespace(""), "maxHPBoost_")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "player_")
+      getproperty         QName(PackageNamespace(""), "maxHPMax_")
+      callpropvoid        QName(PackageNamespace(""), "draw"), 4
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.tooltip:PlayerToolTip"), "mpBar_")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "player_")
+      getproperty         QName(PackageNamespace(""), "mp_")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "player_")
+      getproperty         QName(PackageNamespace(""), "maxMP_")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "player_")
+      getproperty         QName(PackageNamespace(""), "maxMPBoost_")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "player_")
+      getproperty         QName(PackageNamespace(""), "maxMPMax_")
+      callpropvoid        QName(PackageNamespace(""), "draw"), 4
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.tooltip:PlayerToolTip"), "eGrid")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "player_")
+      getproperty         QName(PackageNamespace(""), "equipment_")
+      callpropvoid        QName(PackageNamespace(""), "setItems"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.tooltip:PlayerToolTip"), "rankText_")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "player_")
+      getproperty         QName(PackageNamespace(""), "numStars_")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "player_")
+      getproperty         QName(PackageNamespace(""), "rank_")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "player_")
+      getproperty         QName(PackageNamespace(""), "admin_")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "player_")
+      getproperty         QName(PackageNamespace(""), "starIconType")
+      callpropvoid        QName(PackageNamespace(""), "draw"), 4
+
+      getlocal0
+      callsupervoid       QName(PackageNamespace(""), "draw"), 0
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.ui.tooltip:PlayerToolTip/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PackageNamespace(""), "IMAGE_NAME") type QName(PackageNamespace(""), "String") value Utf8("lofiCharBig") end
+ trait const QName(PackageNamespace(""), "IMAGE_ID") type QName(PackageNamespace(""), "int") value Integer(100) end
+end ; class

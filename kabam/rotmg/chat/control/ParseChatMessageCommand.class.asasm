@@ -1,0 +1,398 @@
+class
+ refid "kabam.rotmg.chat.control:ParseChatMessageCommand"
+ instance QName(PackageNamespace("kabam.rotmg.chat.control"), "ParseChatMessageCommand")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  iinit
+   refid "kabam.rotmg.chat.control:ParseChatMessageCommand/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "data") flag METADATA type QName(PackageNamespace(""), "String")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "hudModel") flag METADATA type QName(PackageNamespace("kabam.rotmg.ui.model"), "HUDModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "addTextLine") flag METADATA type QName(PackageNamespace("kabam.rotmg.game.signals"), "AddTextLineSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "client") flag METADATA type QName(PackageNamespace("kabam.rotmg.appengine.api"), "AppEngineClient")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "account") flag METADATA type QName(PackageNamespace("kabam.rotmg.account.core"), "Account")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "buildData") flag METADATA type QName(PackageNamespace("kabam.rotmg.build.api"), "BuildData")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "openDialog") flag METADATA type QName(PackageNamespace("kabam.rotmg.dialogs.control"), "OpenDialogSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PackageNamespace(""), "execute")
+   method
+    name "execute"
+    refid "kabam.rotmg.chat.control:ParseChatMessageCommand/instance/execute"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 5
+     localcount 11
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnan
+      setlocal2
+
+      pushnull
+      setlocal1
+
+      pushbyte            0
+      setlocal            5
+
+      pushnull
+      setlocal            4
+
+      pushnull
+      setlocal            6
+
+      pushundefined
+      setlocal3
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "data")
+      pushstring          " "
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "split"), 1
+      pushbyte            0
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.chat.control:ParseChatMessageCommand"), ProtectedNamespace("kabam.rotmg.chat.control:ParseChatMessageCommand"), StaticProtectedNs("kabam.rotmg.chat.control:ParseChatMessageCommand"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.chat.control"), PackageInternalNs("kabam.rotmg.chat.control"), PrivateNamespace("FilePrivateNS:ParseChatMessageCommand"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      pushstring          "/mscale"
+      ifne                L82
+
+      getlex              QName(PackageNamespace(""), "parseFloat")
+      getglobalscope
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "data")
+      pushstring          " "
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "split"), 1
+      pushbyte            1
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.chat.control:ParseChatMessageCommand"), ProtectedNamespace("kabam.rotmg.chat.control:ParseChatMessageCommand"), StaticProtectedNs("kabam.rotmg.chat.control:ParseChatMessageCommand"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.chat.control"), PackageInternalNs("kabam.rotmg.chat.control"), PrivateNamespace("FilePrivateNS:ParseChatMessageCommand"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      call                1
+      convert_d
+      setlocal2
+
+      getlocal2
+      pushdouble          0.5
+      lessthan
+      dup
+      iftrue              L42
+
+      pop
+      getlocal2
+      pushbyte            2
+      greaterthan
+L42:
+      dup
+      iftrue              L50
+
+      pop
+      getlex              QName(PackageNamespace(""), "isNaN")
+      getglobalscope
+      getlocal2
+      call                1
+      convert_b
+L50:
+      iffalse             L59
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "addTextLine")
+      getlex              QName(PackageNamespace("kabam.rotmg.chat.model"), "ChatMessage")
+      pushstring          "*Error*"
+      pushstring          "Could not set Map Scale. Please select a number between 0.5 and 2."
+      callproperty        QName(PackageNamespace(""), "make"), 2
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      returnvoid
+
+L59:
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.parameters"), "Parameters")
+      getproperty         QName(PackageNamespace(""), "data")
+      getlocal2
+      setproperty         Multiname("mapZoomMultiplier", [PrivateNamespace("kabam.rotmg.chat.control:ParseChatMessageCommand"), ProtectedNamespace("kabam.rotmg.chat.control:ParseChatMessageCommand"), StaticProtectedNs("kabam.rotmg.chat.control:ParseChatMessageCommand"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.chat.control"), PackageInternalNs("kabam.rotmg.chat.control"), PrivateNamespace("FilePrivateNS:ParseChatMessageCommand"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "addTextLine")
+      getlex              QName(PackageNamespace("kabam.rotmg.chat.model"), "ChatMessage")
+      pushstring          "*Help*"
+      pushstring          "Map Scale set to: "
+      getlocal2
+      add
+      callproperty        QName(PackageNamespace(""), "make"), 2
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hudModel")
+      getproperty         QName(PackageNamespace(""), "gameSprite")
+      findpropstrict      QName(PackageNamespace("flash.events"), "Event")
+      pushstring          "resize"
+      pushtrue
+      pushfalse
+      constructprop       QName(PackageNamespace("flash.events"), "Event"), 3
+      callpropvoid        QName(PackageNamespace(""), "dispatchEvent"), 1
+
+      returnvoid
+
+L82:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "data")
+      setlocal            8
+
+      jump                L226
+
+L86:
+      label
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "addTextLine")
+      getlex              QName(PackageNamespace("kabam.rotmg.chat.model"), "ChatMessage")
+      pushstring          ""
+      pushstring          "This is currently under revamp! Check out the Kanto Ground Shops in the nexus."
+      callproperty        QName(PackageNamespace(""), "make"), 2
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      jump                L242
+
+L95:
+      label
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hudModel")
+      getproperty         QName(PackageNamespace(""), "gameSprite")
+      getproperty         QName(PackageNamespace(""), "model")
+      callproperty        QName(PackageNamespace(""), "getGuildName"), 0
+      getproperty         QName(PackageNamespace(""), "length")
+      pushbyte            0
+      ifngt               L112
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "openDialog")
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.ui.guild"), "GuildChronicleScreen")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hudModel")
+      getproperty         QName(PackageNamespace(""), "gameSprite")
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.ui.guild"), "GuildChronicleScreen"), 1
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+L112:
+      returnvoid
+
+L113:
+      label
+L114:
+      label
+L115:
+      label
+      newobject           0
+      coerce              QName(PackageNamespace(""), "Object")
+      setlocal1
+
+      pushbyte            0
+      convert_u
+      setlocal            5
+
+      pushnull
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.objects"), "GameObject")
+      setlocal            4
+
+      pushstring          ""
+      coerce_s
+      setlocal            6
+
+      pushnull
+      setlocal3
+
+      pushbyte            0
+      setlocal            8
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hudModel")
+      getproperty         QName(PackageNamespace(""), "gameSprite")
+      getproperty         QName(PackageNamespace(""), "map")
+      getproperty         QName(PackageNamespace(""), "goDict")
+      setlocal            7
+
+      jump                L173
+
+L139:
+      label
+      getlocal            7
+      getlocal            8
+      nextvalue
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.objects"), "GameObject")
+      dup
+      setlocal            4
+
+      getproperty         QName(PackageNamespace(""), "props")
+      getproperty         QName(PackageNamespace(""), "isPlayer")
+      iffalse             L173
+
+      getlocal1
+      getlocal            4
+      getproperty         QName(PackageNamespace(""), "objectType_")
+      getlocal1
+      getlocal            4
+      getproperty         QName(PackageNamespace(""), "objectType_")
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.chat.control:ParseChatMessageCommand"), ProtectedNamespace("kabam.rotmg.chat.control:ParseChatMessageCommand"), StaticProtectedNs("kabam.rotmg.chat.control:ParseChatMessageCommand"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.chat.control"), PackageInternalNs("kabam.rotmg.chat.control"), PrivateNamespace("FilePrivateNS:ParseChatMessageCommand"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      pushundefined
+      ifeq                L165
+
+      getlocal1
+      getlocal            4
+      getproperty         QName(PackageNamespace(""), "objectType_")
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.chat.control:ParseChatMessageCommand"), ProtectedNamespace("kabam.rotmg.chat.control:ParseChatMessageCommand"), StaticProtectedNs("kabam.rotmg.chat.control:ParseChatMessageCommand"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.chat.control"), PackageInternalNs("kabam.rotmg.chat.control"), PrivateNamespace("FilePrivateNS:ParseChatMessageCommand"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      pushbyte            1
+      add
+      jump                L167
+
+L165:
+      pushbyte            1
+      coerce_a
+L167:
+      setproperty         MultinameL([PrivateNamespace("kabam.rotmg.chat.control:ParseChatMessageCommand"), ProtectedNamespace("kabam.rotmg.chat.control:ParseChatMessageCommand"), StaticProtectedNs("kabam.rotmg.chat.control:ParseChatMessageCommand"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.chat.control"), PackageInternalNs("kabam.rotmg.chat.control"), PrivateNamespace("FilePrivateNS:ParseChatMessageCommand"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      getlocal            5
+      convert_d
+      increment
+      convert_u
+      setlocal            5
+
+L173:
+      hasnext2            7, 8
+      iftrue              L139
+
+      pushbyte            0
+      setlocal            10
+
+      getlocal1
+      setlocal            9
+
+      jump                L201
+
+L180:
+      label
+      getlocal            9
+      getlocal            10
+      nextname
+      setlocal3
+
+      getlocal            6
+      pushstring          " "
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.objects"), "ObjectLibrary")
+      getproperty         QName(PackageNamespace(""), "typeToDisplayId_")
+      getlocal3
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.chat.control:ParseChatMessageCommand"), ProtectedNamespace("kabam.rotmg.chat.control:ParseChatMessageCommand"), StaticProtectedNs("kabam.rotmg.chat.control:ParseChatMessageCommand"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.chat.control"), PackageInternalNs("kabam.rotmg.chat.control"), PrivateNamespace("FilePrivateNS:ParseChatMessageCommand"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      add
+      pushstring          ": "
+      add
+      getlocal1
+      getlocal3
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.chat.control:ParseChatMessageCommand"), ProtectedNamespace("kabam.rotmg.chat.control:ParseChatMessageCommand"), StaticProtectedNs("kabam.rotmg.chat.control:ParseChatMessageCommand"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.chat.control"), PackageInternalNs("kabam.rotmg.chat.control"), PrivateNamespace("FilePrivateNS:ParseChatMessageCommand"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      add
+      add
+      coerce_s
+      setlocal            6
+
+L201:
+      hasnext2            9, 10
+      iftrue              L180
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "addTextLine")
+      getlex              QName(PackageNamespace("kabam.rotmg.chat.model"), "ChatMessage")
+      pushstring          ""
+      pushstring          "Classes online ("
+      getlocal            5
+      add
+      pushstring          "):"
+      add
+      getlocal            6
+      add
+      callproperty        QName(PackageNamespace(""), "make"), 2
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      jump                L242
+
+L217:
+      label
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hudModel")
+      getproperty         QName(PackageNamespace(""), "gameSprite")
+      getproperty         QName(PackageNamespace(""), "gsc_")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "data")
+      callpropvoid        QName(PackageNamespace(""), "playerText"), 1
+
+      jump                L242
+
+L226:
+      pushstring          "/donorshop"
+      getlocal            8
+      ifstricteq          L86
+
+      pushstring          "/guildboard"
+      getlocal            8
+      ifstricteq          L95
+
+      pushstring          "/c"
+      getlocal            8
+      ifstricteq          L113
+
+      pushstring          "/class"
+      getlocal            8
+      ifstricteq          L114
+
+      pushstring          "/classes"
+      getlocal            8
+      ifstricteq          L115
+
+      jump                L217
+
+L242:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.chat.control:ParseChatMessageCommand/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

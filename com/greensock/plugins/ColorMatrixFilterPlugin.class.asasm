@@ -1,0 +1,1147 @@
+class
+ refid "com.greensock.plugins:ColorMatrixFilterPlugin"
+ instance QName(PackageNamespace("com.greensock.plugins"), "ColorMatrixFilterPlugin")
+  extends QName(PackageNamespace("com.greensock.plugins"), "FilterPlugin")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.greensock.plugins:ColorMatrixFilterPlugin")
+  iinit
+   name "ColorMatrixFilterPlugin"
+   refid "com.greensock.plugins:ColorMatrixFilterPlugin/instance/init"
+   body
+    maxstack 2
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     pushstring          "colorMatrixFilter"
+     constructsuper      1
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(ProtectedNamespace("com.greensock.plugins:ColorMatrixFilterPlugin"), "_matrix") type QName(PackageNamespace(""), "Array") end
+  trait slot QName(ProtectedNamespace("com.greensock.plugins:ColorMatrixFilterPlugin"), "_matrixTween") type QName(PackageNamespace("com.greensock.plugins"), "EndArrayPlugin") end
+  trait method QName(PackageNamespace(""), "_onInitTween") flag OVERRIDE
+   method
+    name "_onInitTween"
+    refid "com.greensock.plugins:ColorMatrixFilterPlugin/instance/_onInitTween"
+    param QName(PackageNamespace(""), "Object")
+    param null
+    param QName(PackageNamespace("com.greensock"), "TweenLite")
+    returns QName(PackageNamespace(""), "Boolean")
+    flag HAS_PARAM_NAMES
+    paramname "target"
+    paramname "value"
+    paramname "tween"
+    body
+     maxstack 8
+     localcount 6
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal2
+      coerce              QName(PackageNamespace(""), "Object")
+      setlocal            4
+
+      findpropstrict      QName(ProtectedNamespace("com.greensock.plugins:FilterPlugin"), "_initFilter")
+      getlocal1
+      pushstring          "remove"
+      getlocal2
+      getproperty         Multiname("remove", [PrivateNamespace("com.greensock.plugins:ColorMatrixFilterPlugin"), ProtectedNamespace("com.greensock.plugins:ColorMatrixFilterPlugin"), StaticProtectedNs("com.greensock.plugins:ColorMatrixFilterPlugin"), StaticProtectedNs("com.greensock.plugins:FilterPlugin"), StaticProtectedNs("com.greensock.plugins:TweenPlugin"), StaticProtectedNs("Object"), PackageNamespace("com.greensock.plugins"), PackageInternalNs("com.greensock.plugins"), PrivateNamespace("FilePrivateNS:ColorMatrixFilterPlugin"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      pushstring          "index"
+      getlocal2
+      getproperty         Multiname("index", [PrivateNamespace("com.greensock.plugins:ColorMatrixFilterPlugin"), ProtectedNamespace("com.greensock.plugins:ColorMatrixFilterPlugin"), StaticProtectedNs("com.greensock.plugins:ColorMatrixFilterPlugin"), StaticProtectedNs("com.greensock.plugins:FilterPlugin"), StaticProtectedNs("com.greensock.plugins:TweenPlugin"), StaticProtectedNs("Object"), PackageNamespace("com.greensock.plugins"), PackageInternalNs("com.greensock.plugins"), PrivateNamespace("FilePrivateNS:ColorMatrixFilterPlugin"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      pushstring          "addFilter"
+      getlocal2
+      getproperty         Multiname("addFilter", [PrivateNamespace("com.greensock.plugins:ColorMatrixFilterPlugin"), ProtectedNamespace("com.greensock.plugins:ColorMatrixFilterPlugin"), StaticProtectedNs("com.greensock.plugins:ColorMatrixFilterPlugin"), StaticProtectedNs("com.greensock.plugins:FilterPlugin"), StaticProtectedNs("com.greensock.plugins:TweenPlugin"), StaticProtectedNs("Object"), PackageNamespace("com.greensock.plugins"), PackageInternalNs("com.greensock.plugins"), PrivateNamespace("FilePrivateNS:ColorMatrixFilterPlugin"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      newobject           3
+      getlocal3
+      getlex              QName(PackageNamespace("flash.filters"), "ColorMatrixFilter")
+      findpropstrict      QName(PackageNamespace("flash.filters"), "ColorMatrixFilter")
+      getlex              QName(StaticProtectedNs("com.greensock.plugins:ColorMatrixFilterPlugin"), "_idMatrix")
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "slice"), 0
+      constructprop       QName(PackageNamespace("flash.filters"), "ColorMatrixFilter"), 1
+      getlex              QName(PrivateNamespace("com.greensock.plugins:ColorMatrixFilterPlugin"), "_propNames")
+      callpropvoid        QName(ProtectedNamespace("com.greensock.plugins:FilterPlugin"), "_initFilter"), 6
+
+      getlex              QName(ProtectedNamespace("com.greensock.plugins:FilterPlugin"), "_filter")
+      pushnull
+      ifne                L35
+
+      getlex              QName(PackageNamespace(""), "trace")
+      getglobalscope
+      pushstring          "FILTER NULL! "
+      call                1
+      pop
+      pushtrue
+      returnvalue
+
+L35:
+      getlex              QName(PackageNamespace("flash.filters"), "ColorMatrixFilter")
+      getglobalscope
+      getlex              QName(ProtectedNamespace("com.greensock.plugins:FilterPlugin"), "_filter")
+      call                1
+      getproperty         QName(PackageNamespace(""), "matrix")
+      findproperty        QName(ProtectedNamespace("com.greensock.plugins:ColorMatrixFilterPlugin"), "_matrix")
+      swap
+      setproperty         QName(ProtectedNamespace("com.greensock.plugins:ColorMatrixFilterPlugin"), "_matrix")
+
+      newarray            0
+      coerce              QName(PackageNamespace(""), "Array")
+      setlocal            5
+
+      getlocal            4
+      getproperty         Multiname("matrix", [PrivateNamespace("com.greensock.plugins:ColorMatrixFilterPlugin"), ProtectedNamespace("com.greensock.plugins:ColorMatrixFilterPlugin"), StaticProtectedNs("com.greensock.plugins:ColorMatrixFilterPlugin"), StaticProtectedNs("com.greensock.plugins:FilterPlugin"), StaticProtectedNs("com.greensock.plugins:TweenPlugin"), StaticProtectedNs("Object"), PackageNamespace("com.greensock.plugins"), PackageInternalNs("com.greensock.plugins"), PrivateNamespace("FilePrivateNS:ColorMatrixFilterPlugin"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      pushnull
+      equals
+      not
+      dup
+      iffalse             L58
+
+      pop
+      getlocal            4
+      getproperty         Multiname("matrix", [PrivateNamespace("com.greensock.plugins:ColorMatrixFilterPlugin"), ProtectedNamespace("com.greensock.plugins:ColorMatrixFilterPlugin"), StaticProtectedNs("com.greensock.plugins:ColorMatrixFilterPlugin"), StaticProtectedNs("com.greensock.plugins:FilterPlugin"), StaticProtectedNs("com.greensock.plugins:TweenPlugin"), StaticProtectedNs("Object"), PackageNamespace("com.greensock.plugins"), PackageInternalNs("com.greensock.plugins"), PrivateNamespace("FilePrivateNS:ColorMatrixFilterPlugin"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getlex              QName(PackageNamespace(""), "Array")
+      istypelate
+L58:
+      iffalse             L64
+
+      getlocal            4
+      getproperty         Multiname("matrix", [PrivateNamespace("com.greensock.plugins:ColorMatrixFilterPlugin"), ProtectedNamespace("com.greensock.plugins:ColorMatrixFilterPlugin"), StaticProtectedNs("com.greensock.plugins:ColorMatrixFilterPlugin"), StaticProtectedNs("com.greensock.plugins:FilterPlugin"), StaticProtectedNs("com.greensock.plugins:TweenPlugin"), StaticProtectedNs("Object"), PackageNamespace("com.greensock.plugins"), PackageInternalNs("com.greensock.plugins"), PrivateNamespace("FilePrivateNS:ColorMatrixFilterPlugin"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      coerce              QName(PackageNamespace(""), "Array")
+      setlocal            5
+
+      jump                L127
+
+L64:
+      getlocal            4
+      getproperty         Multiname("relative", [PrivateNamespace("com.greensock.plugins:ColorMatrixFilterPlugin"), ProtectedNamespace("com.greensock.plugins:ColorMatrixFilterPlugin"), StaticProtectedNs("com.greensock.plugins:ColorMatrixFilterPlugin"), StaticProtectedNs("com.greensock.plugins:FilterPlugin"), StaticProtectedNs("com.greensock.plugins:TweenPlugin"), StaticProtectedNs("Object"), PackageNamespace("com.greensock.plugins"), PackageInternalNs("com.greensock.plugins"), PrivateNamespace("FilePrivateNS:ColorMatrixFilterPlugin"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      pushtrue
+      ifne                L73
+
+      getlex              QName(ProtectedNamespace("com.greensock.plugins:ColorMatrixFilterPlugin"), "_matrix")
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "slice"), 0
+      coerce              QName(PackageNamespace(""), "Array")
+      setlocal            5
+
+      jump                L77
+
+L73:
+      getlex              QName(StaticProtectedNs("com.greensock.plugins:ColorMatrixFilterPlugin"), "_idMatrix")
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "slice"), 0
+      coerce              QName(PackageNamespace(""), "Array")
+      setlocal            5
+
+L77:
+      findpropstrict      QName(PackageNamespace(""), "setBrightness")
+      getlocal            5
+      getlocal            4
+      getproperty         Multiname("brightness", [PrivateNamespace("com.greensock.plugins:ColorMatrixFilterPlugin"), ProtectedNamespace("com.greensock.plugins:ColorMatrixFilterPlugin"), StaticProtectedNs("com.greensock.plugins:ColorMatrixFilterPlugin"), StaticProtectedNs("com.greensock.plugins:FilterPlugin"), StaticProtectedNs("com.greensock.plugins:TweenPlugin"), StaticProtectedNs("Object"), PackageNamespace("com.greensock.plugins"), PackageInternalNs("com.greensock.plugins"), PrivateNamespace("FilePrivateNS:ColorMatrixFilterPlugin"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      callproperty        QName(PackageNamespace(""), "setBrightness"), 2
+      coerce              QName(PackageNamespace(""), "Array")
+      setlocal            5
+
+      findpropstrict      QName(PackageNamespace(""), "setContrast")
+      getlocal            5
+      getlocal            4
+      getproperty         Multiname("contrast", [PrivateNamespace("com.greensock.plugins:ColorMatrixFilterPlugin"), ProtectedNamespace("com.greensock.plugins:ColorMatrixFilterPlugin"), StaticProtectedNs("com.greensock.plugins:ColorMatrixFilterPlugin"), StaticProtectedNs("com.greensock.plugins:FilterPlugin"), StaticProtectedNs("com.greensock.plugins:TweenPlugin"), StaticProtectedNs("Object"), PackageNamespace("com.greensock.plugins"), PackageInternalNs("com.greensock.plugins"), PrivateNamespace("FilePrivateNS:ColorMatrixFilterPlugin"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      callproperty        QName(PackageNamespace(""), "setContrast"), 2
+      coerce              QName(PackageNamespace(""), "Array")
+      setlocal            5
+
+      findpropstrict      QName(PackageNamespace(""), "setHue")
+      getlocal            5
+      getlocal            4
+      getproperty         Multiname("hue", [PrivateNamespace("com.greensock.plugins:ColorMatrixFilterPlugin"), ProtectedNamespace("com.greensock.plugins:ColorMatrixFilterPlugin"), StaticProtectedNs("com.greensock.plugins:ColorMatrixFilterPlugin"), StaticProtectedNs("com.greensock.plugins:FilterPlugin"), StaticProtectedNs("com.greensock.plugins:TweenPlugin"), StaticProtectedNs("Object"), PackageNamespace("com.greensock.plugins"), PackageInternalNs("com.greensock.plugins"), PrivateNamespace("FilePrivateNS:ColorMatrixFilterPlugin"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      callproperty        QName(PackageNamespace(""), "setHue"), 2
+      coerce              QName(PackageNamespace(""), "Array")
+      setlocal            5
+
+      findpropstrict      QName(PackageNamespace(""), "setSaturation")
+      getlocal            5
+      getlocal            4
+      getproperty         Multiname("saturation", [PrivateNamespace("com.greensock.plugins:ColorMatrixFilterPlugin"), ProtectedNamespace("com.greensock.plugins:ColorMatrixFilterPlugin"), StaticProtectedNs("com.greensock.plugins:ColorMatrixFilterPlugin"), StaticProtectedNs("com.greensock.plugins:FilterPlugin"), StaticProtectedNs("com.greensock.plugins:TweenPlugin"), StaticProtectedNs("Object"), PackageNamespace("com.greensock.plugins"), PackageInternalNs("com.greensock.plugins"), PrivateNamespace("FilePrivateNS:ColorMatrixFilterPlugin"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      callproperty        QName(PackageNamespace(""), "setSaturation"), 2
+      coerce              QName(PackageNamespace(""), "Array")
+      setlocal            5
+
+      findpropstrict      QName(PackageNamespace(""), "setThreshold")
+      getlocal            5
+      getlocal            4
+      getproperty         Multiname("threshold", [PrivateNamespace("com.greensock.plugins:ColorMatrixFilterPlugin"), ProtectedNamespace("com.greensock.plugins:ColorMatrixFilterPlugin"), StaticProtectedNs("com.greensock.plugins:ColorMatrixFilterPlugin"), StaticProtectedNs("com.greensock.plugins:FilterPlugin"), StaticProtectedNs("com.greensock.plugins:TweenPlugin"), StaticProtectedNs("Object"), PackageNamespace("com.greensock.plugins"), PackageInternalNs("com.greensock.plugins"), PrivateNamespace("FilePrivateNS:ColorMatrixFilterPlugin"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      callproperty        QName(PackageNamespace(""), "setThreshold"), 2
+      coerce              QName(PackageNamespace(""), "Array")
+      setlocal            5
+
+      getlex              QName(PackageNamespace(""), "isNaN")
+      getglobalscope
+      getlocal            4
+      getproperty         Multiname("colorize", [PrivateNamespace("com.greensock.plugins:ColorMatrixFilterPlugin"), ProtectedNamespace("com.greensock.plugins:ColorMatrixFilterPlugin"), StaticProtectedNs("com.greensock.plugins:ColorMatrixFilterPlugin"), StaticProtectedNs("com.greensock.plugins:FilterPlugin"), StaticProtectedNs("com.greensock.plugins:TweenPlugin"), StaticProtectedNs("Object"), PackageNamespace("com.greensock.plugins"), PackageInternalNs("com.greensock.plugins"), PrivateNamespace("FilePrivateNS:ColorMatrixFilterPlugin"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      call                1
+      iftrue              L127
+
+      findpropstrict      QName(PackageNamespace(""), "colorize")
+      getlocal            5
+      getlocal            4
+      getproperty         Multiname("colorize", [PrivateNamespace("com.greensock.plugins:ColorMatrixFilterPlugin"), ProtectedNamespace("com.greensock.plugins:ColorMatrixFilterPlugin"), StaticProtectedNs("com.greensock.plugins:ColorMatrixFilterPlugin"), StaticProtectedNs("com.greensock.plugins:FilterPlugin"), StaticProtectedNs("com.greensock.plugins:TweenPlugin"), StaticProtectedNs("Object"), PackageNamespace("com.greensock.plugins"), PackageInternalNs("com.greensock.plugins"), PrivateNamespace("FilePrivateNS:ColorMatrixFilterPlugin"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getlocal            4
+      getproperty         Multiname("amount", [PrivateNamespace("com.greensock.plugins:ColorMatrixFilterPlugin"), ProtectedNamespace("com.greensock.plugins:ColorMatrixFilterPlugin"), StaticProtectedNs("com.greensock.plugins:ColorMatrixFilterPlugin"), StaticProtectedNs("com.greensock.plugins:FilterPlugin"), StaticProtectedNs("com.greensock.plugins:TweenPlugin"), StaticProtectedNs("Object"), PackageNamespace("com.greensock.plugins"), PackageInternalNs("com.greensock.plugins"), PrivateNamespace("FilePrivateNS:ColorMatrixFilterPlugin"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      callproperty        QName(PackageNamespace(""), "colorize"), 3
+      coerce              QName(PackageNamespace(""), "Array")
+      setlocal            5
+
+L127:
+      findpropstrict      QName(PackageNamespace("com.greensock.plugins"), "EndArrayPlugin")
+      constructprop       QName(PackageNamespace("com.greensock.plugins"), "EndArrayPlugin"), 0
+      findproperty        QName(ProtectedNamespace("com.greensock.plugins:ColorMatrixFilterPlugin"), "_matrixTween")
+      swap
+      setproperty         QName(ProtectedNamespace("com.greensock.plugins:ColorMatrixFilterPlugin"), "_matrixTween")
+
+      getlex              QName(ProtectedNamespace("com.greensock.plugins:ColorMatrixFilterPlugin"), "_matrixTween")
+      getlex              QName(ProtectedNamespace("com.greensock.plugins:ColorMatrixFilterPlugin"), "_matrix")
+      getlocal            5
+      callpropvoid        QName(PackageNamespace(""), "_init"), 2
+
+      pushtrue
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setRatio") flag OVERRIDE
+   method
+    name "setRatio"
+    refid "com.greensock.plugins:ColorMatrixFilterPlugin/instance/setRatio"
+    param QName(PackageNamespace(""), "Number")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "v"
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(ProtectedNamespace("com.greensock.plugins:ColorMatrixFilterPlugin"), "_matrixTween")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "setRatio"), 1
+
+      getlex              QName(PackageNamespace("flash.filters"), "ColorMatrixFilter")
+      getglobalscope
+      getlex              QName(ProtectedNamespace("com.greensock.plugins:FilterPlugin"), "_filter")
+      call                1
+      getlex              QName(ProtectedNamespace("com.greensock.plugins:ColorMatrixFilterPlugin"), "_matrix")
+      setproperty         QName(PackageNamespace(""), "matrix")
+
+      getlocal0
+      getlocal1
+      callsupervoid       QName(PackageNamespace(""), "setRatio"), 1
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.greensock.plugins:ColorMatrixFilterPlugin/class/init"
+  body
+   maxstack 20
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 1
+   code
+    getlocal0
+    pushscope
+
+    newarray            0
+    findproperty        QName(PrivateNamespace("com.greensock.plugins:ColorMatrixFilterPlugin"), "_propNames")
+    swap
+    setproperty         QName(PrivateNamespace("com.greensock.plugins:ColorMatrixFilterPlugin"), "_propNames")
+
+    pushbyte            1
+    pushbyte            0
+    pushbyte            0
+    pushbyte            0
+    pushbyte            0
+    pushbyte            0
+    pushbyte            1
+    pushbyte            0
+    pushbyte            0
+    pushbyte            0
+    pushbyte            0
+    pushbyte            0
+    pushbyte            1
+    pushbyte            0
+    pushbyte            0
+    pushbyte            0
+    pushbyte            0
+    pushbyte            0
+    pushbyte            1
+    pushbyte            0
+    newarray            20
+    findproperty        QName(StaticProtectedNs("com.greensock.plugins:ColorMatrixFilterPlugin"), "_idMatrix")
+    swap
+    setproperty         QName(StaticProtectedNs("com.greensock.plugins:ColorMatrixFilterPlugin"), "_idMatrix")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PackageNamespace(""), "API") type QName(PackageNamespace(""), "Number") value Integer(2) end
+ trait slot QName(PrivateNamespace("com.greensock.plugins:ColorMatrixFilterPlugin"), "_propNames") type QName(PackageNamespace(""), "Array") end
+ trait slot QName(StaticProtectedNs("com.greensock.plugins:ColorMatrixFilterPlugin"), "_idMatrix") type QName(PackageNamespace(""), "Array") end
+ trait slot QName(StaticProtectedNs("com.greensock.plugins:ColorMatrixFilterPlugin"), "_lumR") type QName(PackageNamespace(""), "Number") value Double(0.212671) end
+ trait slot QName(StaticProtectedNs("com.greensock.plugins:ColorMatrixFilterPlugin"), "_lumG") type QName(PackageNamespace(""), "Number") value Double(0.71516) end
+ trait slot QName(StaticProtectedNs("com.greensock.plugins:ColorMatrixFilterPlugin"), "_lumB") type QName(PackageNamespace(""), "Number") value Double(0.072169) end
+ trait method QName(PackageNamespace(""), "colorize")
+  method
+   name "colorize"
+   refid "com.greensock.plugins:ColorMatrixFilterPlugin/class/colorize"
+   param QName(PackageNamespace(""), "Array")
+   param QName(PackageNamespace(""), "Number")
+   param QName(PackageNamespace(""), "Number")
+   returns QName(PackageNamespace(""), "Array")
+   flag HAS_OPTIONAL
+   flag HAS_PARAM_NAMES
+   optional Integer(1)
+   paramname "m"
+   paramname "color"
+   paramname "amount"
+   body
+    maxstack 20
+    localcount 9
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     pushnan
+     setlocal            6
+
+     getlex              QName(PackageNamespace(""), "isNaN")
+     getglobalscope
+     getlocal2
+     call                1
+     iffalse             L11
+
+     getlocal1
+     returnvalue
+
+L11:
+     getlex              QName(PackageNamespace(""), "isNaN")
+     getglobalscope
+     getlocal3
+     call                1
+     iffalse             L18
+
+     pushdouble          1
+     setlocal3
+
+L18:
+     getlocal2
+     pushbyte            16
+     rshift
+     pushshort           255
+     bitand
+     pushshort           255
+     divide
+     convert_d
+     setlocal            6
+
+     getlocal2
+     pushbyte            8
+     rshift
+     pushshort           255
+     bitand
+     pushshort           255
+     divide
+     convert_d
+     setlocal            8
+
+     getlocal2
+     pushshort           255
+     bitand
+     pushshort           255
+     divide
+     convert_d
+     setlocal            5
+
+     pushbyte            1
+     getlocal3
+     subtract
+     convert_d
+     dup
+     setlocal            4
+
+     getlocal3
+     getlocal            6
+     multiply
+     getlex              QName(StaticProtectedNs("com.greensock.plugins:ColorMatrixFilterPlugin"), "_lumR")
+     multiply
+     add
+     getlocal3
+     getlocal            6
+     multiply
+     getlex              QName(StaticProtectedNs("com.greensock.plugins:ColorMatrixFilterPlugin"), "_lumG")
+     multiply
+     getlocal3
+     getlocal            6
+     multiply
+     getlex              QName(StaticProtectedNs("com.greensock.plugins:ColorMatrixFilterPlugin"), "_lumB")
+     multiply
+     pushbyte            0
+     pushbyte            0
+     getlocal3
+     getlocal            8
+     multiply
+     getlex              QName(StaticProtectedNs("com.greensock.plugins:ColorMatrixFilterPlugin"), "_lumR")
+     multiply
+     getlocal            4
+     getlocal3
+     getlocal            8
+     multiply
+     getlex              QName(StaticProtectedNs("com.greensock.plugins:ColorMatrixFilterPlugin"), "_lumG")
+     multiply
+     add
+     getlocal3
+     getlocal            8
+     multiply
+     getlex              QName(StaticProtectedNs("com.greensock.plugins:ColorMatrixFilterPlugin"), "_lumB")
+     multiply
+     pushbyte            0
+     pushbyte            0
+     getlocal3
+     getlocal            5
+     multiply
+     getlex              QName(StaticProtectedNs("com.greensock.plugins:ColorMatrixFilterPlugin"), "_lumR")
+     multiply
+     getlocal3
+     getlocal            5
+     multiply
+     getlex              QName(StaticProtectedNs("com.greensock.plugins:ColorMatrixFilterPlugin"), "_lumG")
+     multiply
+     getlocal            4
+     getlocal3
+     getlocal            5
+     multiply
+     getlex              QName(StaticProtectedNs("com.greensock.plugins:ColorMatrixFilterPlugin"), "_lumB")
+     multiply
+     add
+     pushbyte            0
+     pushbyte            0
+     pushbyte            0
+     pushbyte            0
+     pushbyte            0
+     pushbyte            1
+     pushbyte            0
+     newarray            20
+     coerce              QName(PackageNamespace(""), "Array")
+     setlocal            7
+
+     findpropstrict      QName(PackageNamespace(""), "applyMatrix")
+     getlocal            7
+     getlocal1
+     callproperty        QName(PackageNamespace(""), "applyMatrix"), 2
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "setThreshold")
+  method
+   name "setThreshold"
+   refid "com.greensock.plugins:ColorMatrixFilterPlugin/class/setThreshold"
+   param QName(PackageNamespace(""), "Array")
+   param QName(PackageNamespace(""), "Number")
+   returns QName(PackageNamespace(""), "Array")
+   flag HAS_PARAM_NAMES
+   paramname "m"
+   paramname "n"
+   body
+    maxstack 20
+    localcount 4
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PackageNamespace(""), "isNaN")
+     getglobalscope
+     getlocal2
+     call                1
+     iffalse             L9
+
+     getlocal1
+     returnvalue
+
+L9:
+     getlex              QName(StaticProtectedNs("com.greensock.plugins:ColorMatrixFilterPlugin"), "_lumR")
+     pushshort           256
+     multiply
+     getlex              QName(StaticProtectedNs("com.greensock.plugins:ColorMatrixFilterPlugin"), "_lumG")
+     pushshort           256
+     multiply
+     getlex              QName(StaticProtectedNs("com.greensock.plugins:ColorMatrixFilterPlugin"), "_lumB")
+     pushshort           256
+     multiply
+     pushbyte            0
+     pushshort           -256
+     getlocal2
+     multiply
+     getlex              QName(StaticProtectedNs("com.greensock.plugins:ColorMatrixFilterPlugin"), "_lumR")
+     pushshort           256
+     multiply
+     getlex              QName(StaticProtectedNs("com.greensock.plugins:ColorMatrixFilterPlugin"), "_lumG")
+     pushshort           256
+     multiply
+     getlex              QName(StaticProtectedNs("com.greensock.plugins:ColorMatrixFilterPlugin"), "_lumB")
+     pushshort           256
+     multiply
+     pushbyte            0
+     pushshort           -256
+     getlocal2
+     multiply
+     getlex              QName(StaticProtectedNs("com.greensock.plugins:ColorMatrixFilterPlugin"), "_lumR")
+     pushshort           256
+     multiply
+     getlex              QName(StaticProtectedNs("com.greensock.plugins:ColorMatrixFilterPlugin"), "_lumG")
+     pushshort           256
+     multiply
+     getlex              QName(StaticProtectedNs("com.greensock.plugins:ColorMatrixFilterPlugin"), "_lumB")
+     pushshort           256
+     multiply
+     pushbyte            0
+     pushshort           -256
+     getlocal2
+     multiply
+     pushbyte            0
+     pushbyte            0
+     pushbyte            0
+     pushbyte            1
+     pushbyte            0
+     newarray            20
+     coerce              QName(PackageNamespace(""), "Array")
+     setlocal3
+
+     findpropstrict      QName(PackageNamespace(""), "applyMatrix")
+     getlocal3
+     getlocal1
+     callproperty        QName(PackageNamespace(""), "applyMatrix"), 2
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "setHue")
+  method
+   name "setHue"
+   refid "com.greensock.plugins:ColorMatrixFilterPlugin/class/setHue"
+   param QName(PackageNamespace(""), "Array")
+   param QName(PackageNamespace(""), "Number")
+   returns QName(PackageNamespace(""), "Array")
+   flag HAS_PARAM_NAMES
+   paramname "m"
+   paramname "n"
+   body
+    maxstack 25
+    localcount 6
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     pushnan
+     setlocal            5
+
+     getlex              QName(PackageNamespace(""), "isNaN")
+     getglobalscope
+     getlocal2
+     call                1
+     iffalse             L11
+
+     getlocal1
+     returnvalue
+
+L11:
+     getlocal2
+     pushdouble          3.141592653589793
+     pushshort           180
+     divide
+     multiply
+     convert_d
+     setlocal2
+
+     getlex              QName(PackageNamespace(""), "Math")
+     getlocal2
+     callproperty        QName(PackageNamespace(""), "cos"), 1
+     convert_d
+     setlocal            5
+
+     getlex              QName(PackageNamespace(""), "Math")
+     getlocal2
+     callproperty        QName(PackageNamespace(""), "sin"), 1
+     convert_d
+     setlocal            4
+
+     getlex              QName(StaticProtectedNs("com.greensock.plugins:ColorMatrixFilterPlugin"), "_lumR")
+     getlocal            5
+     pushbyte            1
+     getlex              QName(StaticProtectedNs("com.greensock.plugins:ColorMatrixFilterPlugin"), "_lumR")
+     subtract
+     multiply
+     add
+     getlocal            4
+     getlex              QName(StaticProtectedNs("com.greensock.plugins:ColorMatrixFilterPlugin"), "_lumR")
+     negate
+     multiply
+     add
+     getlex              QName(StaticProtectedNs("com.greensock.plugins:ColorMatrixFilterPlugin"), "_lumG")
+     getlocal            5
+     getlex              QName(StaticProtectedNs("com.greensock.plugins:ColorMatrixFilterPlugin"), "_lumG")
+     negate
+     multiply
+     add
+     getlocal            4
+     getlex              QName(StaticProtectedNs("com.greensock.plugins:ColorMatrixFilterPlugin"), "_lumG")
+     negate
+     multiply
+     add
+     getlex              QName(StaticProtectedNs("com.greensock.plugins:ColorMatrixFilterPlugin"), "_lumB")
+     getlocal            5
+     getlex              QName(StaticProtectedNs("com.greensock.plugins:ColorMatrixFilterPlugin"), "_lumB")
+     negate
+     multiply
+     add
+     getlocal            4
+     pushbyte            1
+     getlex              QName(StaticProtectedNs("com.greensock.plugins:ColorMatrixFilterPlugin"), "_lumB")
+     subtract
+     multiply
+     add
+     pushbyte            0
+     pushbyte            0
+     getlex              QName(StaticProtectedNs("com.greensock.plugins:ColorMatrixFilterPlugin"), "_lumR")
+     getlocal            5
+     getlex              QName(StaticProtectedNs("com.greensock.plugins:ColorMatrixFilterPlugin"), "_lumR")
+     negate
+     multiply
+     add
+     getlocal            4
+     pushdouble          0.143
+     multiply
+     add
+     getlex              QName(StaticProtectedNs("com.greensock.plugins:ColorMatrixFilterPlugin"), "_lumG")
+     getlocal            5
+     pushbyte            1
+     getlex              QName(StaticProtectedNs("com.greensock.plugins:ColorMatrixFilterPlugin"), "_lumG")
+     subtract
+     multiply
+     add
+     getlocal            4
+     pushdouble          0.14
+     multiply
+     add
+     getlex              QName(StaticProtectedNs("com.greensock.plugins:ColorMatrixFilterPlugin"), "_lumB")
+     getlocal            5
+     getlex              QName(StaticProtectedNs("com.greensock.plugins:ColorMatrixFilterPlugin"), "_lumB")
+     negate
+     multiply
+     add
+     getlocal            4
+     pushdouble          -0.283
+     multiply
+     add
+     pushbyte            0
+     pushbyte            0
+     getlex              QName(StaticProtectedNs("com.greensock.plugins:ColorMatrixFilterPlugin"), "_lumR")
+     getlocal            5
+     getlex              QName(StaticProtectedNs("com.greensock.plugins:ColorMatrixFilterPlugin"), "_lumR")
+     negate
+     multiply
+     add
+     getlocal            4
+     pushbyte            1
+     getlex              QName(StaticProtectedNs("com.greensock.plugins:ColorMatrixFilterPlugin"), "_lumR")
+     subtract
+     negate
+     multiply
+     add
+     getlex              QName(StaticProtectedNs("com.greensock.plugins:ColorMatrixFilterPlugin"), "_lumG")
+     getlocal            5
+     getlex              QName(StaticProtectedNs("com.greensock.plugins:ColorMatrixFilterPlugin"), "_lumG")
+     negate
+     multiply
+     add
+     getlocal            4
+     getlex              QName(StaticProtectedNs("com.greensock.plugins:ColorMatrixFilterPlugin"), "_lumG")
+     multiply
+     add
+     getlex              QName(StaticProtectedNs("com.greensock.plugins:ColorMatrixFilterPlugin"), "_lumB")
+     getlocal            5
+     pushbyte            1
+     getlex              QName(StaticProtectedNs("com.greensock.plugins:ColorMatrixFilterPlugin"), "_lumB")
+     subtract
+     multiply
+     add
+     getlocal            4
+     getlex              QName(StaticProtectedNs("com.greensock.plugins:ColorMatrixFilterPlugin"), "_lumB")
+     multiply
+     add
+     pushbyte            0
+     pushbyte            0
+     pushbyte            0
+     pushbyte            0
+     pushbyte            0
+     pushbyte            1
+     pushbyte            0
+     pushbyte            0
+     pushbyte            0
+     pushbyte            0
+     pushbyte            0
+     pushbyte            1
+     newarray            25
+     coerce              QName(PackageNamespace(""), "Array")
+     setlocal3
+
+     findpropstrict      QName(PackageNamespace(""), "applyMatrix")
+     getlocal3
+     getlocal1
+     callproperty        QName(PackageNamespace(""), "applyMatrix"), 2
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "setBrightness")
+  method
+   name "setBrightness"
+   refid "com.greensock.plugins:ColorMatrixFilterPlugin/class/setBrightness"
+   param QName(PackageNamespace(""), "Array")
+   param QName(PackageNamespace(""), "Number")
+   returns QName(PackageNamespace(""), "Array")
+   flag HAS_PARAM_NAMES
+   paramname "m"
+   paramname "n"
+   body
+    maxstack 26
+    localcount 3
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PackageNamespace(""), "isNaN")
+     getglobalscope
+     getlocal2
+     call                1
+     iffalse             L9
+
+     getlocal1
+     returnvalue
+
+L9:
+     getlocal2
+     pushbyte            100
+     multiply
+     pushbyte            100
+     subtract
+     convert_d
+     setlocal2
+
+     findpropstrict      QName(PackageNamespace(""), "applyMatrix")
+     pushbyte            1
+     pushbyte            0
+     pushbyte            0
+     pushbyte            0
+     getlocal2
+     pushbyte            0
+     pushbyte            1
+     pushbyte            0
+     pushbyte            0
+     getlocal2
+     pushbyte            0
+     pushbyte            0
+     pushbyte            1
+     pushbyte            0
+     getlocal2
+     pushbyte            0
+     pushbyte            0
+     pushbyte            0
+     pushbyte            1
+     pushbyte            0
+     pushbyte            0
+     pushbyte            0
+     pushbyte            0
+     pushbyte            0
+     pushbyte            1
+     newarray            25
+     getlocal1
+     callproperty        QName(PackageNamespace(""), "applyMatrix"), 2
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "setSaturation")
+  method
+   name "setSaturation"
+   refid "com.greensock.plugins:ColorMatrixFilterPlugin/class/setSaturation"
+   param QName(PackageNamespace(""), "Array")
+   param QName(PackageNamespace(""), "Number")
+   returns QName(PackageNamespace(""), "Array")
+   flag HAS_PARAM_NAMES
+   paramname "m"
+   paramname "n"
+   body
+    maxstack 20
+    localcount 8
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     pushnan
+     setlocal3
+
+     getlex              QName(PackageNamespace(""), "isNaN")
+     getglobalscope
+     getlocal2
+     call                1
+     iffalse             L11
+
+     getlocal1
+     returnvalue
+
+L11:
+     pushbyte            1
+     getlocal2
+     subtract
+     convert_d
+     setlocal3
+
+     getlocal3
+     getlex              QName(StaticProtectedNs("com.greensock.plugins:ColorMatrixFilterPlugin"), "_lumR")
+     multiply
+     convert_d
+     setlocal            4
+
+     getlocal3
+     getlex              QName(StaticProtectedNs("com.greensock.plugins:ColorMatrixFilterPlugin"), "_lumG")
+     multiply
+     convert_d
+     setlocal            7
+
+     getlocal3
+     getlex              QName(StaticProtectedNs("com.greensock.plugins:ColorMatrixFilterPlugin"), "_lumB")
+     multiply
+     convert_d
+     setlocal            5
+
+     getlocal            4
+     getlocal2
+     add
+     getlocal            7
+     getlocal            5
+     pushbyte            0
+     pushbyte            0
+     getlocal            4
+     getlocal            7
+     getlocal2
+     add
+     getlocal            5
+     pushbyte            0
+     pushbyte            0
+     getlocal            4
+     getlocal            7
+     getlocal            5
+     getlocal2
+     add
+     pushbyte            0
+     pushbyte            0
+     pushbyte            0
+     pushbyte            0
+     pushbyte            0
+     pushbyte            1
+     pushbyte            0
+     newarray            20
+     coerce              QName(PackageNamespace(""), "Array")
+     setlocal            6
+
+     findpropstrict      QName(PackageNamespace(""), "applyMatrix")
+     getlocal            6
+     getlocal1
+     callproperty        QName(PackageNamespace(""), "applyMatrix"), 2
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "setContrast")
+  method
+   name "setContrast"
+   refid "com.greensock.plugins:ColorMatrixFilterPlugin/class/setContrast"
+   param QName(PackageNamespace(""), "Array")
+   param QName(PackageNamespace(""), "Number")
+   returns QName(PackageNamespace(""), "Array")
+   flag HAS_PARAM_NAMES
+   paramname "m"
+   paramname "n"
+   body
+    maxstack 20
+    localcount 4
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PackageNamespace(""), "isNaN")
+     getglobalscope
+     getlocal2
+     call                1
+     iffalse             L9
+
+     getlocal1
+     returnvalue
+
+L9:
+     getlocal2
+     pushdouble          0.01
+     add
+     convert_d
+     setlocal2
+
+     getlocal2
+     pushbyte            0
+     pushbyte            0
+     pushbyte            0
+     pushshort           128
+     pushbyte            1
+     getlocal2
+     subtract
+     multiply
+     pushbyte            0
+     getlocal2
+     pushbyte            0
+     pushbyte            0
+     pushshort           128
+     pushbyte            1
+     getlocal2
+     subtract
+     multiply
+     pushbyte            0
+     pushbyte            0
+     getlocal2
+     pushbyte            0
+     pushshort           128
+     pushbyte            1
+     getlocal2
+     subtract
+     multiply
+     pushbyte            0
+     pushbyte            0
+     pushbyte            0
+     pushbyte            1
+     pushbyte            0
+     newarray            20
+     coerce              QName(PackageNamespace(""), "Array")
+     setlocal3
+
+     findpropstrict      QName(PackageNamespace(""), "applyMatrix")
+     getlocal3
+     getlocal1
+     callproperty        QName(PackageNamespace(""), "applyMatrix"), 2
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "applyMatrix")
+  method
+   name "applyMatrix"
+   refid "com.greensock.plugins:ColorMatrixFilterPlugin/class/applyMatrix"
+   param QName(PackageNamespace(""), "Array")
+   param QName(PackageNamespace(""), "Array")
+   returns QName(PackageNamespace(""), "Array")
+   flag HAS_PARAM_NAMES
+   paramname "m"
+   paramname "m2"
+   body
+    maxstack 7
+    localcount 8
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     pushbyte            0
+     setlocal            6
+
+     pushbyte            0
+     setlocal            4
+
+     getlocal1
+     getlex              QName(PackageNamespace(""), "Array")
+     istypelate
+     not
+     dup
+     iftrue              L17
+
+     pop
+     getlocal2
+     getlex              QName(PackageNamespace(""), "Array")
+     istypelate
+     not
+L17:
+     iffalse             L20
+
+     getlocal2
+     returnvalue
+
+L20:
+     newarray            0
+     coerce              QName(PackageNamespace(""), "Array")
+     setlocal3
+
+     pushbyte            0
+     setlocal            5
+
+     pushbyte            0
+     setlocal            7
+
+     pushbyte            0
+     setlocal            6
+
+     jump                L116
+
+L30:
+     label
+     pushbyte            0
+     setlocal            4
+
+     jump                L103
+
+L34:
+     label
+     getlocal            4
+     pushbyte            4
+     ifne                L44
+
+     getlocal1
+     getlocal            5
+     pushbyte            4
+     add
+     getproperty         MultinameL([PrivateNamespace("com.greensock.plugins:ColorMatrixFilterPlugin"), StaticProtectedNs("com.greensock.plugins:ColorMatrixFilterPlugin"), StaticProtectedNs("com.greensock.plugins:FilterPlugin"), StaticProtectedNs("com.greensock.plugins:TweenPlugin"), StaticProtectedNs("Object"), PackageNamespace("com.greensock.plugins"), PackageInternalNs("com.greensock.plugins"), PrivateNamespace("FilePrivateNS:ColorMatrixFilterPlugin"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     jump                L46
+
+L44:
+     pushbyte            0
+     coerce_a
+L46:
+     convert_i
+     setlocal            7
+
+     getlocal3
+     getlocal            5
+     getlocal            4
+     add
+     getlocal1
+     getlocal            5
+     getproperty         MultinameL([PrivateNamespace("com.greensock.plugins:ColorMatrixFilterPlugin"), StaticProtectedNs("com.greensock.plugins:ColorMatrixFilterPlugin"), StaticProtectedNs("com.greensock.plugins:FilterPlugin"), StaticProtectedNs("com.greensock.plugins:TweenPlugin"), StaticProtectedNs("Object"), PackageNamespace("com.greensock.plugins"), PackageInternalNs("com.greensock.plugins"), PrivateNamespace("FilePrivateNS:ColorMatrixFilterPlugin"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     getlocal2
+     getlocal            4
+     getproperty         MultinameL([PrivateNamespace("com.greensock.plugins:ColorMatrixFilterPlugin"), StaticProtectedNs("com.greensock.plugins:ColorMatrixFilterPlugin"), StaticProtectedNs("com.greensock.plugins:FilterPlugin"), StaticProtectedNs("com.greensock.plugins:TweenPlugin"), StaticProtectedNs("Object"), PackageNamespace("com.greensock.plugins"), PackageInternalNs("com.greensock.plugins"), PrivateNamespace("FilePrivateNS:ColorMatrixFilterPlugin"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     multiply
+     getlocal1
+     getlocal            5
+     pushbyte            1
+     add
+     getproperty         MultinameL([PrivateNamespace("com.greensock.plugins:ColorMatrixFilterPlugin"), StaticProtectedNs("com.greensock.plugins:ColorMatrixFilterPlugin"), StaticProtectedNs("com.greensock.plugins:FilterPlugin"), StaticProtectedNs("com.greensock.plugins:TweenPlugin"), StaticProtectedNs("Object"), PackageNamespace("com.greensock.plugins"), PackageInternalNs("com.greensock.plugins"), PrivateNamespace("FilePrivateNS:ColorMatrixFilterPlugin"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     getlocal2
+     getlocal            4
+     pushbyte            5
+     add
+     getproperty         MultinameL([PrivateNamespace("com.greensock.plugins:ColorMatrixFilterPlugin"), StaticProtectedNs("com.greensock.plugins:ColorMatrixFilterPlugin"), StaticProtectedNs("com.greensock.plugins:FilterPlugin"), StaticProtectedNs("com.greensock.plugins:TweenPlugin"), StaticProtectedNs("Object"), PackageNamespace("com.greensock.plugins"), PackageInternalNs("com.greensock.plugins"), PrivateNamespace("FilePrivateNS:ColorMatrixFilterPlugin"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     multiply
+     add
+     getlocal1
+     getlocal            5
+     pushbyte            2
+     add
+     getproperty         MultinameL([PrivateNamespace("com.greensock.plugins:ColorMatrixFilterPlugin"), StaticProtectedNs("com.greensock.plugins:ColorMatrixFilterPlugin"), StaticProtectedNs("com.greensock.plugins:FilterPlugin"), StaticProtectedNs("com.greensock.plugins:TweenPlugin"), StaticProtectedNs("Object"), PackageNamespace("com.greensock.plugins"), PackageInternalNs("com.greensock.plugins"), PrivateNamespace("FilePrivateNS:ColorMatrixFilterPlugin"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     getlocal2
+     getlocal            4
+     pushbyte            10
+     add
+     getproperty         MultinameL([PrivateNamespace("com.greensock.plugins:ColorMatrixFilterPlugin"), StaticProtectedNs("com.greensock.plugins:ColorMatrixFilterPlugin"), StaticProtectedNs("com.greensock.plugins:FilterPlugin"), StaticProtectedNs("com.greensock.plugins:TweenPlugin"), StaticProtectedNs("Object"), PackageNamespace("com.greensock.plugins"), PackageInternalNs("com.greensock.plugins"), PrivateNamespace("FilePrivateNS:ColorMatrixFilterPlugin"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     multiply
+     add
+     getlocal1
+     getlocal            5
+     pushbyte            3
+     add
+     getproperty         MultinameL([PrivateNamespace("com.greensock.plugins:ColorMatrixFilterPlugin"), StaticProtectedNs("com.greensock.plugins:ColorMatrixFilterPlugin"), StaticProtectedNs("com.greensock.plugins:FilterPlugin"), StaticProtectedNs("com.greensock.plugins:TweenPlugin"), StaticProtectedNs("Object"), PackageNamespace("com.greensock.plugins"), PackageInternalNs("com.greensock.plugins"), PrivateNamespace("FilePrivateNS:ColorMatrixFilterPlugin"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     getlocal2
+     getlocal            4
+     pushbyte            15
+     add
+     getproperty         MultinameL([PrivateNamespace("com.greensock.plugins:ColorMatrixFilterPlugin"), StaticProtectedNs("com.greensock.plugins:ColorMatrixFilterPlugin"), StaticProtectedNs("com.greensock.plugins:FilterPlugin"), StaticProtectedNs("com.greensock.plugins:TweenPlugin"), StaticProtectedNs("Object"), PackageNamespace("com.greensock.plugins"), PackageInternalNs("com.greensock.plugins"), PrivateNamespace("FilePrivateNS:ColorMatrixFilterPlugin"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     multiply
+     add
+     getlocal            7
+     add
+     setproperty         MultinameL([PrivateNamespace("com.greensock.plugins:ColorMatrixFilterPlugin"), StaticProtectedNs("com.greensock.plugins:ColorMatrixFilterPlugin"), StaticProtectedNs("com.greensock.plugins:FilterPlugin"), StaticProtectedNs("com.greensock.plugins:TweenPlugin"), StaticProtectedNs("Object"), PackageNamespace("com.greensock.plugins"), PackageInternalNs("com.greensock.plugins"), PrivateNamespace("FilePrivateNS:ColorMatrixFilterPlugin"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     getlocal            4
+     pushbyte            1
+     add
+     convert_i
+     setlocal            4
+
+L103:
+     getlocal            4
+     pushbyte            5
+     iflt                L34
+
+     getlocal            5
+     pushbyte            5
+     add
+     convert_i
+     setlocal            5
+
+     getlocal            6
+     pushbyte            1
+     add
+     convert_i
+     setlocal            6
+
+L116:
+     getlocal            6
+     pushbyte            4
+     iflt                L30
+
+     getlocal3
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+end ; class

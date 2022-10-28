@@ -1,0 +1,361 @@
+class
+ refid "com.company.util:PointUtil"
+ instance QName(PackageNamespace("com.company.util"), "PointUtil")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  iinit
+   name "PointUtil"
+   refid "com.company.util:PointUtil/instance/init"
+   param QName(PrivateNamespace("FilePrivateNS:PointUtil"), "StaticEnforcer")
+   flag HAS_PARAM_NAMES
+   paramname "_arg1"
+   body
+    maxstack 1
+    localcount 2
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; instance
+ cinit
+  refid "com.company.util:PointUtil/class/init"
+  body
+   maxstack 3
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 1
+   code
+    getlocal0
+    pushscope
+
+    findpropstrict      QName(PackageNamespace("flash.geom"), "Point")
+    pushbyte            0
+    pushbyte            0
+    constructprop       QName(PackageNamespace("flash.geom"), "Point"), 2
+    findproperty        QName(PackageNamespace(""), "ORIGIN")
+    swap
+    initproperty        QName(PackageNamespace(""), "ORIGIN")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PackageNamespace(""), "ORIGIN") type QName(PackageNamespace("flash.geom"), "Point") end
+ trait method QName(PackageNamespace(""), "roundPoint")
+  method
+   name "roundPoint"
+   refid "com.company.util:PointUtil/class/roundPoint"
+   param QName(PackageNamespace("flash.geom"), "Point")
+   returns QName(PackageNamespace("flash.geom"), "Point")
+   flag HAS_PARAM_NAMES
+   paramname "_arg1"
+   body
+    maxstack 3
+    localcount 3
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal1
+     callproperty        QName(PackageNamespace(""), "clone"), 0
+     coerce              QName(PackageNamespace("flash.geom"), "Point")
+     setlocal2
+
+     getlocal2
+     getlex              QName(PackageNamespace(""), "Math")
+     getlocal2
+     getproperty         QName(PackageNamespace(""), "x")
+     callproperty        QName(PackageNamespace(""), "round"), 1
+     setproperty         QName(PackageNamespace(""), "x")
+
+     getlocal2
+     getlex              QName(PackageNamespace(""), "Math")
+     getlocal2
+     getproperty         QName(PackageNamespace(""), "y")
+     callproperty        QName(PackageNamespace(""), "round"), 1
+     setproperty         QName(PackageNamespace(""), "y")
+
+     getlocal2
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "distanceSquared")
+  method
+   name "distanceSquared"
+   refid "com.company.util:PointUtil/class/distanceSquared"
+   param QName(PackageNamespace("flash.geom"), "Point")
+   param QName(PackageNamespace("flash.geom"), "Point")
+   returns QName(PackageNamespace(""), "Number")
+   flag HAS_PARAM_NAMES
+   paramname "_arg1"
+   paramname "_arg2"
+   body
+    maxstack 5
+    localcount 3
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     findpropstrict      QName(PackageNamespace(""), "distanceSquaredXY")
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "x")
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "y")
+     getlocal2
+     getproperty         QName(PackageNamespace(""), "x")
+     getlocal2
+     getproperty         QName(PackageNamespace(""), "y")
+     callproperty        QName(PackageNamespace(""), "distanceSquaredXY"), 4
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "distanceSquaredXY")
+  method
+   name "distanceSquaredXY"
+   refid "com.company.util:PointUtil/class/distanceSquaredXY"
+   param QName(PackageNamespace(""), "Number")
+   param QName(PackageNamespace(""), "Number")
+   param QName(PackageNamespace(""), "Number")
+   param QName(PackageNamespace(""), "Number")
+   returns QName(PackageNamespace(""), "Number")
+   flag HAS_PARAM_NAMES
+   paramname "_arg1"
+   paramname "_arg2"
+   paramname "_arg3"
+   paramname "_arg4"
+   body
+    maxstack 3
+    localcount 7
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal3
+     getlocal1
+     subtract
+     convert_d
+     setlocal            6
+
+     getlocal            4
+     getlocal2
+     subtract
+     convert_d
+     setlocal            5
+
+     getlocal            6
+     getlocal            6
+     multiply
+     getlocal            5
+     getlocal            5
+     multiply
+     add
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "distanceXY")
+  method
+   name "distanceXY"
+   refid "com.company.util:PointUtil/class/distanceXY"
+   param QName(PackageNamespace(""), "Number")
+   param QName(PackageNamespace(""), "Number")
+   param QName(PackageNamespace(""), "Number")
+   param QName(PackageNamespace(""), "Number")
+   returns QName(PackageNamespace(""), "Number")
+   flag HAS_PARAM_NAMES
+   paramname "_arg1"
+   paramname "_arg2"
+   paramname "_arg3"
+   paramname "_arg4"
+   body
+    maxstack 4
+    localcount 7
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal3
+     getlocal1
+     subtract
+     convert_d
+     setlocal            6
+
+     getlocal            4
+     getlocal2
+     subtract
+     convert_d
+     setlocal            5
+
+     getlex              QName(PackageNamespace(""), "Math")
+     getlocal            6
+     getlocal            6
+     multiply
+     getlocal            5
+     getlocal            5
+     multiply
+     add
+     callproperty        QName(PackageNamespace(""), "sqrt"), 1
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "lerpXY")
+  method
+   name "lerpXY"
+   refid "com.company.util:PointUtil/class/lerpXY"
+   param QName(PackageNamespace(""), "Number")
+   param QName(PackageNamespace(""), "Number")
+   param QName(PackageNamespace(""), "Number")
+   param QName(PackageNamespace(""), "Number")
+   param QName(PackageNamespace(""), "Number")
+   returns QName(PackageNamespace("flash.geom"), "Point")
+   flag HAS_PARAM_NAMES
+   paramname "_arg1"
+   paramname "_arg2"
+   paramname "_arg3"
+   paramname "_arg4"
+   paramname "_arg5"
+   body
+    maxstack 5
+    localcount 6
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     findpropstrict      QName(PackageNamespace("flash.geom"), "Point")
+     getlocal1
+     getlocal3
+     getlocal1
+     subtract
+     getlocal            5
+     multiply
+     add
+     getlocal2
+     getlocal            4
+     getlocal2
+     subtract
+     getlocal            5
+     multiply
+     add
+     constructprop       QName(PackageNamespace("flash.geom"), "Point"), 2
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "angleTo")
+  method
+   name "angleTo"
+   refid "com.company.util:PointUtil/class/angleTo"
+   param QName(PackageNamespace("flash.geom"), "Point")
+   param QName(PackageNamespace("flash.geom"), "Point")
+   returns QName(PackageNamespace(""), "Number")
+   flag HAS_PARAM_NAMES
+   paramname "_arg1"
+   paramname "_arg2"
+   body
+    maxstack 4
+    localcount 3
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PackageNamespace(""), "Math")
+     getlocal2
+     getproperty         QName(PackageNamespace(""), "y")
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "y")
+     subtract
+     getlocal2
+     getproperty         QName(PackageNamespace(""), "x")
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "x")
+     subtract
+     callproperty        QName(PackageNamespace(""), "atan2"), 2
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "pointAt")
+  method
+   name "pointAt"
+   refid "com.company.util:PointUtil/class/pointAt"
+   param QName(PackageNamespace("flash.geom"), "Point")
+   param QName(PackageNamespace(""), "Number")
+   param QName(PackageNamespace(""), "Number")
+   returns QName(PackageNamespace("flash.geom"), "Point")
+   flag HAS_PARAM_NAMES
+   paramname "_arg1"
+   paramname "_arg2"
+   paramname "_arg3"
+   body
+    maxstack 5
+    localcount 5
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     findpropstrict      QName(PackageNamespace("flash.geom"), "Point")
+     constructprop       QName(PackageNamespace("flash.geom"), "Point"), 0
+     coerce              QName(PackageNamespace("flash.geom"), "Point")
+     dup
+     setlocal            4
+
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "x")
+     getlocal3
+     getlex              QName(PackageNamespace(""), "Math")
+     getlocal2
+     callproperty        QName(PackageNamespace(""), "cos"), 1
+     multiply
+     add
+     setproperty         QName(PackageNamespace(""), "x")
+
+     getlocal            4
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "y")
+     getlocal3
+     getlex              QName(PackageNamespace(""), "Math")
+     getlocal2
+     callproperty        QName(PackageNamespace(""), "sin"), 1
+     multiply
+     add
+     setproperty         QName(PackageNamespace(""), "y")
+
+     getlocal            4
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+end ; class

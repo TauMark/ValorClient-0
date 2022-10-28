@@ -1,0 +1,608 @@
+class
+ refid "WebMain"
+ instance QName(PackageNamespace(""), "WebMain")
+  extends QName(PackageNamespace("flash.display"), "Sprite")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("WebMain")
+  iinit
+   name "WebMain"
+   refid "WebMain/instance/init"
+   body
+    maxstack 3
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlex              QName(PackageNamespace(""), "stage")
+     iffalse             L20
+
+     getlex              QName(PackageNamespace(""), "stage")
+     pushstring          "resize"
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "onStageResize")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     getlex              QName(PackageNamespace(""), "stage")
+     getproperty         QName(PackageNamespace(""), "nativeWindow")
+     pushstring          "displayStateChange"
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "onDisplayStateChanged")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     getlocal0
+     callpropvoid        QName(PrivateNamespace("WebMain"), "setup"), 0
+
+     jump                L25
+
+L20:
+     findpropstrict      QName(PackageNamespace(""), "addEventListener")
+     pushstring          "addedToStage"
+     getlocal0
+     getproperty         QName(PrivateNamespace("WebMain"), "onAddedToStage")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+L25:
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(ProtectedNamespace("WebMain"), "context") type QName(PackageNamespace("robotlegs.bender.framework.api"), "IContext") end
+  trait method QName(PrivateNamespace("WebMain"), "setup")
+   method
+    name "setup"
+    refid "WebMain/instance/WebMain/instance/setup"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("WebMain"), "setEnvironment"), 0
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("WebMain"), "hackParameters"), 0
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("WebMain"), "createContext"), 0
+
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.util"), "AssetLoader")
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.util"), "AssetLoader"), 0
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.util"), "AssetLoader")
+      setlocal1
+
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "load"), 0
+
+      getlex              QName(PackageNamespace(""), "stage")
+      findproperty        QName(PackageNamespace(""), "STAGE")
+      swap
+      setproperty         QName(PackageNamespace(""), "STAGE")
+
+      getlex              QName(PackageNamespace(""), "STAGE")
+      pushstring          "exactFit"
+      setproperty         QName(PackageNamespace(""), "scaleMode")
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("WebMain"), "context")
+      getproperty         QName(Namespace("robotlegs.bender.framework.api:IContext"), "injector")
+      getlex              QName(PackageNamespace("kabam.rotmg.startup.control"), "StartupSignal")
+      callproperty        QName(PackageNamespace(""), "getInstance"), 1
+      callpropvoid        Multiname("dispatch", [PrivateNamespace("WebMain"), ProtectedNamespace("WebMain"), StaticProtectedNs("WebMain"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace(""), PackageInternalNs(""), PrivateNamespace("FilePrivateNS:WebMain"), Namespace("http://adobe.com/AS3/2006/builtin")]), 0
+
+      getlex              QName(PackageNamespace("kabam.rotmg.ui"), "UIUtils")
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.parameters"), "Parameters")
+      getproperty         QName(PackageNamespace(""), "data")
+      getproperty         Multiname("uiQuality", [PrivateNamespace("WebMain"), ProtectedNamespace("WebMain"), StaticProtectedNs("WebMain"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace(""), PackageInternalNs(""), PrivateNamespace("FilePrivateNS:WebMain"), Namespace("http://adobe.com/AS3/2006/builtin")])
+      callpropvoid        QName(PackageNamespace(""), "toggleQuality"), 1
+
+      getlex              QName(PackageNamespace(""), "RPC")
+      pushstring          "main"
+      setproperty         QName(PackageNamespace(""), "largeImageKey")
+
+      getlex              QName(PackageNamespace(""), "RPC")
+      pushstring          "v4.3.1"
+      setproperty         QName(PackageNamespace(""), "largeImageText")
+
+      getlex              QName(PackageNamespace(""), "RPC")
+      findpropstrict      QName(PackageNamespace(""), "Date")
+      constructprop       QName(PackageNamespace(""), "Date"), 0
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "valueOf"), 0
+      pushshort           1000
+      divide
+      setproperty         QName(PackageNamespace(""), "startTimestamp")
+
+      getlex              QName(PackageNamespace(""), "RPC")
+      callpropvoid        QName(PackageNamespace(""), "updatePresence"), 0
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.parameters"), "Parameters")
+      getproperty         QName(PackageNamespace(""), "data")
+      getproperty         Multiname("lastWidth", [PrivateNamespace("WebMain"), ProtectedNamespace("WebMain"), StaticProtectedNs("WebMain"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace(""), PackageInternalNs(""), PrivateNamespace("FilePrivateNS:WebMain"), Namespace("http://adobe.com/AS3/2006/builtin")])
+      pushbyte            0
+      equals
+      not
+      dup
+      iffalse             L62
+
+      pop
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.parameters"), "Parameters")
+      getproperty         QName(PackageNamespace(""), "data")
+      getproperty         Multiname("lastHeight", [PrivateNamespace("WebMain"), ProtectedNamespace("WebMain"), StaticProtectedNs("WebMain"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace(""), PackageInternalNs(""), PrivateNamespace("FilePrivateNS:WebMain"), Namespace("http://adobe.com/AS3/2006/builtin")])
+      pushbyte            0
+      equals
+      not
+L62:
+      iffalse             L98
+
+      getlex              QName(PackageNamespace(""), "stage")
+      getproperty         QName(PackageNamespace(""), "nativeWindow")
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.parameters"), "Parameters")
+      getproperty         QName(PackageNamespace(""), "data")
+      getproperty         Multiname("lastWidth", [PrivateNamespace("WebMain"), ProtectedNamespace("WebMain"), StaticProtectedNs("WebMain"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace(""), PackageInternalNs(""), PrivateNamespace("FilePrivateNS:WebMain"), Namespace("http://adobe.com/AS3/2006/builtin")])
+      setproperty         QName(PackageNamespace(""), "width")
+
+      getlex              QName(PackageNamespace(""), "stage")
+      getproperty         QName(PackageNamespace(""), "nativeWindow")
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.parameters"), "Parameters")
+      getproperty         QName(PackageNamespace(""), "data")
+      getproperty         Multiname("lastHeight", [PrivateNamespace("WebMain"), ProtectedNamespace("WebMain"), StaticProtectedNs("WebMain"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace(""), PackageInternalNs(""), PrivateNamespace("FilePrivateNS:WebMain"), Namespace("http://adobe.com/AS3/2006/builtin")])
+      setproperty         QName(PackageNamespace(""), "height")
+
+      getlex              QName(PackageNamespace(""), "stage")
+      getproperty         QName(PackageNamespace(""), "nativeWindow")
+      getlex              QName(PackageNamespace(""), "stage")
+      getproperty         QName(PackageNamespace(""), "fullScreenWidth")
+      getlex              QName(PackageNamespace(""), "stage")
+      getproperty         QName(PackageNamespace(""), "nativeWindow")
+      getproperty         QName(PackageNamespace(""), "width")
+      subtract
+      pushbyte            2
+      divide
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlex              QName(PackageNamespace(""), "stage")
+      getproperty         QName(PackageNamespace(""), "nativeWindow")
+      getlex              QName(PackageNamespace(""), "stage")
+      getproperty         QName(PackageNamespace(""), "fullScreenHeight")
+      getlex              QName(PackageNamespace(""), "stage")
+      getproperty         QName(PackageNamespace(""), "nativeWindow")
+      getproperty         QName(PackageNamespace(""), "height")
+      subtract
+      pushbyte            2
+      divide
+      setproperty         QName(PackageNamespace(""), "y")
+
+      jump                L101
+
+L98:
+      getlex              QName(PackageNamespace(""), "stage")
+      getproperty         QName(PackageNamespace(""), "nativeWindow")
+      callpropvoid        QName(PackageNamespace(""), "maximize"), 0
+
+L101:
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.parameters"), "Parameters")
+      getproperty         QName(PackageNamespace(""), "data")
+      getproperty         Multiname("lastDisplayState", [PrivateNamespace("WebMain"), ProtectedNamespace("WebMain"), StaticProtectedNs("WebMain"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace(""), PackageInternalNs(""), PrivateNamespace("FilePrivateNS:WebMain"), Namespace("http://adobe.com/AS3/2006/builtin")])
+      pushstring          "maximized"
+      ifne                L109
+
+      getlex              QName(PackageNamespace(""), "stage")
+      getproperty         QName(PackageNamespace(""), "nativeWindow")
+      callpropvoid        QName(PackageNamespace(""), "maximize"), 0
+
+L109:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("WebMain"), "setEnvironment")
+   method
+    name "setEnvironment"
+    refid "WebMain/instance/WebMain/instance/setEnvironment"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace(""), "stage")
+      getproperty         QName(PackageNamespace(""), "loaderInfo")
+      getproperty         QName(PackageNamespace(""), "parameters")
+      pushstring          "env"
+      getproperty         MultinameL([PrivateNamespace("WebMain"), ProtectedNamespace("WebMain"), StaticProtectedNs("WebMain"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace(""), PackageInternalNs(""), PrivateNamespace("FilePrivateNS:WebMain"), Namespace("http://adobe.com/AS3/2006/builtin")])
+      findproperty        QName(PackageNamespace(""), "ENV")
+      swap
+      setproperty         QName(PackageNamespace(""), "ENV")
+
+      getlex              QName(PackageNamespace(""), "ENV")
+      pushnull
+      ifne                L17
+
+      pushstring          "production"
+      findproperty        QName(PackageNamespace(""), "ENV")
+      swap
+      setproperty         QName(PackageNamespace(""), "ENV")
+
+L17:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("WebMain"), "hackParameters")
+   method
+    name "hackParameters"
+    refid "WebMain/instance/WebMain/instance/hackParameters"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.parameters"), "Parameters")
+      getlex              QName(PackageNamespace(""), "stage")
+      getproperty         QName(PackageNamespace(""), "root")
+      setproperty         QName(PackageNamespace(""), "root")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("WebMain"), "createContext")
+   method
+    name "createContext"
+    refid "WebMain/instance/WebMain/instance/createContext"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.core"), "StaticInjectorContext")
+      constructprop       QName(PackageNamespace("kabam.rotmg.core"), "StaticInjectorContext"), 0
+      setproperty         QName(ProtectedNamespace("WebMain"), "context")
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("WebMain"), "context")
+      getproperty         QName(Namespace("robotlegs.bender.framework.api:IContext"), "injector")
+      getlex              QName(PackageNamespace("flash.display"), "LoaderInfo")
+      callproperty        QName(PackageNamespace(""), "map"), 1
+      getlex              QName(PackageNamespace(""), "root")
+      getproperty         QName(PackageNamespace(""), "stage")
+      getproperty         QName(PackageNamespace(""), "root")
+      getproperty         QName(PackageNamespace(""), "loaderInfo")
+      callpropvoid        QName(PackageNamespace(""), "toValue"), 1
+
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.util"), "StageProxy")
+      getlocal0
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.util"), "StageProxy"), 1
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.util"), "StageProxy")
+      setlocal1
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("WebMain"), "context")
+      getproperty         QName(Namespace("robotlegs.bender.framework.api:IContext"), "injector")
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "StageProxy")
+      callproperty        QName(PackageNamespace(""), "map"), 1
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "toValue"), 1
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("WebMain"), "context")
+      getlex              QName(PackageNamespace("robotlegs.bender.bundles.mvcs"), "MVCSBundle")
+      callproperty        QName(Namespace("robotlegs.bender.framework.api:IContext"), "extend"), 1
+      getlex              QName(PackageNamespace("robotlegs.bender.extensions.signalCommandMap"), "SignalCommandMapExtension")
+      callproperty        QName(Namespace("robotlegs.bender.framework.api:IContext"), "extend"), 1
+      getlex              QName(PackageNamespace("kabam.rotmg.build"), "BuildConfig")
+      callproperty        QName(Namespace("robotlegs.bender.framework.api:IContext"), "configure"), 1
+      getlex              QName(PackageNamespace("kabam.rotmg.startup"), "StartupConfig")
+      callproperty        QName(Namespace("robotlegs.bender.framework.api:IContext"), "configure"), 1
+      getlex              QName(PackageNamespace("kabam.lib.net"), "NetConfig")
+      callproperty        QName(Namespace("robotlegs.bender.framework.api:IContext"), "configure"), 1
+      getlex              QName(PackageNamespace("kabam.rotmg.dialogs"), "DialogsConfig")
+      callproperty        QName(Namespace("robotlegs.bender.framework.api:IContext"), "configure"), 1
+      getlex              QName(PackageNamespace("kabam.rotmg.application"), "ApplicationConfig")
+      callproperty        QName(Namespace("robotlegs.bender.framework.api:IContext"), "configure"), 1
+      getlex              QName(PackageNamespace("kabam.rotmg.language"), "LanguageConfig")
+      callproperty        QName(Namespace("robotlegs.bender.framework.api:IContext"), "configure"), 1
+      getlex              QName(PackageNamespace("kabam.rotmg.text"), "TextConfig")
+      callproperty        QName(Namespace("robotlegs.bender.framework.api:IContext"), "configure"), 1
+      getlex              QName(PackageNamespace("kabam.rotmg.appengine"), "AppEngineConfig")
+      callproperty        QName(Namespace("robotlegs.bender.framework.api:IContext"), "configure"), 1
+      getlex              QName(PackageNamespace("kabam.rotmg.account"), "AccountConfig")
+      callproperty        QName(Namespace("robotlegs.bender.framework.api:IContext"), "configure"), 1
+      getlex              QName(PackageNamespace("kabam.rotmg.core"), "CoreConfig")
+      callproperty        QName(Namespace("robotlegs.bender.framework.api:IContext"), "configure"), 1
+      getlex              QName(PackageNamespace("kabam.rotmg.assets"), "AssetsConfig")
+      callproperty        QName(Namespace("robotlegs.bender.framework.api:IContext"), "configure"), 1
+      getlex              QName(PackageNamespace("kabam.rotmg.death"), "DeathConfig")
+      callproperty        QName(Namespace("robotlegs.bender.framework.api:IContext"), "configure"), 1
+      getlex              QName(PackageNamespace("kabam.rotmg.characters"), "CharactersConfig")
+      callproperty        QName(Namespace("robotlegs.bender.framework.api:IContext"), "configure"), 1
+      getlex              QName(PackageNamespace("kabam.rotmg.servers"), "ServersConfig")
+      callproperty        QName(Namespace("robotlegs.bender.framework.api:IContext"), "configure"), 1
+      getlex              QName(PackageNamespace("kabam.rotmg.game"), "GameConfig")
+      callproperty        QName(Namespace("robotlegs.bender.framework.api:IContext"), "configure"), 1
+      getlex              QName(PackageNamespace("kabam.rotmg.editor"), "EditorConfig")
+      callproperty        QName(Namespace("robotlegs.bender.framework.api:IContext"), "configure"), 1
+      getlex              QName(PackageNamespace("kabam.rotmg.ui"), "UIConfig")
+      callproperty        QName(Namespace("robotlegs.bender.framework.api:IContext"), "configure"), 1
+      getlex              QName(PackageNamespace("kabam.rotmg.minimap"), "MiniMapConfig")
+      callproperty        QName(Namespace("robotlegs.bender.framework.api:IContext"), "configure"), 1
+      getlex              QName(PackageNamespace("kabam.rotmg.legends"), "LegendsConfig")
+      callproperty        QName(Namespace("robotlegs.bender.framework.api:IContext"), "configure"), 1
+      getlex              QName(PackageNamespace("kabam.rotmg.news"), "NewsConfig")
+      callproperty        QName(Namespace("robotlegs.bender.framework.api:IContext"), "configure"), 1
+      getlex              QName(PackageNamespace("kabam.rotmg.fame"), "FameConfig")
+      callproperty        QName(Namespace("robotlegs.bender.framework.api:IContext"), "configure"), 1
+      getlex              QName(PackageNamespace("kabam.rotmg.tooltips"), "TooltipsConfig")
+      callproperty        QName(Namespace("robotlegs.bender.framework.api:IContext"), "configure"), 1
+      getlex              QName(PackageNamespace("kabam.rotmg.promotions"), "PromotionsConfig")
+      callproperty        QName(Namespace("robotlegs.bender.framework.api:IContext"), "configure"), 1
+      getlex              QName(PackageNamespace("kabam.rotmg.protip"), "ProTipConfig")
+      callproperty        QName(Namespace("robotlegs.bender.framework.api:IContext"), "configure"), 1
+      getlex              QName(PackageNamespace("kabam.rotmg.maploading"), "MapLoadingConfig")
+      callproperty        QName(Namespace("robotlegs.bender.framework.api:IContext"), "configure"), 1
+      getlex              QName(PackageNamespace("kabam.rotmg.market.ui"), "MarketMediatorConfig")
+      callproperty        QName(Namespace("robotlegs.bender.framework.api:IContext"), "configure"), 1
+      getlex              QName(PackageNamespace("kabam.rotmg.classes"), "ClassesConfig")
+      callproperty        QName(Namespace("robotlegs.bender.framework.api:IContext"), "configure"), 1
+      getlex              QName(PackageNamespace("kabam.rotmg.pets"), "PetsConfig")
+      callproperty        QName(Namespace("robotlegs.bender.framework.api:IContext"), "configure"), 1
+      getlex              QName(PackageNamespace("kabam.rotmg.questrewards"), "QuestRewardsConfig")
+      callproperty        QName(Namespace("robotlegs.bender.framework.api:IContext"), "configure"), 1
+      getlex              QName(PackageNamespace("kabam.rotmg.stage3D"), "Stage3DConfig")
+      callproperty        QName(Namespace("robotlegs.bender.framework.api:IContext"), "configure"), 1
+      getlex              QName(PackageNamespace("kabam.rotmg.arena"), "ArenaConfig")
+      callproperty        QName(Namespace("robotlegs.bender.framework.api:IContext"), "configure"), 1
+      getlex              QName(PackageNamespace("kabam.rotmg.external"), "ExternalConfig")
+      callproperty        QName(Namespace("robotlegs.bender.framework.api:IContext"), "configure"), 1
+      getlex              QName(PackageNamespace("kabam.rotmg.mysterybox"), "MysteryBoxConfig")
+      callproperty        QName(Namespace("robotlegs.bender.framework.api:IContext"), "configure"), 1
+      getlex              QName(PackageNamespace("kabam.rotmg.queue"), "QueueConfig")
+      callproperty        QName(Namespace("robotlegs.bender.framework.api:IContext"), "configure"), 1
+      getlocal0
+      callpropvoid        QName(Namespace("robotlegs.bender.framework.api:IContext"), "configure"), 1
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("WebMain"), "context")
+      pushbyte            32
+      setproperty         QName(Namespace("robotlegs.bender.framework.api:IContext"), "logLevel")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "onStageResize")
+   method
+    name "onStageResize"
+    refid "WebMain/instance/onStageResize"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "e"
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace(""), "stage")
+      getproperty         QName(PackageNamespace(""), "scaleMode")
+      pushstring          "noScale"
+      ifne                L35
+
+      getlocal0
+      getlex              QName(PackageNamespace(""), "stage")
+      getproperty         QName(PackageNamespace(""), "stageWidth")
+      pushshort           800
+      divide
+      setproperty         QName(PackageNamespace(""), "scaleX")
+
+      getlocal0
+      getlex              QName(PackageNamespace(""), "stage")
+      getproperty         QName(PackageNamespace(""), "stageHeight")
+      pushshort           600
+      divide
+      setproperty         QName(PackageNamespace(""), "scaleY")
+
+      getlocal0
+      pushshort           800
+      getlex              QName(PackageNamespace(""), "stage")
+      getproperty         QName(PackageNamespace(""), "stageWidth")
+      subtract
+      pushbyte            2
+      divide
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      pushshort           600
+      getlex              QName(PackageNamespace(""), "stage")
+      getproperty         QName(PackageNamespace(""), "stageHeight")
+      subtract
+      pushbyte            2
+      divide
+      setproperty         QName(PackageNamespace(""), "y")
+
+      jump                L47
+
+L35:
+      getlocal0
+      pushbyte            1
+      setproperty         QName(PackageNamespace(""), "scaleX")
+
+      getlocal0
+      pushbyte            1
+      setproperty         QName(PackageNamespace(""), "scaleY")
+
+      getlocal0
+      pushbyte            0
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      pushbyte            0
+      setproperty         QName(PackageNamespace(""), "y")
+
+L47:
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.parameters"), "Parameters")
+      getproperty         QName(PackageNamespace(""), "data")
+      getlex              QName(PackageNamespace(""), "stage")
+      getproperty         QName(PackageNamespace(""), "nativeWindow")
+      getproperty         QName(PackageNamespace(""), "width")
+      setproperty         Multiname("lastWidth", [PrivateNamespace("WebMain"), ProtectedNamespace("WebMain"), StaticProtectedNs("WebMain"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace(""), PackageInternalNs(""), PrivateNamespace("FilePrivateNS:WebMain"), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.parameters"), "Parameters")
+      getproperty         QName(PackageNamespace(""), "data")
+      getlex              QName(PackageNamespace(""), "stage")
+      getproperty         QName(PackageNamespace(""), "nativeWindow")
+      getproperty         QName(PackageNamespace(""), "height")
+      setproperty         Multiname("lastHeight", [PrivateNamespace("WebMain"), ProtectedNamespace("WebMain"), StaticProtectedNs("WebMain"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace(""), PackageInternalNs(""), PrivateNamespace("FilePrivateNS:WebMain"), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.parameters"), "Parameters")
+      callpropvoid        QName(PackageNamespace(""), "save"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "onDisplayStateChanged")
+   method
+    name "onDisplayStateChanged"
+    refid "WebMain/instance/onDisplayStateChanged"
+    param QName(PackageNamespace("flash.events"), "NativeWindowDisplayStateEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.parameters"), "Parameters")
+      getproperty         QName(PackageNamespace(""), "data")
+      getlex              QName(PackageNamespace(""), "stage")
+      getproperty         QName(PackageNamespace(""), "nativeWindow")
+      getproperty         QName(PackageNamespace(""), "displayState")
+      setproperty         Multiname("lastDisplayState", [PrivateNamespace("WebMain"), ProtectedNamespace("WebMain"), StaticProtectedNs("WebMain"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace(""), PackageInternalNs(""), PrivateNamespace("FilePrivateNS:WebMain"), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.parameters"), "Parameters")
+      callpropvoid        QName(PackageNamespace(""), "save"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("WebMain"), "onAddedToStage")
+   method
+    name "onAddedToStage"
+    refid "WebMain/instance/WebMain/instance/onAddedToStage"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 6
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace(""), "removeEventListener")
+      pushstring          "addedToStage"
+      getlocal0
+      getproperty         QName(PrivateNamespace("WebMain"), "onAddedToStage")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      getlex              QName(PackageNamespace(""), "stage")
+      pushstring          "resize"
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "onStageResize")
+      pushfalse
+      pushbyte            0
+      pushtrue
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 5
+
+      getlex              QName(PackageNamespace(""), "stage")
+      getproperty         QName(PackageNamespace(""), "nativeWindow")
+      pushstring          "displayStateChange"
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "onDisplayStateChanged")
+      pushfalse
+      pushbyte            0
+      pushtrue
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 5
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("WebMain"), "setup"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "WebMain/class/init"
+  body
+   maxstack 2
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 1
+   code
+    getlocal0
+    pushscope
+
+    findpropstrict      QName(PackageNamespace("com.flut.rpcANE"), "RichPresence")
+    pushstring          "730032415522685000"
+    constructprop       QName(PackageNamespace("com.flut.rpcANE"), "RichPresence"), 1
+    findproperty        QName(PackageNamespace(""), "RPC")
+    swap
+    initproperty        QName(PackageNamespace(""), "RPC")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PackageNamespace(""), "RPC") type QName(PackageNamespace("com.flut.rpcANE"), "RichPresence") end
+ trait slot QName(PackageNamespace(""), "ENV") type QName(PackageNamespace(""), "String") end
+ trait slot QName(PackageNamespace(""), "STAGE") type QName(PackageNamespace("flash.display"), "Stage") end
+ trait slot QName(PackageNamespace(""), "HUDWidth") type QName(PackageNamespace(""), "int") end
+end ; class

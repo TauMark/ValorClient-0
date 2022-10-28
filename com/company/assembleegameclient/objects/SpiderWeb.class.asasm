@@ -1,0 +1,247 @@
+class
+ refid "com.company.assembleegameclient.objects:SpiderWeb"
+ instance QName(PackageNamespace("com.company.assembleegameclient.objects"), "SpiderWeb")
+  extends QName(PackageNamespace("com.company.assembleegameclient.objects"), "GameObject")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.company.assembleegameclient.objects:SpiderWeb")
+  iinit
+   name "SpiderWeb"
+   refid "com.company.assembleegameclient.objects:SpiderWeb/instance/init"
+   param QName(PackageNamespace(""), "XML")
+   flag HAS_PARAM_NAMES
+   paramname "_arg1"
+   body
+    maxstack 2
+    localcount 2
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     getlocal1
+     constructsuper      1
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.objects:SpiderWeb"), "wallFound_") type QName(PackageNamespace(""), "Boolean") value False() end
+  trait method QName(PackageNamespace(""), "draw") flag OVERRIDE
+   method
+    name "draw"
+    refid "com.company.assembleegameclient.objects:SpiderWeb/instance/draw"
+    param TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("flash.display"), "IGraphicsData")>)
+    param QName(PackageNamespace("com.company.assembleegameclient.map"), "Camera")
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    paramname "_arg2"
+    paramname "_arg3"
+    body
+     maxstack 4
+     localcount 4
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.objects:SpiderWeb"), "wallFound_")
+      iftrue              L9
+
+      getlocal0
+      getlocal0
+      callproperty        QName(PrivateNamespace("com.company.assembleegameclient.objects:SpiderWeb"), "findWall"), 0
+      setproperty         QName(PrivateNamespace("com.company.assembleegameclient.objects:SpiderWeb"), "wallFound_")
+
+L9:
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.objects:SpiderWeb"), "wallFound_")
+      iffalse             L17
+
+      getlocal0
+      getlocal1
+      getlocal2
+      getlocal3
+      callsupervoid       QName(PackageNamespace(""), "draw"), 3
+L17:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.objects:SpiderWeb"), "findWall")
+   method
+    name "findWall"
+    refid "com.company.assembleegameclient.objects:SpiderWeb/instance/com.company.assembleegameclient.objects:SpiderWeb/instance/draw/findWall"
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 5
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      setlocal1
+
+      getlex              QName(PackageNamespace(""), "map_")
+      getlex              QName(PackageNamespace(""), "x_")
+      pushbyte            1
+      subtract
+      getlex              QName(PackageNamespace(""), "y_")
+      callproperty        QName(PackageNamespace(""), "lookupSquare"), 2
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.map"), "Square")
+      setlocal1
+
+      getlocal1
+      pushnull
+      equals
+      not
+      dup
+      iffalse             L23
+
+      pop
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "obj")
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.objects"), "Wall")
+      istypelate
+L23:
+      iffalse             L26
+
+      pushtrue
+      returnvalue
+
+L26:
+      getlex              QName(PackageNamespace(""), "map_")
+      getlex              QName(PackageNamespace(""), "x_")
+      getlex              QName(PackageNamespace(""), "y_")
+      pushbyte            1
+      subtract
+      callproperty        QName(PackageNamespace(""), "lookupSquare"), 2
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.map"), "Square")
+      setlocal1
+
+      getlocal1
+      pushnull
+      equals
+      not
+      dup
+      iffalse             L45
+
+      pop
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "obj")
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.objects"), "Wall")
+      istypelate
+L45:
+      iffalse             L54
+
+      getlex              QName(PackageNamespace(""), "obj3D_")
+      getlex              QName(PackageNamespace(""), "x_")
+      getlex              QName(PackageNamespace(""), "y_")
+      pushbyte            0
+      pushbyte            90
+      callpropvoid        QName(PackageNamespace(""), "setPosition"), 4
+
+      pushtrue
+      returnvalue
+
+L54:
+      getlex              QName(PackageNamespace(""), "map_")
+      getlex              QName(PackageNamespace(""), "x_")
+      pushbyte            1
+      add
+      getlex              QName(PackageNamespace(""), "y_")
+      callproperty        QName(PackageNamespace(""), "lookupSquare"), 2
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.map"), "Square")
+      setlocal1
+
+      getlocal1
+      pushnull
+      equals
+      not
+      dup
+      iffalse             L73
+
+      pop
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "obj")
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.objects"), "Wall")
+      istypelate
+L73:
+      iffalse             L82
+
+      getlex              QName(PackageNamespace(""), "obj3D_")
+      getlex              QName(PackageNamespace(""), "x_")
+      getlex              QName(PackageNamespace(""), "y_")
+      pushbyte            0
+      pushshort           180
+      callpropvoid        QName(PackageNamespace(""), "setPosition"), 4
+
+      pushtrue
+      returnvalue
+
+L82:
+      getlex              QName(PackageNamespace(""), "map_")
+      getlex              QName(PackageNamespace(""), "x_")
+      getlex              QName(PackageNamespace(""), "y_")
+      pushbyte            1
+      add
+      callproperty        QName(PackageNamespace(""), "lookupSquare"), 2
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.map"), "Square")
+      setlocal1
+
+      getlocal1
+      pushnull
+      equals
+      not
+      dup
+      iffalse             L101
+
+      pop
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "obj")
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.objects"), "Wall")
+      istypelate
+L101:
+      iffalse             L110
+
+      getlex              QName(PackageNamespace(""), "obj3D_")
+      getlex              QName(PackageNamespace(""), "x_")
+      getlex              QName(PackageNamespace(""), "y_")
+      pushbyte            0
+      pushshort           270
+      callpropvoid        QName(PackageNamespace(""), "setPosition"), 4
+
+      pushtrue
+      returnvalue
+
+L110:
+      pushfalse
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.objects:SpiderWeb/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

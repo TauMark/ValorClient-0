@@ -1,0 +1,200 @@
+class
+ refid "com.company.assembleegameclient.map:RegionLibrary"
+ instance QName(PackageNamespace("com.company.assembleegameclient.map"), "RegionLibrary")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  iinit
+   refid "com.company.assembleegameclient.map:RegionLibrary/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.map:RegionLibrary/class/init"
+  body
+   maxstack 2
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 1
+   code
+    getlocal0
+    pushscope
+
+    findpropstrict      QName(PackageNamespace("flash.utils"), "Dictionary")
+    constructprop       QName(PackageNamespace("flash.utils"), "Dictionary"), 0
+    findproperty        QName(PackageNamespace(""), "xmlLibrary_")
+    swap
+    initproperty        QName(PackageNamespace(""), "xmlLibrary_")
+
+    findpropstrict      QName(PackageNamespace("flash.utils"), "Dictionary")
+    constructprop       QName(PackageNamespace("flash.utils"), "Dictionary"), 0
+    findproperty        QName(PackageNamespace(""), "idToType_")
+    swap
+    setproperty         QName(PackageNamespace(""), "idToType_")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PackageNamespace(""), "xmlLibrary_") type QName(PackageNamespace("flash.utils"), "Dictionary") end
+ trait const QName(PackageNamespace(""), "ENTRY_REGION_TYPE") type QName(PackageNamespace(""), "uint") value Integer(1) end
+ trait const QName(PackageNamespace(""), "EXIT_REGION_TYPE") type QName(PackageNamespace(""), "uint") value Integer(48) end
+ trait slot QName(PackageNamespace(""), "idToType_") type QName(PackageNamespace("flash.utils"), "Dictionary") end
+ trait method QName(PackageNamespace(""), "parseFromXML")
+  method
+   name "parseFromXML"
+   refid "com.company.assembleegameclient.map:RegionLibrary/class/parseFromXML"
+   param QName(PackageNamespace(""), "XML")
+   returns QName(PackageNamespace(""), "void")
+   flag HAS_PARAM_NAMES
+   paramname "_arg1"
+   body
+    maxstack 3
+    localcount 6
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     pushnull
+     setlocal2
+
+     pushbyte            0
+     setlocal3
+
+     pushbyte            0
+     setlocal            5
+
+     getlocal1
+     getproperty         Multiname("Region", [PrivateNamespace("com.company.assembleegameclient.map:RegionLibrary"), StaticProtectedNs("com.company.assembleegameclient.map:RegionLibrary"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.map"), PackageInternalNs("com.company.assembleegameclient.map"), PrivateNamespace("FilePrivateNS:RegionLibrary"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     setlocal            4
+
+     jump                L32
+
+L12:
+     label
+     getlocal            4
+     getlocal            5
+     nextvalue
+     coerce              QName(PackageNamespace(""), "XML")
+     setlocal2
+
+     getlocal2
+     getproperty         MultinameA("type", [PrivateNamespace("com.company.assembleegameclient.map:RegionLibrary"), StaticProtectedNs("com.company.assembleegameclient.map:RegionLibrary"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.map"), PackageInternalNs("com.company.assembleegameclient.map"), PrivateNamespace("FilePrivateNS:RegionLibrary"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     convert_i
+     setlocal3
+
+     getlex              QName(PackageNamespace(""), "xmlLibrary_")
+     getlocal3
+     getlocal2
+     setproperty         MultinameL([PrivateNamespace("com.company.assembleegameclient.map:RegionLibrary"), StaticProtectedNs("com.company.assembleegameclient.map:RegionLibrary"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.map"), PackageInternalNs("com.company.assembleegameclient.map"), PrivateNamespace("FilePrivateNS:RegionLibrary"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     getlex              QName(PackageNamespace(""), "idToType_")
+     getlocal2
+     getproperty         MultinameA("id", [PrivateNamespace("com.company.assembleegameclient.map:RegionLibrary"), StaticProtectedNs("com.company.assembleegameclient.map:RegionLibrary"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.map"), PackageInternalNs("com.company.assembleegameclient.map"), PrivateNamespace("FilePrivateNS:RegionLibrary"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     convert_s
+     getlocal3
+     setproperty         MultinameL([PrivateNamespace("com.company.assembleegameclient.map:RegionLibrary"), StaticProtectedNs("com.company.assembleegameclient.map:RegionLibrary"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.map"), PackageInternalNs("com.company.assembleegameclient.map"), PrivateNamespace("FilePrivateNS:RegionLibrary"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+L32:
+     hasnext2            4, 5
+     iftrue              L12
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "getIdFromType")
+  method
+   name "getIdFromType"
+   refid "com.company.assembleegameclient.map:RegionLibrary/class/getIdFromType"
+   param QName(PackageNamespace(""), "int")
+   returns QName(PackageNamespace(""), "String")
+   flag HAS_PARAM_NAMES
+   paramname "_arg1"
+   body
+    maxstack 2
+    localcount 3
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PackageNamespace(""), "xmlLibrary_")
+     getlocal1
+     getproperty         MultinameL([PrivateNamespace("com.company.assembleegameclient.map:RegionLibrary"), StaticProtectedNs("com.company.assembleegameclient.map:RegionLibrary"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.map"), PackageInternalNs("com.company.assembleegameclient.map"), PrivateNamespace("FilePrivateNS:RegionLibrary"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     coerce              QName(PackageNamespace(""), "XML")
+     setlocal2
+
+     getlocal2
+     pushnull
+     ifne                L12
+
+     pushnull
+     returnvalue
+
+L12:
+     getlocal2
+     getproperty         MultinameA("id", [PrivateNamespace("com.company.assembleegameclient.map:RegionLibrary"), StaticProtectedNs("com.company.assembleegameclient.map:RegionLibrary"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.map"), PackageInternalNs("com.company.assembleegameclient.map"), PrivateNamespace("FilePrivateNS:RegionLibrary"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     convert_s
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "getColor")
+  method
+   name "getColor"
+   refid "com.company.assembleegameclient.map:RegionLibrary/class/getColor"
+   param QName(PackageNamespace(""), "int")
+   returns QName(PackageNamespace(""), "uint")
+   flag HAS_PARAM_NAMES
+   paramname "_arg1"
+   body
+    maxstack 2
+    localcount 3
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PackageNamespace(""), "xmlLibrary_")
+     getlocal1
+     getproperty         MultinameL([PrivateNamespace("com.company.assembleegameclient.map:RegionLibrary"), StaticProtectedNs("com.company.assembleegameclient.map:RegionLibrary"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.map"), PackageInternalNs("com.company.assembleegameclient.map"), PrivateNamespace("FilePrivateNS:RegionLibrary"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     coerce              QName(PackageNamespace(""), "XML")
+     setlocal2
+
+     getlocal2
+     pushnull
+     ifne                L12
+
+     pushbyte            0
+     returnvalue
+
+L12:
+     getlocal2
+     getproperty         Multiname("Color", [PrivateNamespace("com.company.assembleegameclient.map:RegionLibrary"), StaticProtectedNs("com.company.assembleegameclient.map:RegionLibrary"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.map"), PackageInternalNs("com.company.assembleegameclient.map"), PrivateNamespace("FilePrivateNS:RegionLibrary"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     convert_u
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+end ; class

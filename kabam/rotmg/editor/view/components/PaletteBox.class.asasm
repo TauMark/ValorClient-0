@@ -1,0 +1,142 @@
+class
+ refid "kabam.rotmg.editor.view.components:PaletteBox"
+ instance QName(PackageNamespace("kabam.rotmg.editor.view.components"), "PaletteBox")
+  extends QName(PackageNamespace("flash.display"), "Sprite")
+  flag SEALED
+  iinit
+   name "PaletteBox"
+   refid "kabam.rotmg.editor.view.components:PaletteBox/instance/init"
+   param QName(PackageNamespace(""), "int")
+   param QName(PackageNamespace("com.company.color"), "HSV")
+   param QName(PackageNamespace(""), "Boolean")
+   flag HAS_PARAM_NAMES
+   paramname "_arg_1"
+   paramname "_arg_2"
+   paramname "_arg_3"
+   body
+    maxstack 2
+    localcount 4
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     getlocal1
+     setproperty         QName(PackageNamespace(""), "size_")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("com.company.color"), "HSV")
+     constructprop       QName(PackageNamespace("com.company.color"), "HSV"), 0
+     setproperty         QName(PackageNamespace(""), "hsv_")
+
+     getlocal0
+     getlocal2
+     callpropvoid        QName(PackageNamespace(""), "setColor"), 1
+
+     getlocal0
+     getlocal3
+     setproperty         QName(PackageNamespace(""), "readOnly_")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "size_") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PackageNamespace(""), "hsv_") type QName(PackageNamespace("com.company.color"), "HSV") end
+  trait slot QName(PackageNamespace(""), "readOnly_") type QName(PackageNamespace(""), "Boolean") value False() end
+  trait method QName(PackageNamespace(""), "setColor")
+   method
+    name "setColor"
+    refid "kabam.rotmg.editor.view.components:PaletteBox/instance/setColor"
+    param QName(PackageNamespace("com.company.color"), "HSV")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg_1"
+    body
+     maxstack 5
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "readOnly_")
+      iffalse             L6
+
+      returnvoid
+
+L6:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hsv_")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "h_")
+      setproperty         QName(PackageNamespace(""), "h_")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hsv_")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "s_")
+      setproperty         QName(PackageNamespace(""), "s_")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hsv_")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "v_")
+      setproperty         QName(PackageNamespace(""), "v_")
+
+      getlex              QName(PackageNamespace("com.company.util"), "MoreColorUtil")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hsv_")
+      getproperty         QName(PackageNamespace(""), "h_")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hsv_")
+      getproperty         QName(PackageNamespace(""), "s_")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hsv_")
+      getproperty         QName(PackageNamespace(""), "v_")
+      callproperty        QName(PackageNamespace(""), "hsvToRgb"), 3
+      convert_u
+      setlocal2
+
+      getlex              QName(PackageNamespace(""), "graphics")
+      getlocal2
+      callpropvoid        QName(PackageNamespace(""), "beginFill"), 1
+
+      getlex              QName(PackageNamespace(""), "graphics")
+      pushbyte            0
+      pushbyte            0
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "size_")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "size_")
+      callpropvoid        QName(PackageNamespace(""), "drawRect"), 4
+
+      getlex              QName(PackageNamespace(""), "graphics")
+      callpropvoid        QName(PackageNamespace(""), "endFill"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.editor.view.components:PaletteBox/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

@@ -1,0 +1,1456 @@
+class
+ refid "kabam.rotmg.legends.view:LegendsView"
+ instance QName(PackageNamespace("kabam.rotmg.legends.view"), "LegendsView")
+  extends QName(PackageNamespace("flash.display"), "Sprite")
+  flag SEALED
+  iinit
+   name "LegendsView"
+   refid "kabam.rotmg.legends.view:LegendsView/instance/init"
+   body
+    maxstack 2
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     findpropstrict      QName(PackageNamespace("org.osflash.signals"), "Signal")
+     getlex              QName(PackageNamespace("kabam.rotmg.legends.model"), "Timespan")
+     constructprop       QName(PackageNamespace("org.osflash.signals"), "Signal"), 1
+     findproperty        QName(PackageNamespace(""), "timespanChanged")
+     swap
+     initproperty        QName(PackageNamespace(""), "timespanChanged")
+
+     findpropstrict      QName(PackageNamespace("org.osflash.signals"), "Signal")
+     getlex              QName(PackageNamespace("kabam.rotmg.legends.model"), "Legend")
+     constructprop       QName(PackageNamespace("org.osflash.signals"), "Signal"), 1
+     findproperty        QName(PackageNamespace(""), "showDetail")
+     swap
+     initproperty        QName(PackageNamespace(""), "showDetail")
+
+     findpropstrict      QName(PackageNamespace("org.osflash.signals"), "Signal")
+     constructprop       QName(PackageNamespace("org.osflash.signals"), "Signal"), 0
+     findproperty        QName(PackageNamespace(""), "close")
+     swap
+     initproperty        QName(PackageNamespace(""), "close")
+
+     getlex              QName(PackageNamespace("__AS3__.vec"), "Vector")
+     getlex              QName(PackageNamespace("kabam.rotmg.legends.view"), "LegendListItem")
+     applytype           1
+     pushbyte            0
+     construct           1
+     findproperty        QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "items")
+     swap
+     initproperty        QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "items")
+
+     newobject           0
+     findproperty        QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "tabs")
+     swap
+     initproperty        QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "tabs")
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     callpropvoid        QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "makeScreenBase"), 0
+
+     getlocal0
+     callpropvoid        QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "makeTitleText"), 0
+
+     getlocal0
+     callpropvoid        QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "makeLoadingBanner"), 0
+
+     getlocal0
+     callpropvoid        QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "makeNoLegendsBanner"), 0
+
+     getlocal0
+     callpropvoid        QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "makeMainContainer"), 0
+
+     getlocal0
+     callpropvoid        QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "makeLines"), 0
+
+     getlocal0
+     callpropvoid        QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "makeScrollbar"), 0
+
+     getlocal0
+     callpropvoid        QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "makeTimespanTabs"), 0
+
+     getlocal0
+     callpropvoid        QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "makeMenuBar"), 0
+
+     getlex              QName(PackageNamespace(""), "WebMain")
+     getproperty         QName(PackageNamespace(""), "RPC")
+     pushstring          "Viewing Legends"
+     setproperty         QName(PackageNamespace(""), "details")
+
+     getlex              QName(PackageNamespace(""), "WebMain")
+     getproperty         QName(PackageNamespace(""), "RPC")
+     callpropvoid        QName(PackageNamespace(""), "updatePresence"), 0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait const QName(PackageNamespace(""), "timespanChanged") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait const QName(PackageNamespace(""), "showDetail") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait const QName(PackageNamespace(""), "close") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait const QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "items") type TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("kabam.rotmg.legends.view"), "LegendListItem")>) end
+  trait const QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "tabs") type QName(PackageNamespace(""), "Object") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "buttonsBackground") type QName(PackageNamespace("io.decagames.rotmg.ui.sliceScaling"), "SliceScalingBitmap") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "closeButton") type QName(PackageNamespace("io.decagames.rotmg.ui.buttons"), "SliceScalingButton") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "title") type QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "loadingBanner") type QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "noLegendsBanner") type QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "mainContainer") type QName(PackageNamespace("flash.display"), "Sprite") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "scrollBar") type QName(PackageNamespace("com.company.assembleegameclient.ui"), "Scrollbar") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "listContainer") type QName(PackageNamespace("flash.display"), "Sprite") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "selectedTab") type QName(PackageNamespace("kabam.rotmg.legends.view"), "LegendsTab") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "legends") type TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("kabam.rotmg.legends.model"), "Legend")>) end
+  trait slot QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "count") type QName(PackageNamespace(""), "int") end
+  trait method QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "makeScreenBase")
+   method
+    name "makeScreenBase"
+    refid "kabam.rotmg.legends.view:LegendsView/instance/kabam.rotmg.legends.view:LegendsView/instance/makeScreenBase"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.ui.view.components"), "ScreenBase")
+      constructprop       QName(PackageNamespace("kabam.rotmg.ui.view.components"), "ScreenBase"), 0
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "makeTitleText")
+   method
+    name "makeTitleText"
+    refid "kabam.rotmg.legends.view:LegendsView/instance/kabam.rotmg.legends.view:LegendsView/instance/makeTitleText"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 8
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete")
+      constructprop       QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete"), 0
+      pushbyte            32
+      callproperty        QName(PackageNamespace(""), "setSize"), 1
+      pushint             11776947
+      callproperty        QName(PackageNamespace(""), "setColor"), 1
+      setproperty         QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "title")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "title")
+      pushstring          "center"
+      callpropvoid        QName(PackageNamespace(""), "setAutoSize"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "title")
+      pushtrue
+      callpropvoid        QName(PackageNamespace(""), "setBold"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "title")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder")
+      constructprop       QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder"), 0
+      pushstring          "Screens.legends"
+      callproperty        QName(PackageNamespace(""), "setParams"), 1
+      callpropvoid        QName(PackageNamespace(""), "setStringBuilder"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "title")
+      findpropstrict      QName(PackageNamespace("flash.filters"), "DropShadowFilter")
+      pushbyte            0
+      pushbyte            0
+      pushbyte            0
+      pushbyte            1
+      pushbyte            8
+      pushbyte            8
+      constructprop       QName(PackageNamespace("flash.filters"), "DropShadowFilter"), 6
+      newarray            1
+      setproperty         QName(PackageNamespace(""), "filters")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "title")
+      pushshort           400
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "title")
+      getproperty         QName(PackageNamespace(""), "width")
+      pushbyte            2
+      divide
+      subtract
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "title")
+      pushbyte            24
+      setproperty         QName(PackageNamespace(""), "y")
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "title")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "makeLoadingBanner")
+   method
+    name "makeLoadingBanner"
+    refid "kabam.rotmg.legends.view:LegendsView/instance/kabam.rotmg.legends.view:LegendsView/instance/makeLoadingBanner"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 8
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete")
+      constructprop       QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete"), 0
+      pushbyte            22
+      callproperty        QName(PackageNamespace(""), "setSize"), 1
+      pushint             11776947
+      callproperty        QName(PackageNamespace(""), "setColor"), 1
+      setproperty         QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "loadingBanner")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "loadingBanner")
+      pushtrue
+      callpropvoid        QName(PackageNamespace(""), "setBold"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "loadingBanner")
+      pushstring          "center"
+      callproperty        QName(PackageNamespace(""), "setAutoSize"), 1
+      pushstring          "middle"
+      callpropvoid        QName(PackageNamespace(""), "setVerticalAlign"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "loadingBanner")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder")
+      constructprop       QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder"), 0
+      pushstring          "Loading.text"
+      callproperty        QName(PackageNamespace(""), "setParams"), 1
+      callpropvoid        QName(PackageNamespace(""), "setStringBuilder"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "loadingBanner")
+      findpropstrict      QName(PackageNamespace("flash.filters"), "DropShadowFilter")
+      pushbyte            0
+      pushbyte            0
+      pushbyte            0
+      pushbyte            1
+      pushbyte            8
+      pushbyte            8
+      constructprop       QName(PackageNamespace("flash.filters"), "DropShadowFilter"), 6
+      newarray            1
+      setproperty         QName(PackageNamespace(""), "filters")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "loadingBanner")
+      pushshort           400
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "loadingBanner")
+      pushshort           300
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "loadingBanner")
+      pushfalse
+      setproperty         QName(PackageNamespace(""), "visible")
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "loadingBanner")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "makeNoLegendsBanner")
+   method
+    name "makeNoLegendsBanner"
+    refid "kabam.rotmg.legends.view:LegendsView/instance/kabam.rotmg.legends.view:LegendsView/instance/makeNoLegendsBanner"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 8
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete")
+      constructprop       QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete"), 0
+      pushbyte            22
+      callproperty        QName(PackageNamespace(""), "setSize"), 1
+      pushint             11776947
+      callproperty        QName(PackageNamespace(""), "setColor"), 1
+      setproperty         QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "noLegendsBanner")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "noLegendsBanner")
+      pushtrue
+      callpropvoid        QName(PackageNamespace(""), "setBold"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "noLegendsBanner")
+      pushstring          "center"
+      callproperty        QName(PackageNamespace(""), "setAutoSize"), 1
+      pushstring          "middle"
+      callpropvoid        QName(PackageNamespace(""), "setVerticalAlign"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "noLegendsBanner")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder")
+      constructprop       QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder"), 0
+      pushstring          "Legends.EmptyList"
+      callproperty        QName(PackageNamespace(""), "setParams"), 1
+      callpropvoid        QName(PackageNamespace(""), "setStringBuilder"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "noLegendsBanner")
+      findpropstrict      QName(PackageNamespace("flash.filters"), "DropShadowFilter")
+      pushbyte            0
+      pushbyte            0
+      pushbyte            0
+      pushbyte            1
+      pushbyte            8
+      pushbyte            8
+      constructprop       QName(PackageNamespace("flash.filters"), "DropShadowFilter"), 6
+      newarray            1
+      setproperty         QName(PackageNamespace(""), "filters")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "noLegendsBanner")
+      pushshort           400
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "noLegendsBanner")
+      pushshort           300
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "noLegendsBanner")
+      pushfalse
+      setproperty         QName(PackageNamespace(""), "visible")
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "noLegendsBanner")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "makeMainContainer")
+   method
+    name "makeMainContainer"
+    refid "kabam.rotmg.legends.view:LegendsView/instance/kabam.rotmg.legends.view:LegendsView/instance/makeMainContainer"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 5
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      setlocal2
+
+      findpropstrict      QName(PackageNamespace("flash.display"), "Shape")
+      constructprop       QName(PackageNamespace("flash.display"), "Shape"), 0
+      coerce              QName(PackageNamespace("flash.display"), "Shape")
+      setlocal2
+
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "graphics")
+      coerce              QName(PackageNamespace("flash.display"), "Graphics")
+      setlocal1
+
+      getlocal1
+      pushbyte            0
+      callpropvoid        QName(PackageNamespace(""), "beginFill"), 1
+
+      getlocal1
+      pushbyte            0
+      pushbyte            0
+      pushshort           756
+      pushshort           430
+      callpropvoid        QName(PackageNamespace(""), "drawRect"), 4
+
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "endFill"), 0
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("flash.display"), "Sprite")
+      constructprop       QName(PackageNamespace("flash.display"), "Sprite"), 0
+      setproperty         QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "mainContainer")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "mainContainer")
+      pushbyte            10
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "mainContainer")
+      pushbyte            110
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "mainContainer")
+      getlocal2
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "mainContainer")
+      getlocal2
+      setproperty         QName(PackageNamespace(""), "mask")
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "mainContainer")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "makeMenuBar")
+   method
+    name "makeMenuBar"
+    refid "kabam.rotmg.legends.view:LegendsView/instance/kabam.rotmg.legends.view:LegendsView/instance/makeMenuBar"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 5
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlex              QName(PackageNamespace("io.decagames.rotmg.ui.texture"), "TextureParser")
+      getproperty         QName(PackageNamespace(""), "instance")
+      pushstring          "UI"
+      pushstring          "popup_header_title"
+      pushshort           800
+      callproperty        QName(PackageNamespace(""), "getSliceScalingBitmap"), 3
+      setproperty         QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "buttonsBackground")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "buttonsBackground")
+      pushdouble          502.5
+      setproperty         QName(PackageNamespace(""), "y")
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "buttonsBackground")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("io.decagames.rotmg.ui.buttons"), "SliceScalingButton")
+      getlex              QName(PackageNamespace("io.decagames.rotmg.ui.texture"), "TextureParser")
+      getproperty         QName(PackageNamespace(""), "instance")
+      pushstring          "UI"
+      pushstring          "generic_green_button"
+      callproperty        QName(PackageNamespace(""), "getSliceScalingBitmap"), 2
+      constructprop       QName(PackageNamespace("io.decagames.rotmg.ui.buttons"), "SliceScalingButton"), 1
+      setproperty         QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "closeButton")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "closeButton")
+      pushshort           350
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "closeButton")
+      pushshort           520
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "closeButton")
+      pushbyte            100
+      setproperty         QName(PackageNamespace(""), "width")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "closeButton")
+      pushstring          "Done"
+      getlex              QName(PackageNamespace("io.decagames.rotmg.ui.defaults"), "DefaultLabelFormat")
+      getproperty         QName(PackageNamespace(""), "questButtonCompleteLabel")
+      callpropvoid        QName(PackageNamespace(""), "setLabel"), 2
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "closeButton")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "closeButton")
+      getproperty         QName(PackageNamespace(""), "clicked")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "onDone")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "makeLines")
+   method
+    name "makeLines"
+    refid "kabam.rotmg.legends.view:LegendsView/instance/kabam.rotmg.legends.view:LegendsView/instance/makeLines"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("flash.display"), "Shape")
+      constructprop       QName(PackageNamespace("flash.display"), "Shape"), 0
+      coerce              QName(PackageNamespace("flash.display"), "Shape")
+      setlocal2
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal2
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "graphics")
+      coerce              QName(PackageNamespace("flash.display"), "Graphics")
+      setlocal1
+
+      getlocal1
+      pushbyte            2
+      pushint             5526612
+      callpropvoid        QName(PackageNamespace(""), "lineStyle"), 2
+
+      getlocal1
+      pushbyte            0
+      pushbyte            100
+      callpropvoid        QName(PackageNamespace(""), "moveTo"), 2
+
+      getlocal1
+      pushshort           800
+      pushbyte            100
+      callpropvoid        QName(PackageNamespace(""), "lineTo"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "makeScrollbar")
+   method
+    name "makeScrollbar"
+    refid "kabam.rotmg.legends.view:LegendsView/instance/kabam.rotmg.legends.view:LegendsView/instance/makeScrollbar"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.ui"), "Scrollbar")
+      pushbyte            16
+      pushshort           400
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.ui"), "Scrollbar"), 2
+      setproperty         QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "scrollBar")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "scrollBar")
+      pushshort           800
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "scrollBar")
+      getproperty         QName(PackageNamespace(""), "width")
+      subtract
+      pushbyte            4
+      subtract
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "scrollBar")
+      pushbyte            104
+      setproperty         QName(PackageNamespace(""), "y")
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "scrollBar")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "onDone")
+   method
+    name "onDone"
+    refid "kabam.rotmg.legends.view:LegendsView/instance/kabam.rotmg.legends.view:LegendsView/instance/onDone"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "close")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "makeTimespanTabs")
+   method
+    name "makeTimespanTabs"
+    refid "kabam.rotmg.legends.view:LegendsView/instance/kabam.rotmg.legends.view:LegendsView/instance/makeTimespanTabs"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 4
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushbyte            0
+      setlocal2
+
+      getlex              QName(PackageNamespace("kabam.rotmg.legends.model"), "Timespan")
+      getproperty         QName(PackageNamespace(""), "TIMESPANS")
+      coerce              TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("kabam.rotmg.legends.model"), "Timespan")>)
+      setlocal3
+
+      getlocal3
+      getproperty         QName(PackageNamespace(""), "length")
+      convert_i
+      setlocal1
+
+      jump                L21
+
+L13:
+      label
+      getlocal0
+      getlocal3
+      getlocal2
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), ProtectedNamespace("kabam.rotmg.legends.view:LegendsView"), StaticProtectedNs("kabam.rotmg.legends.view:LegendsView"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.legends.view"), PackageInternalNs("kabam.rotmg.legends.view"), PrivateNamespace("FilePrivateNS:LegendsView"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getlocal2
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "makeTab"), 2
+
+      inclocal_i          2
+L21:
+      getlocal2
+      getlocal1
+      iflt                L13
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "makeTab")
+   method
+    name "makeTab"
+    refid "kabam.rotmg.legends.view:LegendsView/instance/kabam.rotmg.legends.view:LegendsView/instance/makeTab"
+    param QName(PackageNamespace("kabam.rotmg.legends.model"), "Timespan")
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace("kabam.rotmg.legends.view"), "LegendsTab")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    paramname "_arg2"
+    body
+     maxstack 4
+     localcount 4
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.legends.view"), "LegendsTab")
+      getlocal1
+      constructprop       QName(PackageNamespace("kabam.rotmg.legends.view"), "LegendsTab"), 1
+      coerce              QName(PackageNamespace("kabam.rotmg.legends.view"), "LegendsTab")
+      setlocal3
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "tabs")
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "getId"), 0
+      getlocal3
+      setproperty         MultinameL([PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), ProtectedNamespace("kabam.rotmg.legends.view:LegendsView"), StaticProtectedNs("kabam.rotmg.legends.view:LegendsView"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.legends.view"), PackageInternalNs("kabam.rotmg.legends.view"), PrivateNamespace("FilePrivateNS:LegendsView"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      getlocal3
+      pushbyte            20
+      getlocal2
+      pushbyte            90
+      multiply
+      add
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal3
+      pushbyte            70
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal3
+      getproperty         QName(PackageNamespace(""), "selected")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "onTabSelected")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal3
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      getlocal3
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "onTabSelected")
+   method
+    name "onTabSelected"
+    refid "kabam.rotmg.legends.view:LegendsView/instance/kabam.rotmg.legends.view:LegendsView/instance/onTabSelected"
+    param QName(PackageNamespace("kabam.rotmg.legends.view"), "LegendsTab")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "selectedTab")
+      getlocal1
+      ifeq                L9
+
+      getlocal0
+      getlocal1
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "updateTabAndSelectTimespan"), 1
+
+L9:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "updateTabAndSelectTimespan")
+   method
+    name "updateTabAndSelectTimespan"
+    refid "kabam.rotmg.legends.view:LegendsView/instance/kabam.rotmg.legends.view:LegendsView/instance/updateTabAndSelectTimespan"
+    param QName(PackageNamespace("kabam.rotmg.legends.view"), "LegendsTab")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "updateTabs"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "timespanChanged")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "selectedTab")
+      callproperty        QName(PackageNamespace(""), "getTimespan"), 0
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "updateTabs")
+   method
+    name "updateTabs"
+    refid "kabam.rotmg.legends.view:LegendsView/instance/kabam.rotmg.legends.view:LegendsView/instance/updateTabs"
+    param QName(PackageNamespace("kabam.rotmg.legends.view"), "LegendsTab")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "selectedTab")
+      dup
+      iffalse             L12
+
+      pop
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "selectedTab")
+      pushfalse
+      callproperty        QName(PackageNamespace(""), "setIsSelected"), 1
+      coerce_a
+L12:
+      pop
+      getlocal0
+      getlocal1
+      setproperty         QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "selectedTab")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "selectedTab")
+      pushtrue
+      callpropvoid        QName(PackageNamespace(""), "setIsSelected"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "clear")
+   method
+    name "clear"
+    refid "kabam.rotmg.legends.view:LegendsView/instance/clear"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "listContainer")
+      dup
+      iffalse             L10
+
+      pop
+      getlocal0
+      callproperty        QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "clearLegendsList"), 0
+      coerce_a
+L10:
+      pop
+      getlocal0
+      pushnull
+      setproperty         QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "listContainer")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "scrollBar")
+      pushfalse
+      setproperty         QName(PackageNamespace(""), "visible")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "clearLegendsList")
+   method
+    name "clearLegendsList"
+    refid "kabam.rotmg.legends.view:LegendsView/instance/kabam.rotmg.legends.view:LegendsView/instance/clearLegendsList"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 4
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      setlocal1
+
+      pushbyte            0
+      setlocal3
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "items")
+      setlocal2
+
+      jump                L21
+
+L10:
+      label
+      getlocal2
+      getlocal3
+      nextvalue
+      coerce              QName(PackageNamespace("kabam.rotmg.legends.view"), "LegendListItem")
+      setlocal1
+
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "selected")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "onItemSelected")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+L21:
+      hasnext2            2, 3
+      iftrue              L10
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "items")
+      pushbyte            0
+      setproperty         QName(PackageNamespace(""), "length")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "mainContainer")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "listContainer")
+      callpropvoid        QName(PackageNamespace(""), "removeChild"), 1
+
+      getlocal0
+      pushnull
+      setproperty         QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "listContainer")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setLegendsList")
+   method
+    name "setLegendsList"
+    refid "kabam.rotmg.legends.view:LegendsView/instance/setLegendsList"
+    param QName(PackageNamespace("kabam.rotmg.legends.model"), "Timespan")
+    param TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("kabam.rotmg.legends.model"), "Legend")>)
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    paramname "_arg2"
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      callpropvoid        QName(PackageNamespace(""), "clear"), 0
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "tabs")
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "getId"), 0
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), ProtectedNamespace("kabam.rotmg.legends.view:LegendsView"), StaticProtectedNs("kabam.rotmg.legends.view:LegendsView"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.legends.view"), PackageInternalNs("kabam.rotmg.legends.view"), PrivateNamespace("FilePrivateNS:LegendsView"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "updateTabs"), 1
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("flash.display"), "Sprite")
+      constructprop       QName(PackageNamespace("flash.display"), "Sprite"), 0
+      setproperty         QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "listContainer")
+
+      getlocal0
+      getlocal2
+      setproperty         QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "legends")
+
+      getlocal0
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "length")
+      setproperty         QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "count")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "items")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "count")
+      setproperty         QName(PackageNamespace(""), "length")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "noLegendsBanner")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "count")
+      pushbyte            0
+      equals
+      setproperty         QName(PackageNamespace(""), "visible")
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "makeItemsFromLegends"), 0
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "mainContainer")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "listContainer")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "updateScrollbar"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "makeItemsFromLegends")
+   method
+    name "makeItemsFromLegends"
+    refid "kabam.rotmg.legends.view:LegendsView/instance/kabam.rotmg.legends.view:LegendsView/instance/makeItemsFromLegends"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushbyte            0
+      setlocal1
+
+      jump                L14
+
+L5:
+      label
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "items")
+      getlocal1
+      getlocal0
+      getlocal1
+      callproperty        QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "makeItemFromLegend"), 1
+      setproperty         MultinameL([PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), ProtectedNamespace("kabam.rotmg.legends.view:LegendsView"), StaticProtectedNs("kabam.rotmg.legends.view:LegendsView"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.legends.view"), PackageInternalNs("kabam.rotmg.legends.view"), PrivateNamespace("FilePrivateNS:LegendsView"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      inclocal_i          1
+L14:
+      getlocal1
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "count")
+      iflt                L5
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "makeItemFromLegend")
+   method
+    name "makeItemFromLegend"
+    refid "kabam.rotmg.legends.view:LegendsView/instance/kabam.rotmg.legends.view:LegendsView/instance/makeItemFromLegend"
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace("kabam.rotmg.legends.view"), "LegendListItem")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 3
+     localcount 4
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "legends")
+      getlocal1
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), ProtectedNamespace("kabam.rotmg.legends.view:LegendsView"), StaticProtectedNs("kabam.rotmg.legends.view:LegendsView"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.legends.view"), PackageInternalNs("kabam.rotmg.legends.view"), PrivateNamespace("FilePrivateNS:LegendsView"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      coerce              QName(PackageNamespace("kabam.rotmg.legends.model"), "Legend")
+      setlocal2
+
+      getlocal2
+      getlocal1
+      pushbyte            1
+      add
+      setproperty         QName(PackageNamespace(""), "place")
+
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.legends.view"), "LegendListItem")
+      getlocal2
+      constructprop       QName(PackageNamespace("kabam.rotmg.legends.view"), "LegendListItem"), 1
+      coerce              QName(PackageNamespace("kabam.rotmg.legends.view"), "LegendListItem")
+      setlocal3
+
+      getlocal3
+      getlocal1
+      pushbyte            56
+      multiply
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal3
+      getproperty         QName(PackageNamespace(""), "selected")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "onItemSelected")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "listContainer")
+      getlocal3
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      getlocal3
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "updateScrollbar")
+   method
+    name "updateScrollbar"
+    refid "kabam.rotmg.legends.view:LegendsView/instance/kabam.rotmg.legends.view:LegendsView/instance/updateScrollbar"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "listContainer")
+      getproperty         QName(PackageNamespace(""), "height")
+      pushshort           400
+      ifngt               L27
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "scrollBar")
+      pushtrue
+      setproperty         QName(PackageNamespace(""), "visible")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "scrollBar")
+      pushshort           400
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "listContainer")
+      getproperty         QName(PackageNamespace(""), "height")
+      callpropvoid        QName(PackageNamespace(""), "setIndicatorSize"), 2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "scrollBar")
+      pushstring          "change"
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "onScrollBarChange")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "positionScrollbarToDisplayFocussedLegend"), 0
+
+      jump                L37
+
+L27:
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "scrollBar")
+      pushstring          "change"
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "onScrollBarChange")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "scrollBar")
+      pushfalse
+      setproperty         QName(PackageNamespace(""), "visible")
+
+L37:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "positionScrollbarToDisplayFocussedLegend")
+   method
+    name "positionScrollbarToDisplayFocussedLegend"
+    refid "kabam.rotmg.legends.view:LegendsView/instance/kabam.rotmg.legends.view:LegendsView/instance/positionScrollbarToDisplayFocussedLegend"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 4
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushbyte            0
+      setlocal1
+
+      pushbyte            0
+      setlocal2
+
+      getlocal0
+      callproperty        QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "getLegendFocus"), 0
+      coerce              QName(PackageNamespace("kabam.rotmg.legends.model"), "Legend")
+      setlocal3
+
+      getlocal3
+      iffalse             L37
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "legends")
+      getlocal3
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "indexOf"), 1
+      convert_i
+      setlocal1
+
+      getlocal1
+      pushdouble          0.5
+      add
+      pushbyte            56
+      multiply
+      convert_i
+      setlocal2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "scrollBar")
+      getlocal2
+      pushshort           200
+      subtract
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "listContainer")
+      getproperty         QName(PackageNamespace(""), "height")
+      pushshort           400
+      subtract
+      divide
+      callpropvoid        QName(PackageNamespace(""), "setPos"), 1
+
+L37:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "getLegendFocus")
+   method
+    name "getLegendFocus"
+    refid "kabam.rotmg.legends.view:LegendsView/instance/kabam.rotmg.legends.view:LegendsView/instance/getLegendFocus"
+    returns QName(PackageNamespace("kabam.rotmg.legends.model"), "Legend")
+    body
+     maxstack 2
+     localcount 5
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      setlocal2
+
+      pushnull
+      setlocal1
+
+      pushbyte            0
+      setlocal            4
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "legends")
+      setlocal3
+
+      jump                L24
+
+L12:
+      label
+      getlocal3
+      getlocal            4
+      nextvalue
+      coerce              QName(PackageNamespace("kabam.rotmg.legends.model"), "Legend")
+      setlocal1
+
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "isFocus")
+      iffalse             L24
+
+      getlocal1
+      setlocal2
+
+      jump                L26
+
+L24:
+      hasnext2            3, 4
+      iftrue              L12
+
+L26:
+      getlocal2
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "onItemSelected")
+   method
+    name "onItemSelected"
+    refid "kabam.rotmg.legends.view:LegendsView/instance/kabam.rotmg.legends.view:LegendsView/instance/onItemSelected"
+    param QName(PackageNamespace("kabam.rotmg.legends.model"), "Legend")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "showDetail")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "onScrollBarChange")
+   method
+    name "onScrollBarChange"
+    refid "kabam.rotmg.legends.view:LegendsView/instance/kabam.rotmg.legends.view:LegendsView/instance/onScrollBarChange"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 4
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "listContainer")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "scrollBar")
+      callproperty        QName(PackageNamespace(""), "pos"), 0
+      negate
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "listContainer")
+      getproperty         QName(PackageNamespace(""), "height")
+      pushshort           400
+      subtract
+      multiply
+      setproperty         QName(PackageNamespace(""), "y")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "showLoading")
+   method
+    name "showLoading"
+    refid "kabam.rotmg.legends.view:LegendsView/instance/showLoading"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "loadingBanner")
+      pushtrue
+      setproperty         QName(PackageNamespace(""), "visible")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "hideLoading")
+   method
+    name "hideLoading"
+    refid "kabam.rotmg.legends.view:LegendsView/instance/hideLoading"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.legends.view:LegendsView"), "loadingBanner")
+      pushfalse
+      setproperty         QName(PackageNamespace(""), "visible")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.legends.view:LegendsView/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

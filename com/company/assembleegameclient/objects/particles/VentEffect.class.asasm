@@ -1,0 +1,219 @@
+class
+ refid "com.company.assembleegameclient.objects.particles:VentEffect"
+ instance QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "VentEffect")
+  extends QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "ParticleEffect")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.company.assembleegameclient.objects.particles:VentEffect")
+  iinit
+   name "VentEffect"
+   refid "com.company.assembleegameclient.objects.particles:VentEffect/instance/init"
+   param QName(PackageNamespace("com.company.assembleegameclient.objects"), "GameObject")
+   flag HAS_PARAM_NAMES
+   paramname "_arg1"
+   body
+    maxstack 2
+    localcount 2
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     getlocal1
+     setproperty         QName(PackageNamespace(""), "go_")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "go_") type QName(PackageNamespace("com.company.assembleegameclient.objects"), "GameObject") end
+  trait slot QName(PackageNamespace(""), "lastUpdate_") type QName(PackageNamespace(""), "int") value Integer(-1) end
+  trait method QName(PackageNamespace(""), "update") flag OVERRIDE
+   method
+    name "update"
+    refid "com.company.assembleegameclient.objects.particles:VentEffect/instance/update"
+    param QName(PackageNamespace(""), "int")
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "Boolean")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    paramname "_arg2"
+    body
+     maxstack 5
+     localcount 10
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushbyte            0
+      setlocal            8
+
+      pushnull
+      setlocal            9
+
+      pushnan
+      setlocal            6
+
+      pushnan
+      setlocal            7
+
+      pushnan
+      setlocal            4
+
+      pushnan
+      setlocal            5
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "go_")
+      getproperty         QName(PackageNamespace(""), "map_")
+      pushnull
+      ifne                L21
+
+      pushfalse
+      returnvalue
+
+L21:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "lastUpdate_")
+      pushbyte            0
+      ifnlt               L33
+
+      getlocal0
+      getlex              QName(PackageNamespace(""), "Math")
+      pushbyte            0
+      getlocal1
+      pushshort           400
+      subtract
+      callproperty        QName(PackageNamespace(""), "max"), 2
+      setproperty         QName(PackageNamespace(""), "lastUpdate_")
+
+L33:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "go_")
+      getproperty         QName(PackageNamespace(""), "x_")
+      findproperty        QName(PackageNamespace(""), "x_")
+      swap
+      setproperty         QName(PackageNamespace(""), "x_")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "go_")
+      getproperty         QName(PackageNamespace(""), "y_")
+      findproperty        QName(PackageNamespace(""), "y_")
+      swap
+      setproperty         QName(PackageNamespace(""), "y_")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "lastUpdate_")
+      pushbyte            50
+      divide
+      convert_i
+      setlocal3
+
+      jump                L109
+
+L52:
+      label
+      getlocal3
+      pushbyte            50
+      multiply
+      convert_i
+      setlocal            8
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "FreeList")
+      getlex              QName(PrivateNamespace("FilePrivateNS:VentEffect"), "VentParticle")
+      callproperty        QName(PackageNamespace(""), "newObject"), 1
+      getlex              QName(PrivateNamespace("FilePrivateNS:VentEffect"), "VentParticle")
+      astypelate
+      coerce              QName(PrivateNamespace("FilePrivateNS:VentEffect"), "VentParticle")
+      dup
+      setlocal            9
+
+      getlocal            8
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "restart"), 2
+
+      getlex              QName(PackageNamespace(""), "Math")
+      callproperty        QName(PackageNamespace(""), "random"), 0
+      pushdouble          3.141592653589793
+      multiply
+      convert_d
+      setlocal            6
+
+      getlex              QName(PackageNamespace(""), "Math")
+      callproperty        QName(PackageNamespace(""), "random"), 0
+      pushdouble          0.4
+      multiply
+      convert_d
+      setlocal            7
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "go_")
+      getproperty         QName(PackageNamespace(""), "x_")
+      getlocal            7
+      getlex              QName(PackageNamespace(""), "Math")
+      getlocal            6
+      callproperty        QName(PackageNamespace(""), "cos"), 1
+      multiply
+      add
+      convert_d
+      setlocal            4
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "go_")
+      getproperty         QName(PackageNamespace(""), "y_")
+      getlocal            7
+      getlex              QName(PackageNamespace(""), "Math")
+      getlocal            6
+      callproperty        QName(PackageNamespace(""), "sin"), 1
+      multiply
+      add
+      convert_d
+      setlocal            5
+
+      getlex              QName(PackageNamespace(""), "map_")
+      getlocal            9
+      getlocal            4
+      getlocal            5
+      callpropvoid        QName(PackageNamespace(""), "addObj"), 3
+
+      inclocal_i          3
+L109:
+      getlocal3
+      getlocal1
+      pushbyte            50
+      divide
+      convert_i
+      iflt                L52
+
+      getlocal0
+      getlocal1
+      setproperty         QName(PackageNamespace(""), "lastUpdate_")
+
+      pushtrue
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.objects.particles:VentEffect/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:VentEffect"), "BUBBLE_PERIOD") type QName(PackageNamespace(""), "int") value Integer(50) end
+end ; class

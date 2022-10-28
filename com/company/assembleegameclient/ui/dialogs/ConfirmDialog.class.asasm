@@ -1,0 +1,135 @@
+class
+ refid "com.company.assembleegameclient.ui.dialogs:ConfirmDialog"
+ instance QName(PackageNamespace("com.company.assembleegameclient.ui.dialogs"), "ConfirmDialog")
+  extends QName(PackageNamespace("com.company.assembleegameclient.ui.dialogs"), "StaticDialog")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.company.assembleegameclient.ui.dialogs:ConfirmDialog")
+  iinit
+   name "ConfirmDialog"
+   refid "com.company.assembleegameclient.ui.dialogs:ConfirmDialog/instance/init"
+   param QName(PackageNamespace(""), "String")
+   param QName(PackageNamespace(""), "String")
+   param QName(PackageNamespace(""), "Function")
+   flag HAS_PARAM_NAMES
+   paramname "_arg1"
+   paramname "_arg2"
+   paramname "_arg3"
+   body
+    maxstack 5
+    localcount 4
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     getlocal3
+     setproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.dialogs:ConfirmDialog"), "_callback")
+
+     getlocal0
+     getlocal1
+     getlocal2
+     pushstring          "Cancel"
+     pushstring          "OK"
+     constructsuper      4
+
+     findpropstrict      QName(PackageNamespace(""), "addEventListener")
+     pushstring          "dialogLeftButton"
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.dialogs:ConfirmDialog"), "onCancel")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     findpropstrict      QName(PackageNamespace(""), "addEventListener")
+     pushstring          "dialogRightButton"
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.dialogs:ConfirmDialog"), "onConfirm")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.ui.dialogs:ConfirmDialog"), "_callback") type QName(PackageNamespace(""), "Function") end
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.ui.dialogs:ConfirmDialog"), "onConfirm")
+   method
+    name "onConfirm"
+    refid "com.company.assembleegameclient.ui.dialogs:ConfirmDialog/instance/com.company.assembleegameclient.ui.dialogs:ConfirmDialog/instance/onConfirm"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("com.company.assembleegameclient.ui.dialogs:ConfirmDialog"), "_callback"), 0
+
+      getlex              QName(PackageNamespace("kabam.rotmg.core"), "StaticInjectorContext")
+      callproperty        QName(PackageNamespace(""), "getInjector"), 0
+      getlex              QName(PackageNamespace("kabam.rotmg.dialogs.control"), "CloseDialogsSignal")
+      callproperty        QName(PackageNamespace(""), "getInstance"), 1
+      coerce              QName(PackageNamespace("kabam.rotmg.dialogs.control"), "CloseDialogsSignal")
+      setlocal2
+
+      getlocal2
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.ui.dialogs:ConfirmDialog"), "onCancel")
+   method
+    name "onCancel"
+    refid "com.company.assembleegameclient.ui.dialogs:ConfirmDialog/instance/com.company.assembleegameclient.ui.dialogs:ConfirmDialog/instance/onCancel"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace("kabam.rotmg.core"), "StaticInjectorContext")
+      callproperty        QName(PackageNamespace(""), "getInjector"), 0
+      getlex              QName(PackageNamespace("kabam.rotmg.dialogs.control"), "CloseDialogsSignal")
+      callproperty        QName(PackageNamespace(""), "getInstance"), 1
+      coerce              QName(PackageNamespace("kabam.rotmg.dialogs.control"), "CloseDialogsSignal")
+      setlocal2
+
+      getlocal2
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.ui.dialogs:ConfirmDialog/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

@@ -1,0 +1,757 @@
+class
+ refid "kabam.rotmg.game.view.components:StatsView"
+ instance QName(PackageNamespace("kabam.rotmg.game.view.components"), "StatsView")
+  extends QName(PackageNamespace("flash.display"), "Sprite")
+  flag SEALED
+  iinit
+   name "StatsView"
+   refid "kabam.rotmg.game.view.components:StatsView/instance/init"
+   body
+    maxstack 5
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     getlocal0
+     callproperty        QName(PrivateNamespace("kabam.rotmg.game.view.components:StatsView"), "createBackground"), 0
+     setproperty         QName(PrivateNamespace("kabam.rotmg.game.view.components:StatsView"), "background")
+
+     getlocal0
+     getlex              QName(PackageNamespace("__AS3__.vec"), "Vector")
+     getlex              QName(PackageNamespace("kabam.rotmg.game.view.components"), "StatView")
+     applytype           1
+     construct           0
+     setproperty         QName(PackageNamespace(""), "stats_")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("flash.display"), "Sprite")
+     constructprop       QName(PackageNamespace("flash.display"), "Sprite"), 0
+     setproperty         QName(PackageNamespace(""), "containerSprite")
+
+     getlocal0
+     constructsuper      0
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.game.view.components:StatsView"), "background")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "containerSprite")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     getlocal0
+     callpropvoid        QName(PrivateNamespace("kabam.rotmg.game.view.components:StatsView"), "createStats"), 0
+
+     pushfalse
+     findproperty        QName(PackageNamespace(""), "mouseChildren")
+     swap
+     setproperty         QName(PackageNamespace(""), "mouseChildren")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("org.osflash.signals.natives"), "NativeSignal")
+     getlocal0
+     pushstring          "mouseDown"
+     getlex              QName(PackageNamespace("flash.events"), "MouseEvent")
+     constructprop       QName(PackageNamespace("org.osflash.signals.natives"), "NativeSignal"), 3
+     setproperty         QName(PackageNamespace(""), "mouseDown")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait const QName(PrivateNamespace("kabam.rotmg.game.view.components:StatsView"), "WIDTH") type QName(PackageNamespace(""), "int") value Integer(191) end
+  trait const QName(PrivateNamespace("kabam.rotmg.game.view.components:StatsView"), "HEIGHT") type QName(PackageNamespace(""), "int") value Integer(45) end
+  trait slot QName(PrivateNamespace("kabam.rotmg.game.view.components:StatsView"), "background") type QName(PackageNamespace("flash.display"), "Sprite") end
+  trait slot QName(PackageNamespace(""), "stats_") type TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("kabam.rotmg.game.view.components"), "StatView")>) end
+  trait slot QName(PackageNamespace(""), "containerSprite") type QName(PackageNamespace("flash.display"), "Sprite") end
+  trait slot QName(PackageNamespace(""), "mouseDown") type QName(PackageNamespace("org.osflash.signals.natives"), "NativeSignal") end
+  trait slot QName(PackageNamespace(""), "currentState") type QName(PackageNamespace(""), "String") value Utf8("state_docked") end
+  trait method QName(PrivateNamespace("kabam.rotmg.game.view.components:StatsView"), "createStats")
+   method
+    name "createStats"
+    refid "kabam.rotmg.game.view.components:StatsView/instance/kabam.rotmg.game.view.components:StatsView/createStats"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 4
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      setlocal1
+
+      pushbyte            0
+      setlocal3
+
+      pushbyte            0
+      setlocal2
+
+      jump                L32
+
+L9:
+      label
+      getlocal0
+      getlocal2
+      getlocal3
+      callproperty        QName(PrivateNamespace("kabam.rotmg.game.view.components:StatsView"), "createStat"), 2
+      coerce              QName(PackageNamespace("kabam.rotmg.game.view.components"), "StatView")
+      setlocal1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "stats_")
+      getlocal1
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "containerSprite")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      getlocal3
+      getlocal2
+      pushbyte            2
+      modulo
+      add
+      convert_i
+      setlocal3
+
+      inclocal_i          2
+L32:
+      getlocal2
+      getlex              QName(PrivateNamespace("kabam.rotmg.game.view.components:StatsView"), "statsModel")
+      getproperty         QName(PackageNamespace(""), "length")
+      iflt                L9
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.game.view.components:StatsView"), "createStat")
+   method
+    name "createStat"
+    refid "kabam.rotmg.game.view.components:StatsView/instance/kabam.rotmg.game.view.components:StatsView/createStat"
+    param QName(PackageNamespace(""), "int")
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace("kabam.rotmg.game.view.components"), "StatView")
+    flag HAS_PARAM_NAMES
+    paramname "i"
+    paramname "rows"
+    body
+     maxstack 5
+     localcount 5
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      setlocal3
+
+      getlex              QName(PrivateNamespace("kabam.rotmg.game.view.components:StatsView"), "statsModel")
+      getlocal1
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.game.view.components:StatsView"), ProtectedNamespace("kabam.rotmg.game.view.components:StatsView"), StaticProtectedNs("kabam.rotmg.game.view.components:StatsView"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.game.view.components"), PackageInternalNs("kabam.rotmg.game.view.components"), PrivateNamespace("FilePrivateNS:StatsView"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      coerce              QName(PackageNamespace("kabam.rotmg.game.model"), "StatModel")
+      setlocal            4
+
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.game.view.components"), "StatView")
+      getlocal            4
+      getproperty         QName(PackageNamespace(""), "name")
+      getlocal            4
+      getproperty         QName(PackageNamespace(""), "abbreviation")
+      getlocal            4
+      getproperty         QName(PackageNamespace(""), "description")
+      getlocal            4
+      getproperty         QName(PackageNamespace(""), "redOnZero")
+      constructprop       QName(PackageNamespace("kabam.rotmg.game.view.components"), "StatView"), 4
+      coerce              QName(PackageNamespace("kabam.rotmg.game.view.components"), "StatView")
+      setlocal3
+
+      getlocal3
+      getlocal1
+      pushbyte            2
+      modulo
+      pushshort           191
+      multiply
+      pushbyte            2
+      divide
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal3
+      getlocal2
+      pushbyte            45
+      multiply
+      pushbyte            3
+      divide
+      pushbyte            9
+      add
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal3
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "draw")
+   method
+    name "draw"
+    refid "kabam.rotmg.game.view.components:StatsView/instance/draw"
+    param QName(PackageNamespace("com.company.assembleegameclient.objects"), "Player")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "plr"
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      iffalse             L9
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.game.view.components:StatsView"), "setBackgroundVisibility"), 0
+
+      getlocal0
+      getlocal1
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.game.view.components:StatsView"), "drawStats"), 1
+
+L9:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "containerSprite")
+      pushshort           191
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "containerSprite")
+      getproperty         QName(PackageNamespace(""), "width")
+      subtract
+      pushbyte            2
+      divide
+      setproperty         QName(PackageNamespace(""), "x")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.game.view.components:StatsView"), "drawStats")
+   method
+    name "drawStats"
+    refid "kabam.rotmg.game.view.components:StatsView/instance/kabam.rotmg.game.view.components:StatsView/drawStats"
+    param QName(PackageNamespace("com.company.assembleegameclient.objects"), "Player")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "plr"
+    body
+     maxstack 7
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "stats_")
+      pushbyte            0
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.game.view.components:StatsView"), ProtectedNamespace("kabam.rotmg.game.view.components:StatsView"), StaticProtectedNs("kabam.rotmg.game.view.components:StatsView"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.game.view.components"), PackageInternalNs("kabam.rotmg.game.view.components"), PrivateNamespace("FilePrivateNS:StatsView"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "attack_")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "attackBoost_")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "attackMax_")
+      getlex              QName(PackageNamespace(""), "Math")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "attack_")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "attackBoost_")
+      subtract
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "attackMax_")
+      subtract
+      pushbyte            0
+      callproperty        QName(PackageNamespace(""), "max"), 2
+      callpropvoid        QName(PackageNamespace(""), "draw"), 4
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "stats_")
+      pushbyte            1
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.game.view.components:StatsView"), ProtectedNamespace("kabam.rotmg.game.view.components:StatsView"), StaticProtectedNs("kabam.rotmg.game.view.components:StatsView"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.game.view.components"), PackageInternalNs("kabam.rotmg.game.view.components"), PrivateNamespace("FilePrivateNS:StatsView"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "defense_")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "defenseBoost_")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "defenseMax_")
+      getlex              QName(PackageNamespace(""), "Math")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "defense_")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "defenseBoost_")
+      subtract
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "defenseMax_")
+      subtract
+      pushbyte            0
+      callproperty        QName(PackageNamespace(""), "max"), 2
+      callpropvoid        QName(PackageNamespace(""), "draw"), 4
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "stats_")
+      pushbyte            2
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.game.view.components:StatsView"), ProtectedNamespace("kabam.rotmg.game.view.components:StatsView"), StaticProtectedNs("kabam.rotmg.game.view.components:StatsView"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.game.view.components"), PackageInternalNs("kabam.rotmg.game.view.components"), PrivateNamespace("FilePrivateNS:StatsView"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "speed_")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "speedBoost_")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "speedMax_")
+      getlex              QName(PackageNamespace(""), "Math")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "speed_")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "speedBoost_")
+      subtract
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "speedMax_")
+      subtract
+      pushbyte            0
+      callproperty        QName(PackageNamespace(""), "max"), 2
+      callpropvoid        QName(PackageNamespace(""), "draw"), 4
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "stats_")
+      pushbyte            3
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.game.view.components:StatsView"), ProtectedNamespace("kabam.rotmg.game.view.components:StatsView"), StaticProtectedNs("kabam.rotmg.game.view.components:StatsView"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.game.view.components"), PackageInternalNs("kabam.rotmg.game.view.components"), PrivateNamespace("FilePrivateNS:StatsView"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "dexterity_")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "dexterityBoost_")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "dexterityMax_")
+      getlex              QName(PackageNamespace(""), "Math")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "dexterity_")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "dexterityBoost_")
+      subtract
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "dexterityMax_")
+      subtract
+      pushbyte            0
+      callproperty        QName(PackageNamespace(""), "max"), 2
+      callpropvoid        QName(PackageNamespace(""), "draw"), 4
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "stats_")
+      pushbyte            4
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.game.view.components:StatsView"), ProtectedNamespace("kabam.rotmg.game.view.components:StatsView"), StaticProtectedNs("kabam.rotmg.game.view.components:StatsView"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.game.view.components"), PackageInternalNs("kabam.rotmg.game.view.components"), PrivateNamespace("FilePrivateNS:StatsView"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "vitality_")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "vitalityBoost_")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "vitalityMax_")
+      getlex              QName(PackageNamespace(""), "Math")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "vitality_")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "vitalityBoost_")
+      subtract
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "vitalityMax_")
+      subtract
+      pushbyte            0
+      callproperty        QName(PackageNamespace(""), "max"), 2
+      callpropvoid        QName(PackageNamespace(""), "draw"), 4
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "stats_")
+      pushbyte            5
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.game.view.components:StatsView"), ProtectedNamespace("kabam.rotmg.game.view.components:StatsView"), StaticProtectedNs("kabam.rotmg.game.view.components:StatsView"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.game.view.components"), PackageInternalNs("kabam.rotmg.game.view.components"), PrivateNamespace("FilePrivateNS:StatsView"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "wisdom_")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "wisdomBoost_")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "wisdomMax_")
+      getlex              QName(PackageNamespace(""), "Math")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "wisdom_")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "wisdomBoost_")
+      subtract
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "wisdomMax_")
+      subtract
+      pushbyte            0
+      callproperty        QName(PackageNamespace(""), "max"), 2
+      callpropvoid        QName(PackageNamespace(""), "draw"), 4
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "stats_")
+      pushbyte            6
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.game.view.components:StatsView"), ProtectedNamespace("kabam.rotmg.game.view.components:StatsView"), StaticProtectedNs("kabam.rotmg.game.view.components:StatsView"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.game.view.components"), PackageInternalNs("kabam.rotmg.game.view.components"), PrivateNamespace("FilePrivateNS:StatsView"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "might_")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "mightBoost_")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "mightMax_")
+      getlex              QName(PackageNamespace(""), "Math")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "might_")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "mightBoost_")
+      subtract
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "mightMax_")
+      subtract
+      pushbyte            0
+      callproperty        QName(PackageNamespace(""), "max"), 2
+      callpropvoid        QName(PackageNamespace(""), "draw"), 4
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "stats_")
+      pushbyte            7
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.game.view.components:StatsView"), ProtectedNamespace("kabam.rotmg.game.view.components:StatsView"), StaticProtectedNs("kabam.rotmg.game.view.components:StatsView"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.game.view.components"), PackageInternalNs("kabam.rotmg.game.view.components"), PrivateNamespace("FilePrivateNS:StatsView"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "luck_")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "luckBoost_")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "luckMax_")
+      getlex              QName(PackageNamespace(""), "Math")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "luck_")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "luckBoost_")
+      subtract
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "luckMax_")
+      subtract
+      pushbyte            0
+      callproperty        QName(PackageNamespace(""), "max"), 2
+      callpropvoid        QName(PackageNamespace(""), "draw"), 4
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "stats_")
+      pushbyte            8
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.game.view.components:StatsView"), ProtectedNamespace("kabam.rotmg.game.view.components:StatsView"), StaticProtectedNs("kabam.rotmg.game.view.components:StatsView"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.game.view.components"), PackageInternalNs("kabam.rotmg.game.view.components"), PrivateNamespace("FilePrivateNS:StatsView"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "restoration_")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "restorationBoost_")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "restorationMax_")
+      getlex              QName(PackageNamespace(""), "Math")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "restoration_")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "restorationBoost_")
+      subtract
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "restorationMax_")
+      subtract
+      pushbyte            0
+      callproperty        QName(PackageNamespace(""), "max"), 2
+      callpropvoid        QName(PackageNamespace(""), "draw"), 4
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "stats_")
+      pushbyte            9
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.game.view.components:StatsView"), ProtectedNamespace("kabam.rotmg.game.view.components:StatsView"), StaticProtectedNs("kabam.rotmg.game.view.components:StatsView"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.game.view.components"), PackageInternalNs("kabam.rotmg.game.view.components"), PrivateNamespace("FilePrivateNS:StatsView"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "protection_")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "protectionBoost_")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "protectionMax_")
+      getlex              QName(PackageNamespace(""), "Math")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "protection_")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "protectionBoost_")
+      subtract
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "protectionMax_")
+      subtract
+      pushbyte            0
+      callproperty        QName(PackageNamespace(""), "max"), 2
+      callpropvoid        QName(PackageNamespace(""), "draw"), 4
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "dock")
+   method
+    name "dock"
+    refid "kabam.rotmg.game.view.components:StatsView/instance/dock"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      pushstring          "state_docked"
+      setproperty         QName(PackageNamespace(""), "currentState")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "undock")
+   method
+    name "undock"
+    refid "kabam.rotmg.game.view.components:StatsView/instance/undock"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      pushstring          "state_undocked"
+      setproperty         QName(PackageNamespace(""), "currentState")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.game.view.components:StatsView"), "createBackground")
+   method
+    name "createBackground"
+    refid "kabam.rotmg.game.view.components:StatsView/instance/kabam.rotmg.game.view.components:StatsView/createBackground"
+    returns QName(PackageNamespace("flash.display"), "Sprite")
+    body
+     maxstack 8
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("flash.display"), "Sprite")
+      constructprop       QName(PackageNamespace("flash.display"), "Sprite"), 0
+      setproperty         QName(PrivateNamespace("kabam.rotmg.game.view.components:StatsView"), "background")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.game.view.components:StatsView"), "background")
+      getproperty         QName(PackageNamespace(""), "graphics")
+      callpropvoid        QName(PackageNamespace(""), "clear"), 0
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.game.view.components:StatsView"), "background")
+      getproperty         QName(PackageNamespace(""), "graphics")
+      pushint             3552822
+      callpropvoid        QName(PackageNamespace(""), "beginFill"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.game.view.components:StatsView"), "background")
+      getproperty         QName(PackageNamespace(""), "graphics")
+      pushbyte            2
+      pushint             16777215
+      callpropvoid        QName(PackageNamespace(""), "lineStyle"), 2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.game.view.components:StatsView"), "background")
+      getproperty         QName(PackageNamespace(""), "graphics")
+      pushbyte            -5
+      pushbyte            2
+      pushshort           191
+      pushbyte            10
+      add
+      pushbyte            45
+      pushbyte            46
+      add
+      pushbyte            10
+      callpropvoid        QName(PackageNamespace(""), "drawRoundRect"), 5
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.game.view.components:StatsView"), "background")
+      findpropstrict      QName(PackageNamespace("flash.filters"), "GlowFilter")
+      pushbyte            0
+      pushbyte            1
+      pushbyte            10
+      pushbyte            10
+      pushbyte            1
+      pushbyte            3
+      constructprop       QName(PackageNamespace("flash.filters"), "GlowFilter"), 6
+      newarray            1
+      setproperty         QName(PackageNamespace(""), "filters")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.game.view.components:StatsView"), "background")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.game.view.components:StatsView"), "setBackgroundVisibility")
+   method
+    name "setBackgroundVisibility"
+    refid "kabam.rotmg.game.view.components:StatsView/instance/kabam.rotmg.game.view.components:StatsView/setBackgroundVisibility"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "currentState")
+      pushstring          "state_undocked"
+      ifne                L11
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.game.view.components:StatsView"), "background")
+      pushbyte            1
+      setproperty         QName(PackageNamespace(""), "alpha")
+
+      jump                L19
+
+L11:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "currentState")
+      pushstring          "state_docked"
+      ifne                L19
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.game.view.components:StatsView"), "background")
+      pushbyte            0
+      setproperty         QName(PackageNamespace(""), "alpha")
+
+L19:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.game.view.components:StatsView/class/init"
+  body
+   maxstack 14
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 1
+   code
+    getlocal0
+    pushscope
+
+    findpropstrict      QName(PackageNamespace("kabam.rotmg.game.model"), "StatModel")
+    pushstring          "StatModel.attack.short"
+    pushstring          "StatModel.attack.long"
+    pushstring          "StatModel.attack.description"
+    pushtrue
+    constructprop       QName(PackageNamespace("kabam.rotmg.game.model"), "StatModel"), 4
+    findpropstrict      QName(PackageNamespace("kabam.rotmg.game.model"), "StatModel")
+    pushstring          "StatModel.defense.short"
+    pushstring          "StatModel.defense.long"
+    pushstring          "StatModel.defense.description"
+    pushfalse
+    constructprop       QName(PackageNamespace("kabam.rotmg.game.model"), "StatModel"), 4
+    findpropstrict      QName(PackageNamespace("kabam.rotmg.game.model"), "StatModel")
+    pushstring          "StatModel.speed.short"
+    pushstring          "StatModel.speed.long"
+    pushstring          "StatModel.speed.description"
+    pushtrue
+    constructprop       QName(PackageNamespace("kabam.rotmg.game.model"), "StatModel"), 4
+    findpropstrict      QName(PackageNamespace("kabam.rotmg.game.model"), "StatModel")
+    pushstring          "StatModel.dexterity.short"
+    pushstring          "StatModel.dexterity.long"
+    pushstring          "StatModel.dexterity.description"
+    pushtrue
+    constructprop       QName(PackageNamespace("kabam.rotmg.game.model"), "StatModel"), 4
+    findpropstrict      QName(PackageNamespace("kabam.rotmg.game.model"), "StatModel")
+    pushstring          "StatModel.vitality.short"
+    pushstring          "StatModel.vitality.long"
+    pushstring          "StatModel.vitality.description"
+    pushtrue
+    constructprop       QName(PackageNamespace("kabam.rotmg.game.model"), "StatModel"), 4
+    findpropstrict      QName(PackageNamespace("kabam.rotmg.game.model"), "StatModel")
+    pushstring          "StatModel.wisdom.short"
+    pushstring          "StatModel.wisdom.long"
+    pushstring          "StatModel.wisdom.description"
+    pushtrue
+    constructprop       QName(PackageNamespace("kabam.rotmg.game.model"), "StatModel"), 4
+    findpropstrict      QName(PackageNamespace("kabam.rotmg.game.model"), "StatModel")
+    pushstring          "MGT"
+    pushstring          "Might"
+    pushstring          "This stat increases the damage of your critical hits."
+    pushtrue
+    constructprop       QName(PackageNamespace("kabam.rotmg.game.model"), "StatModel"), 4
+    findpropstrict      QName(PackageNamespace("kabam.rotmg.game.model"), "StatModel")
+    pushstring          "LUC"
+    pushstring          "Luck"
+    pushstring          "This stat increases your chance of a critical hit."
+    pushtrue
+    constructprop       QName(PackageNamespace("kabam.rotmg.game.model"), "StatModel"), 4
+    findpropstrict      QName(PackageNamespace("kabam.rotmg.game.model"), "StatModel")
+    pushstring          "RES"
+    pushstring          "Restoration"
+    pushstring          "This stat governs the amount of health and mana potions you get upon entering the Nexus and the amount they restore."
+    pushtrue
+    constructprop       QName(PackageNamespace("kabam.rotmg.game.model"), "StatModel"), 4
+    findpropstrict      QName(PackageNamespace("kabam.rotmg.game.model"), "StatModel")
+    pushstring          "PRT"
+    pushstring          "Protection"
+    pushstring          "This stat increases your PT bar, which allows to soak shots and ignore certain debuffs as long as it's up."
+    pushtrue
+    constructprop       QName(PackageNamespace("kabam.rotmg.game.model"), "StatModel"), 4
+    newarray            10
+    findproperty        QName(PrivateNamespace("kabam.rotmg.game.view.components:StatsView"), "statsModel")
+    swap
+    initproperty        QName(PrivateNamespace("kabam.rotmg.game.view.components:StatsView"), "statsModel")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PrivateNamespace("kabam.rotmg.game.view.components:StatsView"), "statsModel") type QName(PackageNamespace(""), "Array") end
+ trait const QName(PackageNamespace(""), "ATTACK") type QName(PackageNamespace(""), "int") value Integer(0) end
+ trait const QName(PackageNamespace(""), "DEFENSE") type QName(PackageNamespace(""), "int") value Integer(1) end
+ trait const QName(PackageNamespace(""), "SPEED") type QName(PackageNamespace(""), "int") value Integer(2) end
+ trait const QName(PackageNamespace(""), "DEXTERITY") type QName(PackageNamespace(""), "int") value Integer(3) end
+ trait const QName(PackageNamespace(""), "VITALITY") type QName(PackageNamespace(""), "int") value Integer(4) end
+ trait const QName(PackageNamespace(""), "WISDOM") type QName(PackageNamespace(""), "int") value Integer(5) end
+ trait const QName(PackageNamespace(""), "MIGHT") type QName(PackageNamespace(""), "int") value Integer(6) end
+ trait const QName(PackageNamespace(""), "LUCK") type QName(PackageNamespace(""), "int") value Integer(7) end
+ trait const QName(PackageNamespace(""), "RESTORATION") type QName(PackageNamespace(""), "int") value Integer(8) end
+ trait const QName(PackageNamespace(""), "PROTECTION") type QName(PackageNamespace(""), "int") value Integer(9) end
+ trait const QName(PackageNamespace(""), "STATE_UNDOCKED") type QName(PackageNamespace(""), "String") value Utf8("state_undocked") end
+ trait const QName(PackageNamespace(""), "STATE_DOCKED") type QName(PackageNamespace(""), "String") value Utf8("state_docked") end
+ trait const QName(PackageNamespace(""), "STATE_DEFAULT") type QName(PackageNamespace(""), "String") value Utf8("state_docked") end
+end ; class

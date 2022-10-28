@@ -1,0 +1,175 @@
+class
+ refid "kabam.rotmg.arena.view:ArenaLeaderboardListItemMediator"
+ instance QName(PackageNamespace("kabam.rotmg.arena.view"), "ArenaLeaderboardListItemMediator")
+  extends QName(PackageNamespace("robotlegs.bender.bundles.mvcs"), "Mediator")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.arena.view:ArenaLeaderboardListItemMediator")
+  iinit
+   refid "kabam.rotmg.arena.view:ArenaLeaderboardListItemMediator/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "view") flag METADATA type QName(PackageNamespace("kabam.rotmg.arena.view"), "ArenaLeaderboardListItem")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "showTooltip") flag METADATA type QName(PackageNamespace("kabam.rotmg.core.signals"), "ShowTooltipSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "hideTooltips") flag METADATA type QName(PackageNamespace("kabam.rotmg.core.signals"), "HideTooltipsSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "gameModel") flag METADATA type QName(PackageNamespace("kabam.rotmg.game.model"), "GameModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PackageNamespace(""), "initialize") flag OVERRIDE
+   method
+    name "initialize"
+    refid "kabam.rotmg.arena.view:ArenaLeaderboardListItemMediator/instance/initialize"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "showTooltip")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaLeaderboardListItemMediator"), "onShow")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "hideTooltip")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaLeaderboardListItemMediator"), "onHide")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      callpropvoid        QName(PackageNamespace(""), "setColor"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "destroy") flag OVERRIDE
+   method
+    name "destroy"
+    refid "kabam.rotmg.arena.view:ArenaLeaderboardListItemMediator/instance/destroy"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "showTooltip")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaLeaderboardListItemMediator"), "onShow")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "hideTooltip")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaLeaderboardListItemMediator"), "onHide")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaLeaderboardListItemMediator"), "onShow")
+   method
+    name "onShow"
+    refid "kabam.rotmg.arena.view:ArenaLeaderboardListItemMediator/instance/kabam.rotmg.arena.view:ArenaLeaderboardListItemMediator/instance/onShow"
+    param QName(PackageNamespace("flash.display"), "Sprite")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "showTooltip")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaLeaderboardListItemMediator"), "onHide")
+   method
+    name "onHide"
+    refid "kabam.rotmg.arena.view:ArenaLeaderboardListItemMediator/instance/kabam.rotmg.arena.view:ArenaLeaderboardListItemMediator/instance/onHide"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hideTooltips")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.arena.view:ArenaLeaderboardListItemMediator/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

@@ -1,0 +1,127 @@
+class
+ refid "valor.battlePass.resprites:RespriteData"
+ instance QName(PackageNamespace("valor.battlePass.resprites"), "RespriteData")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  iinit
+   name "RespriteData"
+   refid "valor.battlePass.resprites:RespriteData/instance/init"
+   param QName(PackageNamespace(""), "int")
+   param QName(PackageNamespace(""), "int")
+   param QName(PackageNamespace(""), "int")
+   param QName(PackageNamespace("flash.display"), "BitmapData")
+   param TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("flash.display"), "BitmapData")>)
+   param QName(PackageNamespace(""), "Number")
+   flag HAS_OPTIONAL
+   flag HAS_PARAM_NAMES
+   optional Null()
+   optional Integer(0)
+   paramname "id"
+   paramname "theme"
+   paramname "slotType"
+   paramname "texture"
+   paramname "projectileTexture"
+   paramname "projectileAngleCorrection"
+   body
+    maxstack 2
+    localcount 7
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     getlocal1
+     setproperty         QName(PackageNamespace(""), "id")
+
+     getlocal0
+     getlocal2
+     setproperty         QName(PackageNamespace(""), "theme")
+
+     getlocal0
+     getlocal3
+     setproperty         QName(PackageNamespace(""), "slotType")
+
+     getlocal0
+     getlocal            4
+     setproperty         QName(PackageNamespace(""), "texture")
+
+     getlocal0
+     getlocal            5
+     setproperty         QName(PackageNamespace(""), "projectileTexture")
+
+     getlocal0
+     getlocal            6
+     setproperty         QName(PackageNamespace(""), "projectileAngleCorrection")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "id") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PackageNamespace(""), "theme") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PackageNamespace(""), "slotType") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PackageNamespace(""), "texture") type QName(PackageNamespace("flash.display"), "BitmapData") end
+  trait slot QName(PackageNamespace(""), "projectileTexture") type TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("flash.display"), "BitmapData")>) end
+  trait slot QName(PackageNamespace(""), "projectileAngleCorrection") type QName(PackageNamespace(""), "Number") end
+  trait slot QName(PackageNamespace(""), "specialAnimatedCharTexture") type QName(PackageNamespace("com.company.assembleegameclient.util"), "AnimatedChar") value Null() end
+  trait slot QName(PackageNamespace(""), "specialTexture") type QName(PackageNamespace("flash.display"), "BitmapData") value Null() end
+  trait slot QName(PackageNamespace(""), "specialAnimationsData") type QName(PackageNamespace("com.company.assembleegameclient.objects.animation"), "AnimationsData") value Null() end
+  trait method QName(PackageNamespace(""), "getRandomProjectileTexture")
+   method
+    name "getRandomProjectileTexture"
+    refid "valor.battlePass.resprites:RespriteData/instance/getRandomProjectileTexture"
+    returns QName(PackageNamespace("flash.display"), "BitmapData")
+    body
+     maxstack 4
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "projectileTexture")
+      getproperty         QName(PackageNamespace(""), "length")
+      pushbyte            0
+      ifne                L9
+
+      pushnull
+      returnvalue
+
+L9:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "projectileTexture")
+      getlex              QName(PackageNamespace(""), "Math")
+      getlex              QName(PackageNamespace(""), "Math")
+      callproperty        QName(PackageNamespace(""), "random"), 0
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "projectileTexture")
+      getproperty         QName(PackageNamespace(""), "length")
+      multiply
+      callproperty        QName(PackageNamespace(""), "floor"), 1
+      getproperty         MultinameL([PrivateNamespace("valor.battlePass.resprites:RespriteData"), ProtectedNamespace("valor.battlePass.resprites:RespriteData"), StaticProtectedNs("valor.battlePass.resprites:RespriteData"), StaticProtectedNs("Object"), PackageNamespace("valor.battlePass.resprites"), PackageInternalNs("valor.battlePass.resprites"), PrivateNamespace("FilePrivateNS:RespriteData"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "valor.battlePass.resprites:RespriteData/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

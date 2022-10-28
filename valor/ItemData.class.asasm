@@ -1,0 +1,886 @@
+class
+ refid "valor:ItemData"
+ instance QName(PackageNamespace("valor"), "ItemData")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  iinit
+   name "ItemData"
+   refid "valor:ItemData/instance/init"
+   param QName(PackageNamespace(""), "String")
+   flag HAS_OPTIONAL
+   flag HAS_PARAM_NAMES
+   optional Null()
+   paramname "data"
+   body
+    maxstack 2
+    localcount 3
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal1
+     pushnull
+     ifne                L8
+
+     returnvoid
+
+L8:
+     getlocal0
+     getlocal1
+     setproperty         QName(PackageNamespace(""), "str")
+
+     getlex              QName(PackageNamespace("com.adobe.serialization.json"), "JSON")
+     getlocal1
+     callproperty        QName(PackageNamespace(""), "decode"), 1
+     coerce              QName(PackageNamespace(""), "Object")
+     setlocal2
+
+     getlocal2
+     pushnull
+     ifne                L20
+
+     returnvoid
+
+L20:
+     findpropstrict      QName(PackageNamespace(""), "setValues")
+     getlocal2
+     callpropvoid        QName(PackageNamespace(""), "setValues"), 1
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "objectType") type QName(PackageNamespace(""), "int") value Integer(-1) end
+  trait slot QName(PackageNamespace(""), "soulbound") type QName(PackageNamespace(""), "Boolean") value False() end
+  trait slot QName(PackageNamespace(""), "itemOwner") type QName(PackageNamespace(""), "String") value Utf8("") end
+  trait slot QName(PackageNamespace(""), "itemName") type QName(PackageNamespace(""), "String") value Utf8("") end
+  trait slot QName(PackageNamespace(""), "minDmg") type QName(PackageNamespace(""), "int") value Integer(-1) end
+  trait slot QName(PackageNamespace(""), "maxDmg") type QName(PackageNamespace(""), "int") value Integer(-1) end
+  trait slot QName(PackageNamespace(""), "commonCandy") type QName(PackageNamespace(""), "int") value Integer(-1) end
+  trait slot QName(PackageNamespace(""), "rareCandy") type QName(PackageNamespace(""), "int") value Integer(-1) end
+  trait slot QName(PackageNamespace(""), "superCandy") type QName(PackageNamespace(""), "int") value Integer(-1) end
+  trait slot QName(PackageNamespace(""), "ascendedLab") type QName(PackageNamespace(""), "int") value Integer(-1) end
+  trait slot QName(PackageNamespace(""), "ascendedOcean") type QName(PackageNamespace(""), "int") value Integer(-1) end
+  trait slot QName(PackageNamespace(""), "ascendedAbyss") type QName(PackageNamespace(""), "int") value Integer(-1) end
+  trait slot QName(PackageNamespace(""), "ascendedUdl") type QName(PackageNamespace(""), "int") value Integer(-1) end
+  trait slot QName(PackageNamespace(""), "ascendedSnake") type QName(PackageNamespace(""), "int") value Integer(-1) end
+  trait slot QName(PackageNamespace(""), "ascendedRift") type QName(PackageNamespace(""), "int") value Integer(-1) end
+  trait slot QName(PackageNamespace(""), "ascendedTop") type QName(PackageNamespace(""), "int") value Integer(-1) end
+  trait slot QName(PackageNamespace(""), "ascendedSprite") type QName(PackageNamespace(""), "int") value Integer(-1) end
+  trait slot QName(PackageNamespace(""), "ascendedDojo") type QName(PackageNamespace(""), "int") value Integer(-1) end
+  trait slot QName(PackageNamespace(""), "numShots") type QName(PackageNamespace(""), "int") value Integer(-1) end
+  trait slot QName(PackageNamespace(""), "raidBosses") type QName(PackageNamespace(""), "int") value Integer(-1) end
+  trait slot QName(PackageNamespace(""), "abilityUsedCount") type QName(PackageNamespace(""), "int") value Integer(-1) end
+  trait slot QName(PackageNamespace(""), "maxEventsCollected") type QName(PackageNamespace(""), "int") value Integer(-1) end
+  trait slot QName(PackageNamespace(""), "eventsCollected") type QName(PackageNamespace(""), "int") value Integer(-1) end
+  trait slot QName(PackageNamespace(""), "questTier") type QName(PackageNamespace(""), "int") value Integer(-1) end
+  trait slot QName(PackageNamespace(""), "resprite") type QName(PackageNamespace(""), "int") value Integer(-1) end
+  trait slot QName(PackageNamespace(""), "inventory") type QName(PackageNamespace(""), "String") value Utf8("") end
+  trait slot QName(PackageNamespace(""), "bpItem") type QName(PackageNamespace(""), "Boolean") value False() end
+  trait slot QName(PackageNamespace(""), "locked") type QName(PackageNamespace(""), "Boolean") value False() end
+  trait slot QName(PackageNamespace(""), "spiritKills") type QName(PackageNamespace(""), "int") value Integer(-1) end
+  trait slot QName(PackageNamespace(""), "str") type QName(PackageNamespace(""), "String") value Utf8("") end
+  trait method QName(PackageNamespace(""), "setValues")
+   method
+    name "setValues"
+    refid "valor:ItemData/instance/setValues"
+    param QName(PackageNamespace(""), "Object")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "obj"
+    body
+     maxstack 2
+     localcount 5
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      pushstring          "id"
+      getproperty         MultinameL([PrivateNamespace("valor:ItemData"), ProtectedNamespace("valor:ItemData"), StaticProtectedNs("valor:ItemData"), StaticProtectedNs("Object"), PackageNamespace("valor"), PackageInternalNs("valor"), PrivateNamespace("FilePrivateNS:ItemData"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      findproperty        QName(PackageNamespace(""), "objectType")
+      swap
+      setproperty         QName(PackageNamespace(""), "objectType")
+
+      getlocal1
+      pushstring          "soulbound"
+      getproperty         MultinameL([PrivateNamespace("valor:ItemData"), ProtectedNamespace("valor:ItemData"), StaticProtectedNs("valor:ItemData"), StaticProtectedNs("Object"), PackageNamespace("valor"), PackageInternalNs("valor"), PrivateNamespace("FilePrivateNS:ItemData"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      findproperty        QName(PackageNamespace(""), "soulbound")
+      swap
+      setproperty         QName(PackageNamespace(""), "soulbound")
+
+      getlocal1
+      pushstring          "owner"
+      getproperty         MultinameL([PrivateNamespace("valor:ItemData"), ProtectedNamespace("valor:ItemData"), StaticProtectedNs("valor:ItemData"), StaticProtectedNs("Object"), PackageNamespace("valor"), PackageInternalNs("valor"), PrivateNamespace("FilePrivateNS:ItemData"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      pushundefined
+      ifeq                L23
+
+      getlocal1
+      pushstring          "owner"
+      getproperty         MultinameL([PrivateNamespace("valor:ItemData"), ProtectedNamespace("valor:ItemData"), StaticProtectedNs("valor:ItemData"), StaticProtectedNs("Object"), PackageNamespace("valor"), PackageInternalNs("valor"), PrivateNamespace("FilePrivateNS:ItemData"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      jump                L25
+
+L23:
+      pushstring          ""
+      coerce_a
+L25:
+      findproperty        QName(PackageNamespace(""), "itemOwner")
+      swap
+      setproperty         QName(PackageNamespace(""), "itemOwner")
+
+      getlocal1
+      pushstring          "name"
+      getproperty         MultinameL([PrivateNamespace("valor:ItemData"), ProtectedNamespace("valor:ItemData"), StaticProtectedNs("valor:ItemData"), StaticProtectedNs("Object"), PackageNamespace("valor"), PackageInternalNs("valor"), PrivateNamespace("FilePrivateNS:ItemData"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      pushundefined
+      ifeq                L37
+
+      getlocal1
+      pushstring          "name"
+      getproperty         MultinameL([PrivateNamespace("valor:ItemData"), ProtectedNamespace("valor:ItemData"), StaticProtectedNs("valor:ItemData"), StaticProtectedNs("Object"), PackageNamespace("valor"), PackageInternalNs("valor"), PrivateNamespace("FilePrivateNS:ItemData"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      jump                L39
+
+L37:
+      pushstring          ""
+      coerce_a
+L39:
+      findproperty        QName(PackageNamespace(""), "itemName")
+      swap
+      setproperty         QName(PackageNamespace(""), "itemName")
+
+      getlocal1
+      pushstring          "numShots"
+      getproperty         MultinameL([PrivateNamespace("valor:ItemData"), ProtectedNamespace("valor:ItemData"), StaticProtectedNs("valor:ItemData"), StaticProtectedNs("Object"), PackageNamespace("valor"), PackageInternalNs("valor"), PrivateNamespace("FilePrivateNS:ItemData"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      pushundefined
+      ifeq                L51
+
+      getlocal1
+      pushstring          "numShots"
+      getproperty         MultinameL([PrivateNamespace("valor:ItemData"), ProtectedNamespace("valor:ItemData"), StaticProtectedNs("valor:ItemData"), StaticProtectedNs("Object"), PackageNamespace("valor"), PackageInternalNs("valor"), PrivateNamespace("FilePrivateNS:ItemData"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      jump                L53
+
+L51:
+      pushbyte            -1
+      coerce_a
+L53:
+      findproperty        QName(PackageNamespace(""), "numShots")
+      swap
+      setproperty         QName(PackageNamespace(""), "numShots")
+
+      getlocal1
+      pushstring          "raidBosses"
+      getproperty         MultinameL([PrivateNamespace("valor:ItemData"), ProtectedNamespace("valor:ItemData"), StaticProtectedNs("valor:ItemData"), StaticProtectedNs("Object"), PackageNamespace("valor"), PackageInternalNs("valor"), PrivateNamespace("FilePrivateNS:ItemData"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      pushundefined
+      ifeq                L65
+
+      getlocal1
+      pushstring          "raidBosses"
+      getproperty         MultinameL([PrivateNamespace("valor:ItemData"), ProtectedNamespace("valor:ItemData"), StaticProtectedNs("valor:ItemData"), StaticProtectedNs("Object"), PackageNamespace("valor"), PackageInternalNs("valor"), PrivateNamespace("FilePrivateNS:ItemData"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      jump                L67
+
+L65:
+      pushbyte            -1
+      coerce_a
+L67:
+      findproperty        QName(PackageNamespace(""), "raidBosses")
+      swap
+      setproperty         QName(PackageNamespace(""), "raidBosses")
+
+      getlocal1
+      pushstring          "abilityUses"
+      getproperty         MultinameL([PrivateNamespace("valor:ItemData"), ProtectedNamespace("valor:ItemData"), StaticProtectedNs("valor:ItemData"), StaticProtectedNs("Object"), PackageNamespace("valor"), PackageInternalNs("valor"), PrivateNamespace("FilePrivateNS:ItemData"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      pushundefined
+      ifeq                L79
+
+      getlocal1
+      pushstring          "abilityUses"
+      getproperty         MultinameL([PrivateNamespace("valor:ItemData"), ProtectedNamespace("valor:ItemData"), StaticProtectedNs("valor:ItemData"), StaticProtectedNs("Object"), PackageNamespace("valor"), PackageInternalNs("valor"), PrivateNamespace("FilePrivateNS:ItemData"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      jump                L81
+
+L79:
+      pushbyte            -1
+      coerce_a
+L81:
+      findproperty        QName(PackageNamespace(""), "abilityUsedCount")
+      swap
+      setproperty         QName(PackageNamespace(""), "abilityUsedCount")
+
+      getlocal1
+      pushstring          "eventsCollected"
+      getproperty         MultinameL([PrivateNamespace("valor:ItemData"), ProtectedNamespace("valor:ItemData"), StaticProtectedNs("valor:ItemData"), StaticProtectedNs("Object"), PackageNamespace("valor"), PackageInternalNs("valor"), PrivateNamespace("FilePrivateNS:ItemData"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      pushundefined
+      ifeq                L93
+
+      getlocal1
+      pushstring          "eventsCollected"
+      getproperty         MultinameL([PrivateNamespace("valor:ItemData"), ProtectedNamespace("valor:ItemData"), StaticProtectedNs("valor:ItemData"), StaticProtectedNs("Object"), PackageNamespace("valor"), PackageInternalNs("valor"), PrivateNamespace("FilePrivateNS:ItemData"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      jump                L95
+
+L93:
+      pushbyte            -1
+      coerce_a
+L95:
+      findproperty        QName(PackageNamespace(""), "eventsCollected")
+      swap
+      setproperty         QName(PackageNamespace(""), "eventsCollected")
+
+      getlocal1
+      pushstring          "maxEventsCollected"
+      getproperty         MultinameL([PrivateNamespace("valor:ItemData"), ProtectedNamespace("valor:ItemData"), StaticProtectedNs("valor:ItemData"), StaticProtectedNs("Object"), PackageNamespace("valor"), PackageInternalNs("valor"), PrivateNamespace("FilePrivateNS:ItemData"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      pushundefined
+      ifeq                L107
+
+      getlocal1
+      pushstring          "maxEventsCollected"
+      getproperty         MultinameL([PrivateNamespace("valor:ItemData"), ProtectedNamespace("valor:ItemData"), StaticProtectedNs("valor:ItemData"), StaticProtectedNs("Object"), PackageNamespace("valor"), PackageInternalNs("valor"), PrivateNamespace("FilePrivateNS:ItemData"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      jump                L109
+
+L107:
+      pushbyte            -1
+      coerce_a
+L109:
+      findproperty        QName(PackageNamespace(""), "maxEventsCollected")
+      swap
+      setproperty         QName(PackageNamespace(""), "maxEventsCollected")
+
+      getlocal1
+      pushstring          "questTier"
+      getproperty         MultinameL([PrivateNamespace("valor:ItemData"), ProtectedNamespace("valor:ItemData"), StaticProtectedNs("valor:ItemData"), StaticProtectedNs("Object"), PackageNamespace("valor"), PackageInternalNs("valor"), PrivateNamespace("FilePrivateNS:ItemData"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      pushundefined
+      ifeq                L121
+
+      getlocal1
+      pushstring          "questTier"
+      getproperty         MultinameL([PrivateNamespace("valor:ItemData"), ProtectedNamespace("valor:ItemData"), StaticProtectedNs("valor:ItemData"), StaticProtectedNs("Object"), PackageNamespace("valor"), PackageInternalNs("valor"), PrivateNamespace("FilePrivateNS:ItemData"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      jump                L123
+
+L121:
+      pushbyte            -1
+      coerce_a
+L123:
+      findproperty        QName(PackageNamespace(""), "questTier")
+      swap
+      setproperty         QName(PackageNamespace(""), "questTier")
+
+      getlocal1
+      pushstring          "proj"
+      getproperty         MultinameL([PrivateNamespace("valor:ItemData"), ProtectedNamespace("valor:ItemData"), StaticProtectedNs("valor:ItemData"), StaticProtectedNs("Object"), PackageNamespace("valor"), PackageInternalNs("valor"), PrivateNamespace("FilePrivateNS:ItemData"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      coerce              QName(PackageNamespace(""), "Object")
+      dup
+      setlocal            4
+
+      pushnull
+      ifeq                L162
+
+      getlocal            4
+      pushstring          "minDmg"
+      getproperty         MultinameL([PrivateNamespace("valor:ItemData"), ProtectedNamespace("valor:ItemData"), StaticProtectedNs("valor:ItemData"), StaticProtectedNs("Object"), PackageNamespace("valor"), PackageInternalNs("valor"), PrivateNamespace("FilePrivateNS:ItemData"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      pushundefined
+      ifeq                L143
+
+      getlocal            4
+      pushstring          "minDmg"
+      getproperty         MultinameL([PrivateNamespace("valor:ItemData"), ProtectedNamespace("valor:ItemData"), StaticProtectedNs("valor:ItemData"), StaticProtectedNs("Object"), PackageNamespace("valor"), PackageInternalNs("valor"), PrivateNamespace("FilePrivateNS:ItemData"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      jump                L145
+
+L143:
+      pushbyte            -1
+      coerce_a
+L145:
+      findproperty        QName(PackageNamespace(""), "minDmg")
+      swap
+      setproperty         QName(PackageNamespace(""), "minDmg")
+
+      getlocal            4
+      pushstring          "maxDmg"
+      getproperty         MultinameL([PrivateNamespace("valor:ItemData"), ProtectedNamespace("valor:ItemData"), StaticProtectedNs("valor:ItemData"), StaticProtectedNs("Object"), PackageNamespace("valor"), PackageInternalNs("valor"), PrivateNamespace("FilePrivateNS:ItemData"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      pushundefined
+      ifeq                L157
+
+      getlocal            4
+      pushstring          "maxDmg"
+      getproperty         MultinameL([PrivateNamespace("valor:ItemData"), ProtectedNamespace("valor:ItemData"), StaticProtectedNs("valor:ItemData"), StaticProtectedNs("Object"), PackageNamespace("valor"), PackageInternalNs("valor"), PrivateNamespace("FilePrivateNS:ItemData"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      jump                L159
+
+L157:
+      pushbyte            -1
+      coerce_a
+L159:
+      findproperty        QName(PackageNamespace(""), "maxDmg")
+      swap
+      setproperty         QName(PackageNamespace(""), "maxDmg")
+
+L162:
+      getlocal1
+      pushstring          "candySack"
+      getproperty         MultinameL([PrivateNamespace("valor:ItemData"), ProtectedNamespace("valor:ItemData"), StaticProtectedNs("valor:ItemData"), StaticProtectedNs("Object"), PackageNamespace("valor"), PackageInternalNs("valor"), PrivateNamespace("FilePrivateNS:ItemData"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      coerce              QName(PackageNamespace(""), "Object")
+      setlocal2
+
+      getlocal2
+      pushnull
+      ifeq                L212
+
+      getlocal2
+      pushstring          "commonCandy"
+      getproperty         MultinameL([PrivateNamespace("valor:ItemData"), ProtectedNamespace("valor:ItemData"), StaticProtectedNs("valor:ItemData"), StaticProtectedNs("Object"), PackageNamespace("valor"), PackageInternalNs("valor"), PrivateNamespace("FilePrivateNS:ItemData"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      pushundefined
+      ifeq                L179
+
+      getlocal2
+      pushstring          "commonCandy"
+      getproperty         MultinameL([PrivateNamespace("valor:ItemData"), ProtectedNamespace("valor:ItemData"), StaticProtectedNs("valor:ItemData"), StaticProtectedNs("Object"), PackageNamespace("valor"), PackageInternalNs("valor"), PrivateNamespace("FilePrivateNS:ItemData"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      jump                L181
+
+L179:
+      pushbyte            -1
+      coerce_a
+L181:
+      findproperty        QName(PackageNamespace(""), "commonCandy")
+      swap
+      setproperty         QName(PackageNamespace(""), "commonCandy")
+
+      getlocal2
+      pushstring          "rareCandy"
+      getproperty         MultinameL([PrivateNamespace("valor:ItemData"), ProtectedNamespace("valor:ItemData"), StaticProtectedNs("valor:ItemData"), StaticProtectedNs("Object"), PackageNamespace("valor"), PackageInternalNs("valor"), PrivateNamespace("FilePrivateNS:ItemData"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      pushundefined
+      ifeq                L193
+
+      getlocal2
+      pushstring          "rareCandy"
+      getproperty         MultinameL([PrivateNamespace("valor:ItemData"), ProtectedNamespace("valor:ItemData"), StaticProtectedNs("valor:ItemData"), StaticProtectedNs("Object"), PackageNamespace("valor"), PackageInternalNs("valor"), PrivateNamespace("FilePrivateNS:ItemData"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      jump                L195
+
+L193:
+      pushbyte            -1
+      coerce_a
+L195:
+      findproperty        QName(PackageNamespace(""), "rareCandy")
+      swap
+      setproperty         QName(PackageNamespace(""), "rareCandy")
+
+      getlocal2
+      pushstring          "commonCandy"
+      getproperty         MultinameL([PrivateNamespace("valor:ItemData"), ProtectedNamespace("valor:ItemData"), StaticProtectedNs("valor:ItemData"), StaticProtectedNs("Object"), PackageNamespace("valor"), PackageInternalNs("valor"), PrivateNamespace("FilePrivateNS:ItemData"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      pushundefined
+      ifeq                L207
+
+      getlocal2
+      pushstring          "superCandy"
+      getproperty         MultinameL([PrivateNamespace("valor:ItemData"), ProtectedNamespace("valor:ItemData"), StaticProtectedNs("valor:ItemData"), StaticProtectedNs("Object"), PackageNamespace("valor"), PackageInternalNs("valor"), PrivateNamespace("FilePrivateNS:ItemData"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      jump                L209
+
+L207:
+      pushbyte            -1
+      coerce_a
+L209:
+      findproperty        QName(PackageNamespace(""), "superCandy")
+      swap
+      setproperty         QName(PackageNamespace(""), "superCandy")
+
+L212:
+      getlocal1
+      pushstring          "ascendTracker"
+      getproperty         MultinameL([PrivateNamespace("valor:ItemData"), ProtectedNamespace("valor:ItemData"), StaticProtectedNs("valor:ItemData"), StaticProtectedNs("Object"), PackageNamespace("valor"), PackageInternalNs("valor"), PrivateNamespace("FilePrivateNS:ItemData"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      coerce              QName(PackageNamespace(""), "Object")
+      setlocal3
+
+      getlocal3
+      pushnull
+      ifeq                L346
+
+      getlocal3
+      pushstring          "ascendedLab"
+      getproperty         MultinameL([PrivateNamespace("valor:ItemData"), ProtectedNamespace("valor:ItemData"), StaticProtectedNs("valor:ItemData"), StaticProtectedNs("Object"), PackageNamespace("valor"), PackageInternalNs("valor"), PrivateNamespace("FilePrivateNS:ItemData"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      pushundefined
+      ifeq                L229
+
+      getlocal3
+      pushstring          "ascendedLab"
+      getproperty         MultinameL([PrivateNamespace("valor:ItemData"), ProtectedNamespace("valor:ItemData"), StaticProtectedNs("valor:ItemData"), StaticProtectedNs("Object"), PackageNamespace("valor"), PackageInternalNs("valor"), PrivateNamespace("FilePrivateNS:ItemData"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      jump                L231
+
+L229:
+      pushbyte            -1
+      coerce_a
+L231:
+      findproperty        QName(PackageNamespace(""), "ascendedLab")
+      swap
+      setproperty         QName(PackageNamespace(""), "ascendedLab")
+
+      getlocal3
+      pushstring          "ascendedAbyss"
+      getproperty         MultinameL([PrivateNamespace("valor:ItemData"), ProtectedNamespace("valor:ItemData"), StaticProtectedNs("valor:ItemData"), StaticProtectedNs("Object"), PackageNamespace("valor"), PackageInternalNs("valor"), PrivateNamespace("FilePrivateNS:ItemData"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      pushundefined
+      ifeq                L243
+
+      getlocal3
+      pushstring          "ascendedAbyss"
+      getproperty         MultinameL([PrivateNamespace("valor:ItemData"), ProtectedNamespace("valor:ItemData"), StaticProtectedNs("valor:ItemData"), StaticProtectedNs("Object"), PackageNamespace("valor"), PackageInternalNs("valor"), PrivateNamespace("FilePrivateNS:ItemData"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      jump                L245
+
+L243:
+      pushbyte            -1
+      coerce_a
+L245:
+      findproperty        QName(PackageNamespace(""), "ascendedAbyss")
+      swap
+      setproperty         QName(PackageNamespace(""), "ascendedAbyss")
+
+      getlocal3
+      pushstring          "ascendedRift"
+      getproperty         MultinameL([PrivateNamespace("valor:ItemData"), ProtectedNamespace("valor:ItemData"), StaticProtectedNs("valor:ItemData"), StaticProtectedNs("Object"), PackageNamespace("valor"), PackageInternalNs("valor"), PrivateNamespace("FilePrivateNS:ItemData"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      pushundefined
+      ifeq                L257
+
+      getlocal3
+      pushstring          "ascendedRift"
+      getproperty         MultinameL([PrivateNamespace("valor:ItemData"), ProtectedNamespace("valor:ItemData"), StaticProtectedNs("valor:ItemData"), StaticProtectedNs("Object"), PackageNamespace("valor"), PackageInternalNs("valor"), PrivateNamespace("FilePrivateNS:ItemData"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      jump                L259
+
+L257:
+      pushbyte            -1
+      coerce_a
+L259:
+      findproperty        QName(PackageNamespace(""), "ascendedRift")
+      swap
+      setproperty         QName(PackageNamespace(""), "ascendedRift")
+
+      getlocal3
+      pushstring          "ascendedSnake"
+      getproperty         MultinameL([PrivateNamespace("valor:ItemData"), ProtectedNamespace("valor:ItemData"), StaticProtectedNs("valor:ItemData"), StaticProtectedNs("Object"), PackageNamespace("valor"), PackageInternalNs("valor"), PrivateNamespace("FilePrivateNS:ItemData"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      pushundefined
+      ifeq                L271
+
+      getlocal3
+      pushstring          "ascendedSnake"
+      getproperty         MultinameL([PrivateNamespace("valor:ItemData"), ProtectedNamespace("valor:ItemData"), StaticProtectedNs("valor:ItemData"), StaticProtectedNs("Object"), PackageNamespace("valor"), PackageInternalNs("valor"), PrivateNamespace("FilePrivateNS:ItemData"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      jump                L273
+
+L271:
+      pushbyte            -1
+      coerce_a
+L273:
+      findproperty        QName(PackageNamespace(""), "ascendedSnake")
+      swap
+      setproperty         QName(PackageNamespace(""), "ascendedSnake")
+
+      getlocal3
+      pushstring          "ascendedTop"
+      getproperty         MultinameL([PrivateNamespace("valor:ItemData"), ProtectedNamespace("valor:ItemData"), StaticProtectedNs("valor:ItemData"), StaticProtectedNs("Object"), PackageNamespace("valor"), PackageInternalNs("valor"), PrivateNamespace("FilePrivateNS:ItemData"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      pushundefined
+      ifeq                L285
+
+      getlocal3
+      pushstring          "ascendedTop"
+      getproperty         MultinameL([PrivateNamespace("valor:ItemData"), ProtectedNamespace("valor:ItemData"), StaticProtectedNs("valor:ItemData"), StaticProtectedNs("Object"), PackageNamespace("valor"), PackageInternalNs("valor"), PrivateNamespace("FilePrivateNS:ItemData"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      jump                L287
+
+L285:
+      pushbyte            -1
+      coerce_a
+L287:
+      findproperty        QName(PackageNamespace(""), "ascendedTop")
+      swap
+      setproperty         QName(PackageNamespace(""), "ascendedTop")
+
+      getlocal3
+      pushstring          "ascendedUdl"
+      getproperty         MultinameL([PrivateNamespace("valor:ItemData"), ProtectedNamespace("valor:ItemData"), StaticProtectedNs("valor:ItemData"), StaticProtectedNs("Object"), PackageNamespace("valor"), PackageInternalNs("valor"), PrivateNamespace("FilePrivateNS:ItemData"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      pushundefined
+      ifeq                L299
+
+      getlocal3
+      pushstring          "ascendedUdl"
+      getproperty         MultinameL([PrivateNamespace("valor:ItemData"), ProtectedNamespace("valor:ItemData"), StaticProtectedNs("valor:ItemData"), StaticProtectedNs("Object"), PackageNamespace("valor"), PackageInternalNs("valor"), PrivateNamespace("FilePrivateNS:ItemData"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      jump                L301
+
+L299:
+      pushbyte            -1
+      coerce_a
+L301:
+      findproperty        QName(PackageNamespace(""), "ascendedUdl")
+      swap
+      setproperty         QName(PackageNamespace(""), "ascendedUdl")
+
+      getlocal3
+      pushstring          "ascendedOcean"
+      getproperty         MultinameL([PrivateNamespace("valor:ItemData"), ProtectedNamespace("valor:ItemData"), StaticProtectedNs("valor:ItemData"), StaticProtectedNs("Object"), PackageNamespace("valor"), PackageInternalNs("valor"), PrivateNamespace("FilePrivateNS:ItemData"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      pushundefined
+      ifeq                L313
+
+      getlocal3
+      pushstring          "ascendedOcean"
+      getproperty         MultinameL([PrivateNamespace("valor:ItemData"), ProtectedNamespace("valor:ItemData"), StaticProtectedNs("valor:ItemData"), StaticProtectedNs("Object"), PackageNamespace("valor"), PackageInternalNs("valor"), PrivateNamespace("FilePrivateNS:ItemData"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      jump                L315
+
+L313:
+      pushbyte            -1
+      coerce_a
+L315:
+      findproperty        QName(PackageNamespace(""), "ascendedOcean")
+      swap
+      setproperty         QName(PackageNamespace(""), "ascendedOcean")
+
+      getlocal3
+      pushstring          "ascendedSprite"
+      getproperty         MultinameL([PrivateNamespace("valor:ItemData"), ProtectedNamespace("valor:ItemData"), StaticProtectedNs("valor:ItemData"), StaticProtectedNs("Object"), PackageNamespace("valor"), PackageInternalNs("valor"), PrivateNamespace("FilePrivateNS:ItemData"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      pushundefined
+      ifeq                L327
+
+      getlocal3
+      pushstring          "ascendedSprite"
+      getproperty         MultinameL([PrivateNamespace("valor:ItemData"), ProtectedNamespace("valor:ItemData"), StaticProtectedNs("valor:ItemData"), StaticProtectedNs("Object"), PackageNamespace("valor"), PackageInternalNs("valor"), PrivateNamespace("FilePrivateNS:ItemData"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      jump                L329
+
+L327:
+      pushbyte            -1
+      coerce_a
+L329:
+      findproperty        QName(PackageNamespace(""), "ascendedSprite")
+      swap
+      setproperty         QName(PackageNamespace(""), "ascendedSprite")
+
+      getlocal3
+      pushstring          "ascendedDojo"
+      getproperty         MultinameL([PrivateNamespace("valor:ItemData"), ProtectedNamespace("valor:ItemData"), StaticProtectedNs("valor:ItemData"), StaticProtectedNs("Object"), PackageNamespace("valor"), PackageInternalNs("valor"), PrivateNamespace("FilePrivateNS:ItemData"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      pushundefined
+      ifeq                L341
+
+      getlocal3
+      pushstring          "ascendedDojo"
+      getproperty         MultinameL([PrivateNamespace("valor:ItemData"), ProtectedNamespace("valor:ItemData"), StaticProtectedNs("valor:ItemData"), StaticProtectedNs("Object"), PackageNamespace("valor"), PackageInternalNs("valor"), PrivateNamespace("FilePrivateNS:ItemData"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      jump                L343
+
+L341:
+      pushbyte            -1
+      coerce_a
+L343:
+      findproperty        QName(PackageNamespace(""), "ascendedDojo")
+      swap
+      setproperty         QName(PackageNamespace(""), "ascendedDojo")
+
+L346:
+      getlocal1
+      pushstring          "resprite"
+      getproperty         MultinameL([PrivateNamespace("valor:ItemData"), ProtectedNamespace("valor:ItemData"), StaticProtectedNs("valor:ItemData"), StaticProtectedNs("Object"), PackageNamespace("valor"), PackageInternalNs("valor"), PrivateNamespace("FilePrivateNS:ItemData"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      pushundefined
+      ifeq                L355
+
+      getlocal1
+      pushstring          "resprite"
+      getproperty         MultinameL([PrivateNamespace("valor:ItemData"), ProtectedNamespace("valor:ItemData"), StaticProtectedNs("valor:ItemData"), StaticProtectedNs("Object"), PackageNamespace("valor"), PackageInternalNs("valor"), PrivateNamespace("FilePrivateNS:ItemData"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      jump                L357
+
+L355:
+      pushbyte            -1
+      coerce_a
+L357:
+      findproperty        QName(PackageNamespace(""), "resprite")
+      swap
+      setproperty         QName(PackageNamespace(""), "resprite")
+
+      getlocal1
+      pushstring          "inv"
+      getproperty         MultinameL([PrivateNamespace("valor:ItemData"), ProtectedNamespace("valor:ItemData"), StaticProtectedNs("valor:ItemData"), StaticProtectedNs("Object"), PackageNamespace("valor"), PackageInternalNs("valor"), PrivateNamespace("FilePrivateNS:ItemData"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      pushundefined
+      ifeq                L369
+
+      getlocal1
+      pushstring          "inv"
+      getproperty         MultinameL([PrivateNamespace("valor:ItemData"), ProtectedNamespace("valor:ItemData"), StaticProtectedNs("valor:ItemData"), StaticProtectedNs("Object"), PackageNamespace("valor"), PackageInternalNs("valor"), PrivateNamespace("FilePrivateNS:ItemData"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      jump                L371
+
+L369:
+      pushstring          ""
+      coerce_a
+L371:
+      findproperty        QName(PackageNamespace(""), "inventory")
+      swap
+      setproperty         QName(PackageNamespace(""), "inventory")
+
+      getlocal1
+      pushstring          "bpItem"
+      getproperty         MultinameL([PrivateNamespace("valor:ItemData"), ProtectedNamespace("valor:ItemData"), StaticProtectedNs("valor:ItemData"), StaticProtectedNs("Object"), PackageNamespace("valor"), PackageInternalNs("valor"), PrivateNamespace("FilePrivateNS:ItemData"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      findproperty        QName(PackageNamespace(""), "bpItem")
+      swap
+      setproperty         QName(PackageNamespace(""), "bpItem")
+
+      getlocal1
+      pushstring          "locked"
+      getproperty         MultinameL([PrivateNamespace("valor:ItemData"), ProtectedNamespace("valor:ItemData"), StaticProtectedNs("valor:ItemData"), StaticProtectedNs("Object"), PackageNamespace("valor"), PackageInternalNs("valor"), PrivateNamespace("FilePrivateNS:ItemData"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      findproperty        QName(PackageNamespace(""), "locked")
+      swap
+      setproperty         QName(PackageNamespace(""), "locked")
+
+      getlocal1
+      pushstring          "spiritKills"
+      getproperty         MultinameL([PrivateNamespace("valor:ItemData"), ProtectedNamespace("valor:ItemData"), StaticProtectedNs("valor:ItemData"), StaticProtectedNs("Object"), PackageNamespace("valor"), PackageInternalNs("valor"), PrivateNamespace("FilePrivateNS:ItemData"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      pushundefined
+      ifeq                L395
+
+      getlocal1
+      pushstring          "spiritKills"
+      getproperty         MultinameL([PrivateNamespace("valor:ItemData"), ProtectedNamespace("valor:ItemData"), StaticProtectedNs("valor:ItemData"), StaticProtectedNs("Object"), PackageNamespace("valor"), PackageInternalNs("valor"), PrivateNamespace("FilePrivateNS:ItemData"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      jump                L397
+
+L395:
+      pushbyte            -1
+      coerce_a
+L397:
+      findproperty        QName(PackageNamespace(""), "spiritKills")
+      swap
+      setproperty         QName(PackageNamespace(""), "spiritKills")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getNumShots")
+   method
+    name "getNumShots"
+    refid "valor:ItemData/instance/getNumShots"
+    returns QName(PackageNamespace(""), "int")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.objects"), "ObjectLibrary")
+      getproperty         QName(PackageNamespace(""), "xmlLibrary_")
+      getlex              QName(PackageNamespace(""), "objectType")
+      getproperty         MultinameL([PrivateNamespace("valor:ItemData"), ProtectedNamespace("valor:ItemData"), StaticProtectedNs("valor:ItemData"), StaticProtectedNs("Object"), PackageNamespace("valor"), PackageInternalNs("valor"), PrivateNamespace("FilePrivateNS:ItemData"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      coerce              QName(PackageNamespace(""), "XML")
+      setlocal1
+
+      getlex              QName(PackageNamespace(""), "numShots")
+      pushbyte            -1
+      ifeq                L13
+
+      getlex              QName(PackageNamespace(""), "numShots")
+      jump                L24
+
+L13:
+      getlocal1
+      pushstring          "NumProjectiles"
+      callproperty        Multiname("hasOwnProperty", [PrivateNamespace("valor:ItemData"), ProtectedNamespace("valor:ItemData"), StaticProtectedNs("valor:ItemData"), StaticProtectedNs("Object"), PackageNamespace("valor"), PackageInternalNs("valor"), PrivateNamespace("FilePrivateNS:ItemData"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 1
+      iffalse             L21
+
+      getlocal1
+      getproperty         Multiname("NumProjectiles", [PrivateNamespace("valor:ItemData"), ProtectedNamespace("valor:ItemData"), StaticProtectedNs("valor:ItemData"), StaticProtectedNs("Object"), PackageNamespace("valor"), PackageInternalNs("valor"), PrivateNamespace("FilePrivateNS:ItemData"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      convert_i
+      jump                L23
+
+L21:
+      pushbyte            1
+      coerce_a
+L23:
+      coerce_a
+L24:
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getMinDmg")
+   method
+    name "getMinDmg"
+    refid "valor:ItemData/instance/getMinDmg"
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "int")
+    flag HAS_PARAM_NAMES
+    paramname "defaultDmg"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace(""), "minDmg")
+      pushbyte            -1
+      ifeq                L7
+
+      getlex              QName(PackageNamespace(""), "minDmg")
+      jump                L9
+
+L7:
+      getlocal1
+      convert_i
+L9:
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getMaxDmg")
+   method
+    name "getMaxDmg"
+    refid "valor:ItemData/instance/getMaxDmg"
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "int")
+    flag HAS_PARAM_NAMES
+    paramname "defaultDmg"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace(""), "maxDmg")
+      pushbyte            -1
+      ifeq                L7
+
+      getlex              QName(PackageNamespace(""), "maxDmg")
+      jump                L9
+
+L7:
+      getlocal1
+      convert_i
+L9:
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "toString")
+   method
+    name "toString"
+    refid "valor:ItemData/instance/toString"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace(""), "objectType")
+      pushbyte            -1
+      ifne                L7
+
+      pushstring          "null"
+      returnvalue
+
+L7:
+      getlex              QName(PackageNamespace(""), "str")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "valor:ItemData/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait method QName(PackageNamespace(""), "convertFromItemDataString")
+  method
+   name "convertFromItemDataString"
+   refid "valor:ItemData/class/convertFromItemDataString"
+   param QName(PackageNamespace(""), "String")
+   returns TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("valor"), "ItemData")>)
+   flag HAS_PARAM_NAMES
+   paramname "equipment"
+   body
+    maxstack 3
+    localcount 6
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     pushnull
+     setlocal            4
+
+     getlex              QName(PackageNamespace("__AS3__.vec"), "Vector")
+     getlocal0
+     applytype           1
+     construct           0
+     coerce              TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("valor"), "ItemData")>)
+     setlocal2
+
+     getlex              QName(PackageNamespace("com.adobe.serialization.json"), "JSON")
+     getlocal1
+     callproperty        QName(PackageNamespace(""), "decode"), 1
+     coerce              QName(PackageNamespace(""), "Object")
+     setlocal3
+
+     getlocal2
+     getlocal3
+     getproperty         Multiname("length", [PrivateNamespace("valor:ItemData"), StaticProtectedNs("valor:ItemData"), StaticProtectedNs("Object"), PackageNamespace("valor"), PackageInternalNs("valor"), PrivateNamespace("FilePrivateNS:ItemData"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("valor:ItemData")])
+     setproperty         QName(PackageNamespace(""), "length")
+
+     pushbyte            0
+     dup
+     setlocal            5
+
+     pop
+     jump                L44
+
+L24:
+     label
+     getlocal3
+     getlocal            5
+     getproperty         MultinameL([PrivateNamespace("valor:ItemData"), StaticProtectedNs("valor:ItemData"), StaticProtectedNs("Object"), PackageNamespace("valor"), PackageInternalNs("valor"), PrivateNamespace("FilePrivateNS:ItemData"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("valor:ItemData")])
+     coerce              QName(PackageNamespace(""), "Object")
+     setlocal            4
+
+     getlocal2
+     getlocal            5
+     getlocal0
+     construct           0
+     setproperty         MultinameL([PrivateNamespace("valor:ItemData"), StaticProtectedNs("valor:ItemData"), StaticProtectedNs("Object"), PackageNamespace("valor"), PackageInternalNs("valor"), PrivateNamespace("FilePrivateNS:ItemData"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("valor:ItemData")])
+
+     getlocal            4
+     pushnull
+     ifeq                L43
+
+     getlocal2
+     getlocal            5
+     getproperty         MultinameL([PrivateNamespace("valor:ItemData"), StaticProtectedNs("valor:ItemData"), StaticProtectedNs("Object"), PackageNamespace("valor"), PackageInternalNs("valor"), PrivateNamespace("FilePrivateNS:ItemData"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("valor:ItemData")])
+     getlocal            4
+     callpropvoid        QName(PackageNamespace(""), "setValues"), 1
+
+L43:
+     inclocal_i          5
+L44:
+     getlocal            5
+     getlocal3
+     getproperty         Multiname("length", [PrivateNamespace("valor:ItemData"), StaticProtectedNs("valor:ItemData"), StaticProtectedNs("Object"), PackageNamespace("valor"), PackageInternalNs("valor"), PrivateNamespace("FilePrivateNS:ItemData"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("valor:ItemData")])
+     iflt                L24
+
+     getlocal2
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+end ; class

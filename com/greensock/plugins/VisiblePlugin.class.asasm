@@ -1,0 +1,170 @@
+class
+ refid "com.greensock.plugins:VisiblePlugin"
+ instance QName(PackageNamespace("com.greensock.plugins"), "VisiblePlugin")
+  extends QName(PackageNamespace("com.greensock.plugins"), "TweenPlugin")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.greensock.plugins:VisiblePlugin")
+  iinit
+   name "VisiblePlugin"
+   refid "com.greensock.plugins:VisiblePlugin/instance/init"
+   body
+    maxstack 2
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     pushstring          "visible"
+     constructsuper      1
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(ProtectedNamespace("com.greensock.plugins:VisiblePlugin"), "_target") type QName(PackageNamespace(""), "Object") end
+  trait slot QName(ProtectedNamespace("com.greensock.plugins:VisiblePlugin"), "_tween") type QName(PackageNamespace("com.greensock"), "TweenLite") end
+  trait slot QName(ProtectedNamespace("com.greensock.plugins:VisiblePlugin"), "_visible") type QName(PackageNamespace(""), "Boolean") end
+  trait slot QName(ProtectedNamespace("com.greensock.plugins:VisiblePlugin"), "_initVal") type QName(PackageNamespace(""), "Boolean") end
+  trait slot QName(ProtectedNamespace("com.greensock.plugins:VisiblePlugin"), "_progress") type QName(PackageNamespace(""), "int") end
+  trait method QName(PackageNamespace(""), "_onInitTween") flag OVERRIDE
+   method
+    name "_onInitTween"
+    refid "com.greensock.plugins:VisiblePlugin/instance/_onInitTween"
+    param QName(PackageNamespace(""), "Object")
+    param null
+    param QName(PackageNamespace("com.greensock"), "TweenLite")
+    returns QName(PackageNamespace(""), "Boolean")
+    flag HAS_PARAM_NAMES
+    paramname "target"
+    paramname "value"
+    paramname "tween"
+    body
+     maxstack 2
+     localcount 4
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      findproperty        QName(ProtectedNamespace("com.greensock.plugins:VisiblePlugin"), "_target")
+      swap
+      setproperty         QName(ProtectedNamespace("com.greensock.plugins:VisiblePlugin"), "_target")
+
+      getlocal3
+      findproperty        QName(ProtectedNamespace("com.greensock.plugins:VisiblePlugin"), "_tween")
+      swap
+      setproperty         QName(ProtectedNamespace("com.greensock.plugins:VisiblePlugin"), "_tween")
+
+      getlex              QName(ProtectedNamespace("com.greensock.plugins:VisiblePlugin"), "_tween")
+      getproperty         QName(PackageNamespace(""), "vars")
+      getproperty         Multiname("runBackwards", [PrivateNamespace("com.greensock.plugins:VisiblePlugin"), ProtectedNamespace("com.greensock.plugins:VisiblePlugin"), StaticProtectedNs("com.greensock.plugins:VisiblePlugin"), StaticProtectedNs("com.greensock.plugins:TweenPlugin"), StaticProtectedNs("Object"), PackageNamespace("com.greensock.plugins"), PackageInternalNs("com.greensock.plugins"), PrivateNamespace("FilePrivateNS:VisiblePlugin"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      iffalse             L16
+
+      pushbyte            0
+      jump                L17
+
+L16:
+      pushdouble          1
+L17:
+      findproperty        QName(ProtectedNamespace("com.greensock.plugins:VisiblePlugin"), "_progress")
+      swap
+      setproperty         QName(ProtectedNamespace("com.greensock.plugins:VisiblePlugin"), "_progress")
+
+      getlex              QName(ProtectedNamespace("com.greensock.plugins:VisiblePlugin"), "_target")
+      getproperty         Multiname("visible", [PrivateNamespace("com.greensock.plugins:VisiblePlugin"), ProtectedNamespace("com.greensock.plugins:VisiblePlugin"), StaticProtectedNs("com.greensock.plugins:VisiblePlugin"), StaticProtectedNs("com.greensock.plugins:TweenPlugin"), StaticProtectedNs("Object"), PackageNamespace("com.greensock.plugins"), PackageInternalNs("com.greensock.plugins"), PrivateNamespace("FilePrivateNS:VisiblePlugin"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      findproperty        QName(ProtectedNamespace("com.greensock.plugins:VisiblePlugin"), "_initVal")
+      swap
+      setproperty         QName(ProtectedNamespace("com.greensock.plugins:VisiblePlugin"), "_initVal")
+
+      getlocal2
+      convert_b
+      findproperty        QName(ProtectedNamespace("com.greensock.plugins:VisiblePlugin"), "_visible")
+      swap
+      setproperty         QName(ProtectedNamespace("com.greensock.plugins:VisiblePlugin"), "_visible")
+
+      pushtrue
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setRatio") flag OVERRIDE
+   method
+    name "setRatio"
+    refid "com.greensock.plugins:VisiblePlugin/instance/setRatio"
+    param QName(PackageNamespace(""), "Number")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "v"
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(ProtectedNamespace("com.greensock.plugins:VisiblePlugin"), "_target")
+      getlocal1
+      pushbyte            1
+      equals
+      dup
+      iffalse             L24
+
+      pop
+      getlex              QName(ProtectedNamespace("com.greensock.plugins:VisiblePlugin"), "_tween")
+      getproperty         QName(PackageNamespace(""), "_time")
+      getlex              QName(ProtectedNamespace("com.greensock.plugins:VisiblePlugin"), "_tween")
+      getproperty         QName(PackageNamespace(""), "_duration")
+      divide
+      getlex              QName(ProtectedNamespace("com.greensock.plugins:VisiblePlugin"), "_progress")
+      equals
+      dup
+      iftrue              L23
+
+      pop
+      getlex              QName(ProtectedNamespace("com.greensock.plugins:VisiblePlugin"), "_tween")
+      getproperty         QName(PackageNamespace(""), "_duration")
+      pushbyte            0
+      equals
+L23:
+      convert_b
+L24:
+      iffalse             L27
+
+      getlex              QName(ProtectedNamespace("com.greensock.plugins:VisiblePlugin"), "_visible")
+      jump                L29
+
+L27:
+      getlex              QName(ProtectedNamespace("com.greensock.plugins:VisiblePlugin"), "_initVal")
+      convert_b
+L29:
+      setproperty         Multiname("visible", [PrivateNamespace("com.greensock.plugins:VisiblePlugin"), ProtectedNamespace("com.greensock.plugins:VisiblePlugin"), StaticProtectedNs("com.greensock.plugins:VisiblePlugin"), StaticProtectedNs("com.greensock.plugins:TweenPlugin"), StaticProtectedNs("Object"), PackageNamespace("com.greensock.plugins"), PackageInternalNs("com.greensock.plugins"), PrivateNamespace("FilePrivateNS:VisiblePlugin"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.greensock.plugins:VisiblePlugin/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PackageNamespace(""), "API") type QName(PackageNamespace(""), "Number") value Integer(2) end
+end ; class

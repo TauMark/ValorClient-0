@@ -1,0 +1,580 @@
+class
+ refid "kabam.rotmg.raidLauncher:RaidLauncherModal"
+ instance QName(PackageNamespace("kabam.rotmg.raidLauncher"), "RaidLauncherModal")
+  extends QName(PackageNamespace("kabam.rotmg.account.core.view"), "EmptyFrame")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.raidLauncher:RaidLauncherModal")
+  iinit
+   name "RaidLauncherModal"
+   refid "kabam.rotmg.raidLauncher:RaidLauncherModal/instance/init"
+   param QName(PackageNamespace(""), "Boolean")
+   flag HAS_OPTIONAL
+   flag HAS_PARAM_NAMES
+   optional False()
+   paramname "_arg1"
+   body
+    maxstack 3
+    localcount 2
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     getlocal1
+     setproperty         QName(PrivateNamespace("kabam.rotmg.raidLauncher:RaidLauncherModal"), "triggeredOnStartup")
+
+     getlocal0
+     getlex              QName(PackageNamespace("kabam.rotmg.core"), "StaticInjectorContext")
+     callproperty        QName(PackageNamespace(""), "getInjector"), 0
+     getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "FontModel")
+     callproperty        QName(PackageNamespace(""), "getInstance"), 1
+     setproperty         QName(PrivateNamespace("kabam.rotmg.raidLauncher:RaidLauncherModal"), "fontModel")
+
+     pushshort           440
+     findproperty        QName(ProtectedNamespace("kabam.rotmg.account.core.view:EmptyFrame"), "modalWidth")
+     swap
+     setproperty         QName(ProtectedNamespace("kabam.rotmg.account.core.view:EmptyFrame"), "modalWidth")
+
+     pushshort           500
+     findproperty        QName(ProtectedNamespace("kabam.rotmg.account.core.view:EmptyFrame"), "modalHeight")
+     swap
+     setproperty         QName(ProtectedNamespace("kabam.rotmg.account.core.view:EmptyFrame"), "modalHeight")
+
+     getlocal0
+     getlex              QName(ProtectedNamespace("kabam.rotmg.account.core.view:EmptyFrame"), "modalWidth")
+     getlex              QName(ProtectedNamespace("kabam.rotmg.account.core.view:EmptyFrame"), "modalHeight")
+     constructsuper      2
+
+     getlocal0
+     pushtrue
+     callpropvoid        QName(PackageNamespace(""), "setCloseButton"), 1
+
+     getlocal0
+     pushstring          "Choose a raid to launch"
+     pushtrue
+     callpropvoid        QName(PackageNamespace(""), "setTitle"), 2
+
+     getlex              QName(ProtectedNamespace("kabam.rotmg.account.core.view:EmptyFrame"), "closeButton")
+     getproperty         QName(PackageNamespace(""), "clicked")
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "onCloseButtonClicked")
+     callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "launchButton") type QName(PackageNamespace("com.company.assembleegameclient.ui"), "DeprecatedTextButton") end
+  trait slot QName(PackageNamespace(""), "ultraCheckbox") type QName(PackageNamespace("com.company.assembleegameclient.account.ui"), "CheckBoxField") end
+  trait slot QName(PackageNamespace(""), "launchButton2") type QName(PackageNamespace("com.company.assembleegameclient.ui"), "DeprecatedTextButton") end
+  trait slot QName(PackageNamespace(""), "ultraCheckbox2") type QName(PackageNamespace("com.company.assembleegameclient.account.ui"), "CheckBoxField") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.raidLauncher:RaidLauncherModal"), "fontModel") type QName(PackageNamespace("kabam.rotmg.text.model"), "FontModel") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.raidLauncher:RaidLauncherModal"), "triggeredOnStartup") type QName(PackageNamespace(""), "Boolean") end
+  trait method QName(PackageNamespace(""), "onCloseButtonClicked")
+   method
+    name "onCloseButtonClicked"
+    refid "kabam.rotmg.raidLauncher:RaidLauncherModal/instance/onCloseButtonClicked"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace("kabam.rotmg.core"), "StaticInjectorContext")
+      callproperty        QName(PackageNamespace(""), "getInjector"), 0
+      getlex              QName(PackageNamespace("kabam.rotmg.dialogs.control"), "FlushPopupStartupQueueSignal")
+      callproperty        QName(PackageNamespace(""), "getInstance"), 1
+      coerce              QName(PackageNamespace("kabam.rotmg.dialogs.control"), "FlushPopupStartupQueueSignal")
+      setlocal1
+
+      getlex              QName(ProtectedNamespace("kabam.rotmg.account.core.view:EmptyFrame"), "closeButton")
+      getproperty         QName(PackageNamespace(""), "clicked")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "onCloseButtonClicked")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.raidLauncher:RaidLauncherModal"), "triggeredOnStartup")
+      iffalse             L18
+
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+L18:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "onClick")
+   method
+    name "onClick"
+    refid "kabam.rotmg.raidLauncher:RaidLauncherModal/instance/onClick"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 1
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(ProtectedNamespace("kabam.rotmg.raidLauncher:RaidLauncherModal"), "makeModalBackground") flag OVERRIDE
+   method
+    name "makeModalBackground"
+    refid "kabam.rotmg.raidLauncher:RaidLauncherModal/instance/kabam.rotmg.raidLauncher:RaidLauncherModal:makeModalBackground"
+    returns QName(PackageNamespace("flash.display"), "Sprite")
+    body
+     maxstack 4
+     localcount 6
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("flash.display"), "Sprite")
+      constructprop       QName(PackageNamespace("flash.display"), "Sprite"), 0
+      coerce              QName(PackageNamespace("flash.display"), "Sprite")
+      setlocal3
+
+      findpropstrict      QName(PackageNamespace(""), "backgroundImageEmbed")
+      constructprop       QName(PackageNamespace(""), "backgroundImageEmbed"), 0
+      coerce              QName(PackageNamespace("flash.display"), "DisplayObject")
+      setlocal1
+
+      getlocal1
+      getlex              QName(ProtectedNamespace("kabam.rotmg.account.core.view:EmptyFrame"), "modalWidth")
+      pushbyte            1
+      add
+      setproperty         QName(PackageNamespace(""), "width")
+
+      getlocal1
+      getlex              QName(ProtectedNamespace("kabam.rotmg.account.core.view:EmptyFrame"), "modalHeight")
+      pushbyte            25
+      subtract
+      setproperty         QName(PackageNamespace(""), "height")
+
+      getlocal1
+      pushbyte            27
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal1
+      pushbyte            1
+      setproperty         QName(PackageNamespace(""), "alpha")
+
+      findpropstrict      QName(PackageNamespace(""), "raid1launchFlagEmbed")
+      constructprop       QName(PackageNamespace(""), "raid1launchFlagEmbed"), 0
+      coerce              QName(PackageNamespace("flash.display"), "DisplayObject")
+      setlocal2
+
+      getlocal2
+      pushshort           440
+      setproperty         QName(PackageNamespace(""), "width")
+
+      getlocal2
+      pushbyte            80
+      setproperty         QName(PackageNamespace(""), "height")
+
+      getlocal2
+      pushbyte            30
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal2
+      pushbyte            1
+      setproperty         QName(PackageNamespace(""), "alpha")
+
+      findpropstrict      QName(PackageNamespace(""), "raid2launchFlagEmbed")
+      constructprop       QName(PackageNamespace(""), "raid2launchFlagEmbed"), 0
+      coerce              QName(PackageNamespace("flash.display"), "DisplayObject")
+      dup
+      setlocal            5
+
+      pushshort           440
+      setproperty         QName(PackageNamespace(""), "width")
+
+      getlocal            5
+      pushbyte            80
+      setproperty         QName(PackageNamespace(""), "height")
+
+      getlocal            5
+      pushshort           150
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal            5
+      pushdouble          0.75
+      setproperty         QName(PackageNamespace(""), "alpha")
+
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.pets.view.components"), "PopupWindowBackground")
+      constructprop       QName(PackageNamespace("kabam.rotmg.pets.view.components"), "PopupWindowBackground"), 0
+      coerce              QName(PackageNamespace("kabam.rotmg.pets.view.components"), "PopupWindowBackground")
+      dup
+      setlocal            4
+
+      getlex              QName(ProtectedNamespace("kabam.rotmg.account.core.view:EmptyFrame"), "modalWidth")
+      getlex              QName(ProtectedNamespace("kabam.rotmg.account.core.view:EmptyFrame"), "modalHeight")
+      pushbyte            1
+      callpropvoid        QName(PackageNamespace(""), "draw"), 3
+
+      getlocal3
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      getlocal3
+      getlocal2
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      getlocal3
+      getlocal            4
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      getlocal3
+      getlocal            5
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.ui"), "DeprecatedTextButton")
+      pushbyte            12
+      pushstring          "Launch"
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.ui"), "DeprecatedTextButton"), 2
+      setproperty         QName(PackageNamespace(""), "launchButton")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "launchButton")
+      pushbyte            118
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "launchButton")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "launchButton")
+      getproperty         QName(PackageNamespace(""), "x")
+      pushbyte            10
+      add
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "launchButton")
+      pushtrue
+      callpropvoid        QName(PackageNamespace(""), "setEnabled"), 1
+
+      getlocal3
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "launchButton")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.account.ui"), "CheckBoxField")
+      pushstring          "Ultra"
+      pushfalse
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.account.ui"), "CheckBoxField"), 2
+      setproperty         QName(PackageNamespace(""), "ultraCheckbox")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "ultraCheckbox")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "launchButton")
+      getproperty         QName(PackageNamespace(""), "y")
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "ultraCheckbox")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "launchButton")
+      getproperty         QName(PackageNamespace(""), "x")
+      pushbyte            80
+      add
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal3
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "ultraCheckbox")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "launchButton")
+      pushstring          "click"
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.raidLauncher:RaidLauncherModal"), "onMouseClick")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.ui"), "DeprecatedTextButton")
+      pushbyte            12
+      pushstring          "Launch"
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.ui"), "DeprecatedTextButton"), 2
+      setproperty         QName(PackageNamespace(""), "launchButton2")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "launchButton2")
+      pushshort           236
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "launchButton2")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "launchButton2")
+      getproperty         QName(PackageNamespace(""), "x")
+      pushbyte            10
+      add
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "launchButton2")
+      pushtrue
+      callpropvoid        QName(PackageNamespace(""), "setEnabled"), 1
+
+      getlocal3
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "launchButton2")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.account.ui"), "CheckBoxField")
+      pushstring          "Ultra"
+      pushfalse
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.account.ui"), "CheckBoxField"), 2
+      setproperty         QName(PackageNamespace(""), "ultraCheckbox2")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "ultraCheckbox2")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "launchButton2")
+      getproperty         QName(PackageNamespace(""), "y")
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "ultraCheckbox2")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "launchButton2")
+      getproperty         QName(PackageNamespace(""), "x")
+      pushbyte            80
+      add
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal3
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "ultraCheckbox2")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "launchButton2")
+      pushstring          "click"
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.raidLauncher:RaidLauncherModal"), "onMouseClick")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      getlocal3
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.raidLauncher:RaidLauncherModal"), "onMouseClick")
+   method
+    name "onMouseClick"
+    refid "kabam.rotmg.raidLauncher:RaidLauncherModal/instance/kabam.rotmg.raidLauncher:RaidLauncherModal/instance/onMouseClick"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "e"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.sound"), "SoundEffectLibrary")
+      pushstring          "button_click"
+      callpropvoid        QName(PackageNamespace(""), "play"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "onCloseClick") flag OVERRIDE
+   method
+    name "onCloseClick"
+    refid "kabam.rotmg.raidLauncher:RaidLauncherModal/instance/onCloseClick"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.sound"), "SoundEffectLibrary")
+      pushstring          "button_click"
+      callpropvoid        QName(PackageNamespace(""), "play"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.raidLauncher:RaidLauncherModal/class/init"
+  body
+   maxstack 2
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 1
+   code
+    getlocal0
+    pushscope
+
+    getlex              QName(PackageNamespace("kabam.rotmg.raidLauncher"), "RaidLauncher_backgroundImageEmbed")
+    findproperty        QName(PackageNamespace(""), "backgroundImageEmbed")
+    swap
+    setproperty         QName(PackageNamespace(""), "backgroundImageEmbed")
+
+    getlex              QName(PackageNamespace("kabam.rotmg.raidLauncher"), "Raid1_launchFlag")
+    findproperty        QName(PackageNamespace(""), "raid1launchFlagEmbed")
+    swap
+    setproperty         QName(PackageNamespace(""), "raid1launchFlagEmbed")
+
+    getlex              QName(PackageNamespace("kabam.rotmg.raidLauncher"), "Raid2_launchFlag")
+    findproperty        QName(PackageNamespace(""), "raid2launchFlagEmbed")
+    swap
+    setproperty         QName(PackageNamespace(""), "raid2launchFlagEmbed")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PackageNamespace(""), "MODAL_WIDTH") type QName(PackageNamespace(""), "int") value Integer(440) end
+ trait const QName(PackageNamespace(""), "MODAL_HEIGHT") type QName(PackageNamespace(""), "int") value Integer(500) end
+ trait slot QName(PackageNamespace(""), "backgroundImageEmbed") type QName(PackageNamespace(""), "Class") end
+ trait slot QName(PackageNamespace(""), "raid1launchFlagEmbed") type QName(PackageNamespace(""), "Class") end
+ trait slot QName(PackageNamespace(""), "raid2launchFlagEmbed") type QName(PackageNamespace(""), "Class") end
+ trait slot QName(PackageNamespace(""), "modalWidth") type QName(PackageNamespace(""), "int") value Integer(440) end
+ trait slot QName(PackageNamespace(""), "modalHeight") type QName(PackageNamespace(""), "int") value Integer(500) end
+ trait method QName(PackageNamespace(""), "getText")
+  method
+   name "getText"
+   refid "kabam.rotmg.raidLauncher:RaidLauncherModal/class/getText"
+   param QName(PackageNamespace(""), "String")
+   param QName(PackageNamespace(""), "int")
+   param QName(PackageNamespace(""), "int")
+   param QName(PackageNamespace(""), "Boolean")
+   returns QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete")
+   flag HAS_PARAM_NAMES
+   paramname "_arg1"
+   paramname "_arg2"
+   paramname "_arg3"
+   paramname "_arg4"
+   body
+    maxstack 5
+    localcount 6
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete")
+     constructprop       QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete"), 0
+     pushbyte            18
+     callproperty        QName(PackageNamespace(""), "setSize"), 1
+     pushint             16777215
+     callproperty        QName(PackageNamespace(""), "setColor"), 1
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "modalWidth")
+     pushbyte            20
+     pushbyte            2
+     multiply
+     subtract
+     pushbyte            10
+     subtract
+     callproperty        QName(PackageNamespace(""), "setTextWidth"), 1
+     coerce              QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete")
+     dup
+     setlocal            5
+
+     pushtrue
+     callpropvoid        QName(PackageNamespace(""), "setBold"), 1
+
+     getlocal            4
+     iffalse             L30
+
+     getlocal            5
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "StaticStringBuilder")
+     getlocal1
+     constructprop       QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "StaticStringBuilder"), 1
+     callpropvoid        QName(PackageNamespace(""), "setStringBuilder"), 1
+
+     jump                L36
+
+L30:
+     getlocal            5
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder")
+     constructprop       QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder"), 0
+     getlocal1
+     callproperty        QName(PackageNamespace(""), "setParams"), 1
+     callpropvoid        QName(PackageNamespace(""), "setStringBuilder"), 1
+
+L36:
+     getlocal            5
+     pushtrue
+     callpropvoid        QName(PackageNamespace(""), "setWordWrap"), 1
+
+     getlocal            5
+     pushtrue
+     callpropvoid        QName(PackageNamespace(""), "setMultiLine"), 1
+
+     getlocal            5
+     pushstring          "center"
+     callpropvoid        QName(PackageNamespace(""), "setAutoSize"), 1
+
+     getlocal            5
+     pushstring          "center"
+     callpropvoid        QName(PackageNamespace(""), "setHorizontalAlign"), 1
+
+     getlocal            5
+     findpropstrict      QName(PackageNamespace("flash.filters"), "DropShadowFilter")
+     pushbyte            0
+     pushbyte            0
+     pushbyte            0
+     constructprop       QName(PackageNamespace("flash.filters"), "DropShadowFilter"), 3
+     newarray            1
+     setproperty         QName(PackageNamespace(""), "filters")
+
+     getlocal            5
+     getlocal2
+     setproperty         QName(PackageNamespace(""), "x")
+
+     getlocal            5
+     getlocal3
+     setproperty         QName(PackageNamespace(""), "y")
+
+     getlocal            5
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+end ; class

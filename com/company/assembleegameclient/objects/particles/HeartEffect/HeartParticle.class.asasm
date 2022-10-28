@@ -1,0 +1,266 @@
+class
+ refid "com.company.assembleegameclient.objects.particles:HeartEffect/HeartParticle"
+ instance QName(PrivateNamespace("FilePrivateNS:HeartEffect"), "HeartParticle")
+  extends QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "Particle")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("FilePrivateNS:HeartEffect:HeartParticle")
+  iinit
+   name "HeartParticle"
+   refid "com.company.assembleegameclient.objects.particles:HeartEffect/HeartParticle/instance/init"
+   param QName(PackageNamespace(""), "uint")
+   flag HAS_OPTIONAL
+   flag HAS_PARAM_NAMES
+   optional Integer(16711680)
+   paramname "_arg1"
+   body
+    maxstack 6
+    localcount 2
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     pushdouble          0.97
+     getlex              QName(PackageNamespace(""), "Math")
+     callproperty        QName(PackageNamespace(""), "random"), 0
+     pushdouble          0.06
+     multiply
+     add
+     setproperty         QName(PrivateNamespace("FilePrivateNS:HeartEffect:HeartParticle"), "radVar_")
+
+     getlocal0
+     getlocal1
+     pushbyte            0
+     pushshort           140
+     getlex              QName(PackageNamespace(""), "Math")
+     callproperty        QName(PackageNamespace(""), "random"), 0
+     pushbyte            40
+     multiply
+     add
+     constructsuper      3
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "startTime_") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PackageNamespace(""), "cX_") type QName(PackageNamespace(""), "Number") end
+  trait slot QName(PackageNamespace(""), "cY_") type QName(PackageNamespace(""), "Number") end
+  trait slot QName(PackageNamespace(""), "rad_") type QName(PackageNamespace(""), "Number") end
+  trait slot QName(PackageNamespace(""), "alive_") type QName(PackageNamespace(""), "Boolean") value True() end
+  trait slot QName(PackageNamespace(""), "speed_") type QName(PackageNamespace(""), "Number") end
+  trait slot QName(PrivateNamespace("FilePrivateNS:HeartEffect:HeartParticle"), "radVar_") type QName(PackageNamespace(""), "Number") end
+  trait method QName(PrivateNamespace("FilePrivateNS:HeartEffect:HeartParticle"), "move")
+   method
+    name "move"
+    refid "com.company.assembleegameclient.objects.particles:HeartEffect/HeartParticle/instance/com.company.assembleegameclient.objects.particles:HeartEffect/HeartParticle/instance/move"
+    param QName(PackageNamespace(""), "Number")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 6
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "cX_")
+      pushbyte            16
+      getlex              QName(PackageNamespace(""), "Math")
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "sin"), 1
+      multiply
+      getlex              QName(PackageNamespace(""), "Math")
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "sin"), 1
+      multiply
+      getlex              QName(PackageNamespace(""), "Math")
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "sin"), 1
+      multiply
+      pushbyte            16
+      divide
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "rad_")
+      getlocal0
+      getproperty         QName(PrivateNamespace("FilePrivateNS:HeartEffect:HeartParticle"), "radVar_")
+      multiply
+      multiply
+      add
+      findproperty        QName(PackageNamespace(""), "x_")
+      swap
+      setproperty         QName(PackageNamespace(""), "x_")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "cY_")
+      pushbyte            13
+      getlex              QName(PackageNamespace(""), "Math")
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "cos"), 1
+      multiply
+      pushbyte            5
+      getlex              QName(PackageNamespace(""), "Math")
+      pushbyte            2
+      getlocal1
+      multiply
+      callproperty        QName(PackageNamespace(""), "cos"), 1
+      multiply
+      subtract
+      pushbyte            2
+      getlex              QName(PackageNamespace(""), "Math")
+      pushbyte            3
+      getlocal1
+      multiply
+      callproperty        QName(PackageNamespace(""), "cos"), 1
+      multiply
+      subtract
+      getlex              QName(PackageNamespace(""), "Math")
+      pushbyte            4
+      getlocal1
+      multiply
+      callproperty        QName(PackageNamespace(""), "cos"), 1
+      subtract
+      pushbyte            16
+      divide
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "rad_")
+      getlocal0
+      getproperty         QName(PrivateNamespace("FilePrivateNS:HeartEffect:HeartParticle"), "radVar_")
+      multiply
+      multiply
+      subtract
+      findproperty        QName(PackageNamespace(""), "y_")
+      swap
+      setproperty         QName(PackageNamespace(""), "y_")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "restart")
+   method
+    name "restart"
+    refid "com.company.assembleegameclient.objects.particles:HeartEffect/HeartParticle/instance/restart"
+    param QName(PackageNamespace(""), "int")
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    paramname "_arg2"
+    body
+     maxstack 2
+     localcount 4
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      setproperty         QName(PackageNamespace(""), "startTime_")
+
+      getlocal2
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "startTime_")
+      subtract
+      pushshort           1000
+      divide
+      convert_d
+      setlocal3
+
+      getlocal0
+      getlocal3
+      callpropvoid        QName(PrivateNamespace("FilePrivateNS:HeartEffect:HeartParticle"), "move"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "removeFromMap") flag OVERRIDE
+   method
+    name "removeFromMap"
+    refid "com.company.assembleegameclient.objects.particles:HeartEffect/HeartParticle/instance/removeFromMap"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      callsupervoid       QName(PackageNamespace(""), "removeFromMap"), 0
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "FreeList")
+      getlocal0
+      callpropvoid        QName(PackageNamespace(""), "deleteObject"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "update") flag OVERRIDE
+   method
+    name "update"
+    refid "com.company.assembleegameclient.objects.particles:HeartEffect/HeartParticle/instance/update"
+    param QName(PackageNamespace(""), "int")
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "Boolean")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    paramname "_arg2"
+    body
+     maxstack 2
+     localcount 4
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "startTime_")
+      subtract
+      pushshort           1000
+      divide
+      convert_d
+      setlocal3
+
+      getlocal0
+      getlocal3
+      callpropvoid        QName(PrivateNamespace("FilePrivateNS:HeartEffect:HeartParticle"), "move"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "alive_")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.objects.particles:HeartEffect/HeartParticle/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

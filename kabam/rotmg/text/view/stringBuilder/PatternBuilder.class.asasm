@@ -1,0 +1,182 @@
+class
+ refid "kabam.rotmg.text.view.stringBuilder:PatternBuilder"
+ instance QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "PatternBuilder")
+  extends QName(PackageNamespace(""), "Object")
+  implements QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "StringBuilder")
+  flag SEALED
+  iinit
+   refid "kabam.rotmg.text.view.stringBuilder:PatternBuilder/instance/init"
+   body
+    maxstack 3
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PackageNamespace(""), "RegExp")
+     pushstring          "(\\{([^\\{]+?)\\})"
+     pushstring          "gi"
+     construct           2
+     findproperty        QName(PrivateNamespace("kabam.rotmg.text.view.stringBuilder:PatternBuilder"), "PATTERN")
+     swap
+     initproperty        QName(PrivateNamespace("kabam.rotmg.text.view.stringBuilder:PatternBuilder"), "PATTERN")
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait const QName(PrivateNamespace("kabam.rotmg.text.view.stringBuilder:PatternBuilder"), "PATTERN") type QName(PackageNamespace(""), "RegExp") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.text.view.stringBuilder:PatternBuilder"), "pattern") type QName(PackageNamespace(""), "String") value Utf8("") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.text.view.stringBuilder:PatternBuilder"), "keys") type QName(PackageNamespace(""), "Array") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.text.view.stringBuilder:PatternBuilder"), "provider") type QName(PackageNamespace("kabam.rotmg.language.model"), "StringMap") end
+  trait method QName(PackageNamespace(""), "setPattern")
+   method
+    name "setPattern"
+    refid "kabam.rotmg.text.view.stringBuilder:PatternBuilder/instance/setPattern"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "PatternBuilder")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      setproperty         QName(PrivateNamespace("kabam.rotmg.text.view.stringBuilder:PatternBuilder"), "pattern")
+
+      getlocal0
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setStringMap")
+   method
+    name "setStringMap"
+    refid "kabam.rotmg.text.view.stringBuilder:PatternBuilder/instance/setStringMap"
+    param QName(PackageNamespace("kabam.rotmg.language.model"), "StringMap")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      setproperty         QName(PrivateNamespace("kabam.rotmg.text.view.stringBuilder:PatternBuilder"), "provider")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getString")
+   method
+    name "getString"
+    refid "kabam.rotmg.text.view.stringBuilder:PatternBuilder/instance/getString"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 7
+     localcount 5
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      setlocal1
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.text.view.stringBuilder:PatternBuilder"), "pattern")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.text.view.stringBuilder:PatternBuilder"), "PATTERN")
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "match"), 1
+      setproperty         QName(PrivateNamespace("kabam.rotmg.text.view.stringBuilder:PatternBuilder"), "keys")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.text.view.stringBuilder:PatternBuilder"), "pattern")
+      coerce_s
+      setlocal2
+
+      pushbyte            0
+      setlocal            4
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.text.view.stringBuilder:PatternBuilder"), "keys")
+      setlocal3
+
+      jump                L42
+
+L21:
+      label
+      getlocal3
+      getlocal            4
+      nextvalue
+      coerce_s
+      setlocal1
+
+      getlocal2
+      getlocal1
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.text.view.stringBuilder:PatternBuilder"), "provider")
+      getlocal1
+      pushbyte            1
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "length")
+      pushbyte            2
+      subtract
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "substr"), 2
+      callproperty        QName(Namespace("kabam.rotmg.language.model:StringMap"), "getValue"), 1
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "replace"), 2
+      coerce_s
+      setlocal2
+
+L42:
+      hasnext2            3, 4
+      iftrue              L21
+
+      getlocal2
+      getlex              QName(PackageNamespace(""), "RegExp")
+      pushstring          "\\\\n"
+      pushstring          "g"
+      construct           2
+      pushstring          "\n"
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "replace"), 2
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.text.view.stringBuilder:PatternBuilder/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

@@ -1,0 +1,299 @@
+class
+ refid "com.company.assembleegameclient.houseeditor:HouseMapEditor"
+ instance QName(PackageNamespace("com.company.assembleegameclient.houseeditor"), "HouseMapEditor")
+  extends QName(PackageNamespace("flash.display"), "Sprite")
+  flag SEALED
+  iinit
+   name "HouseMapEditor"
+   refid "com.company.assembleegameclient.houseeditor:HouseMapEditor/instance/init"
+   param QName(PackageNamespace(""), "Object")
+   flag HAS_PARAM_NAMES
+   paramname "_arg1"
+   body
+    maxstack 3
+    localcount 2
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.houseeditor"), "HouseEditingScreen")
+     getlocal1
+     constructprop       QName(PackageNamespace("com.company.assembleegameclient.houseeditor"), "HouseEditingScreen"), 1
+     setproperty         QName(PackageNamespace(""), "editingScreen_")
+
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "editingScreen_")
+     pushstring          "SUBMIT_JM_EVENT"
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.houseeditor:HouseMapEditor"), "onSubmitMapPopup")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "editingScreen_")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.houseeditor:HouseMapEditor"), "model") type QName(PackageNamespace("kabam.rotmg.core.model"), "PlayerModel") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.houseeditor:HouseMapEditor"), "server") type QName(PackageNamespace("kabam.rotmg.servers.api"), "Server") end
+  trait slot QName(PackageNamespace(""), "editingScreen_") type QName(PackageNamespace("com.company.assembleegameclient.houseeditor"), "HouseEditingScreen") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.houseeditor:HouseMapEditor"), "blackBackground") type QName(PackageNamespace("flash.display"), "Sprite") end
+  trait method QName(PackageNamespace(""), "initialize")
+   method
+    name "initialize"
+    refid "com.company.assembleegameclient.houseeditor:HouseMapEditor/instance/initialize"
+    param QName(PackageNamespace("kabam.rotmg.core.model"), "PlayerModel")
+    param QName(PackageNamespace("kabam.rotmg.servers.api"), "Server")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    paramname "_arg2"
+    body
+     maxstack 2
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      setproperty         QName(PrivateNamespace("com.company.assembleegameclient.houseeditor:HouseMapEditor"), "model")
+
+      getlocal0
+      getlocal2
+      setproperty         QName(PrivateNamespace("com.company.assembleegameclient.houseeditor:HouseMapEditor"), "server")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.houseeditor:HouseMapEditor"), "onSubmitMapPopup")
+   method
+    name "onSubmitMapPopup"
+    refid "com.company.assembleegameclient.houseeditor:HouseMapEditor/instance/com.company.assembleegameclient.houseeditor:HouseMapEditor/instance/onSubmitMapPopup"
+    param QName(PackageNamespace("com.company.assembleegameclient.houseeditor"), "HouseSubmitJMEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      setlocal2
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.houseeditor"), "HouseSubmitMapForm")
+      callproperty        QName(PackageNamespace(""), "isInitialized"), 0
+      iftrue              L45
+
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.houseeditor"), "HouseSubmitMapForm")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "mapJSON_")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.houseeditor:HouseMapEditor"), "model")
+      getproperty         QName(PackageNamespace(""), "account")
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.houseeditor"), "HouseSubmitMapForm"), 2
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.houseeditor"), "HouseSubmitMapForm")
+      setlocal2
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("com.company.assembleegameclient.houseeditor:HouseMapEditor"), "showCurtain"), 0
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal2
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      getlocal2
+      pushshort           800
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "width")
+      subtract
+      pushbyte            2
+      divide
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal2
+      pushshort           600
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "height")
+      subtract
+      pushbyte            2
+      divide
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.houseeditor"), "HouseSubmitMapForm")
+      getproperty         QName(PackageNamespace(""), "cancel")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.houseeditor:HouseMapEditor"), "onSubmitClose")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "editingScreen_")
+      callpropvoid        QName(PackageNamespace(""), "disableInput"), 0
+
+L45:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.houseeditor:HouseMapEditor"), "onSubmitClose")
+   method
+    name "onSubmitClose"
+    refid "com.company.assembleegameclient.houseeditor:HouseMapEditor/instance/com.company.assembleegameclient.houseeditor:HouseMapEditor/instance/onSubmitClose"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("com.company.assembleegameclient.houseeditor:HouseMapEditor"), "hideCurtain"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "editingScreen_")
+      callpropvoid        QName(PackageNamespace(""), "enableInput"), 0
+
+      getlex              QName(PackageNamespace("kabam.rotmg.core"), "StaticInjectorContext")
+      callproperty        QName(PackageNamespace(""), "getInjector"), 0
+      getlex              QName(PackageNamespace("kabam.rotmg.game.signals"), "GameClosedSignal")
+      callproperty        QName(PackageNamespace(""), "getInstance"), 1
+      callpropvoid        Multiname("dispatch", [PrivateNamespace("com.company.assembleegameclient.houseeditor:HouseMapEditor"), ProtectedNamespace("com.company.assembleegameclient.houseeditor:HouseMapEditor"), StaticProtectedNs("com.company.assembleegameclient.houseeditor:HouseMapEditor"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.houseeditor"), PackageInternalNs("com.company.assembleegameclient.houseeditor"), PrivateNamespace("FilePrivateNS:HouseMapEditor"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.houseeditor:HouseMapEditor"), "showCurtain")
+   method
+    name "showCurtain"
+    refid "com.company.assembleegameclient.houseeditor:HouseMapEditor/instance/com.company.assembleegameclient.houseeditor:HouseMapEditor/instance/showCurtain"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 5
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.houseeditor:HouseMapEditor"), "blackBackground")
+      pushnull
+      ifne                L28
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("flash.display"), "Sprite")
+      constructprop       QName(PackageNamespace("flash.display"), "Sprite"), 0
+      setproperty         QName(PrivateNamespace("com.company.assembleegameclient.houseeditor:HouseMapEditor"), "blackBackground")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.houseeditor:HouseMapEditor"), "blackBackground")
+      getproperty         QName(PackageNamespace(""), "graphics")
+      pushbyte            0
+      pushdouble          0.4
+      callpropvoid        QName(PackageNamespace(""), "beginFill"), 2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.houseeditor:HouseMapEditor"), "blackBackground")
+      getproperty         QName(PackageNamespace(""), "graphics")
+      pushbyte            0
+      pushbyte            0
+      getlex              QName(PackageNamespace(""), "width")
+      getlex              QName(PackageNamespace(""), "height")
+      callpropvoid        QName(PackageNamespace(""), "drawRect"), 4
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.houseeditor:HouseMapEditor"), "blackBackground")
+      getproperty         QName(PackageNamespace(""), "graphics")
+      callpropvoid        QName(PackageNamespace(""), "endFill"), 0
+
+L28:
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.houseeditor:HouseMapEditor"), "blackBackground")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.houseeditor:HouseMapEditor"), "hideCurtain")
+   method
+    name "hideCurtain"
+    refid "com.company.assembleegameclient.houseeditor:HouseMapEditor/instance/com.company.assembleegameclient.houseeditor:HouseMapEditor/instance/hideCurtain"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.houseeditor:HouseMapEditor"), "blackBackground")
+      pushnull
+      equals
+      not
+      dup
+      iffalse             L14
+
+      pop
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.houseeditor:HouseMapEditor"), "blackBackground")
+      getproperty         QName(PackageNamespace(""), "parent")
+      coerce_a
+L14:
+      iffalse             L19
+
+      findpropstrict      QName(PackageNamespace(""), "removeChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.houseeditor:HouseMapEditor"), "blackBackground")
+      callpropvoid        QName(PackageNamespace(""), "removeChild"), 1
+
+L19:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.houseeditor:HouseMapEditor/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

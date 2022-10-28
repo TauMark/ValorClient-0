@@ -1,0 +1,97 @@
+class
+ refid "kabam.lib.net:NetConfig"
+ instance QName(PackageNamespace("kabam.lib.net"), "NetConfig")
+  extends QName(PackageNamespace(""), "Object")
+  implements QName(PackageNamespace("robotlegs.bender.framework.api"), "IConfig")
+  flag SEALED
+  iinit
+   refid "kabam.lib.net:NetConfig/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "injector") flag METADATA type QName(PackageNamespace("org.swiftsuspenders"), "Injector")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PrivateNamespace("kabam.lib.net:NetConfig"), "messageCenter") type QName(PackageNamespace("kabam.lib.net.impl"), "MessageCenter") end
+  trait method QName(PackageNamespace(""), "configure")
+   method
+    name "configure"
+    refid "kabam.lib.net:NetConfig/instance/configure"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("kabam.lib.net.impl"), "MessageCenter")
+      constructprop       QName(PackageNamespace("kabam.lib.net.impl"), "MessageCenter"), 0
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "injector")
+      callproperty        QName(PackageNamespace(""), "setInjector"), 1
+      setproperty         QName(PrivateNamespace("kabam.lib.net:NetConfig"), "messageCenter")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "injector")
+      getlex              QName(PackageNamespace("flash.net"), "Socket")
+      callpropvoid        QName(PackageNamespace(""), "map"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "injector")
+      getlex              QName(PackageNamespace("kabam.lib.net.api"), "MessageMap")
+      callproperty        QName(PackageNamespace(""), "map"), 1
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.lib.net:NetConfig"), "messageCenter")
+      callpropvoid        QName(PackageNamespace(""), "toValue"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "injector")
+      getlex              QName(PackageNamespace("kabam.lib.net.api"), "MessageProvider")
+      callproperty        QName(PackageNamespace(""), "map"), 1
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.lib.net:NetConfig"), "messageCenter")
+      callpropvoid        QName(PackageNamespace(""), "toValue"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "injector")
+      getlex              QName(PackageNamespace("kabam.lib.net.impl"), "SocketServer")
+      callproperty        QName(PackageNamespace(""), "map"), 1
+      callpropvoid        QName(PackageNamespace(""), "asSingleton"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.lib.net:NetConfig/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

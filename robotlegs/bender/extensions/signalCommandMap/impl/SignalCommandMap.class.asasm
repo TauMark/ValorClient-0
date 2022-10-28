@@ -1,0 +1,207 @@
+class
+ refid "robotlegs.bender.extensions.signalCommandMap.impl:SignalCommandMap"
+ instance QName(PackageNamespace("robotlegs.bender.extensions.signalCommandMap.impl"), "SignalCommandMap")
+  extends QName(PackageNamespace(""), "Object")
+  implements Multiname("ISignalCommandMap", [PackageNamespace("robotlegs.bender.extensions.signalCommandMap.api")])
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("robotlegs.bender.extensions.signalCommandMap.impl:SignalCommandMap")
+  iinit
+   name "robotlegs.bender.extensions.signalCommandMap.impl:SignalCommandMap/SignalCommandMap"
+   refid "robotlegs.bender.extensions.signalCommandMap.impl:SignalCommandMap/instance/init"
+   param QName(PackageNamespace("org.swiftsuspenders"), "Injector")
+   param QName(PackageNamespace("robotlegs.bender.extensions.commandCenter.api"), "ICommandCenter")
+   flag HAS_PARAM_NAMES
+   paramname "_arg_1"
+   paramname "_arg_2"
+   body
+    maxstack 2
+    localcount 3
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("flash.utils"), "Dictionary")
+     constructprop       QName(PackageNamespace("flash.utils"), "Dictionary"), 0
+     initproperty        QName(PrivateNamespace("robotlegs.bender.extensions.signalCommandMap.impl:SignalCommandMap"), "_signalTriggers")
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     getlocal1
+     initproperty        QName(PrivateNamespace("robotlegs.bender.extensions.signalCommandMap.impl:SignalCommandMap"), "_injector")
+
+     getlocal0
+     getlocal2
+     initproperty        QName(PrivateNamespace("robotlegs.bender.extensions.signalCommandMap.impl:SignalCommandMap"), "_commandMap")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait const QName(PrivateNamespace("robotlegs.bender.extensions.signalCommandMap.impl:SignalCommandMap"), "_signalTriggers") type QName(PackageNamespace("flash.utils"), "Dictionary") end
+  trait slot QName(PrivateNamespace("robotlegs.bender.extensions.signalCommandMap.impl:SignalCommandMap"), "_injector") type QName(PackageNamespace("org.swiftsuspenders"), "Injector") end
+  trait slot QName(PrivateNamespace("robotlegs.bender.extensions.signalCommandMap.impl:SignalCommandMap"), "_commandMap") type QName(PackageNamespace("robotlegs.bender.extensions.commandCenter.api"), "ICommandCenter") end
+  trait method QName(PackageNamespace(""), "map")
+   method
+    name "robotlegs.bender.extensions.signalCommandMap.impl:SignalCommandMap/map"
+    refid "robotlegs.bender.extensions.signalCommandMap.impl:SignalCommandMap/instance/map"
+    param QName(PackageNamespace(""), "Class")
+    param QName(PackageNamespace(""), "Boolean")
+    returns QName(PackageNamespace("robotlegs.bender.extensions.commandCenter.dsl"), "ICommandMapper")
+    flag HAS_OPTIONAL
+    flag HAS_PARAM_NAMES
+    optional False()
+    paramname "_arg_1"
+    paramname "_arg_2"
+    body
+     maxstack 5
+     localcount 5
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("robotlegs.bender.extensions.signalCommandMap.impl:SignalCommandMap"), "_signalTriggers")
+      getlocal1
+      getlocal0
+      getproperty         QName(PrivateNamespace("robotlegs.bender.extensions.signalCommandMap.impl:SignalCommandMap"), "_signalTriggers")
+      getlocal1
+      getproperty         MultinameL([PrivateNamespace("robotlegs.bender.extensions.signalCommandMap.impl:SignalCommandMap"), PrivateNamespace("SignalCommandMap.as$64"), PackageNamespace(""), PackageNamespace("robotlegs.bender.extensions.signalCommandMap.impl"), PackageInternalNs("robotlegs.bender.extensions.signalCommandMap.impl"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("robotlegs.bender.extensions.signalCommandMap.impl:SignalCommandMap"), StaticProtectedNs("robotlegs.bender.extensions.signalCommandMap.impl:SignalCommandMap")])
+      coerce_a
+      dup
+      iftrue              L18
+
+      pop
+      getlocal0
+      getlocal1
+      getlocal2
+      callproperty        QName(PrivateNamespace("robotlegs.bender.extensions.signalCommandMap.impl:SignalCommandMap"), "createSignalTrigger"), 2
+      coerce_a
+L18:
+      dup
+      setlocal            4
+
+      setproperty         MultinameL([PrivateNamespace("robotlegs.bender.extensions.signalCommandMap.impl:SignalCommandMap"), PrivateNamespace("SignalCommandMap.as$64"), PackageNamespace(""), PackageNamespace("robotlegs.bender.extensions.signalCommandMap.impl"), PackageInternalNs("robotlegs.bender.extensions.signalCommandMap.impl"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("robotlegs.bender.extensions.signalCommandMap.impl:SignalCommandMap"), StaticProtectedNs("robotlegs.bender.extensions.signalCommandMap.impl:SignalCommandMap")])
+
+      getlocal            4
+      kill                4
+      coerce              QName(PackageNamespace("robotlegs.bender.extensions.commandCenter.api"), "ICommandTrigger")
+      setlocal3
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("robotlegs.bender.extensions.signalCommandMap.impl:SignalCommandMap"), "_commandMap")
+      getlocal3
+      callproperty        QName(Namespace("robotlegs.bender.extensions.commandCenter.api:ICommandCenter"), "map"), 1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "unmap")
+   method
+    name "robotlegs.bender.extensions.signalCommandMap.impl:SignalCommandMap/unmap"
+    refid "robotlegs.bender.extensions.signalCommandMap.impl:SignalCommandMap/instance/unmap"
+    param QName(PackageNamespace(""), "Class")
+    returns QName(PackageNamespace("robotlegs.bender.extensions.commandCenter.dsl"), "ICommandUnmapper")
+    flag HAS_PARAM_NAMES
+    paramname "_arg_1"
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("robotlegs.bender.extensions.signalCommandMap.impl:SignalCommandMap"), "_commandMap")
+      getlocal0
+      getlocal1
+      callproperty        QName(PrivateNamespace("robotlegs.bender.extensions.signalCommandMap.impl:SignalCommandMap"), "getSignalTrigger"), 1
+      callproperty        QName(Namespace("robotlegs.bender.extensions.commandCenter.api:ICommandCenter"), "unmap"), 1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("robotlegs.bender.extensions.signalCommandMap.impl:SignalCommandMap"), "createSignalTrigger")
+   method
+    name "robotlegs.bender.extensions.signalCommandMap.impl:SignalCommandMap/private:createSignalTrigger"
+    refid "robotlegs.bender.extensions.signalCommandMap.impl:SignalCommandMap/instance/robotlegs.bender.extensions.signalCommandMap.impl:SignalCommandMap/instance/createSignalTrigger"
+    param QName(PackageNamespace(""), "Class")
+    param QName(PackageNamespace(""), "Boolean")
+    returns QName(PackageNamespace("robotlegs.bender.extensions.commandCenter.api"), "ICommandTrigger")
+    flag HAS_OPTIONAL
+    flag HAS_PARAM_NAMES
+    optional False()
+    paramname "_arg_1"
+    paramname "_arg_2"
+    body
+     maxstack 4
+     localcount 3
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("robotlegs.bender.extensions.signalCommandMap.impl"), "SignalCommandTrigger")
+      getlocal0
+      getproperty         QName(PrivateNamespace("robotlegs.bender.extensions.signalCommandMap.impl:SignalCommandMap"), "_injector")
+      getlocal1
+      getlocal2
+      constructprop       QName(PackageNamespace("robotlegs.bender.extensions.signalCommandMap.impl"), "SignalCommandTrigger"), 3
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("robotlegs.bender.extensions.signalCommandMap.impl:SignalCommandMap"), "getSignalTrigger")
+   method
+    name "robotlegs.bender.extensions.signalCommandMap.impl:SignalCommandMap/private:getSignalTrigger"
+    refid "robotlegs.bender.extensions.signalCommandMap.impl:SignalCommandMap/instance/robotlegs.bender.extensions.signalCommandMap.impl:SignalCommandMap/instance/getSignalTrigger"
+    param QName(PackageNamespace(""), "Class")
+    returns QName(PackageNamespace("robotlegs.bender.extensions.commandCenter.api"), "ICommandTrigger")
+    flag HAS_PARAM_NAMES
+    paramname "_arg_1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("robotlegs.bender.extensions.signalCommandMap.impl:SignalCommandMap"), "_signalTriggers")
+      getlocal1
+      getproperty         MultinameL([PrivateNamespace("robotlegs.bender.extensions.signalCommandMap.impl:SignalCommandMap"), PrivateNamespace("SignalCommandMap.as$64"), PackageNamespace(""), PackageNamespace("robotlegs.bender.extensions.signalCommandMap.impl"), PackageInternalNs("robotlegs.bender.extensions.signalCommandMap.impl"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("robotlegs.bender.extensions.signalCommandMap.impl:SignalCommandMap"), StaticProtectedNs("robotlegs.bender.extensions.signalCommandMap.impl:SignalCommandMap")])
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  name ""
+  refid "robotlegs.bender.extensions.signalCommandMap.impl:SignalCommandMap/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

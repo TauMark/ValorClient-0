@@ -1,0 +1,194 @@
+class
+ refid "com.company.assembleegameclient.account.ui:NewChooseNameFrame"
+ instance QName(PackageNamespace("com.company.assembleegameclient.account.ui"), "NewChooseNameFrame")
+  extends QName(PackageNamespace("com.company.assembleegameclient.account.ui"), "Frame")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.company.assembleegameclient.account.ui:NewChooseNameFrame")
+  iinit
+   name "NewChooseNameFrame"
+   refid "com.company.assembleegameclient.account.ui:NewChooseNameFrame/instance/init"
+   body
+    maxstack 4
+    localcount 2
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     findpropstrict      QName(PackageNamespace("org.osflash.signals"), "Signal")
+     constructprop       QName(PackageNamespace("org.osflash.signals"), "Signal"), 0
+     findproperty        QName(PackageNamespace(""), "choose")
+     swap
+     initproperty        QName(PackageNamespace(""), "choose")
+
+     findpropstrict      QName(PackageNamespace("org.osflash.signals"), "Signal")
+     constructprop       QName(PackageNamespace("org.osflash.signals"), "Signal"), 0
+     findproperty        QName(PackageNamespace(""), "cancel")
+     swap
+     initproperty        QName(PackageNamespace(""), "cancel")
+
+     getlocal0
+     pushstring          "NewChooseNameFrame.title"
+     pushstring          "Cancel"
+     pushstring          "NewChooseNameFrame.rightButton"
+     constructsuper      3
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.account.ui"), "TextInputField")
+     pushstring          "NewChooseNameFrame.name"
+     pushfalse
+     constructprop       QName(PackageNamespace("com.company.assembleegameclient.account.ui"), "TextInputField"), 2
+     setproperty         QName(PrivateNamespace("com.company.assembleegameclient.account.ui:NewChooseNameFrame"), "name_")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.account.ui:NewChooseNameFrame"), "name_")
+     getproperty         QName(PackageNamespace(""), "inputText_")
+     pushstring          "A-Za-z"
+     setproperty         QName(PackageNamespace(""), "restrict")
+
+     pushbyte            10
+     setlocal1
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.account.ui:NewChooseNameFrame"), "name_")
+     getproperty         QName(PackageNamespace(""), "inputText_")
+     getlocal1
+     setproperty         QName(PackageNamespace(""), "maxChars")
+
+     findpropstrict      QName(PackageNamespace(""), "addTextInputField")
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.account.ui:NewChooseNameFrame"), "name_")
+     callpropvoid        QName(PackageNamespace(""), "addTextInputField"), 1
+
+     findpropstrict      QName(PackageNamespace(""), "addPlainText")
+     pushstring          "Frame.maxChar"
+     pushstring          "maxChars"
+     getlocal1
+     newobject           1
+     callpropvoid        QName(PackageNamespace(""), "addPlainText"), 2
+
+     findpropstrict      QName(PackageNamespace(""), "addPlainText")
+     pushstring          "Frame.restrictChar"
+     callpropvoid        QName(PackageNamespace(""), "addPlainText"), 1
+
+     findpropstrict      QName(PackageNamespace(""), "addPlainText")
+     pushstring          "NewChooseNameFrame.warning"
+     callpropvoid        QName(PackageNamespace(""), "addPlainText"), 1
+
+     getlex              QName(PackageNamespace(""), "leftButton_")
+     pushstring          "click"
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.account.ui:NewChooseNameFrame"), "onCancel")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     getlex              QName(PackageNamespace(""), "rightButton_")
+     pushstring          "click"
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.account.ui:NewChooseNameFrame"), "onChoose")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait const QName(PackageNamespace(""), "choose") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait const QName(PackageNamespace(""), "cancel") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.account.ui:NewChooseNameFrame"), "name_") type QName(PackageNamespace("com.company.assembleegameclient.account.ui"), "TextInputField") end
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.account.ui:NewChooseNameFrame"), "onChoose")
+   method
+    name "onChoose"
+    refid "com.company.assembleegameclient.account.ui:NewChooseNameFrame/instance/com.company.assembleegameclient.account.ui:NewChooseNameFrame/instance/onChoose"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "choose")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.account.ui:NewChooseNameFrame"), "name_")
+      callproperty        QName(PackageNamespace(""), "text"), 0
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.account.ui:NewChooseNameFrame"), "onCancel")
+   method
+    name "onCancel"
+    refid "com.company.assembleegameclient.account.ui:NewChooseNameFrame/instance/com.company.assembleegameclient.account.ui:NewChooseNameFrame/instance/onCancel"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 1
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "cancel")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setError")
+   method
+    name "setError"
+    refid "com.company.assembleegameclient.account.ui:NewChooseNameFrame/instance/setError"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.account.ui:NewChooseNameFrame"), "name_")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "setError"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.account.ui:NewChooseNameFrame/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

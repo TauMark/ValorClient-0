@@ -1,0 +1,265 @@
+class
+ refid "com.company.assembleegameclient.map.partyoverlay:PlayerArrow"
+ instance QName(PackageNamespace("com.company.assembleegameclient.map.partyoverlay"), "PlayerArrow")
+  extends QName(PackageNamespace("com.company.assembleegameclient.map.partyoverlay"), "GameObjectArrow")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.company.assembleegameclient.map.partyoverlay:PlayerArrow")
+  iinit
+   name "PlayerArrow"
+   refid "com.company.assembleegameclient.map.partyoverlay:PlayerArrow/instance/init"
+   body
+    maxstack 4
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     pushint             16777215
+     pushint             4179794
+     pushfalse
+     constructsuper      3
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait method QName(ProtectedNamespace("com.company.assembleegameclient.map.partyoverlay:PlayerArrow"), "onMouseOver") flag OVERRIDE
+   method
+    name "onMouseOver"
+    refid "com.company.assembleegameclient.map.partyoverlay:PlayerArrow/instance/com.company.assembleegameclient.map.partyoverlay:PlayerArrow:onMouseOver"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 4
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      callsupervoid       QName(ProtectedNamespace("com.company.assembleegameclient.map.partyoverlay:GameObjectArrow"), "onMouseOver"), 1
+      findpropstrict      QName(ProtectedNamespace("com.company.assembleegameclient.map.partyoverlay:GameObjectArrow"), "setToolTip")
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.ui.tooltip"), "PlayerGroupToolTip")
+      getlocal0
+      callproperty        QName(PrivateNamespace("com.company.assembleegameclient.map.partyoverlay:PlayerArrow"), "getFullPlayerVec"), 0
+      pushfalse
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.ui.tooltip"), "PlayerGroupToolTip"), 2
+      callpropvoid        QName(ProtectedNamespace("com.company.assembleegameclient.map.partyoverlay:GameObjectArrow"), "setToolTip"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(ProtectedNamespace("com.company.assembleegameclient.map.partyoverlay:PlayerArrow"), "onMouseOut") flag OVERRIDE
+   method
+    name "onMouseOut"
+    refid "com.company.assembleegameclient.map.partyoverlay:PlayerArrow/instance/com.company.assembleegameclient.map.partyoverlay:PlayerArrow:onMouseOut"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      callsupervoid       QName(ProtectedNamespace("com.company.assembleegameclient.map.partyoverlay:GameObjectArrow"), "onMouseOut"), 1
+      findpropstrict      QName(ProtectedNamespace("com.company.assembleegameclient.map.partyoverlay:GameObjectArrow"), "setToolTip")
+      pushnull
+      callpropvoid        QName(ProtectedNamespace("com.company.assembleegameclient.map.partyoverlay:GameObjectArrow"), "setToolTip"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(ProtectedNamespace("com.company.assembleegameclient.map.partyoverlay:PlayerArrow"), "onMouseDown") flag OVERRIDE
+   method
+    name "onMouseDown"
+    refid "com.company.assembleegameclient.map.partyoverlay:PlayerArrow/instance/com.company.assembleegameclient.map.partyoverlay:PlayerArrow:onMouseDown"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      callsupervoid       QName(ProtectedNamespace("com.company.assembleegameclient.map.partyoverlay:GameObjectArrow"), "onMouseDown"), 1
+      findpropstrict      QName(PackageNamespace(""), "removeMenu")
+      callpropvoid        QName(PackageNamespace(""), "removeMenu"), 0
+
+      findpropstrict      QName(ProtectedNamespace("com.company.assembleegameclient.map.partyoverlay:GameObjectArrow"), "setMenu")
+      getlocal0
+      callproperty        QName(ProtectedNamespace("com.company.assembleegameclient.map.partyoverlay:PlayerArrow"), "getMenu"), 0
+      callpropvoid        QName(ProtectedNamespace("com.company.assembleegameclient.map.partyoverlay:GameObjectArrow"), "setMenu"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(ProtectedNamespace("com.company.assembleegameclient.map.partyoverlay:PlayerArrow"), "getMenu")
+   method
+    name "getMenu"
+    refid "com.company.assembleegameclient.map.partyoverlay:PlayerArrow/instance/com.company.assembleegameclient.map.partyoverlay:PlayerArrow:getMenu"
+    returns QName(PackageNamespace("com.company.assembleegameclient.ui.menu"), "Menu")
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace(""), "go_")
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.objects"), "Player")
+      astypelate
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.objects"), "Player")
+      setlocal2
+
+      getlocal2
+      pushnull
+      equals
+      dup
+      iftrue              L17
+
+      pop
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "map_")
+      pushnull
+      equals
+L17:
+      iffalse             L20
+
+      pushnull
+      returnvalue
+
+L20:
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "map_")
+      getproperty         QName(PackageNamespace(""), "player")
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.objects"), "Player")
+      setlocal1
+
+      getlocal1
+      pushnull
+      ifne                L30
+
+      pushnull
+      returnvalue
+
+L30:
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.ui.menu"), "PlayerGroupMenu")
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "map_")
+      getlocal0
+      callproperty        QName(PrivateNamespace("com.company.assembleegameclient.map.partyoverlay:PlayerArrow"), "getFullPlayerVec"), 0
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.ui.menu"), "PlayerGroupMenu"), 2
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.map.partyoverlay:PlayerArrow"), "getFullPlayerVec")
+   method
+    name "getFullPlayerVec"
+    refid "com.company.assembleegameclient.map.partyoverlay:PlayerArrow/instance/com.company.assembleegameclient.map.partyoverlay:PlayerArrow/instance/getFullPlayerVec"
+    returns TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("com.company.assembleegameclient.objects"), "Player")>)
+    body
+     maxstack 5
+     localcount 5
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      setlocal1
+
+      getlex              QName(PackageNamespace("__AS3__.vec"), "Vector")
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.objects"), "Player")
+      applytype           1
+      pushbyte            1
+      construct           1
+      dup
+      pushbyte            0
+      getlex              QName(PackageNamespace(""), "go_")
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.objects"), "Player")
+      astypelate
+      setproperty         MultinameL([PrivateNamespace("com.company.assembleegameclient.map.partyoverlay:PlayerArrow"), ProtectedNamespace("com.company.assembleegameclient.map.partyoverlay:PlayerArrow"), StaticProtectedNs("com.company.assembleegameclient.map.partyoverlay:PlayerArrow"), StaticProtectedNs("com.company.assembleegameclient.map.partyoverlay:GameObjectArrow"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.map.partyoverlay"), PackageInternalNs("com.company.assembleegameclient.map.partyoverlay"), PrivateNamespace("FilePrivateNS:PlayerArrow"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      coerce              TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("com.company.assembleegameclient.objects"), "Player")>)
+      setlocal2
+
+      pushbyte            0
+      setlocal            4
+
+      getlex              QName(PackageNamespace(""), "extraGOs_")
+      setlocal3
+
+      jump                L33
+
+L22:
+      label
+      getlocal3
+      getlocal            4
+      nextvalue
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.objects"), "GameObject")
+      setlocal1
+
+      getlocal2
+      getlocal1
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.objects"), "Player")
+      astypelate
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+
+L33:
+      hasnext2            3, 4
+      iftrue              L22
+
+      getlocal2
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.map.partyoverlay:PlayerArrow/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

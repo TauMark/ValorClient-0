@@ -1,0 +1,138 @@
+class
+ refid "com.company.assembleegameclient.objects.particles:PoisonEffect"
+ instance QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "PoisonEffect")
+  extends QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "ParticleEffect")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.company.assembleegameclient.objects.particles:PoisonEffect")
+  iinit
+   name "PoisonEffect"
+   refid "com.company.assembleegameclient.objects.particles:PoisonEffect/instance/init"
+   param QName(PackageNamespace("com.company.assembleegameclient.objects"), "GameObject")
+   param QName(PackageNamespace(""), "int")
+   flag HAS_PARAM_NAMES
+   paramname "_arg1"
+   paramname "_arg2"
+   body
+    maxstack 2
+    localcount 3
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     getlocal1
+     setproperty         QName(PackageNamespace(""), "go_")
+
+     getlocal0
+     getlocal2
+     setproperty         QName(PackageNamespace(""), "color_")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "go_") type QName(PackageNamespace("com.company.assembleegameclient.objects"), "GameObject") end
+  trait slot QName(PackageNamespace(""), "color_") type QName(PackageNamespace(""), "int") end
+  trait method QName(PackageNamespace(""), "update") flag OVERRIDE
+   method
+    name "update"
+    refid "com.company.assembleegameclient.objects.particles:PoisonEffect/instance/update"
+    param QName(PackageNamespace(""), "int")
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "Boolean")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    paramname "_arg2"
+    body
+     maxstack 9
+     localcount 5
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushbyte            0
+      setlocal            4
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "go_")
+      getproperty         QName(PackageNamespace(""), "map_")
+      pushnull
+      ifne                L11
+
+      pushfalse
+      returnvalue
+
+L11:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "go_")
+      getproperty         QName(PackageNamespace(""), "x_")
+      findproperty        QName(PackageNamespace(""), "x_")
+      swap
+      setproperty         QName(PackageNamespace(""), "x_")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "go_")
+      getproperty         QName(PackageNamespace(""), "y_")
+      findproperty        QName(PackageNamespace(""), "y_")
+      swap
+      setproperty         QName(PackageNamespace(""), "y_")
+
+      pushbyte            10
+      setlocal3
+
+      jump                L45
+
+L26:
+      label
+      getlex              QName(PackageNamespace(""), "map_")
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "SparkParticle")
+      pushbyte            100
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "color_")
+      pushshort           400
+      pushdouble          0.75
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "RandomUtil")
+      pushbyte            4
+      callproperty        QName(PackageNamespace(""), "plusMinus"), 1
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "RandomUtil")
+      pushbyte            4
+      callproperty        QName(PackageNamespace(""), "plusMinus"), 1
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "SparkParticle"), 6
+      getlex              QName(PackageNamespace(""), "x_")
+      getlex              QName(PackageNamespace(""), "y_")
+      callpropvoid        QName(PackageNamespace(""), "addObj"), 3
+
+      inclocal_i          4
+L45:
+      getlocal            4
+      getlocal3
+      iflt                L26
+
+      pushfalse
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.objects.particles:PoisonEffect/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

@@ -1,0 +1,505 @@
+class
+ refid "kabam.rotmg.chat.view:ChatInput"
+ instance QName(PackageNamespace("kabam.rotmg.chat.view"), "ChatInput")
+  extends QName(PackageNamespace("flash.display"), "Sprite")
+  flag SEALED
+  iinit
+   name "ChatInput"
+   refid "kabam.rotmg.chat.view:ChatInput/instance/init"
+   body
+    maxstack 2
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     findpropstrict      QName(PackageNamespace("org.osflash.signals"), "Signal")
+     getlex              QName(PackageNamespace(""), "String")
+     constructprop       QName(PackageNamespace("org.osflash.signals"), "Signal"), 1
+     findproperty        QName(PackageNamespace(""), "message")
+     swap
+     initproperty        QName(PackageNamespace(""), "message")
+
+     findpropstrict      QName(PackageNamespace("org.osflash.signals"), "Signal")
+     constructprop       QName(PackageNamespace("org.osflash.signals"), "Signal"), 0
+     findproperty        QName(PackageNamespace(""), "close")
+     swap
+     initproperty        QName(PackageNamespace(""), "close")
+
+     getlocal0
+     constructsuper      0
+
+     pushfalse
+     findproperty        QName(PackageNamespace(""), "visible")
+     swap
+     setproperty         QName(PackageNamespace(""), "visible")
+
+     getlocal0
+     pushfalse
+     setproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatInput"), "enteredText")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait const QName(PackageNamespace(""), "message") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait const QName(PackageNamespace(""), "close") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.chat.view:ChatInput"), "input") type QName(PackageNamespace("flash.text"), "TextField") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.chat.view:ChatInput"), "enteredText") type QName(PackageNamespace(""), "Boolean") end
+  trait method QName(PackageNamespace(""), "setup")
+   method
+    name "setup"
+    refid "kabam.rotmg.chat.view:ChatInput/instance/setup"
+    param QName(PackageNamespace("kabam.rotmg.chat.model"), "ChatModel")
+    param QName(PackageNamespace("flash.text"), "TextField")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    paramname "_arg2"
+    body
+     maxstack 4
+     localcount 4
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getlocal2
+      dup
+      setlocal3
+
+      setproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatInput"), "input")
+
+      getlocal3
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      getlocal2
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "bounds")
+      getproperty         QName(PackageNamespace(""), "width")
+      pushbyte            2
+      subtract
+      setproperty         QName(PackageNamespace(""), "width")
+
+      getlocal2
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "lineHeight")
+      setproperty         QName(PackageNamespace(""), "height")
+
+      getlocal2
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "bounds")
+      getproperty         QName(PackageNamespace(""), "height")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "lineHeight")
+      subtract
+      setproperty         QName(PackageNamespace(""), "y")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "activate")
+   method
+    name "activate"
+    refid "kabam.rotmg.chat.view:ChatInput/instance/activate"
+    param QName(PackageNamespace(""), "String")
+    param QName(PackageNamespace(""), "Boolean")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    paramname "_arg2"
+    body
+     maxstack 3
+     localcount 4
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      pushfalse
+      setproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatInput"), "enteredText")
+
+      getlocal1
+      pushnull
+      ifeq                L12
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatInput"), "input")
+      getlocal1
+      setproperty         QName(PackageNamespace(""), "text")
+
+L12:
+      getlocal1
+      iffalse             L17
+
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "length")
+      jump                L19
+
+L17:
+      pushbyte            0
+      coerce_a
+L19:
+      convert_i
+      setlocal3
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatInput"), "input")
+      getlocal3
+      getlocal3
+      callpropvoid        QName(PackageNamespace(""), "setSelection"), 2
+
+      getlocal2
+      iffalse             L31
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.chat.view:ChatInput"), "activateEnabled"), 0
+
+      jump                L33
+
+L31:
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.chat.view:ChatInput"), "activateDisabled"), 0
+
+L33:
+      pushtrue
+      findproperty        QName(PackageNamespace(""), "visible")
+      swap
+      setproperty         QName(PackageNamespace(""), "visible")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "deactivate")
+   method
+    name "deactivate"
+    refid "kabam.rotmg.chat.view:ChatInput/instance/deactivate"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      pushfalse
+      setproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatInput"), "enteredText")
+
+      findpropstrict      QName(PackageNamespace(""), "removeEventListener")
+      pushstring          "keyUp"
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatInput"), "onKeyUp")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      getlex              QName(PackageNamespace(""), "stage")
+      pushstring          "keyUp"
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatInput"), "onTextChange")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      pushfalse
+      findproperty        QName(PackageNamespace(""), "visible")
+      swap
+      setproperty         QName(PackageNamespace(""), "visible")
+
+      getlex              QName(PackageNamespace(""), "stage")
+      dup
+      iffalse             L30
+
+      pop
+      getlex              QName(PackageNamespace(""), "stage")
+      pushnull
+      dup
+      setlocal1
+
+      setproperty         QName(PackageNamespace(""), "focus")
+
+      getlocal1
+      coerce_a
+L30:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "hasEnteredText")
+   method
+    name "hasEnteredText"
+    refid "kabam.rotmg.chat.view:ChatInput/instance/hasEnteredText"
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatInput"), "enteredText")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.chat.view:ChatInput"), "activateEnabled")
+   method
+    name "activateEnabled"
+    refid "kabam.rotmg.chat.view:ChatInput/instance/kabam.rotmg.chat.view:ChatInput/instance/activateEnabled"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 8
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatInput"), "input")
+      pushstring          "input"
+      setproperty         QName(PackageNamespace(""), "type")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatInput"), "input")
+      pushtrue
+      setproperty         QName(PackageNamespace(""), "border")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatInput"), "input")
+      pushtrue
+      setproperty         QName(PackageNamespace(""), "selectable")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatInput"), "input")
+      pushshort           128
+      setproperty         QName(PackageNamespace(""), "maxChars")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatInput"), "input")
+      pushint             16777215
+      setproperty         QName(PackageNamespace(""), "borderColor")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatInput"), "input")
+      pushbyte            18
+      setproperty         QName(PackageNamespace(""), "height")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatInput"), "input")
+      findpropstrict      QName(PackageNamespace("flash.filters"), "GlowFilter")
+      pushbyte            0
+      pushbyte            1
+      pushbyte            3
+      pushbyte            3
+      pushbyte            2
+      pushbyte            1
+      constructprop       QName(PackageNamespace("flash.filters"), "GlowFilter"), 6
+      newarray            1
+      setproperty         QName(PackageNamespace(""), "filters")
+
+      findpropstrict      QName(PackageNamespace(""), "addEventListener")
+      pushstring          "keyUp"
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatInput"), "onKeyUp")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      getlex              QName(PackageNamespace(""), "stage")
+      pushstring          "keyUp"
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatInput"), "onTextChange")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      getlex              QName(PackageNamespace(""), "stage")
+      dup
+      iffalse             L60
+
+      pop
+      getlex              QName(PackageNamespace(""), "stage")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatInput"), "input")
+      dup
+      setlocal1
+
+      setproperty         QName(PackageNamespace(""), "focus")
+
+      getlocal1
+      coerce_a
+L60:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.chat.view:ChatInput"), "onTextChange")
+   method
+    name "onTextChange"
+    refid "kabam.rotmg.chat.view:ChatInput/instance/kabam.rotmg.chat.view:ChatInput/instance/onTextChange"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      pushtrue
+      setproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatInput"), "enteredText")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.chat.view:ChatInput"), "activateDisabled")
+   method
+    name "activateDisabled"
+    refid "kabam.rotmg.chat.view:ChatInput/instance/kabam.rotmg.chat.view:ChatInput/instance/activateDisabled"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 8
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatInput"), "input")
+      pushstring          "dynamic"
+      setproperty         QName(PackageNamespace(""), "type")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatInput"), "input")
+      pushfalse
+      setproperty         QName(PackageNamespace(""), "border")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatInput"), "input")
+      pushfalse
+      setproperty         QName(PackageNamespace(""), "selectable")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatInput"), "input")
+      findpropstrict      QName(PackageNamespace("flash.filters"), "GlowFilter")
+      pushbyte            0
+      pushbyte            1
+      pushbyte            3
+      pushbyte            3
+      pushbyte            2
+      pushbyte            1
+      constructprop       QName(PackageNamespace("flash.filters"), "GlowFilter"), 6
+      newarray            1
+      setproperty         QName(PackageNamespace(""), "filters")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatInput"), "input")
+      pushbyte            18
+      setproperty         QName(PackageNamespace(""), "height")
+
+      findpropstrict      QName(PackageNamespace(""), "removeEventListener")
+      pushstring          "keyUp"
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatInput"), "onKeyUp")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      getlex              QName(PackageNamespace(""), "stage")
+      pushstring          "keyUp"
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatInput"), "onTextChange")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.chat.view:ChatInput"), "onKeyUp")
+   method
+    name "onKeyUp"
+    refid "kabam.rotmg.chat.view:ChatInput/instance/kabam.rotmg.chat.view:ChatInput/instance/onKeyUp"
+    param QName(PackageNamespace("flash.events"), "KeyboardEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "keyCode")
+      pushbyte            13
+      ifne                L23
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatInput"), "input")
+      getproperty         QName(PackageNamespace(""), "text")
+      pushstring          ""
+      ifeq                L18
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "message")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatInput"), "input")
+      getproperty         QName(PackageNamespace(""), "text")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      jump                L21
+
+L18:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "close")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+L21:
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "stopImmediatePropagation"), 0
+
+L23:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.chat.view:ChatInput/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

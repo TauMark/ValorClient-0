@@ -1,0 +1,170 @@
+class
+ refid "kabam.rotmg.queue.view:QueueMediator"
+ instance QName(PackageNamespace("kabam.rotmg.queue.view"), "QueueMediator")
+  extends QName(PackageNamespace("robotlegs.bender.bundles.mvcs"), "Mediator")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.queue.view:QueueMediator")
+  iinit
+   refid "kabam.rotmg.queue.view:QueueMediator/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "view") flag METADATA type QName(PackageNamespace("kabam.rotmg.queue.view"), "QueueView")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "hide") flag METADATA type QName(PackageNamespace("kabam.rotmg.maploading.signals"), "HideMapLoadingSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "update") flag METADATA type QName(PackageNamespace("kabam.rotmg.queue.control"), "UpdateQueueSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PackageNamespace(""), "initialize") flag OVERRIDE
+   method
+    name "initialize"
+    refid "kabam.rotmg.queue.view:QueueMediator/instance/initialize"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      callpropvoid        QName(PackageNamespace(""), "show"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hide")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.queue.view:QueueMediator"), "onHide")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "update")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.queue.view:QueueMediator"), "onUpdate")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "destroy") flag OVERRIDE
+   method
+    name "destroy"
+    refid "kabam.rotmg.queue.view:QueueMediator/instance/destroy"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hide")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.queue.view:QueueMediator"), "onHide")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "update")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.queue.view:QueueMediator"), "onUpdate")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.queue.view:QueueMediator"), "onHide")
+   method
+    name "onHide"
+    refid "kabam.rotmg.queue.view:QueueMediator/instance/kabam.rotmg.queue.view:QueueMediator/instance/onHide"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.queue.view:QueueMediator"), "onUpdate")
+   method
+    name "onUpdate"
+    refid "kabam.rotmg.queue.view:QueueMediator/instance/kabam.rotmg.queue.view:QueueMediator/instance/onUpdate"
+    param QName(PackageNamespace(""), "int")
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "pos"
+    paramname "cnt"
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlocal1
+      getlocal2
+      callpropvoid        QName(PackageNamespace(""), "update"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.queue.view:QueueMediator/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

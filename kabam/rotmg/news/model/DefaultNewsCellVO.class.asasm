@@ -1,0 +1,109 @@
+class
+ refid "kabam.rotmg.news.model:DefaultNewsCellVO"
+ instance QName(PackageNamespace("kabam.rotmg.news.model"), "DefaultNewsCellVO")
+  extends QName(PackageNamespace("kabam.rotmg.news.model"), "NewsCellVO")
+  flag SEALED
+  iinit
+   name "DefaultNewsCellVO"
+   refid "kabam.rotmg.news.model:DefaultNewsCellVO/instance/init"
+   param QName(PackageNamespace(""), "int")
+   flag HAS_PARAM_NAMES
+   paramname "_arg1"
+   body
+    maxstack 4
+    localcount 2
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     pushstring          ""
+     findproperty        QName(PackageNamespace(""), "imageURL")
+     swap
+     setproperty         QName(PackageNamespace(""), "imageURL")
+
+     pushstring          "https://www.reddit.com/r/RotMG/search?sort=new&restrict_sr=on&q=flair%3AOfficial%2BDeca"
+     findproperty        QName(PackageNamespace(""), "linkDetail")
+     swap
+     setproperty         QName(PackageNamespace(""), "linkDetail")
+
+     getlocal1
+     pushbyte            0
+     ifne                L17
+
+     pushstring          "Official Deca Posts on Reddit"
+     jump                L19
+
+L17:
+     pushstring          "Deca on Reddit"
+     coerce_s
+L19:
+     findproperty        QName(PackageNamespace(""), "headline")
+     swap
+     setproperty         QName(PackageNamespace(""), "headline")
+
+     findpropstrict      QName(PackageNamespace(""), "Date")
+     constructprop       QName(PackageNamespace(""), "Date"), 0
+     callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "getTime"), 0
+     pushint             1000000000
+     subtract
+     findproperty        QName(PackageNamespace(""), "startDate")
+     swap
+     setproperty         QName(PackageNamespace(""), "startDate")
+
+     findpropstrict      QName(PackageNamespace(""), "Date")
+     constructprop       QName(PackageNamespace(""), "Date"), 0
+     callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "getTime"), 0
+     pushint             1000000000
+     add
+     findproperty        QName(PackageNamespace(""), "endDate")
+     swap
+     setproperty         QName(PackageNamespace(""), "endDate")
+
+     pushstring          "kabam.com"
+     pushstring          "kongregate"
+     pushstring          "steam"
+     pushstring          "rotmg"
+     newarray            4
+     findproperty        QName(PackageNamespace(""), "networks")
+     swap
+     setproperty         QName(PackageNamespace(""), "networks")
+
+     getlex              QName(PackageNamespace("kabam.rotmg.news.model"), "NewsCellLinkType")
+     getproperty         QName(PackageNamespace(""), "OPENS_LINK")
+     findproperty        QName(PackageNamespace(""), "linkType")
+     swap
+     setproperty         QName(PackageNamespace(""), "linkType")
+
+     pushint             999999
+     findproperty        QName(PackageNamespace(""), "priority")
+     swap
+     setproperty         QName(PackageNamespace(""), "priority")
+
+     getlocal1
+     findproperty        QName(PackageNamespace(""), "slot")
+     swap
+     setproperty         QName(PackageNamespace(""), "slot")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; instance
+ cinit
+  refid "kabam.rotmg.news.model:DefaultNewsCellVO/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

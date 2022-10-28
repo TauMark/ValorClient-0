@@ -1,0 +1,419 @@
+class
+ refid "kabam.rotmg.arena.component:LeaderboardWeeklyResetTimer"
+ instance QName(PackageNamespace("kabam.rotmg.arena.component"), "LeaderboardWeeklyResetTimer")
+  extends QName(PackageNamespace("flash.display"), "Sprite")
+  flag SEALED
+  iinit
+   name "LeaderboardWeeklyResetTimer"
+   refid "kabam.rotmg.arena.component:LeaderboardWeeklyResetTimer/instance/init"
+   body
+    maxstack 5
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     getlocal0
+     callproperty        QName(PrivateNamespace("kabam.rotmg.arena.component:LeaderboardWeeklyResetTimer"), "makeDifferenceMilliseconds"), 0
+     setproperty         QName(PrivateNamespace("kabam.rotmg.arena.component:LeaderboardWeeklyResetTimer"), "differenceMilliseconds")
+
+     getlocal0
+     getlocal0
+     callproperty        QName(PrivateNamespace("kabam.rotmg.arena.component:LeaderboardWeeklyResetTimer"), "makeResetClockDisplay"), 0
+     setproperty         QName(PrivateNamespace("kabam.rotmg.arena.component:LeaderboardWeeklyResetTimer"), "resetClock")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder")
+     constructprop       QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder"), 0
+     setproperty         QName(PrivateNamespace("kabam.rotmg.arena.component:LeaderboardWeeklyResetTimer"), "resetClockStringBuilder")
+
+     getlocal0
+     constructsuper      0
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.arena.component:LeaderboardWeeklyResetTimer"), "resetClock")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.arena.component:LeaderboardWeeklyResetTimer"), "resetClock")
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.arena.component:LeaderboardWeeklyResetTimer"), "resetClockStringBuilder")
+     pushstring          "LeaderboardWeeklyResetTime.label"
+     pushstring          "time"
+     getlocal0
+     callproperty        QName(PrivateNamespace("kabam.rotmg.arena.component:LeaderboardWeeklyResetTimer"), "getDateString"), 0
+     newobject           1
+     callproperty        QName(PackageNamespace(""), "setParams"), 2
+     callpropvoid        QName(PackageNamespace(""), "setStringBuilder"), 1
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("flash.utils"), "Timer")
+     pushshort           1000
+     constructprop       QName(PackageNamespace("flash.utils"), "Timer"), 1
+     setproperty         QName(PrivateNamespace("kabam.rotmg.arena.component:LeaderboardWeeklyResetTimer"), "updateTimer")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.arena.component:LeaderboardWeeklyResetTimer"), "updateTimer")
+     pushstring          "timer"
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.arena.component:LeaderboardWeeklyResetTimer"), "onUpdateTime")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.arena.component:LeaderboardWeeklyResetTimer"), "updateTimer")
+     callpropvoid        QName(PackageNamespace(""), "start"), 0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait const QName(PrivateNamespace("kabam.rotmg.arena.component:LeaderboardWeeklyResetTimer"), "MONDAY") type QName(PackageNamespace(""), "Number") value Integer(1) end
+  trait const QName(PrivateNamespace("kabam.rotmg.arena.component:LeaderboardWeeklyResetTimer"), "UTC_COUNTOFF_HOUR") type QName(PackageNamespace(""), "Number") value Integer(7) end
+  trait slot QName(PrivateNamespace("kabam.rotmg.arena.component:LeaderboardWeeklyResetTimer"), "differenceMilliseconds") type QName(PackageNamespace(""), "Number") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.arena.component:LeaderboardWeeklyResetTimer"), "updateTimer") type QName(PackageNamespace("flash.utils"), "Timer") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.arena.component:LeaderboardWeeklyResetTimer"), "resetClock") type QName(PackageNamespace("kabam.rotmg.text.view"), "StaticTextDisplay") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.arena.component:LeaderboardWeeklyResetTimer"), "resetClockStringBuilder") type QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder") end
+  trait method QName(PrivateNamespace("kabam.rotmg.arena.component:LeaderboardWeeklyResetTimer"), "onUpdateTime")
+   method
+    name "onUpdateTime"
+    refid "kabam.rotmg.arena.component:LeaderboardWeeklyResetTimer/instance/kabam.rotmg.arena.component:LeaderboardWeeklyResetTimer/instance/onUpdateTime"
+    param QName(PackageNamespace("flash.events"), "TimerEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 5
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.arena.component:LeaderboardWeeklyResetTimer"), "differenceMilliseconds")
+      pushshort           1000
+      subtract
+      setproperty         QName(PrivateNamespace("kabam.rotmg.arena.component:LeaderboardWeeklyResetTimer"), "differenceMilliseconds")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.arena.component:LeaderboardWeeklyResetTimer"), "resetClock")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.arena.component:LeaderboardWeeklyResetTimer"), "resetClockStringBuilder")
+      pushstring          "LeaderboardWeeklyResetTime.label"
+      pushstring          "time"
+      getlocal0
+      callproperty        QName(PrivateNamespace("kabam.rotmg.arena.component:LeaderboardWeeklyResetTimer"), "getDateString"), 0
+      newobject           1
+      callproperty        QName(PackageNamespace(""), "setParams"), 2
+      callpropvoid        QName(PackageNamespace(""), "setStringBuilder"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.arena.component:LeaderboardWeeklyResetTimer"), "getDateString")
+   method
+    name "getDateString"
+    refid "kabam.rotmg.arena.component:LeaderboardWeeklyResetTimer/instance/kabam.rotmg.arena.component:LeaderboardWeeklyResetTimer/instance/getDateString"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 3
+     localcount 7
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.arena.component:LeaderboardWeeklyResetTimer"), "differenceMilliseconds")
+      convert_i
+      setlocal3
+
+      getlex              QName(PackageNamespace(""), "Math")
+      getlocal3
+      pushint             86400000
+      divide
+      callproperty        QName(PackageNamespace(""), "floor"), 1
+      convert_i
+      setlocal1
+
+      getlocal3
+      pushint             86400000
+      modulo
+      convert_i
+      setlocal3
+
+      getlex              QName(PackageNamespace(""), "Math")
+      getlocal3
+      pushint             3600000
+      divide
+      callproperty        QName(PackageNamespace(""), "floor"), 1
+      convert_i
+      setlocal2
+
+      getlocal3
+      pushint             3600000
+      modulo
+      convert_i
+      setlocal3
+
+      getlex              QName(PackageNamespace(""), "Math")
+      getlocal3
+      pushint             60000
+      divide
+      callproperty        QName(PackageNamespace(""), "floor"), 1
+      convert_i
+      setlocal            5
+
+      getlocal3
+      pushint             60000
+      modulo
+      convert_i
+      setlocal3
+
+      getlex              QName(PackageNamespace(""), "Math")
+      getlocal3
+      pushshort           1000
+      divide
+      callproperty        QName(PackageNamespace(""), "floor"), 1
+      convert_i
+      setlocal            6
+
+      pushstring          ""
+      coerce_s
+      setlocal            4
+
+      getlocal1
+      pushbyte            0
+      ifngt               L69
+
+      getlocal1
+      pushstring          " days, "
+      add
+      getlocal2
+      add
+      pushstring          " hours, "
+      add
+      getlocal            5
+      add
+      pushstring          " minutes"
+      add
+      coerce_s
+      setlocal            4
+
+      jump                L82
+
+L69:
+      getlocal2
+      pushstring          " hours, "
+      add
+      getlocal            5
+      add
+      pushstring          " minutes, "
+      add
+      getlocal            6
+      add
+      pushstring          " seconds"
+      add
+      coerce_s
+      setlocal            4
+
+L82:
+      getlocal            4
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.arena.component:LeaderboardWeeklyResetTimer"), "makeDifferenceMilliseconds")
+   method
+    name "makeDifferenceMilliseconds"
+    refid "kabam.rotmg.arena.component:LeaderboardWeeklyResetTimer/instance/kabam.rotmg.arena.component:LeaderboardWeeklyResetTimer/instance/makeDifferenceMilliseconds"
+    returns QName(PackageNamespace(""), "Number")
+    body
+     maxstack 2
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace(""), "Date")
+      constructprop       QName(PackageNamespace(""), "Date"), 0
+      coerce              QName(PackageNamespace(""), "Date")
+      setlocal2
+
+      getlocal0
+      callproperty        QName(PrivateNamespace("kabam.rotmg.arena.component:LeaderboardWeeklyResetTimer"), "makeResetDate"), 0
+      coerce              QName(PackageNamespace(""), "Date")
+      setlocal1
+
+      getlocal1
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "getTime"), 0
+      getlocal2
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "getTime"), 0
+      subtract
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.arena.component:LeaderboardWeeklyResetTimer"), "makeResetDate")
+   method
+    name "makeResetDate"
+    refid "kabam.rotmg.arena.component:LeaderboardWeeklyResetTimer/instance/kabam.rotmg.arena.component:LeaderboardWeeklyResetTimer/instance/makeResetDate"
+    returns QName(PackageNamespace(""), "Date")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace(""), "Date")
+      constructprop       QName(PackageNamespace(""), "Date"), 0
+      coerce              QName(PackageNamespace(""), "Date")
+      setlocal1
+
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "dayUTC")
+      pushbyte            1
+      equals
+      dup
+      iffalse             L17
+
+      pop
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "hoursUTC")
+      pushbyte            7
+      lessthan
+L17:
+      iffalse             L26
+
+      getlocal1
+      pushbyte            7
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "hoursUTC")
+      subtract
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "setUTCHours"), 1
+
+      getlocal1
+      returnvalue
+
+L26:
+      getlocal1
+      pushbyte            7
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "setUTCHours"), 1
+
+      getlocal1
+      pushbyte            0
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "setUTCMinutes"), 1
+
+      getlocal1
+      pushbyte            0
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "setUTCSeconds"), 1
+
+      getlocal1
+      pushbyte            0
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "setUTCMilliseconds"), 1
+
+      getlocal1
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "dateUTC")
+      pushbyte            1
+      add
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "setUTCDate"), 1
+
+      jump                L52
+
+L45:
+      label
+      getlocal1
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "dateUTC")
+      pushbyte            1
+      add
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "setUTCDate"), 1
+
+L52:
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "dayUTC")
+      pushbyte            1
+      ifne                L45
+
+      getlocal1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.arena.component:LeaderboardWeeklyResetTimer"), "makeResetClockDisplay")
+   method
+    name "makeResetClockDisplay"
+    refid "kabam.rotmg.arena.component:LeaderboardWeeklyResetTimer/instance/kabam.rotmg.arena.component:LeaderboardWeeklyResetTimer/instance/makeResetClockDisplay"
+    returns QName(PackageNamespace("kabam.rotmg.text.view"), "StaticTextDisplay")
+    body
+     maxstack 8
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view"), "StaticTextDisplay")
+      constructprop       QName(PackageNamespace("kabam.rotmg.text.view"), "StaticTextDisplay"), 0
+      coerce              QName(PackageNamespace("kabam.rotmg.text.view"), "StaticTextDisplay")
+      setlocal1
+
+      getlocal1
+      pushbyte            14
+      callproperty        QName(PackageNamespace(""), "setSize"), 1
+      pushint             16567065
+      callproperty        QName(PackageNamespace(""), "setColor"), 1
+      pushtrue
+      callpropvoid        QName(PackageNamespace(""), "setBold"), 1
+
+      getlocal1
+      findpropstrict      QName(PackageNamespace("flash.filters"), "DropShadowFilter")
+      pushbyte            0
+      pushbyte            0
+      pushbyte            0
+      pushbyte            1
+      pushbyte            8
+      pushbyte            8
+      constructprop       QName(PackageNamespace("flash.filters"), "DropShadowFilter"), 6
+      newarray            1
+      setproperty         QName(PackageNamespace(""), "filters")
+
+      getlocal1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.arena.component:LeaderboardWeeklyResetTimer/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

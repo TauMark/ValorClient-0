@@ -1,0 +1,445 @@
+class
+ refid "valor.condEffsTimers:CondEffectTimer"
+ instance QName(PackageNamespace("valor.condEffsTimers"), "CondEffectTimer")
+  extends QName(PackageNamespace("flash.display"), "Sprite")
+  flag SEALED
+  iinit
+   name "CondEffectTimer"
+   refid "valor.condEffsTimers:CondEffectTimer/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace("valor.condEffsTimers:CondEffectTimer"), "condEff") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PrivateNamespace("valor.condEffsTimers:CondEffectTimer"), "time") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PrivateNamespace("valor.condEffsTimers:CondEffectTimer"), "lastDrawnCondEff") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PrivateNamespace("valor.condEffsTimers:CondEffectTimer"), "icon") type QName(PackageNamespace("flash.display"), "Bitmap") end
+  trait slot QName(PrivateNamespace("valor.condEffsTimers:CondEffectTimer"), "background") type QName(PackageNamespace("io.decagames.rotmg.ui.sliceScaling"), "SliceScalingBitmap") end
+  trait slot QName(PrivateNamespace("valor.condEffsTimers:CondEffectTimer"), "timer") type QName(PackageNamespace("io.decagames.rotmg.ui.labels"), "UILabel") end
+  trait method QName(PackageNamespace(""), "update")
+   method
+    name "update"
+    refid "valor.condEffsTimers:CondEffectTimer/instance/update"
+    param QName(PackageNamespace(""), "int")
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "condEff"
+    paramname "time"
+    body
+     maxstack 2
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("valor.condEffsTimers:CondEffectTimer"), "condEff")
+      getlocal1
+      equals
+      dup
+      iffalse             L13
+
+      pop
+      getlocal0
+      getproperty         QName(PrivateNamespace("valor.condEffsTimers:CondEffectTimer"), "time")
+      getlocal2
+      equals
+L13:
+      iffalse             L15
+
+      returnvoid
+
+L15:
+      getlocal0
+      getlocal1
+      setproperty         QName(PrivateNamespace("valor.condEffsTimers:CondEffectTimer"), "condEff")
+
+      getlocal0
+      getlocal2
+      setproperty         QName(PrivateNamespace("valor.condEffsTimers:CondEffectTimer"), "time")
+
+      getlocal0
+      callpropvoid        QName(PackageNamespace(""), "draw"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "draw")
+   method
+    name "draw"
+    refid "valor.condEffsTimers:CondEffectTimer/instance/draw"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      setlocal1
+
+      pushnull
+      setlocal2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("valor.condEffsTimers:CondEffectTimer"), "condEff")
+      pushbyte            -1
+      ifne                L13
+
+      getlocal0
+      callpropvoid        QName(PackageNamespace(""), "dispose"), 0
+
+      returnvoid
+
+L13:
+      getlocal0
+      getproperty         QName(PrivateNamespace("valor.condEffsTimers:CondEffectTimer"), "background")
+      pushnull
+      ifne                L43
+
+      getlocal0
+      getlex              QName(PackageNamespace("io.decagames.rotmg.ui.texture"), "TextureParser")
+      getproperty         QName(PackageNamespace(""), "instance")
+      pushstring          "UI"
+      pushstring          "daily_quest_list_element_grey"
+      callproperty        QName(PackageNamespace(""), "getSliceScalingBitmap"), 2
+      setproperty         QName(PrivateNamespace("valor.condEffsTimers:CondEffectTimer"), "background")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("valor.condEffsTimers:CondEffectTimer"), "background")
+      pushbyte            0
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("valor.condEffsTimers:CondEffectTimer"), "background")
+      pushbyte            0
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("valor.condEffsTimers:CondEffectTimer"), "background")
+      pushbyte            40
+      setproperty         QName(PackageNamespace(""), "width")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("valor.condEffsTimers:CondEffectTimer"), "background")
+      pushbyte            40
+      setproperty         QName(PackageNamespace(""), "height")
+
+      getlocal0
+      getlex              QName(PrivateNamespace("valor.condEffsTimers:CondEffectTimer"), "background")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+L43:
+      getlocal0
+      getproperty         QName(PrivateNamespace("valor.condEffsTimers:CondEffectTimer"), "lastDrawnCondEff")
+      getlocal0
+      getproperty         QName(PrivateNamespace("valor.condEffsTimers:CondEffectTimer"), "condEff")
+      ifeq                L131
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "ConditionEffect")
+      getproperty         QName(PackageNamespace(""), "effects_")
+      getlocal0
+      getproperty         QName(PrivateNamespace("valor.condEffsTimers:CondEffectTimer"), "condEff")
+      getproperty         MultinameL([PrivateNamespace("valor.condEffsTimers:CondEffectTimer"), ProtectedNamespace("valor.condEffsTimers:CondEffectTimer"), StaticProtectedNs("valor.condEffsTimers:CondEffectTimer"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("valor.condEffsTimers"), PackageInternalNs("valor.condEffsTimers"), PrivateNamespace("FilePrivateNS:CondEffectTimer"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.util"), "ConditionEffect")
+      setlocal1
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace("valor.condEffsTimers:CondEffectTimer"), "condEff")
+      setproperty         QName(PrivateNamespace("valor.condEffsTimers:CondEffectTimer"), "lastDrawnCondEff")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("valor.condEffsTimers:CondEffectTimer"), "icon")
+      pushnull
+      equals
+      not
+      dup
+      iffalse             L72
+
+      pop
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace("valor.condEffsTimers:CondEffectTimer"), "icon")
+      callproperty        QName(PackageNamespace(""), "contains"), 1
+      convert_b
+L72:
+      iffalse             L77
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace("valor.condEffsTimers:CondEffectTimer"), "icon")
+      callpropvoid        QName(PackageNamespace(""), "removeChild"), 1
+
+L77:
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "icon16Bit_")
+      iffalse             L90
+
+      getlex              QName(PackageNamespace("com.company.util"), "AssetLibrary")
+      pushstring          "lofiInterfaceBig"
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "iconOffsets_")
+      pushbyte            0
+      getproperty         MultinameL([PrivateNamespace("valor.condEffsTimers:CondEffectTimer"), ProtectedNamespace("valor.condEffsTimers:CondEffectTimer"), StaticProtectedNs("valor.condEffsTimers:CondEffectTimer"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("valor.condEffsTimers"), PackageInternalNs("valor.condEffsTimers"), PrivateNamespace("FilePrivateNS:CondEffectTimer"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      callproperty        QName(PackageNamespace(""), "getImageFromSet"), 2
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      setlocal2
+
+      jump                L99
+
+L90:
+      getlex              QName(PackageNamespace("com.company.util"), "AssetLibrary")
+      pushstring          "lofiInterface2"
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "iconOffsets_")
+      pushbyte            0
+      getproperty         MultinameL([PrivateNamespace("valor.condEffsTimers:CondEffectTimer"), ProtectedNamespace("valor.condEffsTimers:CondEffectTimer"), StaticProtectedNs("valor.condEffsTimers:CondEffectTimer"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("valor.condEffsTimers"), PackageInternalNs("valor.condEffsTimers"), PrivateNamespace("FilePrivateNS:CondEffectTimer"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      callproperty        QName(PackageNamespace(""), "getImageFromSet"), 2
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      setlocal2
+
+L99:
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.util.redrawers"), "GlowRedrawer")
+      getlocal2
+      pushdouble          4294967295
+      pushdouble          0.5
+      callproperty        QName(PackageNamespace(""), "outlineGlow"), 3
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      setlocal2
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("flash.display"), "Bitmap")
+      getlocal2
+      constructprop       QName(PackageNamespace("flash.display"), "Bitmap"), 1
+      setproperty         QName(PrivateNamespace("valor.condEffsTimers:CondEffectTimer"), "icon")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("valor.condEffsTimers:CondEffectTimer"), "icon")
+      pushbyte            12
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("valor.condEffsTimers:CondEffectTimer"), "icon")
+      pushbyte            7
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("valor.condEffsTimers:CondEffectTimer"), "icon")
+      pushbyte            16
+      setproperty         QName(PackageNamespace(""), "width")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("valor.condEffsTimers:CondEffectTimer"), "icon")
+      pushbyte            16
+      setproperty         QName(PackageNamespace(""), "height")
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace("valor.condEffsTimers:CondEffectTimer"), "icon")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+L131:
+      getlocal0
+      getproperty         QName(PrivateNamespace("valor.condEffsTimers:CondEffectTimer"), "timer")
+      pushnull
+      ifne                L159
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("io.decagames.rotmg.ui.labels"), "UILabel")
+      constructprop       QName(PackageNamespace("io.decagames.rotmg.ui.labels"), "UILabel"), 0
+      setproperty         QName(PrivateNamespace("valor.condEffsTimers:CondEffectTimer"), "timer")
+
+      getlex              QName(PackageNamespace("io.decagames.rotmg.ui.defaults"), "DefaultLabelFormat")
+      getlocal0
+      getproperty         QName(PrivateNamespace("valor.condEffsTimers:CondEffectTimer"), "timer")
+      callpropvoid        QName(PackageNamespace(""), "condEffsTimer"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("valor.condEffsTimers:CondEffectTimer"), "timer")
+      getlocal0
+      getproperty         QName(PrivateNamespace("valor.condEffsTimers:CondEffectTimer"), "icon")
+      getproperty         QName(PackageNamespace(""), "y")
+      getlocal0
+      getproperty         QName(PrivateNamespace("valor.condEffsTimers:CondEffectTimer"), "icon")
+      getproperty         QName(PackageNamespace(""), "height")
+      add
+      pushbyte            3
+      add
+      setproperty         QName(PackageNamespace(""), "y")
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace("valor.condEffsTimers:CondEffectTimer"), "timer")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+L159:
+      getlocal0
+      getproperty         QName(PrivateNamespace("valor.condEffsTimers:CondEffectTimer"), "timer")
+      getlocal0
+      getproperty         QName(PrivateNamespace("valor.condEffsTimers:CondEffectTimer"), "time")
+      pushint             2147483647
+      ifne                L167
+
+      pushstring          "Infinite"
+      jump                L177
+
+L167:
+      getlex              QName(PackageNamespace(""), "Math")
+      getlocal0
+      getproperty         QName(PrivateNamespace("valor.condEffsTimers:CondEffectTimer"), "time")
+      pushbyte            100
+      divide
+      callproperty        QName(PackageNamespace(""), "round"), 1
+      pushbyte            10
+      divide
+      convert_s
+      coerce_s
+L177:
+      setproperty         QName(PackageNamespace(""), "text")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("valor.condEffsTimers:CondEffectTimer"), "timer")
+      getlocal0
+      getproperty         QName(PrivateNamespace("valor.condEffsTimers:CondEffectTimer"), "background")
+      getproperty         QName(PackageNamespace(""), "width")
+      getlocal0
+      getproperty         QName(PrivateNamespace("valor.condEffsTimers:CondEffectTimer"), "timer")
+      getproperty         QName(PackageNamespace(""), "width")
+      subtract
+      pushbyte            2
+      divide
+      setproperty         QName(PackageNamespace(""), "x")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "dispose")
+   method
+    name "dispose"
+    refid "valor.condEffsTimers:CondEffectTimer/instance/dispose"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("valor.condEffsTimers:CondEffectTimer"), "icon")
+      pushnull
+      ifeq                L21
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace("valor.condEffsTimers:CondEffectTimer"), "icon")
+      callproperty        QName(PackageNamespace(""), "contains"), 1
+      iffalse             L15
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace("valor.condEffsTimers:CondEffectTimer"), "icon")
+      callpropvoid        QName(PackageNamespace(""), "removeChild"), 1
+
+L15:
+      getlocal0
+      pushnull
+      setproperty         QName(PrivateNamespace("valor.condEffsTimers:CondEffectTimer"), "icon")
+
+      getlocal0
+      pushbyte            -1
+      setproperty         QName(PrivateNamespace("valor.condEffsTimers:CondEffectTimer"), "lastDrawnCondEff")
+
+L21:
+      getlocal0
+      getproperty         QName(PrivateNamespace("valor.condEffsTimers:CondEffectTimer"), "background")
+      pushnull
+      ifeq                L40
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace("valor.condEffsTimers:CondEffectTimer"), "background")
+      callproperty        QName(PackageNamespace(""), "contains"), 1
+      iffalse             L34
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace("valor.condEffsTimers:CondEffectTimer"), "background")
+      callpropvoid        QName(PackageNamespace(""), "removeChild"), 1
+
+L34:
+      getlocal0
+      getproperty         QName(PrivateNamespace("valor.condEffsTimers:CondEffectTimer"), "background")
+      callpropvoid        QName(PackageNamespace(""), "dispose"), 0
+
+      getlocal0
+      pushnull
+      setproperty         QName(PrivateNamespace("valor.condEffsTimers:CondEffectTimer"), "background")
+
+L40:
+      getlocal0
+      getproperty         QName(PrivateNamespace("valor.condEffsTimers:CondEffectTimer"), "timer")
+      pushnull
+      ifeq                L56
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace("valor.condEffsTimers:CondEffectTimer"), "timer")
+      callproperty        QName(PackageNamespace(""), "contains"), 1
+      iffalse             L53
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace("valor.condEffsTimers:CondEffectTimer"), "timer")
+      callpropvoid        QName(PackageNamespace(""), "removeChild"), 1
+
+L53:
+      getlocal0
+      pushnull
+      setproperty         QName(PrivateNamespace("valor.condEffsTimers:CondEffectTimer"), "timer")
+
+L56:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "valor.condEffsTimers:CondEffectTimer/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

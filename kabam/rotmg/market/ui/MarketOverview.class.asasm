@@ -1,0 +1,461 @@
+class
+ refid "kabam.rotmg.market.ui:MarketOverview"
+ instance QName(PackageNamespace("kabam.rotmg.market.ui"), "MarketOverview")
+  extends QName(PackageNamespace("kabam.rotmg.account.core.view"), "EmptyFrame")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.market.ui:MarketOverview")
+  iinit
+   name "MarketOverview"
+   refid "kabam.rotmg.market.ui:MarketOverview/instance/init"
+   body
+    maxstack 6
+    localcount 2
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete")
+     constructprop       QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete"), 0
+     pushbyte            46
+     callproperty        QName(PackageNamespace(""), "setSize"), 1
+     pushtrue
+     callproperty        QName(PackageNamespace(""), "setBold"), 1
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "StaticStringBuilder")
+     pushstring          "Market"
+     constructprop       QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "StaticStringBuilder"), 1
+     callproperty        QName(PackageNamespace(""), "setStringBuilder"), 1
+     pushstring          "center"
+     callproperty        QName(PackageNamespace(""), "setAutoSize"), 1
+     pushshort           600
+     callproperty        QName(PackageNamespace(""), "setTextWidth"), 1
+     pushint             16777215
+     callproperty        QName(PackageNamespace(""), "setColor"), 1
+     pushbyte            0
+     pushbyte            20
+     callproperty        QName(PackageNamespace(""), "setPosition"), 2
+     coerce              QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete")
+     setlocal1
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal1
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.pets.view.components"), "DialogCloseButton")
+     pushdouble          0.8
+     constructprop       QName(PackageNamespace("kabam.rotmg.pets.view.components"), "DialogCloseButton"), 1
+     setproperty         QName(PackageNamespace(""), "closeButton_")
+
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "closeButton_")
+     pushshort           566
+     setproperty         QName(PackageNamespace(""), "x")
+
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "closeButton_")
+     pushbyte            5
+     setproperty         QName(PackageNamespace(""), "y")
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "closeButton_")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     getlocal0
+     getlocal0
+     pushstring          "Marketplace"
+     pushbyte            10
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketOverview"), "marketplace")
+     pushtrue
+     callproperty        QName(PrivateNamespace("kabam.rotmg.market.ui:MarketOverview"), "createButton"), 4
+     setproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketOverview"), "marketplaceButton")
+
+     getlocal0
+     getlocal0
+     pushstring          "My offers"
+     pushshort           140
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "myOffers")
+     callproperty        QName(PrivateNamespace("kabam.rotmg.market.ui:MarketOverview"), "createButton"), 3
+     setproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketOverview"), "myOffersButton")
+
+     getlocal0
+     getlocal0
+     pushstring          "Create offer"
+     pushshort           250
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketOverview"), "createOffer")
+     callproperty        QName(PrivateNamespace("kabam.rotmg.market.ui:MarketOverview"), "createButton"), 3
+     setproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketOverview"), "createOfferButton")
+
+     getlocal0
+     callpropvoid        QName(PrivateNamespace("kabam.rotmg.market.ui:MarketOverview"), "marketplace"), 0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace("kabam.rotmg.market.ui:MarketOverview"), "currentScreen") type QName(PackageNamespace("flash.display"), "Sprite") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.market.ui:MarketOverview"), "myOffersButton") type QName(PackageNamespace("com.company.assembleegameclient.screens"), "TitleMenuOption") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.market.ui:MarketOverview"), "createOfferButton") type QName(PackageNamespace("com.company.assembleegameclient.screens"), "TitleMenuOption") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.market.ui:MarketOverview"), "marketplaceButton") type QName(PackageNamespace("com.company.assembleegameclient.screens"), "TitleMenuOption") end
+  trait slot QName(PackageNamespace(""), "closeButton_") type QName(PackageNamespace("kabam.rotmg.pets.view.components"), "DialogCloseButton") end
+  trait method QName(PrivateNamespace("kabam.rotmg.market.ui:MarketOverview"), "marketplace")
+   method
+    name "marketplace"
+    refid "kabam.rotmg.market.ui:MarketOverview/instance/kabam.rotmg.market.ui:MarketOverview/instance/marketplace"
+    returns QName(PackageNamespace(""), "void")
+    flag NEED_ACTIVATION
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 2
+     code
+      getlocal0
+      pushscope
+
+      newactivation
+      dup
+      setlocal1
+
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.market.ui"), "MarketAllOffersScreen")
+      constructprop       QName(PackageNamespace("kabam.rotmg.market.ui"), "MarketAllOffersScreen"), 0
+      coerce              QName(PackageNamespace("kabam.rotmg.market.ui"), "MarketAllOffersScreen")
+      getlocal1
+      swap
+      setslot             1
+
+      getlex              QName(PackageInternalNs("kabam.rotmg.market.ui"), "screen")
+      getproperty         QName(PackageNamespace(""), "removed")
+      newfunction         "kabam.rotmg.market.ui:MarketOverview/instance/kabam.rotmg.market.ui:MarketOverview/instance/marketplace/inline_method"
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getlex              QName(PackageInternalNs("kabam.rotmg.market.ui"), "screen")
+      callpropvoid        QName(PackageNamespace(""), "setScreen"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketOverview"), "marketplaceButton")
+      callpropvoid        QName(PackageNamespace(""), "deactivate"), 0
+
+      returnvoid
+     end ; code
+     trait slot QName(PackageInternalNs("kabam.rotmg.market.ui"), "screen") slotid 1 type QName(PackageNamespace("kabam.rotmg.market.ui"), "MarketAllOffersScreen") end
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.market.ui:MarketOverview"), "createOffer")
+   method
+    name "createOffer"
+    refid "kabam.rotmg.market.ui:MarketOverview/instance/kabam.rotmg.market.ui:MarketOverview/instance/createOffer"
+    returns QName(PackageNamespace(""), "void")
+    flag NEED_ACTIVATION
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 2
+     code
+      getlocal0
+      pushscope
+
+      newactivation
+      dup
+      setlocal1
+
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.market.ui"), "MarketCreateOfferScreen")
+      constructprop       QName(PackageNamespace("kabam.rotmg.market.ui"), "MarketCreateOfferScreen"), 0
+      coerce              QName(PackageNamespace("kabam.rotmg.market.ui"), "MarketCreateOfferScreen")
+      getlocal1
+      swap
+      setslot             1
+
+      getlex              QName(PackageInternalNs("kabam.rotmg.market.ui"), "screen")
+      getproperty         QName(PackageNamespace(""), "removed")
+      newfunction         "kabam.rotmg.market.ui:MarketOverview/instance/kabam.rotmg.market.ui:MarketOverview/instance/createOffer/inline_method"
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getlex              QName(PackageInternalNs("kabam.rotmg.market.ui"), "screen")
+      callpropvoid        QName(PackageNamespace(""), "setScreen"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketOverview"), "createOfferButton")
+      callpropvoid        QName(PackageNamespace(""), "deactivate"), 0
+
+      returnvoid
+     end ; code
+     trait slot QName(PackageInternalNs("kabam.rotmg.market.ui"), "screen") slotid 1 type QName(PackageNamespace("kabam.rotmg.market.ui"), "MarketCreateOfferScreen") end
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "myOffers")
+   method
+    name "myOffers"
+    refid "kabam.rotmg.market.ui:MarketOverview/instance/myOffers"
+    returns QName(PackageNamespace(""), "void")
+    flag NEED_ACTIVATION
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 2
+     code
+      getlocal0
+      pushscope
+
+      newactivation
+      dup
+      setlocal1
+
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.market.ui"), "MarketMyOffersScreen")
+      constructprop       QName(PackageNamespace("kabam.rotmg.market.ui"), "MarketMyOffersScreen"), 0
+      coerce              QName(PackageNamespace("kabam.rotmg.market.ui"), "MarketMyOffersScreen")
+      getlocal1
+      swap
+      setslot             1
+
+      getlex              QName(PackageInternalNs("kabam.rotmg.market.ui"), "screen")
+      getproperty         QName(PackageNamespace(""), "removed")
+      newfunction         "kabam.rotmg.market.ui:MarketOverview/instance/myOffers/inline_method"
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getlex              QName(PackageInternalNs("kabam.rotmg.market.ui"), "screen")
+      callpropvoid        QName(PackageNamespace(""), "setScreen"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketOverview"), "myOffersButton")
+      callpropvoid        QName(PackageNamespace(""), "deactivate"), 0
+
+      returnvoid
+     end ; code
+     trait slot QName(PackageInternalNs("kabam.rotmg.market.ui"), "screen") slotid 1 type QName(PackageNamespace("kabam.rotmg.market.ui"), "MarketMyOffersScreen") end
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setScreen")
+   method
+    name "setScreen"
+    refid "kabam.rotmg.market.ui:MarketOverview/instance/setScreen"
+    param QName(PackageNamespace("flash.display"), "Sprite")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "param1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketOverview"), "currentScreen")
+      dup
+      iffalse             L12
+
+      pop
+      findpropstrict      QName(PackageNamespace(""), "contains")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketOverview"), "currentScreen")
+      callproperty        QName(PackageNamespace(""), "contains"), 1
+      coerce_a
+L12:
+      iffalse             L17
+
+      findpropstrict      QName(PackageNamespace(""), "removeChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketOverview"), "currentScreen")
+      callpropvoid        QName(PackageNamespace(""), "removeChild"), 1
+
+L17:
+      getlocal0
+      getlocal1
+      setproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketOverview"), "currentScreen")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketOverview"), "currentScreen")
+      pushbyte            100
+      setproperty         QName(PackageNamespace(""), "y")
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(ProtectedNamespace("kabam.rotmg.market.ui:MarketOverview"), "makeModalBackground") flag OVERRIDE
+   method
+    name "makeModalBackground"
+    refid "kabam.rotmg.market.ui:MarketOverview/instance/kabam.rotmg.market.ui:MarketOverview:makeModalBackground"
+    returns QName(PackageNamespace("flash.display"), "Sprite")
+    body
+     maxstack 5
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushbyte            0
+      findproperty        QName(PackageNamespace(""), "x")
+      swap
+      setproperty         QName(PackageNamespace(""), "x")
+
+      pushbyte            0
+      findproperty        QName(PackageNamespace(""), "y")
+      swap
+      setproperty         QName(PackageNamespace(""), "y")
+
+      findpropstrict      QName(PackageNamespace("flash.display"), "Sprite")
+      constructprop       QName(PackageNamespace("flash.display"), "Sprite"), 0
+      coerce              QName(PackageNamespace("flash.display"), "Sprite")
+      setlocal1
+
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "graphics")
+      pushbyte            0
+      pushdouble          0.9
+      callpropvoid        QName(PackageNamespace(""), "beginFill"), 2
+
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "graphics")
+      pushbyte            0
+      pushbyte            0
+      pushshort           600
+      pushshort           600
+      callpropvoid        QName(PackageNamespace(""), "drawRect"), 4
+
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "graphics")
+      callpropvoid        QName(PackageNamespace(""), "endFill"), 0
+
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "graphics")
+      pushint             16777215
+      pushbyte            1
+      callpropvoid        QName(PackageNamespace(""), "beginFill"), 2
+
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "graphics")
+      pushbyte            0
+      pushbyte            98
+      pushshort           600
+      pushbyte            2
+      callpropvoid        QName(PackageNamespace(""), "drawRect"), 4
+
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "graphics")
+      callpropvoid        QName(PackageNamespace(""), "endFill"), 0
+
+      getlocal1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.market.ui:MarketOverview"), "createButton")
+   method
+    name "createButton"
+    refid "kabam.rotmg.market.ui:MarketOverview/instance/kabam.rotmg.market.ui:MarketOverview/instance/createButton"
+    param QName(PackageNamespace(""), "String")
+    param QName(PackageNamespace(""), "Number")
+    param QName(PackageNamespace(""), "Function")
+    param QName(PackageNamespace(""), "Boolean")
+    returns QName(PackageNamespace("com.company.assembleegameclient.screens"), "TitleMenuOption")
+    flag HAS_OPTIONAL
+    flag HAS_PARAM_NAMES
+    optional False()
+    paramname "param1"
+    paramname "param2"
+    paramname "param3"
+    paramname "param4"
+    body
+     maxstack 4
+     localcount 6
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.screens"), "TitleMenuOption")
+      getlocal1
+      pushbyte            18
+      pushfalse
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.screens"), "TitleMenuOption"), 3
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.screens"), "TitleMenuOption")
+      dup
+      setlocal            5
+
+      pushstring          "left"
+      callpropvoid        QName(PackageNamespace(""), "setAutoSize"), 1
+
+      getlocal            5
+      pushstring          "middle"
+      callpropvoid        QName(PackageNamespace(""), "setVerticalAlign"), 1
+
+      getlocal            5
+      getlocal2
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal            5
+      pushbyte            85
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal            5
+      getproperty         QName(PackageNamespace(""), "clicked")
+      getlocal3
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal            4
+      iffalse             L29
+
+      getlocal            5
+      callpropvoid        QName(PackageNamespace(""), "deactivate"), 0
+
+L29:
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal            5
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      getlocal            5
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.market.ui:MarketOverview/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

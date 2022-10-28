@@ -1,0 +1,927 @@
+class
+ refid "com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile"
+ instance QName(PackageNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles"), "InteractiveItemTile")
+  extends QName(PackageNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles"), "ItemTile")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile")
+  iinit
+   name "InteractiveItemTile"
+   refid "com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile/instance/init"
+   param QName(PackageNamespace(""), "int")
+   param QName(PackageNamespace("com.company.assembleegameclient.ui.panels.itemgrids"), "ItemGrid")
+   param QName(PackageNamespace(""), "Boolean")
+   flag HAS_PARAM_NAMES
+   paramname "tileId"
+   paramname "ownerId"
+   paramname "isInteractive"
+   body
+    maxstack 5
+    localcount 5
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "TextureRedrawer")
+     getlex              QName(PackageNamespace("com.company.util"), "AssetLibrary")
+     pushstring          "lofiInterface2"
+     pushbyte            81
+     callproperty        QName(PackageNamespace(""), "getImageFromSet"), 2
+     pushbyte            30
+     pushtrue
+     pushint             16777215
+     callproperty        QName(PackageNamespace(""), "redraw"), 4
+     coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+     setlocal            4
+
+     getlocal0
+     getlocal1
+     getlocal2
+     constructsuper      2
+
+     pushfalse
+     findproperty        QName(PackageNamespace(""), "mouseChildren")
+     swap
+     setproperty         QName(PackageNamespace(""), "mouseChildren")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("flash.utils"), "Timer")
+     pushshort           250
+     pushbyte            1
+     constructprop       QName(PackageNamespace("flash.utils"), "Timer"), 2
+     setproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile"), "doubleClickTimer")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile"), "doubleClickTimer")
+     pushstring          "timerComplete"
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile"), "onDoubleClickTimerComplete")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     getlocal0
+     getlocal3
+     callpropvoid        QName(PackageNamespace(""), "setInteractive"), 1
+
+     findpropstrict      QName(PackageNamespace("flash.display"), "Bitmap")
+     getlocal            4
+     constructprop       QName(PackageNamespace("flash.display"), "Bitmap"), 1
+     findproperty        QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile"), "lockBitmap")
+     swap
+     setproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile"), "lockBitmap")
+
+     getlex              QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile"), "lockBitmap")
+     pushfalse
+     setproperty         QName(PackageNamespace(""), "visible")
+
+     getlex              QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile"), "lockBitmap")
+     getlex              QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile"), "lockBitmap")
+     getproperty         QName(PackageNamespace(""), "x")
+     pushbyte            12
+     subtract
+     setproperty         QName(PackageNamespace(""), "x")
+
+     getlex              QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile"), "lockBitmap")
+     getlex              QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile"), "lockBitmap")
+     getproperty         QName(PackageNamespace(""), "y")
+     pushbyte            12
+     add
+     setproperty         QName(PackageNamespace(""), "y")
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlex              QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile"), "lockBitmap")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     findpropstrict      QName(PackageNamespace(""), "addEventListener")
+     pushstring          "enterFrame"
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile"), "onEnterFrame")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile"), "doubleClickTimer") type QName(PackageNamespace("flash.utils"), "Timer") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile"), "dragStart") type QName(PackageNamespace("flash.geom"), "Point") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile"), "pendingSecondClick") type QName(PackageNamespace(""), "Boolean") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile"), "isDragging") type QName(PackageNamespace(""), "Boolean") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile"), "lockBitmap") type QName(PackageNamespace("flash.display"), "Bitmap") end
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile"), "onEnterFrame")
+   method
+    name "onEnterFrame"
+    refid "com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile/instance/com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile/instance/onEnterFrame"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "event"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile"), "lockBitmap")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "itemSprite")
+      getproperty         QName(PackageNamespace(""), "itemData")
+      getproperty         QName(PackageNamespace(""), "locked")
+      setproperty         QName(PackageNamespace(""), "visible")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setInteractive")
+   method
+    name "setInteractive"
+    refid "com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile/instance/setInteractive"
+    param QName(PackageNamespace(""), "Boolean")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "isInteractive"
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      iffalse             L30
+
+      findpropstrict      QName(PackageNamespace(""), "addEventListener")
+      pushstring          "rightClick"
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile"), "onRightClick")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      findpropstrict      QName(PackageNamespace(""), "addEventListener")
+      pushstring          "mouseDown"
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile"), "onMouseDown")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      findpropstrict      QName(PackageNamespace(""), "addEventListener")
+      pushstring          "mouseUp"
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile"), "onMouseUp")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      findpropstrict      QName(PackageNamespace(""), "addEventListener")
+      pushstring          "mouseOut"
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile"), "onMouseOut")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      findpropstrict      QName(PackageNamespace(""), "addEventListener")
+      pushstring          "removedFromStage"
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile"), "onRemovedFromStage")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      jump                L45
+
+L30:
+      findpropstrict      QName(PackageNamespace(""), "removeEventListener")
+      pushstring          "mouseDown"
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile"), "onMouseDown")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      findpropstrict      QName(PackageNamespace(""), "removeEventListener")
+      pushstring          "mouseUp"
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile"), "onMouseUp")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      findpropstrict      QName(PackageNamespace(""), "removeEventListener")
+      pushstring          "mouseOut"
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile"), "onMouseOut")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+L45:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getDropTarget")
+   method
+    name "getDropTarget"
+    refid "com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile/instance/getDropTarget"
+    returns QName(PackageNamespace("flash.display"), "DisplayObject")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace(""), "itemSprite")
+      getproperty         QName(PackageNamespace(""), "dropTarget")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(ProtectedNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile"), "beginDragCallback")
+   method
+    name "beginDragCallback"
+    refid "com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile/instance/com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile:beginDragCallback"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(ProtectedNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile"), "endDragCallback")
+   method
+    name "endDragCallback"
+    refid "com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile/instance/com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile:endDragCallback"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile"), "onMouseOut")
+   method
+    name "onMouseOut"
+    refid "com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile/instance/com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile/instance/onMouseOut"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "e"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      pushfalse
+      callpropvoid        QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile"), "setPendingDoubleClick"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile"), "onMouseUp")
+   method
+    name "onMouseUp"
+    refid "com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile/instance/com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile/instance/onMouseUp"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "e"
+    body
+     maxstack 4
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile"), "isDragging")
+      iffalse             L6
+
+      returnvoid
+
+L6:
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "shiftKey")
+      iffalse             L19
+
+      getlocal0
+      pushfalse
+      callpropvoid        QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile"), "setPendingDoubleClick"), 1
+
+      findpropstrict      QName(PackageNamespace(""), "dispatchEvent")
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles"), "ItemTileEvent")
+      pushstring          "ITEM_SHIFT_CLICK"
+      getlocal0
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles"), "ItemTileEvent"), 2
+      callpropvoid        QName(PackageNamespace(""), "dispatchEvent"), 1
+
+      jump                L48
+
+L19:
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "ctrlKey")
+      iffalse             L32
+
+      getlocal0
+      pushfalse
+      callpropvoid        QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile"), "setPendingDoubleClick"), 1
+
+      findpropstrict      QName(PackageNamespace(""), "dispatchEvent")
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles"), "ItemTileEvent")
+      pushstring          "ITEM_CTRL_CLICK"
+      getlocal0
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles"), "ItemTileEvent"), 2
+      callpropvoid        QName(PackageNamespace(""), "dispatchEvent"), 1
+
+      jump                L48
+
+L32:
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile"), "pendingSecondClick")
+      iftrue              L39
+
+      getlocal0
+      pushtrue
+      callpropvoid        QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile"), "setPendingDoubleClick"), 1
+
+      jump                L48
+
+L39:
+      getlocal0
+      pushfalse
+      callpropvoid        QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile"), "setPendingDoubleClick"), 1
+
+      findpropstrict      QName(PackageNamespace(""), "dispatchEvent")
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles"), "ItemTileEvent")
+      pushstring          "ITEM_DOUBLE_CLICK"
+      getlocal0
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles"), "ItemTileEvent"), 2
+      callpropvoid        QName(PackageNamespace(""), "dispatchEvent"), 1
+
+L48:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile"), "onMouseDown")
+   method
+    name "onMouseDown"
+    refid "com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile/instance/com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile/instance/onMouseDown"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "e"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace(""), "getItemId")
+      callproperty        QName(PackageNamespace(""), "getItemId"), 0
+      getproperty         QName(PackageNamespace(""), "objectType")
+      pushbyte            -1
+      ifne                L8
+
+      returnvoid
+
+L8:
+      getlocal0
+      getlocal1
+      callpropvoid        QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile"), "beginDragCheck"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile"), "onRightClick")
+   method
+    name "onRightClick"
+    refid "com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile/instance/com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile/instance/onRightClick"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "e"
+    body
+     maxstack 4
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "ownerGrid")
+      getproperty         QName(PackageNamespace(""), "owner")
+      getproperty         QName(PackageNamespace(""), "map_")
+      getproperty         QName(PackageNamespace(""), "gs")
+      getproperty         QName(PackageNamespace(""), "gsc_")
+      getlex              QName(PackageNamespace(""), "tileId")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "ownerGrid")
+      getproperty         QName(PackageNamespace(""), "owner")
+      getproperty         QName(PackageNamespace(""), "objectId")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "itemSprite")
+      getproperty         QName(PackageNamespace(""), "itemData")
+      callproperty        QName(PackageNamespace(""), "toString"), 0
+      callpropvoid        QName(PackageNamespace(""), "lockItem"), 3
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile"), "setPendingDoubleClick")
+   method
+    name "setPendingDoubleClick"
+    refid "com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile/instance/com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile/instance/setPendingDoubleClick"
+    param QName(PackageNamespace(""), "Boolean")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "pending"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      setproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile"), "pendingSecondClick")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile"), "pendingSecondClick")
+      iffalse             L15
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile"), "doubleClickTimer")
+      callpropvoid        QName(PackageNamespace(""), "reset"), 0
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile"), "doubleClickTimer")
+      callpropvoid        QName(PackageNamespace(""), "start"), 0
+
+      jump                L18
+
+L15:
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile"), "doubleClickTimer")
+      callpropvoid        QName(PackageNamespace(""), "stop"), 0
+
+L18:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile"), "beginDragCheck")
+   method
+    name "beginDragCheck"
+    refid "com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile/instance/com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile/instance/beginDragCheck"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "e"
+    body
+     maxstack 4
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("flash.geom"), "Point")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "stageX")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "stageY")
+      constructprop       QName(PackageNamespace("flash.geom"), "Point"), 2
+      setproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile"), "dragStart")
+
+      findpropstrict      QName(PackageNamespace(""), "addEventListener")
+      pushstring          "mouseMove"
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile"), "onMouseMoveCheckDrag")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      findpropstrict      QName(PackageNamespace(""), "addEventListener")
+      pushstring          "mouseOut"
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile"), "cancelDragCheck")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      findpropstrict      QName(PackageNamespace(""), "addEventListener")
+      pushstring          "mouseUp"
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile"), "cancelDragCheck")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile"), "cancelDragCheck")
+   method
+    name "cancelDragCheck"
+    refid "com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile/instance/com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile/instance/cancelDragCheck"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "e"
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace(""), "removeEventListener")
+      pushstring          "mouseMove"
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile"), "onMouseMoveCheckDrag")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      findpropstrict      QName(PackageNamespace(""), "removeEventListener")
+      pushstring          "mouseOut"
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile"), "cancelDragCheck")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      findpropstrict      QName(PackageNamespace(""), "removeEventListener")
+      pushstring          "mouseUp"
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile"), "cancelDragCheck")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile"), "onMouseMoveCheckDrag")
+   method
+    name "onMouseMoveCheckDrag"
+    refid "com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile/instance/com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile/instance/onMouseMoveCheckDrag"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "e"
+    body
+     maxstack 4
+     localcount 5
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "stageX")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile"), "dragStart")
+      getproperty         QName(PackageNamespace(""), "x")
+      subtract
+      convert_d
+      setlocal2
+
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "stageY")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile"), "dragStart")
+      getproperty         QName(PackageNamespace(""), "y")
+      subtract
+      convert_d
+      setlocal3
+
+      getlex              QName(PackageNamespace(""), "Math")
+      getlocal2
+      getlocal2
+      multiply
+      getlocal3
+      getlocal3
+      multiply
+      add
+      callproperty        QName(PackageNamespace(""), "sqrt"), 1
+      convert_d
+      dup
+      setlocal            4
+
+      pushbyte            3
+      ifngt               L41
+
+      getlocal0
+      pushnull
+      callpropvoid        QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile"), "cancelDragCheck"), 1
+
+      getlocal0
+      pushfalse
+      callpropvoid        QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile"), "setPendingDoubleClick"), 1
+
+      getlocal0
+      getlocal1
+      callpropvoid        QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile"), "beginDrag"), 1
+
+L41:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile"), "onDoubleClickTimerComplete")
+   method
+    name "onDoubleClickTimerComplete"
+    refid "com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile/instance/com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile/instance/onDoubleClickTimerComplete"
+    param QName(PackageNamespace("flash.events"), "TimerEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "e"
+    body
+     maxstack 4
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      pushfalse
+      callpropvoid        QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile"), "setPendingDoubleClick"), 1
+
+      findpropstrict      QName(PackageNamespace(""), "dispatchEvent")
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles"), "ItemTileEvent")
+      pushstring          "ITEM_CLICK"
+      getlocal0
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles"), "ItemTileEvent"), 2
+      callpropvoid        QName(PackageNamespace(""), "dispatchEvent"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile"), "beginDrag")
+   method
+    name "beginDrag"
+    refid "com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile/instance/com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile/instance/beginDrag"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "e"
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      pushtrue
+      setproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile"), "isDragging")
+
+      findpropstrict      QName(ProtectedNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:ItemTile"), "toggleDragState")
+      pushfalse
+      callpropvoid        QName(ProtectedNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:ItemTile"), "toggleDragState"), 1
+
+      getlex              QName(PackageNamespace(""), "stage")
+      getlex              QName(PackageNamespace(""), "itemSprite")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      getlex              QName(PackageNamespace(""), "itemSprite")
+      pushtrue
+      callpropvoid        QName(PackageNamespace(""), "startDrag"), 1
+
+      getlex              QName(PackageNamespace(""), "itemSprite")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "stageX")
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlex              QName(PackageNamespace(""), "itemSprite")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "stageY")
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlex              QName(PackageNamespace(""), "itemSprite")
+      pushstring          "mouseUp"
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile"), "endDrag")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      getlocal0
+      callpropvoid        QName(ProtectedNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile"), "beginDragCallback"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile"), "endDrag")
+   method
+    name "endDrag"
+    refid "com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile/instance/com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile/instance/endDrag"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "e"
+    body
+     maxstack 4
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      pushfalse
+      setproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile"), "isDragging")
+
+      findpropstrict      QName(ProtectedNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:ItemTile"), "toggleDragState")
+      pushtrue
+      callpropvoid        QName(ProtectedNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:ItemTile"), "toggleDragState"), 1
+
+      getlex              QName(PackageNamespace(""), "itemSprite")
+      callpropvoid        QName(PackageNamespace(""), "stopDrag"), 0
+
+      getlex              QName(PackageNamespace(""), "itemSprite")
+      pushstring          "mouseUp"
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile"), "endDrag")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      findpropstrict      QName(PackageNamespace(""), "dispatchEvent")
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles"), "ItemTileEvent")
+      pushstring          "ITEM_MOVE"
+      getlocal0
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles"), "ItemTileEvent"), 2
+      callpropvoid        QName(PackageNamespace(""), "dispatchEvent"), 1
+
+      getlocal0
+      callpropvoid        QName(ProtectedNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile"), "endDragCallback"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setItem") flag OVERRIDE
+   method
+    name "setItem"
+    refid "com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile/instance/setItem"
+    param QName(PackageNamespace("valor"), "ItemData")
+    returns QName(PackageNamespace(""), "Boolean")
+    flag HAS_PARAM_NAMES
+    paramname "itemId"
+    body
+     maxstack 2
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      callsuper           QName(PackageNamespace(""), "setItem"), 1
+      convert_b
+      setlocal2
+
+      getlocal2
+      iffalse             L11
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile"), "stopDragging"), 0
+
+L11:
+      getlocal2
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile"), "onRemovedFromStage")
+   method
+    name "onRemovedFromStage"
+    refid "com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile/instance/com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile/instance/onRemovedFromStage"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "e"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      pushfalse
+      callpropvoid        QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile"), "setPendingDoubleClick"), 1
+
+      getlocal0
+      pushnull
+      callpropvoid        QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile"), "cancelDragCheck"), 1
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile"), "stopDragging"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile"), "stopDragging")
+   method
+    name "stopDragging"
+    refid "com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile/instance/com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile/instance/stopDragging"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile"), "isDragging")
+      iffalse             L17
+
+      getlex              QName(PackageNamespace(""), "itemSprite")
+      callpropvoid        QName(PackageNamespace(""), "stopDrag"), 0
+
+      getlex              QName(PackageNamespace(""), "stage")
+      getlex              QName(PackageNamespace(""), "itemSprite")
+      callproperty        QName(PackageNamespace(""), "contains"), 1
+      iffalse             L14
+
+      getlex              QName(PackageNamespace(""), "stage")
+      getlex              QName(PackageNamespace(""), "itemSprite")
+      callpropvoid        QName(PackageNamespace(""), "removeChild"), 1
+
+L14:
+      getlocal0
+      pushfalse
+      setproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile"), "isDragging")
+
+L17:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile"), "DOUBLE_CLICK_PAUSE") type QName(PackageNamespace(""), "uint") value Integer(250) end
+ trait const QName(PrivateNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:InteractiveItemTile"), "DRAG_DIST") type QName(PackageNamespace(""), "int") value Integer(3) end
+end ; class

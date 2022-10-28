@@ -1,0 +1,279 @@
+class
+ refid "kabam.rotmg.crusher:CrusherFrameMediator"
+ instance QName(PackageNamespace("kabam.rotmg.crusher"), "CrusherFrameMediator")
+  extends QName(PackageNamespace("robotlegs.bender.bundles.mvcs"), "Mediator")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.crusher:CrusherFrameMediator")
+  iinit
+   refid "kabam.rotmg.crusher:CrusherFrameMediator/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "view") flag METADATA type QName(PackageNamespace("kabam.rotmg.crusher"), "CrusherFrame")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "closeDialogs") flag METADATA type QName(PackageNamespace("kabam.rotmg.dialogs.control"), "CloseDialogsSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "nameChanged") flag METADATA type QName(PackageNamespace("kabam.rotmg.ui.signals"), "NameChangedSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PrivateNamespace("kabam.rotmg.crusher:CrusherFrameMediator"), "gameSprite") type QName(PackageNamespace("com.company.assembleegameclient.game"), "AGameSprite") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.crusher:CrusherFrameMediator"), "NormalVials") type QName(PackageNamespace(""), "Boolean") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.crusher:CrusherFrameMediator"), "LifeManaVials") type QName(PackageNamespace(""), "Boolean") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.crusher:CrusherFrameMediator"), "SpecialVials") type QName(PackageNamespace(""), "Boolean") end
+  trait slot QName(PackageNamespace(""), "hudModel") flag METADATA type QName(PackageNamespace("kabam.rotmg.ui.model"), "HUDModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "logger") flag METADATA type QName(PackageNamespace("robotlegs.bender.framework.api"), "ILogger")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PackageNamespace(""), "initialize") flag OVERRIDE
+   method
+    name "initialize"
+    refid "kabam.rotmg.crusher:CrusherFrameMediator/instance/initialize"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "gameSprite")
+      setproperty         QName(PrivateNamespace("kabam.rotmg.crusher:CrusherFrameMediator"), "gameSprite")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "choose")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.crusher:CrusherFrameMediator"), "onChoose")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "cancel")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.crusher:CrusherFrameMediator"), "onCancel")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "destroy") flag OVERRIDE
+   method
+    name "destroy"
+    refid "kabam.rotmg.crusher:CrusherFrameMediator/instance/destroy"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "choose")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.crusher:CrusherFrameMediator"), "onChoose")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "cancel")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.crusher:CrusherFrameMediator"), "onCancel")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.crusher:CrusherFrameMediator"), "onChoose")
+   method
+    name "onChoose"
+    refid "kabam.rotmg.crusher:CrusherFrameMediator/instance/kabam.rotmg.crusher:CrusherFrameMediator/instance/onChoose"
+    param QName(PackageNamespace(""), "Boolean")
+    param QName(PackageNamespace(""), "Boolean")
+    param QName(PackageNamespace(""), "Boolean")
+    param QName(PackageNamespace(""), "Boolean")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg3"
+    paramname "_arg4"
+    paramname "_arg1"
+    paramname "_arg2"
+    body
+     maxstack 2
+     localcount 5
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal2
+      setproperty         QName(PrivateNamespace("kabam.rotmg.crusher:CrusherFrameMediator"), "NormalVials")
+
+      getlocal0
+      getlocal3
+      setproperty         QName(PrivateNamespace("kabam.rotmg.crusher:CrusherFrameMediator"), "LifeManaVials")
+
+      getlocal0
+      getlocal            4
+      setproperty         QName(PrivateNamespace("kabam.rotmg.crusher:CrusherFrameMediator"), "SpecialVials")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.crusher:CrusherFrameMediator"), "NormalVials")
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "valueOf"), 0
+      pushtrue
+      ifne                L22
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hudModel")
+      getproperty         QName(PackageNamespace(""), "gameSprite")
+      getproperty         QName(PackageNamespace(""), "gsc_")
+      pushstring          "/crush 1"
+      callpropvoid        QName(PackageNamespace(""), "playerText"), 1
+
+L22:
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.crusher:CrusherFrameMediator"), "SpecialVials")
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "valueOf"), 0
+      pushtrue
+      ifne                L33
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hudModel")
+      getproperty         QName(PackageNamespace(""), "gameSprite")
+      getproperty         QName(PackageNamespace(""), "gsc_")
+      pushstring          "/crush 3"
+      callpropvoid        QName(PackageNamespace(""), "playerText"), 1
+
+L33:
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.crusher:CrusherFrameMediator"), "LifeManaVials")
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "valueOf"), 0
+      pushtrue
+      ifne                L44
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hudModel")
+      getproperty         QName(PackageNamespace(""), "gameSprite")
+      getproperty         QName(PackageNamespace(""), "gsc_")
+      pushstring          "/crush 2"
+      callpropvoid        QName(PackageNamespace(""), "playerText"), 1
+
+L44:
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.crusher:CrusherFrameMediator"), "NormalVials")
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "valueOf"), 0
+      pushfalse
+      equals
+      dup
+      iffalse             L57
+
+      pop
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.crusher:CrusherFrameMediator"), "LifeManaVials")
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "valueOf"), 0
+      pushfalse
+      equals
+L57:
+      dup
+      iffalse             L65
+
+      pop
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.crusher:CrusherFrameMediator"), "SpecialVials")
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "valueOf"), 0
+      pushfalse
+      equals
+L65:
+      iffalse             L72
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hudModel")
+      getproperty         QName(PackageNamespace(""), "gameSprite")
+      getproperty         QName(PackageNamespace(""), "gsc_")
+      pushstring          "/crush"
+      callpropvoid        QName(PackageNamespace(""), "playerText"), 1
+
+L72:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "closeDialogs")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.crusher:CrusherFrameMediator"), "onCancel")
+   method
+    name "onCancel"
+    refid "kabam.rotmg.crusher:CrusherFrameMediator/instance/kabam.rotmg.crusher:CrusherFrameMediator/instance/onCancel"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "closeDialogs")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.crusher:CrusherFrameMediator/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

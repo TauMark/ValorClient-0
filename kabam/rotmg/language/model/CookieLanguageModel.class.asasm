@@ -1,0 +1,425 @@
+class
+ refid "kabam.rotmg.language.model:CookieLanguageModel"
+ instance QName(PackageNamespace("kabam.rotmg.language.model"), "CookieLanguageModel")
+  extends QName(PackageNamespace(""), "Object")
+  implements QName(PackageNamespace("kabam.rotmg.language.model"), "LanguageModel")
+  flag SEALED
+  iinit
+   name "CookieLanguageModel"
+   refid "kabam.rotmg.language.model:CookieLanguageModel/instance/init"
+   body
+    maxstack 4
+    localcount 3
+    initscopedepth 0
+    maxscopedepth 2
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     getlocal0
+     callproperty        QName(PrivateNamespace("kabam.rotmg.language.model:CookieLanguageModel"), "makeAvailableLanguages"), 0
+     setproperty         QName(PrivateNamespace("kabam.rotmg.language.model:CookieLanguageModel"), "availableLanguages")
+
+     getlocal0
+     constructsuper      0
+
+L8:
+     getlocal0
+     getlex              QName(PackageNamespace("flash.net"), "SharedObject")
+     pushstring          "VLR"
+     pushstring          "/"
+     callproperty        QName(PackageNamespace(""), "getLocal"), 2
+     setproperty         QName(PrivateNamespace("kabam.rotmg.language.model:CookieLanguageModel"), "cookie")
+
+L14:
+     jump                L25
+
+L15:
+     getlocal0
+     pushscope
+
+     newcatch            0
+     dup
+     setlocal2
+
+     dup
+     pushscope
+
+     swap
+     setslot             1
+
+     popscope
+L25:
+     returnvoid
+    end ; code
+    try from L8 to L14 target L15 type QName(PackageNamespace(""), "Error") name QName(PackageInternalNs("kabam.rotmg.language.model"), "error") end
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace("kabam.rotmg.language.model:CookieLanguageModel"), "cookie") type QName(PackageNamespace("flash.net"), "SharedObject") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.language.model:CookieLanguageModel"), "language") type QName(PackageNamespace(""), "String") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.language.model:CookieLanguageModel"), "availableLanguages") type QName(PackageNamespace("flash.utils"), "Dictionary") end
+  trait method QName(PackageNamespace(""), "getLanguage")
+   method
+    name "getLanguage"
+    refid "kabam.rotmg.language.model:CookieLanguageModel/instance/getLanguage"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.language.model:CookieLanguageModel"), "language")
+      dup
+      iftrue              L11
+
+      pop
+      getlocal0
+      callproperty        QName(PrivateNamespace("kabam.rotmg.language.model:CookieLanguageModel"), "readLanguageFromCookie"), 0
+      coerce_s
+L11:
+      dup
+      setlocal1
+
+      setproperty         QName(PrivateNamespace("kabam.rotmg.language.model:CookieLanguageModel"), "language")
+
+      getlocal1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.language.model:CookieLanguageModel"), "readLanguageFromCookie")
+   method
+    name "readLanguageFromCookie"
+    refid "kabam.rotmg.language.model:CookieLanguageModel/instance/kabam.rotmg.language.model:CookieLanguageModel/instance/readLanguageFromCookie"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.language.model:CookieLanguageModel"), "cookie")
+      getproperty         QName(PackageNamespace(""), "data")
+      getproperty         Multiname("locale", [PrivateNamespace("kabam.rotmg.language.model:CookieLanguageModel"), ProtectedNamespace("kabam.rotmg.language.model:CookieLanguageModel"), StaticProtectedNs("kabam.rotmg.language.model:CookieLanguageModel"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.language.model"), PackageInternalNs("kabam.rotmg.language.model"), PrivateNamespace("FilePrivateNS:CookieLanguageModel"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      dup
+      iftrue              L11
+
+      pop
+      pushstring          "en"
+      coerce_a
+L11:
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setLanguage")
+   method
+    name "setLanguage"
+    refid "kabam.rotmg.language.model:CookieLanguageModel/instance/setLanguage"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 3
+     localcount 4
+     initscopedepth 0
+     maxscopedepth 2
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      setproperty         QName(PrivateNamespace("kabam.rotmg.language.model:CookieLanguageModel"), "language")
+
+L5:
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.language.model:CookieLanguageModel"), "cookie")
+      getproperty         QName(PackageNamespace(""), "data")
+      getlocal1
+      setproperty         Multiname("locale", [PrivateNamespace("kabam.rotmg.language.model:CookieLanguageModel"), ProtectedNamespace("kabam.rotmg.language.model:CookieLanguageModel"), StaticProtectedNs("kabam.rotmg.language.model:CookieLanguageModel"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.language.model"), PackageInternalNs("kabam.rotmg.language.model"), PrivateNamespace("FilePrivateNS:CookieLanguageModel"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.language.model:CookieLanguageModel"), "cookie")
+      callpropvoid        QName(PackageNamespace(""), "flush"), 0
+
+L13:
+      jump                L24
+
+L14:
+      getlocal0
+      pushscope
+
+      newcatch            0
+      dup
+      setlocal3
+
+      dup
+      pushscope
+
+      swap
+      setslot             1
+
+      popscope
+L24:
+      returnvoid
+     end ; code
+     try from L5 to L13 target L14 type QName(PackageNamespace(""), "Error") name QName(PackageInternalNs("kabam.rotmg.language.model"), "error") end
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getLanguageFamily")
+   method
+    name "getLanguageFamily"
+    refid "kabam.rotmg.language.model:CookieLanguageModel/instance/getLanguageFamily"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      callproperty        QName(PackageNamespace(""), "getLanguage"), 0
+      pushbyte            0
+      pushbyte            2
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "substr"), 2
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "toLowerCase"), 0
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getLanguageNames")
+   method
+    name "getLanguageNames"
+    refid "kabam.rotmg.language.model:CookieLanguageModel/instance/getLanguageNames"
+    returns TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace(""), "String")>)
+    body
+     maxstack 2
+     localcount 5
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      setlocal1
+
+      getlex              QName(PackageNamespace("__AS3__.vec"), "Vector")
+      getlex              QName(PackageNamespace(""), "String")
+      applytype           1
+      construct           0
+      coerce              TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace(""), "String")>)
+      setlocal2
+
+      pushbyte            0
+      setlocal            4
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.language.model:CookieLanguageModel"), "availableLanguages")
+      setlocal3
+
+      jump                L25
+
+L16:
+      label
+      getlocal3
+      getlocal            4
+      nextname
+      coerce_s
+      setlocal1
+
+      getlocal2
+      getlocal1
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+
+L25:
+      hasnext2            3, 4
+      iftrue              L16
+
+      getlocal2
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getLanguageCodeForName")
+   method
+    name "getLanguageCodeForName"
+    refid "kabam.rotmg.language.model:CookieLanguageModel/instance/getLanguageCodeForName"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "String")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.language.model:CookieLanguageModel"), "availableLanguages")
+      getlocal1
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.language.model:CookieLanguageModel"), ProtectedNamespace("kabam.rotmg.language.model:CookieLanguageModel"), StaticProtectedNs("kabam.rotmg.language.model:CookieLanguageModel"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.language.model"), PackageInternalNs("kabam.rotmg.language.model"), PrivateNamespace("FilePrivateNS:CookieLanguageModel"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getNameForLanguageCode")
+   method
+    name "getNameForLanguageCode"
+    refid "kabam.rotmg.language.model:CookieLanguageModel/instance/getNameForLanguageCode"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "String")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 6
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      setlocal2
+
+      pushnull
+      setlocal3
+
+      pushbyte            0
+      setlocal            5
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.language.model:CookieLanguageModel"), "availableLanguages")
+      setlocal            4
+
+      jump                L26
+
+L12:
+      label
+      getlocal            4
+      getlocal            5
+      nextname
+      coerce_s
+      setlocal3
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.language.model:CookieLanguageModel"), "availableLanguages")
+      getlocal3
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.language.model:CookieLanguageModel"), ProtectedNamespace("kabam.rotmg.language.model:CookieLanguageModel"), StaticProtectedNs("kabam.rotmg.language.model:CookieLanguageModel"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.language.model"), PackageInternalNs("kabam.rotmg.language.model"), PrivateNamespace("FilePrivateNS:CookieLanguageModel"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getlocal1
+      ifne                L26
+
+      getlocal3
+      setlocal2
+
+L26:
+      hasnext2            4, 5
+      iftrue              L12
+
+      getlocal2
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.language.model:CookieLanguageModel"), "makeAvailableLanguages")
+   method
+    name "makeAvailableLanguages"
+    refid "kabam.rotmg.language.model:CookieLanguageModel/instance/kabam.rotmg.language.model:CookieLanguageModel/instance/makeAvailableLanguages"
+    returns QName(PackageNamespace("flash.utils"), "Dictionary")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("flash.utils"), "Dictionary")
+      constructprop       QName(PackageNamespace("flash.utils"), "Dictionary"), 0
+      coerce              QName(PackageNamespace("flash.utils"), "Dictionary")
+      setlocal1
+
+      getlocal1
+      pushstring          "Languages.English"
+      pushstring          "en"
+      setproperty         MultinameL([PrivateNamespace("kabam.rotmg.language.model:CookieLanguageModel"), ProtectedNamespace("kabam.rotmg.language.model:CookieLanguageModel"), StaticProtectedNs("kabam.rotmg.language.model:CookieLanguageModel"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.language.model"), PackageInternalNs("kabam.rotmg.language.model"), PrivateNamespace("FilePrivateNS:CookieLanguageModel"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      getlocal1
+      pushstring          "Languages.French"
+      pushstring          "fr"
+      setproperty         MultinameL([PrivateNamespace("kabam.rotmg.language.model:CookieLanguageModel"), ProtectedNamespace("kabam.rotmg.language.model:CookieLanguageModel"), StaticProtectedNs("kabam.rotmg.language.model:CookieLanguageModel"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.language.model"), PackageInternalNs("kabam.rotmg.language.model"), PrivateNamespace("FilePrivateNS:CookieLanguageModel"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      getlocal1
+      pushstring          "Languages.Spanish"
+      pushstring          "es"
+      setproperty         MultinameL([PrivateNamespace("kabam.rotmg.language.model:CookieLanguageModel"), ProtectedNamespace("kabam.rotmg.language.model:CookieLanguageModel"), StaticProtectedNs("kabam.rotmg.language.model:CookieLanguageModel"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.language.model"), PackageInternalNs("kabam.rotmg.language.model"), PrivateNamespace("FilePrivateNS:CookieLanguageModel"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      getlocal1
+      pushstring          "Languages.Italian"
+      pushstring          "it"
+      setproperty         MultinameL([PrivateNamespace("kabam.rotmg.language.model:CookieLanguageModel"), ProtectedNamespace("kabam.rotmg.language.model:CookieLanguageModel"), StaticProtectedNs("kabam.rotmg.language.model:CookieLanguageModel"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.language.model"), PackageInternalNs("kabam.rotmg.language.model"), PrivateNamespace("FilePrivateNS:CookieLanguageModel"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      getlocal1
+      pushstring          "Languages.German"
+      pushstring          "de"
+      setproperty         MultinameL([PrivateNamespace("kabam.rotmg.language.model:CookieLanguageModel"), ProtectedNamespace("kabam.rotmg.language.model:CookieLanguageModel"), StaticProtectedNs("kabam.rotmg.language.model:CookieLanguageModel"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.language.model"), PackageInternalNs("kabam.rotmg.language.model"), PrivateNamespace("FilePrivateNS:CookieLanguageModel"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      getlocal1
+      pushstring          "Languages.Turkish"
+      pushstring          "tr"
+      setproperty         MultinameL([PrivateNamespace("kabam.rotmg.language.model:CookieLanguageModel"), ProtectedNamespace("kabam.rotmg.language.model:CookieLanguageModel"), StaticProtectedNs("kabam.rotmg.language.model:CookieLanguageModel"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.language.model"), PackageInternalNs("kabam.rotmg.language.model"), PrivateNamespace("FilePrivateNS:CookieLanguageModel"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      getlocal1
+      pushstring          "Languages.Russian"
+      pushstring          "ru"
+      setproperty         MultinameL([PrivateNamespace("kabam.rotmg.language.model:CookieLanguageModel"), ProtectedNamespace("kabam.rotmg.language.model:CookieLanguageModel"), StaticProtectedNs("kabam.rotmg.language.model:CookieLanguageModel"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.language.model"), PackageInternalNs("kabam.rotmg.language.model"), PrivateNamespace("FilePrivateNS:CookieLanguageModel"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      getlocal1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.language.model:CookieLanguageModel/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PackageNamespace(""), "DEFAULT_LOCALE") type QName(PackageNamespace(""), "String") value Utf8("en") end
+end ; class

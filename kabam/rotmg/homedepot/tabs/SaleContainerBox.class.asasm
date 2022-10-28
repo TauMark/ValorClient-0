@@ -1,0 +1,540 @@
+class
+ refid "kabam.rotmg.homedepot.tabs:SaleContainerBox"
+ instance QName(PackageNamespace("kabam.rotmg.homedepot.tabs"), "SaleContainerBox")
+  extends QName(PackageNamespace("io.decagames.rotmg.ui.gird"), "UIGridElement")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.homedepot.tabs:SaleContainerBox")
+  iinit
+   name "SaleContainerBox"
+   refid "kabam.rotmg.homedepot.tabs:SaleContainerBox/instance/init"
+   param QName(PackageNamespace(""), "String")
+   param QName(PackageNamespace(""), "int")
+   param QName(PackageNamespace(""), "int")
+   param QName(PackageNamespace("flash.display"), "BitmapData")
+   param QName(PackageNamespace(""), "int")
+   param QName(PackageNamespace(""), "Boolean")
+   param QName(PackageNamespace(""), "Boolean")
+   param QName(PackageNamespace("kabam.rotmg.homedepot"), "HomeDepotPurchaseDialog")
+   flag HAS_PARAM_NAMES
+   paramname "name"
+   paramname "price"
+   paramname "amount"
+   paramname "chestImg"
+   paramname "type"
+   paramname "previewOnly"
+   paramname "halfScale"
+   paramname "_arg5"
+   body
+    maxstack 5
+    localcount 9
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     getlocal3
+     setproperty         QName(PackageNamespace(""), "_amount")
+
+     getlocal0
+     getlocal            6
+     setproperty         QName(PackageNamespace(""), "previewOnly_")
+
+     getlocal0
+     getlocal1
+     setproperty         QName(PackageNamespace(""), "idName_")
+
+     getlocal0
+     getlocal            7
+     setproperty         QName(PackageNamespace(""), "halfScale")
+
+     getlocal0
+     getlocal            5
+     setproperty         QName(PackageNamespace(""), "type")
+
+     getlocal0
+     getlocal2
+     setproperty         QName(PackageNamespace(""), "cost")
+
+     getlocal0
+     getlocal            8
+     setproperty         QName(PackageNamespace(""), "homeDepotPurchaseDialog")
+
+     getlocal0
+     getlex              QName(PackageNamespace("io.decagames.rotmg.ui.texture"), "TextureParser")
+     getproperty         QName(PackageNamespace(""), "instance")
+     pushstring          "UI"
+     pushstring          "shop_box_background"
+     pushbyte            10
+     callproperty        QName(PackageNamespace(""), "getSliceScalingBitmap"), 3
+     setproperty         QName(ProtectedNamespace("kabam.rotmg.homedepot.tabs:SaleContainerBox"), "background")
+
+     getlocal0
+     getlex              QName(PackageNamespace("io.decagames.rotmg.ui.texture"), "TextureParser")
+     getproperty         QName(PackageNamespace(""), "instance")
+     pushstring          "UI"
+     pushstring          "shop_title_background"
+     pushbyte            10
+     callproperty        QName(PackageNamespace(""), "getSliceScalingBitmap"), 3
+     setproperty         QName(ProtectedNamespace("kabam.rotmg.homedepot.tabs:SaleContainerBox"), "backgroundTitle")
+
+     getlocal0
+     getlex              QName(PackageNamespace("io.decagames.rotmg.ui.texture"), "TextureParser")
+     getproperty         QName(PackageNamespace(""), "instance")
+     pushstring          "UI"
+     pushstring          "shop_box_button_background"
+     pushbyte            10
+     callproperty        QName(PackageNamespace(""), "getSliceScalingBitmap"), 3
+     setproperty         QName(ProtectedNamespace("kabam.rotmg.homedepot.tabs:SaleContainerBox"), "backgroundButton")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("io.decagames.rotmg.ui.labels"), "UILabel")
+     constructprop       QName(PackageNamespace("io.decagames.rotmg.ui.labels"), "UILabel"), 0
+     setproperty         QName(ProtectedNamespace("kabam.rotmg.homedepot.tabs:SaleContainerBox"), "titleLabel")
+
+     getlocal0
+     getproperty         QName(ProtectedNamespace("kabam.rotmg.homedepot.tabs:SaleContainerBox"), "titleLabel")
+     getlocal1
+     setproperty         QName(PackageNamespace(""), "text")
+
+     getlex              QName(PackageNamespace("io.decagames.rotmg.ui.defaults"), "DefaultLabelFormat")
+     getlocal0
+     getproperty         QName(ProtectedNamespace("kabam.rotmg.homedepot.tabs:SaleContainerBox"), "titleLabel")
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "length")
+     pushbyte            10
+     ifngt               L66
+
+     pushbyte            10
+     jump                L74
+
+L66:
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "length")
+     pushbyte            16
+     ifngt               L72
+
+     pushbyte            8
+     jump                L73
+
+L72:
+     pushdouble          14
+L73:
+     convert_d
+L74:
+     callpropvoid        QName(PackageNamespace(""), "shopBoxTitle"), 2
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.homedepot.components"), "HomePurchaseButton")
+     getlocal2
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "type")
+     constructprop       QName(PackageNamespace("kabam.rotmg.homedepot.components"), "HomePurchaseButton"), 2
+     setproperty         QName(ProtectedNamespace("kabam.rotmg.homedepot.tabs:SaleContainerBox"), "_buyButton")
+
+     getlocal0
+     getproperty         QName(ProtectedNamespace("kabam.rotmg.homedepot.tabs:SaleContainerBox"), "_buyButton")
+     pushbyte            105
+     setproperty         QName(PackageNamespace(""), "width")
+
+     getlocal0
+     getproperty         QName(ProtectedNamespace("kabam.rotmg.homedepot.tabs:SaleContainerBox"), "_buyButton")
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "previewOnly_")
+     not
+     setproperty         QName(PackageNamespace(""), "visible")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("flash.display"), "Bitmap")
+     constructprop       QName(PackageNamespace("flash.display"), "Bitmap"), 0
+     setproperty         QName(PrivateNamespace("kabam.rotmg.homedepot.tabs:SaleContainerBox"), "_chestBitmap")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot.tabs:SaleContainerBox"), "_chestBitmap")
+     getlocal            4
+     setproperty         QName(PackageNamespace(""), "bitmapData")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("io.decagames.rotmg.ui.labels"), "UILabel")
+     constructprop       QName(PackageNamespace("io.decagames.rotmg.ui.labels"), "UILabel"), 0
+     setproperty         QName(ProtectedNamespace("kabam.rotmg.homedepot.tabs:SaleContainerBox"), "amountLabel")
+
+     getlocal0
+     getproperty         QName(ProtectedNamespace("kabam.rotmg.homedepot.tabs:SaleContainerBox"), "amountLabel")
+     pushstring          "x"
+     getlocal3
+     callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "toString"), 0
+     add
+     setproperty         QName(PackageNamespace(""), "text")
+
+     getlex              QName(PackageNamespace("io.decagames.rotmg.ui.defaults"), "DefaultLabelFormat")
+     getlocal0
+     getproperty         QName(ProtectedNamespace("kabam.rotmg.homedepot.tabs:SaleContainerBox"), "amountLabel")
+     callpropvoid        QName(PackageNamespace(""), "shopTag"), 1
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(ProtectedNamespace("kabam.rotmg.homedepot.tabs:SaleContainerBox"), "background")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(ProtectedNamespace("kabam.rotmg.homedepot.tabs:SaleContainerBox"), "backgroundTitle")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(ProtectedNamespace("kabam.rotmg.homedepot.tabs:SaleContainerBox"), "backgroundButton")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(ProtectedNamespace("kabam.rotmg.homedepot.tabs:SaleContainerBox"), "titleLabel")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(ProtectedNamespace("kabam.rotmg.homedepot.tabs:SaleContainerBox"), "amountLabel")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot.tabs:SaleContainerBox"), "_chestBitmap")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(ProtectedNamespace("kabam.rotmg.homedepot.tabs:SaleContainerBox"), "_buyButton")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(ProtectedNamespace("kabam.rotmg.homedepot.tabs:SaleContainerBox"), "background") type QName(PackageNamespace("io.decagames.rotmg.ui.sliceScaling"), "SliceScalingBitmap") end
+  trait slot QName(ProtectedNamespace("kabam.rotmg.homedepot.tabs:SaleContainerBox"), "backgroundTitle") type QName(PackageNamespace("io.decagames.rotmg.ui.sliceScaling"), "SliceScalingBitmap") end
+  trait slot QName(ProtectedNamespace("kabam.rotmg.homedepot.tabs:SaleContainerBox"), "backgroundButton") type QName(PackageNamespace("io.decagames.rotmg.ui.sliceScaling"), "SliceScalingBitmap") end
+  trait slot QName(ProtectedNamespace("kabam.rotmg.homedepot.tabs:SaleContainerBox"), "titleLabel") type QName(PackageNamespace("io.decagames.rotmg.ui.labels"), "UILabel") end
+  trait slot QName(ProtectedNamespace("kabam.rotmg.homedepot.tabs:SaleContainerBox"), "amountLabel") type QName(PackageNamespace("io.decagames.rotmg.ui.labels"), "UILabel") end
+  trait slot QName(ProtectedNamespace("kabam.rotmg.homedepot.tabs:SaleContainerBox"), "_buyButton") type QName(PackageNamespace("kabam.rotmg.homedepot.components"), "HomePurchaseButton") end
+  trait slot QName(ProtectedNamespace("kabam.rotmg.homedepot.tabs:SaleContainerBox"), "boxHeight") type QName(PackageNamespace(""), "int") value Integer(160) end
+  trait slot QName(PrivateNamespace("kabam.rotmg.homedepot.tabs:SaleContainerBox"), "_chestBitmap") type QName(PackageNamespace("flash.display"), "Bitmap") end
+  trait slot QName(PackageNamespace(""), "_amount") type QName(PackageNamespace(""), "uint") end
+  trait slot QName(PackageNamespace(""), "previewOnly_") type QName(PackageNamespace(""), "Boolean") end
+  trait slot QName(PackageNamespace(""), "idName_") type QName(PackageNamespace(""), "String") end
+  trait slot QName(PackageNamespace(""), "halfScale") type QName(PackageNamespace(""), "Boolean") end
+  trait slot QName(PackageNamespace(""), "type") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PackageNamespace(""), "cost") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PackageNamespace(""), "homeDepotPurchaseDialog") type QName(PackageNamespace("kabam.rotmg.homedepot"), "HomeDepotPurchaseDialog") end
+  trait getter QName(PackageNamespace(""), "height") flag OVERRIDE
+   method
+    name "height"
+    refid "kabam.rotmg.homedepot.tabs:SaleContainerBox/instance/height/getter"
+    returns QName(PackageNamespace(""), "Number")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("kabam.rotmg.homedepot.tabs:SaleContainerBox"), "background")
+      getproperty         QName(PackageNamespace(""), "height")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "resize") flag OVERRIDE
+   method
+    name "resize"
+    refid "kabam.rotmg.homedepot.tabs:SaleContainerBox/instance/resize"
+    param QName(PackageNamespace(""), "int")
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_OPTIONAL
+    flag HAS_PARAM_NAMES
+    optional Integer(-1)
+    paramname "_arg1"
+    paramname "_arg2"
+    body
+     maxstack 4
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("kabam.rotmg.homedepot.tabs:SaleContainerBox"), "background")
+      getlocal1
+      setproperty         QName(PackageNamespace(""), "width")
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("kabam.rotmg.homedepot.tabs:SaleContainerBox"), "backgroundTitle")
+      getlocal1
+      setproperty         QName(PackageNamespace(""), "width")
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("kabam.rotmg.homedepot.tabs:SaleContainerBox"), "backgroundButton")
+      getlocal1
+      setproperty         QName(PackageNamespace(""), "width")
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("kabam.rotmg.homedepot.tabs:SaleContainerBox"), "background")
+      getlocal0
+      getproperty         QName(ProtectedNamespace("kabam.rotmg.homedepot.tabs:SaleContainerBox"), "boxHeight")
+      setproperty         QName(PackageNamespace(""), "height")
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("kabam.rotmg.homedepot.tabs:SaleContainerBox"), "backgroundTitle")
+      pushbyte            2
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("kabam.rotmg.homedepot.tabs:SaleContainerBox"), "titleLabel")
+      getlex              QName(PackageNamespace(""), "Math")
+      getlocal1
+      getlocal0
+      getproperty         QName(ProtectedNamespace("kabam.rotmg.homedepot.tabs:SaleContainerBox"), "titleLabel")
+      getproperty         QName(PackageNamespace(""), "textWidth")
+      subtract
+      pushbyte            2
+      divide
+      callproperty        QName(PackageNamespace(""), "round"), 1
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("kabam.rotmg.homedepot.tabs:SaleContainerBox"), "titleLabel")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "idName_")
+      convert_d
+      pushbyte            10
+      ifngt               L44
+
+      pushbyte            9
+      jump                L45
+
+L44:
+      pushdouble          6
+L45:
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("kabam.rotmg.homedepot.tabs:SaleContainerBox"), "backgroundButton")
+      pushbyte            99
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("kabam.rotmg.homedepot.tabs:SaleContainerBox"), "_buyButton")
+      getlocal0
+      getproperty         QName(ProtectedNamespace("kabam.rotmg.homedepot.tabs:SaleContainerBox"), "backgroundButton")
+      getproperty         QName(PackageNamespace(""), "y")
+      pushbyte            4
+      add
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("kabam.rotmg.homedepot.tabs:SaleContainerBox"), "_buyButton")
+      getlocal1
+      pushbyte            119
+      subtract
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot.tabs:SaleContainerBox"), "_chestBitmap")
+      getlocal1
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot.tabs:SaleContainerBox"), "_chestBitmap")
+      getproperty         QName(PackageNamespace(""), "width")
+      subtract
+      pushbyte            2
+      divide
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "halfScale")
+      iftrue              L85
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot.tabs:SaleContainerBox"), "_chestBitmap")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot.tabs:SaleContainerBox"), "_chestBitmap")
+      getproperty         QName(PackageNamespace(""), "height")
+      pushbyte            2
+      divide
+      setproperty         QName(PackageNamespace(""), "y")
+
+L85:
+      getlocal0
+      getproperty         QName(ProtectedNamespace("kabam.rotmg.homedepot.tabs:SaleContainerBox"), "amountLabel")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot.tabs:SaleContainerBox"), "_chestBitmap")
+      getproperty         QName(PackageNamespace(""), "x")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.homedepot.tabs:SaleContainerBox"), "_chestBitmap")
+      getproperty         QName(PackageNamespace(""), "width")
+      add
+      getlocal0
+      getproperty         QName(ProtectedNamespace("kabam.rotmg.homedepot.tabs:SaleContainerBox"), "amountLabel")
+      getproperty         QName(PackageNamespace(""), "width")
+      pushbyte            2
+      divide
+      subtract
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("kabam.rotmg.homedepot.tabs:SaleContainerBox"), "amountLabel")
+      pushbyte            32
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "halfScale")
+      iffalse             L117
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("kabam.rotmg.homedepot.tabs:SaleContainerBox"), "amountLabel")
+      getproperty         QName(PackageNamespace(""), "x")
+      pushbyte            5
+      subtract
+      getlocal0
+      getproperty         QName(ProtectedNamespace("kabam.rotmg.homedepot.tabs:SaleContainerBox"), "amountLabel")
+      swap
+      setproperty         QName(PackageNamespace(""), "x")
+
+L117:
+      getlocal0
+      getlocal1
+      callpropvoid        QName(ProtectedNamespace("kabam.rotmg.homedepot.tabs:SaleContainerBox"), "updateClickMask"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(ProtectedNamespace("kabam.rotmg.homedepot.tabs:SaleContainerBox"), "updateClickMask")
+   method
+    name "updateClickMask"
+    refid "kabam.rotmg.homedepot.tabs:SaleContainerBox/instance/kabam.rotmg.homedepot.tabs:SaleContainerBox:updateClickMask"
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 5
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlex              QName(PackageNamespace("io.decagames.rotmg.ui.texture"), "TextureParser")
+      getproperty         QName(PackageNamespace(""), "instance")
+      pushstring          "UI"
+      pushstring          "shop_title_background"
+      pushbyte            10
+      callproperty        QName(PackageNamespace(""), "getSliceScalingBitmap"), 3
+      setproperty         QName(ProtectedNamespace("kabam.rotmg.homedepot.tabs:SaleContainerBox"), "backgroundTitle")
+
+      getlocal0
+      getlocal0
+      getproperty         QName(ProtectedNamespace("kabam.rotmg.homedepot.tabs:SaleContainerBox"), "boxHeight")
+      getlocal0
+      getproperty         QName(ProtectedNamespace("kabam.rotmg.homedepot.tabs:SaleContainerBox"), "boxHeight")
+      getlocal0
+      getproperty         QName(ProtectedNamespace("kabam.rotmg.homedepot.tabs:SaleContainerBox"), "backgroundButton")
+      getproperty         QName(PackageNamespace(""), "y")
+      subtract
+      pushbyte            4
+      add
+      subtract
+      setproperty         QName(ProtectedNamespace("kabam.rotmg.homedepot.tabs:SaleContainerBox"), "boxHeight")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait getter QName(PackageNamespace(""), "buyButton")
+   method
+    name "buyButton"
+    refid "kabam.rotmg.homedepot.tabs:SaleContainerBox/instance/buyButton/getter"
+    returns QName(PackageNamespace("kabam.rotmg.homedepot.components"), "HomePurchaseButton")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("kabam.rotmg.homedepot.tabs:SaleContainerBox"), "_buyButton")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "dispose") flag OVERRIDE
+   method
+    name "dispose"
+    refid "kabam.rotmg.homedepot.tabs:SaleContainerBox/instance/dispose"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("kabam.rotmg.homedepot.tabs:SaleContainerBox"), "background")
+      callpropvoid        QName(PackageNamespace(""), "dispose"), 0
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("kabam.rotmg.homedepot.tabs:SaleContainerBox"), "backgroundTitle")
+      callpropvoid        QName(PackageNamespace(""), "dispose"), 0
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("kabam.rotmg.homedepot.tabs:SaleContainerBox"), "backgroundButton")
+      callpropvoid        QName(PackageNamespace(""), "dispose"), 0
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("kabam.rotmg.homedepot.tabs:SaleContainerBox"), "_buyButton")
+      callpropvoid        QName(PackageNamespace(""), "dispose"), 0
+
+      getlocal0
+      callsupervoid       QName(PackageNamespace(""), "dispose"), 0
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.homedepot.tabs:SaleContainerBox/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

@@ -1,0 +1,159 @@
+class
+ refid "kabam.rotmg.build.impl:CompileTimeBuildData"
+ instance QName(PackageNamespace("kabam.rotmg.build.impl"), "CompileTimeBuildData")
+  extends QName(PackageNamespace(""), "Object")
+  implements QName(PackageNamespace("kabam.rotmg.build.api"), "BuildData")
+  flag SEALED
+  iinit
+   refid "kabam.rotmg.build.impl:CompileTimeBuildData/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "loaderInfo") flag METADATA type QName(PackageNamespace("flash.display"), "LoaderInfo")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "environments") flag METADATA type QName(PackageNamespace("kabam.rotmg.build.impl"), "BuildEnvironments")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PrivateNamespace("kabam.rotmg.build.impl:CompileTimeBuildData"), "isParsed") type QName(PackageNamespace(""), "Boolean") value False() end
+  trait slot QName(PrivateNamespace("kabam.rotmg.build.impl:CompileTimeBuildData"), "environment") type QName(PackageNamespace("kabam.rotmg.build.api"), "BuildEnvironment") end
+  trait method QName(PackageNamespace(""), "getEnvironmentString")
+   method
+    name "getEnvironmentString"
+    refid "kabam.rotmg.build.impl:CompileTimeBuildData/instance/getEnvironmentString"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace(""), "WebMain")
+      getproperty         QName(PackageNamespace(""), "ENV")
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "toLowerCase"), 0
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getEnvironment")
+   method
+    name "getEnvironment"
+    refid "kabam.rotmg.build.impl:CompileTimeBuildData/instance/getEnvironment"
+    returns QName(PackageNamespace("kabam.rotmg.build.api"), "BuildEnvironment")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.build.impl:CompileTimeBuildData"), "isParsed")
+      dup
+      iftrue              L10
+
+      pop
+      getlocal0
+      callproperty        QName(PrivateNamespace("kabam.rotmg.build.impl:CompileTimeBuildData"), "parseEnvironment"), 0
+      coerce_a
+L10:
+      pop
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.build.impl:CompileTimeBuildData"), "environment")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.build.impl:CompileTimeBuildData"), "parseEnvironment")
+   method
+    name "parseEnvironment"
+    refid "kabam.rotmg.build.impl:CompileTimeBuildData/instance/kabam.rotmg.build.impl:CompileTimeBuildData/instance/parseEnvironment"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      pushtrue
+      setproperty         QName(PrivateNamespace("kabam.rotmg.build.impl:CompileTimeBuildData"), "isParsed")
+
+      getlocal0
+      getlocal0
+      callproperty        QName(PackageNamespace(""), "getEnvironmentString"), 0
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.build.impl:CompileTimeBuildData"), "setEnvironmentValue"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.build.impl:CompileTimeBuildData"), "setEnvironmentValue")
+   method
+    name "setEnvironmentValue"
+    refid "kabam.rotmg.build.impl:CompileTimeBuildData/instance/kabam.rotmg.build.impl:CompileTimeBuildData/instance/setEnvironmentValue"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "environments")
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "getEnvironment"), 1
+      setproperty         QName(PrivateNamespace("kabam.rotmg.build.impl:CompileTimeBuildData"), "environment")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.build.impl:CompileTimeBuildData/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

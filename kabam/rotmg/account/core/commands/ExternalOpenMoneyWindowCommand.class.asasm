@@ -1,0 +1,594 @@
+class
+ refid "kabam.rotmg.account.core.commands:ExternalOpenMoneyWindowCommand"
+ instance QName(PackageNamespace("kabam.rotmg.account.core.commands"), "ExternalOpenMoneyWindowCommand")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  iinit
+   refid "kabam.rotmg.account.core.commands:ExternalOpenMoneyWindowCommand/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait const QName(PrivateNamespace("kabam.rotmg.account.core.commands:ExternalOpenMoneyWindowCommand"), "TESTING_ERROR_MESSAGE") type QName(PackageNamespace(""), "String") value Utf8("You cannot purchase gold on the testing server") end
+  trait const QName(PrivateNamespace("kabam.rotmg.account.core.commands:ExternalOpenMoneyWindowCommand"), "REGISTRATION_ERROR_MESSAGE") type QName(PackageNamespace(""), "String") value Utf8("You must be registered to buy gold") end
+  trait slot QName(PackageNamespace(""), "moneyWindowModel") flag METADATA type QName(PackageNamespace("kabam.rotmg.account.core.model"), "JSInitializedModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "account") flag METADATA type QName(PackageNamespace("kabam.rotmg.account.core"), "Account")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "moneyConfig") flag METADATA type QName(PackageNamespace("kabam.rotmg.account.core.model"), "MoneyConfig")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "openDialog") flag METADATA type QName(PackageNamespace("kabam.rotmg.dialogs.control"), "OpenDialogSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "logger") flag METADATA type QName(PackageNamespace("robotlegs.bender.framework.api"), "ILogger")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "buildData") flag METADATA type QName(PackageNamespace("kabam.rotmg.build.api"), "BuildData")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "openDialogSignal") flag METADATA type QName(PackageNamespace("kabam.rotmg.dialogs.control"), "OpenDialogSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "applicationSetup") flag METADATA type QName(PackageNamespace("kabam.rotmg.application.api"), "ApplicationSetup")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "playerModel") flag METADATA type QName(PackageNamespace("kabam.rotmg.core.model"), "PlayerModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "beginnersPackageModel") flag METADATA type QName(PackageNamespace("kabam.rotmg.promotions.model"), "BeginnersPackageModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PackageNamespace(""), "execute")
+   method
+    name "execute"
+    refid "kabam.rotmg.account.core.commands:ExternalOpenMoneyWindowCommand/instance/execute"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      callproperty        QName(PrivateNamespace("kabam.rotmg.account.core.commands:ExternalOpenMoneyWindowCommand"), "isGoldPurchaseEnabled"), 0
+      dup
+      iffalse             L11
+
+      pop
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "account")
+      callproperty        QName(Namespace("kabam.rotmg.account.core:Account"), "isRegistered"), 0
+      convert_b
+L11:
+      iffalse             L15
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.account.core.commands:ExternalOpenMoneyWindowCommand"), "handleValidMoneyWindowRequest"), 0
+
+      jump                L17
+
+L15:
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.account.core.commands:ExternalOpenMoneyWindowCommand"), "handleInvalidMoneyWindowRequest"), 0
+
+L17:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.account.core.commands:ExternalOpenMoneyWindowCommand"), "handleInvalidMoneyWindowRequest")
+   method
+    name "handleInvalidMoneyWindowRequest"
+    refid "kabam.rotmg.account.core.commands:ExternalOpenMoneyWindowCommand/instance/kabam.rotmg.account.core.commands:ExternalOpenMoneyWindowCommand/instance/handleInvalidMoneyWindowRequest"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      callproperty        QName(PrivateNamespace("kabam.rotmg.account.core.commands:ExternalOpenMoneyWindowCommand"), "isGoldPurchaseEnabled"), 0
+      iftrue              L12
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "openDialogSignal")
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.ui.dialogs"), "ErrorDialog")
+      pushstring          "You cannot purchase gold on the testing server"
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.ui.dialogs"), "ErrorDialog"), 1
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      jump                L22
+
+L12:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "account")
+      callproperty        QName(Namespace("kabam.rotmg.account.core:Account"), "isRegistered"), 0
+      iftrue              L22
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "openDialogSignal")
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.ui.dialogs"), "ErrorDialog")
+      pushstring          "You must be registered to buy gold"
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.ui.dialogs"), "ErrorDialog"), 1
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+L22:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.account.core.commands:ExternalOpenMoneyWindowCommand"), "handleValidMoneyWindowRequest")
+   method
+    name "handleValidMoneyWindowRequest"
+    refid "kabam.rotmg.account.core.commands:ExternalOpenMoneyWindowCommand/instance/kabam.rotmg.account.core.commands:ExternalOpenMoneyWindowCommand/instance/handleValidMoneyWindowRequest"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 5
+     initscopedepth 0
+     maxscopedepth 2
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "account")
+      getlex              QName(PackageNamespace("kabam.rotmg.account.web"), "WebAccount")
+      istypelate
+      dup
+      iffalse             L17
+
+      pop
+      getlex              QName(PackageNamespace("kabam.rotmg.account.web"), "WebAccount")
+      getglobalscope
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "account")
+      call                1
+      getproperty         QName(PackageNamespace(""), "paymentProvider")
+      pushstring          "paymentwall"
+      equals
+L17:
+      iffalse             L45
+
+L18:
+      getlocal0
+      getlex              QName(PackageNamespace("kabam.rotmg.account.web"), "WebAccount")
+      getglobalscope
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "account")
+      call                1
+      getproperty         QName(PackageNamespace(""), "paymentData")
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.account.core.commands:ExternalOpenMoneyWindowCommand"), "openPaymentwallMoneyWindowFromBrowser"), 1
+
+L26:
+      jump                L44
+
+L27:
+      getlocal0
+      pushscope
+
+      newcatch            0
+      dup
+      setlocal2
+
+      dup
+      pushscope
+
+      swap
+      setslot             1
+
+      findpropstrict      QName(PrivateNamespace("kabam.rotmg.account.core.commands:ExternalOpenMoneyWindowCommand"), "openPaymentwallMoneyWindowFromStandalonePlayer")
+      getlex              QName(PackageNamespace("kabam.rotmg.account.web"), "WebAccount")
+      getglobalscope
+      getlex              QName(PackageNamespace(""), "account")
+      call                1
+      getproperty         QName(PackageNamespace(""), "paymentData")
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.account.core.commands:ExternalOpenMoneyWindowCommand"), "openPaymentwallMoneyWindowFromStandalonePlayer"), 1
+
+      popscope
+L44:
+      jump                L60
+
+L45:
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.account.core.commands:ExternalOpenMoneyWindowCommand"), "openKabamMoneyWindowFromBrowser"), 0
+
+L47:
+      jump                L60
+
+L48:
+      getlocal0
+      pushscope
+
+      newcatch            1
+      dup
+      setlocal            4
+
+      dup
+      pushscope
+
+      swap
+      setslot             1
+
+      findpropstrict      QName(PrivateNamespace("kabam.rotmg.account.core.commands:ExternalOpenMoneyWindowCommand"), "openKabamMoneyWindowFromStandalonePlayer")
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.account.core.commands:ExternalOpenMoneyWindowCommand"), "openKabamMoneyWindowFromStandalonePlayer"), 0
+
+      popscope
+L60:
+      returnvoid
+     end ; code
+     try from L18 to L26 target L27 type QName(PackageNamespace(""), "Error") name QName(PackageInternalNs("kabam.rotmg.account.core.commands"), "e") end
+     try from L45 to L47 target L48 type QName(PackageNamespace(""), "Error") name QName(PackageInternalNs("kabam.rotmg.account.core.commands"), "e") end
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.account.core.commands:ExternalOpenMoneyWindowCommand"), "openKabamMoneyWindowFromStandalonePlayer")
+   method
+    name "openKabamMoneyWindowFromStandalonePlayer"
+    refid "kabam.rotmg.account.core.commands:ExternalOpenMoneyWindowCommand/instance/kabam.rotmg.account.core.commands:ExternalOpenMoneyWindowCommand/instance/openKabamMoneyWindowFromStandalonePlayer"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 4
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "applicationSetup")
+      pushtrue
+      callproperty        QName(Namespace("kabam.rotmg.application.api:ApplicationSetup"), "getAppEngineUrl"), 1
+      coerce_s
+      setlocal3
+
+      findpropstrict      QName(PackageNamespace("flash.net"), "URLVariables")
+      constructprop       QName(PackageNamespace("flash.net"), "URLVariables"), 0
+      coerce              QName(PackageNamespace("flash.net"), "URLVariables")
+      setlocal1
+
+      findpropstrict      QName(PackageNamespace("flash.net"), "URLRequest")
+      constructprop       QName(PackageNamespace("flash.net"), "URLRequest"), 0
+      coerce              QName(PackageNamespace("flash.net"), "URLRequest")
+      setlocal2
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "account")
+      callproperty        QName(Namespace("kabam.rotmg.account.core:Account"), "getMoneyUserId"), 0
+      setproperty         Multiname("naid", [PrivateNamespace("kabam.rotmg.account.core.commands:ExternalOpenMoneyWindowCommand"), ProtectedNamespace("kabam.rotmg.account.core.commands:ExternalOpenMoneyWindowCommand"), StaticProtectedNs("kabam.rotmg.account.core.commands:ExternalOpenMoneyWindowCommand"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.account.core.commands"), PackageInternalNs("kabam.rotmg.account.core.commands"), PrivateNamespace("FilePrivateNS:ExternalOpenMoneyWindowCommand"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "account")
+      callproperty        QName(Namespace("kabam.rotmg.account.core:Account"), "getMoneyAccessToken"), 0
+      setproperty         Multiname("signedRequest", [PrivateNamespace("kabam.rotmg.account.core.commands:ExternalOpenMoneyWindowCommand"), ProtectedNamespace("kabam.rotmg.account.core.commands:ExternalOpenMoneyWindowCommand"), StaticProtectedNs("kabam.rotmg.account.core.commands:ExternalOpenMoneyWindowCommand"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.account.core.commands"), PackageInternalNs("kabam.rotmg.account.core.commands"), PrivateNamespace("FilePrivateNS:ExternalOpenMoneyWindowCommand"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "beginnersPackageModel")
+      callproperty        QName(PackageNamespace(""), "isBeginnerAvailable"), 0
+      iffalse             L36
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "beginnersPackageModel")
+      callproperty        QName(PackageNamespace(""), "getUserCreatedAt"), 0
+      setproperty         Multiname("createdat", [PrivateNamespace("kabam.rotmg.account.core.commands:ExternalOpenMoneyWindowCommand"), ProtectedNamespace("kabam.rotmg.account.core.commands:ExternalOpenMoneyWindowCommand"), StaticProtectedNs("kabam.rotmg.account.core.commands:ExternalOpenMoneyWindowCommand"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.account.core.commands"), PackageInternalNs("kabam.rotmg.account.core.commands"), PrivateNamespace("FilePrivateNS:ExternalOpenMoneyWindowCommand"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      jump                L39
+
+L36:
+      getlocal1
+      pushbyte            0
+      setproperty         Multiname("createdat", [PrivateNamespace("kabam.rotmg.account.core.commands:ExternalOpenMoneyWindowCommand"), ProtectedNamespace("kabam.rotmg.account.core.commands:ExternalOpenMoneyWindowCommand"), StaticProtectedNs("kabam.rotmg.account.core.commands:ExternalOpenMoneyWindowCommand"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.account.core.commands"), PackageInternalNs("kabam.rotmg.account.core.commands"), PrivateNamespace("FilePrivateNS:ExternalOpenMoneyWindowCommand"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+L39:
+      getlocal2
+      getlocal3
+      pushstring          "/credits/kabamadd"
+      add
+      setproperty         QName(PackageNamespace(""), "url")
+
+      getlocal2
+      pushstring          "POST"
+      setproperty         QName(PackageNamespace(""), "method")
+
+      getlocal2
+      getlocal1
+      setproperty         QName(PackageNamespace(""), "data")
+
+      getlex              QName(PackageNamespace("flash.net"), "navigateToURL")
+      getglobalscope
+      getlocal2
+      pushstring          "_blank"
+      call                2
+      pop
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "logger")
+      pushstring          "Opening window from standalone player"
+      callpropvoid        QName(Namespace("robotlegs.bender.framework.api:ILogger"), "debug"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.account.core.commands:ExternalOpenMoneyWindowCommand"), "openPaymentwallMoneyWindowFromStandalonePlayer")
+   method
+    name "openPaymentwallMoneyWindowFromStandalonePlayer"
+    refid "kabam.rotmg.account.core.commands:ExternalOpenMoneyWindowCommand/instance/kabam.rotmg.account.core.commands:ExternalOpenMoneyWindowCommand/instance/openPaymentwallMoneyWindowFromStandalonePlayer"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 4
+     localcount 5
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "applicationSetup")
+      pushtrue
+      callproperty        QName(Namespace("kabam.rotmg.application.api:ApplicationSetup"), "getAppEngineUrl"), 1
+      coerce_s
+      setlocal2
+
+      findpropstrict      QName(PackageNamespace("flash.net"), "URLVariables")
+      constructprop       QName(PackageNamespace("flash.net"), "URLVariables"), 0
+      coerce              QName(PackageNamespace("flash.net"), "URLVariables")
+      setlocal3
+
+      findpropstrict      QName(PackageNamespace("flash.net"), "URLRequest")
+      constructprop       QName(PackageNamespace("flash.net"), "URLRequest"), 0
+      coerce              QName(PackageNamespace("flash.net"), "URLRequest")
+      setlocal            4
+
+      getlocal3
+      getlocal1
+      setproperty         Multiname("iframeUrl", [PrivateNamespace("kabam.rotmg.account.core.commands:ExternalOpenMoneyWindowCommand"), ProtectedNamespace("kabam.rotmg.account.core.commands:ExternalOpenMoneyWindowCommand"), StaticProtectedNs("kabam.rotmg.account.core.commands:ExternalOpenMoneyWindowCommand"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.account.core.commands"), PackageInternalNs("kabam.rotmg.account.core.commands"), PrivateNamespace("FilePrivateNS:ExternalOpenMoneyWindowCommand"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      getlocal            4
+      getlocal2
+      pushstring          "/credits/pwpurchase"
+      add
+      setproperty         QName(PackageNamespace(""), "url")
+
+      getlocal            4
+      pushstring          "POST"
+      setproperty         QName(PackageNamespace(""), "method")
+
+      getlocal            4
+      getlocal3
+      setproperty         QName(PackageNamespace(""), "data")
+
+      getlex              QName(PackageNamespace("flash.net"), "navigateToURL")
+      getglobalscope
+      getlocal            4
+      pushstring          "_blank"
+      call                2
+      pop
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "logger")
+      pushstring          "Opening window from standalone player"
+      callpropvoid        QName(Namespace("robotlegs.bender.framework.api:ILogger"), "debug"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.account.core.commands:ExternalOpenMoneyWindowCommand"), "initializeMoneyWindow")
+   method
+    name "initializeMoneyWindow"
+    refid "kabam.rotmg.account.core.commands:ExternalOpenMoneyWindowCommand/instance/kabam.rotmg.account.core.commands:ExternalOpenMoneyWindowCommand/instance/initializeMoneyWindow"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 5
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnan
+      setlocal1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "moneyWindowModel")
+      getproperty         QName(PackageNamespace(""), "isInitialized")
+      iftrue              L36
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "beginnersPackageModel")
+      callproperty        QName(PackageNamespace(""), "isBeginnerAvailable"), 0
+      iffalse             L18
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "beginnersPackageModel")
+      callproperty        QName(PackageNamespace(""), "getUserCreatedAt"), 0
+      convert_d
+      setlocal1
+
+      jump                L20
+
+L18:
+      pushdouble          0
+      setlocal1
+
+L20:
+      getlex              QName(PackageNamespace("flash.external"), "ExternalInterface")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "moneyConfig")
+      callproperty        QName(Namespace("kabam.rotmg.account.core.model:MoneyConfig"), "jsInitializeFunction"), 0
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "account")
+      callproperty        QName(Namespace("kabam.rotmg.account.core:Account"), "getMoneyUserId"), 0
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "account")
+      callproperty        QName(Namespace("kabam.rotmg.account.core:Account"), "getMoneyAccessToken"), 0
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "call"), 4
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "moneyWindowModel")
+      pushtrue
+      setproperty         QName(PackageNamespace(""), "isInitialized")
+
+L36:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.account.core.commands:ExternalOpenMoneyWindowCommand"), "openKabamMoneyWindowFromBrowser")
+   method
+    name "openKabamMoneyWindowFromBrowser"
+    refid "kabam.rotmg.account.core.commands:ExternalOpenMoneyWindowCommand/instance/kabam.rotmg.account.core.commands:ExternalOpenMoneyWindowCommand/instance/openKabamMoneyWindowFromBrowser"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.account.core.commands:ExternalOpenMoneyWindowCommand"), "initializeMoneyWindow"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "logger")
+      pushstring          "Attempting External Payments"
+      callpropvoid        QName(Namespace("robotlegs.bender.framework.api:ILogger"), "debug"), 1
+
+      getlex              QName(PackageNamespace("flash.external"), "ExternalInterface")
+      pushstring          "rotmg.KabamPayment.displayPaymentWall"
+      callpropvoid        QName(PackageNamespace(""), "call"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.account.core.commands:ExternalOpenMoneyWindowCommand"), "openPaymentwallMoneyWindowFromBrowser")
+   method
+    name "openPaymentwallMoneyWindowFromBrowser"
+    refid "kabam.rotmg.account.core.commands:ExternalOpenMoneyWindowCommand/instance/kabam.rotmg.account.core.commands:ExternalOpenMoneyWindowCommand/instance/openPaymentwallMoneyWindowFromBrowser"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "logger")
+      pushstring          "Attempting External Payments via Paymentwall"
+      callpropvoid        QName(Namespace("robotlegs.bender.framework.api:ILogger"), "debug"), 1
+
+      getlex              QName(PackageNamespace("flash.external"), "ExternalInterface")
+      pushstring          "rotmg.Paymentwall.showPaymentwall"
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "call"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.account.core.commands:ExternalOpenMoneyWindowCommand"), "isGoldPurchaseEnabled")
+   method
+    name "isGoldPurchaseEnabled"
+    refid "kabam.rotmg.account.core.commands:ExternalOpenMoneyWindowCommand/instance/kabam.rotmg.account.core.commands:ExternalOpenMoneyWindowCommand/instance/isGoldPurchaseEnabled"
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "buildData")
+      callproperty        QName(Namespace("kabam.rotmg.build.api:BuildData"), "getEnvironment"), 0
+      getlex              QName(PackageNamespace("kabam.rotmg.build.api"), "BuildEnvironment")
+      getproperty         QName(PackageNamespace(""), "TESTING")
+      equals
+      not
+      dup
+      iftrue              L16
+
+      pop
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "playerModel")
+      callproperty        QName(PackageNamespace(""), "isAdmin"), 0
+      convert_b
+L16:
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.account.core.commands:ExternalOpenMoneyWindowCommand/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

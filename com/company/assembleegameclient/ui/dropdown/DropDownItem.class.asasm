@@ -1,0 +1,263 @@
+class
+ refid "com.company.assembleegameclient.ui.dropdown:DropDownItem"
+ instance QName(PackageNamespace("com.company.assembleegameclient.ui.dropdown"), "DropDownItem")
+  extends QName(PackageNamespace("flash.display"), "Sprite")
+  flag SEALED
+  iinit
+   name "DropDownItem"
+   refid "com.company.assembleegameclient.ui.dropdown:DropDownItem/instance/init"
+   param QName(PackageNamespace(""), "String")
+   param QName(PackageNamespace(""), "int")
+   param QName(PackageNamespace(""), "int")
+   flag HAS_PARAM_NAMES
+   paramname "_arg1"
+   paramname "_arg2"
+   paramname "_arg3"
+   body
+    maxstack 7
+    localcount 4
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     getlocal2
+     setproperty         QName(PackageNamespace(""), "w_")
+
+     getlocal0
+     getlocal3
+     setproperty         QName(PackageNamespace(""), "h_")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("com.company.ui"), "BaseSimpleText")
+     pushbyte            16
+     pushint             11776947
+     pushfalse
+     pushbyte            0
+     pushbyte            0
+     constructprop       QName(PackageNamespace("com.company.ui"), "BaseSimpleText"), 5
+     setproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.dropdown:DropDownItem"), "nameText_")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.dropdown:DropDownItem"), "nameText_")
+     pushtrue
+     callpropvoid        QName(PackageNamespace(""), "setBold"), 1
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.dropdown:DropDownItem"), "nameText_")
+     getlocal1
+     setproperty         QName(PackageNamespace(""), "text")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.dropdown:DropDownItem"), "nameText_")
+     callpropvoid        QName(PackageNamespace(""), "updateMetrics"), 0
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.dropdown:DropDownItem"), "nameText_")
+     findpropstrict      QName(PackageNamespace("flash.filters"), "DropShadowFilter")
+     pushbyte            0
+     pushbyte            0
+     pushbyte            0
+     constructprop       QName(PackageNamespace("flash.filters"), "DropShadowFilter"), 3
+     newarray            1
+     setproperty         QName(PackageNamespace(""), "filters")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.dropdown:DropDownItem"), "nameText_")
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "w_")
+     pushbyte            2
+     divide
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.dropdown:DropDownItem"), "nameText_")
+     getproperty         QName(PackageNamespace(""), "width")
+     pushbyte            2
+     divide
+     subtract
+     setproperty         QName(PackageNamespace(""), "x")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.dropdown:DropDownItem"), "nameText_")
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "h_")
+     pushbyte            2
+     divide
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.dropdown:DropDownItem"), "nameText_")
+     getproperty         QName(PackageNamespace(""), "height")
+     pushbyte            2
+     divide
+     subtract
+     setproperty         QName(PackageNamespace(""), "y")
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.dropdown:DropDownItem"), "nameText_")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     getlocal0
+     pushint             3552822
+     callpropvoid        QName(PrivateNamespace("com.company.assembleegameclient.ui.dropdown:DropDownItem"), "drawBackground"), 1
+
+     findpropstrict      QName(PackageNamespace(""), "addEventListener")
+     pushstring          "mouseOver"
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.dropdown:DropDownItem"), "onMouseOver")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     findpropstrict      QName(PackageNamespace(""), "addEventListener")
+     pushstring          "mouseOut"
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.dropdown:DropDownItem"), "onMouseOut")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "w_") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PackageNamespace(""), "h_") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.ui.dropdown:DropDownItem"), "nameText_") type QName(PackageNamespace("com.company.ui"), "BaseSimpleText") end
+  trait method QName(PackageNamespace(""), "getValue")
+   method
+    name "getValue"
+    refid "com.company.assembleegameclient.ui.dropdown:DropDownItem/instance/getValue"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.dropdown:DropDownItem"), "nameText_")
+      getproperty         QName(PackageNamespace(""), "text")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.ui.dropdown:DropDownItem"), "onMouseOver")
+   method
+    name "onMouseOver"
+    refid "com.company.assembleegameclient.ui.dropdown:DropDownItem/instance/com.company.assembleegameclient.ui.dropdown:DropDownItem/instance/onMouseOver"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      pushint             5658198
+      callpropvoid        QName(PrivateNamespace("com.company.assembleegameclient.ui.dropdown:DropDownItem"), "drawBackground"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.ui.dropdown:DropDownItem"), "onMouseOut")
+   method
+    name "onMouseOut"
+    refid "com.company.assembleegameclient.ui.dropdown:DropDownItem/instance/com.company.assembleegameclient.ui.dropdown:DropDownItem/instance/onMouseOut"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      pushint             3552822
+      callpropvoid        QName(PrivateNamespace("com.company.assembleegameclient.ui.dropdown:DropDownItem"), "drawBackground"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.ui.dropdown:DropDownItem"), "drawBackground")
+   method
+    name "drawBackground"
+    refid "com.company.assembleegameclient.ui.dropdown:DropDownItem/instance/com.company.assembleegameclient.ui.dropdown:DropDownItem/instance/drawBackground"
+    param QName(PackageNamespace(""), "uint")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 5
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace(""), "graphics")
+      callpropvoid        QName(PackageNamespace(""), "clear"), 0
+
+      getlex              QName(PackageNamespace(""), "graphics")
+      pushbyte            1
+      pushint             11776947
+      callpropvoid        QName(PackageNamespace(""), "lineStyle"), 2
+
+      getlex              QName(PackageNamespace(""), "graphics")
+      getlocal1
+      pushbyte            1
+      callpropvoid        QName(PackageNamespace(""), "beginFill"), 2
+
+      getlex              QName(PackageNamespace(""), "graphics")
+      pushbyte            0
+      pushbyte            0
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "w_")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "h_")
+      callpropvoid        QName(PackageNamespace(""), "drawRect"), 4
+
+      getlex              QName(PackageNamespace(""), "graphics")
+      callpropvoid        QName(PackageNamespace(""), "endFill"), 0
+
+      getlex              QName(PackageNamespace(""), "graphics")
+      callpropvoid        QName(PackageNamespace(""), "lineStyle"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.ui.dropdown:DropDownItem/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

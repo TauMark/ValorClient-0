@@ -1,0 +1,93 @@
+class
+ refid "kabam.rotmg.editor.commands:SaveTextureCommand"
+ instance QName(PackageNamespace("kabam.rotmg.editor.commands"), "SaveTextureCommand")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  iinit
+   refid "kabam.rotmg.editor.commands:SaveTextureCommand/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "task") flag METADATA type QName(PackageNamespace("kabam.rotmg.editor.services"), "SaveTextureTask")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "monitor") flag METADATA type QName(PackageNamespace("kabam.lib.tasks"), "TaskMonitor")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "closeDialog") flag METADATA type QName(PackageNamespace("kabam.rotmg.dialogs.control"), "CloseDialogsSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PackageNamespace(""), "execute")
+   method
+    name "execute"
+    refid "kabam.rotmg.editor.commands:SaveTextureCommand/instance/execute"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("kabam.lib.tasks"), "TaskSequence")
+      constructprop       QName(PackageNamespace("kabam.lib.tasks"), "TaskSequence"), 0
+      coerce              QName(PackageNamespace("kabam.lib.tasks"), "TaskSequence")
+      setlocal1
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "task")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal1
+      findpropstrict      QName(PackageNamespace("kabam.lib.tasks"), "DispatchSignalTask")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "closeDialog")
+      constructprop       QName(PackageNamespace("kabam.lib.tasks"), "DispatchSignalTask"), 1
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "monitor")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "start"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.editor.commands:SaveTextureCommand/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

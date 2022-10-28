@@ -1,0 +1,371 @@
+class
+ refid "com.company.assembleegameclient.objects.particles:OrbitObject"
+ instance QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "OrbitObject")
+  extends QName(PackageNamespace("com.company.assembleegameclient.objects"), "BasicObject")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.company.assembleegameclient.objects.particles:OrbitObject")
+  iinit
+   name "OrbitObject"
+   refid "com.company.assembleegameclient.objects.particles:OrbitObject/instance/init"
+   param QName(PackageNamespace("flash.display"), "BitmapData")
+   flag HAS_PARAM_NAMES
+   paramname "_arg1"
+   body
+    maxstack 6
+    localcount 2
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     getlex              QName(PackageNamespace("__AS3__.vec"), "Vector")
+     getlex              QName(PackageNamespace(""), "Number")
+     applytype           1
+     pushbyte            8
+     construct           1
+     setproperty         QName(ProtectedNamespace("com.company.assembleegameclient.objects.particles:OrbitObject"), "vS_")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("flash.geom"), "Matrix")
+     constructprop       QName(PackageNamespace("flash.geom"), "Matrix"), 0
+     setproperty         QName(ProtectedNamespace("com.company.assembleegameclient.objects.particles:OrbitObject"), "_01i")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("flash.display"), "GraphicsPath")
+     getlex              QName(PackageNamespace("com.company.util"), "GraphicsUtil")
+     getproperty         QName(PackageNamespace(""), "QUAD_COMMANDS")
+     pushnull
+     constructprop       QName(PackageNamespace("flash.display"), "GraphicsPath"), 2
+     setproperty         QName(ProtectedNamespace("com.company.assembleegameclient.objects.particles:OrbitObject"), "path_")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("flash.display"), "GraphicsBitmapFill")
+     pushnull
+     pushnull
+     pushfalse
+     pushfalse
+     constructprop       QName(PackageNamespace("flash.display"), "GraphicsBitmapFill"), 4
+     setproperty         QName(ProtectedNamespace("com.company.assembleegameclient.objects.particles:OrbitObject"), "bitmapFill_")
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     getproperty         QName(ProtectedNamespace("com.company.assembleegameclient.objects.particles:OrbitObject"), "bitmapFill_")
+     getlocal1
+     setproperty         QName(PackageNamespace(""), "bitmapData")
+
+     getlocal0
+     getlocal1
+     setproperty         QName(PackageNamespace(""), "bitmapData_")
+
+     findpropstrict      QName(PackageNamespace(""), "getNextFakeObjectId")
+     callproperty        QName(PackageNamespace(""), "getNextFakeObjectId"), 0
+     findproperty        QName(PackageNamespace(""), "objectId")
+     swap
+     setproperty         QName(PackageNamespace(""), "objectId")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "_G_n") type QName(PackageNamespace(""), "Number") value Integer(0) end
+  trait slot QName(PackageNamespace(""), "_G_m") type QName(PackageNamespace(""), "Number") value Integer(0) end
+  trait slot QName(PackageNamespace(""), "_null_") type QName(PackageNamespace(""), "Number") end
+  trait slot QName(PackageNamespace(""), "_0K_5") type QName(PackageNamespace(""), "Number") end
+  trait slot QName(PackageNamespace(""), "_0A_7") type QName(PackageNamespace(""), "Number") end
+  trait slot QName(PackageNamespace(""), "_size") type QName(PackageNamespace(""), "Number") end
+  trait slot QName(PackageNamespace(""), "lX_") type QName(PackageNamespace(""), "Number") value Integer(0) end
+  trait slot QName(PackageNamespace(""), "lY_") type QName(PackageNamespace(""), "Number") value Integer(0) end
+  trait slot QName(PackageNamespace(""), "pOwnerX_") type QName(PackageNamespace(""), "Number") value Integer(0) end
+  trait slot QName(PackageNamespace(""), "pOwnerY_") type QName(PackageNamespace(""), "Number") value Integer(0) end
+  trait slot QName(PackageNamespace(""), "cloudInitLife_") type QName(PackageNamespace(""), "Number") value Integer(0) end
+  trait slot QName(PackageNamespace(""), "fadeInitLife_") type QName(PackageNamespace(""), "Number") value Integer(0) end
+  trait slot QName(PackageNamespace(""), "fadedIn_") type QName(PackageNamespace(""), "Boolean") value False() end
+  trait slot QName(PackageNamespace(""), "bitmapData_") type QName(PackageNamespace("flash.display"), "BitmapData") end
+  trait slot QName(PackageNamespace(""), "bitmapIndex_") type QName(PackageNamespace(""), "Number") value Integer(-1) end
+  trait slot QName(PackageNamespace(""), "alpha_") type QName(PackageNamespace(""), "Number") value Integer(1) end
+  trait slot QName(ProtectedNamespace("com.company.assembleegameclient.objects.particles:OrbitObject"), "vS_") type TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace(""), "Number")>) end
+  trait slot QName(ProtectedNamespace("com.company.assembleegameclient.objects.particles:OrbitObject"), "_01i") type QName(PackageNamespace("flash.geom"), "Matrix") end
+  trait slot QName(ProtectedNamespace("com.company.assembleegameclient.objects.particles:OrbitObject"), "path_") type QName(PackageNamespace("flash.display"), "GraphicsPath") end
+  trait slot QName(ProtectedNamespace("com.company.assembleegameclient.objects.particles:OrbitObject"), "bitmapFill_") type QName(PackageNamespace("flash.display"), "GraphicsBitmapFill") end
+  trait method QName(PackageNamespace(""), "draw") flag OVERRIDE
+   method
+    name "draw"
+    refid "com.company.assembleegameclient.objects.particles:OrbitObject/instance/draw"
+    param TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("flash.display"), "IGraphicsData")>)
+    param QName(PackageNamespace("com.company.assembleegameclient.map"), "Camera")
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    paramname "_arg2"
+    paramname "_arg3"
+    body
+     maxstack 6
+     localcount 7
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("com.company.assembleegameclient.objects.particles:OrbitObject"), "bitmapFill_")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "bitmapData_")
+      setproperty         QName(PackageNamespace(""), "bitmapData")
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("com.company.assembleegameclient.objects.particles:OrbitObject"), "bitmapFill_")
+      getlex              QName(PackageNamespace("com.company.util"), "CachingColorTransformer")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "bitmapData_")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "alpha_")
+      callproperty        QName(PackageNamespace(""), "alphaBitmapData"), 2
+      setproperty         QName(PackageNamespace(""), "bitmapData")
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("com.company.assembleegameclient.objects.particles:OrbitObject"), "bitmapFill_")
+      getproperty         QName(PackageNamespace(""), "bitmapData")
+      getproperty         QName(PackageNamespace(""), "width")
+      pushbyte            2
+      divide
+      convert_d
+      setlocal            4
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("com.company.assembleegameclient.objects.particles:OrbitObject"), "bitmapFill_")
+      getproperty         QName(PackageNamespace(""), "bitmapData")
+      getproperty         QName(PackageNamespace(""), "height")
+      pushbyte            2
+      divide
+      convert_d
+      setlocal            5
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("com.company.assembleegameclient.objects.particles:OrbitObject"), "vS_")
+      pushbyte            6
+      getlocal0
+      getproperty         QName(ProtectedNamespace("com.company.assembleegameclient.objects.particles:OrbitObject"), "vS_")
+      pushbyte            0
+      getlex              QName(PackageNamespace(""), "posS_")
+      pushbyte            3
+      getproperty         MultinameL([PrivateNamespace("com.company.assembleegameclient.objects.particles:OrbitObject"), ProtectedNamespace("com.company.assembleegameclient.objects.particles:OrbitObject"), StaticProtectedNs("com.company.assembleegameclient.objects.particles:OrbitObject"), StaticProtectedNs("com.company.assembleegameclient.objects:BasicObject"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.objects.particles"), PackageInternalNs("com.company.assembleegameclient.objects.particles"), PrivateNamespace("FilePrivateNS:OrbitObject"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getlocal            4
+      subtract
+      dup
+      setlocal            6
+
+      setproperty         MultinameL([PrivateNamespace("com.company.assembleegameclient.objects.particles:OrbitObject"), ProtectedNamespace("com.company.assembleegameclient.objects.particles:OrbitObject"), StaticProtectedNs("com.company.assembleegameclient.objects.particles:OrbitObject"), StaticProtectedNs("com.company.assembleegameclient.objects:BasicObject"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.objects.particles"), PackageInternalNs("com.company.assembleegameclient.objects.particles"), PrivateNamespace("FilePrivateNS:OrbitObject"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      getlocal            6
+      setproperty         MultinameL([PrivateNamespace("com.company.assembleegameclient.objects.particles:OrbitObject"), ProtectedNamespace("com.company.assembleegameclient.objects.particles:OrbitObject"), StaticProtectedNs("com.company.assembleegameclient.objects.particles:OrbitObject"), StaticProtectedNs("com.company.assembleegameclient.objects:BasicObject"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.objects.particles"), PackageInternalNs("com.company.assembleegameclient.objects.particles"), PrivateNamespace("FilePrivateNS:OrbitObject"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("com.company.assembleegameclient.objects.particles:OrbitObject"), "vS_")
+      pushbyte            3
+      getlocal0
+      getproperty         QName(ProtectedNamespace("com.company.assembleegameclient.objects.particles:OrbitObject"), "vS_")
+      pushbyte            1
+      getlex              QName(PackageNamespace(""), "posS_")
+      pushbyte            4
+      getproperty         MultinameL([PrivateNamespace("com.company.assembleegameclient.objects.particles:OrbitObject"), ProtectedNamespace("com.company.assembleegameclient.objects.particles:OrbitObject"), StaticProtectedNs("com.company.assembleegameclient.objects.particles:OrbitObject"), StaticProtectedNs("com.company.assembleegameclient.objects:BasicObject"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.objects.particles"), PackageInternalNs("com.company.assembleegameclient.objects.particles"), PrivateNamespace("FilePrivateNS:OrbitObject"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getlocal            5
+      subtract
+      dup
+      setlocal            6
+
+      setproperty         MultinameL([PrivateNamespace("com.company.assembleegameclient.objects.particles:OrbitObject"), ProtectedNamespace("com.company.assembleegameclient.objects.particles:OrbitObject"), StaticProtectedNs("com.company.assembleegameclient.objects.particles:OrbitObject"), StaticProtectedNs("com.company.assembleegameclient.objects:BasicObject"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.objects.particles"), PackageInternalNs("com.company.assembleegameclient.objects.particles"), PrivateNamespace("FilePrivateNS:OrbitObject"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      getlocal            6
+      setproperty         MultinameL([PrivateNamespace("com.company.assembleegameclient.objects.particles:OrbitObject"), ProtectedNamespace("com.company.assembleegameclient.objects.particles:OrbitObject"), StaticProtectedNs("com.company.assembleegameclient.objects.particles:OrbitObject"), StaticProtectedNs("com.company.assembleegameclient.objects:BasicObject"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.objects.particles"), PackageInternalNs("com.company.assembleegameclient.objects.particles"), PrivateNamespace("FilePrivateNS:OrbitObject"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("com.company.assembleegameclient.objects.particles:OrbitObject"), "vS_")
+      pushbyte            4
+      getlocal0
+      getproperty         QName(ProtectedNamespace("com.company.assembleegameclient.objects.particles:OrbitObject"), "vS_")
+      pushbyte            2
+      getlex              QName(PackageNamespace(""), "posS_")
+      pushbyte            3
+      getproperty         MultinameL([PrivateNamespace("com.company.assembleegameclient.objects.particles:OrbitObject"), ProtectedNamespace("com.company.assembleegameclient.objects.particles:OrbitObject"), StaticProtectedNs("com.company.assembleegameclient.objects.particles:OrbitObject"), StaticProtectedNs("com.company.assembleegameclient.objects:BasicObject"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.objects.particles"), PackageInternalNs("com.company.assembleegameclient.objects.particles"), PrivateNamespace("FilePrivateNS:OrbitObject"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getlocal            4
+      add
+      dup
+      setlocal            6
+
+      setproperty         MultinameL([PrivateNamespace("com.company.assembleegameclient.objects.particles:OrbitObject"), ProtectedNamespace("com.company.assembleegameclient.objects.particles:OrbitObject"), StaticProtectedNs("com.company.assembleegameclient.objects.particles:OrbitObject"), StaticProtectedNs("com.company.assembleegameclient.objects:BasicObject"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.objects.particles"), PackageInternalNs("com.company.assembleegameclient.objects.particles"), PrivateNamespace("FilePrivateNS:OrbitObject"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      getlocal            6
+      setproperty         MultinameL([PrivateNamespace("com.company.assembleegameclient.objects.particles:OrbitObject"), ProtectedNamespace("com.company.assembleegameclient.objects.particles:OrbitObject"), StaticProtectedNs("com.company.assembleegameclient.objects.particles:OrbitObject"), StaticProtectedNs("com.company.assembleegameclient.objects:BasicObject"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.objects.particles"), PackageInternalNs("com.company.assembleegameclient.objects.particles"), PrivateNamespace("FilePrivateNS:OrbitObject"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("com.company.assembleegameclient.objects.particles:OrbitObject"), "vS_")
+      pushbyte            7
+      getlocal0
+      getproperty         QName(ProtectedNamespace("com.company.assembleegameclient.objects.particles:OrbitObject"), "vS_")
+      pushbyte            5
+      getlex              QName(PackageNamespace(""), "posS_")
+      pushbyte            4
+      getproperty         MultinameL([PrivateNamespace("com.company.assembleegameclient.objects.particles:OrbitObject"), ProtectedNamespace("com.company.assembleegameclient.objects.particles:OrbitObject"), StaticProtectedNs("com.company.assembleegameclient.objects.particles:OrbitObject"), StaticProtectedNs("com.company.assembleegameclient.objects:BasicObject"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.objects.particles"), PackageInternalNs("com.company.assembleegameclient.objects.particles"), PrivateNamespace("FilePrivateNS:OrbitObject"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getlocal            5
+      add
+      dup
+      setlocal            6
+
+      setproperty         MultinameL([PrivateNamespace("com.company.assembleegameclient.objects.particles:OrbitObject"), ProtectedNamespace("com.company.assembleegameclient.objects.particles:OrbitObject"), StaticProtectedNs("com.company.assembleegameclient.objects.particles:OrbitObject"), StaticProtectedNs("com.company.assembleegameclient.objects:BasicObject"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.objects.particles"), PackageInternalNs("com.company.assembleegameclient.objects.particles"), PrivateNamespace("FilePrivateNS:OrbitObject"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      getlocal            6
+      setproperty         MultinameL([PrivateNamespace("com.company.assembleegameclient.objects.particles:OrbitObject"), ProtectedNamespace("com.company.assembleegameclient.objects.particles:OrbitObject"), StaticProtectedNs("com.company.assembleegameclient.objects.particles:OrbitObject"), StaticProtectedNs("com.company.assembleegameclient.objects:BasicObject"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.objects.particles"), PackageInternalNs("com.company.assembleegameclient.objects.particles"), PrivateNamespace("FilePrivateNS:OrbitObject"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("com.company.assembleegameclient.objects.particles:OrbitObject"), "path_")
+      getlocal0
+      getproperty         QName(ProtectedNamespace("com.company.assembleegameclient.objects.particles:OrbitObject"), "vS_")
+      setproperty         QName(PackageNamespace(""), "data")
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("com.company.assembleegameclient.objects.particles:OrbitObject"), "_01i")
+      callpropvoid        QName(PackageNamespace(""), "identity"), 0
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("com.company.assembleegameclient.objects.particles:OrbitObject"), "_01i")
+      getlocal0
+      getproperty         QName(ProtectedNamespace("com.company.assembleegameclient.objects.particles:OrbitObject"), "vS_")
+      pushbyte            0
+      getproperty         MultinameL([PrivateNamespace("com.company.assembleegameclient.objects.particles:OrbitObject"), ProtectedNamespace("com.company.assembleegameclient.objects.particles:OrbitObject"), StaticProtectedNs("com.company.assembleegameclient.objects.particles:OrbitObject"), StaticProtectedNs("com.company.assembleegameclient.objects:BasicObject"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.objects.particles"), PackageInternalNs("com.company.assembleegameclient.objects.particles"), PrivateNamespace("FilePrivateNS:OrbitObject"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getlocal0
+      getproperty         QName(ProtectedNamespace("com.company.assembleegameclient.objects.particles:OrbitObject"), "vS_")
+      pushbyte            1
+      getproperty         MultinameL([PrivateNamespace("com.company.assembleegameclient.objects.particles:OrbitObject"), ProtectedNamespace("com.company.assembleegameclient.objects.particles:OrbitObject"), StaticProtectedNs("com.company.assembleegameclient.objects.particles:OrbitObject"), StaticProtectedNs("com.company.assembleegameclient.objects:BasicObject"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.objects.particles"), PackageInternalNs("com.company.assembleegameclient.objects.particles"), PrivateNamespace("FilePrivateNS:OrbitObject"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      callpropvoid        QName(PackageNamespace(""), "translate"), 2
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("com.company.assembleegameclient.objects.particles:OrbitObject"), "bitmapFill_")
+      getlocal0
+      getproperty         QName(ProtectedNamespace("com.company.assembleegameclient.objects.particles:OrbitObject"), "_01i")
+      setproperty         QName(PackageNamespace(""), "matrix")
+
+      getlocal1
+      getlocal0
+      getproperty         QName(ProtectedNamespace("com.company.assembleegameclient.objects.particles:OrbitObject"), "bitmapFill_")
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+
+      getlocal1
+      getlocal0
+      getproperty         QName(ProtectedNamespace("com.company.assembleegameclient.objects.particles:OrbitObject"), "path_")
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+
+      getlocal1
+      getlex              QName(PackageNamespace("com.company.util"), "GraphicsUtil")
+      getproperty         QName(PackageNamespace(""), "END_FILL")
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "removeFromMap") flag OVERRIDE
+   method
+    name "removeFromMap"
+    refid "com.company.assembleegameclient.objects.particles:OrbitObject/instance/removeFromMap"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      findproperty        QName(PackageNamespace(""), "map_")
+      swap
+      setproperty         QName(PackageNamespace(""), "map_")
+
+      pushnull
+      findproperty        QName(PackageNamespace(""), "square")
+      swap
+      setproperty         QName(PackageNamespace(""), "square")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "initialize")
+   method
+    name "initialize"
+    refid "com.company.assembleegameclient.objects.particles:OrbitObject/instance/initialize"
+    param QName(PackageNamespace(""), "Number")
+    param QName(PackageNamespace(""), "Number")
+    param QName(PackageNamespace(""), "Number")
+    param QName(PackageNamespace(""), "Number")
+    param QName(PackageNamespace(""), "Number")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    paramname "_arg2"
+    paramname "_arg3"
+    paramname "_arg4"
+    paramname "_arg5"
+    body
+     maxstack 2
+     localcount 6
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      setproperty         QName(PackageNamespace(""), "_G_n")
+
+      getlocal0
+      getlocal1
+      setproperty         QName(PackageNamespace(""), "_G_m")
+
+      getlocal0
+      getlocal2
+      setproperty         QName(PackageNamespace(""), "_null_")
+
+      getlocal0
+      getlocal3
+      setproperty         QName(PackageNamespace(""), "_0K_5")
+
+      getlocal0
+      getlocal            4
+      setproperty         QName(PackageNamespace(""), "_0A_7")
+
+      getlocal            5
+      findproperty        QName(PackageNamespace(""), "z_")
+      swap
+      setproperty         QName(PackageNamespace(""), "z_")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.objects.particles:OrbitObject/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

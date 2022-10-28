@@ -1,0 +1,420 @@
+class
+ refid "kabam.rotmg.dialogs.view:DialogsView"
+ instance QName(PackageNamespace("kabam.rotmg.dialogs.view"), "DialogsView")
+  extends QName(PackageNamespace("flash.display"), "Sprite")
+  flag SEALED
+  iinit
+   name "DialogsView"
+   refid "kabam.rotmg.dialogs.view:DialogsView/instance/init"
+   body
+    maxstack 4
+    localcount 2
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     findpropstrict      QName(PackageNamespace("flash.display"), "Sprite")
+     constructprop       QName(PackageNamespace("flash.display"), "Sprite"), 0
+     dup
+     setlocal1
+
+     setproperty         QName(PrivateNamespace("kabam.rotmg.dialogs.view:DialogsView"), "background")
+
+     getlocal1
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     findpropstrict      QName(PackageNamespace("flash.display"), "Sprite")
+     constructprop       QName(PackageNamespace("flash.display"), "Sprite"), 0
+     dup
+     setlocal1
+
+     setproperty         QName(PrivateNamespace("kabam.rotmg.dialogs.view:DialogsView"), "container")
+
+     getlocal1
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.dialogs.view:DialogsView"), "background")
+     pushfalse
+     setproperty         QName(PackageNamespace(""), "visible")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.dialogs.view:DialogsView"), "background")
+     pushtrue
+     setproperty         QName(PackageNamespace(""), "mouseEnabled")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace("kabam.rotmg.dialogs.view:DialogsView"), "background") type QName(PackageNamespace("flash.display"), "Sprite") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.dialogs.view:DialogsView"), "container") type QName(PackageNamespace("flash.display"), "DisplayObjectContainer") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.dialogs.view:DialogsView"), "current") type QName(PackageNamespace("flash.display"), "Sprite") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.dialogs.view:DialogsView"), "pushed") type QName(PackageNamespace("flash.display"), "DisplayObject") end
+  trait method QName(PackageNamespace(""), "showBackground")
+   method
+    name "showBackground"
+    refid "kabam.rotmg.dialogs.view:DialogsView/instance/showBackground"
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_OPTIONAL
+    flag HAS_PARAM_NAMES
+    optional Integer(1381653)
+    paramname "_arg1"
+    body
+     maxstack 5
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.dialogs.view:DialogsView"), "background")
+      getproperty         QName(PackageNamespace(""), "graphics")
+      coerce              QName(PackageNamespace("flash.display"), "Graphics")
+      setlocal2
+
+      getlocal2
+      callpropvoid        QName(PackageNamespace(""), "clear"), 0
+
+      getlocal2
+      getlocal1
+      pushdouble          0.6
+      callpropvoid        QName(PackageNamespace(""), "beginFill"), 2
+
+      getlocal2
+      pushbyte            0
+      pushbyte            0
+      pushshort           800
+      pushshort           600
+      callpropvoid        QName(PackageNamespace(""), "drawRect"), 4
+
+      getlocal2
+      callpropvoid        QName(PackageNamespace(""), "endFill"), 0
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.dialogs.view:DialogsView"), "background")
+      pushtrue
+      setproperty         QName(PackageNamespace(""), "visible")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "show")
+   method
+    name "show"
+    refid "kabam.rotmg.dialogs.view:DialogsView/instance/show"
+    param QName(PackageNamespace("flash.display"), "Sprite")
+    param QName(PackageNamespace(""), "Boolean")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    paramname "_arg2"
+    body
+     maxstack 2
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.dialogs.view:DialogsView"), "removeCurrentDialog"), 0
+
+      getlocal0
+      getlocal1
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.dialogs.view:DialogsView"), "addDialog"), 1
+
+      getlocal2
+      dup
+      iffalse             L14
+
+      pop
+      getlocal0
+      callproperty        QName(PackageNamespace(""), "showBackground"), 0
+      coerce_a
+L14:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "hideAll")
+   method
+    name "hideAll"
+    refid "kabam.rotmg.dialogs.view:DialogsView/instance/hideAll"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.dialogs.view:DialogsView"), "background")
+      pushfalse
+      setproperty         QName(PackageNamespace(""), "visible")
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.dialogs.view:DialogsView"), "removeCurrentDialog"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "push")
+   method
+    name "push"
+    refid "kabam.rotmg.dialogs.view:DialogsView/instance/push"
+    param QName(PackageNamespace("flash.display"), "Sprite")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.dialogs.view:DialogsView"), "current")
+      pushfalse
+      setproperty         QName(PackageNamespace(""), "visible")
+
+      getlocal0
+      getlocal1
+      setproperty         QName(PrivateNamespace("kabam.rotmg.dialogs.view:DialogsView"), "pushed")
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.dialogs.view:DialogsView"), "background")
+      pushtrue
+      setproperty         QName(PackageNamespace(""), "visible")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getPushed")
+   method
+    name "getPushed"
+    refid "kabam.rotmg.dialogs.view:DialogsView/instance/getPushed"
+    returns QName(PackageNamespace("flash.display"), "DisplayObject")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.dialogs.view:DialogsView"), "pushed")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "pop")
+   method
+    name "pop"
+    refid "kabam.rotmg.dialogs.view:DialogsView/instance/pop"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace(""), "removeChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.dialogs.view:DialogsView"), "pushed")
+      callpropvoid        QName(PackageNamespace(""), "removeChild"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.dialogs.view:DialogsView"), "current")
+      pushtrue
+      setproperty         QName(PackageNamespace(""), "visible")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.dialogs.view:DialogsView"), "addDialog")
+   method
+    name "addDialog"
+    refid "kabam.rotmg.dialogs.view:DialogsView/instance/kabam.rotmg.dialogs.view:DialogsView/instance/addDialog"
+    param QName(PackageNamespace("flash.display"), "Sprite")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      setproperty         QName(PrivateNamespace("kabam.rotmg.dialogs.view:DialogsView"), "current")
+
+      getlocal1
+      pushstring          "removed"
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.dialogs.view:DialogsView"), "onRemoved")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.dialogs.view:DialogsView"), "container")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.dialogs.view:DialogsView"), "onRemoved")
+   method
+    name "onRemoved"
+    refid "kabam.rotmg.dialogs.view:DialogsView/instance/kabam.rotmg.dialogs.view:DialogsView/instance/onRemoved"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "target")
+      getlex              QName(PackageNamespace("flash.display"), "Sprite")
+      astypelate
+      coerce              QName(PackageNamespace("flash.display"), "Sprite")
+      setlocal2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.dialogs.view:DialogsView"), "current")
+      getlocal2
+      ifne                L19
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.dialogs.view:DialogsView"), "background")
+      pushfalse
+      setproperty         QName(PackageNamespace(""), "visible")
+
+      getlocal0
+      pushnull
+      setproperty         QName(PrivateNamespace("kabam.rotmg.dialogs.view:DialogsView"), "current")
+
+L19:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.dialogs.view:DialogsView"), "removeCurrentDialog")
+   method
+    name "removeCurrentDialog"
+    refid "kabam.rotmg.dialogs.view:DialogsView/instance/kabam.rotmg.dialogs.view:DialogsView/instance/removeCurrentDialog"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.dialogs.view:DialogsView"), "current")
+      dup
+      iffalse             L13
+
+      pop
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.dialogs.view:DialogsView"), "container")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.dialogs.view:DialogsView"), "current")
+      callproperty        QName(PackageNamespace(""), "contains"), 1
+      coerce_a
+L13:
+      iffalse             L29
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.dialogs.view:DialogsView"), "current")
+      pushstring          "removed"
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.dialogs.view:DialogsView"), "onRemoved")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.dialogs.view:DialogsView"), "container")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.dialogs.view:DialogsView"), "current")
+      callpropvoid        QName(PackageNamespace(""), "removeChild"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.dialogs.view:DialogsView"), "background")
+      pushfalse
+      setproperty         QName(PackageNamespace(""), "visible")
+
+L29:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.dialogs.view:DialogsView/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

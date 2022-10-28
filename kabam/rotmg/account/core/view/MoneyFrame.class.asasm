@@ -1,0 +1,687 @@
+class
+ refid "kabam.rotmg.account.core.view:MoneyFrame"
+ instance QName(PackageNamespace("kabam.rotmg.account.core.view"), "MoneyFrame")
+  extends QName(PackageNamespace("flash.display"), "Sprite")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.account.core.view:MoneyFrame")
+  iinit
+   name "MoneyFrame"
+   refid "kabam.rotmg.account.core.view:MoneyFrame/instance/init"
+   body
+    maxstack 4
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("org.osflash.signals"), "Signal")
+     getlex              QName(PackageNamespace("com.company.assembleegameclient.util.offer"), "Offer")
+     getlex              QName(PackageNamespace(""), "String")
+     constructprop       QName(PackageNamespace("org.osflash.signals"), "Signal"), 2
+     setproperty         QName(PackageNamespace(""), "buyNow")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("org.osflash.signals"), "Signal")
+     constructprop       QName(PackageNamespace("org.osflash.signals"), "Signal"), 0
+     setproperty         QName(PackageNamespace(""), "cancel")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "buyNow") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait slot QName(PackageNamespace(""), "cancel") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.account.core.view:MoneyFrame"), "offers") type QName(PackageNamespace("com.company.assembleegameclient.util.offer"), "Offers") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.account.core.view:MoneyFrame"), "config") type QName(PackageNamespace("kabam.rotmg.account.core.model"), "MoneyConfig") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.account.core.view:MoneyFrame"), "frame") type QName(PackageNamespace("com.company.assembleegameclient.account.ui"), "Frame") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.account.core.view:MoneyFrame"), "paymentMethodButtons") type QName(PackageNamespace("com.company.assembleegameclient.account.ui"), "PaymentMethodRadioButtons") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.account.core.view:MoneyFrame"), "offerButtons") type QName(PackageNamespace("com.company.assembleegameclient.account.ui"), "OfferRadioButtons") end
+  trait slot QName(PackageNamespace(""), "buyNowButton") type QName(PackageNamespace("com.company.assembleegameclient.ui"), "DeprecatedTextButton") end
+  trait slot QName(PackageNamespace(""), "cancelButton") type QName(PackageNamespace("com.company.assembleegameclient.ui"), "DeprecatedClickableText") end
+  trait method QName(PackageNamespace(""), "initialize")
+   method
+    name "initialize"
+    refid "kabam.rotmg.account.core.view:MoneyFrame/instance/initialize"
+    param QName(PackageNamespace("com.company.assembleegameclient.util.offer"), "Offers")
+    param QName(PackageNamespace("kabam.rotmg.account.core.model"), "MoneyConfig")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    paramname "_arg2"
+    body
+     maxstack 6
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      setproperty         QName(PrivateNamespace("kabam.rotmg.account.core.view:MoneyFrame"), "offers")
+
+      getlocal0
+      getlocal2
+      setproperty         QName(PrivateNamespace("kabam.rotmg.account.core.view:MoneyFrame"), "config")
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.account.ui"), "Frame")
+      pushstring          "MoneyFrame.title"
+      pushstring          ""
+      pushstring          ""
+      pushshort           550
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.account.ui"), "Frame"), 4
+      setproperty         QName(PrivateNamespace("kabam.rotmg.account.core.view:MoneyFrame"), "frame")
+
+      getlocal2
+      callproperty        QName(Namespace("kabam.rotmg.account.core.model:MoneyConfig"), "showPaymentMethods"), 0
+      dup
+      iffalse             L24
+
+      pop
+      getlocal0
+      callproperty        QName(PackageNamespace(""), "addPaymentMethods"), 0
+      coerce_a
+L24:
+      pop
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.account.core.view:MoneyFrame"), "addOffers"), 0
+
+      getlocal0
+      callpropvoid        QName(PackageNamespace(""), "addBuyNowButton"), 0
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.account.core.view:MoneyFrame"), "frame")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      getlocal0
+      pushstring          "MoneyFrame.rightButton"
+      callpropvoid        QName(PackageNamespace(""), "addCancelButton"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "cancelButton")
+      pushstring          "click"
+      getlocal0
+      getproperty         QName(ProtectedNamespace("kabam.rotmg.account.core.view:MoneyFrame"), "onCancel")
+      pushfalse
+      pushbyte            0
+      pushtrue
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 5
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "addPaymentMethods")
+   method
+    name "addPaymentMethods"
+    refid "kabam.rotmg.account.core.view:MoneyFrame/instance/addPaymentMethods"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 5
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.account.core.view:MoneyFrame"), "makePaymentMethodRadioButtons"), 0
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.account.core.view:MoneyFrame"), "frame")
+      pushstring          "MoneyFrame.payment"
+      callpropvoid        QName(PackageNamespace(""), "addTitle"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.account.core.view:MoneyFrame"), "frame")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.account.core.view:MoneyFrame"), "paymentMethodButtons")
+      callpropvoid        QName(PackageNamespace(""), "addRadioBox"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.account.core.view:MoneyFrame"), "frame")
+      pushbyte            14
+      callpropvoid        QName(PackageNamespace(""), "addSpace"), 1
+
+      getlocal0
+      pushint             8355711
+      pushshort           536
+      pushbyte            2
+      pushbyte            10
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.account.core.view:MoneyFrame"), "addLine"), 4
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.account.core.view:MoneyFrame"), "frame")
+      pushbyte            6
+      callpropvoid        QName(PackageNamespace(""), "addSpace"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.account.core.view:MoneyFrame"), "makePaymentMethodRadioButtons")
+   method
+    name "makePaymentMethodRadioButtons"
+    refid "kabam.rotmg.account.core.view:MoneyFrame/instance/kabam.rotmg.account.core.view:MoneyFrame/instance/makePaymentMethodRadioButtons"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      callproperty        QName(PrivateNamespace("kabam.rotmg.account.core.view:MoneyFrame"), "makePaymentMethodLabels"), 0
+      coerce              TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace(""), "String")>)
+      setlocal1
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.account.ui"), "PaymentMethodRadioButtons")
+      getlocal1
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.account.ui"), "PaymentMethodRadioButtons"), 1
+      setproperty         QName(PrivateNamespace("kabam.rotmg.account.core.view:MoneyFrame"), "paymentMethodButtons")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.account.core.view:MoneyFrame"), "paymentMethodButtons")
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.parameters"), "Parameters")
+      getproperty         QName(PackageNamespace(""), "data")
+      getproperty         Multiname("paymentMethod", [PrivateNamespace("kabam.rotmg.account.core.view:MoneyFrame"), ProtectedNamespace("kabam.rotmg.account.core.view:MoneyFrame"), StaticProtectedNs("kabam.rotmg.account.core.view:MoneyFrame"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.account.core.view"), PackageInternalNs("kabam.rotmg.account.core.view"), PrivateNamespace("FilePrivateNS:MoneyFrame"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      callpropvoid        QName(PackageNamespace(""), "setSelected"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.account.core.view:MoneyFrame"), "makePaymentMethodLabels")
+   method
+    name "makePaymentMethodLabels"
+    refid "kabam.rotmg.account.core.view:MoneyFrame/instance/kabam.rotmg.account.core.view:MoneyFrame/instance/makePaymentMethodLabels"
+    returns TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace(""), "String")>)
+    body
+     maxstack 2
+     localcount 5
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      setlocal1
+
+      getlex              QName(PackageNamespace("__AS3__.vec"), "Vector")
+      getlex              QName(PackageNamespace(""), "String")
+      applytype           1
+      construct           0
+      coerce              TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace(""), "String")>)
+      setlocal2
+
+      pushbyte            0
+      setlocal            4
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "PaymentMethod")
+      getproperty         QName(PackageNamespace(""), "PAYMENT_METHODS")
+      setlocal3
+
+      jump                L26
+
+L16:
+      label
+      getlocal3
+      getlocal            4
+      nextvalue
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.util"), "PaymentMethod")
+      setlocal1
+
+      getlocal2
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "label_")
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+
+L26:
+      hasnext2            3, 4
+      iftrue              L16
+
+      getlocal2
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.account.core.view:MoneyFrame"), "addLine")
+   method
+    name "addLine"
+    refid "kabam.rotmg.account.core.view:MoneyFrame/instance/kabam.rotmg.account.core.view:MoneyFrame/instance/addLine"
+    param QName(PackageNamespace(""), "int")
+    param QName(PackageNamespace(""), "int")
+    param QName(PackageNamespace(""), "int")
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    paramname "_arg2"
+    paramname "_arg3"
+    paramname "_arg4"
+    body
+     maxstack 6
+     localcount 6
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("flash.display"), "Shape")
+      constructprop       QName(PackageNamespace("flash.display"), "Shape"), 0
+      coerce              QName(PackageNamespace("flash.display"), "Shape")
+      dup
+      setlocal            5
+
+      getproperty         QName(PackageNamespace(""), "graphics")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "beginFill"), 1
+
+      getlocal            5
+      getproperty         QName(PackageNamespace(""), "graphics")
+      getlocal            4
+      pushbyte            0
+      getlocal2
+      getlocal            4
+      pushbyte            2
+      multiply
+      subtract
+      getlocal3
+      callpropvoid        QName(PackageNamespace(""), "drawRect"), 4
+
+      getlocal            5
+      getproperty         QName(PackageNamespace(""), "graphics")
+      callpropvoid        QName(PackageNamespace(""), "endFill"), 0
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.account.core.view:MoneyFrame"), "frame")
+      getlocal            5
+      pushbyte            0
+      callpropvoid        QName(PackageNamespace(""), "addComponent"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.account.core.view:MoneyFrame"), "addOffers")
+   method
+    name "addOffers"
+    refid "kabam.rotmg.account.core.view:MoneyFrame/instance/kabam.rotmg.account.core.view:MoneyFrame/instance/addOffers"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.account.ui"), "OfferRadioButtons")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.account.core.view:MoneyFrame"), "offers")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.account.core.view:MoneyFrame"), "config")
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.account.ui"), "OfferRadioButtons"), 2
+      setproperty         QName(PrivateNamespace("kabam.rotmg.account.core.view:MoneyFrame"), "offerButtons")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.account.core.view:MoneyFrame"), "offerButtons")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.account.core.view:MoneyFrame"), "config")
+      callproperty        QName(Namespace("kabam.rotmg.account.core.model:MoneyConfig"), "showBonuses"), 0
+      callpropvoid        QName(PackageNamespace(""), "showBonuses"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.account.core.view:MoneyFrame"), "frame")
+      pushstring          "MoneyFrame.gold"
+      callpropvoid        QName(PackageNamespace(""), "addTitle"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.account.core.view:MoneyFrame"), "frame")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.account.core.view:MoneyFrame"), "offerButtons")
+      callpropvoid        QName(PackageNamespace(""), "addComponent"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "addBuyNowButton")
+   method
+    name "addBuyNowButton"
+    refid "kabam.rotmg.account.core.view:MoneyFrame/instance/addBuyNowButton"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.ui"), "DeprecatedTextButton")
+      pushbyte            16
+      pushstring          "MoneyFrame.buy"
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.ui"), "DeprecatedTextButton"), 2
+      setproperty         QName(PackageNamespace(""), "buyNowButton")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "buyNowButton")
+      pushstring          "click"
+      getlocal0
+      getproperty         QName(ProtectedNamespace("kabam.rotmg.account.core.view:MoneyFrame"), "onBuyNowClick")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "buyNowButton")
+      pushbyte            8
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "buyNowButton")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.account.core.view:MoneyFrame"), "frame")
+      getproperty         QName(PackageNamespace(""), "h_")
+      pushbyte            52
+      subtract
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.account.core.view:MoneyFrame"), "frame")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "buyNowButton")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "addCancelButton")
+   method
+    name "addCancelButton"
+    refid "kabam.rotmg.account.core.view:MoneyFrame/instance/addCancelButton"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 5
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.ui"), "DeprecatedClickableText")
+      pushbyte            18
+      pushtrue
+      getlocal1
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.ui"), "DeprecatedClickableText"), 3
+      setproperty         QName(PackageNamespace(""), "cancelButton")
+
+      getlocal1
+      pushstring          ""
+      ifeq                L52
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "cancelButton")
+      pushtrue
+      setproperty         QName(PackageNamespace(""), "buttonMode")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "cancelButton")
+      pushshort           400
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.account.core.view:MoneyFrame"), "frame")
+      getproperty         QName(PackageNamespace(""), "w_")
+      pushbyte            2
+      divide
+      add
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "cancelButton")
+      getproperty         QName(PackageNamespace(""), "width")
+      subtract
+      pushbyte            26
+      subtract
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "cancelButton")
+      pushshort           300
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.account.core.view:MoneyFrame"), "frame")
+      getproperty         QName(PackageNamespace(""), "h_")
+      pushbyte            2
+      divide
+      add
+      pushbyte            52
+      subtract
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "cancelButton")
+      pushstring          "right"
+      callpropvoid        QName(PackageNamespace(""), "setAutoSize"), 1
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "cancelButton")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+L52:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(ProtectedNamespace("kabam.rotmg.account.core.view:MoneyFrame"), "onBuyNowClick")
+   method
+    name "onBuyNowClick"
+    refid "kabam.rotmg.account.core.view:MoneyFrame/instance/kabam.rotmg.account.core.view:MoneyFrame:onBuyNowClick"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 4
+     localcount 4
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      callpropvoid        QName(PackageNamespace(""), "disable"), 0
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.account.core.view:MoneyFrame"), "offerButtons")
+      callproperty        QName(PackageNamespace(""), "getChoice"), 0
+      getproperty         QName(PackageNamespace(""), "offer")
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.util.offer"), "Offer")
+      setlocal2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.account.core.view:MoneyFrame"), "paymentMethodButtons")
+      iffalse             L17
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.account.core.view:MoneyFrame"), "paymentMethodButtons")
+      callproperty        QName(PackageNamespace(""), "getSelected"), 0
+      jump                L19
+
+L17:
+      pushnull
+      coerce_a
+L19:
+      coerce_s
+      setlocal3
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "buyNow")
+      getlocal2
+      getlocal3
+      dup
+      iftrue              L30
+
+      pop
+      pushstring          ""
+      coerce_s
+L30:
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "disable")
+   method
+    name "disable"
+    refid "kabam.rotmg.account.core.view:MoneyFrame/instance/disable"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.account.core.view:MoneyFrame"), "frame")
+      callpropvoid        QName(PackageNamespace(""), "disable"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "cancelButton")
+      pushint             11776947
+      callpropvoid        QName(PackageNamespace(""), "setDefaultColor"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "cancelButton")
+      pushfalse
+      setproperty         QName(PackageNamespace(""), "mouseEnabled")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "cancelButton")
+      pushfalse
+      setproperty         QName(PackageNamespace(""), "mouseChildren")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "enableOnlyCancel")
+   method
+    name "enableOnlyCancel"
+    refid "kabam.rotmg.account.core.view:MoneyFrame/instance/enableOnlyCancel"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "cancelButton")
+      callpropvoid        QName(PackageNamespace(""), "removeOnHoverEvents"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "cancelButton")
+      pushtrue
+      setproperty         QName(PackageNamespace(""), "mouseEnabled")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "cancelButton")
+      pushtrue
+      setproperty         QName(PackageNamespace(""), "mouseChildren")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(ProtectedNamespace("kabam.rotmg.account.core.view:MoneyFrame"), "onCancel")
+   method
+    name "onCancel"
+    refid "kabam.rotmg.account.core.view:MoneyFrame/instance/kabam.rotmg.account.core.view:MoneyFrame:onCancel"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace(""), "stage")
+      getlex              QName(PackageNamespace(""), "stage")
+      setproperty         QName(PackageNamespace(""), "focus")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "cancel")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.account.core.view:MoneyFrame/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PrivateNamespace("kabam.rotmg.account.core.view:MoneyFrame"), "TITLE") type QName(PackageNamespace(""), "String") value Utf8("MoneyFrame.title") end
+ trait const QName(PrivateNamespace("kabam.rotmg.account.core.view:MoneyFrame"), "PAYMENT_SUBTITLE") type QName(PackageNamespace(""), "String") value Utf8("MoneyFrame.payment") end
+ trait const QName(PrivateNamespace("kabam.rotmg.account.core.view:MoneyFrame"), "GOLD_SUBTITLE") type QName(PackageNamespace(""), "String") value Utf8("MoneyFrame.gold") end
+ trait const QName(PrivateNamespace("kabam.rotmg.account.core.view:MoneyFrame"), "BUY_NOW") type QName(PackageNamespace(""), "String") value Utf8("MoneyFrame.buy") end
+ trait const QName(PrivateNamespace("kabam.rotmg.account.core.view:MoneyFrame"), "WIDTH") type QName(PackageNamespace(""), "int") value Integer(550) end
+end ; class

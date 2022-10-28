@@ -1,0 +1,143 @@
+class
+ refid "valor.battlePass:BattlePassCharacterPanel"
+ instance QName(PackageNamespace("valor.battlePass"), "BattlePassCharacterPanel")
+  extends QName(PackageNamespace("com.company.assembleegameclient.ui.panels"), "ButtonPanel")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("valor.battlePass:BattlePassCharacterPanel")
+  iinit
+   name "BattlePassCharacterPanel"
+   refid "valor.battlePass:BattlePassCharacterPanel/instance/init"
+   param QName(PackageNamespace("com.company.assembleegameclient.game"), "GameSprite")
+   flag HAS_PARAM_NAMES
+   paramname "gameSprite"
+   body
+    maxstack 4
+    localcount 2
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     getlocal1
+     pushstring          "Battle Pass"
+     pushstring          "View"
+     constructsuper      3
+
+     getlocal0
+     getlocal1
+     setproperty         QName(PrivateNamespace("valor.battlePass:BattlePassCharacterPanel"), "gameSprite")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace("valor.battlePass:BattlePassCharacterPanel"), "gameSprite") type QName(PackageNamespace("com.company.assembleegameclient.game"), "GameSprite") end
+  trait method QName(ProtectedNamespace("valor.battlePass:BattlePassCharacterPanel"), "onButtonClick") flag OVERRIDE
+   method
+    name "onButtonClick"
+    refid "valor.battlePass:BattlePassCharacterPanel/instance/valor.battlePass:BattlePassCharacterPanel:onButtonClick"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "evt"
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace("valor.battlePass"), "BattlePassModel")
+      getproperty         QName(PackageNamespace(""), "isOpened")
+      iffalse             L6
+
+      returnvoid
+
+L6:
+      getlocal0
+      getproperty         QName(PrivateNamespace("valor.battlePass:BattlePassCharacterPanel"), "gameSprite")
+      findpropstrict      QName(PackageNamespace("valor.battlePass"), "BattlePassPopup")
+      getlocal0
+      getproperty         QName(PrivateNamespace("valor.battlePass:BattlePassCharacterPanel"), "gameSprite")
+      constructprop       QName(PackageNamespace("valor.battlePass"), "BattlePassPopup"), 1
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(ProtectedNamespace("valor.battlePass:BattlePassCharacterPanel"), "onKeyDown")
+   method
+    name "onKeyDown"
+    refid "valor.battlePass:BattlePassCharacterPanel/instance/valor.battlePass:BattlePassCharacterPanel:onKeyDown"
+    param QName(PackageNamespace("flash.events"), "KeyboardEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "evt"
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace("valor.battlePass"), "BattlePassModel")
+      getproperty         QName(PackageNamespace(""), "isOpened")
+      iffalse             L6
+
+      returnvoid
+
+L6:
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "keyCode")
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.parameters"), "Parameters")
+      getproperty         QName(PackageNamespace(""), "data")
+      getproperty         Multiname("interact", [PrivateNamespace("valor.battlePass:BattlePassCharacterPanel"), ProtectedNamespace("valor.battlePass:BattlePassCharacterPanel"), StaticProtectedNs("valor.battlePass:BattlePassCharacterPanel"), StaticProtectedNs("com.company.assembleegameclient.ui.panels:ButtonPanel"), StaticProtectedNs("com.company.assembleegameclient.ui.panels:Panel"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("valor.battlePass"), PackageInternalNs("valor.battlePass"), PrivateNamespace("FilePrivateNS:BattlePassCharacterPanel"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      equals
+      dup
+      iffalse             L19
+
+      pop
+      getlex              QName(PackageNamespace(""), "stage")
+      getproperty         QName(PackageNamespace(""), "focus")
+      pushnull
+      equals
+L19:
+      iffalse             L27
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("valor.battlePass:BattlePassCharacterPanel"), "gameSprite")
+      findpropstrict      QName(PackageNamespace("valor.battlePass"), "BattlePassPopup")
+      getlocal0
+      getproperty         QName(PrivateNamespace("valor.battlePass:BattlePassCharacterPanel"), "gameSprite")
+      constructprop       QName(PackageNamespace("valor.battlePass"), "BattlePassPopup"), 1
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+L27:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "valor.battlePass:BattlePassCharacterPanel/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

@@ -1,0 +1,138 @@
+class
+ refid "com.company.assembleegameclient.houseeditor:HouseEditTilePropertiesFrame"
+ instance QName(PackageNamespace("com.company.assembleegameclient.houseeditor"), "HouseEditTilePropertiesFrame")
+  extends QName(PackageNamespace("com.company.assembleegameclient.account.ui"), "Frame")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.company.assembleegameclient.houseeditor:HouseEditTilePropertiesFrame")
+  iinit
+   name "HouseEditTilePropertiesFrame"
+   refid "com.company.assembleegameclient.houseeditor:HouseEditTilePropertiesFrame/instance/init"
+   param QName(PackageNamespace(""), "String")
+   flag HAS_PARAM_NAMES
+   paramname "_arg1"
+   body
+    maxstack 4
+    localcount 2
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     pushstring          "Tile properties"
+     pushstring          "Cancel"
+     pushstring          "Save"
+     constructsuper      3
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.account.ui"), "TextInputField")
+     pushstring          "Object Name"
+     pushfalse
+     constructprop       QName(PackageNamespace("com.company.assembleegameclient.account.ui"), "TextInputField"), 2
+     setproperty         QName(PackageNamespace(""), "objectName_")
+
+     getlocal1
+     pushnull
+     ifeq                L21
+
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "objectName_")
+     getproperty         QName(PackageNamespace(""), "inputText_")
+     getlocal1
+     setproperty         QName(PackageNamespace(""), "text")
+
+L21:
+     findpropstrict      QName(PackageNamespace(""), "addTextInputField")
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "objectName_")
+     callpropvoid        QName(PackageNamespace(""), "addTextInputField"), 1
+
+     getlex              QName(PackageNamespace(""), "leftButton_")
+     pushstring          "click"
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.houseeditor:HouseEditTilePropertiesFrame"), "onCancel")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     getlex              QName(PackageNamespace(""), "rightButton_")
+     pushstring          "click"
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.houseeditor:HouseEditTilePropertiesFrame"), "onDone")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "objectName_") type QName(PackageNamespace("com.company.assembleegameclient.account.ui"), "TextInputField") end
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.houseeditor:HouseEditTilePropertiesFrame"), "onCancel")
+   method
+    name "onCancel"
+    refid "com.company.assembleegameclient.houseeditor:HouseEditTilePropertiesFrame/instance/com.company.assembleegameclient.houseeditor:HouseEditTilePropertiesFrame/instance/init/onCancel"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace(""), "dispatchEvent")
+      findpropstrict      QName(PackageNamespace("flash.events"), "Event")
+      pushstring          "cancel"
+      constructprop       QName(PackageNamespace("flash.events"), "Event"), 1
+      callpropvoid        QName(PackageNamespace(""), "dispatchEvent"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.houseeditor:HouseEditTilePropertiesFrame"), "onDone")
+   method
+    name "onDone"
+    refid "com.company.assembleegameclient.houseeditor:HouseEditTilePropertiesFrame/instance/com.company.assembleegameclient.houseeditor:HouseEditTilePropertiesFrame/instance/init/onDone"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace(""), "dispatchEvent")
+      findpropstrict      QName(PackageNamespace("flash.events"), "Event")
+      pushstring          "complete"
+      constructprop       QName(PackageNamespace("flash.events"), "Event"), 1
+      callpropvoid        QName(PackageNamespace(""), "dispatchEvent"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.houseeditor:HouseEditTilePropertiesFrame/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

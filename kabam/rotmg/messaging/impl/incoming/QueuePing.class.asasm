@@ -1,0 +1,112 @@
+class
+ refid "kabam.rotmg.messaging.impl.incoming:QueuePing"
+ instance QName(PackageNamespace("kabam.rotmg.messaging.impl.incoming"), "QueuePing")
+  extends QName(PackageNamespace("kabam.rotmg.messaging.impl.incoming"), "IncomingMessage")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.messaging.impl.incoming:QueuePing")
+  iinit
+   name "QueuePing"
+   refid "kabam.rotmg.messaging.impl.incoming:QueuePing/instance/init"
+   param QName(PackageNamespace(""), "uint")
+   param QName(PackageNamespace(""), "Function")
+   flag HAS_PARAM_NAMES
+   paramname "_arg1"
+   paramname "_arg2"
+   body
+    maxstack 3
+    localcount 3
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     getlocal1
+     getlocal2
+     constructsuper      2
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "serial_") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PackageNamespace(""), "position_") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PackageNamespace(""), "count_") type QName(PackageNamespace(""), "int") end
+  trait method QName(PackageNamespace(""), "parseFromInput") flag OVERRIDE
+   method
+    name "parseFromInput"
+    refid "kabam.rotmg.messaging.impl.incoming:QueuePing/instance/parseFromInput"
+    param QName(PackageNamespace("flash.utils"), "IDataInput")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      callproperty        QName(Namespace("flash.utils:IDataInput"), "readInt"), 0
+      setproperty         QName(PackageNamespace(""), "serial_")
+
+      getlocal0
+      getlocal1
+      callproperty        QName(Namespace("flash.utils:IDataInput"), "readInt"), 0
+      setproperty         QName(PackageNamespace(""), "position_")
+
+      getlocal0
+      getlocal1
+      callproperty        QName(Namespace("flash.utils:IDataInput"), "readInt"), 0
+      setproperty         QName(PackageNamespace(""), "count_")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "toString") flag OVERRIDE
+   method
+    name "toString"
+    refid "kabam.rotmg.messaging.impl.incoming:QueuePing/instance/toString"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 5
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(ProtectedNamespace("kabam.lib.net.impl:Message"), "formatToString")
+      pushstring          "QUEUEPING"
+      pushstring          "serial_"
+      pushstring          "position_"
+      pushstring          "count_"
+      callproperty        QName(ProtectedNamespace("kabam.lib.net.impl:Message"), "formatToString"), 4
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.messaging.impl.incoming:QueuePing/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

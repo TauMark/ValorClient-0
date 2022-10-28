@@ -1,0 +1,586 @@
+class
+ refid "kabam.rotmg.market.ui:MarketMyOffersScreen"
+ instance QName(PackageNamespace("kabam.rotmg.market.ui"), "MarketMyOffersScreen")
+  extends QName(PackageNamespace("flash.display"), "Sprite")
+  flag SEALED
+  iinit
+   name "MarketMyOffersScreen"
+   refid "kabam.rotmg.market.ui:MarketMyOffersScreen/instance/init"
+   body
+    maxstack 4
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("org.osflash.signals.natives"), "NativeMappedSignal")
+     getlocal0
+     pushstring          "removedFromStage"
+     constructprop       QName(PackageNamespace("org.osflash.signals.natives"), "NativeMappedSignal"), 2
+     setproperty         QName(PackageNamespace(""), "removed")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete")
+     constructprop       QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete"), 0
+     pushbyte            46
+     callproperty        QName(PackageNamespace(""), "setSize"), 1
+     pushtrue
+     callproperty        QName(PackageNamespace(""), "setBold"), 1
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "StaticStringBuilder")
+     pushstring          "Loading..."
+     constructprop       QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "StaticStringBuilder"), 1
+     callproperty        QName(PackageNamespace(""), "setStringBuilder"), 1
+     pushstring          "center"
+     callproperty        QName(PackageNamespace(""), "setAutoSize"), 1
+     pushshort           600
+     callproperty        QName(PackageNamespace(""), "setTextWidth"), 1
+     pushstring          "middle"
+     callproperty        QName(PackageNamespace(""), "setVerticalAlign"), 1
+     pushbyte            0
+     pushshort           250
+     callproperty        QName(PackageNamespace(""), "setPosition"), 2
+     pushint             16777215
+     callproperty        QName(PackageNamespace(""), "setColor"), 1
+     setproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketMyOffersScreen"), "status")
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketMyOffersScreen"), "status")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     getlex              QName(PackageNamespace("kabam.rotmg.core"), "StaticInjectorContext")
+     callproperty        QName(PackageNamespace(""), "getInjector"), 0
+     getlex              QName(PackageNamespace("kabam.rotmg.market"), "MarketItemsResultSignal")
+     callproperty        QName(PackageNamespace(""), "getInstance"), 1
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketMyOffersScreen"), "onOffersGet")
+     callpropvoid        Multiname("add", [PrivateNamespace("kabam.rotmg.market.ui:MarketMyOffersScreen"), ProtectedNamespace("kabam.rotmg.market.ui:MarketMyOffersScreen"), StaticProtectedNs("kabam.rotmg.market.ui:MarketMyOffersScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketMyOffersScreen"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 1
+
+     getlex              QName(PackageNamespace("kabam.rotmg.messaging.impl"), "GameServerConnectionConcrete")
+     getproperty         QName(PackageNamespace(""), "instance")
+     callpropvoid        QName(PackageNamespace(""), "requestMyMarketOffers"), 0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace("kabam.rotmg.market.ui:MarketMyOffersScreen"), "status") type QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.market.ui:MarketMyOffersScreen"), "scrollBar") type QName(PackageNamespace("io.decagames.rotmg.ui.scroll"), "UIScrollbar") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.market.ui:MarketMyOffersScreen"), "offerHolder") type QName(PackageNamespace("flash.display"), "Sprite") end
+  trait slot QName(PackageNamespace(""), "removed") type QName(PackageNamespace("org.osflash.signals.natives"), "NativeMappedSignal") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.market.ui:MarketMyOffersScreen"), "removeSelectedButton") type QName(PackageNamespace("io.decagames.rotmg.ui.buttons"), "SliceScalingButton") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.market.ui:MarketMyOffersScreen"), "offers") type TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PrivateNamespace("FilePrivateNS:MarketMyOffersScreen"), "OfferEntry")>) end
+  trait method QName(PrivateNamespace("kabam.rotmg.market.ui:MarketMyOffersScreen"), "onOffersGet")
+   method
+    name "onOffersGet"
+    refid "kabam.rotmg.market.ui:MarketMyOffersScreen/instance/kabam.rotmg.market.ui:MarketMyOffersScreen/instance/onOffersGet"
+    param TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "PlayerShopItem")>)
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "param1"
+    body
+     maxstack 5
+     localcount 9
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushbyte            0
+      setlocal3
+
+      getlex              QName(PackageNamespace("kabam.rotmg.core"), "StaticInjectorContext")
+      callproperty        QName(PackageNamespace(""), "getInjector"), 0
+      getlex              QName(PackageNamespace("kabam.rotmg.market"), "MarketItemsResultSignal")
+      callproperty        QName(PackageNamespace(""), "getInstance"), 1
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketMyOffersScreen"), "onOffersGet")
+      callpropvoid        Multiname("remove", [PrivateNamespace("kabam.rotmg.market.ui:MarketMyOffersScreen"), ProtectedNamespace("kabam.rotmg.market.ui:MarketMyOffersScreen"), StaticProtectedNs("kabam.rotmg.market.ui:MarketMyOffersScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketMyOffersScreen"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 1
+
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "length")
+      pushbyte            0
+      ifne                L22
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketMyOffersScreen"), "status")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "StaticStringBuilder")
+      pushstring          "No offers yet."
+      constructprop       QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "StaticStringBuilder"), 1
+      callpropvoid        QName(PackageNamespace(""), "setStringBuilder"), 1
+
+      jump                L26
+
+L22:
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketMyOffersScreen"), "status")
+      pushfalse
+      setproperty         QName(PackageNamespace(""), "visible")
+
+L26:
+      findpropstrict      QName(PackageNamespace("flash.display"), "Shape")
+      constructprop       QName(PackageNamespace("flash.display"), "Shape"), 0
+      coerce              QName(PackageNamespace("flash.display"), "Shape")
+      dup
+      setlocal            5
+
+      getproperty         QName(PackageNamespace(""), "graphics")
+      pushbyte            0
+      pushbyte            0
+      callpropvoid        QName(PackageNamespace(""), "beginFill"), 2
+
+      getlocal            5
+      getproperty         QName(PackageNamespace(""), "graphics")
+      pushbyte            0
+      pushbyte            0
+      pushshort           600
+      pushshort           460
+      callpropvoid        QName(PackageNamespace(""), "drawRect"), 4
+
+      getlocal            5
+      getproperty         QName(PackageNamespace(""), "graphics")
+      callpropvoid        QName(PackageNamespace(""), "endFill"), 0
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal            5
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("flash.display"), "Sprite")
+      constructprop       QName(PackageNamespace("flash.display"), "Sprite"), 0
+      setproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketMyOffersScreen"), "offerHolder")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketMyOffersScreen"), "offerHolder")
+      getlocal            5
+      setproperty         QName(PackageNamespace(""), "mask")
+
+      pushdouble          5
+      setlocal            6
+
+      pushdouble          15
+      setlocal            4
+
+      pushnull
+      coerce              QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "PlayerShopItem")
+      setlocal2
+
+      getlocal0
+      getlex              QName(PackageNamespace("__AS3__.vec"), "Vector")
+      getlex              QName(PrivateNamespace("FilePrivateNS:MarketMyOffersScreen"), "OfferEntry")
+      applytype           1
+      construct           0
+      setproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketMyOffersScreen"), "offers")
+
+      pushbyte            0
+      setlocal            8
+
+      getlocal1
+      setlocal            7
+
+      jump                L130
+
+L74:
+      label
+      getlocal            7
+      getlocal            8
+      nextvalue
+      coerce              QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "PlayerShopItem")
+      setlocal2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketMyOffersScreen"), "offers")
+      getproperty         QName(PackageNamespace(""), "length")
+      convert_i
+      setlocal3
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketMyOffersScreen"), "offers")
+      getlocal3
+      findpropstrict      QName(PrivateNamespace("FilePrivateNS:MarketMyOffersScreen"), "OfferEntry")
+      getlocal2
+      constructprop       QName(PrivateNamespace("FilePrivateNS:MarketMyOffersScreen"), "OfferEntry"), 1
+      setproperty         MultinameL([PrivateNamespace("kabam.rotmg.market.ui:MarketMyOffersScreen"), ProtectedNamespace("kabam.rotmg.market.ui:MarketMyOffersScreen"), StaticProtectedNs("kabam.rotmg.market.ui:MarketMyOffersScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketMyOffersScreen"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketMyOffersScreen"), "offers")
+      getlocal3
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.market.ui:MarketMyOffersScreen"), ProtectedNamespace("kabam.rotmg.market.ui:MarketMyOffersScreen"), StaticProtectedNs("kabam.rotmg.market.ui:MarketMyOffersScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketMyOffersScreen"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getlocal            4
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketMyOffersScreen"), "offers")
+      getlocal3
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.market.ui:MarketMyOffersScreen"), ProtectedNamespace("kabam.rotmg.market.ui:MarketMyOffersScreen"), StaticProtectedNs("kabam.rotmg.market.ui:MarketMyOffersScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketMyOffersScreen"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getlocal            6
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketMyOffersScreen"), "offerHolder")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketMyOffersScreen"), "offers")
+      getlocal3
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.market.ui:MarketMyOffersScreen"), ProtectedNamespace("kabam.rotmg.market.ui:MarketMyOffersScreen"), StaticProtectedNs("kabam.rotmg.market.ui:MarketMyOffersScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketMyOffersScreen"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      getlocal            4
+      pushbyte            5
+      pushbyte            50
+      add
+      add
+      convert_d
+      dup
+      setlocal            4
+
+      pushshort           550
+      ifnge               L130
+
+      pushdouble          15
+      setlocal            4
+
+      getlocal            6
+      pushbyte            5
+      pushbyte            50
+      add
+      add
+      convert_d
+      setlocal            6
+
+L130:
+      hasnext2            7, 8
+      iftrue              L74
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketMyOffersScreen"), "offerHolder")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("io.decagames.rotmg.ui.scroll"), "UIScrollbar")
+      pushshort           450
+      constructprop       QName(PackageNamespace("io.decagames.rotmg.ui.scroll"), "UIScrollbar"), 1
+      setproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketMyOffersScreen"), "scrollBar")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketMyOffersScreen"), "scrollBar")
+      pushbyte            5
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketMyOffersScreen"), "scrollBar")
+      pushshort           578
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketMyOffersScreen"), "scrollBar")
+      getlocal0
+      setproperty         QName(PackageNamespace(""), "scrollObject")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketMyOffersScreen"), "scrollBar")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketMyOffersScreen"), "offerHolder")
+      setproperty         QName(PackageNamespace(""), "content")
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketMyOffersScreen"), "scrollBar")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("io.decagames.rotmg.ui.buttons"), "SliceScalingButton")
+      getlex              QName(PackageNamespace("io.decagames.rotmg.ui.texture"), "TextureParser")
+      getproperty         QName(PackageNamespace(""), "instance")
+      pushstring          "UI"
+      pushstring          "generic_green_button"
+      callproperty        QName(PackageNamespace(""), "getSliceScalingBitmap"), 2
+      constructprop       QName(PackageNamespace("io.decagames.rotmg.ui.buttons"), "SliceScalingButton"), 1
+      setproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketMyOffersScreen"), "removeSelectedButton")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketMyOffersScreen"), "removeSelectedButton")
+      pushshort           150
+      setproperty         QName(PackageNamespace(""), "width")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketMyOffersScreen"), "removeSelectedButton")
+      pushstring          "Remove Selected"
+      getlex              QName(PackageNamespace("io.decagames.rotmg.ui.defaults"), "DefaultLabelFormat")
+      getproperty         QName(PackageNamespace(""), "defaultModalTitle")
+      callpropvoid        QName(PackageNamespace(""), "setLabel"), 2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketMyOffersScreen"), "removeSelectedButton")
+      pushshort           600
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketMyOffersScreen"), "removeSelectedButton")
+      getproperty         QName(PackageNamespace(""), "width")
+      subtract
+      pushbyte            2
+      divide
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketMyOffersScreen"), "removeSelectedButton")
+      pushshort           460
+      setproperty         QName(PackageNamespace(""), "y")
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketMyOffersScreen"), "removeSelectedButton")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketMyOffersScreen"), "removeSelectedButton")
+      pushstring          "click"
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketMyOffersScreen"), "onOffersRemoveCount")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.market.ui:MarketMyOffersScreen"), "onOffersRemoveCount")
+   method
+    name "onOffersRemoveCount"
+    refid "kabam.rotmg.market.ui:MarketMyOffersScreen/instance/kabam.rotmg.market.ui:MarketMyOffersScreen/instance/onOffersRemoveCount"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "mouseEvent"
+    body
+     maxstack 4
+     localcount 4
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushbyte            0
+      setlocal3
+
+      getlex              QName(PackageNamespace("__AS3__.vec"), "Vector")
+      getlex              QName(PackageNamespace(""), "uint")
+      applytype           1
+      construct           0
+      coerce              TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace(""), "uint")>)
+      setlocal2
+
+      pushbyte            0
+      setlocal3
+
+      jump                L31
+
+L13:
+      label
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketMyOffersScreen"), "offers")
+      getlocal3
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.market.ui:MarketMyOffersScreen"), ProtectedNamespace("kabam.rotmg.market.ui:MarketMyOffersScreen"), StaticProtectedNs("kabam.rotmg.market.ui:MarketMyOffersScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketMyOffersScreen"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getproperty         QName(PackageNamespace(""), "isSelected")
+      iffalse             L30
+
+      getlocal2
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "length")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketMyOffersScreen"), "offers")
+      getlocal3
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.market.ui:MarketMyOffersScreen"), ProtectedNamespace("kabam.rotmg.market.ui:MarketMyOffersScreen"), StaticProtectedNs("kabam.rotmg.market.ui:MarketMyOffersScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketMyOffersScreen"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getproperty         QName(PackageNamespace(""), "item")
+      getproperty         QName(PackageNamespace(""), "id")
+      setproperty         MultinameL([PrivateNamespace("kabam.rotmg.market.ui:MarketMyOffersScreen"), ProtectedNamespace("kabam.rotmg.market.ui:MarketMyOffersScreen"), StaticProtectedNs("kabam.rotmg.market.ui:MarketMyOffersScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketMyOffersScreen"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+L30:
+      inclocal_i          3
+L31:
+      getlocal3
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketMyOffersScreen"), "offers")
+      getproperty         QName(PackageNamespace(""), "length")
+      iflt                L13
+
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "length")
+      pushbyte            0
+      ifne                L41
+
+      returnvoid
+
+L41:
+      findpropstrict      QName(PrivateNamespace("kabam.rotmg.market.ui:MarketMyOffersScreen"), "onOffersRemove")
+      getlocal2
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.market.ui:MarketMyOffersScreen"), "onOffersRemove"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.market.ui:MarketMyOffersScreen"), "onOffersRemove")
+   method
+    name "onOffersRemove"
+    refid "kabam.rotmg.market.ui:MarketMyOffersScreen/instance/kabam.rotmg.market.ui:MarketMyOffersScreen/instance/onOffersRemove"
+    param TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace(""), "uint")>)
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "param1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace("kabam.rotmg.core"), "StaticInjectorContext")
+      callproperty        QName(PackageNamespace(""), "getInjector"), 0
+      getlex              QName(PackageNamespace("kabam.rotmg.market"), "MarketResultSignal")
+      callproperty        QName(PackageNamespace(""), "getInstance"), 1
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketMyOffersScreen"), "onResult")
+      callpropvoid        Multiname("add", [PrivateNamespace("kabam.rotmg.market.ui:MarketMyOffersScreen"), ProtectedNamespace("kabam.rotmg.market.ui:MarketMyOffersScreen"), StaticProtectedNs("kabam.rotmg.market.ui:MarketMyOffersScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketMyOffersScreen"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 1
+
+      getlex              QName(PackageNamespace("kabam.rotmg.messaging.impl"), "GameServerConnectionConcrete")
+      getproperty         QName(PackageNamespace(""), "instance")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "removeMarketOffer"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.market.ui:MarketMyOffersScreen"), "onResult")
+   method
+    name "onResult"
+    refid "kabam.rotmg.market.ui:MarketMyOffersScreen/instance/kabam.rotmg.market.ui:MarketMyOffersScreen/instance/onResult"
+    param QName(PackageNamespace(""), "String")
+    param QName(PackageNamespace(""), "Boolean")
+    returns QName(PackageNamespace(""), "void")
+    flag NEED_ACTIVATION
+    flag HAS_PARAM_NAMES
+    paramname "param1"
+    paramname "param2"
+    body
+     maxstack 6
+     localcount 4
+     initscopedepth 0
+     maxscopedepth 2
+     code
+      getlocal0
+      pushscope
+
+      newactivation
+      dup
+      setlocal3
+
+      pushscope
+
+      findpropstrict      QName(PackageInternalNs("kabam.rotmg.market.ui"), "param1")
+      getlocal1
+      setproperty         QName(PackageInternalNs("kabam.rotmg.market.ui"), "param1")
+
+      findpropstrict      QName(PackageInternalNs("kabam.rotmg.market.ui"), "param2")
+      getlocal2
+      setproperty         QName(PackageInternalNs("kabam.rotmg.market.ui"), "param2")
+
+      pushnull
+      coerce              QName(PackageNamespace("kabam.rotmg.pets.view.dialogs"), "PetDialog")
+      getlocal3
+      swap
+      setslot             3
+
+      getlex              QName(PackageInternalNs("kabam.rotmg.market.ui"), "param1")
+      coerce_s
+      getlocal3
+      swap
+      setslot             4
+
+      getlex              QName(PackageInternalNs("kabam.rotmg.market.ui"), "param2")
+      convert_b
+      getlocal3
+      swap
+      setslot             5
+
+      getlex              QName(PackageNamespace("kabam.rotmg.core"), "StaticInjectorContext")
+      callproperty        QName(PackageNamespace(""), "getInjector"), 0
+      getlex              QName(PackageNamespace("kabam.rotmg.market"), "MarketResultSignal")
+      callproperty        QName(PackageNamespace(""), "getInstance"), 1
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.market.ui:MarketMyOffersScreen"), "onResult")
+      callpropvoid        Multiname("remove", [PrivateNamespace("kabam.rotmg.market.ui:MarketMyOffersScreen"), ProtectedNamespace("kabam.rotmg.market.ui:MarketMyOffersScreen"), StaticProtectedNs("kabam.rotmg.market.ui:MarketMyOffersScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.market.ui"), PackageInternalNs("kabam.rotmg.market.ui"), PrivateNamespace("FilePrivateNS:MarketMyOffersScreen"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 1
+
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.pets.view.dialogs"), "PetDialog")
+      getlex              QName(PackageInternalNs("kabam.rotmg.market.ui"), "error")
+      iffalse             L39
+
+      pushstring          "Unable to create this listing - common problems are lack of 3 stars or attempted market sniping."
+      jump                L41
+
+L39:
+      pushstring          "Success"
+      coerce_s
+L41:
+      getlex              QName(PackageInternalNs("kabam.rotmg.market.ui"), "message")
+      pushstring          "Ok"
+      pushnull
+      pushstring          "/marketResult"
+      constructprop       QName(PackageNamespace("kabam.rotmg.pets.view.dialogs"), "PetDialog"), 5
+      coerce              QName(PackageNamespace("kabam.rotmg.pets.view.dialogs"), "PetDialog")
+      getlocal3
+      swap
+      setslot             3
+
+      getlex              QName(PackageInternalNs("kabam.rotmg.market.ui"), "dialog")
+      callpropvoid        QName(PackageNamespace(""), "addFullDim"), 0
+
+      getlex              QName(PackageInternalNs("kabam.rotmg.market.ui"), "dialog")
+      pushstring          "dialogLeftButton"
+      newfunction         "kabam.rotmg.market.ui:MarketMyOffersScreen/instance/kabam.rotmg.market.ui:MarketMyOffersScreen/instance/onResult/inline_method"
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      getlex              QName(PackageNamespace(""), "parent")
+      getproperty         QName(PackageNamespace(""), "parent")
+      getproperty         QName(PackageNamespace(""), "parent")
+      getlex              QName(PackageInternalNs("kabam.rotmg.market.ui"), "dialog")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      returnvoid
+     end ; code
+     trait slot QName(PackageInternalNs("kabam.rotmg.market.ui"), "param1") slotid 1 type QName(PackageNamespace(""), "String") end
+     trait slot QName(PackageInternalNs("kabam.rotmg.market.ui"), "param2") slotid 2 type QName(PackageNamespace(""), "Boolean") end
+     trait slot QName(PackageInternalNs("kabam.rotmg.market.ui"), "dialog") slotid 3 type QName(PackageNamespace("kabam.rotmg.pets.view.dialogs"), "PetDialog") end
+     trait slot QName(PackageInternalNs("kabam.rotmg.market.ui"), "message") slotid 4 type QName(PackageNamespace(""), "String") end
+     trait slot QName(PackageInternalNs("kabam.rotmg.market.ui"), "error") slotid 5 type QName(PackageNamespace(""), "Boolean") end
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.market.ui:MarketMyOffersScreen/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PackageNamespace(""), "WIDTH") type QName(PackageNamespace(""), "int") value Integer(600) end
+ trait const QName(PackageNamespace(""), "HEIGHT") type QName(PackageNamespace(""), "int") value Integer(600) end
+end ; class

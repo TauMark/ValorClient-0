@@ -1,0 +1,239 @@
+class
+ refid "kabam.rotmg.pets.view.components:DialogCloseButton"
+ instance QName(PackageNamespace("kabam.rotmg.pets.view.components"), "DialogCloseButton")
+  extends QName(PackageNamespace("flash.display"), "Sprite")
+  flag SEALED
+  iinit
+   name "DialogCloseButton"
+   refid "kabam.rotmg.pets.view.components:DialogCloseButton/instance/init"
+   param QName(PackageNamespace(""), "Number")
+   flag HAS_OPTIONAL
+   flag HAS_PARAM_NAMES
+   optional Integer(-1)
+   paramname "_arg1"
+   body
+    maxstack 3
+    localcount 3
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     pushnull
+     setlocal2
+
+     findpropstrict      QName(PackageNamespace("org.osflash.signals"), "Signal")
+     constructprop       QName(PackageNamespace("org.osflash.signals"), "Signal"), 0
+     findproperty        QName(PackageNamespace(""), "clicked")
+     swap
+     initproperty        QName(PackageNamespace(""), "clicked")
+
+     findpropstrict      QName(PackageNamespace("org.osflash.signals"), "Signal")
+     constructprop       QName(PackageNamespace("org.osflash.signals"), "Signal"), 0
+     findproperty        QName(PackageNamespace(""), "closeClicked")
+     swap
+     initproperty        QName(PackageNamespace(""), "closeClicked")
+
+     getlocal0
+     constructsuper      0
+
+     getlocal1
+     pushbyte            0
+     ifnlt               L24
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     findpropstrict      QName(PackageNamespace(""), "CloseButtonAsset")
+     constructprop       QName(PackageNamespace(""), "CloseButtonAsset"), 0
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     jump                L44
+
+L24:
+     findpropstrict      QName(PackageNamespace(""), "CloseButtonLargeAsset")
+     constructprop       QName(PackageNamespace(""), "CloseButtonLargeAsset"), 0
+     coerce              QName(PackageNamespace("flash.display"), "DisplayObject")
+     setlocal2
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     findpropstrict      QName(PackageNamespace(""), "CloseButtonLargeAsset")
+     constructprop       QName(PackageNamespace(""), "CloseButtonLargeAsset"), 0
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     getlex              QName(PackageNamespace(""), "scaleX")
+     getlocal1
+     multiply
+     findproperty        QName(PackageNamespace(""), "scaleX")
+     swap
+     setproperty         QName(PackageNamespace(""), "scaleX")
+
+     getlex              QName(PackageNamespace(""), "scaleY")
+     getlocal1
+     multiply
+     findproperty        QName(PackageNamespace(""), "scaleY")
+     swap
+     setproperty         QName(PackageNamespace(""), "scaleY")
+
+L44:
+     pushtrue
+     findproperty        QName(PackageNamespace(""), "buttonMode")
+     swap
+     setproperty         QName(PackageNamespace(""), "buttonMode")
+
+     findpropstrict      QName(PackageNamespace(""), "addEventListener")
+     pushstring          "click"
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.pets.view.components:DialogCloseButton"), "onClicked")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait const QName(PackageNamespace(""), "clicked") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait const QName(PackageNamespace(""), "closeClicked") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait slot QName(PackageNamespace(""), "disabled") type QName(PackageNamespace(""), "Boolean") value False() end
+  trait method QName(PackageNamespace(""), "setDisabled")
+   method
+    name "setDisabled"
+    refid "kabam.rotmg.pets.view.components:DialogCloseButton/instance/setDisabled"
+    param QName(PackageNamespace(""), "Boolean")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      setproperty         QName(PackageNamespace(""), "disabled")
+
+      getlocal1
+      iffalse             L13
+
+      findpropstrict      QName(PackageNamespace(""), "removeEventListener")
+      pushstring          "click"
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.pets.view.components:DialogCloseButton"), "onClicked")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      jump                L18
+
+L13:
+      findpropstrict      QName(PackageNamespace(""), "addEventListener")
+      pushstring          "click"
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.pets.view.components:DialogCloseButton"), "onClicked")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+L18:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "disableLegacyCloseBehavior")
+   method
+    name "disableLegacyCloseBehavior"
+    refid "kabam.rotmg.pets.view.components:DialogCloseButton/instance/disableLegacyCloseBehavior"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      pushtrue
+      setproperty         QName(PackageNamespace(""), "disabled")
+
+      findpropstrict      QName(PackageNamespace(""), "removeEventListener")
+      pushstring          "click"
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.pets.view.components:DialogCloseButton"), "onClicked")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.pets.view.components:DialogCloseButton"), "onClicked")
+   method
+    name "onClicked"
+    refid "kabam.rotmg.pets.view.components:DialogCloseButton/instance/kabam.rotmg.pets.view.components:DialogCloseButton/instance/onClicked"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "disabled")
+      iftrue              L16
+
+      findpropstrict      QName(PackageNamespace(""), "removeEventListener")
+      pushstring          "click"
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.pets.view.components:DialogCloseButton"), "onClicked")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "closeClicked")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "clicked")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+L16:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.pets.view.components:DialogCloseButton/class/init"
+  body
+   maxstack 2
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 1
+   code
+    getlocal0
+    pushscope
+
+    getlex              QName(PackageNamespace("kabam.rotmg.pets.view.components"), "DialogCloseButton_CloseButtonAsset")
+    findproperty        QName(PackageNamespace(""), "CloseButtonAsset")
+    swap
+    setproperty         QName(PackageNamespace(""), "CloseButtonAsset")
+
+    getlex              QName(PackageNamespace("kabam.rotmg.pets.view.components"), "DialogCloseButton_CloseButtonLargeAsset")
+    findproperty        QName(PackageNamespace(""), "CloseButtonLargeAsset")
+    swap
+    setproperty         QName(PackageNamespace(""), "CloseButtonLargeAsset")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait slot QName(PackageNamespace(""), "CloseButtonAsset") type QName(PackageNamespace(""), "Class") end
+ trait slot QName(PackageNamespace(""), "CloseButtonLargeAsset") type QName(PackageNamespace(""), "Class") end
+end ; class

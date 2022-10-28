@@ -1,0 +1,459 @@
+class
+ refid "kabam.rotmg.ui.view:HUDMediator"
+ instance QName(PackageNamespace("kabam.rotmg.ui.view"), "HUDMediator")
+  extends QName(PackageNamespace("robotlegs.bender.bundles.mvcs"), "Mediator")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.ui.view:HUDMediator")
+  iinit
+   refid "kabam.rotmg.ui.view:HUDMediator/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "view") flag METADATA type QName(PackageNamespace("kabam.rotmg.ui.view"), "HUDView")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "hudModel") flag METADATA type QName(PackageNamespace("kabam.rotmg.ui.model"), "HUDModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "updateHUD") flag METADATA type QName(PackageNamespace("kabam.rotmg.ui.signals"), "UpdateHUDSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "statsUndocked") flag METADATA type QName(PackageNamespace("kabam.rotmg.game.view.components"), "StatsUndockedSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "statsDocked") flag METADATA type QName(PackageNamespace("kabam.rotmg.ui.view"), "StatsDockedSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PrivateNamespace("kabam.rotmg.ui.view:HUDMediator"), "stats") type QName(PackageNamespace("flash.display"), "Sprite") end
+  trait method QName(PackageNamespace(""), "initialize") flag OVERRIDE
+   method
+    name "initialize"
+    refid "kabam.rotmg.ui.view:HUDMediator/instance/initialize"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "updateHUD")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.ui.view:HUDMediator"), "onInitializeHUD")
+      callpropvoid        QName(PackageNamespace(""), "addOnce"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "updateHUD")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.ui.view:HUDMediator"), "onUpdateHUD")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "statsUndocked")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.ui.view:HUDMediator"), "onStatsUndocked")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.ui.view:HUDMediator"), "onStatsUndocked")
+   method
+    name "onStatsUndocked"
+    refid "kabam.rotmg.ui.view:HUDMediator/instance/kabam.rotmg.ui.view:HUDMediator/instance/onStatsUndocked"
+    param QName(PackageNamespace("kabam.rotmg.game.view.components"), "StatsView")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 4
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      setproperty         QName(PrivateNamespace("kabam.rotmg.ui.view:HUDMediator"), "stats")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "mouseX")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "width")
+      pushbyte            2
+      divide
+      subtract
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "mouseY")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "height")
+      pushbyte            2
+      divide
+      subtract
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal0
+      getlocal1
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.ui.view:HUDMediator"), "startDraggingStatsAsset"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.ui.view:HUDMediator"), "startDraggingStatsAsset")
+   method
+    name "startDraggingStatsAsset"
+    refid "kabam.rotmg.ui.view:HUDMediator/instance/kabam.rotmg.ui.view:HUDMediator/instance/startDraggingStatsAsset"
+    param QName(PackageNamespace("kabam.rotmg.game.view.components"), "StatsView")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "startDrag"), 0
+
+      getlocal1
+      pushstring          "mouseUp"
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.ui.view:HUDMediator"), "onStatsMouseUp")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.ui.view:HUDMediator"), "onStatsMouseUp")
+   method
+    name "onStatsMouseUp"
+    refid "kabam.rotmg.ui.view:HUDMediator/instance/kabam.rotmg.ui.view:HUDMediator/instance/onStatsMouseUp"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace("kabam.rotmg.game.view.components"), "StatsView")
+      getglobalscope
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "target")
+      call                1
+      coerce              QName(PackageNamespace("flash.display"), "Sprite")
+      setlocal2
+
+      getlocal0
+      getlocal2
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.ui.view:HUDMediator"), "stopDraggingStatsAsset"), 1
+
+      getlocal2
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "tabStrip")
+      callproperty        QName(PackageNamespace(""), "hitTestObject"), 1
+      iffalse             L21
+
+      getlocal0
+      getlocal2
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.ui.view:HUDMediator"), "dockStats"), 1
+
+L21:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.ui.view:HUDMediator"), "dockStats")
+   method
+    name "dockStats"
+    refid "kabam.rotmg.ui.view:HUDMediator/instance/kabam.rotmg.ui.view:HUDMediator/instance/dockStats"
+    param QName(PackageNamespace("flash.display"), "Sprite")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "statsDocked")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "removeChild"), 1
+
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "stopDrag"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.ui.view:HUDMediator"), "stopDraggingStatsAsset")
+   method
+    name "stopDraggingStatsAsset"
+    refid "kabam.rotmg.ui.view:HUDMediator/instance/kabam.rotmg.ui.view:HUDMediator/instance/stopDraggingStatsAsset"
+    param QName(PackageNamespace("flash.display"), "Sprite")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      pushstring          "mouseUp"
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.ui.view:HUDMediator"), "onStatsMouseUp")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      getlocal1
+      pushstring          "mouseDown"
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.ui.view:HUDMediator"), "onStatsMouseDown")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "stopDrag"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.ui.view:HUDMediator"), "onStatsMouseDown")
+   method
+    name "onStatsMouseDown"
+    refid "kabam.rotmg.ui.view:HUDMediator/instance/kabam.rotmg.ui.view:HUDMediator/instance/onStatsMouseDown"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace("flash.display"), "Sprite")
+      getglobalscope
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "target")
+      call                1
+      coerce              QName(PackageNamespace("flash.display"), "Sprite")
+      setlocal2
+
+      getlocal0
+      getlocal2
+      setproperty         QName(PrivateNamespace("kabam.rotmg.ui.view:HUDMediator"), "stats")
+
+      getlocal2
+      pushstring          "mouseDown"
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.ui.view:HUDMediator"), "onStatsMouseDown")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      getlocal2
+      pushstring          "mouseUp"
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.ui.view:HUDMediator"), "onStatsMouseUp")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      getlocal2
+      callpropvoid        QName(PackageNamespace(""), "startDrag"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "destroy") flag OVERRIDE
+   method
+    name "destroy"
+    refid "kabam.rotmg.ui.view:HUDMediator/instance/destroy"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "updateHUD")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.ui.view:HUDMediator"), "onUpdateHUD")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "statsUndocked")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.ui.view:HUDMediator"), "onStatsUndocked")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.ui.view:HUDMediator"), "stats")
+      dup
+      iffalse             L22
+
+      pop
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.ui.view:HUDMediator"), "stats")
+      pushstring          "mouseDown"
+      callproperty        QName(PackageNamespace(""), "hasEventListener"), 1
+      coerce_a
+L22:
+      iffalse             L29
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.ui.view:HUDMediator"), "stats")
+      pushstring          "mouseDown"
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.ui.view:HUDMediator"), "onStatsMouseDown")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+L29:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.ui.view:HUDMediator"), "onUpdateHUD")
+   method
+    name "onUpdateHUD"
+    refid "kabam.rotmg.ui.view:HUDMediator/instance/kabam.rotmg.ui.view:HUDMediator/instance/onUpdateHUD"
+    param QName(PackageNamespace("com.company.assembleegameclient.objects"), "Player")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 1
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      callpropvoid        QName(PackageNamespace(""), "draw"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.ui.view:HUDMediator"), "onInitializeHUD")
+   method
+    name "onInitializeHUD"
+    refid "kabam.rotmg.ui.view:HUDMediator/instance/kabam.rotmg.ui.view:HUDMediator/instance/onInitializeHUD"
+    param QName(PackageNamespace("com.company.assembleegameclient.objects"), "Player")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hudModel")
+      getproperty         QName(PackageNamespace(""), "gameSprite")
+      callpropvoid        QName(PackageNamespace(""), "setPlayerDependentAssets"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.ui.view:HUDMediator/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

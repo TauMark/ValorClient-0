@@ -1,0 +1,653 @@
+class
+ refid "com.company.assembleegameclient.util.redrawers:GlowRedrawer"
+ instance QName(PackageNamespace("com.company.assembleegameclient.util.redrawers"), "GlowRedrawer")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  iinit
+   refid "com.company.assembleegameclient.util.redrawers:GlowRedrawer/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.util.redrawers:GlowRedrawer/class/init"
+  body
+   maxstack 9
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 1
+   code
+    getlocal0
+    pushscope
+
+    findpropstrict      QName(PackageNamespace("flash.filters"), "GlowFilter")
+    pushbyte            0
+    pushdouble          0.3
+    pushbyte            12
+    pushbyte            12
+    pushbyte            2
+    pushbyte            1
+    pushfalse
+    pushfalse
+    constructprop       QName(PackageNamespace("flash.filters"), "GlowFilter"), 8
+    findproperty        QName(PrivateNamespace("com.company.assembleegameclient.util.redrawers:GlowRedrawer"), "GLOW_FILTER")
+    swap
+    initproperty        QName(PrivateNamespace("com.company.assembleegameclient.util.redrawers:GlowRedrawer"), "GLOW_FILTER")
+
+    findpropstrict      QName(PackageNamespace("flash.filters"), "GlowFilter")
+    pushbyte            0
+    pushdouble          0.6
+    pushbyte            13
+    pushbyte            13
+    pushbyte            3
+    pushbyte            1
+    pushfalse
+    pushfalse
+    constructprop       QName(PackageNamespace("flash.filters"), "GlowFilter"), 8
+    findproperty        QName(PrivateNamespace("com.company.assembleegameclient.util.redrawers:GlowRedrawer"), "GLOW_FILTER_NEW")
+    swap
+    initproperty        QName(PrivateNamespace("com.company.assembleegameclient.util.redrawers:GlowRedrawer"), "GLOW_FILTER_NEW")
+
+    findpropstrict      QName(PackageNamespace("flash.geom"), "Matrix")
+    constructprop       QName(PackageNamespace("flash.geom"), "Matrix"), 0
+    findproperty        QName(PrivateNamespace("com.company.assembleegameclient.util.redrawers:GlowRedrawer"), "tempMatrix")
+    swap
+    setproperty         QName(PrivateNamespace("com.company.assembleegameclient.util.redrawers:GlowRedrawer"), "tempMatrix")
+
+    findpropstrict      QName(PrivateNamespace("com.company.assembleegameclient.util.redrawers:GlowRedrawer"), "getGradient")
+    callproperty        QName(PrivateNamespace("com.company.assembleegameclient.util.redrawers:GlowRedrawer"), "getGradient"), 0
+    findproperty        QName(PrivateNamespace("com.company.assembleegameclient.util.redrawers:GlowRedrawer"), "gradient")
+    swap
+    setproperty         QName(PrivateNamespace("com.company.assembleegameclient.util.redrawers:GlowRedrawer"), "gradient")
+
+    findpropstrict      QName(PackageNamespace("flash.utils"), "Dictionary")
+    constructprop       QName(PackageNamespace("flash.utils"), "Dictionary"), 0
+    findproperty        QName(PrivateNamespace("com.company.assembleegameclient.util.redrawers:GlowRedrawer"), "glowHashes")
+    swap
+    setproperty         QName(PrivateNamespace("com.company.assembleegameclient.util.redrawers:GlowRedrawer"), "glowHashes")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PrivateNamespace("com.company.assembleegameclient.util.redrawers:GlowRedrawer"), "GRADIENT_MAX_SUB") type QName(PackageNamespace(""), "uint") value Integer(2631720) end
+ trait const QName(PrivateNamespace("com.company.assembleegameclient.util.redrawers:GlowRedrawer"), "GLOW_FILTER") type QName(PackageNamespace("flash.filters"), "GlowFilter") end
+ trait const QName(PrivateNamespace("com.company.assembleegameclient.util.redrawers:GlowRedrawer"), "GLOW_FILTER_NEW") type QName(PackageNamespace("flash.filters"), "GlowFilter") end
+ trait slot QName(PrivateNamespace("com.company.assembleegameclient.util.redrawers:GlowRedrawer"), "tempMatrix") type QName(PackageNamespace("flash.geom"), "Matrix") end
+ trait slot QName(PrivateNamespace("com.company.assembleegameclient.util.redrawers:GlowRedrawer"), "gradient") type QName(PackageNamespace("flash.display"), "Shape") end
+ trait slot QName(PrivateNamespace("com.company.assembleegameclient.util.redrawers:GlowRedrawer"), "glowHashes") type QName(PackageNamespace("flash.utils"), "Dictionary") end
+ trait method QName(PackageNamespace(""), "outlineGlow")
+  method
+   name "outlineGlow"
+   refid "com.company.assembleegameclient.util.redrawers:GlowRedrawer/class/outlineGlow"
+   param QName(PackageNamespace("flash.display"), "BitmapData")
+   param QName(PackageNamespace(""), "uint")
+   param QName(PackageNamespace(""), "Number")
+   param QName(PackageNamespace(""), "Boolean")
+   returns QName(PackageNamespace("flash.display"), "BitmapData")
+   flag HAS_OPTIONAL
+   flag HAS_PARAM_NAMES
+   optional Double(1.4)
+   optional False()
+   paramname "tex"
+   paramname "color"
+   paramname "mult"
+   paramname "useCache"
+   body
+    maxstack 5
+    localcount 8
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     findpropstrict      QName(PrivateNamespace("com.company.assembleegameclient.util.redrawers:GlowRedrawer"), "getHash")
+     getlocal2
+     getlocal3
+     callproperty        QName(PrivateNamespace("com.company.assembleegameclient.util.redrawers:GlowRedrawer"), "getHash"), 2
+     coerce_s
+     setlocal            6
+
+     getlocal            4
+     dup
+     iffalse             L17
+
+     pop
+     findpropstrict      QName(PrivateNamespace("com.company.assembleegameclient.util.redrawers:GlowRedrawer"), "isCached")
+     getlocal1
+     getlocal            6
+     callproperty        QName(PrivateNamespace("com.company.assembleegameclient.util.redrawers:GlowRedrawer"), "isCached"), 2
+     convert_b
+L17:
+     iffalse             L24
+
+     getlex              QName(PrivateNamespace("com.company.assembleegameclient.util.redrawers:GlowRedrawer"), "glowHashes")
+     getlocal1
+     getproperty         MultinameL([PrivateNamespace("com.company.assembleegameclient.util.redrawers:GlowRedrawer"), StaticProtectedNs("com.company.assembleegameclient.util.redrawers:GlowRedrawer"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.util.redrawers"), PackageInternalNs("com.company.assembleegameclient.util.redrawers"), PrivateNamespace("FilePrivateNS:GlowRedrawer"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     getlocal            6
+     getproperty         MultinameL([PrivateNamespace("com.company.assembleegameclient.util.redrawers:GlowRedrawer"), StaticProtectedNs("com.company.assembleegameclient.util.redrawers:GlowRedrawer"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.util.redrawers"), PackageInternalNs("com.company.assembleegameclient.util.redrawers"), PrivateNamespace("FilePrivateNS:GlowRedrawer"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     returnvalue
+
+L24:
+     getlex              QName(PrivateNamespace("com.company.assembleegameclient.util.redrawers:GlowRedrawer"), "tempMatrix")
+     callpropvoid        QName(PackageNamespace(""), "identity"), 0
+
+     getlex              QName(PrivateNamespace("com.company.assembleegameclient.util.redrawers:GlowRedrawer"), "tempMatrix")
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "width")
+     pushshort           256
+     divide
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "height")
+     pushshort           256
+     divide
+     callpropvoid        QName(PackageNamespace(""), "scale"), 2
+
+     findpropstrict      QName(PackageNamespace("flash.display"), "Bitmap")
+     getlocal1
+     constructprop       QName(PackageNamespace("flash.display"), "Bitmap"), 1
+     coerce              QName(PackageNamespace("flash.display"), "Bitmap")
+     setlocal            5
+
+     getlocal1
+     callproperty        QName(PackageNamespace(""), "clone"), 0
+     coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+     dup
+     setlocal            7
+
+     getlex              QName(PrivateNamespace("com.company.assembleegameclient.util.redrawers:GlowRedrawer"), "gradient")
+     getlex              QName(PrivateNamespace("com.company.assembleegameclient.util.redrawers:GlowRedrawer"), "tempMatrix")
+     pushnull
+     pushstring          "subtract"
+     callpropvoid        QName(PackageNamespace(""), "draw"), 4
+
+     getlocal            7
+     getlocal            5
+     pushnull
+     pushnull
+     pushstring          "alpha"
+     callpropvoid        QName(PackageNamespace(""), "draw"), 4
+
+     getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "TextureRedrawer")
+     getproperty         QName(PackageNamespace(""), "OUTLINE_FILTER")
+     getlocal3
+     setproperty         QName(PackageNamespace(""), "blurX")
+
+     getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "TextureRedrawer")
+     getproperty         QName(PackageNamespace(""), "OUTLINE_FILTER")
+     getlocal3
+     setproperty         QName(PackageNamespace(""), "blurY")
+
+     getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "TextureRedrawer")
+     getproperty         QName(PackageNamespace(""), "OUTLINE_FILTER")
+     pushbyte            0
+     setproperty         QName(PackageNamespace(""), "color")
+
+     getlocal            7
+     getlocal            7
+     getlocal            7
+     getproperty         QName(PackageNamespace(""), "rect")
+     getlex              QName(PackageNamespace("com.company.util"), "PointUtil")
+     getproperty         QName(PackageNamespace(""), "ORIGIN")
+     getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "TextureRedrawer")
+     getproperty         QName(PackageNamespace(""), "OUTLINE_FILTER")
+     callpropvoid        QName(PackageNamespace(""), "applyFilter"), 4
+
+     getlocal2
+     pushdouble          4294967295
+     ifeq                L92
+
+     getlex              QName(PrivateNamespace("com.company.assembleegameclient.util.redrawers:GlowRedrawer"), "GLOW_FILTER")
+     getlocal2
+     setproperty         QName(PackageNamespace(""), "color")
+
+     getlocal            7
+     getlocal            7
+     getlocal            7
+     getproperty         QName(PackageNamespace(""), "rect")
+     getlex              QName(PackageNamespace("com.company.util"), "PointUtil")
+     getproperty         QName(PackageNamespace(""), "ORIGIN")
+     getlex              QName(PrivateNamespace("com.company.assembleegameclient.util.redrawers:GlowRedrawer"), "GLOW_FILTER")
+     callpropvoid        QName(PackageNamespace(""), "applyFilter"), 4
+
+L92:
+     getlocal            4
+     iffalse             L100
+
+     findpropstrict      QName(PrivateNamespace("com.company.assembleegameclient.util.redrawers:GlowRedrawer"), "cache")
+     getlocal1
+     getlocal2
+     getlocal3
+     getlocal            7
+     callpropvoid        QName(PrivateNamespace("com.company.assembleegameclient.util.redrawers:GlowRedrawer"), "cache"), 4
+
+L100:
+     getlocal            7
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PrivateNamespace("com.company.assembleegameclient.util.redrawers:GlowRedrawer"), "cache")
+  method
+   name "cache"
+   refid "com.company.assembleegameclient.util.redrawers:GlowRedrawer/class/com.company.assembleegameclient.util.redrawers:GlowRedrawer/class/cache"
+   param QName(PackageNamespace("flash.display"), "BitmapData")
+   param QName(PackageNamespace(""), "uint")
+   param QName(PackageNamespace(""), "Number")
+   param QName(PackageNamespace("flash.display"), "BitmapData")
+   returns QName(PackageNamespace(""), "void")
+   flag HAS_PARAM_NAMES
+   paramname "tex"
+   paramname "color"
+   paramname "mult"
+   paramname "modTex"
+   body
+    maxstack 3
+    localcount 7
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     pushnull
+     setlocal            5
+
+     findpropstrict      QName(PrivateNamespace("com.company.assembleegameclient.util.redrawers:GlowRedrawer"), "getHash")
+     getlocal2
+     getlocal3
+     callproperty        QName(PrivateNamespace("com.company.assembleegameclient.util.redrawers:GlowRedrawer"), "getHash"), 2
+     coerce_s
+     setlocal            6
+
+     getlocal1
+     getlex              QName(PrivateNamespace("com.company.assembleegameclient.util.redrawers:GlowRedrawer"), "glowHashes")
+     in
+     iffalse             L21
+
+     getlex              QName(PrivateNamespace("com.company.assembleegameclient.util.redrawers:GlowRedrawer"), "glowHashes")
+     getlocal1
+     getproperty         MultinameL([PrivateNamespace("com.company.assembleegameclient.util.redrawers:GlowRedrawer"), StaticProtectedNs("com.company.assembleegameclient.util.redrawers:GlowRedrawer"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.util.redrawers"), PackageInternalNs("com.company.assembleegameclient.util.redrawers"), PrivateNamespace("FilePrivateNS:GlowRedrawer"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     getlocal            6
+     getlocal            4
+     setproperty         MultinameL([PrivateNamespace("com.company.assembleegameclient.util.redrawers:GlowRedrawer"), StaticProtectedNs("com.company.assembleegameclient.util.redrawers:GlowRedrawer"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.util.redrawers"), PackageInternalNs("com.company.assembleegameclient.util.redrawers"), PrivateNamespace("FilePrivateNS:GlowRedrawer"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     jump                L33
+
+L21:
+     findpropstrict      QName(PackageNamespace("flash.utils"), "Dictionary")
+     constructprop       QName(PackageNamespace("flash.utils"), "Dictionary"), 0
+     coerce              QName(PackageNamespace("flash.utils"), "Dictionary")
+     dup
+     setlocal            5
+
+     getlocal            6
+     getlocal            4
+     setproperty         MultinameL([PrivateNamespace("com.company.assembleegameclient.util.redrawers:GlowRedrawer"), StaticProtectedNs("com.company.assembleegameclient.util.redrawers:GlowRedrawer"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.util.redrawers"), PackageInternalNs("com.company.assembleegameclient.util.redrawers"), PrivateNamespace("FilePrivateNS:GlowRedrawer"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     getlex              QName(PrivateNamespace("com.company.assembleegameclient.util.redrawers:GlowRedrawer"), "glowHashes")
+     getlocal1
+     getlocal            5
+     setproperty         MultinameL([PrivateNamespace("com.company.assembleegameclient.util.redrawers:GlowRedrawer"), StaticProtectedNs("com.company.assembleegameclient.util.redrawers:GlowRedrawer"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.util.redrawers"), PackageInternalNs("com.company.assembleegameclient.util.redrawers"), PrivateNamespace("FilePrivateNS:GlowRedrawer"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+L33:
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "outlineGlowNew")
+  method
+   name "outlineGlowNew"
+   refid "com.company.assembleegameclient.util.redrawers:GlowRedrawer/class/outlineGlowNew"
+   param QName(PackageNamespace("flash.display"), "BitmapData")
+   param QName(PackageNamespace(""), "uint")
+   param QName(PackageNamespace(""), "Number")
+   returns QName(PackageNamespace("flash.display"), "BitmapData")
+   flag HAS_OPTIONAL
+   flag HAS_PARAM_NAMES
+   optional Double(1.4)
+   paramname "_arg1"
+   paramname "_arg2"
+   paramname "_arg3"
+   body
+    maxstack 5
+    localcount 6
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal1
+     callproperty        QName(PackageNamespace(""), "clone"), 0
+     coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+     setlocal            4
+
+     getlex              QName(PrivateNamespace("com.company.assembleegameclient.util.redrawers:GlowRedrawer"), "tempMatrix")
+     callpropvoid        QName(PackageNamespace(""), "identity"), 0
+
+     getlex              QName(PrivateNamespace("com.company.assembleegameclient.util.redrawers:GlowRedrawer"), "tempMatrix")
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "width")
+     pushshort           256
+     divide
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "height")
+     pushshort           256
+     divide
+     callpropvoid        QName(PackageNamespace(""), "scale"), 2
+
+     getlocal            4
+     getlex              QName(PrivateNamespace("com.company.assembleegameclient.util.redrawers:GlowRedrawer"), "gradient")
+     getlex              QName(PrivateNamespace("com.company.assembleegameclient.util.redrawers:GlowRedrawer"), "tempMatrix")
+     pushnull
+     pushstring          "subtract"
+     callpropvoid        QName(PackageNamespace(""), "draw"), 4
+
+     findpropstrict      QName(PackageNamespace("flash.display"), "Bitmap")
+     getlocal1
+     constructprop       QName(PackageNamespace("flash.display"), "Bitmap"), 1
+     coerce              QName(PackageNamespace("flash.display"), "Bitmap")
+     setlocal            5
+
+     getlocal            4
+     getlocal            5
+     pushnull
+     pushnull
+     pushstring          "alpha"
+     callpropvoid        QName(PackageNamespace(""), "draw"), 4
+
+     getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "TextureRedrawer")
+     getproperty         QName(PackageNamespace(""), "OUTLINE_FILTER")
+     getlocal3
+     setproperty         QName(PackageNamespace(""), "blurX")
+
+     getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "TextureRedrawer")
+     getproperty         QName(PackageNamespace(""), "OUTLINE_FILTER")
+     getlocal3
+     setproperty         QName(PackageNamespace(""), "blurY")
+
+     getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "TextureRedrawer")
+     getproperty         QName(PackageNamespace(""), "OUTLINE_FILTER")
+     pushbyte            0
+     setproperty         QName(PackageNamespace(""), "color")
+
+     getlocal            4
+     getlocal            4
+     getlocal            4
+     getproperty         QName(PackageNamespace(""), "rect")
+     getlex              QName(PackageNamespace("com.company.util"), "PointUtil")
+     getproperty         QName(PackageNamespace(""), "ORIGIN")
+     getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "TextureRedrawer")
+     getproperty         QName(PackageNamespace(""), "OUTLINE_FILTER")
+     callpropvoid        QName(PackageNamespace(""), "applyFilter"), 4
+
+     getlocal2
+     pushdouble          4294967295
+     ifeq                L70
+
+     getlex              QName(PrivateNamespace("com.company.assembleegameclient.util.redrawers:GlowRedrawer"), "GLOW_FILTER_NEW")
+     getlocal2
+     setproperty         QName(PackageNamespace(""), "color")
+
+     getlocal            4
+     getlocal            4
+     getlocal            4
+     getproperty         QName(PackageNamespace(""), "rect")
+     getlex              QName(PackageNamespace("com.company.util"), "PointUtil")
+     getproperty         QName(PackageNamespace(""), "ORIGIN")
+     getlex              QName(PrivateNamespace("com.company.assembleegameclient.util.redrawers:GlowRedrawer"), "GLOW_FILTER_NEW")
+     callpropvoid        QName(PackageNamespace(""), "applyFilter"), 4
+
+L70:
+     getlocal            4
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PrivateNamespace("com.company.assembleegameclient.util.redrawers:GlowRedrawer"), "isCached")
+  method
+   name "isCached"
+   refid "com.company.assembleegameclient.util.redrawers:GlowRedrawer/class/com.company.assembleegameclient.util.redrawers:GlowRedrawer/class/isCached"
+   param QName(PackageNamespace("flash.display"), "BitmapData")
+   param QName(PackageNamespace(""), "String")
+   returns QName(PackageNamespace(""), "Boolean")
+   flag HAS_PARAM_NAMES
+   paramname "tex"
+   paramname "hash"
+   body
+    maxstack 2
+    localcount 4
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     pushnull
+     setlocal3
+
+     getlocal1
+     getlex              QName(PrivateNamespace("com.company.assembleegameclient.util.redrawers:GlowRedrawer"), "glowHashes")
+     in
+     iffalse             L19
+
+     getlex              QName(PrivateNamespace("com.company.assembleegameclient.util.redrawers:GlowRedrawer"), "glowHashes")
+     getlocal1
+     getproperty         MultinameL([PrivateNamespace("com.company.assembleegameclient.util.redrawers:GlowRedrawer"), StaticProtectedNs("com.company.assembleegameclient.util.redrawers:GlowRedrawer"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.util.redrawers"), PackageInternalNs("com.company.assembleegameclient.util.redrawers"), PrivateNamespace("FilePrivateNS:GlowRedrawer"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     coerce              QName(PackageNamespace(""), "Object")
+     setlocal3
+
+     getlocal2
+     getlocal3
+     in
+     iffalse             L19
+
+     pushtrue
+     returnvalue
+
+L19:
+     pushfalse
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PrivateNamespace("com.company.assembleegameclient.util.redrawers:GlowRedrawer"), "getHash")
+  method
+   name "getHash"
+   refid "com.company.assembleegameclient.util.redrawers:GlowRedrawer/class/com.company.assembleegameclient.util.redrawers:GlowRedrawer/class/getHash"
+   param QName(PackageNamespace(""), "uint")
+   param QName(PackageNamespace(""), "Number")
+   returns QName(PackageNamespace(""), "String")
+   flag HAS_PARAM_NAMES
+   paramname "color"
+   paramname "mult"
+   body
+    maxstack 2
+    localcount 3
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal2
+     pushbyte            10
+     multiply
+     convert_i
+     callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "toString"), 0
+     getlocal1
+     add
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PrivateNamespace("com.company.assembleegameclient.util.redrawers:GlowRedrawer"), "getGradient")
+  method
+   name "getGradient"
+   refid "com.company.assembleegameclient.util.redrawers:GlowRedrawer/class/com.company.assembleegameclient.util.redrawers:GlowRedrawer/class/getGradient"
+   returns QName(PackageNamespace("flash.display"), "Shape")
+   body
+    maxstack 6
+    localcount 3
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     findpropstrict      QName(PackageNamespace("flash.display"), "Shape")
+     constructprop       QName(PackageNamespace("flash.display"), "Shape"), 0
+     coerce              QName(PackageNamespace("flash.display"), "Shape")
+     setlocal1
+
+     findpropstrict      QName(PackageNamespace("flash.geom"), "Matrix")
+     constructprop       QName(PackageNamespace("flash.geom"), "Matrix"), 0
+     coerce              QName(PackageNamespace("flash.geom"), "Matrix")
+     setlocal2
+
+     getlocal2
+     pushshort           256
+     pushshort           256
+     pushdouble          3.141592653589793
+     pushbyte            2
+     divide
+     pushbyte            0
+     pushbyte            0
+     callpropvoid        QName(PackageNamespace(""), "createGradientBox"), 5
+
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "graphics")
+     pushstring          "linear"
+     pushbyte            0
+     pushuint            2631720
+     newarray            2
+     pushbyte            1
+     pushbyte            1
+     newarray            2
+     pushbyte            127
+     pushshort           255
+     newarray            2
+     getlocal2
+     callpropvoid        QName(PackageNamespace(""), "beginGradientFill"), 5
+
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "graphics")
+     pushbyte            0
+     pushbyte            0
+     pushshort           256
+     pushshort           256
+     callpropvoid        QName(PackageNamespace(""), "drawRect"), 4
+
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "graphics")
+     callpropvoid        QName(PackageNamespace(""), "endFill"), 0
+
+     getlocal1
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "clearCache")
+  method
+   name "clearCache"
+   refid "com.company.assembleegameclient.util.redrawers:GlowRedrawer/class/clearCache"
+   returns QName(PackageNamespace(""), "void")
+   body
+    maxstack 2
+    localcount 7
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     pushnull
+     setlocal2
+
+     pushnull
+     setlocal1
+
+     pushbyte            0
+     setlocal            6
+
+     getlex              QName(PrivateNamespace("com.company.assembleegameclient.util.redrawers:GlowRedrawer"), "glowHashes")
+     setlocal            5
+
+     jump                L40
+
+L11:
+     label
+     getlocal            5
+     getlocal            6
+     nextvalue
+     coerce              QName(PackageNamespace("flash.utils"), "Dictionary")
+     setlocal2
+
+     pushbyte            0
+     setlocal            4
+
+     getlocal2
+     setlocal3
+
+     jump                L34
+
+L22:
+     label
+     getlocal3
+     getlocal            4
+     nextvalue
+     coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+     setlocal1
+
+     getlocal1
+     callpropvoid        QName(PackageNamespace(""), "dispose"), 0
+
+     getlocal2
+     getlocal1
+     deleteproperty      MultinameL([PrivateNamespace("com.company.assembleegameclient.util.redrawers:GlowRedrawer"), StaticProtectedNs("com.company.assembleegameclient.util.redrawers:GlowRedrawer"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.util.redrawers"), PackageInternalNs("com.company.assembleegameclient.util.redrawers"), PrivateNamespace("FilePrivateNS:GlowRedrawer"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     pop
+L34:
+     hasnext2            3, 4
+     iftrue              L22
+
+     getlex              QName(PrivateNamespace("com.company.assembleegameclient.util.redrawers:GlowRedrawer"), "glowHashes")
+     getlocal2
+     deleteproperty      MultinameL([PrivateNamespace("com.company.assembleegameclient.util.redrawers:GlowRedrawer"), StaticProtectedNs("com.company.assembleegameclient.util.redrawers:GlowRedrawer"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.util.redrawers"), PackageInternalNs("com.company.assembleegameclient.util.redrawers"), PrivateNamespace("FilePrivateNS:GlowRedrawer"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     pop
+L40:
+     hasnext2            5, 6
+     iftrue              L11
+
+     findpropstrict      QName(PackageNamespace("flash.utils"), "Dictionary")
+     constructprop       QName(PackageNamespace("flash.utils"), "Dictionary"), 0
+     findproperty        QName(PrivateNamespace("com.company.assembleegameclient.util.redrawers:GlowRedrawer"), "glowHashes")
+     swap
+     setproperty         QName(PrivateNamespace("com.company.assembleegameclient.util.redrawers:GlowRedrawer"), "glowHashes")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+end ; class

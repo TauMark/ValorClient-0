@@ -1,0 +1,234 @@
+class
+ refid "kabam.rotmg.arena.view:ArenaLeaderboardMediator"
+ instance QName(PackageNamespace("kabam.rotmg.arena.view"), "ArenaLeaderboardMediator")
+  extends QName(PackageNamespace("robotlegs.bender.bundles.mvcs"), "Mediator")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.arena.view:ArenaLeaderboardMediator")
+  iinit
+   refid "kabam.rotmg.arena.view:ArenaLeaderboardMediator/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "injector") flag METADATA type QName(PackageNamespace("org.swiftsuspenders"), "Injector")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "view") flag METADATA type QName(PackageNamespace("kabam.rotmg.arena.view"), "ArenaLeaderboard")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "closeDialogs") flag METADATA type QName(PackageNamespace("kabam.rotmg.dialogs.control"), "CloseDialogsSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "reloadLeaderboard") flag METADATA type QName(PackageNamespace("kabam.rotmg.arena.control"), "ReloadLeaderboard")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "arenaLeaderboardModel") flag METADATA type QName(PackageNamespace("kabam.rotmg.arena.model"), "ArenaLeaderboardModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PackageNamespace(""), "initialize") flag OVERRIDE
+   method
+    name "initialize"
+    refid "kabam.rotmg.arena.view:ArenaLeaderboardMediator/instance/initialize"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "reloadLeaderboard")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaLeaderboardMediator"), "requestComplete")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "requestData")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaLeaderboardMediator"), "onRequestData")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "close")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaLeaderboardMediator"), "onClose")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      callpropvoid        QName(PackageNamespace(""), "init"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "destroy") flag OVERRIDE
+   method
+    name "destroy"
+    refid "kabam.rotmg.arena.view:ArenaLeaderboardMediator/instance/destroy"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "arenaLeaderboardModel")
+      callpropvoid        QName(PackageNamespace(""), "clearFilters"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "reloadLeaderboard")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaLeaderboardMediator"), "requestComplete")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      callpropvoid        QName(PackageNamespace(""), "destroy"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaLeaderboardMediator"), "onClose")
+   method
+    name "onClose"
+    refid "kabam.rotmg.arena.view:ArenaLeaderboardMediator/instance/kabam.rotmg.arena.view:ArenaLeaderboardMediator/instance/onClose"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "closeDialogs")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaLeaderboardMediator"), "onRequestData")
+   method
+    name "onRequestData"
+    refid "kabam.rotmg.arena.view:ArenaLeaderboardMediator/instance/kabam.rotmg.arena.view:ArenaLeaderboardMediator/instance/onRequestData"
+    param QName(PackageNamespace("kabam.rotmg.arena.model"), "ArenaLeaderboardFilter")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      setlocal2
+
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "hasEntries"), 0
+      iffalse             L13
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "getEntries"), 0
+      callpropvoid        QName(PackageNamespace(""), "setList"), 1
+
+      jump                L24
+
+L13:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "injector")
+      getlex              QName(PackageNamespace("kabam.rotmg.arena.service"), "GetArenaLeaderboardTask")
+      callproperty        QName(PackageNamespace(""), "getInstance"), 1
+      coerce              QName(PackageNamespace("kabam.rotmg.arena.service"), "GetArenaLeaderboardTask")
+      setlocal2
+
+      getlocal2
+      getlocal1
+      setproperty         QName(PackageNamespace(""), "filter")
+
+      getlocal2
+      callpropvoid        QName(PackageNamespace(""), "start"), 0
+
+L24:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.arena.view:ArenaLeaderboardMediator"), "requestComplete")
+   method
+    name "requestComplete"
+    refid "kabam.rotmg.arena.view:ArenaLeaderboardMediator/instance/kabam.rotmg.arena.view:ArenaLeaderboardMediator/instance/requestComplete"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      callpropvoid        QName(PackageNamespace(""), "reloadList"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.arena.view:ArenaLeaderboardMediator/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

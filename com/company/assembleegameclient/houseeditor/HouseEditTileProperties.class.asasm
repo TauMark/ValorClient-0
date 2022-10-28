@@ -1,0 +1,201 @@
+class
+ refid "com.company.assembleegameclient.houseeditor:HouseEditTileProperties"
+ instance QName(PackageNamespace("com.company.assembleegameclient.houseeditor"), "HouseEditTileProperties")
+  extends QName(PackageNamespace("flash.display"), "Sprite")
+  flag SEALED
+  iinit
+   name "HouseEditTileProperties"
+   refid "com.company.assembleegameclient.houseeditor:HouseEditTileProperties/instance/init"
+   param TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("com.company.util"), "IntPoint")>)
+   param QName(PackageNamespace(""), "String")
+   flag HAS_PARAM_NAMES
+   paramname "_arg1"
+   paramname "_arg2"
+   body
+    maxstack 5
+    localcount 4
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     getlocal1
+     setproperty         QName(PackageNamespace(""), "tiles_")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("flash.display"), "Shape")
+     constructprop       QName(PackageNamespace("flash.display"), "Shape"), 0
+     setproperty         QName(PrivateNamespace("com.company.assembleegameclient.houseeditor:HouseEditTileProperties"), "darkBox_")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.houseeditor:HouseEditTileProperties"), "darkBox_")
+     getproperty         QName(PackageNamespace(""), "graphics")
+     coerce              QName(PackageNamespace("flash.display"), "Graphics")
+     setlocal3
+
+     getlocal3
+     callpropvoid        QName(PackageNamespace(""), "clear"), 0
+
+     getlocal3
+     pushbyte            0
+     pushdouble          0.8
+     callpropvoid        QName(PackageNamespace(""), "beginFill"), 2
+
+     getlocal3
+     pushbyte            0
+     pushbyte            0
+     pushshort           800
+     pushshort           600
+     callpropvoid        QName(PackageNamespace(""), "drawRect"), 4
+
+     getlocal3
+     callpropvoid        QName(PackageNamespace(""), "endFill"), 0
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.houseeditor:HouseEditTileProperties"), "darkBox_")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.houseeditor"), "HouseEditTilePropertiesFrame")
+     getlocal2
+     constructprop       QName(PackageNamespace("com.company.assembleegameclient.houseeditor"), "HouseEditTilePropertiesFrame"), 1
+     setproperty         QName(PrivateNamespace("com.company.assembleegameclient.houseeditor:HouseEditTileProperties"), "frame_")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.houseeditor:HouseEditTileProperties"), "frame_")
+     pushstring          "complete"
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "onComplete")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.houseeditor:HouseEditTileProperties"), "frame_")
+     pushstring          "cancel"
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "onCancel")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.houseeditor:HouseEditTileProperties"), "frame_")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "tiles_") type TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("com.company.util"), "IntPoint")>) end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.houseeditor:HouseEditTileProperties"), "darkBox_") type QName(PackageNamespace("flash.display"), "Shape") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.houseeditor:HouseEditTileProperties"), "frame_") type QName(PackageNamespace("com.company.assembleegameclient.houseeditor"), "HouseEditTilePropertiesFrame") end
+  trait method QName(PackageNamespace(""), "getObjectName")
+   method
+    name "getObjectName"
+    refid "com.company.assembleegameclient.houseeditor:HouseEditTileProperties/instance/getObjectName"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.houseeditor:HouseEditTileProperties"), "frame_")
+      getproperty         QName(PackageNamespace(""), "objectName_")
+      callproperty        QName(PackageNamespace(""), "text"), 0
+      pushstring          ""
+      ifne                L10
+
+      pushnull
+      returnvalue
+
+L10:
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.houseeditor:HouseEditTileProperties"), "frame_")
+      getproperty         QName(PackageNamespace(""), "objectName_")
+      callproperty        QName(PackageNamespace(""), "text"), 0
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "onComplete")
+   method
+    name "onComplete"
+    refid "com.company.assembleegameclient.houseeditor:HouseEditTileProperties/instance/onComplete"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace(""), "dispatchEvent")
+      findpropstrict      QName(PackageNamespace("flash.events"), "Event")
+      pushstring          "complete"
+      constructprop       QName(PackageNamespace("flash.events"), "Event"), 1
+      callpropvoid        QName(PackageNamespace(""), "dispatchEvent"), 1
+
+      getlex              QName(PackageNamespace(""), "parent")
+      getlocal0
+      callpropvoid        QName(PackageNamespace(""), "removeChild"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "onCancel")
+   method
+    name "onCancel"
+    refid "com.company.assembleegameclient.houseeditor:HouseEditTileProperties/instance/onCancel"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace(""), "parent")
+      getlocal0
+      callpropvoid        QName(PackageNamespace(""), "removeChild"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.houseeditor:HouseEditTileProperties/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

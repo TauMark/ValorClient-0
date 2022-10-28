@@ -1,0 +1,177 @@
+class
+ refid "kabam.rotmg.trialsMenu:TrialBossDisplay"
+ instance QName(PackageNamespace("kabam.rotmg.trialsMenu"), "TrialBossDisplay")
+  extends QName(PackageNamespace("flash.display"), "Sprite")
+  flag SEALED
+  iinit
+   name "TrialBossDisplay"
+   refid "kabam.rotmg.trialsMenu:TrialBossDisplay/instance/init"
+   param QName(PackageNamespace(""), "int")
+   param QName(PackageNamespace(""), "Number")
+   param QName(PackageNamespace(""), "Number")
+   param QName(PackageNamespace(""), "int")
+   flag HAS_PARAM_NAMES
+   paramname "bossId"
+   paramname "bossPosX"
+   paramname "bossPosY"
+   paramname "size"
+   body
+    maxstack 5
+    localcount 6
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "TextureRedrawer")
+     getlex              QName(PackageNamespace("com.company.util"), "AssetLibrary")
+     pushstring          "trialsPreview"
+     getlocal1
+     callproperty        QName(PackageNamespace(""), "getImageFromSet"), 2
+     getlocal            4
+     pushtrue
+     pushint             16711680
+     callproperty        QName(PackageNamespace(""), "redraw"), 4
+     coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+     setlocal            5
+
+     findpropstrict      QName(PackageNamespace("flash.display"), "Bitmap")
+     getlocal            5
+     constructprop       QName(PackageNamespace("flash.display"), "Bitmap"), 1
+     findproperty        QName(PrivateNamespace("kabam.rotmg.trialsMenu:TrialBossDisplay"), "bossSprite")
+     swap
+     setproperty         QName(PrivateNamespace("kabam.rotmg.trialsMenu:TrialBossDisplay"), "bossSprite")
+
+     getlex              QName(PrivateNamespace("kabam.rotmg.trialsMenu:TrialBossDisplay"), "bossSprite")
+     getlocal2
+     setproperty         QName(PackageNamespace(""), "x")
+
+     getlex              QName(PrivateNamespace("kabam.rotmg.trialsMenu:TrialBossDisplay"), "bossSprite")
+     getlocal3
+     setproperty         QName(PackageNamespace(""), "y")
+
+     getlex              QName(PrivateNamespace("kabam.rotmg.trialsMenu:TrialBossDisplay"), "bossSprite")
+     pushbyte            1
+     setproperty         QName(PackageNamespace(""), "scaleX")
+
+     getlex              QName(PrivateNamespace("kabam.rotmg.trialsMenu:TrialBossDisplay"), "bossSprite")
+     pushbyte            1
+     setproperty         QName(PackageNamespace(""), "scaleY")
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlex              QName(PrivateNamespace("kabam.rotmg.trialsMenu:TrialBossDisplay"), "bossSprite")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     findpropstrict      QName(PackageNamespace(""), "addEventListener")
+     pushstring          "rollOver"
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.trialsMenu:TrialBossDisplay"), "onOver")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     findpropstrict      QName(PackageNamespace(""), "addEventListener")
+     pushstring          "rollOut"
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.trialsMenu:TrialBossDisplay"), "onOut")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "openDialog") flag METADATA type QName(PackageNamespace("kabam.rotmg.dialogs.control"), "OpenDialogSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "injector") flag METADATA type QName(PackageNamespace("org.swiftsuspenders"), "Injector")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PrivateNamespace("kabam.rotmg.trialsMenu:TrialBossDisplay"), "bossSprite") type QName(PackageNamespace("flash.display"), "Bitmap") end
+  trait method QName(PrivateNamespace("kabam.rotmg.trialsMenu:TrialBossDisplay"), "onOver")
+   method
+    name "onOver"
+    refid "kabam.rotmg.trialsMenu:TrialBossDisplay/instance/kabam.rotmg.trialsMenu:TrialBossDisplay/instance/onOver"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "mouseEvent"
+    body
+     maxstack 11
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace("com.greensock"), "TweenMax")
+      getlex              QName(PrivateNamespace("kabam.rotmg.trialsMenu:TrialBossDisplay"), "bossSprite")
+      pushdouble          0.4
+      pushstring          "scaleX"
+      pushdouble          1.1
+      pushstring          "scaleY"
+      pushdouble          1.1
+      pushstring          "yoyo"
+      pushtrue
+      pushstring          "repeat"
+      pushbyte            -1
+      newobject           4
+      callpropvoid        QName(PackageNamespace(""), "to"), 3
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.trialsMenu:TrialBossDisplay"), "onOut")
+   method
+    name "onOut"
+    refid "kabam.rotmg.trialsMenu:TrialBossDisplay/instance/kabam.rotmg.trialsMenu:TrialBossDisplay/instance/onOut"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "mouseEvent"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace("com.greensock"), "TweenMax")
+      getlex              QName(PrivateNamespace("kabam.rotmg.trialsMenu:TrialBossDisplay"), "bossSprite")
+      callpropvoid        QName(PackageNamespace(""), "killTweensOf"), 1
+
+      getlex              QName(PrivateNamespace("kabam.rotmg.trialsMenu:TrialBossDisplay"), "bossSprite")
+      pushbyte            1
+      setproperty         QName(PackageNamespace(""), "scaleX")
+
+      getlex              QName(PrivateNamespace("kabam.rotmg.trialsMenu:TrialBossDisplay"), "bossSprite")
+      pushbyte            1
+      setproperty         QName(PackageNamespace(""), "scaleY")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.trialsMenu:TrialBossDisplay/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

@@ -1,0 +1,411 @@
+class
+ refid "com.company.assembleegameclient.ui.panels:GuildInvitePanel"
+ instance QName(PackageNamespace("com.company.assembleegameclient.ui.panels"), "GuildInvitePanel")
+  extends QName(PackageNamespace("com.company.assembleegameclient.ui.panels"), "Panel")
+  flag SEALED
+  iinit
+   name "GuildInvitePanel"
+   refid "com.company.assembleegameclient.ui.panels:GuildInvitePanel/instance/init"
+   param QName(PackageNamespace("com.company.assembleegameclient.game"), "AGameSprite")
+   param QName(PackageNamespace(""), "String")
+   param QName(PackageNamespace(""), "String")
+   flag HAS_PARAM_NAMES
+   paramname "_arg1"
+   paramname "_arg2"
+   paramname "_arg3"
+   body
+    maxstack 5
+    localcount 4
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.ui.view"), "SignalWaiter")
+     constructprop       QName(PackageNamespace("kabam.rotmg.ui.view"), "SignalWaiter"), 0
+     findproperty        QName(PrivateNamespace("com.company.assembleegameclient.ui.panels:GuildInvitePanel"), "waiter")
+     swap
+     initproperty        QName(PrivateNamespace("com.company.assembleegameclient.ui.panels:GuildInvitePanel"), "waiter")
+
+     getlocal0
+     getlocal1
+     constructsuper      1
+
+     getlocal0
+     getlocal2
+     setproperty         QName(PackageNamespace(""), "name_")
+
+     getlocal0
+     getlocal3
+     setproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels:GuildInvitePanel"), "guildName_")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete")
+     constructprop       QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete"), 0
+     pushbyte            16
+     callproperty        QName(PackageNamespace(""), "setSize"), 1
+     pushint             16777215
+     callproperty        QName(PackageNamespace(""), "setColor"), 1
+     pushshort           188
+     callproperty        QName(PackageNamespace(""), "setTextWidth"), 1
+     pushtrue
+     callproperty        QName(PackageNamespace(""), "setBold"), 1
+     pushstring          "center"
+     callproperty        QName(PackageNamespace(""), "setAutoSize"), 1
+     pushtrue
+     callproperty        QName(PackageNamespace(""), "setHTML"), 1
+     setproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels:GuildInvitePanel"), "title_")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels:GuildInvitePanel"), "title_")
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder")
+     constructprop       QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder"), 0
+     pushstring          "Guild.invitation"
+     pushstring          "playerName"
+     getlocal2
+     newobject           1
+     callproperty        QName(PackageNamespace(""), "setParams"), 2
+     pushstring          "<p align=\"center\">"
+     callproperty        QName(PackageNamespace(""), "setPrefix"), 1
+     pushstring          "</p>"
+     callproperty        QName(PackageNamespace(""), "setPostfix"), 1
+     callpropvoid        QName(PackageNamespace(""), "setStringBuilder"), 1
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels:GuildInvitePanel"), "title_")
+     findpropstrict      QName(PackageNamespace("flash.filters"), "DropShadowFilter")
+     pushbyte            0
+     pushbyte            0
+     pushbyte            0
+     constructprop       QName(PackageNamespace("flash.filters"), "DropShadowFilter"), 3
+     newarray            1
+     setproperty         QName(PackageNamespace(""), "filters")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels:GuildInvitePanel"), "title_")
+     pushbyte            0
+     setproperty         QName(PackageNamespace(""), "y")
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels:GuildInvitePanel"), "title_")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete")
+     constructprop       QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete"), 0
+     pushbyte            16
+     callproperty        QName(PackageNamespace(""), "setSize"), 1
+     pushint             16777215
+     callproperty        QName(PackageNamespace(""), "setColor"), 1
+     pushshort           188
+     callproperty        QName(PackageNamespace(""), "setTextWidth"), 1
+     pushstring          "center"
+     callproperty        QName(PackageNamespace(""), "setAutoSize"), 1
+     pushtrue
+     callproperty        QName(PackageNamespace(""), "setBold"), 1
+     pushtrue
+     callproperty        QName(PackageNamespace(""), "setHTML"), 1
+     setproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels:GuildInvitePanel"), "guildNameText_")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels:GuildInvitePanel"), "guildNameText_")
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "StaticStringBuilder")
+     pushstring          "<p align=\"center\">"
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels:GuildInvitePanel"), "guildName_")
+     add
+     pushstring          "</p>"
+     add
+     constructprop       QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "StaticStringBuilder"), 1
+     callpropvoid        QName(PackageNamespace(""), "setStringBuilder"), 1
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels:GuildInvitePanel"), "guildNameText_")
+     findpropstrict      QName(PackageNamespace("flash.filters"), "DropShadowFilter")
+     pushbyte            0
+     pushbyte            0
+     pushbyte            0
+     constructprop       QName(PackageNamespace("flash.filters"), "DropShadowFilter"), 3
+     newarray            1
+     setproperty         QName(PackageNamespace(""), "filters")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels:GuildInvitePanel"), "guildNameText_")
+     pushbyte            20
+     setproperty         QName(PackageNamespace(""), "y")
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels:GuildInvitePanel"), "guildNameText_")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("io.decagames.rotmg.ui.buttons"), "SliceScalingButton")
+     getlex              QName(PackageNamespace("io.decagames.rotmg.ui.texture"), "TextureParser")
+     getproperty         QName(PackageNamespace(""), "instance")
+     pushstring          "UI"
+     pushstring          "generic_green_button"
+     callproperty        QName(PackageNamespace(""), "getSliceScalingBitmap"), 2
+     constructprop       QName(PackageNamespace("io.decagames.rotmg.ui.buttons"), "SliceScalingButton"), 1
+     setproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels:GuildInvitePanel"), "rejectButton_")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels:GuildInvitePanel"), "rejectButton_")
+     pushstring          "Reject"
+     getlex              QName(PackageNamespace("io.decagames.rotmg.ui.defaults"), "DefaultLabelFormat")
+     getproperty         QName(PackageNamespace(""), "questButtonCompleteLabel")
+     callpropvoid        QName(PackageNamespace(""), "setLabel"), 2
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels:GuildInvitePanel"), "rejectButton_")
+     pushbyte            100
+     setproperty         QName(PackageNamespace(""), "width")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels:GuildInvitePanel"), "rejectButton_")
+     pushstring          "click"
+     getlex              QName(PrivateNamespace("com.company.assembleegameclient.ui.panels:GuildInvitePanel"), "onRejectClick")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels:GuildInvitePanel"), "rejectButton_")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("io.decagames.rotmg.ui.buttons"), "SliceScalingButton")
+     getlex              QName(PackageNamespace("io.decagames.rotmg.ui.texture"), "TextureParser")
+     getproperty         QName(PackageNamespace(""), "instance")
+     pushstring          "UI"
+     pushstring          "generic_green_button"
+     callproperty        QName(PackageNamespace(""), "getSliceScalingBitmap"), 2
+     constructprop       QName(PackageNamespace("io.decagames.rotmg.ui.buttons"), "SliceScalingButton"), 1
+     setproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels:GuildInvitePanel"), "acceptButton_")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels:GuildInvitePanel"), "acceptButton_")
+     pushstring          "Accept"
+     getlex              QName(PackageNamespace("io.decagames.rotmg.ui.defaults"), "DefaultLabelFormat")
+     getproperty         QName(PackageNamespace(""), "questButtonCompleteLabel")
+     callpropvoid        QName(PackageNamespace(""), "setLabel"), 2
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels:GuildInvitePanel"), "acceptButton_")
+     pushbyte            100
+     setproperty         QName(PackageNamespace(""), "width")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels:GuildInvitePanel"), "acceptButton_")
+     pushstring          "click"
+     getlex              QName(PrivateNamespace("com.company.assembleegameclient.ui.panels:GuildInvitePanel"), "onAcceptClick")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels:GuildInvitePanel"), "acceptButton_")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("flash.utils"), "Timer")
+     pushshort           20000
+     pushbyte            1
+     constructprop       QName(PackageNamespace("flash.utils"), "Timer"), 2
+     setproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels:GuildInvitePanel"), "timer_")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels:GuildInvitePanel"), "timer_")
+     callpropvoid        QName(PackageNamespace(""), "start"), 0
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels:GuildInvitePanel"), "timer_")
+     pushstring          "timer"
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels:GuildInvitePanel"), "onTimer")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     getlocal0
+     callpropvoid        QName(PrivateNamespace("com.company.assembleegameclient.ui.panels:GuildInvitePanel"), "alignUI"), 0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait const QName(PrivateNamespace("com.company.assembleegameclient.ui.panels:GuildInvitePanel"), "waiter") type QName(PackageNamespace("kabam.rotmg.ui.view"), "SignalWaiter") end
+  trait slot QName(PackageNamespace(""), "name_") type QName(PackageNamespace(""), "String") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.ui.panels:GuildInvitePanel"), "title_") type QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.ui.panels:GuildInvitePanel"), "guildName_") type QName(PackageNamespace(""), "String") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.ui.panels:GuildInvitePanel"), "guildNameText_") type QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.ui.panels:GuildInvitePanel"), "rejectButton_") type QName(PackageNamespace("io.decagames.rotmg.ui.buttons"), "SliceScalingButton") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.ui.panels:GuildInvitePanel"), "acceptButton_") type QName(PackageNamespace("io.decagames.rotmg.ui.buttons"), "SliceScalingButton") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.ui.panels:GuildInvitePanel"), "timer_") type QName(PackageNamespace("flash.utils"), "Timer") end
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.ui.panels:GuildInvitePanel"), "alignUI")
+   method
+    name "alignUI"
+    refid "com.company.assembleegameclient.ui.panels:GuildInvitePanel/instance/com.company.assembleegameclient.ui.panels:GuildInvitePanel/instance/alignUI"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels:GuildInvitePanel"), "rejectButton_")
+      pushshort           188
+      pushbyte            4
+      divide
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels:GuildInvitePanel"), "rejectButton_")
+      getproperty         QName(PackageNamespace(""), "width")
+      pushbyte            2
+      divide
+      subtract
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels:GuildInvitePanel"), "rejectButton_")
+      pushbyte            84
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels:GuildInvitePanel"), "rejectButton_")
+      getproperty         QName(PackageNamespace(""), "height")
+      subtract
+      pushbyte            4
+      subtract
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels:GuildInvitePanel"), "acceptButton_")
+      pushshort           141
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels:GuildInvitePanel"), "acceptButton_")
+      getproperty         QName(PackageNamespace(""), "width")
+      pushbyte            2
+      divide
+      subtract
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels:GuildInvitePanel"), "acceptButton_")
+      pushbyte            84
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels:GuildInvitePanel"), "acceptButton_")
+      getproperty         QName(PackageNamespace(""), "height")
+      subtract
+      pushbyte            4
+      subtract
+      setproperty         QName(PackageNamespace(""), "y")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.ui.panels:GuildInvitePanel"), "onTimer")
+   method
+    name "onTimer"
+    refid "com.company.assembleegameclient.ui.panels:GuildInvitePanel/instance/com.company.assembleegameclient.ui.panels:GuildInvitePanel/instance/onTimer"
+    param QName(PackageNamespace("flash.events"), "TimerEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace(""), "dispatchEvent")
+      findpropstrict      QName(PackageNamespace("flash.events"), "Event")
+      pushstring          "complete"
+      constructprop       QName(PackageNamespace("flash.events"), "Event"), 1
+      callpropvoid        QName(PackageNamespace(""), "dispatchEvent"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.ui.panels:GuildInvitePanel"), "onRejectClick")
+   method
+    name "onRejectClick"
+    refid "com.company.assembleegameclient.ui.panels:GuildInvitePanel/instance/com.company.assembleegameclient.ui.panels:GuildInvitePanel/instance/onRejectClick"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace(""), "dispatchEvent")
+      findpropstrict      QName(PackageNamespace("flash.events"), "Event")
+      pushstring          "complete"
+      constructprop       QName(PackageNamespace("flash.events"), "Event"), 1
+      callpropvoid        QName(PackageNamespace(""), "dispatchEvent"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.ui.panels:GuildInvitePanel"), "onAcceptClick")
+   method
+    name "onAcceptClick"
+    refid "com.company.assembleegameclient.ui.panels:GuildInvitePanel/instance/com.company.assembleegameclient.ui.panels:GuildInvitePanel/instance/onAcceptClick"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace(""), "gs_")
+      getproperty         QName(PackageNamespace(""), "gsc_")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui.panels:GuildInvitePanel"), "guildName_")
+      callpropvoid        QName(PackageNamespace(""), "joinGuild"), 1
+
+      findpropstrict      QName(PackageNamespace(""), "dispatchEvent")
+      findpropstrict      QName(PackageNamespace("flash.events"), "Event")
+      pushstring          "complete"
+      constructprop       QName(PackageNamespace("flash.events"), "Event"), 1
+      callpropvoid        QName(PackageNamespace(""), "dispatchEvent"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.ui.panels:GuildInvitePanel/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

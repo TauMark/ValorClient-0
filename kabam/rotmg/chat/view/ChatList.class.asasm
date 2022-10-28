@@ -1,0 +1,1102 @@
+class
+ refid "kabam.rotmg.chat.view:ChatList"
+ instance QName(PackageNamespace("kabam.rotmg.chat.view"), "ChatList")
+  extends QName(PackageNamespace("flash.display"), "Sprite")
+  flag SEALED
+  iinit
+   name "ChatList"
+   refid "kabam.rotmg.chat.view:ChatList/instance/init"
+   param QName(PackageNamespace(""), "int")
+   param QName(PackageNamespace(""), "uint")
+   flag HAS_OPTIONAL
+   flag HAS_PARAM_NAMES
+   optional Integer(7)
+   optional Integer(150)
+   paramname "_arg1"
+   paramname "_arg2"
+   body
+    maxstack 3
+    localcount 3
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     findpropstrict      QName(PackageNamespace("flash.utils"), "Timer")
+     pushshort           1000
+     constructprop       QName(PackageNamespace("flash.utils"), "Timer"), 1
+     findproperty        QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "timer")
+     swap
+     initproperty        QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "timer")
+
+     getlex              QName(PackageNamespace("__AS3__.vec"), "Vector")
+     getlex              QName(PackageNamespace("kabam.rotmg.chat.view"), "ChatListItem")
+     applytype           1
+     construct           0
+     findproperty        QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "itemsToRemove")
+     swap
+     initproperty        QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "itemsToRemove")
+
+     getlocal0
+     constructsuper      0
+
+     pushtrue
+     findproperty        QName(PackageNamespace(""), "mouseEnabled")
+     swap
+     setproperty         QName(PackageNamespace(""), "mouseEnabled")
+
+     pushtrue
+     findproperty        QName(PackageNamespace(""), "mouseChildren")
+     swap
+     setproperty         QName(PackageNamespace(""), "mouseChildren")
+
+     getlocal0
+     getlex              QName(PackageNamespace("__AS3__.vec"), "Vector")
+     getlex              QName(PackageNamespace("kabam.rotmg.chat.view"), "ChatListItem")
+     applytype           1
+     construct           0
+     setproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "listItems")
+
+     getlocal0
+     getlex              QName(PackageNamespace("__AS3__.vec"), "Vector")
+     getlex              QName(PackageNamespace("kabam.rotmg.chat.view"), "ChatListItem")
+     applytype           1
+     construct           0
+     setproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "visibleItems")
+
+     getlocal0
+     getlocal1
+     setproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "visibleItemCount")
+
+     getlocal0
+     getlocal2
+     setproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "maxLength")
+
+     getlocal0
+     pushbyte            0
+     setproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "index")
+
+     getlocal0
+     pushtrue
+     setproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "isCurrent")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "timer")
+     pushstring          "timer"
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "onCheckTimeout")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "timer")
+     callpropvoid        QName(PackageNamespace(""), "start"), 0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait const QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "timer") type QName(PackageNamespace("flash.utils"), "Timer") end
+  trait const QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "itemsToRemove") type TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("kabam.rotmg.chat.view"), "ChatListItem")>) end
+  trait slot QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "listItems") type TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("kabam.rotmg.chat.view"), "ChatListItem")>) end
+  trait slot QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "visibleItems") type TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("kabam.rotmg.chat.view"), "ChatListItem")>) end
+  trait slot QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "visibleItemCount") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "index") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "isCurrent") type QName(PackageNamespace(""), "Boolean") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "ignoreTimeOuts") type QName(PackageNamespace(""), "Boolean") value False() end
+  trait slot QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "maxLength") type QName(PackageNamespace(""), "int") end
+  trait method QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "onCheckTimeout")
+   method
+    name "onCheckTimeout"
+    refid "kabam.rotmg.chat.view:ChatList/instance/kabam.rotmg.chat.view:ChatList/instance/onCheckTimeout"
+    param QName(PackageNamespace("flash.events"), "TimerEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 4
+     localcount 6
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      setlocal2
+
+      pushnull
+      setlocal3
+
+      pushbyte            0
+      setlocal            5
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "visibleItems")
+      setlocal            4
+
+      jump                L33
+
+L12:
+      label
+      getlocal            4
+      getlocal            5
+      nextvalue
+      coerce              QName(PackageNamespace("kabam.rotmg.chat.view"), "ChatListItem")
+      setlocal2
+
+      getlocal2
+      callproperty        QName(PackageNamespace(""), "isTimedOut"), 0
+      dup
+      iffalse             L26
+
+      pop
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "ignoreTimeOuts")
+      not
+L26:
+      iffalse             L32
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "itemsToRemove")
+      getlocal2
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+
+      jump                L33
+
+L32:
+      jump                L35
+
+L33:
+      hasnext2            4, 5
+      iftrue              L12
+
+L35:
+      jump                L75
+
+L36:
+      label
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "itemsToRemove")
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "pop"), 0
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "onItemTimedOut"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "isCurrent")
+      iftrue              L75
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "listItems")
+      getlocal0
+      dup
+      getproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "index")
+      convert_d
+      dup
+      setlocal            5
+
+      increment
+      setproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "index")
+
+      getlocal            5
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.chat.view:ChatList"), ProtectedNamespace("kabam.rotmg.chat.view:ChatList"), StaticProtectedNs("kabam.rotmg.chat.view:ChatList"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.chat.view"), PackageInternalNs("kabam.rotmg.chat.view"), PrivateNamespace("FilePrivateNS:ChatList"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      coerce              QName(PackageNamespace("kabam.rotmg.chat.view"), "ChatListItem")
+      setlocal3
+
+      getlocal3
+      callproperty        QName(PackageNamespace(""), "isTimedOut"), 0
+      iftrue              L75
+
+      getlocal0
+      getlocal3
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "addNewItem"), 1
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "index")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "listItems")
+      getproperty         QName(PackageNamespace(""), "length")
+      equals
+      setproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "isCurrent")
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "positionItems"), 0
+
+L75:
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "itemsToRemove")
+      getproperty         QName(PackageNamespace(""), "length")
+      pushbyte            0
+      ifgt                L36
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setup")
+   method
+    name "setup"
+    refid "kabam.rotmg.chat.view:ChatList/instance/setup"
+    param QName(PackageNamespace("kabam.rotmg.chat.model"), "ChatModel")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "visibleItemCount")
+      setproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "visibleItemCount")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "addMessage")
+   method
+    name "addMessage"
+    refid "kabam.rotmg.chat.view:ChatList/instance/addMessage"
+    param QName(PackageNamespace("kabam.rotmg.chat.view"), "ChatListItem")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      setlocal2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "listItems")
+      getproperty         QName(PackageNamespace(""), "length")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "maxLength")
+      ifngt               L38
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "listItems")
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "shift"), 0
+      coerce              QName(PackageNamespace("kabam.rotmg.chat.view"), "ChatListItem")
+      setlocal2
+
+      getlocal0
+      getlocal2
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "onItemTimedOut"), 1
+
+      getlocal0
+      dup
+      getproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "index")
+      convert_d
+      decrement
+      setproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "index")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "isCurrent")
+      not
+      dup
+      iffalse             L35
+
+      pop
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "index")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "visibleItemCount")
+      lessthan
+L35:
+      iffalse             L38
+
+      getlocal0
+      callpropvoid        QName(PackageNamespace(""), "pageDown"), 0
+
+L38:
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "listItems")
+      getlocal1
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "isCurrent")
+      iffalse             L48
+
+      getlocal0
+      getlocal1
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "displayNewItem"), 1
+
+L48:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "onItemTimedOut")
+   method
+    name "onItemTimedOut"
+    refid "kabam.rotmg.chat.view:ChatList/instance/kabam.rotmg.chat.view:ChatList/instance/onItemTimedOut"
+    param QName(PackageNamespace("kabam.rotmg.chat.view"), "ChatListItem")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "visibleItems")
+      getlocal1
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "indexOf"), 1
+      convert_i
+      setlocal2
+
+      getlocal2
+      pushbyte            -1
+      ifeq                L27
+
+      findpropstrict      QName(PackageNamespace(""), "removeChild")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "removeChild"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "visibleItems")
+      getlocal2
+      pushbyte            1
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "splice"), 2
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "index")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "listItems")
+      getproperty         QName(PackageNamespace(""), "length")
+      equals
+      setproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "isCurrent")
+
+L27:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "displayNewItem")
+   method
+    name "displayNewItem"
+    refid "kabam.rotmg.chat.view:ChatList/instance/kabam.rotmg.chat.view:ChatList/instance/displayNewItem"
+    param QName(PackageNamespace("kabam.rotmg.chat.view"), "ChatListItem")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      dup
+      getproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "index")
+      convert_d
+      increment
+      setproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "index")
+
+      getlocal0
+      getlocal1
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "addNewItem"), 1
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "removeOldestVisibleIfNeeded"), 0
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "positionItems"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "scrollUp")
+   method
+    name "scrollUp"
+    refid "kabam.rotmg.chat.view:ChatList/instance/scrollUp"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "ignoreTimeOuts")
+      dup
+      iffalse             L10
+
+      pop
+      getlocal0
+      callproperty        QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "canScrollUp"), 0
+      convert_b
+L10:
+      iffalse             L14
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "scrollItemsUp"), 0
+
+      jump                L16
+
+L14:
+      getlocal0
+      callpropvoid        QName(PackageNamespace(""), "showAvailable"), 0
+
+L16:
+      getlocal0
+      pushtrue
+      setproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "ignoreTimeOuts")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "showAvailable")
+   method
+    name "showAvailable"
+    refid "kabam.rotmg.chat.view:ChatList/instance/showAvailable"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 5
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      setlocal            4
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "index")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "visibleItems")
+      getproperty         QName(PackageNamespace(""), "length")
+      subtract
+      pushbyte            1
+      subtract
+      convert_i
+      setlocal3
+
+      getlex              QName(PackageNamespace(""), "Math")
+      pushbyte            0
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "index")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "visibleItemCount")
+      subtract
+      pushbyte            1
+      subtract
+      callproperty        QName(PackageNamespace(""), "max"), 2
+      convert_i
+      setlocal1
+
+      getlocal3
+      setlocal2
+
+      jump                L46
+
+L29:
+      label
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "listItems")
+      getlocal2
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.chat.view:ChatList"), ProtectedNamespace("kabam.rotmg.chat.view:ChatList"), StaticProtectedNs("kabam.rotmg.chat.view:ChatList"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.chat.view"), PackageInternalNs("kabam.rotmg.chat.view"), PrivateNamespace("FilePrivateNS:ChatList"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      coerce              QName(PackageNamespace("kabam.rotmg.chat.view"), "ChatListItem")
+      setlocal            4
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "visibleItems")
+      getlocal            4
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "indexOf"), 1
+      pushbyte            -1
+      ifne                L45
+
+      getlocal0
+      getlocal            4
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "addOldItem"), 1
+
+L45:
+      declocal_i          2
+L46:
+      getlocal2
+      getlocal1
+      ifgt                L29
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "positionItems"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "scrollDown")
+   method
+    name "scrollDown"
+    refid "kabam.rotmg.chat.view:ChatList/instance/scrollDown"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "ignoreTimeOuts")
+      iffalse             L13
+
+      getlocal0
+      pushfalse
+      setproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "ignoreTimeOuts")
+
+      getlocal0
+      callpropvoid        QName(PackageNamespace(""), "scrollToCurrent"), 0
+
+      getlocal0
+      pushnull
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "onCheckTimeout"), 1
+
+L13:
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "isCurrent")
+      iftrue              L19
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "scrollItemsDown"), 0
+
+      jump                L25
+
+L19:
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "ignoreTimeOuts")
+      iffalse             L25
+
+      getlocal0
+      pushfalse
+      setproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "ignoreTimeOuts")
+
+L25:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "scrollToCurrent")
+   method
+    name "scrollToCurrent"
+    refid "kabam.rotmg.chat.view:ChatList/instance/scrollToCurrent"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      jump                L6
+
+L3:
+      label
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "scrollItemsDown"), 0
+
+L6:
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "isCurrent")
+      iffalse             L3
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "pageUp")
+   method
+    name "pageUp"
+    refid "kabam.rotmg.chat.view:ChatList/instance/pageUp"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushbyte            0
+      setlocal1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "ignoreTimeOuts")
+      iftrue              L13
+
+      getlocal0
+      callpropvoid        QName(PackageNamespace(""), "showAvailable"), 0
+
+      getlocal0
+      pushtrue
+      setproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "ignoreTimeOuts")
+
+      jump                L29
+
+L13:
+      pushbyte            0
+      setlocal1
+
+      jump                L25
+
+L16:
+      label
+      getlocal0
+      callproperty        QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "canScrollUp"), 0
+      iffalse             L23
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "scrollItemsUp"), 0
+
+      jump                L24
+
+L23:
+      returnvoid
+
+L24:
+      inclocal_i          1
+L25:
+      getlocal1
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "visibleItemCount")
+      iflt                L16
+
+L29:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "pageDown")
+   method
+    name "pageDown"
+    refid "kabam.rotmg.chat.view:ChatList/instance/pageDown"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushbyte            0
+      setlocal1
+
+      jump                L17
+
+L5:
+      label
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "isCurrent")
+      iftrue              L12
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "scrollItemsDown"), 0
+
+      jump                L16
+
+L12:
+      getlocal0
+      pushfalse
+      setproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "ignoreTimeOuts")
+
+      returnvoid
+
+L16:
+      inclocal_i          1
+L17:
+      getlocal1
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "visibleItemCount")
+      iflt                L5
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "addNewItem")
+   method
+    name "addNewItem"
+    refid "kabam.rotmg.chat.view:ChatList/instance/kabam.rotmg.chat.view:ChatList/instance/addNewItem"
+    param QName(PackageNamespace("kabam.rotmg.chat.view"), "ChatListItem")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "visibleItems")
+      getlocal1
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "removeOldestVisibleIfNeeded")
+   method
+    name "removeOldestVisibleIfNeeded"
+    refid "kabam.rotmg.chat.view:ChatList/instance/kabam.rotmg.chat.view:ChatList/instance/removeOldestVisibleIfNeeded"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "visibleItems")
+      getproperty         QName(PackageNamespace(""), "length")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "visibleItemCount")
+      ifngt               L13
+
+      findpropstrict      QName(PackageNamespace(""), "removeChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "visibleItems")
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "shift"), 0
+      callpropvoid        QName(PackageNamespace(""), "removeChild"), 1
+
+L13:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "canScrollUp")
+   method
+    name "canScrollUp"
+    refid "kabam.rotmg.chat.view:ChatList/instance/kabam.rotmg.chat.view:ChatList/instance/canScrollUp"
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "index")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "visibleItemCount")
+      greaterthan
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "scrollItemsUp")
+   method
+    name "scrollItemsUp"
+    refid "kabam.rotmg.chat.view:ChatList/instance/kabam.rotmg.chat.view:ChatList/instance/scrollItemsUp"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "listItems")
+      getlocal0
+      dup
+      getproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "index")
+      decrement
+      dup
+      setlocal2
+
+      setproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "index")
+
+      getlocal2
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "visibleItemCount")
+      subtract
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.chat.view:ChatList"), ProtectedNamespace("kabam.rotmg.chat.view:ChatList"), StaticProtectedNs("kabam.rotmg.chat.view:ChatList"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.chat.view"), PackageInternalNs("kabam.rotmg.chat.view"), PrivateNamespace("FilePrivateNS:ChatList"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      coerce              QName(PackageNamespace("kabam.rotmg.chat.view"), "ChatListItem")
+      setlocal1
+
+      getlocal0
+      getlocal1
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "addOldItem"), 1
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "removeNewestVisibleIfNeeded"), 0
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "positionItems"), 0
+
+      getlocal0
+      pushfalse
+      setproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "isCurrent")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "scrollItemsDown")
+   method
+    name "scrollItemsDown"
+    refid "kabam.rotmg.chat.view:ChatList/instance/kabam.rotmg.chat.view:ChatList/instance/scrollItemsDown"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "index")
+      pushbyte            0
+      ifnlt               L9
+
+      getlocal0
+      pushbyte            0
+      setproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "index")
+
+L9:
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "listItems")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "index")
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.chat.view:ChatList"), ProtectedNamespace("kabam.rotmg.chat.view:ChatList"), StaticProtectedNs("kabam.rotmg.chat.view:ChatList"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.chat.view"), PackageInternalNs("kabam.rotmg.chat.view"), PrivateNamespace("FilePrivateNS:ChatList"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      coerce              QName(PackageNamespace("kabam.rotmg.chat.view"), "ChatListItem")
+      setlocal1
+
+      getlocal0
+      dup
+      getproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "index")
+      convert_d
+      increment
+      setproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "index")
+
+      getlocal0
+      getlocal1
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "addNewItem"), 1
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "removeOldestVisibleIfNeeded"), 0
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "index")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "listItems")
+      getproperty         QName(PackageNamespace(""), "length")
+      equals
+      setproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "isCurrent")
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "positionItems"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "addOldItem")
+   method
+    name "addOldItem"
+    refid "kabam.rotmg.chat.view:ChatList/instance/kabam.rotmg.chat.view:ChatList/instance/addOldItem"
+    param QName(PackageNamespace("kabam.rotmg.chat.view"), "ChatListItem")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "visibleItems")
+      getlocal1
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "unshift"), 1
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "removeNewestVisibleIfNeeded")
+   method
+    name "removeNewestVisibleIfNeeded"
+    refid "kabam.rotmg.chat.view:ChatList/instance/kabam.rotmg.chat.view:ChatList/instance/removeNewestVisibleIfNeeded"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "visibleItems")
+      getproperty         QName(PackageNamespace(""), "length")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "visibleItemCount")
+      ifngt               L13
+
+      findpropstrict      QName(PackageNamespace(""), "removeChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "visibleItems")
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "pop"), 0
+      callpropvoid        QName(PackageNamespace(""), "removeChild"), 1
+
+L13:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "positionItems")
+   method
+    name "positionItems"
+    refid "kabam.rotmg.chat.view:ChatList/instance/kabam.rotmg.chat.view:ChatList/instance/positionItems"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 4
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      setlocal2
+
+      pushbyte            0
+      setlocal3
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "visibleItems")
+      getproperty         QName(PackageNamespace(""), "length")
+      convert_i
+      setlocal1
+
+      jump                L28
+
+L12:
+      label
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.chat.view:ChatList"), "visibleItems")
+      getlocal1
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.chat.view:ChatList"), ProtectedNamespace("kabam.rotmg.chat.view:ChatList"), StaticProtectedNs("kabam.rotmg.chat.view:ChatList"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.chat.view"), PackageInternalNs("kabam.rotmg.chat.view"), PrivateNamespace("FilePrivateNS:ChatList"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      coerce              QName(PackageNamespace("kabam.rotmg.chat.view"), "ChatListItem")
+      setlocal2
+
+      getlocal2
+      getlocal3
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal3
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "height")
+      subtract
+      convert_i
+      setlocal3
+
+L28:
+      getlocal1
+      declocal_i          1
+      iftrue              L12
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.chat.view:ChatList/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

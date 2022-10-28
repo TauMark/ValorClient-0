@@ -1,0 +1,292 @@
+class
+ refid "com.company.assembleegameclient.sound:Song"
+ instance QName(PackageNamespace("com.company.assembleegameclient.sound"), "Song")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  iinit
+   name "Song"
+   refid "com.company.assembleegameclient.sound:Song/instance/init"
+   param QName(PackageNamespace(""), "String")
+   flag HAS_PARAM_NAMES
+   paramname "name"
+   body
+    maxstack 4
+    localcount 2
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     findpropstrict      QName(PackageNamespace("flash.media"), "Sound")
+     constructprop       QName(PackageNamespace("flash.media"), "Sound"), 0
+     findproperty        QName(PrivateNamespace("com.company.assembleegameclient.sound:Song"), "sound")
+     swap
+     setproperty         QName(PrivateNamespace("com.company.assembleegameclient.sound:Song"), "sound")
+
+     getlex              QName(PrivateNamespace("com.company.assembleegameclient.sound:Song"), "sound")
+     findpropstrict      QName(PackageNamespace("flash.net"), "URLRequest")
+     pushstring          "https://music-cdn.valorserver.com/music/"
+     getlocal1
+     add
+     pushstring          ".mp3"
+     add
+     constructprop       QName(PackageNamespace("flash.net"), "URLRequest"), 1
+     callpropvoid        QName(PackageNamespace(""), "load"), 1
+
+     findpropstrict      QName(PackageNamespace("flash.media"), "SoundTransform")
+     pushbyte            0
+     constructprop       QName(PackageNamespace("flash.media"), "SoundTransform"), 1
+     findproperty        QName(PrivateNamespace("com.company.assembleegameclient.sound:Song"), "transform")
+     swap
+     setproperty         QName(PrivateNamespace("com.company.assembleegameclient.sound:Song"), "transform")
+
+     findpropstrict      QName(PackageNamespace("com.gskinner.motion"), "GTween")
+     getlex              QName(PrivateNamespace("com.company.assembleegameclient.sound:Song"), "transform")
+     constructprop       QName(PackageNamespace("com.gskinner.motion"), "GTween"), 1
+     findproperty        QName(PrivateNamespace("com.company.assembleegameclient.sound:Song"), "tween")
+     swap
+     setproperty         QName(PrivateNamespace("com.company.assembleegameclient.sound:Song"), "tween")
+
+     getlex              QName(PrivateNamespace("com.company.assembleegameclient.sound:Song"), "tween")
+     getlex              QName(PrivateNamespace("com.company.assembleegameclient.sound:Song"), "updateTransform")
+     setproperty         QName(PackageNamespace(""), "onChange")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.sound:Song"), "sound") type QName(PackageNamespace("flash.media"), "Sound") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.sound:Song"), "transform") type QName(PackageNamespace("flash.media"), "SoundTransform") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.sound:Song"), "channel") type QName(PackageNamespace("flash.media"), "SoundChannel") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.sound:Song"), "tween") type QName(PackageNamespace("com.gskinner.motion"), "GTween") end
+  trait method QName(PackageNamespace(""), "play")
+   method
+    name "play"
+    refid "com.company.assembleegameclient.sound:Song/instance/play"
+    param QName(PackageNamespace(""), "Number")
+    param QName(PackageNamespace(""), "Number")
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_OPTIONAL
+    flag HAS_PARAM_NAMES
+    optional Double(1)
+    optional Integer(2)
+    optional Integer(2147483647)
+    paramname "volume"
+    paramname "fadeTime"
+    paramname "loops"
+    body
+     maxstack 4
+     localcount 4
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PrivateNamespace("com.company.assembleegameclient.sound:Song"), "channel")
+      iffalse             L6
+
+      getlex              QName(PrivateNamespace("com.company.assembleegameclient.sound:Song"), "channel")
+      callpropvoid        QName(PackageNamespace(""), "stop"), 0
+
+L6:
+      getlex              QName(PrivateNamespace("com.company.assembleegameclient.sound:Song"), "tween")
+      getlocal2
+      setproperty         QName(PackageNamespace(""), "duration")
+
+      getlex              QName(PrivateNamespace("com.company.assembleegameclient.sound:Song"), "tween")
+      pushstring          "volume"
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "setValue"), 2
+
+      getlex              QName(PrivateNamespace("com.company.assembleegameclient.sound:Song"), "sound")
+      pushbyte            0
+      getlocal3
+      getlex              QName(PrivateNamespace("com.company.assembleegameclient.sound:Song"), "transform")
+      callproperty        QName(PackageNamespace(""), "play"), 3
+      findproperty        QName(PrivateNamespace("com.company.assembleegameclient.sound:Song"), "channel")
+      swap
+      setproperty         QName(PrivateNamespace("com.company.assembleegameclient.sound:Song"), "channel")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "stop")
+   method
+    name "stop"
+    refid "com.company.assembleegameclient.sound:Song/instance/stop"
+    param QName(PackageNamespace(""), "Boolean")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_OPTIONAL
+    flag HAS_PARAM_NAMES
+    optional False()
+    paramname "noFade"
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PrivateNamespace("com.company.assembleegameclient.sound:Song"), "channel")
+      iffalse             L16
+
+      getlex              QName(PrivateNamespace("com.company.assembleegameclient.sound:Song"), "tween")
+      getlex              QName(PrivateNamespace("com.company.assembleegameclient.sound:Song"), "stopChannel")
+      setproperty         QName(PackageNamespace(""), "onComplete")
+
+      getlex              QName(PrivateNamespace("com.company.assembleegameclient.sound:Song"), "tween")
+      pushstring          "volume"
+      pushbyte            0
+      callpropvoid        QName(PackageNamespace(""), "setValue"), 2
+
+      getlocal1
+      iffalse             L16
+
+      getlex              QName(PrivateNamespace("com.company.assembleegameclient.sound:Song"), "transform")
+      pushbyte            0
+      setproperty         QName(PackageNamespace(""), "volume")
+
+L16:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait getter QName(PackageNamespace(""), "volume")
+   method
+    name "volume"
+    refid "com.company.assembleegameclient.sound:Song/instance/volume/getter"
+    returns QName(PackageNamespace(""), "Number")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PrivateNamespace("com.company.assembleegameclient.sound:Song"), "transform")
+      getproperty         QName(PackageNamespace(""), "volume")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait setter QName(PackageNamespace(""), "volume")
+   method
+    name "volume"
+    refid "com.company.assembleegameclient.sound:Song/instance/volume/setter"
+    param QName(PackageNamespace(""), "Number")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "volume"
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PrivateNamespace("com.company.assembleegameclient.sound:Song"), "transform")
+      getlocal1
+      setproperty         QName(PackageNamespace(""), "volume")
+
+      getlex              QName(PrivateNamespace("com.company.assembleegameclient.sound:Song"), "tween")
+      pushstring          "volume"
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "setValue"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.sound:Song"), "updateTransform")
+   method
+    name "updateTransform"
+    refid "com.company.assembleegameclient.sound:Song/instance/com.company.assembleegameclient.sound:Song/instance/updateTransform"
+    param QName(PackageNamespace("com.gskinner.motion"), "GTween")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_OPTIONAL
+    flag HAS_PARAM_NAMES
+    optional Null()
+    paramname "tween"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PrivateNamespace("com.company.assembleegameclient.sound:Song"), "channel")
+      iffalse             L7
+
+      getlex              QName(PrivateNamespace("com.company.assembleegameclient.sound:Song"), "channel")
+      getlex              QName(PrivateNamespace("com.company.assembleegameclient.sound:Song"), "transform")
+      setproperty         QName(PackageNamespace(""), "soundTransform")
+
+L7:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.sound:Song"), "stopChannel")
+   method
+    name "stopChannel"
+    refid "com.company.assembleegameclient.sound:Song/instance/com.company.assembleegameclient.sound:Song/instance/stopChannel"
+    param QName(PackageNamespace("com.gskinner.motion"), "GTween")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "tween"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PrivateNamespace("com.company.assembleegameclient.sound:Song"), "channel")
+      callpropvoid        QName(PackageNamespace(""), "stop"), 0
+
+      pushnull
+      findproperty        QName(PrivateNamespace("com.company.assembleegameclient.sound:Song"), "channel")
+      swap
+      setproperty         QName(PrivateNamespace("com.company.assembleegameclient.sound:Song"), "channel")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.sound:Song/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

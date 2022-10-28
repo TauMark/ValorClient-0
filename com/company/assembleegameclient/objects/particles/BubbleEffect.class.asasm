@@ -1,0 +1,323 @@
+class
+ refid "com.company.assembleegameclient.objects.particles:BubbleEffect"
+ instance QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "BubbleEffect")
+  extends QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "ParticleEffect")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.company.assembleegameclient.objects.particles:BubbleEffect")
+  iinit
+   name "BubbleEffect"
+   refid "com.company.assembleegameclient.objects.particles:BubbleEffect/instance/init"
+   param QName(PackageNamespace("com.company.assembleegameclient.objects"), "GameObject")
+   param QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "EffectProperties")
+   flag HAS_PARAM_NAMES
+   paramname "_arg1"
+   paramname "_arg2"
+   body
+    maxstack 3
+    localcount 3
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     getlocal1
+     setproperty         QName(PackageNamespace(""), "go_")
+
+     getlocal0
+     getlocal2
+     setproperty         QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:BubbleEffect"), "fxProps")
+
+     getlocal0
+     pushbyte            1
+     getlocal2
+     getproperty         QName(PackageNamespace(""), "rate")
+     subtract
+     pushshort           400
+     multiply
+     pushbyte            1
+     add
+     setproperty         QName(PackageNamespace(""), "rate_")
+
+     getlocal0
+     pushstring          "BubbleEffect_"
+     getlex              QName(PackageNamespace(""), "Math")
+     callproperty        QName(PackageNamespace(""), "random"), 0
+     add
+     setproperty         QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:BubbleEffect"), "poolID")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:BubbleEffect"), "poolID") type QName(PackageNamespace(""), "String") end
+  trait slot QName(PackageNamespace(""), "go_") type QName(PackageNamespace("com.company.assembleegameclient.objects"), "GameObject") end
+  trait slot QName(PackageNamespace(""), "lastUpdate_") type QName(PackageNamespace(""), "int") value Integer(-1) end
+  trait slot QName(PackageNamespace(""), "rate_") type QName(PackageNamespace(""), "Number") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:BubbleEffect"), "fxProps") type QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "EffectProperties") end
+  trait method QName(PackageNamespace(""), "update") flag OVERRIDE
+   method
+    name "update"
+    refid "com.company.assembleegameclient.objects.particles:BubbleEffect/instance/update"
+    param QName(PackageNamespace(""), "int")
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "Boolean")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    paramname "_arg2"
+    body
+     maxstack 8
+     localcount 14
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushbyte            0
+      setlocal3
+
+      pushbyte            0
+      setlocal            9
+
+      pushnan
+      setlocal            6
+
+      pushnan
+      setlocal            7
+
+      pushnan
+      setlocal            4
+
+      pushnan
+      setlocal            5
+
+      pushnull
+      setlocal            13
+
+      pushnan
+      setlocal            12
+
+      pushnan
+      setlocal            11
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "go_")
+      getproperty         QName(PackageNamespace(""), "map_")
+      pushnull
+      ifne                L27
+
+      pushfalse
+      returnvalue
+
+L27:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "lastUpdate_")
+      iftrue              L35
+
+      getlocal0
+      getlocal1
+      setproperty         QName(PackageNamespace(""), "lastUpdate_")
+
+      pushtrue
+      returnvalue
+
+L35:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "lastUpdate_")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "rate_")
+      divide
+      convert_i
+      setlocal3
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "rate_")
+      divide
+      convert_i
+      setlocal            8
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "go_")
+      getproperty         QName(PackageNamespace(""), "x_")
+      convert_d
+      setlocal            4
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "go_")
+      getproperty         QName(PackageNamespace(""), "y_")
+      convert_d
+      setlocal            5
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "lastUpdate_")
+      pushbyte            0
+      ifnlt               L70
+
+      getlocal0
+      getlex              QName(PackageNamespace(""), "Math")
+      pushbyte            0
+      getlocal1
+      pushshort           400
+      subtract
+      callproperty        QName(PackageNamespace(""), "max"), 2
+      setproperty         QName(PackageNamespace(""), "lastUpdate_")
+
+L70:
+      getlocal            4
+      findproperty        QName(PackageNamespace(""), "x_")
+      swap
+      setproperty         QName(PackageNamespace(""), "x_")
+
+      getlocal            5
+      findproperty        QName(PackageNamespace(""), "y_")
+      swap
+      setproperty         QName(PackageNamespace(""), "y_")
+
+      getlocal3
+      setlocal            10
+
+      jump                L152
+
+L81:
+      label
+      getlocal            10
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "rate_")
+      multiply
+      convert_i
+      setlocal            9
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "BubbleParticle")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:BubbleEffect"), "poolID")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:BubbleEffect"), "fxProps")
+      getproperty         QName(PackageNamespace(""), "color")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:BubbleEffect"), "fxProps")
+      getproperty         QName(PackageNamespace(""), "speed")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:BubbleEffect"), "fxProps")
+      getproperty         QName(PackageNamespace(""), "life")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:BubbleEffect"), "fxProps")
+      getproperty         QName(PackageNamespace(""), "lifeVariance")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:BubbleEffect"), "fxProps")
+      getproperty         QName(PackageNamespace(""), "speedVariance")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:BubbleEffect"), "fxProps")
+      getproperty         QName(PackageNamespace(""), "spread")
+      callproperty        QName(PackageNamespace(""), "create"), 7
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "BubbleParticle")
+      dup
+      setlocal            13
+
+      getlocal            9
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "restart"), 2
+
+      getlex              QName(PackageNamespace(""), "Math")
+      callproperty        QName(PackageNamespace(""), "random"), 0
+      pushdouble          3.141592653589793
+      multiply
+      convert_d
+      setlocal            6
+
+      getlex              QName(PackageNamespace(""), "Math")
+      callproperty        QName(PackageNamespace(""), "random"), 0
+      pushdouble          0.4
+      multiply
+      convert_d
+      setlocal            7
+
+      getlocal            4
+      getlocal            7
+      getlex              QName(PackageNamespace(""), "Math")
+      getlocal            6
+      callproperty        QName(PackageNamespace(""), "cos"), 1
+      multiply
+      add
+      convert_d
+      setlocal            12
+
+      getlocal            5
+      getlocal            7
+      getlex              QName(PackageNamespace(""), "Math")
+      getlocal            6
+      callproperty        QName(PackageNamespace(""), "sin"), 1
+      multiply
+      add
+      convert_d
+      setlocal            11
+
+      getlex              QName(PackageNamespace(""), "map_")
+      getlocal            13
+      getlocal            12
+      getlocal            11
+      callpropvoid        QName(PackageNamespace(""), "addObj"), 3
+
+      inclocal_i          10
+L152:
+      getlocal            10
+      getlocal            8
+      iflt                L81
+
+      getlocal0
+      getlocal1
+      setproperty         QName(PackageNamespace(""), "lastUpdate_")
+
+      pushtrue
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "removeFromMap") flag OVERRIDE
+   method
+    name "removeFromMap"
+    refid "com.company.assembleegameclient.objects.particles:BubbleEffect/instance/removeFromMap"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      callsupervoid       QName(PackageNamespace(""), "removeFromMap"), 0
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "FreeList")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:BubbleEffect"), "poolID")
+      callpropvoid        QName(PackageNamespace(""), "dump"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.objects.particles:BubbleEffect/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:BubbleEffect"), "PERIOD_MAX") type QName(PackageNamespace(""), "Number") value Integer(400) end
+end ; class

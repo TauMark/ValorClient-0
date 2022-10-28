@@ -1,0 +1,236 @@
+class
+ refid "robotlegs.bender.extensions.modularity.impl:ContextViewBasedExistenceWatcher"
+ instance QName(PackageNamespace("robotlegs.bender.extensions.modularity.impl"), "ContextViewBasedExistenceWatcher")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("robotlegs.bender.extensions.modularity.impl:ContextViewBasedExistenceWatcher")
+  iinit
+   name "robotlegs.bender.extensions.modularity.impl:ContextViewBasedExistenceWatcher/ContextViewBasedExistenceWatcher"
+   refid "robotlegs.bender.extensions.modularity.impl:ContextViewBasedExistenceWatcher/instance/init"
+   param QName(PackageNamespace("robotlegs.bender.framework.api"), "IContext")
+   param QName(PackageNamespace("flash.display"), "DisplayObjectContainer")
+   flag HAS_PARAM_NAMES
+   paramname "_arg_1"
+   paramname "_arg_2"
+   body
+    maxstack 3
+    localcount 3
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     getlex              QName(PackageNamespace("robotlegs.bender.framework.impl"), "UID")
+     getlex              QName(PackageNamespace("robotlegs.bender.extensions.modularity.impl"), "ContextViewBasedExistenceWatcher")
+     callproperty        QName(PackageNamespace(""), "create"), 1
+     initproperty        QName(PrivateNamespace("robotlegs.bender.extensions.modularity.impl:ContextViewBasedExistenceWatcher"), "_uid")
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     getlocal1
+     getlocal0
+     callproperty        QName(Namespace("robotlegs.bender.framework.api:IContext"), "getLogger"), 1
+     initproperty        QName(PrivateNamespace("robotlegs.bender.extensions.modularity.impl:ContextViewBasedExistenceWatcher"), "_logger")
+
+     getlocal0
+     getlocal1
+     getproperty         QName(Namespace("robotlegs.bender.framework.api:IContext"), "injector")
+     initproperty        QName(PrivateNamespace("robotlegs.bender.extensions.modularity.impl:ContextViewBasedExistenceWatcher"), "_injector")
+
+     getlocal0
+     getlocal2
+     initproperty        QName(PrivateNamespace("robotlegs.bender.extensions.modularity.impl:ContextViewBasedExistenceWatcher"), "_contextView")
+
+     getlocal1
+     getproperty         QName(Namespace("robotlegs.bender.framework.api:IContext"), "lifecycle")
+     getlocal0
+     getproperty         QName(PrivateNamespace("robotlegs.bender.extensions.modularity.impl:ContextViewBasedExistenceWatcher"), "destroy")
+     callpropvoid        QName(Namespace("robotlegs.bender.framework.api:ILifecycle"), "whenDestroying"), 1
+
+     getlocal0
+     callpropvoid        QName(PrivateNamespace("robotlegs.bender.extensions.modularity.impl:ContextViewBasedExistenceWatcher"), "init"), 0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait const QName(PrivateNamespace("robotlegs.bender.extensions.modularity.impl:ContextViewBasedExistenceWatcher"), "_uid") type QName(PackageNamespace(""), "String") end
+  trait slot QName(PrivateNamespace("robotlegs.bender.extensions.modularity.impl:ContextViewBasedExistenceWatcher"), "_logger") type QName(PackageNamespace("robotlegs.bender.framework.api"), "ILogger") end
+  trait slot QName(PrivateNamespace("robotlegs.bender.extensions.modularity.impl:ContextViewBasedExistenceWatcher"), "_injector") type QName(PackageNamespace("org.swiftsuspenders"), "Injector") end
+  trait slot QName(PrivateNamespace("robotlegs.bender.extensions.modularity.impl:ContextViewBasedExistenceWatcher"), "_contextView") type QName(PackageNamespace("flash.display"), "DisplayObjectContainer") end
+  trait slot QName(PrivateNamespace("robotlegs.bender.extensions.modularity.impl:ContextViewBasedExistenceWatcher"), "_childContext") type QName(PackageNamespace("robotlegs.bender.framework.api"), "IContext") end
+  trait method QName(PackageNamespace(""), "toString")
+   method
+    name "robotlegs.bender.extensions.modularity.impl:ContextViewBasedExistenceWatcher/toString"
+    refid "robotlegs.bender.extensions.modularity.impl:ContextViewBasedExistenceWatcher/instance/toString"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("robotlegs.bender.extensions.modularity.impl:ContextViewBasedExistenceWatcher"), "_uid")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("robotlegs.bender.extensions.modularity.impl:ContextViewBasedExistenceWatcher"), "init")
+   method
+    name "robotlegs.bender.extensions.modularity.impl:ContextViewBasedExistenceWatcher/private:init"
+    refid "robotlegs.bender.extensions.modularity.impl:ContextViewBasedExistenceWatcher/instance/robotlegs.bender.extensions.modularity.impl:ContextViewBasedExistenceWatcher/instance/init"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("robotlegs.bender.extensions.modularity.impl:ContextViewBasedExistenceWatcher"), "_logger")
+      pushstring          "Listening for context existence events on contextView {0}"
+      getlocal0
+      getproperty         QName(PrivateNamespace("robotlegs.bender.extensions.modularity.impl:ContextViewBasedExistenceWatcher"), "_contextView")
+      newarray            1
+      callpropvoid        QName(Namespace("robotlegs.bender.framework.api:ILogger"), "debug"), 2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("robotlegs.bender.extensions.modularity.impl:ContextViewBasedExistenceWatcher"), "_contextView")
+      getlex              QName(PackageNamespace("robotlegs.bender.extensions.modularity.impl"), "ModularContextEvent")
+      getproperty         QName(PackageNamespace(""), "CONTEXT_ADD")
+      getlocal0
+      getproperty         QName(PrivateNamespace("robotlegs.bender.extensions.modularity.impl:ContextViewBasedExistenceWatcher"), "onContextAdd")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("robotlegs.bender.extensions.modularity.impl:ContextViewBasedExistenceWatcher"), "destroy")
+   method
+    name "robotlegs.bender.extensions.modularity.impl:ContextViewBasedExistenceWatcher/private:destroy"
+    refid "robotlegs.bender.extensions.modularity.impl:ContextViewBasedExistenceWatcher/instance/robotlegs.bender.extensions.modularity.impl:ContextViewBasedExistenceWatcher/instance/destroy"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("robotlegs.bender.extensions.modularity.impl:ContextViewBasedExistenceWatcher"), "_logger")
+      pushstring          "Removing modular context existence event listener from contextView {0}"
+      getlocal0
+      getproperty         QName(PrivateNamespace("robotlegs.bender.extensions.modularity.impl:ContextViewBasedExistenceWatcher"), "_contextView")
+      newarray            1
+      callpropvoid        QName(Namespace("robotlegs.bender.framework.api:ILogger"), "debug"), 2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("robotlegs.bender.extensions.modularity.impl:ContextViewBasedExistenceWatcher"), "_contextView")
+      getlex              QName(PackageNamespace("robotlegs.bender.extensions.modularity.impl"), "ModularContextEvent")
+      getproperty         QName(PackageNamespace(""), "CONTEXT_ADD")
+      getlocal0
+      getproperty         QName(PrivateNamespace("robotlegs.bender.extensions.modularity.impl:ContextViewBasedExistenceWatcher"), "onContextAdd")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("robotlegs.bender.extensions.modularity.impl:ContextViewBasedExistenceWatcher"), "_childContext")
+      iffalse             L31
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("robotlegs.bender.extensions.modularity.impl:ContextViewBasedExistenceWatcher"), "_logger")
+      pushstring          "Unlinking parent injector for child context {0}"
+      getlocal0
+      getproperty         QName(PrivateNamespace("robotlegs.bender.extensions.modularity.impl:ContextViewBasedExistenceWatcher"), "_childContext")
+      newarray            1
+      callpropvoid        QName(Namespace("robotlegs.bender.framework.api:ILogger"), "debug"), 2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("robotlegs.bender.extensions.modularity.impl:ContextViewBasedExistenceWatcher"), "_childContext")
+      getproperty         QName(Namespace("robotlegs.bender.framework.api:IContext"), "injector")
+      pushnull
+      setproperty         QName(PackageNamespace(""), "parentInjector")
+
+L31:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("robotlegs.bender.extensions.modularity.impl:ContextViewBasedExistenceWatcher"), "onContextAdd")
+   method
+    name "robotlegs.bender.extensions.modularity.impl:ContextViewBasedExistenceWatcher/private:onContextAdd"
+    refid "robotlegs.bender.extensions.modularity.impl:ContextViewBasedExistenceWatcher/instance/robotlegs.bender.extensions.modularity.impl:ContextViewBasedExistenceWatcher/instance/onContextAdd"
+    param QName(PackageNamespace("robotlegs.bender.extensions.modularity.impl"), "ModularContextEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg_1"
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "stopImmediatePropagation"), 0
+
+      getlocal0
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "context")
+      setproperty         QName(PrivateNamespace("robotlegs.bender.extensions.modularity.impl:ContextViewBasedExistenceWatcher"), "_childContext")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("robotlegs.bender.extensions.modularity.impl:ContextViewBasedExistenceWatcher"), "_logger")
+      pushstring          "Context existence event caught. Configuring child context {0}"
+      getlocal0
+      getproperty         QName(PrivateNamespace("robotlegs.bender.extensions.modularity.impl:ContextViewBasedExistenceWatcher"), "_childContext")
+      newarray            1
+      callpropvoid        QName(Namespace("robotlegs.bender.framework.api:ILogger"), "debug"), 2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("robotlegs.bender.extensions.modularity.impl:ContextViewBasedExistenceWatcher"), "_childContext")
+      getproperty         QName(Namespace("robotlegs.bender.framework.api:IContext"), "injector")
+      getlocal0
+      getproperty         QName(PrivateNamespace("robotlegs.bender.extensions.modularity.impl:ContextViewBasedExistenceWatcher"), "_injector")
+      setproperty         QName(PackageNamespace(""), "parentInjector")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  name ""
+  refid "robotlegs.bender.extensions.modularity.impl:ContextViewBasedExistenceWatcher/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

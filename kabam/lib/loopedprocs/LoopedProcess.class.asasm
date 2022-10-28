@@ -1,0 +1,348 @@
+class
+ refid "kabam.lib.loopedprocs:LoopedProcess"
+ instance QName(PackageNamespace("kabam.lib.loopedprocs"), "LoopedProcess")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.lib.loopedprocs:LoopedProcess")
+  iinit
+   name "LoopedProcess"
+   refid "kabam.lib.loopedprocs:LoopedProcess/instance/init"
+   param QName(PackageNamespace(""), "uint")
+   flag HAS_PARAM_NAMES
+   paramname "_arg1"
+   body
+    maxstack 2
+    localcount 2
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     getlocal1
+     setproperty         QName(PackageNamespace(""), "interval")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "id") type QName(PackageNamespace(""), "uint") end
+  trait slot QName(PackageNamespace(""), "paused") type QName(PackageNamespace(""), "Boolean") end
+  trait slot QName(PackageNamespace(""), "interval") type QName(PackageNamespace(""), "uint") end
+  trait slot QName(PackageNamespace(""), "lastRun") type QName(PackageNamespace(""), "int") end
+  trait method QName(PackageNamespace(""), "add") flag FINAL
+   method
+    name "add"
+    refid "kabam.lib.loopedprocs:LoopedProcess/instance/add"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace(""), "addProcess")
+      getlocal0
+      callpropvoid        QName(PackageNamespace(""), "addProcess"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "destroy") flag FINAL
+   method
+    name "destroy"
+    refid "kabam.lib.loopedprocs:LoopedProcess/instance/destroy"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace(""), "destroyProcess")
+      getlocal0
+      callpropvoid        QName(PackageNamespace(""), "destroyProcess"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(ProtectedNamespace("kabam.lib.loopedprocs:LoopedProcess"), "run")
+   method
+    name "run"
+    refid "kabam.lib.loopedprocs:LoopedProcess/instance/kabam.lib.loopedprocs:LoopedProcess:run"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(ProtectedNamespace("kabam.lib.loopedprocs:LoopedProcess"), "onDestroyed")
+   method
+    name "onDestroyed"
+    refid "kabam.lib.loopedprocs:LoopedProcess/instance/kabam.lib.loopedprocs:LoopedProcess:onDestroyed"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.lib.loopedprocs:LoopedProcess/class/init"
+  body
+   maxstack 2
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 1
+   code
+    getlocal0
+    pushscope
+
+    findpropstrict      QName(PackageNamespace("flash.utils"), "Dictionary")
+    constructprop       QName(PackageNamespace("flash.utils"), "Dictionary"), 0
+    findproperty        QName(PrivateNamespace("kabam.lib.loopedprocs:LoopedProcess"), "loopProcs")
+    swap
+    setproperty         QName(PrivateNamespace("kabam.lib.loopedprocs:LoopedProcess"), "loopProcs")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait slot QName(PrivateNamespace("kabam.lib.loopedprocs:LoopedProcess"), "maxId") type QName(PackageNamespace(""), "uint") end
+ trait slot QName(PrivateNamespace("kabam.lib.loopedprocs:LoopedProcess"), "loopProcs") type QName(PackageNamespace("flash.utils"), "Dictionary") end
+ trait method QName(PackageNamespace(""), "addProcess")
+  method
+   name "addProcess"
+   refid "kabam.lib.loopedprocs:LoopedProcess/class/addProcess"
+   param QName(PackageNamespace("kabam.lib.loopedprocs"), "LoopedProcess")
+   returns QName(PackageNamespace(""), "uint")
+   flag HAS_PARAM_NAMES
+   paramname "_arg1"
+   body
+    maxstack 3
+    localcount 3
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PrivateNamespace("kabam.lib.loopedprocs:LoopedProcess"), "loopProcs")
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "id")
+     getproperty         MultinameL([PrivateNamespace("kabam.lib.loopedprocs:LoopedProcess"), StaticProtectedNs("kabam.lib.loopedprocs:LoopedProcess"), StaticProtectedNs("Object"), PackageNamespace("kabam.lib.loopedprocs"), PackageInternalNs("kabam.lib.loopedprocs"), PrivateNamespace("FilePrivateNS:LoopedProcess"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.lib.loopedprocs:LoopedProcess")])
+     getlocal1
+     ifne                L11
+
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "id")
+     returnvalue
+
+L11:
+     getlex              QName(PrivateNamespace("kabam.lib.loopedprocs:LoopedProcess"), "maxId")
+     increment
+     dup
+     findpropstrict      QName(PrivateNamespace("kabam.lib.loopedprocs:LoopedProcess"), "maxId")
+     swap
+     setproperty         QName(PrivateNamespace("kabam.lib.loopedprocs:LoopedProcess"), "maxId")
+
+     convert_i
+     setlocal2
+
+     getlex              QName(PrivateNamespace("kabam.lib.loopedprocs:LoopedProcess"), "loopProcs")
+     getlocal2
+     getlocal1
+     setproperty         MultinameL([PrivateNamespace("kabam.lib.loopedprocs:LoopedProcess"), StaticProtectedNs("kabam.lib.loopedprocs:LoopedProcess"), StaticProtectedNs("Object"), PackageNamespace("kabam.lib.loopedprocs"), PackageInternalNs("kabam.lib.loopedprocs"), PrivateNamespace("FilePrivateNS:LoopedProcess"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.lib.loopedprocs:LoopedProcess")])
+
+     getlocal1
+     getlex              QName(PackageNamespace("flash.utils"), "getTimer")
+     getglobalscope
+     call                0
+     setproperty         QName(PackageNamespace(""), "lastRun")
+
+     getlex              QName(PrivateNamespace("kabam.lib.loopedprocs:LoopedProcess"), "maxId")
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "runProcesses")
+  method
+   name "runProcesses"
+   refid "kabam.lib.loopedprocs:LoopedProcess/class/runProcesses"
+   param QName(PackageNamespace(""), "int")
+   returns QName(PackageNamespace(""), "void")
+   flag HAS_PARAM_NAMES
+   paramname "_arg1"
+   body
+    maxstack 2
+    localcount 6
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     pushnull
+     setlocal2
+
+     pushbyte            0
+     setlocal3
+
+     pushbyte            0
+     setlocal            5
+
+     getlex              QName(PrivateNamespace("kabam.lib.loopedprocs:LoopedProcess"), "loopProcs")
+     setlocal            4
+
+     jump                L35
+
+L11:
+     label
+     getlocal            4
+     getlocal            5
+     nextvalue
+     coerce              QName(PackageNamespace("kabam.lib.loopedprocs"), "LoopedProcess")
+     setlocal2
+
+     getlocal2
+     getproperty         QName(PackageNamespace(""), "paused")
+     iftrue              L35
+
+     getlocal1
+     getlocal2
+     getproperty         QName(PackageNamespace(""), "lastRun")
+     subtract
+     convert_i
+     setlocal3
+
+     getlocal3
+     getlocal2
+     getproperty         QName(PackageNamespace(""), "interval")
+     ifnge               L35
+
+     getlocal2
+     getlocal1
+     setproperty         QName(PackageNamespace(""), "lastRun")
+
+     getlocal2
+     callpropvoid        QName(ProtectedNamespace("kabam.lib.loopedprocs:LoopedProcess"), "run"), 0
+
+L35:
+     hasnext2            4, 5
+     iftrue              L11
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "destroyProcess")
+  method
+   name "destroyProcess"
+   refid "kabam.lib.loopedprocs:LoopedProcess/class/destroyProcess"
+   param QName(PackageNamespace("kabam.lib.loopedprocs"), "LoopedProcess")
+   returns QName(PackageNamespace(""), "void")
+   flag HAS_PARAM_NAMES
+   paramname "_arg1"
+   body
+    maxstack 2
+    localcount 2
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PrivateNamespace("kabam.lib.loopedprocs:LoopedProcess"), "loopProcs")
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "id")
+     deleteproperty      MultinameL([PrivateNamespace("kabam.lib.loopedprocs:LoopedProcess"), StaticProtectedNs("kabam.lib.loopedprocs:LoopedProcess"), StaticProtectedNs("Object"), PackageNamespace("kabam.lib.loopedprocs"), PackageInternalNs("kabam.lib.loopedprocs"), PrivateNamespace("FilePrivateNS:LoopedProcess"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.lib.loopedprocs:LoopedProcess")])
+     pop
+     getlocal1
+     callpropvoid        QName(ProtectedNamespace("kabam.lib.loopedprocs:LoopedProcess"), "onDestroyed"), 0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "destroyAll")
+  method
+   name "destroyAll"
+   refid "kabam.lib.loopedprocs:LoopedProcess/class/destroyAll"
+   returns QName(PackageNamespace(""), "void")
+   body
+    maxstack 2
+    localcount 4
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     pushnull
+     setlocal1
+
+     pushbyte            0
+     setlocal3
+
+     getlex              QName(PrivateNamespace("kabam.lib.loopedprocs:LoopedProcess"), "loopProcs")
+     setlocal2
+
+     jump                L17
+
+L9:
+     label
+     getlocal2
+     getlocal3
+     nextvalue
+     coerce              QName(PackageNamespace("kabam.lib.loopedprocs"), "LoopedProcess")
+     setlocal1
+
+     getlocal1
+     callpropvoid        QName(PackageNamespace(""), "destroy"), 0
+
+L17:
+     hasnext2            2, 3
+     iftrue              L9
+
+     findpropstrict      QName(PackageNamespace("flash.utils"), "Dictionary")
+     constructprop       QName(PackageNamespace("flash.utils"), "Dictionary"), 0
+     findproperty        QName(PrivateNamespace("kabam.lib.loopedprocs:LoopedProcess"), "loopProcs")
+     swap
+     setproperty         QName(PrivateNamespace("kabam.lib.loopedprocs:LoopedProcess"), "loopProcs")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+end ; class

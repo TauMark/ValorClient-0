@@ -1,0 +1,216 @@
+class
+ refid "kabam.rotmg.editor.view.components.drawer:Pixel"
+ instance QName(PackageNamespace("kabam.rotmg.editor.view.components.drawer"), "Pixel")
+  extends QName(PackageNamespace("flash.display"), "Sprite")
+  flag SEALED
+  iinit
+   name "Pixel"
+   refid "kabam.rotmg.editor.view.components.drawer:Pixel/instance/init"
+   param QName(PackageNamespace(""), "int")
+   param QName(PackageNamespace(""), "Boolean")
+   flag HAS_PARAM_NAMES
+   paramname "_arg_1"
+   paramname "_arg_2"
+   body
+    maxstack 2
+    localcount 3
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     getlocal1
+     setproperty         QName(PackageNamespace(""), "size_")
+
+     getlocal0
+     getlocal2
+     setproperty         QName(PrivateNamespace("kabam.rotmg.editor.view.components.drawer:Pixel"), "allowTrans_")
+
+     getlocal0
+     callpropvoid        QName(PackageNamespace(""), "redraw"), 0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "size_") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PackageNamespace(""), "hsv_") type QName(PackageNamespace("com.company.color"), "HSV") value Null() end
+  trait slot QName(PrivateNamespace("kabam.rotmg.editor.view.components.drawer:Pixel"), "allowTrans_") type QName(PackageNamespace(""), "Boolean") end
+  trait method QName(PackageNamespace(""), "setHSV")
+   method
+    name "setHSV"
+    refid "kabam.rotmg.editor.view.components.drawer:Pixel/instance/setHSV"
+    param QName(PackageNamespace("com.company.color"), "HSV")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg_1"
+    body
+     maxstack 4
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      pushnull
+      ifeq                L14
+
+      getlocal0
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "clone"), 0
+      dup
+      setlocal2
+
+      setproperty         QName(PackageNamespace(""), "hsv_")
+
+      getlocal2
+      jump                L16
+
+L14:
+      pushnull
+      coerce_a
+L16:
+      setproperty         QName(PackageNamespace(""), "hsv_")
+
+      getlocal0
+      callpropvoid        QName(PackageNamespace(""), "redraw"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getColor")
+   method
+    name "getColor"
+    refid "kabam.rotmg.editor.view.components.drawer:Pixel/instance/getColor"
+    returns QName(PackageNamespace(""), "uint")
+    body
+     maxstack 4
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hsv_")
+      pushnull
+      ifne                L8
+
+      pushbyte            0
+      jump                L20
+
+L8:
+      getlex              QName(PackageNamespace("com.company.util"), "MoreColorUtil")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hsv_")
+      getproperty         QName(PackageNamespace(""), "h_")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hsv_")
+      getproperty         QName(PackageNamespace(""), "s_")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hsv_")
+      getproperty         QName(PackageNamespace(""), "v_")
+      callproperty        QName(PackageNamespace(""), "hsvToRgb"), 3
+      coerce_a
+L20:
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "redraw")
+   method
+    name "redraw"
+    refid "kabam.rotmg.editor.view.components.drawer:Pixel/instance/redraw"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 5
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace(""), "graphics")
+      callpropvoid        QName(PackageNamespace(""), "clear"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hsv_")
+      pushnull
+      ifne                L18
+
+      getlex              QName(PackageNamespace(""), "graphics")
+      pushbyte            0
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.editor.view.components.drawer:Pixel"), "allowTrans_")
+      iffalse             L15
+
+      pushbyte            0
+      jump                L16
+
+L15:
+      pushdouble          1
+L16:
+      callpropvoid        QName(PackageNamespace(""), "beginFill"), 2
+
+      jump                L31
+
+L18:
+      getlex              QName(PackageNamespace(""), "graphics")
+      getlex              QName(PackageNamespace("com.company.util"), "MoreColorUtil")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hsv_")
+      getproperty         QName(PackageNamespace(""), "h_")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hsv_")
+      getproperty         QName(PackageNamespace(""), "s_")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hsv_")
+      getproperty         QName(PackageNamespace(""), "v_")
+      callproperty        QName(PackageNamespace(""), "hsvToRgb"), 3
+      callpropvoid        QName(PackageNamespace(""), "beginFill"), 1
+
+L31:
+      getlex              QName(PackageNamespace(""), "graphics")
+      pushbyte            0
+      pushbyte            0
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "size_")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "size_")
+      callpropvoid        QName(PackageNamespace(""), "drawRect"), 4
+
+      getlex              QName(PackageNamespace(""), "graphics")
+      callpropvoid        QName(PackageNamespace(""), "endFill"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.editor.view.components.drawer:Pixel/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

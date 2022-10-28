@@ -1,0 +1,739 @@
+class
+ refid "kabam.rotmg.potionStorage:PotionStorageModel"
+ instance QName(PackageNamespace("kabam.rotmg.potionStorage"), "PotionStorageModel")
+  extends QName(PackageNamespace("io.decagames.rotmg.ui.popups.modal"), "ModalPopup")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.potionStorage:PotionStorageModel")
+  iinit
+   name "PotionStorageModel"
+   refid "kabam.rotmg.potionStorage:PotionStorageModel/instance/init"
+   param QName(PackageNamespace("com.company.assembleegameclient.game"), "GameSprite")
+   flag HAS_PARAM_NAMES
+   paramname "gs"
+   body
+    maxstack 6
+    localcount 8
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     pushbyte            0
+     setlocal            7
+
+     pushnull
+     setlocal3
+
+     findpropstrict      QName(PackageNamespace("org.osflash.signals"), "Signal")
+     constructprop       QName(PackageNamespace("org.osflash.signals"), "Signal"), 0
+     findproperty        QName(PackageInternalNs("kabam.rotmg.potionStorage"), "close")
+     swap
+     setproperty         QName(PackageInternalNs("kabam.rotmg.potionStorage"), "close")
+
+     getlocal0
+     getlocal1
+     setproperty         QName(PrivateNamespace("kabam.rotmg.potionStorage:PotionStorageModel"), "gs_")
+
+     getlocal0
+     getlex              QName(PrivateNamespace("kabam.rotmg.potionStorage:PotionStorageModel"), "MODAL_WIDTH")
+     getlex              QName(PrivateNamespace("kabam.rotmg.potionStorage:PotionStorageModel"), "MODAL_HEIGHT")
+     pushstring          "Potion Storage"
+     constructsuper      3
+
+     getlocal0
+     getlex              QName(PackageNamespace("io.decagames.rotmg.ui.texture"), "TextureParser")
+     getproperty         QName(PackageNamespace(""), "instance")
+     pushstring          "UI"
+     pushstring          "popup_content_inset"
+     callproperty        QName(PackageNamespace(""), "getSliceScalingBitmap"), 2
+     setproperty         QName(PrivateNamespace("kabam.rotmg.potionStorage:PotionStorageModel"), "darkBackground")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.potionStorage:PotionStorageModel"), "darkBackground")
+     pushbyte            0
+     setproperty         QName(PackageNamespace(""), "x")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.potionStorage:PotionStorageModel"), "darkBackground")
+     pushbyte            0
+     setproperty         QName(PackageNamespace(""), "y")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.potionStorage:PotionStorageModel"), "darkBackground")
+     getlex              QName(PrivateNamespace("kabam.rotmg.potionStorage:PotionStorageModel"), "MODAL_WIDTH")
+     pushbyte            10
+     subtract
+     setproperty         QName(PackageNamespace(""), "width")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.potionStorage:PotionStorageModel"), "darkBackground")
+     getlex              QName(PrivateNamespace("kabam.rotmg.potionStorage:PotionStorageModel"), "MODAL_HEIGHT")
+     pushbyte            10
+     subtract
+     setproperty         QName(PackageNamespace(""), "height")
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlex              QName(PrivateNamespace("kabam.rotmg.potionStorage:PotionStorageModel"), "darkBackground")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     findpropstrict      QName(PackageNamespace("flash.display"), "Sprite")
+     constructprop       QName(PackageNamespace("flash.display"), "Sprite"), 0
+     coerce              QName(PackageNamespace("flash.display"), "Sprite")
+     setlocal2
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal2
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     findpropstrict      QName(PackageNamespace("flash.display"), "Sprite")
+     constructprop       QName(PackageNamespace("flash.display"), "Sprite"), 0
+     coerce              QName(PackageNamespace("flash.display"), "Sprite")
+     dup
+     setlocal            4
+
+     getproperty         QName(PackageNamespace(""), "graphics")
+     pushbyte            0
+     callpropvoid        QName(PackageNamespace(""), "beginFill"), 1
+
+     getlocal            4
+     getproperty         QName(PackageNamespace(""), "graphics")
+     pushbyte            0
+     pushbyte            8
+     getlex              QName(PrivateNamespace("kabam.rotmg.potionStorage:PotionStorageModel"), "MODAL_WIDTH")
+     pushbyte            10
+     subtract
+     getlex              QName(PrivateNamespace("kabam.rotmg.potionStorage:PotionStorageModel"), "MODAL_HEIGHT")
+     pushbyte            20
+     subtract
+     callpropvoid        QName(PackageNamespace(""), "drawRect"), 4
+
+     getlocal2
+     getlocal            4
+     setproperty         QName(PackageNamespace(""), "mask")
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal            4
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.potionStorage:PotionStorageModel"), "gs_")
+     getproperty         QName(PackageNamespace(""), "map")
+     getproperty         QName(PackageNamespace(""), "player")
+     getproperty         QName(PackageNamespace(""), "SPS_Modal")
+     pushnull
+     ifeq                L100
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.potionStorage:PotionStorageModel"), "gs_")
+     getproperty         QName(PackageNamespace(""), "map")
+     getproperty         QName(PackageNamespace(""), "player")
+     getproperty         QName(PackageNamespace(""), "SPS_Modal")
+     callpropvoid        QName(PackageNamespace(""), "dispose"), 0
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.potionStorage:PotionStorageModel"), "gs_")
+     getproperty         QName(PackageNamespace(""), "map")
+     getproperty         QName(PackageNamespace(""), "player")
+     pushnull
+     setproperty         QName(PackageNamespace(""), "SPS_Modal")
+
+L100:
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.potionStorage:PotionStorageModel"), "gs_")
+     getproperty         QName(PackageNamespace(""), "map")
+     getproperty         QName(PackageNamespace(""), "player")
+     getlocal0
+     setproperty         QName(PackageNamespace(""), "SPS_Modal")
+
+     getlocal0
+     getlex              QName(PackageNamespace("__AS3__.vec"), "Vector")
+     getlex              QName(PackageNamespace("kabam.rotmg.potionStorage"), "PotionStorageContainer")
+     applytype           1
+     construct           0
+     setproperty         QName(PackageNamespace(""), "potionContainers")
+
+     getlocal0
+     getlex              QName(PackageNamespace("kabam.rotmg.core"), "StaticInjectorContext")
+     callproperty        QName(PackageNamespace(""), "getInjector"), 0
+     getlex              QName(PackageNamespace("kabam.rotmg.game.model"), "GameModel")
+     callproperty        QName(PackageNamespace(""), "getInstance"), 1
+     getproperty         Multiname("player", [PrivateNamespace("kabam.rotmg.potionStorage:PotionStorageModel"), ProtectedNamespace("kabam.rotmg.potionStorage:PotionStorageModel"), StaticProtectedNs("kabam.rotmg.potionStorage:PotionStorageModel"), StaticProtectedNs("io.decagames.rotmg.ui.popups.modal:ModalPopup"), StaticProtectedNs("io.decagames.rotmg.ui.popups:BasePopup"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.potionStorage"), PackageInternalNs("kabam.rotmg.potionStorage"), PrivateNamespace("FilePrivateNS:PotionStorageModel"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+     setproperty         QName(PackageInternalNs("kabam.rotmg.potionStorage"), "player")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("io.decagames.rotmg.ui.buttons"), "SliceScalingButton")
+     getlex              QName(PackageNamespace("io.decagames.rotmg.ui.texture"), "TextureParser")
+     getproperty         QName(PackageNamespace(""), "instance")
+     pushstring          "UI"
+     pushstring          "close_button"
+     callproperty        QName(PackageNamespace(""), "getSliceScalingBitmap"), 2
+     constructprop       QName(PackageNamespace("io.decagames.rotmg.ui.buttons"), "SliceScalingButton"), 1
+     setproperty         QName(PackageInternalNs("kabam.rotmg.potionStorage"), "quitButton")
+
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "header")
+     getlocal0
+     getproperty         QName(PackageInternalNs("kabam.rotmg.potionStorage"), "quitButton")
+     pushstring          "right_button"
+     callpropvoid        QName(PackageNamespace(""), "addButton"), 2
+
+     getlocal0
+     getproperty         QName(PackageInternalNs("kabam.rotmg.potionStorage"), "quitButton")
+     pushstring          "click"
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "onClose")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     pushbyte            0
+     setlocal            7
+
+     jump                L171
+
+L143:
+     label
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.potionStorage"), "PotionStorageContainer")
+     getlocal0
+     getlocal            7
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "map")
+     getproperty         QName(PackageNamespace(""), "player")
+     constructprop       QName(PackageNamespace("kabam.rotmg.potionStorage"), "PotionStorageContainer"), 3
+     coerce              QName(PackageNamespace("kabam.rotmg.potionStorage"), "PotionStorageContainer")
+     setlocal3
+
+     getlocal3
+     pushbyte            30
+     setproperty         QName(PackageNamespace(""), "x")
+
+     getlocal3
+     pushbyte            8
+     pushbyte            80
+     getlocal            7
+     multiply
+     add
+     setproperty         QName(PackageNamespace(""), "y")
+
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "potionContainers")
+     getlocal3
+     callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+
+     getlocal2
+     getlocal3
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     inclocal_i          7
+L171:
+     getlocal            7
+     pushbyte            12
+     iflt                L143
+
+     findpropstrict      QName(PackageNamespace("flash.display"), "Sprite")
+     constructprop       QName(PackageNamespace("flash.display"), "Sprite"), 0
+     coerce              QName(PackageNamespace("flash.display"), "Sprite")
+     dup
+     setlocal            5
+
+     getproperty         QName(PackageNamespace(""), "graphics")
+     pushbyte            0
+     callpropvoid        QName(PackageNamespace(""), "beginFill"), 1
+
+     getlocal            5
+     getproperty         QName(PackageNamespace(""), "graphics")
+     pushbyte            30
+     pushshort           970
+     pushbyte            0
+     pushbyte            10
+     callpropvoid        QName(PackageNamespace(""), "drawRect"), 4
+
+     getlocal2
+     getlocal            5
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     getlocal0
+     pushbyte            30
+     setproperty         QName(PackageNamespace(""), "x")
+
+     getlocal0
+     pushbyte            10
+     setproperty         QName(PackageNamespace(""), "y")
+
+     findpropstrict      QName(PackageNamespace("io.decagames.rotmg.ui.scroll"), "UIScrollbar")
+     getlex              QName(PrivateNamespace("kabam.rotmg.potionStorage:PotionStorageModel"), "MODAL_HEIGHT")
+     pushbyte            10
+     subtract
+     constructprop       QName(PackageNamespace("io.decagames.rotmg.ui.scroll"), "UIScrollbar"), 1
+     coerce              QName(PackageNamespace("io.decagames.rotmg.ui.scroll"), "UIScrollbar")
+     dup
+     setlocal            6
+
+     pushbyte            4
+     setproperty         QName(PackageNamespace(""), "mouseRollSpeedFactor")
+
+     getlocal            6
+     getlocal0
+     setproperty         QName(PackageNamespace(""), "scrollObject")
+
+     getlocal            6
+     getlocal2
+     setproperty         QName(PackageNamespace(""), "content")
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal            6
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace("kabam.rotmg.potionStorage:PotionStorageModel"), "gs_") type QName(PackageNamespace("com.company.assembleegameclient.game"), "GameSprite") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.potionStorage:PotionStorageModel"), "darkBackground") type QName(PackageNamespace("io.decagames.rotmg.ui.sliceScaling"), "SliceScalingBitmap") end
+  trait slot QName(PackageInternalNs("kabam.rotmg.potionStorage"), "quitButton") type QName(PackageNamespace("io.decagames.rotmg.ui.buttons"), "SliceScalingButton") end
+  trait slot QName(PackageInternalNs("kabam.rotmg.potionStorage"), "player") type QName(PackageNamespace("com.company.assembleegameclient.objects"), "Player") end
+  trait slot QName(PackageInternalNs("kabam.rotmg.potionStorage"), "text_") type QName(PackageNamespace(""), "String") end
+  trait slot QName(PackageInternalNs("kabam.rotmg.potionStorage"), "close") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait slot QName(PackageNamespace(""), "potionContainers") type TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("kabam.rotmg.potionStorage"), "PotionStorageContainer")>) end
+  trait method QName(PackageNamespace(""), "Interaction")
+   method
+    name "Interaction"
+    refid "kabam.rotmg.potionStorage:PotionStorageModel/instance/Interaction"
+    param QName(PackageNamespace(""), "int")
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "potionType"
+    paramname "action"
+    body
+     maxstack 4
+     localcount 6
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace("kabam.rotmg.messaging.impl"), "GameServerConnectionConcrete")
+      getproperty         QName(PackageNamespace(""), "instance")
+      getproperty         QName(PackageNamespace(""), "player")
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.objects"), "Player")
+      setlocal            5
+
+      findpropstrict      QName(PrivateNamespace("kabam.rotmg.potionStorage:PotionStorageModel"), "findPotion")
+      getlocal1
+      callproperty        QName(PrivateNamespace("kabam.rotmg.potionStorage:PotionStorageModel"), "findPotion"), 1
+      convert_i
+      setlocal            4
+
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "SlotObjectData")
+      constructprop       QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "SlotObjectData"), 0
+      coerce              QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "SlotObjectData")
+      setlocal3
+
+      getlocal3
+      getlocal            5
+      getproperty         QName(PackageNamespace(""), "objectId")
+      setproperty         QName(PackageNamespace(""), "objectId_")
+
+      getlocal3
+      getlocal            4
+      setproperty         QName(PackageNamespace(""), "slotId_")
+
+      getlocal3
+      getlocal            4
+      pushbyte            -1
+      ifeq                L33
+
+      getlocal            5
+      getproperty         QName(PackageNamespace(""), "equipment_")
+      getlocal            4
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.potionStorage:PotionStorageModel"), ProtectedNamespace("kabam.rotmg.potionStorage:PotionStorageModel"), StaticProtectedNs("kabam.rotmg.potionStorage:PotionStorageModel"), StaticProtectedNs("io.decagames.rotmg.ui.popups.modal:ModalPopup"), StaticProtectedNs("io.decagames.rotmg.ui.popups:BasePopup"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.potionStorage"), PackageInternalNs("kabam.rotmg.potionStorage"), PrivateNamespace("FilePrivateNS:PotionStorageModel"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      callproperty        QName(PackageNamespace(""), "toString"), 0
+      jump                L35
+
+L33:
+      pushstring          ""
+      coerce_s
+L35:
+      setproperty         QName(PackageNamespace(""), "itemData_")
+
+      getlex              QName(PackageNamespace("kabam.rotmg.messaging.impl"), "GameServerConnectionConcrete")
+      getproperty         QName(PackageNamespace(""), "instance")
+      getlocal1
+      getlocal2
+      getlocal3
+      callpropvoid        QName(PackageNamespace(""), "PotionInteraction"), 3
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.potionStorage:PotionStorageModel"), "findPotion")
+   method
+    name "findPotion"
+    refid "kabam.rotmg.potionStorage:PotionStorageModel/instance/kabam.rotmg.potionStorage:PotionStorageModel/instance/findPotion"
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "int")
+    flag HAS_PARAM_NAMES
+    paramname "potionType"
+    body
+     maxstack 4
+     localcount 6
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushbyte            0
+      setlocal            4
+
+      getlex              QName(PackageNamespace("kabam.rotmg.messaging.impl"), "GameServerConnectionConcrete")
+      getproperty         QName(PackageNamespace(""), "instance")
+      getproperty         QName(PackageNamespace(""), "player")
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.objects"), "Player")
+      setlocal            5
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.objects"), "ObjectLibrary")
+      getproperty         QName(PackageNamespace(""), "idToType_")
+      findpropstrict      QName(PrivateNamespace("kabam.rotmg.potionStorage:PotionStorageModel"), "fromPotionTypeToString")
+      getlocal1
+      callproperty        QName(PrivateNamespace("kabam.rotmg.potionStorage:PotionStorageModel"), "fromPotionTypeToString"), 1
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.potionStorage:PotionStorageModel"), ProtectedNamespace("kabam.rotmg.potionStorage:PotionStorageModel"), StaticProtectedNs("kabam.rotmg.potionStorage:PotionStorageModel"), StaticProtectedNs("io.decagames.rotmg.ui.popups.modal:ModalPopup"), StaticProtectedNs("io.decagames.rotmg.ui.popups:BasePopup"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.potionStorage"), PackageInternalNs("kabam.rotmg.potionStorage"), PrivateNamespace("FilePrivateNS:PotionStorageModel"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      convert_i
+      setlocal2
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.objects"), "ObjectLibrary")
+      getproperty         QName(PackageNamespace(""), "idToType_")
+      pushstring          "Greater "
+      findpropstrict      QName(PrivateNamespace("kabam.rotmg.potionStorage:PotionStorageModel"), "fromPotionTypeToString")
+      getlocal1
+      callproperty        QName(PrivateNamespace("kabam.rotmg.potionStorage:PotionStorageModel"), "fromPotionTypeToString"), 1
+      add
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.potionStorage:PotionStorageModel"), ProtectedNamespace("kabam.rotmg.potionStorage:PotionStorageModel"), StaticProtectedNs("kabam.rotmg.potionStorage:PotionStorageModel"), StaticProtectedNs("io.decagames.rotmg.ui.popups.modal:ModalPopup"), StaticProtectedNs("io.decagames.rotmg.ui.popups:BasePopup"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.potionStorage"), PackageInternalNs("kabam.rotmg.potionStorage"), PrivateNamespace("FilePrivateNS:PotionStorageModel"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      convert_i
+      setlocal3
+
+      pushbyte            0
+      setlocal            4
+
+      jump                L52
+
+L30:
+      label
+      getlocal            5
+      getproperty         QName(PackageNamespace(""), "equipment_")
+      getlocal            4
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.potionStorage:PotionStorageModel"), ProtectedNamespace("kabam.rotmg.potionStorage:PotionStorageModel"), StaticProtectedNs("kabam.rotmg.potionStorage:PotionStorageModel"), StaticProtectedNs("io.decagames.rotmg.ui.popups.modal:ModalPopup"), StaticProtectedNs("io.decagames.rotmg.ui.popups:BasePopup"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.potionStorage"), PackageInternalNs("kabam.rotmg.potionStorage"), PrivateNamespace("FilePrivateNS:PotionStorageModel"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getproperty         QName(PackageNamespace(""), "objectType")
+      getlocal2
+      equals
+      dup
+      iftrue              L48
+
+      pop
+      getlocal            5
+      getproperty         QName(PackageNamespace(""), "equipment_")
+      getlocal            4
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.potionStorage:PotionStorageModel"), ProtectedNamespace("kabam.rotmg.potionStorage:PotionStorageModel"), StaticProtectedNs("kabam.rotmg.potionStorage:PotionStorageModel"), StaticProtectedNs("io.decagames.rotmg.ui.popups.modal:ModalPopup"), StaticProtectedNs("io.decagames.rotmg.ui.popups:BasePopup"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.potionStorage"), PackageInternalNs("kabam.rotmg.potionStorage"), PrivateNamespace("FilePrivateNS:PotionStorageModel"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getproperty         QName(PackageNamespace(""), "objectType")
+      getlocal3
+      equals
+L48:
+      iffalse             L51
+
+      getlocal            4
+      returnvalue
+
+L51:
+      inclocal_i          4
+L52:
+      getlocal            4
+      getlocal            5
+      getproperty         QName(PackageNamespace(""), "equipment_")
+      getproperty         QName(PackageNamespace(""), "length")
+      iflt                L30
+
+      pushbyte            -1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.potionStorage:PotionStorageModel"), "fromPotionTypeToString")
+   method
+    name "fromPotionTypeToString"
+    refid "kabam.rotmg.potionStorage:PotionStorageModel/instance/kabam.rotmg.potionStorage:PotionStorageModel/instance/fromPotionTypeToString"
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "String")
+    flag HAS_PARAM_NAMES
+    paramname "potionType"
+    body
+     maxstack 1
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      convert_i
+      lookupswitch        L29, [L5, L7, L9, L11, L13, L15, L17, L19, L21, L23, L25, L27]
+
+L5:
+      pushstring          "Potion of Life"
+      returnvalue
+
+L7:
+      pushstring          "Potion of Mana"
+      returnvalue
+
+L9:
+      pushstring          "Potion of Attack"
+      returnvalue
+
+L11:
+      pushstring          "Potion of Defense"
+      returnvalue
+
+L13:
+      pushstring          "Potion of Speed"
+      returnvalue
+
+L15:
+      pushstring          "Potion of Dexterity"
+      returnvalue
+
+L17:
+      pushstring          "Potion of Vitality"
+      returnvalue
+
+L19:
+      pushstring          "Potion of Wisdom"
+      returnvalue
+
+L21:
+      pushstring          "Potion of Might"
+      returnvalue
+
+L23:
+      pushstring          "Potion of Luck"
+      returnvalue
+
+L25:
+      pushstring          "Potion of Restoration"
+      returnvalue
+
+L27:
+      pushstring          "Potion of Protection"
+      returnvalue
+
+L29:
+      pushstring          ""
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "onClose")
+   method
+    name "onClose"
+    refid "kabam.rotmg.potionStorage:PotionStorageModel/instance/onClose"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "arg1"
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageInternalNs("kabam.rotmg.potionStorage"), "close")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.potionStorage:PotionStorageModel"), "gs_")
+      getlocal0
+      callpropvoid        QName(PackageNamespace(""), "removeChild"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.potionStorage:PotionStorageModel"), "gs_")
+      getproperty         QName(PackageNamespace(""), "potionButton")
+      pushstring          "click"
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.potionStorage:PotionStorageModel"), "gs_")
+      getproperty         QName(PackageNamespace(""), "potionButton")
+      getproperty         QName(PackageNamespace(""), "onClick")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "draw")
+   method
+    name "draw"
+    refid "kabam.rotmg.potionStorage:PotionStorageModel/instance/draw"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushbyte            0
+      setlocal1
+
+      pushbyte            0
+      setlocal1
+
+      jump                L14
+
+L7:
+      label
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "potionContainers")
+      getlocal1
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.potionStorage:PotionStorageModel"), ProtectedNamespace("kabam.rotmg.potionStorage:PotionStorageModel"), StaticProtectedNs("kabam.rotmg.potionStorage:PotionStorageModel"), StaticProtectedNs("io.decagames.rotmg.ui.popups.modal:ModalPopup"), StaticProtectedNs("io.decagames.rotmg.ui.popups:BasePopup"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.potionStorage"), PackageInternalNs("kabam.rotmg.potionStorage"), PrivateNamespace("FilePrivateNS:PotionStorageModel"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      callpropvoid        QName(PackageNamespace(""), "draw"), 0
+
+      inclocal_i          1
+L14:
+      getlocal1
+      pushbyte            12
+      iflt                L7
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "dispose") flag OVERRIDE
+   method
+    name "dispose"
+    refid "kabam.rotmg.potionStorage:PotionStorageModel/instance/dispose"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushbyte            0
+      setlocal1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.potionStorage:PotionStorageModel"), "darkBackground")
+      pushnull
+      ifeq                L14
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.potionStorage:PotionStorageModel"), "darkBackground")
+      callpropvoid        QName(PackageNamespace(""), "dispose"), 0
+
+      getlocal0
+      pushnull
+      setproperty         QName(PrivateNamespace("kabam.rotmg.potionStorage:PotionStorageModel"), "darkBackground")
+
+L14:
+      getlocal0
+      getproperty         QName(PackageInternalNs("kabam.rotmg.potionStorage"), "quitButton")
+      pushnull
+      ifeq                L30
+
+      getlocal0
+      getproperty         QName(PackageInternalNs("kabam.rotmg.potionStorage"), "quitButton")
+      pushstring          "click"
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "onClose")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PackageInternalNs("kabam.rotmg.potionStorage"), "quitButton")
+      callpropvoid        QName(PackageNamespace(""), "dispose"), 0
+
+      getlocal0
+      pushnull
+      setproperty         QName(PackageInternalNs("kabam.rotmg.potionStorage"), "quitButton")
+
+L30:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "potionContainers")
+      pushnull
+      ifeq                L61
+
+      pushbyte            0
+      setlocal1
+
+      jump                L49
+
+L37:
+      label
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "potionContainers")
+      getlocal1
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.potionStorage:PotionStorageModel"), ProtectedNamespace("kabam.rotmg.potionStorage:PotionStorageModel"), StaticProtectedNs("kabam.rotmg.potionStorage:PotionStorageModel"), StaticProtectedNs("io.decagames.rotmg.ui.popups.modal:ModalPopup"), StaticProtectedNs("io.decagames.rotmg.ui.popups:BasePopup"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.potionStorage"), PackageInternalNs("kabam.rotmg.potionStorage"), PrivateNamespace("FilePrivateNS:PotionStorageModel"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      callpropvoid        QName(PackageNamespace(""), "dispose"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "potionContainers")
+      getlocal1
+      pushnull
+      setproperty         MultinameL([PrivateNamespace("kabam.rotmg.potionStorage:PotionStorageModel"), ProtectedNamespace("kabam.rotmg.potionStorage:PotionStorageModel"), StaticProtectedNs("kabam.rotmg.potionStorage:PotionStorageModel"), StaticProtectedNs("io.decagames.rotmg.ui.popups.modal:ModalPopup"), StaticProtectedNs("io.decagames.rotmg.ui.popups:BasePopup"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.potionStorage"), PackageInternalNs("kabam.rotmg.potionStorage"), PrivateNamespace("FilePrivateNS:PotionStorageModel"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      inclocal_i          1
+L49:
+      getlocal1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "potionContainers")
+      getproperty         QName(PackageNamespace(""), "length")
+      iflt                L37
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "potionContainers")
+      pushbyte            0
+      setproperty         QName(PackageNamespace(""), "length")
+
+      getlocal0
+      pushnull
+      setproperty         QName(PackageNamespace(""), "potionContainers")
+
+L61:
+      getlocal0
+      callsupervoid       QName(PackageNamespace(""), "dispose"), 0
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.potionStorage:PotionStorageModel/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait slot QName(PrivateNamespace("kabam.rotmg.potionStorage:PotionStorageModel"), "MODAL_WIDTH") type QName(PackageNamespace(""), "int") value Integer(560) end
+ trait slot QName(PrivateNamespace("kabam.rotmg.potionStorage:PotionStorageModel"), "MODAL_HEIGHT") type QName(PackageNamespace(""), "int") value Integer(500) end
+end ; class

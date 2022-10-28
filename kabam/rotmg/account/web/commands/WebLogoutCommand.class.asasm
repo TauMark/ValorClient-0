@@ -1,0 +1,153 @@
+class
+ refid "kabam.rotmg.account.web.commands:WebLogoutCommand"
+ instance QName(PackageNamespace("kabam.rotmg.account.web.commands"), "WebLogoutCommand")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  iinit
+   refid "kabam.rotmg.account.web.commands:WebLogoutCommand/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "account") flag METADATA type QName(PackageNamespace("kabam.rotmg.account.core"), "Account")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "invalidate") flag METADATA type QName(PackageNamespace("kabam.rotmg.core.signals"), "InvalidateDataSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "setScreenWithValidData") flag METADATA type QName(PackageNamespace("kabam.rotmg.core.signals"), "SetScreenWithValidDataSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "screenModel") flag METADATA type QName(PackageNamespace("kabam.rotmg.core.model"), "ScreenModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PackageNamespace(""), "execute")
+   method
+    name "execute"
+    refid "kabam.rotmg.account.web.commands:WebLogoutCommand/instance/execute"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "account")
+      callpropvoid        QName(Namespace("kabam.rotmg.account.core:Account"), "clear"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "invalidate")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.account.web.commands:WebLogoutCommand"), "onFinished")
+   method
+    name "onFinished"
+    refid "kabam.rotmg.account.web.commands:WebLogoutCommand/instance/kabam.rotmg.account.web.commands:WebLogoutCommand/instance/onFinished"
+    param QName(PackageNamespace("kabam.lib.tasks"), "BaseTask")
+    param QName(PackageNamespace(""), "Boolean")
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    paramname "_arg2"
+    paramname "_arg3"
+    body
+     maxstack 2
+     localcount 4
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "setScreenWithValidData")
+      getlocal0
+      callproperty        QName(PrivateNamespace("kabam.rotmg.account.web.commands:WebLogoutCommand"), "makeScreen"), 0
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.account.web.commands:WebLogoutCommand"), "makeScreen")
+   method
+    name "makeScreen"
+    refid "kabam.rotmg.account.web.commands:WebLogoutCommand/instance/kabam.rotmg.account.web.commands:WebLogoutCommand/instance/makeScreen"
+    returns QName(PackageNamespace("flash.display"), "Sprite")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "screenModel")
+      callproperty        QName(PackageNamespace(""), "getCurrentScreenType"), 0
+      getlex              QName(PackageNamespace("kabam.rotmg.fame.view"), "FameView")
+      ifne                L10
+
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.screens"), "CharacterSelectionAndNewsScreen")
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.screens"), "CharacterSelectionAndNewsScreen"), 0
+      returnvalue
+
+L10:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "screenModel")
+      callproperty        QName(PackageNamespace(""), "getCurrentScreenType"), 0
+      dup
+      iftrue              L18
+
+      pop
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.screens"), "CharacterSelectionAndNewsScreen")
+      coerce_a
+L18:
+      construct           0
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.account.web.commands:WebLogoutCommand/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

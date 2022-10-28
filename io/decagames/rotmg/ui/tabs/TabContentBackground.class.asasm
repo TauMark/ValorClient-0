@@ -1,0 +1,288 @@
+class
+ refid "io.decagames.rotmg.ui.tabs:TabContentBackground"
+ instance QName(PackageNamespace("io.decagames.rotmg.ui.tabs"), "TabContentBackground")
+  extends QName(PackageNamespace("io.decagames.rotmg.ui.sliceScaling"), "SliceScalingBitmap")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("io.decagames.rotmg.ui.tabs:TabContentBackground")
+  iinit
+   name "TabContentBackground"
+   refid "io.decagames.rotmg.ui.tabs:TabContentBackground/instance/init"
+   body
+    maxstack 8
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     getlex              QName(PackageNamespace("io.decagames.rotmg.ui.texture"), "TextureParser")
+     getproperty         QName(PackageNamespace(""), "instance")
+     pushstring          "UI"
+     pushstring          "tab_cointainer_background"
+     callproperty        QName(PackageNamespace(""), "getTexture"), 2
+     getproperty         QName(PackageNamespace(""), "bitmapData")
+     getlex              QName(PackageNamespace("io.decagames.rotmg.ui.sliceScaling"), "SliceScalingBitmap")
+     getproperty         QName(PackageNamespace(""), "SCALE_TYPE_9")
+     findpropstrict      QName(PackageNamespace("flash.geom"), "Rectangle")
+     pushbyte            15
+     pushbyte            15
+     pushbyte            1
+     pushbyte            1
+     constructprop       QName(PackageNamespace("flash.geom"), "Rectangle"), 4
+     constructsuper      3
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:TabContentBackground"), "decorBitmapData") type QName(PackageNamespace("flash.display"), "BitmapData") end
+  trait slot QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:TabContentBackground"), "decorSliceRectangle") type QName(PackageNamespace("flash.geom"), "Rectangle") end
+  trait method QName(PackageNamespace(""), "dispose") flag OVERRIDE
+   method
+    name "dispose"
+    refid "io.decagames.rotmg.ui.tabs:TabContentBackground/instance/dispose"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:TabContentBackground"), "decorBitmapData")
+      callpropvoid        QName(PackageNamespace(""), "dispose"), 0
+
+      getlocal0
+      callsupervoid       QName(PackageNamespace(""), "dispose"), 0
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "addDecor")
+   method
+    name "addDecor"
+    refid "io.decagames.rotmg.ui.tabs:TabContentBackground/instance/addDecor"
+    param QName(PackageNamespace(""), "int")
+    param QName(PackageNamespace(""), "int")
+    param QName(PackageNamespace(""), "int")
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg_1"
+    paramname "_arg_2"
+    paramname "_arg_3"
+    paramname "_arg_4"
+    body
+     maxstack 8
+     localcount 6
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      callpropvoid        QName(ProtectedNamespace("io.decagames.rotmg.ui.sliceScaling:SliceScalingBitmap"), "render"), 0
+
+      getlocal3
+      pushbyte            0
+      ifne                L34
+
+      getlocal0
+      getlex              QName(PackageNamespace("io.decagames.rotmg.ui.texture"), "TextureParser")
+      getproperty         QName(PackageNamespace(""), "instance")
+      pushstring          "UI"
+      pushstring          "tab_open_decor_left"
+      callproperty        QName(PackageNamespace(""), "getTexture"), 2
+      getproperty         QName(PackageNamespace(""), "bitmapData")
+      setproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:TabContentBackground"), "decorBitmapData")
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("flash.geom"), "Rectangle")
+      pushbyte            21
+      pushbyte            0
+      pushbyte            1
+      pushbyte            14
+      constructprop       QName(PackageNamespace("flash.geom"), "Rectangle"), 4
+      setproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:TabContentBackground"), "decorSliceRectangle")
+
+      getlocal1
+      pushbyte            7
+      subtract
+      convert_i
+      setlocal1
+
+      getlocal2
+      pushbyte            4
+      subtract
+      convert_i
+      setlocal2
+
+      jump                L72
+
+L34:
+      getlocal3
+      getlocal            4
+      pushbyte            1
+      subtract
+      ifne                L56
+
+      getlocal0
+      getlex              QName(PackageNamespace("io.decagames.rotmg.ui.texture"), "TextureParser")
+      getproperty         QName(PackageNamespace(""), "instance")
+      pushstring          "UI"
+      pushstring          "tab_open_decor_right"
+      callproperty        QName(PackageNamespace(""), "getTexture"), 2
+      getproperty         QName(PackageNamespace(""), "bitmapData")
+      setproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:TabContentBackground"), "decorBitmapData")
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("flash.geom"), "Rectangle")
+      pushbyte            18
+      pushbyte            0
+      pushbyte            1
+      pushbyte            14
+      constructprop       QName(PackageNamespace("flash.geom"), "Rectangle"), 4
+      setproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:TabContentBackground"), "decorSliceRectangle")
+
+      jump                L72
+
+L56:
+      getlocal0
+      getlex              QName(PackageNamespace("io.decagames.rotmg.ui.texture"), "TextureParser")
+      getproperty         QName(PackageNamespace(""), "instance")
+      pushstring          "UI"
+      pushstring          "tab_open_decor_center"
+      callproperty        QName(PackageNamespace(""), "getTexture"), 2
+      getproperty         QName(PackageNamespace(""), "bitmapData")
+      setproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:TabContentBackground"), "decorBitmapData")
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("flash.geom"), "Rectangle")
+      pushbyte            18
+      pushbyte            0
+      pushbyte            1
+      pushbyte            14
+      constructprop       QName(PackageNamespace("flash.geom"), "Rectangle"), 4
+      setproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:TabContentBackground"), "decorSliceRectangle")
+
+L72:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "bitmapData")
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:TabContentBackground"), "decorBitmapData")
+      findpropstrict      QName(PackageNamespace("flash.geom"), "Rectangle")
+      pushbyte            0
+      pushbyte            0
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:TabContentBackground"), "decorSliceRectangle")
+      getproperty         QName(PackageNamespace(""), "x")
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:TabContentBackground"), "decorBitmapData")
+      getproperty         QName(PackageNamespace(""), "height")
+      constructprop       QName(PackageNamespace("flash.geom"), "Rectangle"), 4
+      findpropstrict      QName(PackageNamespace("flash.geom"), "Point")
+      getlocal1
+      pushbyte            0
+      constructprop       QName(PackageNamespace("flash.geom"), "Point"), 2
+      callpropvoid        QName(PackageNamespace(""), "copyPixels"), 3
+
+      getlocal1
+      setlocal            5
+
+      jump                L121
+
+L94:
+      label
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "bitmapData")
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:TabContentBackground"), "decorBitmapData")
+      findpropstrict      QName(PackageNamespace("flash.geom"), "Rectangle")
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:TabContentBackground"), "decorSliceRectangle")
+      getproperty         QName(PackageNamespace(""), "x")
+      pushbyte            0
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:TabContentBackground"), "decorSliceRectangle")
+      getproperty         QName(PackageNamespace(""), "width")
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:TabContentBackground"), "decorBitmapData")
+      getproperty         QName(PackageNamespace(""), "height")
+      constructprop       QName(PackageNamespace("flash.geom"), "Rectangle"), 4
+      findpropstrict      QName(PackageNamespace("flash.geom"), "Point")
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:TabContentBackground"), "decorSliceRectangle")
+      getproperty         QName(PackageNamespace(""), "x")
+      getlocal            5
+      add
+      pushbyte            0
+      constructprop       QName(PackageNamespace("flash.geom"), "Point"), 2
+      callpropvoid        QName(PackageNamespace(""), "copyPixels"), 3
+
+      inclocal_i          5
+L121:
+      getlocal            5
+      getlocal2
+      iflt                L94
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "bitmapData")
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:TabContentBackground"), "decorBitmapData")
+      findpropstrict      QName(PackageNamespace("flash.geom"), "Rectangle")
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:TabContentBackground"), "decorSliceRectangle")
+      getproperty         QName(PackageNamespace(""), "x")
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:TabContentBackground"), "decorSliceRectangle")
+      getproperty         QName(PackageNamespace(""), "width")
+      add
+      pushbyte            0
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:TabContentBackground"), "decorBitmapData")
+      getproperty         QName(PackageNamespace(""), "width")
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:TabContentBackground"), "decorSliceRectangle")
+      getproperty         QName(PackageNamespace(""), "x")
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:TabContentBackground"), "decorSliceRectangle")
+      getproperty         QName(PackageNamespace(""), "width")
+      add
+      subtract
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.tabs:TabContentBackground"), "decorBitmapData")
+      getproperty         QName(PackageNamespace(""), "height")
+      constructprop       QName(PackageNamespace("flash.geom"), "Rectangle"), 4
+      findpropstrict      QName(PackageNamespace("flash.geom"), "Point")
+      getlocal2
+      pushbyte            0
+      constructprop       QName(PackageNamespace("flash.geom"), "Point"), 2
+      callpropvoid        QName(PackageNamespace(""), "copyPixels"), 3
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "io.decagames.rotmg.ui.tabs:TabContentBackground/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

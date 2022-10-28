@@ -1,0 +1,430 @@
+class
+ refid "kabam.rotmg.lootBoxes:LootBoxesBox"
+ instance QName(PackageNamespace("kabam.rotmg.lootBoxes"), "LootBoxesBox")
+  extends QName(PackageNamespace("io.decagames.rotmg.ui.gird"), "UIGridElement")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.lootBoxes:LootBoxesBox")
+  iinit
+   name "LootBoxesBox"
+   refid "kabam.rotmg.lootBoxes:LootBoxesBox/instance/init"
+   param QName(PackageNamespace(""), "uint")
+   param QName(PackageNamespace(""), "String")
+   param QName(PackageNamespace(""), "int")
+   param QName(PackageNamespace(""), "Boolean")
+   param QName(PackageNamespace("flash.display"), "BitmapData")
+   param QName(PackageNamespace(""), "int")
+   param QName(PackageNamespace(""), "String")
+   flag HAS_OPTIONAL
+   flag HAS_PARAM_NAMES
+   optional Utf8("")
+   paramname "id"
+   paramname "name"
+   paramname "price"
+   paramname "unlocked"
+   paramname "chestImg"
+   paramname "type"
+   paramname "tooltip"
+   body
+    maxstack 5
+    localcount 8
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     getlocal1
+     setproperty         QName(PackageNamespace(""), "_type")
+
+     getlocal0
+     getlocal            7
+     setproperty         QName(PackageNamespace(""), "_tooltip")
+
+     getlocal0
+     getlocal            4
+     setproperty         QName(PackageNamespace(""), "unlocked")
+
+     getlocal0
+     getlex              QName(PackageNamespace("io.decagames.rotmg.ui.texture"), "TextureParser")
+     getproperty         QName(PackageNamespace(""), "instance")
+     pushstring          "UI"
+     pushstring          "shop_box_background"
+     pushbyte            10
+     callproperty        QName(PackageNamespace(""), "getSliceScalingBitmap"), 3
+     setproperty         QName(ProtectedNamespace("kabam.rotmg.lootBoxes:LootBoxesBox"), "background")
+
+     getlocal0
+     getlex              QName(PackageNamespace("io.decagames.rotmg.ui.texture"), "TextureParser")
+     getproperty         QName(PackageNamespace(""), "instance")
+     pushstring          "UI"
+     pushstring          "shop_title_background"
+     pushbyte            10
+     callproperty        QName(PackageNamespace(""), "getSliceScalingBitmap"), 3
+     setproperty         QName(ProtectedNamespace("kabam.rotmg.lootBoxes:LootBoxesBox"), "backgroundTitle")
+
+     getlocal0
+     getlex              QName(PackageNamespace("io.decagames.rotmg.ui.texture"), "TextureParser")
+     getproperty         QName(PackageNamespace(""), "instance")
+     pushstring          "UI"
+     pushstring          "shop_box_button_background"
+     pushbyte            10
+     callproperty        QName(PackageNamespace(""), "getSliceScalingBitmap"), 3
+     setproperty         QName(ProtectedNamespace("kabam.rotmg.lootBoxes:LootBoxesBox"), "backgroundButton")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("io.decagames.rotmg.ui.labels"), "UILabel")
+     constructprop       QName(PackageNamespace("io.decagames.rotmg.ui.labels"), "UILabel"), 0
+     setproperty         QName(ProtectedNamespace("kabam.rotmg.lootBoxes:LootBoxesBox"), "titleLabel")
+
+     getlocal0
+     getproperty         QName(ProtectedNamespace("kabam.rotmg.lootBoxes:LootBoxesBox"), "titleLabel")
+     getlocal2
+     setproperty         QName(PackageNamespace(""), "text")
+
+     getlex              QName(PackageNamespace("io.decagames.rotmg.ui.defaults"), "DefaultLabelFormat")
+     getlocal0
+     getproperty         QName(ProtectedNamespace("kabam.rotmg.lootBoxes:LootBoxesBox"), "titleLabel")
+     callpropvoid        QName(PackageNamespace(""), "shopBoxTitle"), 1
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.lootBoxes"), "LootBoxPurchaseButton")
+     getlocal3
+     getlocal            6
+     constructprop       QName(PackageNamespace("kabam.rotmg.lootBoxes"), "LootBoxPurchaseButton"), 2
+     setproperty         QName(ProtectedNamespace("kabam.rotmg.lootBoxes:LootBoxesBox"), "_buyButton")
+
+     getlocal0
+     getproperty         QName(ProtectedNamespace("kabam.rotmg.lootBoxes:LootBoxesBox"), "_buyButton")
+     pushbyte            105
+     setproperty         QName(PackageNamespace(""), "width")
+
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "unlocked")
+     iftrue              L71
+
+     getlex              QName(PackageNamespace("io.decagames.rotmg.utils.colors"), "GreyScale")
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "buyButton")
+     pushtrue
+     callpropvoid        QName(PackageNamespace(""), "greyScaleToDisplayObject"), 2
+
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "buyButton")
+     pushtrue
+     setproperty         QName(PackageNamespace(""), "disabled")
+
+L71:
+     getlocal0
+     findpropstrict      QName(PackageNamespace("flash.display"), "Bitmap")
+     constructprop       QName(PackageNamespace("flash.display"), "Bitmap"), 0
+     setproperty         QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootBoxesBox"), "_chestBitmap")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootBoxesBox"), "_chestBitmap")
+     getlocal            5
+     setproperty         QName(PackageNamespace(""), "bitmapData")
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(ProtectedNamespace("kabam.rotmg.lootBoxes:LootBoxesBox"), "background")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(ProtectedNamespace("kabam.rotmg.lootBoxes:LootBoxesBox"), "backgroundTitle")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(ProtectedNamespace("kabam.rotmg.lootBoxes:LootBoxesBox"), "backgroundButton")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(ProtectedNamespace("kabam.rotmg.lootBoxes:LootBoxesBox"), "titleLabel")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootBoxesBox"), "_chestBitmap")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(ProtectedNamespace("kabam.rotmg.lootBoxes:LootBoxesBox"), "_buyButton")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(ProtectedNamespace("kabam.rotmg.lootBoxes:LootBoxesBox"), "background") type QName(PackageNamespace("io.decagames.rotmg.ui.sliceScaling"), "SliceScalingBitmap") end
+  trait slot QName(ProtectedNamespace("kabam.rotmg.lootBoxes:LootBoxesBox"), "backgroundTitle") type QName(PackageNamespace("io.decagames.rotmg.ui.sliceScaling"), "SliceScalingBitmap") end
+  trait slot QName(ProtectedNamespace("kabam.rotmg.lootBoxes:LootBoxesBox"), "backgroundButton") type QName(PackageNamespace("io.decagames.rotmg.ui.sliceScaling"), "SliceScalingBitmap") end
+  trait slot QName(ProtectedNamespace("kabam.rotmg.lootBoxes:LootBoxesBox"), "titleLabel") type QName(PackageNamespace("io.decagames.rotmg.ui.labels"), "UILabel") end
+  trait slot QName(ProtectedNamespace("kabam.rotmg.lootBoxes:LootBoxesBox"), "_buyButton") type QName(PackageNamespace("kabam.rotmg.lootBoxes"), "LootBoxPurchaseButton") end
+  trait slot QName(ProtectedNamespace("kabam.rotmg.lootBoxes:LootBoxesBox"), "boxHeight") type QName(PackageNamespace(""), "int") value Integer(160) end
+  trait slot QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootBoxesBox"), "_chestBitmap") type QName(PackageNamespace("flash.display"), "Bitmap") end
+  trait slot QName(PackageNamespace(""), "_tooltip") type QName(PackageNamespace(""), "String") end
+  trait slot QName(PackageNamespace(""), "_type") type QName(PackageNamespace(""), "uint") end
+  trait slot QName(PackageNamespace(""), "unlocked") type QName(PackageNamespace(""), "Boolean") end
+  trait getter QName(PackageNamespace(""), "height") flag OVERRIDE
+   method
+    name "height"
+    refid "kabam.rotmg.lootBoxes:LootBoxesBox/instance/height/getter"
+    returns QName(PackageNamespace(""), "Number")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("kabam.rotmg.lootBoxes:LootBoxesBox"), "background")
+      getproperty         QName(PackageNamespace(""), "height")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "resize") flag OVERRIDE
+   method
+    name "resize"
+    refid "kabam.rotmg.lootBoxes:LootBoxesBox/instance/resize"
+    param QName(PackageNamespace(""), "int")
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_OPTIONAL
+    flag HAS_PARAM_NAMES
+    optional Integer(-1)
+    paramname "_arg1"
+    paramname "_arg2"
+    body
+     maxstack 4
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("kabam.rotmg.lootBoxes:LootBoxesBox"), "background")
+      getlocal1
+      setproperty         QName(PackageNamespace(""), "width")
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("kabam.rotmg.lootBoxes:LootBoxesBox"), "backgroundTitle")
+      getlocal1
+      setproperty         QName(PackageNamespace(""), "width")
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("kabam.rotmg.lootBoxes:LootBoxesBox"), "backgroundButton")
+      getlocal1
+      setproperty         QName(PackageNamespace(""), "width")
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("kabam.rotmg.lootBoxes:LootBoxesBox"), "background")
+      getlocal0
+      getproperty         QName(ProtectedNamespace("kabam.rotmg.lootBoxes:LootBoxesBox"), "boxHeight")
+      setproperty         QName(PackageNamespace(""), "height")
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("kabam.rotmg.lootBoxes:LootBoxesBox"), "backgroundTitle")
+      pushbyte            2
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("kabam.rotmg.lootBoxes:LootBoxesBox"), "titleLabel")
+      getlex              QName(PackageNamespace(""), "Math")
+      getlocal1
+      getlocal0
+      getproperty         QName(ProtectedNamespace("kabam.rotmg.lootBoxes:LootBoxesBox"), "titleLabel")
+      getproperty         QName(PackageNamespace(""), "textWidth")
+      subtract
+      pushbyte            2
+      divide
+      callproperty        QName(PackageNamespace(""), "round"), 1
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("kabam.rotmg.lootBoxes:LootBoxesBox"), "titleLabel")
+      pushbyte            6
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("kabam.rotmg.lootBoxes:LootBoxesBox"), "backgroundButton")
+      pushbyte            33
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("kabam.rotmg.lootBoxes:LootBoxesBox"), "_buyButton")
+      getlocal0
+      getproperty         QName(ProtectedNamespace("kabam.rotmg.lootBoxes:LootBoxesBox"), "backgroundButton")
+      getproperty         QName(PackageNamespace(""), "y")
+      pushbyte            4
+      add
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("kabam.rotmg.lootBoxes:LootBoxesBox"), "_buyButton")
+      getlocal1
+      pushbyte            119
+      subtract
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootBoxesBox"), "_chestBitmap")
+      getlocal1
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootBoxesBox"), "_chestBitmap")
+      getproperty         QName(PackageNamespace(""), "width")
+      subtract
+      pushbyte            2
+      divide
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.lootBoxes:LootBoxesBox"), "_chestBitmap")
+      getlocal0
+      getproperty         QName(ProtectedNamespace("kabam.rotmg.lootBoxes:LootBoxesBox"), "boxHeight")
+      pushbyte            2
+      divide
+      pushbyte            10
+      subtract
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal0
+      getlocal1
+      callpropvoid        QName(ProtectedNamespace("kabam.rotmg.lootBoxes:LootBoxesBox"), "updateClickMask"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(ProtectedNamespace("kabam.rotmg.lootBoxes:LootBoxesBox"), "updateClickMask")
+   method
+    name "updateClickMask"
+    refid "kabam.rotmg.lootBoxes:LootBoxesBox/instance/kabam.rotmg.lootBoxes:LootBoxesBox:updateClickMask"
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 5
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlex              QName(PackageNamespace("io.decagames.rotmg.ui.texture"), "TextureParser")
+      getproperty         QName(PackageNamespace(""), "instance")
+      pushstring          "UI"
+      pushstring          "shop_title_background"
+      pushbyte            10
+      callproperty        QName(PackageNamespace(""), "getSliceScalingBitmap"), 3
+      setproperty         QName(ProtectedNamespace("kabam.rotmg.lootBoxes:LootBoxesBox"), "backgroundTitle")
+
+      getlocal0
+      getlocal0
+      getproperty         QName(ProtectedNamespace("kabam.rotmg.lootBoxes:LootBoxesBox"), "boxHeight")
+      getlocal0
+      getproperty         QName(ProtectedNamespace("kabam.rotmg.lootBoxes:LootBoxesBox"), "boxHeight")
+      getlocal0
+      getproperty         QName(ProtectedNamespace("kabam.rotmg.lootBoxes:LootBoxesBox"), "backgroundButton")
+      getproperty         QName(PackageNamespace(""), "y")
+      subtract
+      pushbyte            4
+      add
+      subtract
+      setproperty         QName(ProtectedNamespace("kabam.rotmg.lootBoxes:LootBoxesBox"), "boxHeight")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait getter QName(PackageNamespace(""), "buyButton")
+   method
+    name "buyButton"
+    refid "kabam.rotmg.lootBoxes:LootBoxesBox/instance/buyButton/getter"
+    returns QName(PackageNamespace("kabam.rotmg.lootBoxes"), "LootBoxPurchaseButton")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("kabam.rotmg.lootBoxes:LootBoxesBox"), "_buyButton")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "dispose") flag OVERRIDE
+   method
+    name "dispose"
+    refid "kabam.rotmg.lootBoxes:LootBoxesBox/instance/dispose"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("kabam.rotmg.lootBoxes:LootBoxesBox"), "background")
+      callpropvoid        QName(PackageNamespace(""), "dispose"), 0
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("kabam.rotmg.lootBoxes:LootBoxesBox"), "backgroundTitle")
+      callpropvoid        QName(PackageNamespace(""), "dispose"), 0
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("kabam.rotmg.lootBoxes:LootBoxesBox"), "backgroundButton")
+      callpropvoid        QName(PackageNamespace(""), "dispose"), 0
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("kabam.rotmg.lootBoxes:LootBoxesBox"), "_buyButton")
+      callpropvoid        QName(PackageNamespace(""), "dispose"), 0
+
+      getlocal0
+      callsupervoid       QName(PackageNamespace(""), "dispose"), 0
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.lootBoxes:LootBoxesBox/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

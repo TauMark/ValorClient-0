@@ -1,0 +1,450 @@
+class
+ refid "com.company.assembleegameclient.mapeditor:MECommandMenu"
+ instance QName(PackageNamespace("com.company.assembleegameclient.mapeditor"), "MECommandMenu")
+  extends QName(PackageNamespace("com.company.assembleegameclient.editor"), "CommandMenu")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.company.assembleegameclient.mapeditor:MECommandMenu")
+  iinit
+   name "MECommandMenu"
+   refid "com.company.assembleegameclient.mapeditor:MECommandMenu/instance/init"
+   body
+    maxstack 5
+    localcount 2
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlex              QName(PackageNamespace("kabam.rotmg.core"), "StaticInjectorContext")
+     callproperty        QName(PackageNamespace(""), "getInjector"), 0
+     getlex              QName(PackageNamespace("kabam.rotmg.core.model"), "PlayerModel")
+     callproperty        QName(PackageNamespace(""), "getInstance"), 1
+     coerce              QName(PackageNamespace("kabam.rotmg.core.model"), "PlayerModel")
+     setlocal1
+
+     findpropstrict      QName(ProtectedNamespace("com.company.assembleegameclient.editor:CommandMenu"), "addCommandMenuItem")
+     pushstring          "(D)raw"
+     pushbyte            68
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.mapeditor:MECommandMenu"), "select")
+     pushbyte            1
+     callpropvoid        QName(ProtectedNamespace("com.company.assembleegameclient.editor:CommandMenu"), "addCommandMenuItem"), 4
+
+     findpropstrict      QName(ProtectedNamespace("com.company.assembleegameclient.editor:CommandMenu"), "addCommandMenuItem")
+     pushstring          "(E)rase"
+     pushbyte            69
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.mapeditor:MECommandMenu"), "select")
+     pushbyte            2
+     callpropvoid        QName(ProtectedNamespace("com.company.assembleegameclient.editor:CommandMenu"), "addCommandMenuItem"), 4
+
+     getlocal1
+     pushnull
+     equals
+     not
+     dup
+     iffalse             L34
+
+     pop
+     getlocal1
+     callproperty        QName(PackageNamespace(""), "isAdmin"), 0
+     convert_b
+L34:
+     iffalse             L42
+
+     findpropstrict      QName(ProtectedNamespace("com.company.assembleegameclient.editor:CommandMenu"), "addCommandMenuItem")
+     pushstring          "S(A)mple"
+     pushbyte            65
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.mapeditor:MECommandMenu"), "select")
+     pushbyte            3
+     callpropvoid        QName(ProtectedNamespace("com.company.assembleegameclient.editor:CommandMenu"), "addCommandMenuItem"), 4
+
+L42:
+     findpropstrict      QName(ProtectedNamespace("com.company.assembleegameclient.editor:CommandMenu"), "addCommandMenuItem")
+     pushstring          "(P)ick Up"
+     pushbyte            80
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.mapeditor:MECommandMenu"), "select")
+     pushbyte            8
+     callpropvoid        QName(ProtectedNamespace("com.company.assembleegameclient.editor:CommandMenu"), "addCommandMenuItem"), 4
+
+     findpropstrict      QName(ProtectedNamespace("com.company.assembleegameclient.editor:CommandMenu"), "addCommandMenuItem")
+     pushstring          "Drop"
+     pushbyte            -1
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.mapeditor:MECommandMenu"), "select")
+     pushbyte            9
+     callpropvoid        QName(ProtectedNamespace("com.company.assembleegameclient.editor:CommandMenu"), "addCommandMenuItem"), 4
+
+     findpropstrict      QName(ProtectedNamespace("com.company.assembleegameclient.editor:CommandMenu"), "addCommandMenuItem")
+     pushstring          "(U)ndo"
+     pushbyte            85
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.mapeditor:MECommandMenu"), "onUndo")
+     pushbyte            0
+     callpropvoid        QName(ProtectedNamespace("com.company.assembleegameclient.editor:CommandMenu"), "addCommandMenuItem"), 4
+
+     findpropstrict      QName(ProtectedNamespace("com.company.assembleegameclient.editor:CommandMenu"), "addCommandMenuItem")
+     pushstring          "(R)edo"
+     pushbyte            82
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.mapeditor:MECommandMenu"), "onRedo")
+     pushbyte            0
+     callpropvoid        QName(ProtectedNamespace("com.company.assembleegameclient.editor:CommandMenu"), "addCommandMenuItem"), 4
+
+     findpropstrict      QName(ProtectedNamespace("com.company.assembleegameclient.editor:CommandMenu"), "addCommandMenuItem")
+     pushstring          "(C)lear"
+     pushbyte            67
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.mapeditor:MECommandMenu"), "onClear")
+     pushbyte            0
+     callpropvoid        QName(ProtectedNamespace("com.company.assembleegameclient.editor:CommandMenu"), "addCommandMenuItem"), 4
+
+     findpropstrict      QName(ProtectedNamespace("com.company.assembleegameclient.editor:CommandMenu"), "addCommandMenuItem")
+     pushstring          "Cut"
+     pushbyte            -1
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.mapeditor:MECommandMenu"), "select")
+     pushbyte            5
+     callpropvoid        QName(ProtectedNamespace("com.company.assembleegameclient.editor:CommandMenu"), "addCommandMenuItem"), 4
+
+     findpropstrict      QName(ProtectedNamespace("com.company.assembleegameclient.editor:CommandMenu"), "addCommandMenuItem")
+     pushstring          "Copy"
+     pushbyte            -1
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.mapeditor:MECommandMenu"), "select")
+     pushbyte            6
+     callpropvoid        QName(ProtectedNamespace("com.company.assembleegameclient.editor:CommandMenu"), "addCommandMenuItem"), 4
+
+     findpropstrict      QName(ProtectedNamespace("com.company.assembleegameclient.editor:CommandMenu"), "addCommandMenuItem")
+     pushstring          "Paste"
+     pushbyte            -1
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.mapeditor:MECommandMenu"), "select")
+     pushbyte            7
+     callpropvoid        QName(ProtectedNamespace("com.company.assembleegameclient.editor:CommandMenu"), "addCommandMenuItem"), 4
+
+     findpropstrict      QName(ProtectedNamespace("com.company.assembleegameclient.editor:CommandMenu"), "addCommandMenuItem")
+     pushstring          "(L)oad"
+     pushbyte            76
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.mapeditor:MECommandMenu"), "onLoad")
+     pushbyte            0
+     callpropvoid        QName(ProtectedNamespace("com.company.assembleegameclient.editor:CommandMenu"), "addCommandMenuItem"), 4
+
+     findpropstrict      QName(ProtectedNamespace("com.company.assembleegameclient.editor:CommandMenu"), "addCommandMenuItem")
+     pushstring          "(S)ave"
+     pushbyte            83
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.mapeditor:MECommandMenu"), "onSave")
+     pushbyte            0
+     callpropvoid        QName(ProtectedNamespace("com.company.assembleegameclient.editor:CommandMenu"), "addCommandMenuItem"), 4
+
+     findpropstrict      QName(ProtectedNamespace("com.company.assembleegameclient.editor:CommandMenu"), "addCommandMenuItem")
+     pushstring          "(T)est"
+     pushbyte            84
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.mapeditor:MECommandMenu"), "onTest")
+     pushbyte            0
+     callpropvoid        QName(ProtectedNamespace("com.company.assembleegameclient.editor:CommandMenu"), "addCommandMenuItem"), 4
+
+     getlocal1
+     callproperty        QName(PackageNamespace(""), "isAdmin"), 0
+     dup
+     iftrue              L136
+
+     pop
+     getlex              QName(PackageNamespace("kabam.rotmg.application"), "DynamicSettings")
+     pushstring          "UGDOpenSubmission"
+     callproperty        QName(PackageNamespace(""), "settingExists"), 1
+     dup
+     iffalse             L135
+
+     pop
+     getlex              QName(PackageNamespace("kabam.rotmg.application"), "DynamicSettings")
+     pushstring          "UGDOpenSubmission"
+     callproperty        QName(PackageNamespace(""), "getSettingValue"), 1
+     pushbyte            1
+     equals
+L135:
+     convert_b
+L136:
+     iffalse             L145
+
+     findpropstrict      QName(ProtectedNamespace("com.company.assembleegameclient.editor:CommandMenu"), "addCommandMenuItem")
+     pushstring          "Submit"
+     pushbyte            -1
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.mapeditor:MECommandMenu"), "onSubmit")
+     pushbyte            0
+     callpropvoid        QName(ProtectedNamespace("com.company.assembleegameclient.editor:CommandMenu"), "addCommandMenuItem"), 4
+
+     jump                L147
+
+L145:
+     findpropstrict      QName(ProtectedNamespace("com.company.assembleegameclient.editor:CommandMenu"), "addBreak")
+     callpropvoid        QName(ProtectedNamespace("com.company.assembleegameclient.editor:CommandMenu"), "addBreak"), 0
+
+L147:
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.mapeditor:MECommandMenu"), "select")
+   method
+    name "select"
+    refid "com.company.assembleegameclient.mapeditor:MECommandMenu/instance/com.company.assembleegameclient.mapeditor:MECommandMenu/instance/init/select"
+    param QName(PackageNamespace("com.company.assembleegameclient.editor"), "CommandMenuItem")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(ProtectedNamespace("com.company.assembleegameclient.editor:CommandMenu"), "setSelected")
+      getlocal1
+      callpropvoid        QName(ProtectedNamespace("com.company.assembleegameclient.editor:CommandMenu"), "setSelected"), 1
+
+      findpropstrict      QName(PackageNamespace(""), "dispatchEvent")
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.editor"), "CommandEvent")
+      pushstring          "SELECT_COMMAND_EVENT"
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.editor"), "CommandEvent"), 1
+      callpropvoid        QName(PackageNamespace(""), "dispatchEvent"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.mapeditor:MECommandMenu"), "onUndo")
+   method
+    name "onUndo"
+    refid "com.company.assembleegameclient.mapeditor:MECommandMenu/instance/com.company.assembleegameclient.mapeditor:MECommandMenu/instance/init/onUndo"
+    param QName(PackageNamespace("com.company.assembleegameclient.editor"), "CommandMenuItem")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace(""), "dispatchEvent")
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.editor"), "CommandEvent")
+      pushstring          "UNDO_COMMAND_EVENT"
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.editor"), "CommandEvent"), 1
+      callpropvoid        QName(PackageNamespace(""), "dispatchEvent"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.mapeditor:MECommandMenu"), "onRedo")
+   method
+    name "onRedo"
+    refid "com.company.assembleegameclient.mapeditor:MECommandMenu/instance/com.company.assembleegameclient.mapeditor:MECommandMenu/instance/init/onRedo"
+    param QName(PackageNamespace("com.company.assembleegameclient.editor"), "CommandMenuItem")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace(""), "dispatchEvent")
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.editor"), "CommandEvent")
+      pushstring          "REDO_COMMAND_EVENT"
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.editor"), "CommandEvent"), 1
+      callpropvoid        QName(PackageNamespace(""), "dispatchEvent"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.mapeditor:MECommandMenu"), "onClear")
+   method
+    name "onClear"
+    refid "com.company.assembleegameclient.mapeditor:MECommandMenu/instance/com.company.assembleegameclient.mapeditor:MECommandMenu/instance/init/onClear"
+    param QName(PackageNamespace("com.company.assembleegameclient.editor"), "CommandMenuItem")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace(""), "dispatchEvent")
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.editor"), "CommandEvent")
+      pushstring          "CLEAR_COMMAND_EVENT"
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.editor"), "CommandEvent"), 1
+      callpropvoid        QName(PackageNamespace(""), "dispatchEvent"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.mapeditor:MECommandMenu"), "onLoad")
+   method
+    name "onLoad"
+    refid "com.company.assembleegameclient.mapeditor:MECommandMenu/instance/com.company.assembleegameclient.mapeditor:MECommandMenu/instance/init/onLoad"
+    param QName(PackageNamespace("com.company.assembleegameclient.editor"), "CommandMenuItem")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace(""), "dispatchEvent")
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.editor"), "CommandEvent")
+      pushstring          "LOAD_COMMAND_EVENT"
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.editor"), "CommandEvent"), 1
+      callpropvoid        QName(PackageNamespace(""), "dispatchEvent"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.mapeditor:MECommandMenu"), "onSave")
+   method
+    name "onSave"
+    refid "com.company.assembleegameclient.mapeditor:MECommandMenu/instance/com.company.assembleegameclient.mapeditor:MECommandMenu/instance/init/onSave"
+    param QName(PackageNamespace("com.company.assembleegameclient.editor"), "CommandMenuItem")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace(""), "dispatchEvent")
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.editor"), "CommandEvent")
+      pushstring          "SAVE_COMMAND_EVENT"
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.editor"), "CommandEvent"), 1
+      callpropvoid        QName(PackageNamespace(""), "dispatchEvent"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.mapeditor:MECommandMenu"), "onSubmit")
+   method
+    name "onSubmit"
+    refid "com.company.assembleegameclient.mapeditor:MECommandMenu/instance/com.company.assembleegameclient.mapeditor:MECommandMenu/instance/init/onSubmit"
+    param QName(PackageNamespace("com.company.assembleegameclient.editor"), "CommandMenuItem")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace(""), "dispatchEvent")
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.editor"), "CommandEvent")
+      pushstring          "SUBMIT_COMMAND_EVENT"
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.editor"), "CommandEvent"), 1
+      callpropvoid        QName(PackageNamespace(""), "dispatchEvent"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.mapeditor:MECommandMenu"), "onTest")
+   method
+    name "onTest"
+    refid "com.company.assembleegameclient.mapeditor:MECommandMenu/instance/com.company.assembleegameclient.mapeditor:MECommandMenu/instance/init/onTest"
+    param QName(PackageNamespace("com.company.assembleegameclient.editor"), "CommandMenuItem")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace(""), "dispatchEvent")
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.editor"), "CommandEvent")
+      pushstring          "TEST_COMMAND_EVENT"
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.editor"), "CommandEvent"), 1
+      callpropvoid        QName(PackageNamespace(""), "dispatchEvent"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.mapeditor:MECommandMenu/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PackageNamespace(""), "NONE_COMMAND") type QName(PackageNamespace(""), "int") value Integer(0) end
+ trait const QName(PackageNamespace(""), "DRAW_COMMAND") type QName(PackageNamespace(""), "int") value Integer(1) end
+ trait const QName(PackageNamespace(""), "ERASE_COMMAND") type QName(PackageNamespace(""), "int") value Integer(2) end
+ trait const QName(PackageNamespace(""), "SAMPLE_COMMAND") type QName(PackageNamespace(""), "int") value Integer(3) end
+ trait const QName(PackageNamespace(""), "EDIT_COMMAND") type QName(PackageNamespace(""), "int") value Integer(4) end
+ trait const QName(PackageNamespace(""), "CUT_COMMAND") type QName(PackageNamespace(""), "int") value Integer(5) end
+ trait const QName(PackageNamespace(""), "COPY_COMMAND") type QName(PackageNamespace(""), "int") value Integer(6) end
+ trait const QName(PackageNamespace(""), "PASTE_COMMAND") type QName(PackageNamespace(""), "int") value Integer(7) end
+ trait const QName(PackageNamespace(""), "PICK_UP_COMMAND") type QName(PackageNamespace(""), "int") value Integer(8) end
+ trait const QName(PackageNamespace(""), "DROP_COMMAND") type QName(PackageNamespace(""), "int") value Integer(9) end
+end ; class

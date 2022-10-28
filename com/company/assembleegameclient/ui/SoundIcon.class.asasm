@@ -1,0 +1,187 @@
+class
+ refid "com.company.assembleegameclient.ui:SoundIcon"
+ instance QName(PackageNamespace("com.company.assembleegameclient.ui"), "SoundIcon")
+  extends QName(PackageNamespace("flash.display"), "Sprite")
+  flag SEALED
+  iinit
+   name "SoundIcon"
+   refid "com.company.assembleegameclient.ui:SoundIcon/instance/init"
+   body
+    maxstack 7
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("flash.display"), "Bitmap")
+     constructprop       QName(PackageNamespace("flash.display"), "Bitmap"), 0
+     setproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui:SoundIcon"), "bitmap_")
+
+     getlocal0
+     constructsuper      0
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui:SoundIcon"), "bitmap_")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui:SoundIcon"), "bitmap_")
+     pushbyte            2
+     setproperty         QName(PackageNamespace(""), "scaleX")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui:SoundIcon"), "bitmap_")
+     pushbyte            2
+     setproperty         QName(PackageNamespace(""), "scaleY")
+
+     getlocal0
+     callpropvoid        QName(PrivateNamespace("com.company.assembleegameclient.ui:SoundIcon"), "setBitmap"), 0
+
+     findpropstrict      QName(PackageNamespace(""), "addEventListener")
+     pushstring          "click"
+     getlocal0
+     getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui:SoundIcon"), "onIconClick")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     findpropstrict      QName(PackageNamespace("flash.filters"), "GlowFilter")
+     pushbyte            0
+     pushbyte            1
+     pushbyte            4
+     pushbyte            4
+     pushbyte            2
+     pushbyte            1
+     constructprop       QName(PackageNamespace("flash.filters"), "GlowFilter"), 6
+     newarray            1
+     findproperty        QName(PackageNamespace(""), "filters")
+     swap
+     setproperty         QName(PackageNamespace(""), "filters")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.ui:SoundIcon"), "bitmap_") type QName(PackageNamespace("flash.display"), "Bitmap") end
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.ui:SoundIcon"), "setBitmap")
+   method
+    name "setBitmap"
+    refid "com.company.assembleegameclient.ui:SoundIcon/instance/com.company.assembleegameclient.ui:SoundIcon/instance/setBitmap"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.ui:SoundIcon"), "bitmap_")
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.parameters"), "Parameters")
+      getproperty         QName(PackageNamespace(""), "data")
+      getproperty         Multiname("playMusic", [PrivateNamespace("com.company.assembleegameclient.ui:SoundIcon"), ProtectedNamespace("com.company.assembleegameclient.ui:SoundIcon"), StaticProtectedNs("com.company.assembleegameclient.ui:SoundIcon"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.ui"), PackageInternalNs("com.company.assembleegameclient.ui"), PrivateNamespace("FilePrivateNS:SoundIcon"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      dup
+      iftrue              L14
+
+      pop
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.parameters"), "Parameters")
+      getproperty         QName(PackageNamespace(""), "data")
+      getproperty         Multiname("playSFX", [PrivateNamespace("com.company.assembleegameclient.ui:SoundIcon"), ProtectedNamespace("com.company.assembleegameclient.ui:SoundIcon"), StaticProtectedNs("com.company.assembleegameclient.ui:SoundIcon"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.ui"), PackageInternalNs("com.company.assembleegameclient.ui"), PrivateNamespace("FilePrivateNS:SoundIcon"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      coerce_a
+L14:
+      iffalse             L20
+
+      getlex              QName(PackageNamespace("com.company.util"), "AssetLibrary")
+      pushstring          "lofiInterfaceBig"
+      pushbyte            3
+      callproperty        QName(PackageNamespace(""), "getImageFromSet"), 2
+      jump                L25
+
+L20:
+      getlex              QName(PackageNamespace("com.company.util"), "AssetLibrary")
+      pushstring          "lofiInterfaceBig"
+      pushbyte            4
+      callproperty        QName(PackageNamespace(""), "getImageFromSet"), 2
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+L25:
+      setproperty         QName(PackageNamespace(""), "bitmapData")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.ui:SoundIcon"), "onIconClick")
+   method
+    name "onIconClick"
+    refid "com.company.assembleegameclient.ui:SoundIcon/instance/com.company.assembleegameclient.ui:SoundIcon/instance/onIconClick"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.parameters"), "Parameters")
+      getproperty         QName(PackageNamespace(""), "data")
+      getproperty         Multiname("playMusic", [PrivateNamespace("com.company.assembleegameclient.ui:SoundIcon"), ProtectedNamespace("com.company.assembleegameclient.ui:SoundIcon"), StaticProtectedNs("com.company.assembleegameclient.ui:SoundIcon"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.ui"), PackageInternalNs("com.company.assembleegameclient.ui"), PrivateNamespace("FilePrivateNS:SoundIcon"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      dup
+      iftrue              L12
+
+      pop
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.parameters"), "Parameters")
+      getproperty         QName(PackageNamespace(""), "data")
+      getproperty         Multiname("playSFX", [PrivateNamespace("com.company.assembleegameclient.ui:SoundIcon"), ProtectedNamespace("com.company.assembleegameclient.ui:SoundIcon"), StaticProtectedNs("com.company.assembleegameclient.ui:SoundIcon"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.ui"), PackageInternalNs("com.company.assembleegameclient.ui"), PrivateNamespace("FilePrivateNS:SoundIcon"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      coerce_a
+L12:
+      not
+      setlocal2
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.sound"), "Music")
+      getlocal2
+      callpropvoid        QName(PackageNamespace(""), "setPlayMusic"), 1
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.sound"), "SFX")
+      getlocal2
+      callpropvoid        QName(PackageNamespace(""), "setPlaySFX"), 1
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.parameters"), "Parameters")
+      getproperty         QName(PackageNamespace(""), "data")
+      getlocal2
+      setproperty         Multiname("playPewPew", [PrivateNamespace("com.company.assembleegameclient.ui:SoundIcon"), ProtectedNamespace("com.company.assembleegameclient.ui:SoundIcon"), StaticProtectedNs("com.company.assembleegameclient.ui:SoundIcon"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.ui"), PackageInternalNs("com.company.assembleegameclient.ui"), PrivateNamespace("FilePrivateNS:SoundIcon"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.parameters"), "Parameters")
+      callpropvoid        QName(PackageNamespace(""), "save"), 0
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("com.company.assembleegameclient.ui:SoundIcon"), "setBitmap"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.ui:SoundIcon/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

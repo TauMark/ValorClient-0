@@ -1,0 +1,158 @@
+class
+ refid "com.greensock.plugins:FrameLabelPlugin"
+ instance QName(PackageNamespace("com.greensock.plugins"), "FrameLabelPlugin")
+  extends QName(PackageNamespace("com.greensock.plugins"), "FramePlugin")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.greensock.plugins:FrameLabelPlugin")
+  iinit
+   name "FrameLabelPlugin"
+   refid "com.greensock.plugins:FrameLabelPlugin/instance/init"
+   body
+    maxstack 2
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     pushstring          "frameLabel"
+     findproperty        QName(PackageNamespace(""), "_propName")
+     swap
+     setproperty         QName(PackageNamespace(""), "_propName")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait method QName(PackageNamespace(""), "_onInitTween") flag OVERRIDE
+   method
+    name "_onInitTween"
+    refid "com.greensock.plugins:FrameLabelPlugin/instance/_onInitTween"
+    param QName(PackageNamespace(""), "Object")
+    param null
+    param QName(PackageNamespace("com.greensock"), "TweenLite")
+    returns QName(PackageNamespace(""), "Boolean")
+    flag HAS_PARAM_NAMES
+    paramname "target"
+    paramname "value"
+    paramname "tween"
+    body
+     maxstack 7
+     localcount 8
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal3
+      getproperty         QName(PackageNamespace(""), "target")
+      not
+      getlex              QName(PackageNamespace("flash.display"), "MovieClip")
+      istypelate
+      iffalse             L10
+
+      pushfalse
+      returnvalue
+
+L10:
+      getlocal1
+      getlex              QName(PackageNamespace("flash.display"), "MovieClip")
+      astypelate
+      findproperty        QName(ProtectedNamespace("com.greensock.plugins:FramePlugin"), "_target")
+      swap
+      setproperty         QName(ProtectedNamespace("com.greensock.plugins:FramePlugin"), "_target")
+
+      getlocal0
+      getlex              QName(ProtectedNamespace("com.greensock.plugins:FramePlugin"), "_target")
+      getproperty         QName(PackageNamespace(""), "currentFrame")
+      setproperty         QName(PackageNamespace(""), "frame")
+
+      getlex              QName(ProtectedNamespace("com.greensock.plugins:FramePlugin"), "_target")
+      getproperty         QName(PackageNamespace(""), "currentLabels")
+      coerce              QName(PackageNamespace(""), "Array")
+      setlocal            7
+
+      getlocal2
+      coerce_s
+      setlocal            6
+
+      getlex              QName(ProtectedNamespace("com.greensock.plugins:FramePlugin"), "_target")
+      getproperty         QName(PackageNamespace(""), "currentFrame")
+      convert_i
+      setlocal            5
+
+      getlocal            7
+      getproperty         QName(PackageNamespace(""), "length")
+      convert_i
+      setlocal            4
+
+      jump                L50
+
+L36:
+      label
+      getlocal            7
+      getlocal            4
+      getproperty         MultinameL([PrivateNamespace("com.greensock.plugins:FrameLabelPlugin"), ProtectedNamespace("com.greensock.plugins:FrameLabelPlugin"), StaticProtectedNs("com.greensock.plugins:FrameLabelPlugin"), StaticProtectedNs("com.greensock.plugins:FramePlugin"), StaticProtectedNs("com.greensock.plugins:TweenPlugin"), StaticProtectedNs("Object"), PackageNamespace("com.greensock.plugins"), PackageInternalNs("com.greensock.plugins"), PrivateNamespace("FilePrivateNS:FrameLabelPlugin"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getproperty         Multiname("name", [PrivateNamespace("com.greensock.plugins:FrameLabelPlugin"), ProtectedNamespace("com.greensock.plugins:FrameLabelPlugin"), StaticProtectedNs("com.greensock.plugins:FrameLabelPlugin"), StaticProtectedNs("com.greensock.plugins:FramePlugin"), StaticProtectedNs("com.greensock.plugins:TweenPlugin"), StaticProtectedNs("Object"), PackageNamespace("com.greensock.plugins"), PackageInternalNs("com.greensock.plugins"), PrivateNamespace("FilePrivateNS:FrameLabelPlugin"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getlocal            6
+      ifne                L50
+
+      getlocal            7
+      getlocal            4
+      getproperty         MultinameL([PrivateNamespace("com.greensock.plugins:FrameLabelPlugin"), ProtectedNamespace("com.greensock.plugins:FrameLabelPlugin"), StaticProtectedNs("com.greensock.plugins:FrameLabelPlugin"), StaticProtectedNs("com.greensock.plugins:FramePlugin"), StaticProtectedNs("com.greensock.plugins:TweenPlugin"), StaticProtectedNs("Object"), PackageNamespace("com.greensock.plugins"), PackageInternalNs("com.greensock.plugins"), PrivateNamespace("FilePrivateNS:FrameLabelPlugin"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getproperty         Multiname("frame", [PrivateNamespace("com.greensock.plugins:FrameLabelPlugin"), ProtectedNamespace("com.greensock.plugins:FrameLabelPlugin"), StaticProtectedNs("com.greensock.plugins:FrameLabelPlugin"), StaticProtectedNs("com.greensock.plugins:FramePlugin"), StaticProtectedNs("com.greensock.plugins:TweenPlugin"), StaticProtectedNs("Object"), PackageNamespace("com.greensock.plugins"), PackageInternalNs("com.greensock.plugins"), PrivateNamespace("FilePrivateNS:FrameLabelPlugin"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      convert_i
+      setlocal            5
+
+      jump                L54
+
+L50:
+      declocal_i          4
+      getlocal            4
+      pushbyte            -1
+      ifgt                L36
+
+L54:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "frame")
+      getlocal            5
+      ifeq                L67
+
+      findpropstrict      QName(ProtectedNamespace("com.greensock.plugins:TweenPlugin"), "_addTween")
+      getlocal0
+      pushstring          "frame"
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "frame")
+      getlocal            5
+      pushstring          "frame"
+      pushtrue
+      callpropvoid        QName(ProtectedNamespace("com.greensock.plugins:TweenPlugin"), "_addTween"), 6
+
+L67:
+      pushtrue
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.greensock.plugins:FrameLabelPlugin/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PackageNamespace(""), "API") type QName(PackageNamespace(""), "Number") value Integer(2) end
+end ; class

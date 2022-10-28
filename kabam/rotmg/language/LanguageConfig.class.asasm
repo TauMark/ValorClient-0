@@ -1,0 +1,113 @@
+class
+ refid "kabam.rotmg.language:LanguageConfig"
+ instance QName(PackageNamespace("kabam.rotmg.language"), "LanguageConfig")
+  extends QName(PackageNamespace(""), "Object")
+  implements QName(PackageNamespace("robotlegs.bender.framework.api"), "IConfig")
+  flag SEALED
+  iinit
+   refid "kabam.rotmg.language:LanguageConfig/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "injector") flag METADATA type QName(PackageNamespace("org.swiftsuspenders"), "Injector")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "commandMap") flag METADATA type QName(PackageNamespace("robotlegs.bender.extensions.signalCommandMap.api"), "ISignalCommandMap")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "startup") flag METADATA type QName(PackageNamespace("kabam.rotmg.startup.control"), "StartupSequence")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "applicationSetup") flag METADATA type QName(PackageNamespace("kabam.rotmg.application.api"), "ApplicationSetup")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PackageNamespace(""), "configure")
+   method
+    name "configure"
+    refid "kabam.rotmg.language:LanguageConfig/instance/configure"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "injector")
+      getlex              QName(PackageNamespace("kabam.rotmg.language.model"), "LanguageModel")
+      callproperty        QName(PackageNamespace(""), "map"), 1
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.language.model"), "CookieLanguageModel")
+      constructprop       QName(PackageNamespace("kabam.rotmg.language.model"), "CookieLanguageModel"), 0
+      callpropvoid        QName(PackageNamespace(""), "toValue"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "injector")
+      getlex              QName(PackageNamespace("kabam.rotmg.language.model"), "StringMap")
+      callproperty        QName(PackageNamespace(""), "map"), 1
+      getlex              QName(PackageNamespace("kabam.rotmg.language.model"), "StringMapConcrete")
+      callpropvoid        QName(PackageNamespace(""), "toSingleton"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "injector")
+      getlex              QName(PackageNamespace("kabam.rotmg.language.service"), "GetLanguageService")
+      callpropvoid        QName(PackageNamespace(""), "map"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "startup")
+      getlex              QName(PackageNamespace("kabam.rotmg.language.service"), "GetLanguageService")
+      pushshort           -999
+      callpropvoid        QName(PackageNamespace(""), "addTask"), 2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "commandMap")
+      getlex              QName(PackageNamespace("kabam.rotmg.language.control"), "ReloadCurrentScreenSignal")
+      callproperty        QName(Namespace("robotlegs.bender.extensions.signalCommandMap.api:ISignalCommandMap"), "map"), 1
+      getlex              QName(PackageNamespace("kabam.rotmg.language.control"), "ReloadCurrentScreenCommand")
+      callpropvoid        QName(Namespace("robotlegs.bender.extensions.commandCenter.dsl:ICommandMapper"), "toCommand"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "commandMap")
+      getlex              QName(PackageNamespace("kabam.rotmg.language.control"), "SetLanguageSignal")
+      callproperty        QName(Namespace("robotlegs.bender.extensions.signalCommandMap.api:ISignalCommandMap"), "map"), 1
+      getlex              QName(PackageNamespace("kabam.rotmg.language.control"), "SetLanguageCommand")
+      callpropvoid        QName(Namespace("robotlegs.bender.extensions.commandCenter.dsl:ICommandMapper"), "toCommand"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.language:LanguageConfig/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

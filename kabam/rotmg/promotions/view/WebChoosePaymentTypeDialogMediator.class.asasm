@@ -1,0 +1,194 @@
+class
+ refid "kabam.rotmg.promotions.view:WebChoosePaymentTypeDialogMediator"
+ instance QName(PackageNamespace("kabam.rotmg.promotions.view"), "WebChoosePaymentTypeDialogMediator")
+  extends QName(PackageNamespace("robotlegs.bender.bundles.mvcs"), "Mediator")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.promotions.view:WebChoosePaymentTypeDialogMediator")
+  iinit
+   refid "kabam.rotmg.promotions.view:WebChoosePaymentTypeDialogMediator/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "view") flag METADATA type QName(PackageNamespace("kabam.rotmg.promotions.view"), "WebChoosePaymentTypeDialog")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "model") flag METADATA type QName(PackageNamespace("kabam.rotmg.promotions.model"), "BeginnersPackageModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "closeDialogs") flag METADATA type QName(PackageNamespace("kabam.rotmg.dialogs.control"), "CloseDialogsSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "makePayment") flag METADATA type QName(PackageNamespace("kabam.rotmg.promotions.signals"), "MakeBeginnersPackagePaymentSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PackageNamespace(""), "initialize") flag OVERRIDE
+   method
+    name "initialize"
+    refid "kabam.rotmg.promotions.view:WebChoosePaymentTypeDialogMediator/instance/initialize"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "close")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.promotions.view:WebChoosePaymentTypeDialogMediator"), "onClose")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "select")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.promotions.view:WebChoosePaymentTypeDialogMediator"), "onSelect")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      callpropvoid        QName(PackageNamespace(""), "centerOnScreen"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "destroy") flag OVERRIDE
+   method
+    name "destroy"
+    refid "kabam.rotmg.promotions.view:WebChoosePaymentTypeDialogMediator/instance/destroy"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "close")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.promotions.view:WebChoosePaymentTypeDialogMediator"), "onClose")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "select")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.promotions.view:WebChoosePaymentTypeDialogMediator"), "onSelect")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.promotions.view:WebChoosePaymentTypeDialogMediator"), "onClose")
+   method
+    name "onClose"
+    refid "kabam.rotmg.promotions.view:WebChoosePaymentTypeDialogMediator/instance/kabam.rotmg.promotions.view:WebChoosePaymentTypeDialogMediator/instance/onClose"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "closeDialogs")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.promotions.view:WebChoosePaymentTypeDialogMediator"), "onSelect")
+   method
+    name "onSelect"
+    refid "kabam.rotmg.promotions.view:WebChoosePaymentTypeDialogMediator/instance/kabam.rotmg.promotions.view:WebChoosePaymentTypeDialogMediator/instance/onSelect"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.account.core"), "PaymentData")
+      constructprop       QName(PackageNamespace("kabam.rotmg.account.core"), "PaymentData"), 0
+      coerce              QName(PackageNamespace("kabam.rotmg.account.core"), "PaymentData")
+      setlocal2
+
+      getlocal2
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "model")
+      callproperty        QName(PackageNamespace(""), "getOffer"), 0
+      setproperty         QName(PackageNamespace(""), "offer")
+
+      getlocal2
+      getlocal1
+      setproperty         QName(PackageNamespace(""), "paymentMethod")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "makePayment")
+      getlocal2
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "closeDialogs")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.promotions.view:WebChoosePaymentTypeDialogMediator/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

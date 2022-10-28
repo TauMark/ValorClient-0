@@ -1,0 +1,114 @@
+class
+ refid "com.greensock.plugins:BevelFilterPlugin"
+ instance QName(PackageNamespace("com.greensock.plugins"), "BevelFilterPlugin")
+  extends QName(PackageNamespace("com.greensock.plugins"), "FilterPlugin")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.greensock.plugins:BevelFilterPlugin")
+  iinit
+   name "BevelFilterPlugin"
+   refid "com.greensock.plugins:BevelFilterPlugin/instance/init"
+   body
+    maxstack 2
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     pushstring          "bevelFilter"
+     constructsuper      1
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait method QName(PackageNamespace(""), "_onInitTween") flag OVERRIDE
+   method
+    name "_onInitTween"
+    refid "com.greensock.plugins:BevelFilterPlugin/instance/_onInitTween"
+    param QName(PackageNamespace(""), "Object")
+    param null
+    param QName(PackageNamespace("com.greensock"), "TweenLite")
+    returns QName(PackageNamespace(""), "Boolean")
+    flag HAS_PARAM_NAMES
+    paramname "target"
+    paramname "value"
+    paramname "tween"
+    body
+     maxstack 17
+     localcount 4
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(ProtectedNamespace("com.greensock.plugins:FilterPlugin"), "_initFilter")
+      getlocal1
+      getlocal2
+      getlocal3
+      getlex              QName(PackageNamespace("flash.filters"), "BevelFilter")
+      findpropstrict      QName(PackageNamespace("flash.filters"), "BevelFilter")
+      pushbyte            0
+      pushbyte            0
+      pushint             16777215
+      pushdouble          0.5
+      pushbyte            0
+      pushdouble          0.5
+      pushbyte            2
+      pushbyte            2
+      pushbyte            0
+      getlocal2
+      getproperty         Multiname("quality", [PrivateNamespace("com.greensock.plugins:BevelFilterPlugin"), ProtectedNamespace("com.greensock.plugins:BevelFilterPlugin"), StaticProtectedNs("com.greensock.plugins:BevelFilterPlugin"), StaticProtectedNs("com.greensock.plugins:FilterPlugin"), StaticProtectedNs("com.greensock.plugins:TweenPlugin"), StaticProtectedNs("Object"), PackageNamespace("com.greensock.plugins"), PackageInternalNs("com.greensock.plugins"), PrivateNamespace("FilePrivateNS:BevelFilterPlugin"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      dup
+      iftrue              L24
+
+      pop
+      pushbyte            2
+      coerce_a
+L24:
+      constructprop       QName(PackageNamespace("flash.filters"), "BevelFilter"), 10
+      getlex              QName(PrivateNamespace("com.greensock.plugins:BevelFilterPlugin"), "_propNames")
+      callproperty        QName(ProtectedNamespace("com.greensock.plugins:FilterPlugin"), "_initFilter"), 6
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.greensock.plugins:BevelFilterPlugin/class/init"
+  body
+   maxstack 10
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 1
+   code
+    getlocal0
+    pushscope
+
+    pushstring          "distance"
+    pushstring          "angle"
+    pushstring          "highlightColor"
+    pushstring          "highlightAlpha"
+    pushstring          "shadowColor"
+    pushstring          "shadowAlpha"
+    pushstring          "blurX"
+    pushstring          "blurY"
+    pushstring          "strength"
+    pushstring          "quality"
+    newarray            10
+    findproperty        QName(PrivateNamespace("com.greensock.plugins:BevelFilterPlugin"), "_propNames")
+    swap
+    setproperty         QName(PrivateNamespace("com.greensock.plugins:BevelFilterPlugin"), "_propNames")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PackageNamespace(""), "API") type QName(PackageNamespace(""), "Number") value Integer(2) end
+ trait slot QName(PrivateNamespace("com.greensock.plugins:BevelFilterPlugin"), "_propNames") type QName(PackageNamespace(""), "Array") end
+end ; class

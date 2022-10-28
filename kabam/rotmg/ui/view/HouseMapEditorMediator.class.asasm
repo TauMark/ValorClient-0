@@ -1,0 +1,183 @@
+class
+ refid "kabam.rotmg.ui.view:HouseMapEditorMediator"
+ instance QName(PackageNamespace("kabam.rotmg.ui.view"), "HouseMapEditorMediator")
+  extends QName(PackageNamespace("robotlegs.bender.bundles.mvcs"), "Mediator")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.ui.view:HouseMapEditorMediator")
+  iinit
+   refid "kabam.rotmg.ui.view:HouseMapEditorMediator/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "view") flag METADATA type QName(PackageNamespace("com.company.assembleegameclient.houseeditor"), "HouseMapEditor")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "model") flag METADATA type QName(PackageNamespace("kabam.rotmg.core.model"), "PlayerModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "servers") flag METADATA type QName(PackageNamespace("kabam.rotmg.servers.api"), "ServerModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "gameClosed") flag METADATA type QName(PackageNamespace("kabam.rotmg.game.signals"), "GameClosedSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "openDialog") flag METADATA type QName(PackageNamespace("kabam.rotmg.dialogs.control"), "OpenDialogSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PackageNamespace(""), "initialize") flag OVERRIDE
+   method
+    name "initialize"
+    refid "kabam.rotmg.ui.view:HouseMapEditorMediator/instance/initialize"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "model")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "servers")
+      callproperty        QName(Namespace("kabam.rotmg.servers.api:ServerModel"), "getServer"), 0
+      callpropvoid        QName(PackageNamespace(""), "initialize"), 2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "editingScreen_")
+      getproperty         QName(PackageNamespace(""), "returnButton_")
+      pushstring          "click"
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.ui.view:HouseMapEditorMediator"), "onReturnPhase1")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "destroy") flag OVERRIDE
+   method
+    name "destroy"
+    refid "kabam.rotmg.ui.view:HouseMapEditorMediator/instance/destroy"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "editingScreen_")
+      getproperty         QName(PackageNamespace(""), "returnButton_")
+      pushstring          "click"
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.ui.view:HouseMapEditorMediator"), "onReturnPhase1")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.ui.view:HouseMapEditorMediator"), "onReturnPhase1")
+   method
+    name "onReturnPhase1"
+    refid "kabam.rotmg.ui.view:HouseMapEditorMediator/instance/kabam.rotmg.ui.view:HouseMapEditorMediator/instance/onReturnPhase1"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 4
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.ui.dialogs"), "ConfirmDialog")
+      pushstring          "Go Back"
+      pushstring          "Are you sure you want to return to the title screen? This will erase your map data."
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.ui.view:HouseMapEditorMediator"), "onReturn")
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.ui.dialogs"), "ConfirmDialog"), 3
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.ui.dialogs"), "ConfirmDialog")
+      setlocal2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "openDialog")
+      getlocal2
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.ui.view:HouseMapEditorMediator"), "onReturn")
+   method
+    name "onReturn"
+    refid "kabam.rotmg.ui.view:HouseMapEditorMediator/instance/kabam.rotmg.ui.view:HouseMapEditorMediator/instance/onReturn"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "gameClosed")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.ui.view:HouseMapEditorMediator/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

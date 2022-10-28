@@ -1,0 +1,356 @@
+class
+ refid "com.company.assembleegameclient.game:IdleWatcher"
+ instance QName(PackageNamespace("com.company.assembleegameclient.game"), "IdleWatcher")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  iinit
+   name "IdleWatcher"
+   refid "com.company.assembleegameclient.game:IdleWatcher/instance/init"
+   body
+    maxstack 3
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     getlex              QName(PackageNamespace("kabam.rotmg.core"), "StaticInjectorContext")
+     callproperty        QName(PackageNamespace(""), "getInjector"), 0
+     getlex              QName(PackageNamespace("kabam.rotmg.game.signals"), "AddTextLineSignal")
+     callproperty        QName(PackageNamespace(""), "getInstance"), 1
+     setproperty         QName(PrivateNamespace("com.company.assembleegameclient.game:IdleWatcher"), "addTextLine")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "gs_") type QName(PackageNamespace("com.company.assembleegameclient.game"), "GameSprite") value Null() end
+  trait slot QName(PackageNamespace(""), "idleTime_") type QName(PackageNamespace(""), "int") value Integer(0) end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.game:IdleWatcher"), "addTextLine") type QName(PackageNamespace("kabam.rotmg.game.signals"), "AddTextLineSignal") end
+  trait method QName(PackageNamespace(""), "start")
+   method
+    name "start"
+    refid "com.company.assembleegameclient.game:IdleWatcher/instance/start"
+    param QName(PackageNamespace("com.company.assembleegameclient.game"), "GameSprite")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "gs"
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      setproperty         QName(PackageNamespace(""), "gs_")
+
+      getlocal0
+      pushbyte            0
+      setproperty         QName(PackageNamespace(""), "idleTime_")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "gs_")
+      getproperty         QName(PackageNamespace(""), "stage")
+      pushstring          "mouseMove"
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.game:IdleWatcher"), "onMouseMove")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "gs_")
+      getproperty         QName(PackageNamespace(""), "stage")
+      pushstring          "keyDown"
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.game:IdleWatcher"), "onKeyDown")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "update")
+   method
+    name "update"
+    refid "com.company.assembleegameclient.game:IdleWatcher/instance/update"
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "Boolean")
+    flag HAS_PARAM_NAMES
+    paramname "elapsedMS"
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "idleTime_")
+      convert_i
+      setlocal2
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "idleTime_")
+      getlocal1
+      add
+      setproperty         QName(PackageNamespace(""), "idleTime_")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "idleTime_")
+      pushbyte            15
+      pushint             60000
+      multiply
+      ifnlt               L20
+
+      pushfalse
+      returnvalue
+
+L20:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "idleTime_")
+      pushbyte            15
+      pushint             60000
+      multiply
+      greaterequals
+      dup
+      iffalse             L34
+
+      pop
+      getlocal2
+      pushbyte            15
+      pushint             60000
+      multiply
+      lessthan
+L34:
+      iffalse             L42
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.game:IdleWatcher"), "addTextLine")
+      getlocal0
+      callproperty        QName(PrivateNamespace("com.company.assembleegameclient.game:IdleWatcher"), "makeFirstWarning"), 0
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      pushfalse
+      returnvalue
+
+L42:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "idleTime_")
+      pushbyte            20
+      pushint             60000
+      multiply
+      greaterequals
+      dup
+      iffalse             L56
+
+      pop
+      getlocal2
+      pushbyte            20
+      pushint             60000
+      multiply
+      lessthan
+L56:
+      iffalse             L64
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.game:IdleWatcher"), "addTextLine")
+      getlocal0
+      callproperty        QName(PrivateNamespace("com.company.assembleegameclient.game:IdleWatcher"), "makeFinalWarning"), 0
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      pushtrue
+      returnvalue
+
+L64:
+      pushfalse
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.game:IdleWatcher"), "makeFirstWarning")
+   method
+    name "makeFirstWarning"
+    refid "com.company.assembleegameclient.game:IdleWatcher/instance/com.company.assembleegameclient.game:IdleWatcher/instance/makeFirstWarning"
+    returns QName(PackageNamespace("kabam.rotmg.chat.model"), "ChatMessage")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.chat.model"), "ChatMessage")
+      constructprop       QName(PackageNamespace("kabam.rotmg.chat.model"), "ChatMessage"), 0
+      coerce              QName(PackageNamespace("kabam.rotmg.chat.model"), "ChatMessage")
+      setlocal1
+
+      getlocal1
+      pushstring          "*Error*"
+      setproperty         QName(PackageNamespace(""), "name")
+
+      getlocal1
+      pushstring          "You have been idle for 15 minutes, you will be disconnected if you are idle for more than 20 minutes."
+      setproperty         QName(PackageNamespace(""), "text")
+
+      getlocal1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.game:IdleWatcher"), "makeFinalWarning")
+   method
+    name "makeFinalWarning"
+    refid "com.company.assembleegameclient.game:IdleWatcher/instance/com.company.assembleegameclient.game:IdleWatcher/instance/makeFinalWarning"
+    returns QName(PackageNamespace("kabam.rotmg.chat.model"), "ChatMessage")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.chat.model"), "ChatMessage")
+      constructprop       QName(PackageNamespace("kabam.rotmg.chat.model"), "ChatMessage"), 0
+      coerce              QName(PackageNamespace("kabam.rotmg.chat.model"), "ChatMessage")
+      setlocal1
+
+      getlocal1
+      pushstring          "*Error*"
+      setproperty         QName(PackageNamespace(""), "name")
+
+      getlocal1
+      pushstring          "You have been idle for 20 minutes. Valor wishes you a good day!"
+      setproperty         QName(PackageNamespace(""), "text")
+
+      getlocal1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "stop")
+   method
+    name "stop"
+    refid "com.company.assembleegameclient.game:IdleWatcher/instance/stop"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "gs_")
+      getproperty         QName(PackageNamespace(""), "stage")
+      pushstring          "mouseMove"
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.game:IdleWatcher"), "onMouseMove")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "gs_")
+      getproperty         QName(PackageNamespace(""), "stage")
+      pushstring          "keyDown"
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.game:IdleWatcher"), "onKeyDown")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      getlocal0
+      pushnull
+      setproperty         QName(PackageNamespace(""), "gs_")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.game:IdleWatcher"), "onMouseMove")
+   method
+    name "onMouseMove"
+    refid "com.company.assembleegameclient.game:IdleWatcher/instance/com.company.assembleegameclient.game:IdleWatcher/instance/onMouseMove"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      pushbyte            0
+      setproperty         QName(PackageNamespace(""), "idleTime_")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.game:IdleWatcher"), "onKeyDown")
+   method
+    name "onKeyDown"
+    refid "com.company.assembleegameclient.game:IdleWatcher/instance/com.company.assembleegameclient.game:IdleWatcher/instance/onKeyDown"
+    param QName(PackageNamespace("flash.events"), "KeyboardEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      pushbyte            0
+      setproperty         QName(PackageNamespace(""), "idleTime_")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.game:IdleWatcher/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PrivateNamespace("com.company.assembleegameclient.game:IdleWatcher"), "MINUTE_IN_MS") type QName(PackageNamespace(""), "int") value Integer(60000) end
+ trait const QName(PrivateNamespace("com.company.assembleegameclient.game:IdleWatcher"), "FIRST_WARNING_MINUTES") type QName(PackageNamespace(""), "int") value Integer(15) end
+ trait const QName(PrivateNamespace("com.company.assembleegameclient.game:IdleWatcher"), "KICK_MINUTES") type QName(PackageNamespace(""), "int") value Integer(20) end
+end ; class

@@ -1,0 +1,181 @@
+class
+ refid "kabam.rotmg.game.view.components:TabIconView"
+ instance QName(PackageNamespace("kabam.rotmg.game.view.components"), "TabIconView")
+  extends QName(PackageNamespace("kabam.rotmg.game.view.components"), "TabView")
+  flag SEALED
+  iinit
+   name "TabIconView"
+   refid "kabam.rotmg.game.view.components:TabIconView/instance/init"
+   param QName(PackageNamespace(""), "int")
+   param QName(PackageNamespace("flash.display"), "Sprite")
+   param QName(PackageNamespace("flash.display"), "Bitmap")
+   flag HAS_PARAM_NAMES
+   paramname "_arg1"
+   paramname "_arg2"
+   paramname "_arg3"
+   body
+    maxstack 2
+    localcount 4
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     getlocal1
+     constructsuper      1
+
+     getlocal0
+     getlocal2
+     callpropvoid        QName(PrivateNamespace("kabam.rotmg.game.view.components:TabIconView"), "initBackground"), 1
+
+     getlocal3
+     iffalse             L13
+
+     getlocal0
+     getlocal3
+     callpropvoid        QName(PrivateNamespace("kabam.rotmg.game.view.components:TabIconView"), "initIcon"), 1
+
+L13:
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace("kabam.rotmg.game.view.components:TabIconView"), "background") type QName(PackageNamespace("flash.display"), "Sprite") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.game.view.components:TabIconView"), "icon") type QName(PackageNamespace("flash.display"), "Bitmap") end
+  trait method QName(PrivateNamespace("kabam.rotmg.game.view.components:TabIconView"), "initBackground")
+   method
+    name "initBackground"
+    refid "kabam.rotmg.game.view.components:TabIconView/instance/kabam.rotmg.game.view.components:TabIconView/instance/initBackground"
+    param QName(PackageNamespace("flash.display"), "Sprite")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      setproperty         QName(PrivateNamespace("kabam.rotmg.game.view.components:TabIconView"), "background")
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.game.view.components:TabIconView"), "initIcon")
+   method
+    name "initIcon"
+    refid "kabam.rotmg.game.view.components:TabIconView/instance/kabam.rotmg.game.view.components:TabIconView/instance/initIcon"
+    param QName(PackageNamespace("flash.display"), "Bitmap")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      setproperty         QName(PrivateNamespace("kabam.rotmg.game.view.components:TabIconView"), "icon")
+
+      getlocal1
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "x")
+      pushbyte            5
+      subtract
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal1
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "y")
+      pushbyte            11
+      subtract
+      setproperty         QName(PackageNamespace(""), "y")
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setSelected") flag OVERRIDE
+   method
+    name "setSelected"
+    refid "kabam.rotmg.game.view.components:TabIconView/instance/setSelected"
+    param QName(PackageNamespace(""), "Boolean")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.game.view.components:TabIconView"), "background")
+      getproperty         QName(PackageNamespace(""), "transform")
+      getproperty         QName(PackageNamespace(""), "colorTransform")
+      coerce              QName(PackageNamespace("flash.geom"), "ColorTransform")
+      setlocal2
+
+      getlocal2
+      getlocal1
+      iffalse             L13
+
+      pushuint            2368034
+      jump                L14
+
+L13:
+      pushuint            7039594
+L14:
+      setproperty         QName(PackageNamespace(""), "color")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.game.view.components:TabIconView"), "background")
+      getproperty         QName(PackageNamespace(""), "transform")
+      getlocal2
+      setproperty         QName(PackageNamespace(""), "colorTransform")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.game.view.components:TabIconView/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

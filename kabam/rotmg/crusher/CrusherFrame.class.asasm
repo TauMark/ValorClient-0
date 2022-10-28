@@ -1,0 +1,232 @@
+class
+ refid "kabam.rotmg.crusher:CrusherFrame"
+ instance QName(PackageNamespace("kabam.rotmg.crusher"), "CrusherFrame")
+  extends QName(PackageNamespace("com.company.assembleegameclient.account.ui"), "AdvancedFrame")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.crusher:CrusherFrame")
+  iinit
+   name "CrusherFrame"
+   refid "kabam.rotmg.crusher:CrusherFrame/instance/init"
+   param QName(PackageNamespace("com.company.assembleegameclient.game"), "AGameSprite")
+   param QName(PackageNamespace(""), "Boolean")
+   flag HAS_PARAM_NAMES
+   paramname "_arg1"
+   paramname "_arg2"
+   body
+    maxstack 7
+    localcount 3
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     findpropstrict      QName(PackageNamespace("org.osflash.signals"), "Signal")
+     constructprop       QName(PackageNamespace("org.osflash.signals"), "Signal"), 0
+     findproperty        QName(PackageNamespace(""), "cancel")
+     swap
+     initproperty        QName(PackageNamespace(""), "cancel")
+
+     findpropstrict      QName(PackageNamespace("org.osflash.signals"), "Signal")
+     getlex              QName(PackageNamespace(""), "String")
+     constructprop       QName(PackageNamespace("org.osflash.signals"), "Signal"), 1
+     findproperty        QName(PackageNamespace(""), "choose")
+     swap
+     initproperty        QName(PackageNamespace(""), "choose")
+
+     getlocal0
+     pushstring          "Vial Smelter"
+     pushstring          "Cancel"
+     pushstring          "Smelt"
+     pushshort           390
+     pushshort           300
+     pushtrue
+     constructsuper      6
+
+     getlocal0
+     getlocal1
+     setproperty         QName(PackageNamespace(""), "gameSprite")
+
+     getlocal0
+     getlocal2
+     setproperty         QName(PackageNamespace(""), "isPurchase")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.account.ui"), "CheckBoxField")
+     pushstring          "1: The Six Basic Stats"
+     pushfalse
+     pushbyte            16
+     constructprop       QName(PackageNamespace("com.company.assembleegameclient.account.ui"), "CheckBoxField"), 3
+     setproperty         QName(PrivateNamespace("kabam.rotmg.crusher:CrusherFrame"), "CheckRegVials")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.account.ui"), "CheckBoxField")
+     pushstring          "2: Life & Mana"
+     pushfalse
+     pushbyte            16
+     constructprop       QName(PackageNamespace("com.company.assembleegameclient.account.ui"), "CheckBoxField"), 3
+     setproperty         QName(PrivateNamespace("kabam.rotmg.crusher:CrusherFrame"), "CheckLifeManaVials")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.account.ui"), "CheckBoxField")
+     pushstring          "3: The Big Four"
+     pushfalse
+     pushbyte            16
+     constructprop       QName(PackageNamespace("com.company.assembleegameclient.account.ui"), "CheckBoxField"), 3
+     setproperty         QName(PrivateNamespace("kabam.rotmg.crusher:CrusherFrame"), "CheckNonRegVials")
+
+     findpropstrict      QName(PackageNamespace(""), "addCheckBox")
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.crusher:CrusherFrame"), "CheckRegVials")
+     callpropvoid        QName(PackageNamespace(""), "addCheckBox"), 1
+
+     findpropstrict      QName(PackageNamespace(""), "addPlainText")
+     pushstring          "1: All Dex, Atk, Spd, Vit, Wis, Def vials in your inventory will be smelted."
+     callpropvoid        QName(PackageNamespace(""), "addPlainText"), 1
+
+     findpropstrict      QName(PackageNamespace(""), "addCheckBox")
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.crusher:CrusherFrame"), "CheckLifeManaVials")
+     callpropvoid        QName(PackageNamespace(""), "addCheckBox"), 1
+
+     findpropstrict      QName(PackageNamespace(""), "addPlainText")
+     pushstring          "2: All Mana & Life vials in your inventory will be smelted."
+     callpropvoid        QName(PackageNamespace(""), "addPlainText"), 1
+
+     findpropstrict      QName(PackageNamespace(""), "addCheckBox")
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.crusher:CrusherFrame"), "CheckNonRegVials")
+     callpropvoid        QName(PackageNamespace(""), "addCheckBox"), 1
+
+     findpropstrict      QName(PackageNamespace(""), "addPlainText")
+     pushstring          "3: All Prot, Might, Luck & Res vials in your inventory will be smelted."
+     callpropvoid        QName(PackageNamespace(""), "addPlainText"), 1
+
+     getlex              QName(PackageNamespace(""), "leftButton_")
+     pushstring          "click"
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.crusher:CrusherFrame"), "onCancel")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     getlex              QName(PackageNamespace(""), "rightButton_")
+     pushstring          "click"
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.crusher:CrusherFrame"), "onChoose")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait const QName(PackageNamespace(""), "cancel") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait const QName(PackageNamespace(""), "choose") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait slot QName(PackageNamespace(""), "logger") flag METADATA type QName(PackageNamespace("robotlegs.bender.framework.api"), "ILogger")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "gameSprite") type QName(PackageNamespace("com.company.assembleegameclient.game"), "AGameSprite") end
+  trait slot QName(PackageNamespace(""), "isPurchase") type QName(PackageNamespace(""), "Boolean") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.crusher:CrusherFrame"), "CheckRegVials") type QName(PackageNamespace("com.company.assembleegameclient.account.ui"), "CheckBoxField") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.crusher:CrusherFrame"), "CheckLifeManaVials") type QName(PackageNamespace("com.company.assembleegameclient.account.ui"), "CheckBoxField") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.crusher:CrusherFrame"), "CheckNonRegVials") type QName(PackageNamespace("com.company.assembleegameclient.account.ui"), "CheckBoxField") end
+  trait slot QName(PackageNamespace(""), "gs_") type QName(PackageNamespace("com.company.assembleegameclient.game"), "AGameSprite") end
+  trait slot QName(PackageNamespace(""), "hudModel") type QName(PackageNamespace("kabam.rotmg.ui.model"), "HUDModel") end
+  trait method QName(PrivateNamespace("kabam.rotmg.crusher:CrusherFrame"), "onCancel")
+   method
+    name "onCancel"
+    refid "kabam.rotmg.crusher:CrusherFrame/instance/kabam.rotmg.crusher:CrusherFrame/instance/onCancel"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 1
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "cancel")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.crusher:CrusherFrame"), "onChoose")
+   method
+    name "onChoose"
+    refid "kabam.rotmg.crusher:CrusherFrame/instance/kabam.rotmg.crusher:CrusherFrame/instance/onChoose"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 5
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "choose")
+      pushstring          "true"
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.crusher:CrusherFrame"), "CheckRegVials")
+      callproperty        QName(PackageNamespace(""), "isChecked"), 0
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.crusher:CrusherFrame"), "CheckLifeManaVials")
+      callproperty        QName(PackageNamespace(""), "isChecked"), 0
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.crusher:CrusherFrame"), "CheckNonRegVials")
+      callproperty        QName(PackageNamespace(""), "isChecked"), 0
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 4
+
+      findpropstrict      QName(PackageNamespace(""), "disable")
+      callpropvoid        QName(PackageNamespace(""), "disable"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setError")
+   method
+    name "setError"
+    refid "kabam.rotmg.crusher:CrusherFrame/instance/setError"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 1
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.crusher:CrusherFrame/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

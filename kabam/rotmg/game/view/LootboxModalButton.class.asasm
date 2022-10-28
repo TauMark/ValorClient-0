@@ -1,0 +1,349 @@
+class
+ refid "kabam.rotmg.game.view:LootboxModalButton"
+ instance QName(PackageNamespace("kabam.rotmg.game.view"), "LootboxModalButton")
+  extends QName(PackageNamespace("flash.display"), "Sprite")
+  implements QName(PackageNamespace("kabam.rotmg.tooltips"), "TooltipAble")
+  flag SEALED
+  iinit
+   name "LootboxModalButton"
+   refid "kabam.rotmg.game.view:LootboxModalButton/instance/init"
+   body
+    maxstack 7
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.tooltips"), "HoverTooltipDelegate")
+     constructprop       QName(PackageNamespace("kabam.rotmg.tooltips"), "HoverTooltipDelegate"), 0
+     setproperty         QName(PackageNamespace(""), "hoverTooltipDelegate")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.ui.tooltip"), "TextToolTip")
+     pushint             3552822
+     pushbyte            0
+     pushnull
+     pushstring          "Unbox the latest Lootboxes you've earned."
+     pushshort           200
+     constructprop       QName(PackageNamespace("com.company.assembleegameclient.ui.tooltip"), "TextToolTip"), 5
+     setproperty         QName(PrivateNamespace("kabam.rotmg.game.view:LootboxModalButton"), "tooltip")
+
+     getlocal0
+     constructsuper      0
+
+     pushfalse
+     findproperty        QName(PackageNamespace(""), "mouseChildren")
+     swap
+     setproperty         QName(PackageNamespace(""), "mouseChildren")
+
+     getlocal0
+     getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "TextureRedrawer")
+     getlex              QName(PackageNamespace("com.company.util"), "AssetLibrary")
+     pushstring          "lofiCharBig"
+     pushbyte            101
+     callproperty        QName(PackageNamespace(""), "getImageFromSet"), 2
+     pushbyte            28
+     pushtrue
+     pushbyte            0
+     callproperty        QName(PackageNamespace(""), "redraw"), 4
+     setproperty         QName(PrivateNamespace("kabam.rotmg.game.view:LootboxModalButton"), "lootBoxTexture")
+
+     getlocal0
+     getlex              QName(PackageNamespace("kabam.rotmg.ui"), "UIUtils")
+     pushbyte            28
+     pushbyte            27
+     callproperty        QName(PackageNamespace(""), "makeHUDBackground"), 2
+     setproperty         QName(PrivateNamespace("kabam.rotmg.game.view:LootboxModalButton"), "background")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("flash.display"), "Bitmap")
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:LootboxModalButton"), "lootBoxTexture")
+     constructprop       QName(PackageNamespace("flash.display"), "Bitmap"), 1
+     setproperty         QName(PrivateNamespace("kabam.rotmg.game.view:LootboxModalButton"), "bitmap")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:LootboxModalButton"), "bitmap")
+     pushbyte            -9
+     setproperty         QName(PackageNamespace(""), "x")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:LootboxModalButton"), "bitmap")
+     pushbyte            -9
+     setproperty         QName(PackageNamespace(""), "y")
+
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "hoverTooltipDelegate")
+     getlocal0
+     callpropvoid        QName(PackageNamespace(""), "setDisplayObject"), 1
+
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "hoverTooltipDelegate")
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:LootboxModalButton"), "tooltip")
+     setproperty         QName(PackageNamespace(""), "tooltip")
+
+     getlocal0
+     callpropvoid        QName(PackageNamespace(""), "drawAsOpen"), 0
+
+     findpropstrict      QName(PackageNamespace(""), "addEventListener")
+     pushstring          "click"
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "onClick")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "hoverTooltipDelegate") type QName(PackageNamespace("kabam.rotmg.tooltips"), "HoverTooltipDelegate") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.game.view:LootboxModalButton"), "bitmap") type QName(PackageNamespace("flash.display"), "Bitmap") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.game.view:LootboxModalButton"), "background") type QName(PackageNamespace("flash.display"), "Sprite") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.game.view:LootboxModalButton"), "lootBoxTexture") type QName(PackageNamespace("flash.display"), "BitmapData") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.game.view:LootboxModalButton"), "tooltip") type QName(PackageNamespace("com.company.assembleegameclient.ui.tooltip"), "TextToolTip") end
+  trait slot QName(PackageNamespace(""), "gs_") type QName(PackageNamespace("com.company.assembleegameclient.game"), "AGameSprite") end
+  trait method QName(PackageNamespace(""), "setShowToolTipSignal")
+   method
+    name "setShowToolTipSignal"
+    refid "kabam.rotmg.game.view:LootboxModalButton/instance/setShowToolTipSignal"
+    param QName(PackageNamespace("kabam.rotmg.core.signals"), "ShowTooltipSignal")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg_1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hoverTooltipDelegate")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "setShowToolTipSignal"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getShowToolTip")
+   method
+    name "getShowToolTip"
+    refid "kabam.rotmg.game.view:LootboxModalButton/instance/getShowToolTip"
+    returns QName(PackageNamespace("kabam.rotmg.core.signals"), "ShowTooltipSignal")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hoverTooltipDelegate")
+      callproperty        QName(PackageNamespace(""), "getShowToolTip"), 0
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setHideToolTipsSignal")
+   method
+    name "setHideToolTipsSignal"
+    refid "kabam.rotmg.game.view:LootboxModalButton/instance/setHideToolTipsSignal"
+    param QName(PackageNamespace("kabam.rotmg.core.signals"), "HideTooltipsSignal")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg_1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hoverTooltipDelegate")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "setHideToolTipsSignal"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getHideToolTips")
+   method
+    name "getHideToolTips"
+    refid "kabam.rotmg.game.view:LootboxModalButton/instance/getHideToolTips"
+    returns QName(PackageNamespace("kabam.rotmg.core.signals"), "HideTooltipsSignal")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hoverTooltipDelegate")
+      callproperty        QName(PackageNamespace(""), "getHideToolTips"), 0
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "drawAsOpen")
+   method
+    name "drawAsOpen"
+    refid "kabam.rotmg.game.view:LootboxModalButton/instance/drawAsOpen"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:LootboxModalButton"), "background")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:LootboxModalButton"), "bitmap")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "onClick")
+   method
+    name "onClick"
+    refid "kabam.rotmg.game.view:LootboxModalButton/instance/onClick"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg_1"
+    body
+     maxstack 2
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace("kabam.rotmg.core"), "StaticInjectorContext")
+      callproperty        QName(PackageNamespace(""), "getInjector"), 0
+      getlex              QName(PackageNamespace("kabam.rotmg.dialogs.control"), "OpenDialogSignal")
+      callproperty        QName(PackageNamespace(""), "getInstance"), 1
+      coerce              QName(PackageNamespace("kabam.rotmg.dialogs.control"), "OpenDialogSignal")
+      setlocal2
+
+      getlocal2
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.lootBoxes"), "LootboxModal")
+      constructprop       QName(PackageNamespace("kabam.rotmg.lootBoxes"), "LootboxModal"), 0
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.sound"), "SoundEffectLibrary")
+      pushstring          "button_click"
+      callpropvoid        QName(PackageNamespace(""), "play"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "drawAsClosed")
+   method
+    name "drawAsClosed"
+    refid "kabam.rotmg.game.view:LootboxModalButton/instance/drawAsClosed"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:LootboxModalButton"), "background")
+      dup
+      iffalse             L13
+
+      pop
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:LootboxModalButton"), "background")
+      getproperty         QName(PackageNamespace(""), "parent")
+      getlocal0
+      equals
+      coerce_a
+L13:
+      iffalse             L18
+
+      findpropstrict      QName(PackageNamespace(""), "removeChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:LootboxModalButton"), "background")
+      callpropvoid        QName(PackageNamespace(""), "removeChild"), 1
+
+L18:
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:LootboxModalButton"), "bitmap")
+      dup
+      iffalse             L29
+
+      pop
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:LootboxModalButton"), "bitmap")
+      getproperty         QName(PackageNamespace(""), "parent")
+      getlocal0
+      equals
+      coerce_a
+L29:
+      iffalse             L34
+
+      findpropstrict      QName(PackageNamespace(""), "removeChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.game.view:LootboxModalButton"), "bitmap")
+      callpropvoid        QName(PackageNamespace(""), "removeChild"), 1
+
+L34:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.game.view:LootboxModalButton/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PackageNamespace(""), "IMAGE_NAME") type QName(PackageNamespace(""), "String") value Utf8("lofiCharBig") end
+ trait const QName(PackageNamespace(""), "IMAGE_ID") type QName(PackageNamespace(""), "int") value Integer(101) end
+end ; class

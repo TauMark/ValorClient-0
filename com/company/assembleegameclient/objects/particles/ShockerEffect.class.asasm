@@ -1,0 +1,486 @@
+class
+ refid "com.company.assembleegameclient.objects.particles:ShockerEffect"
+ instance QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "ShockerEffect")
+  extends QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "ParticleEffect")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.company.assembleegameclient.objects.particles:ShockerEffect")
+  iinit
+   name "ShockerEffect"
+   refid "com.company.assembleegameclient.objects.particles:ShockerEffect/instance/init"
+   param QName(PackageNamespace("com.company.assembleegameclient.objects"), "GameObject")
+   flag HAS_PARAM_NAMES
+   paramname "_arg1"
+   body
+    maxstack 2
+    localcount 2
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     getlocal1
+     setproperty         QName(PackageNamespace(""), "go")
+
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "texture_")
+     getproperty         QName(PackageNamespace(""), "height")
+     pushbyte            8
+     ifne                L22
+
+     getlocal0
+     pushdouble          0.4
+     setproperty         QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ShockerEffect"), "innerRadius")
+
+     getlocal0
+     pushdouble          1.3
+     setproperty         QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ShockerEffect"), "outerRadius")
+
+     getlocal0
+     pushbyte            30
+     setproperty         QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ShockerEffect"), "particleScale")
+
+     jump                L31
+
+L22:
+     getlocal0
+     pushdouble          0.7
+     setproperty         QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ShockerEffect"), "innerRadius")
+
+     getlocal0
+     pushbyte            2
+     setproperty         QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ShockerEffect"), "outerRadius")
+
+     getlocal0
+     pushbyte            40
+     setproperty         QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ShockerEffect"), "particleScale")
+
+L31:
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "start_") type QName(PackageNamespace("flash.geom"), "Point") end
+  trait slot QName(PackageNamespace(""), "end_") type QName(PackageNamespace("flash.geom"), "Point") end
+  trait slot QName(PackageNamespace(""), "go") type QName(PackageNamespace("com.company.assembleegameclient.objects"), "GameObject") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ShockerEffect"), "innerRadius") type QName(PackageNamespace(""), "Number") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ShockerEffect"), "outerRadius") type QName(PackageNamespace(""), "Number") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ShockerEffect"), "radians") type QName(PackageNamespace(""), "Number") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ShockerEffect"), "particleScale") type QName(PackageNamespace(""), "uint") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ShockerEffect"), "timer") type QName(PackageNamespace("flash.utils"), "Timer") end
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ShockerEffect"), "isDestroyed") type QName(PackageNamespace(""), "Boolean") value False() end
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ShockerEffect"), "parseBitmapDataFromImageSet")
+   method
+    name "parseBitmapDataFromImageSet"
+    refid "com.company.assembleegameclient.objects.particles:ShockerEffect/instance/com.company.assembleegameclient.objects.particles:ShockerEffect/instance/parseBitmapDataFromImageSet"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 7
+     localcount 4
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushbyte            0
+      setlocal1
+
+      getlex              QName(PackageNamespace("__AS3__.vec"), "Vector")
+      getlex              QName(PackageNamespace("flash.display"), "BitmapData")
+      applytype           1
+      construct           0
+      findproperty        QName(PackageNamespace(""), "images")
+      swap
+      setproperty         QName(PackageNamespace(""), "images")
+
+      getlex              QName(PackageNamespace("com.company.util"), "AssetLibrary")
+      pushstring          "lofiParticlesShocker"
+      callproperty        QName(PackageNamespace(""), "getImageSet"), 1
+      coerce              QName(PackageNamespace("com.company.util"), "ImageSet")
+      setlocal3
+
+      pushbyte            9
+      convert_u
+      setlocal2
+
+      pushbyte            0
+      convert_u
+      setlocal1
+
+      jump                L42
+
+L23:
+      label
+      getlex              QName(PackageNamespace(""), "images")
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "TextureRedrawer")
+      getlocal3
+      getproperty         QName(PackageNamespace(""), "images")
+      getlocal1
+      getproperty         MultinameL([PrivateNamespace("com.company.assembleegameclient.objects.particles:ShockerEffect"), ProtectedNamespace("com.company.assembleegameclient.objects.particles:ShockerEffect"), StaticProtectedNs("com.company.assembleegameclient.objects.particles:ShockerEffect"), StaticProtectedNs("com.company.assembleegameclient.objects.particles:ParticleEffect"), StaticProtectedNs("com.company.assembleegameclient.objects:GameObject"), StaticProtectedNs("com.company.assembleegameclient.objects:BasicObject"), StaticProtectedNs("Object"), PackageNamespace("com.company.assembleegameclient.objects.particles"), PackageInternalNs("com.company.assembleegameclient.objects.particles"), PrivateNamespace("FilePrivateNS:ShockerEffect"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ShockerEffect"), "particleScale")
+      pushtrue
+      pushbyte            0
+      pushtrue
+      callproperty        QName(PackageNamespace(""), "redraw"), 5
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+
+      getlocal1
+      convert_d
+      increment
+      convert_u
+      setlocal1
+
+L42:
+      getlocal1
+      getlocal2
+      iflt                L23
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "update") flag OVERRIDE
+   method
+    name "update"
+    refid "com.company.assembleegameclient.objects.particles:ShockerEffect/instance/update"
+    param QName(PackageNamespace(""), "int")
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "Boolean")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    paramname "_arg2"
+    body
+     maxstack 2
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ShockerEffect"), "isDestroyed")
+      iffalse             L7
+
+      pushfalse
+      returnvalue
+
+L7:
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ShockerEffect"), "timer")
+      iftrue              L12
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ShockerEffect"), "initialize"), 0
+
+L12:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "go")
+      getproperty         QName(PackageNamespace(""), "x_")
+      findproperty        QName(PackageNamespace(""), "x_")
+      swap
+      setproperty         QName(PackageNamespace(""), "x_")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "go")
+      getproperty         QName(PackageNamespace(""), "y_")
+      findproperty        QName(PackageNamespace(""), "y_")
+      swap
+      setproperty         QName(PackageNamespace(""), "y_")
+
+      pushtrue
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ShockerEffect"), "initialize")
+   method
+    name "initialize"
+    refid "com.company.assembleegameclient.objects.particles:ShockerEffect/instance/com.company.assembleegameclient.objects.particles:ShockerEffect/instance/initialize"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("flash.utils"), "Timer")
+      pushshort           200
+      pushbyte            10
+      constructprop       QName(PackageNamespace("flash.utils"), "Timer"), 2
+      setproperty         QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ShockerEffect"), "timer")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ShockerEffect"), "timer")
+      pushstring          "timer"
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ShockerEffect"), "onTimer")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ShockerEffect"), "timer")
+      pushstring          "timerComplete"
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ShockerEffect"), "onTimerComplete")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ShockerEffect"), "timer")
+      callpropvoid        QName(PackageNamespace(""), "start"), 0
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ShockerEffect"), "parseBitmapDataFromImageSet"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ShockerEffect"), "onTimer")
+   method
+    name "onTimer"
+    refid "com.company.assembleegameclient.objects.particles:ShockerEffect/instance/com.company.assembleegameclient.objects.particles:ShockerEffect/instance/onTimer"
+    param QName(PackageNamespace("flash.events"), "TimerEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 10
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace(""), "map_")
+      iffalse             L91
+
+      getlocal0
+      getlex              QName(PackageNamespace(""), "Math")
+      callproperty        QName(PackageNamespace(""), "random"), 0
+      pushshort           360
+      multiply
+      convert_i
+      pushdouble          3.141592653589793
+      pushshort           180
+      divide
+      multiply
+      setproperty         QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ShockerEffect"), "radians")
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("flash.geom"), "Point")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "go")
+      getproperty         QName(PackageNamespace(""), "x_")
+      getlex              QName(PackageNamespace(""), "Math")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ShockerEffect"), "radians")
+      callproperty        QName(PackageNamespace(""), "sin"), 1
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ShockerEffect"), "innerRadius")
+      multiply
+      add
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "go")
+      getproperty         QName(PackageNamespace(""), "y_")
+      getlex              QName(PackageNamespace(""), "Math")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ShockerEffect"), "radians")
+      callproperty        QName(PackageNamespace(""), "cos"), 1
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ShockerEffect"), "innerRadius")
+      multiply
+      add
+      constructprop       QName(PackageNamespace("flash.geom"), "Point"), 2
+      setproperty         QName(PackageNamespace(""), "start_")
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("flash.geom"), "Point")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "go")
+      getproperty         QName(PackageNamespace(""), "x_")
+      getlex              QName(PackageNamespace(""), "Math")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ShockerEffect"), "radians")
+      callproperty        QName(PackageNamespace(""), "sin"), 1
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ShockerEffect"), "outerRadius")
+      multiply
+      add
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "go")
+      getproperty         QName(PackageNamespace(""), "y_")
+      getlex              QName(PackageNamespace(""), "Math")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ShockerEffect"), "radians")
+      callproperty        QName(PackageNamespace(""), "cos"), 1
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ShockerEffect"), "outerRadius")
+      multiply
+      add
+      constructprop       QName(PackageNamespace("flash.geom"), "Point"), 2
+      setproperty         QName(PackageNamespace(""), "end_")
+
+      getlex              QName(PackageNamespace(""), "map_")
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "ShockParticle")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "objectId")
+      pushbyte            25
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ShockerEffect"), "particleScale")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "start_")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "end_")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ShockerEffect"), "radians")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "go")
+      getlex              QName(PackageNamespace(""), "images")
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "ShockParticle"), 8
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "start_")
+      getproperty         QName(PackageNamespace(""), "x")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "start_")
+      getproperty         QName(PackageNamespace(""), "y")
+      callpropvoid        QName(PackageNamespace(""), "addObj"), 3
+
+L91:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ShockerEffect"), "onTimerComplete")
+   method
+    name "onTimerComplete"
+    refid "com.company.assembleegameclient.objects.particles:ShockerEffect/instance/com.company.assembleegameclient.objects.particles:ShockerEffect/instance/onTimerComplete"
+    param QName(PackageNamespace("flash.events"), "TimerEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 1
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      callpropvoid        QName(PackageNamespace(""), "destroy"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "destroy")
+   method
+    name "destroy"
+    refid "com.company.assembleegameclient.objects.particles:ShockerEffect/instance/destroy"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ShockerEffect"), "timer")
+      iffalse             L23
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ShockerEffect"), "timer")
+      pushstring          "timer"
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ShockerEffect"), "onTimer")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ShockerEffect"), "timer")
+      pushstring          "timer"
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ShockerEffect"), "onTimerComplete")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ShockerEffect"), "timer")
+      callpropvoid        QName(PackageNamespace(""), "stop"), 0
+
+      getlocal0
+      pushnull
+      setproperty         QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ShockerEffect"), "timer")
+
+L23:
+      getlocal0
+      pushnull
+      setproperty         QName(PackageNamespace(""), "go")
+
+      getlocal0
+      pushtrue
+      setproperty         QName(PrivateNamespace("com.company.assembleegameclient.objects.particles:ShockerEffect"), "isDestroyed")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "removeFromMap") flag OVERRIDE
+   method
+    name "removeFromMap"
+    refid "com.company.assembleegameclient.objects.particles:ShockerEffect/instance/removeFromMap"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      callpropvoid        QName(PackageNamespace(""), "destroy"), 0
+
+      getlocal0
+      callsupervoid       QName(PackageNamespace(""), "removeFromMap"), 0
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.objects.particles:ShockerEffect/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait slot QName(PackageNamespace(""), "images") type TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("flash.display"), "BitmapData")>) end
+end ; class

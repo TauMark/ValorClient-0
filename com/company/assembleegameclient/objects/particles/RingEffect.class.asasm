@@ -1,0 +1,375 @@
+class
+ refid "com.company.assembleegameclient.objects.particles:RingEffect"
+ instance QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "RingEffect")
+  extends QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "ParticleEffect")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.company.assembleegameclient.objects.particles:RingEffect")
+  iinit
+   name "RingEffect"
+   refid "com.company.assembleegameclient.objects.particles:RingEffect/instance/init"
+   param QName(PackageNamespace("com.company.assembleegameclient.objects"), "GameObject")
+   param QName(PackageNamespace(""), "Number")
+   param QName(PackageNamespace(""), "int")
+   flag HAS_PARAM_NAMES
+   paramname "_arg1"
+   paramname "_arg2"
+   paramname "_arg3"
+   body
+    maxstack 4
+    localcount 4
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("flash.geom"), "Point")
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "x_")
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "y_")
+     constructprop       QName(PackageNamespace("flash.geom"), "Point"), 2
+     setproperty         QName(PackageNamespace(""), "start_")
+
+     getlocal0
+     getlocal2
+     setproperty         QName(PackageNamespace(""), "novaRadius_")
+
+     getlocal0
+     getlocal3
+     setproperty         QName(PackageNamespace(""), "color_")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "start_") type QName(PackageNamespace("flash.geom"), "Point") end
+  trait slot QName(PackageNamespace(""), "novaRadius_") type QName(PackageNamespace(""), "Number") end
+  trait slot QName(PackageNamespace(""), "color_") type QName(PackageNamespace(""), "int") end
+  trait method QName(PackageNamespace(""), "runNormalRendering") flag OVERRIDE
+   method
+    name "runNormalRendering"
+    refid "com.company.assembleegameclient.objects.particles:RingEffect/instance/runNormalRendering"
+    param QName(PackageNamespace(""), "int")
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "Boolean")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    paramname "_arg2"
+    body
+     maxstack 6
+     localcount 11
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnan
+      setlocal            8
+
+      pushnull
+      setlocal            5
+
+      pushnull
+      setlocal            6
+
+      pushnull
+      setlocal3
+
+      pushbyte            0
+      setlocal            4
+
+      pushbyte            0
+      setlocal            7
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "start_")
+      getproperty         QName(PackageNamespace(""), "x")
+      findproperty        QName(PackageNamespace(""), "x_")
+      swap
+      setproperty         QName(PackageNamespace(""), "x_")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "start_")
+      getproperty         QName(PackageNamespace(""), "y")
+      findproperty        QName(PackageNamespace(""), "y_")
+      swap
+      setproperty         QName(PackageNamespace(""), "y_")
+
+      pushbyte            12
+      setlocal            9
+
+      pushshort           200
+      setlocal            10
+
+      jump                L109
+
+L31:
+      label
+      getlocal            7
+      pushbyte            2
+      multiply
+      pushdouble          3.141592653589793
+      multiply
+      getlocal            9
+      divide
+      convert_d
+      setlocal            8
+
+      findpropstrict      QName(PackageNamespace("flash.geom"), "Point")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "start_")
+      getproperty         QName(PackageNamespace(""), "x")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "novaRadius_")
+      getlex              QName(PackageNamespace(""), "Math")
+      getlocal            8
+      callproperty        QName(PackageNamespace(""), "cos"), 1
+      multiply
+      add
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "start_")
+      getproperty         QName(PackageNamespace(""), "y")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "novaRadius_")
+      getlex              QName(PackageNamespace(""), "Math")
+      getlocal            8
+      callproperty        QName(PackageNamespace(""), "sin"), 1
+      multiply
+      add
+      constructprop       QName(PackageNamespace("flash.geom"), "Point"), 2
+      coerce              QName(PackageNamespace("flash.geom"), "Point")
+      setlocal            5
+
+      findpropstrict      QName(PackageNamespace("flash.geom"), "Point")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "start_")
+      getproperty         QName(PackageNamespace(""), "x")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "novaRadius_")
+      pushdouble          0.9
+      multiply
+      getlex              QName(PackageNamespace(""), "Math")
+      getlocal            8
+      callproperty        QName(PackageNamespace(""), "cos"), 1
+      multiply
+      add
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "start_")
+      getproperty         QName(PackageNamespace(""), "y")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "novaRadius_")
+      pushdouble          0.9
+      multiply
+      getlex              QName(PackageNamespace(""), "Math")
+      getlocal            8
+      callproperty        QName(PackageNamespace(""), "sin"), 1
+      multiply
+      add
+      constructprop       QName(PackageNamespace("flash.geom"), "Point"), 2
+      coerce              QName(PackageNamespace("flash.geom"), "Point")
+      setlocal            6
+
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "SparkerParticle")
+      getlocal            4
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "color_")
+      getlocal            10
+      getlocal            6
+      getlocal            5
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "SparkerParticle"), 5
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "Particle")
+      setlocal3
+
+      getlex              QName(PackageNamespace(""), "map_")
+      getlocal3
+      getlex              QName(PackageNamespace(""), "x_")
+      getlex              QName(PackageNamespace(""), "y_")
+      callpropvoid        QName(PackageNamespace(""), "addObj"), 3
+
+      inclocal_i          7
+L109:
+      getlocal            7
+      getlocal            9
+      iflt                L31
+
+      pushfalse
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "runEasyRendering") flag OVERRIDE
+   method
+    name "runEasyRendering"
+    refid "com.company.assembleegameclient.objects.particles:RingEffect/instance/runEasyRendering"
+    param QName(PackageNamespace(""), "int")
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "Boolean")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    paramname "_arg2"
+    body
+     maxstack 6
+     localcount 11
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnan
+      setlocal            8
+
+      pushnull
+      setlocal            5
+
+      pushnull
+      setlocal            6
+
+      pushnull
+      setlocal3
+
+      pushbyte            0
+      setlocal            4
+
+      pushbyte            0
+      setlocal            7
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "start_")
+      getproperty         QName(PackageNamespace(""), "x")
+      findproperty        QName(PackageNamespace(""), "x_")
+      swap
+      setproperty         QName(PackageNamespace(""), "x_")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "start_")
+      getproperty         QName(PackageNamespace(""), "y")
+      findproperty        QName(PackageNamespace(""), "y_")
+      swap
+      setproperty         QName(PackageNamespace(""), "y_")
+
+      pushbyte            10
+      setlocal            9
+
+      pushbyte            50
+      setlocal            10
+
+      jump                L109
+
+L31:
+      label
+      getlocal            7
+      pushbyte            2
+      multiply
+      pushdouble          3.141592653589793
+      multiply
+      getlocal            9
+      divide
+      convert_d
+      setlocal            8
+
+      findpropstrict      QName(PackageNamespace("flash.geom"), "Point")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "start_")
+      getproperty         QName(PackageNamespace(""), "x")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "novaRadius_")
+      getlex              QName(PackageNamespace(""), "Math")
+      getlocal            8
+      callproperty        QName(PackageNamespace(""), "cos"), 1
+      multiply
+      add
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "start_")
+      getproperty         QName(PackageNamespace(""), "y")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "novaRadius_")
+      getlex              QName(PackageNamespace(""), "Math")
+      getlocal            8
+      callproperty        QName(PackageNamespace(""), "sin"), 1
+      multiply
+      add
+      constructprop       QName(PackageNamespace("flash.geom"), "Point"), 2
+      coerce              QName(PackageNamespace("flash.geom"), "Point")
+      setlocal            5
+
+      findpropstrict      QName(PackageNamespace("flash.geom"), "Point")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "start_")
+      getproperty         QName(PackageNamespace(""), "x")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "novaRadius_")
+      pushdouble          0.9
+      multiply
+      getlex              QName(PackageNamespace(""), "Math")
+      getlocal            8
+      callproperty        QName(PackageNamespace(""), "cos"), 1
+      multiply
+      add
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "start_")
+      getproperty         QName(PackageNamespace(""), "y")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "novaRadius_")
+      pushdouble          0.9
+      multiply
+      getlex              QName(PackageNamespace(""), "Math")
+      getlocal            8
+      callproperty        QName(PackageNamespace(""), "sin"), 1
+      multiply
+      add
+      constructprop       QName(PackageNamespace("flash.geom"), "Point"), 2
+      coerce              QName(PackageNamespace("flash.geom"), "Point")
+      setlocal            6
+
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "SparkerParticle")
+      getlocal            4
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "color_")
+      getlocal            10
+      getlocal            6
+      getlocal            5
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "SparkerParticle"), 5
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "Particle")
+      setlocal3
+
+      getlex              QName(PackageNamespace(""), "map_")
+      getlocal3
+      getlex              QName(PackageNamespace(""), "x_")
+      getlex              QName(PackageNamespace(""), "y_")
+      callpropvoid        QName(PackageNamespace(""), "addObj"), 3
+
+      inclocal_i          7
+L109:
+      getlocal            7
+      getlocal            9
+      iflt                L31
+
+      pushfalse
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.objects.particles:RingEffect/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

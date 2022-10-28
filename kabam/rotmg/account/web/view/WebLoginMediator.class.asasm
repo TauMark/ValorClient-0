@@ -1,0 +1,283 @@
+class
+ refid "kabam.rotmg.account.web.view:WebLoginMediator"
+ instance QName(PackageNamespace("kabam.rotmg.account.web.view"), "WebLoginMediator")
+  extends QName(PackageNamespace("robotlegs.bender.bundles.mvcs"), "Mediator")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.account.web.view:WebLoginMediator")
+  iinit
+   refid "kabam.rotmg.account.web.view:WebLoginMediator/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "view") flag METADATA type QName(PackageNamespace("kabam.rotmg.account.web.view"), "WebLoginDialog")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "login") flag METADATA type QName(PackageNamespace("kabam.rotmg.account.core.signals"), "LoginSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "openDialog") flag METADATA type QName(PackageNamespace("kabam.rotmg.dialogs.control"), "OpenDialogSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "closeDialog") flag METADATA type QName(PackageNamespace("kabam.rotmg.dialogs.control"), "CloseDialogsSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "loginError") flag METADATA type QName(PackageNamespace("kabam.rotmg.core.signals"), "TaskErrorSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "account") flag METADATA type QName(PackageNamespace("kabam.rotmg.account.core"), "Account")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PackageNamespace(""), "initialize") flag OVERRIDE
+   method
+    name "initialize"
+    refid "kabam.rotmg.account.web.view:WebLoginMediator/instance/initialize"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "signIn")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.account.web.view:WebLoginMediator"), "onSignIn")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "register")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.account.web.view:WebLoginMediator"), "onRegister")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "cancel")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.account.web.view:WebLoginMediator"), "onCancel")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "loginError")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.account.web.view:WebLoginMediator"), "onLoginError")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "destroy") flag OVERRIDE
+   method
+    name "destroy"
+    refid "kabam.rotmg.account.web.view:WebLoginMediator/instance/destroy"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "signIn")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.account.web.view:WebLoginMediator"), "onSignIn")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "register")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.account.web.view:WebLoginMediator"), "onRegister")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "cancel")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.account.web.view:WebLoginMediator"), "onCancel")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "loginError")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.account.web.view:WebLoginMediator"), "onLoginError")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.account.web.view:WebLoginMediator"), "onSignIn")
+   method
+    name "onSignIn"
+    refid "kabam.rotmg.account.web.view:WebLoginMediator/instance/kabam.rotmg.account.web.view:WebLoginMediator/instance/onSignIn"
+    param QName(PackageNamespace("kabam.rotmg.account.web.model"), "AccountData")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "account")
+      getlex              QName(PackageNamespace("kabam.rotmg.account.web"), "WebAccount")
+      istypelate
+      iffalse             L16
+
+      getlex              QName(PackageNamespace("kabam.rotmg.account.web"), "WebAccount")
+      getglobalscope
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "account")
+      call                1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      callproperty        QName(PackageNamespace(""), "isRememberMeSelected"), 0
+      setproperty         QName(PackageNamespace(""), "rememberMe")
+
+L16:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      callpropvoid        QName(PackageNamespace(""), "disable"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "login")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.account.web.view:WebLoginMediator"), "onRegister")
+   method
+    name "onRegister"
+    refid "kabam.rotmg.account.web.view:WebLoginMediator/instance/kabam.rotmg.account.web.view:WebLoginMediator/instance/onRegister"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "openDialog")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.account.web.view"), "WebRegisterDialog")
+      constructprop       QName(PackageNamespace("kabam.rotmg.account.web.view"), "WebRegisterDialog"), 0
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.account.web.view:WebLoginMediator"), "onCancel")
+   method
+    name "onCancel"
+    refid "kabam.rotmg.account.web.view:WebLoginMediator/instance/kabam.rotmg.account.web.view:WebLoginMediator/instance/onCancel"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "closeDialog")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.account.web.view:WebLoginMediator"), "onLoginError")
+   method
+    name "onLoginError"
+    refid "kabam.rotmg.account.web.view:WebLoginMediator/instance/kabam.rotmg.account.web.view:WebLoginMediator/instance/onLoginError"
+    param QName(PackageNamespace("kabam.lib.tasks"), "Task")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlocal1
+      getproperty         QName(Namespace("kabam.lib.tasks:Task"), "error")
+      callpropvoid        QName(PackageNamespace(""), "setError"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      callpropvoid        QName(PackageNamespace(""), "enable"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.account.web.view:WebLoginMediator/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

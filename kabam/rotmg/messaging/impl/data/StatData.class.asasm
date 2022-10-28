@@ -1,0 +1,1057 @@
+class
+ refid "kabam.rotmg.messaging.impl.data:StatData"
+ instance QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "StatData")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  iinit
+   refid "kabam.rotmg.messaging.impl.data:StatData/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "statType_") type QName(PackageNamespace(""), "uint") value Integer(0) end
+  trait slot QName(PackageNamespace(""), "statValue_") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PackageNamespace(""), "strStatValue_") type QName(PackageNamespace(""), "String") end
+  trait method QName(PackageNamespace(""), "isStringStat")
+   method
+    name "isStringStat"
+    refid "kabam.rotmg.messaging.impl.data:StatData/instance/isStringStat"
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "statType_")
+      setlocal1
+
+      jump                L14
+
+L6:
+      label
+L7:
+      label
+L8:
+      label
+L9:
+      label
+L10:
+      label
+L11:
+      label
+      pushtrue
+      returnvalue
+
+L14:
+      pushbyte            31
+      getlocal1
+      ifstricteq          L6
+
+      pushbyte            62
+      getlocal1
+      ifstricteq          L7
+
+      pushbyte            38
+      getlocal1
+      ifstricteq          L8
+
+      pushbyte            54
+      getlocal1
+      ifstricteq          L9
+
+      pushbyte            127
+      getlocal1
+      ifstricteq          L10
+
+      pushbyte            25
+      getlocal1
+      ifstricteq          L11
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "statType_")
+      pushbyte            8
+      greaterequals
+      dup
+      iffalse             L43
+
+      pop
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "statType_")
+      pushbyte            19
+      lessequals
+L43:
+      iffalse             L46
+
+      pushtrue
+      returnvalue
+
+L46:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "statType_")
+      pushbyte            71
+      greaterequals
+      dup
+      iffalse             L57
+
+      pop
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "statType_")
+      pushbyte            78
+      lessequals
+L57:
+      iffalse             L60
+
+      pushtrue
+      returnvalue
+
+L60:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "statType_")
+      pushbyte            34
+      equals
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "parseFromInput")
+   method
+    name "parseFromInput"
+    refid "kabam.rotmg.messaging.impl.data:StatData/instance/parseFromInput"
+    param QName(PackageNamespace("flash.utils"), "IDataInput")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "input"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      callproperty        QName(Namespace("flash.utils:IDataInput"), "readUnsignedByte"), 0
+      setproperty         QName(PackageNamespace(""), "statType_")
+
+      getlocal0
+      callproperty        QName(PackageNamespace(""), "isStringStat"), 0
+      iftrue              L14
+
+      getlocal0
+      getlocal1
+      callproperty        QName(Namespace("flash.utils:IDataInput"), "readInt"), 0
+      setproperty         QName(PackageNamespace(""), "statValue_")
+
+      jump                L18
+
+L14:
+      getlocal0
+      getlocal1
+      callproperty        QName(Namespace("flash.utils:IDataInput"), "readUTF"), 0
+      setproperty         QName(PackageNamespace(""), "strStatValue_")
+
+L18:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "writeToOutput")
+   method
+    name "writeToOutput"
+    refid "kabam.rotmg.messaging.impl.data:StatData/instance/writeToOutput"
+    param QName(PackageNamespace("flash.utils"), "IDataOutput")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "output"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "statType_")
+      callpropvoid        QName(Namespace("flash.utils:IDataOutput"), "writeByte"), 1
+
+      getlocal0
+      callproperty        QName(PackageNamespace(""), "isStringStat"), 0
+      iftrue              L14
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "statValue_")
+      callpropvoid        QName(Namespace("flash.utils:IDataOutput"), "writeInt"), 1
+
+      jump                L18
+
+L14:
+      getlocal1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "strStatValue_")
+      callpropvoid        QName(Namespace("flash.utils:IDataOutput"), "writeUTF"), 1
+
+L18:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "toString")
+   method
+    name "toString"
+    refid "kabam.rotmg.messaging.impl.data:StatData/instance/toString"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      callproperty        QName(PackageNamespace(""), "isStringStat"), 0
+      iftrue              L17
+
+      pushstring          "["
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "statType_")
+      add
+      pushstring          ": "
+      add
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "statValue_")
+      add
+      pushstring          "]"
+      add
+      returnvalue
+
+L17:
+      pushstring          "["
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "statType_")
+      add
+      pushstring          ": \""
+      add
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "strStatValue_")
+      add
+      pushstring          "\"]"
+      add
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.messaging.impl.data:StatData/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PackageNamespace(""), "MAX_HP_STAT") type QName(PackageNamespace(""), "int") value Integer(0) end
+ trait const QName(PackageNamespace(""), "HP_STAT") type QName(PackageNamespace(""), "int") value Integer(1) end
+ trait const QName(PackageNamespace(""), "SIZE_STAT") type QName(PackageNamespace(""), "int") value Integer(2) end
+ trait const QName(PackageNamespace(""), "MAX_MP_STAT") type QName(PackageNamespace(""), "int") value Integer(3) end
+ trait const QName(PackageNamespace(""), "MP_STAT") type QName(PackageNamespace(""), "int") value Integer(4) end
+ trait const QName(PackageNamespace(""), "NEXT_LEVEL_EXP_STAT") type QName(PackageNamespace(""), "int") value Integer(5) end
+ trait const QName(PackageNamespace(""), "EXP_STAT") type QName(PackageNamespace(""), "int") value Integer(6) end
+ trait const QName(PackageNamespace(""), "LEVEL_STAT") type QName(PackageNamespace(""), "int") value Integer(7) end
+ trait const QName(PackageNamespace(""), "INVENTORY_0_STAT") type QName(PackageNamespace(""), "int") value Integer(8) end
+ trait const QName(PackageNamespace(""), "INVENTORY_1_STAT") type QName(PackageNamespace(""), "int") value Integer(9) end
+ trait const QName(PackageNamespace(""), "INVENTORY_2_STAT") type QName(PackageNamespace(""), "int") value Integer(10) end
+ trait const QName(PackageNamespace(""), "INVENTORY_3_STAT") type QName(PackageNamespace(""), "int") value Integer(11) end
+ trait const QName(PackageNamespace(""), "INVENTORY_4_STAT") type QName(PackageNamespace(""), "int") value Integer(12) end
+ trait const QName(PackageNamespace(""), "INVENTORY_5_STAT") type QName(PackageNamespace(""), "int") value Integer(13) end
+ trait const QName(PackageNamespace(""), "INVENTORY_6_STAT") type QName(PackageNamespace(""), "int") value Integer(14) end
+ trait const QName(PackageNamespace(""), "INVENTORY_7_STAT") type QName(PackageNamespace(""), "int") value Integer(15) end
+ trait const QName(PackageNamespace(""), "INVENTORY_8_STAT") type QName(PackageNamespace(""), "int") value Integer(16) end
+ trait const QName(PackageNamespace(""), "INVENTORY_9_STAT") type QName(PackageNamespace(""), "int") value Integer(17) end
+ trait const QName(PackageNamespace(""), "INVENTORY_10_STAT") type QName(PackageNamespace(""), "int") value Integer(18) end
+ trait const QName(PackageNamespace(""), "INVENTORY_11_STAT") type QName(PackageNamespace(""), "int") value Integer(19) end
+ trait const QName(PackageNamespace(""), "ATTACK_STAT") type QName(PackageNamespace(""), "int") value Integer(20) end
+ trait const QName(PackageNamespace(""), "DEFENSE_STAT") type QName(PackageNamespace(""), "int") value Integer(21) end
+ trait const QName(PackageNamespace(""), "SPEED_STAT") type QName(PackageNamespace(""), "int") value Integer(22) end
+ trait const QName(PackageNamespace(""), "VITALITY_STAT") type QName(PackageNamespace(""), "int") value Integer(26) end
+ trait const QName(PackageNamespace(""), "WISDOM_STAT") type QName(PackageNamespace(""), "int") value Integer(27) end
+ trait const QName(PackageNamespace(""), "DEXTERITY_STAT") type QName(PackageNamespace(""), "int") value Integer(28) end
+ trait const QName(PackageNamespace(""), "CONDITION_STAT") type QName(PackageNamespace(""), "int") value Integer(29) end
+ trait const QName(PackageNamespace(""), "NUM_STARS_STAT") type QName(PackageNamespace(""), "int") value Integer(30) end
+ trait const QName(PackageNamespace(""), "NAME_STAT") type QName(PackageNamespace(""), "int") value Integer(31) end
+ trait const QName(PackageNamespace(""), "TEX1_STAT") type QName(PackageNamespace(""), "int") value Integer(32) end
+ trait const QName(PackageNamespace(""), "TEX2_STAT") type QName(PackageNamespace(""), "int") value Integer(33) end
+ trait const QName(PackageNamespace(""), "MERCHANDISE_TYPE_STAT") type QName(PackageNamespace(""), "int") value Integer(34) end
+ trait const QName(PackageNamespace(""), "CREDITS_STAT") type QName(PackageNamespace(""), "int") value Integer(35) end
+ trait const QName(PackageNamespace(""), "MERCHANDISE_PRICE_STAT") type QName(PackageNamespace(""), "int") value Integer(36) end
+ trait const QName(PackageNamespace(""), "ACTIVE_STAT") type QName(PackageNamespace(""), "int") value Integer(37) end
+ trait const QName(PackageNamespace(""), "ACCOUNT_ID_STAT") type QName(PackageNamespace(""), "int") value Integer(38) end
+ trait const QName(PackageNamespace(""), "FAME_STAT") type QName(PackageNamespace(""), "int") value Integer(39) end
+ trait const QName(PackageNamespace(""), "MERCHANDISE_CURRENCY_STAT") type QName(PackageNamespace(""), "int") value Integer(40) end
+ trait const QName(PackageNamespace(""), "CONNECT_STAT") type QName(PackageNamespace(""), "int") value Integer(41) end
+ trait const QName(PackageNamespace(""), "MERCHANDISE_COUNT_STAT") type QName(PackageNamespace(""), "int") value Integer(42) end
+ trait const QName(PackageNamespace(""), "MERCHANDISE_MINS_LEFT_STAT") type QName(PackageNamespace(""), "int") value Integer(43) end
+ trait const QName(PackageNamespace(""), "MERCHANDISE_DISCOUNT_STAT") type QName(PackageNamespace(""), "int") value Integer(44) end
+ trait const QName(PackageNamespace(""), "MERCHANDISE_RANK_REQ_STAT") type QName(PackageNamespace(""), "int") value Integer(45) end
+ trait const QName(PackageNamespace(""), "MAX_HP_BOOST_STAT") type QName(PackageNamespace(""), "int") value Integer(46) end
+ trait const QName(PackageNamespace(""), "MAX_MP_BOOST_STAT") type QName(PackageNamespace(""), "int") value Integer(47) end
+ trait const QName(PackageNamespace(""), "ATTACK_BOOST_STAT") type QName(PackageNamespace(""), "int") value Integer(48) end
+ trait const QName(PackageNamespace(""), "DEFENSE_BOOST_STAT") type QName(PackageNamespace(""), "int") value Integer(49) end
+ trait const QName(PackageNamespace(""), "SPEED_BOOST_STAT") type QName(PackageNamespace(""), "int") value Integer(50) end
+ trait const QName(PackageNamespace(""), "VITALITY_BOOST_STAT") type QName(PackageNamespace(""), "int") value Integer(51) end
+ trait const QName(PackageNamespace(""), "WISDOM_BOOST_STAT") type QName(PackageNamespace(""), "int") value Integer(52) end
+ trait const QName(PackageNamespace(""), "DEXTERITY_BOOST_STAT") type QName(PackageNamespace(""), "int") value Integer(53) end
+ trait const QName(PackageNamespace(""), "OWNER_ACCOUNT_ID_STAT") type QName(PackageNamespace(""), "int") value Integer(54) end
+ trait const QName(PackageNamespace(""), "RANK_REQUIRED_STAT") type QName(PackageNamespace(""), "int") value Integer(55) end
+ trait const QName(PackageNamespace(""), "NAME_CHOSEN_STAT") type QName(PackageNamespace(""), "int") value Integer(56) end
+ trait const QName(PackageNamespace(""), "CURR_FAME_STAT") type QName(PackageNamespace(""), "int") value Integer(57) end
+ trait const QName(PackageNamespace(""), "NEXT_CLASS_QUEST_FAME_STAT") type QName(PackageNamespace(""), "int") value Integer(58) end
+ trait const QName(PackageNamespace(""), "GLOW_COLOR_STAT") type QName(PackageNamespace(""), "int") value Integer(59) end
+ trait const QName(PackageNamespace(""), "SINK_LEVEL_STAT") type QName(PackageNamespace(""), "int") value Integer(60) end
+ trait const QName(PackageNamespace(""), "ALT_TEXTURE_STAT") type QName(PackageNamespace(""), "int") value Integer(61) end
+ trait const QName(PackageNamespace(""), "GUILD_NAME_STAT") type QName(PackageNamespace(""), "int") value Integer(62) end
+ trait const QName(PackageNamespace(""), "GUILD_RANK_STAT") type QName(PackageNamespace(""), "int") value Integer(63) end
+ trait const QName(PackageNamespace(""), "XP_BOOSTED_STAT") type QName(PackageNamespace(""), "int") value Integer(65) end
+ trait const QName(PackageNamespace(""), "XP_TIMER_STAT") type QName(PackageNamespace(""), "int") value Integer(66) end
+ trait const QName(PackageNamespace(""), "LD_TIMER_STAT") type QName(PackageNamespace(""), "int") value Integer(67) end
+ trait const QName(PackageNamespace(""), "LT_TIMER_STAT") type QName(PackageNamespace(""), "int") value Integer(68) end
+ trait const QName(PackageNamespace(""), "HEALTH_POTION_STACK_STAT") type QName(PackageNamespace(""), "int") value Integer(69) end
+ trait const QName(PackageNamespace(""), "MAGIC_POTION_STACK_STAT") type QName(PackageNamespace(""), "int") value Integer(70) end
+ trait const QName(PackageNamespace(""), "BACKPACK_0_STAT") type QName(PackageNamespace(""), "int") value Integer(71) end
+ trait const QName(PackageNamespace(""), "BACKPACK_1_STAT") type QName(PackageNamespace(""), "int") value Integer(72) end
+ trait const QName(PackageNamespace(""), "BACKPACK_2_STAT") type QName(PackageNamespace(""), "int") value Integer(73) end
+ trait const QName(PackageNamespace(""), "BACKPACK_3_STAT") type QName(PackageNamespace(""), "int") value Integer(74) end
+ trait const QName(PackageNamespace(""), "BACKPACK_4_STAT") type QName(PackageNamespace(""), "int") value Integer(75) end
+ trait const QName(PackageNamespace(""), "BACKPACK_5_STAT") type QName(PackageNamespace(""), "int") value Integer(76) end
+ trait const QName(PackageNamespace(""), "BACKPACK_6_STAT") type QName(PackageNamespace(""), "int") value Integer(77) end
+ trait const QName(PackageNamespace(""), "BACKPACK_7_STAT") type QName(PackageNamespace(""), "int") value Integer(78) end
+ trait const QName(PackageNamespace(""), "HASBACKPACK_STAT") type QName(PackageNamespace(""), "int") value Integer(79) end
+ trait const QName(PackageNamespace(""), "TEXTURE_STAT") type QName(PackageNamespace(""), "int") value Integer(80) end
+ trait const QName(PackageNamespace(""), "PET_ID") type QName(PackageNamespace(""), "int") value Integer(81) end
+ trait const QName(PackageNamespace(""), "EFFECTS_2") type QName(PackageNamespace(""), "int") value Integer(96) end
+ trait const QName(PackageNamespace(""), "FORTUNE_TOKEN_STAT") type QName(PackageNamespace(""), "int") value Integer(97) end
+ trait const QName(PackageNamespace(""), "FORTUNE") type QName(PackageNamespace(""), "int") value Integer(102) end
+ trait const QName(PackageNamespace(""), "RANK") type QName(PackageNamespace(""), "int") value Integer(103) end
+ trait const QName(PackageNamespace(""), "ADMIN") type QName(PackageNamespace(""), "int") value Integer(104) end
+ trait const QName(PackageNamespace(""), "ONRANE_STAT") type QName(PackageNamespace(""), "int") value Integer(106) end
+ trait const QName(PackageNamespace(""), "KANTOS_STAT") type QName(PackageNamespace(""), "int") value Integer(107) end
+ trait const QName(PackageNamespace(""), "ALERT_TOKEN") type QName(PackageNamespace(""), "int") value Integer(108) end
+ trait const QName(PackageNamespace(""), "RAID_RANK") type QName(PackageNamespace(""), "int") value Integer(109) end
+ trait const QName(PackageNamespace(""), "SURGE") type QName(PackageNamespace(""), "int") value Integer(110) end
+ trait const QName(PackageNamespace(""), "MIGHT_STAT") type QName(PackageNamespace(""), "int") value Integer(112) end
+ trait const QName(PackageNamespace(""), "MIGHT_BOOST_STAT") type QName(PackageNamespace(""), "int") value Integer(113) end
+ trait const QName(PackageNamespace(""), "LUCK_STAT") type QName(PackageNamespace(""), "int") value Integer(114) end
+ trait const QName(PackageNamespace(""), "LUCK_BOOST_STAT") type QName(PackageNamespace(""), "int") value Integer(115) end
+ trait const QName(PackageNamespace(""), "BRONZE_LOOTBOX") type QName(PackageNamespace(""), "int") value Integer(116) end
+ trait const QName(PackageNamespace(""), "SILVER_LOOTBOX") type QName(PackageNamespace(""), "int") value Integer(117) end
+ trait const QName(PackageNamespace(""), "GOLD_LOOTBOX") type QName(PackageNamespace(""), "int") value Integer(118) end
+ trait const QName(PackageNamespace(""), "ELITE_LOOTBOX") type QName(PackageNamespace(""), "int") value Integer(119) end
+ trait const QName(PackageNamespace(""), "PREMIUM_LOOTBOX") type QName(PackageNamespace(""), "int") value Integer(120) end
+ trait const QName(PackageNamespace(""), "RESTORATION_STAT") type QName(PackageNamespace(""), "int") value Integer(121) end
+ trait const QName(PackageNamespace(""), "PROTECTION_STAT") type QName(PackageNamespace(""), "int") value Integer(122) end
+ trait const QName(PackageNamespace(""), "RESTORATION_BOOST_STAT") type QName(PackageNamespace(""), "int") value Integer(123) end
+ trait const QName(PackageNamespace(""), "PROTECTION_BOOST_STAT") type QName(PackageNamespace(""), "int") value Integer(124) end
+ trait const QName(PackageNamespace(""), "PROTECTIONPOINTS") type QName(PackageNamespace(""), "int") value Integer(125) end
+ trait const QName(PackageNamespace(""), "PROTECTIONMAX") type QName(PackageNamespace(""), "int") value Integer(126) end
+ trait const QName(PackageNamespace(""), "EFFECT") type QName(PackageNamespace(""), "int") value Integer(127) end
+ trait const QName(PackageNamespace(""), "MARKSENABLED") type QName(PackageNamespace(""), "int") value Integer(128) end
+ trait const QName(PackageNamespace(""), "MARK") type QName(PackageNamespace(""), "int") value Integer(129) end
+ trait const QName(PackageNamespace(""), "NODE1") type QName(PackageNamespace(""), "int") value Integer(130) end
+ trait const QName(PackageNamespace(""), "NODE2") type QName(PackageNamespace(""), "int") value Integer(131) end
+ trait const QName(PackageNamespace(""), "NODE3") type QName(PackageNamespace(""), "int") value Integer(132) end
+ trait const QName(PackageNamespace(""), "NODE4") type QName(PackageNamespace(""), "int") value Integer(133) end
+ trait const QName(PackageNamespace(""), "ASCENSIONENABLED") type QName(PackageNamespace(""), "int") value Integer(146) end
+ trait const QName(PackageNamespace(""), "RAGE_STAT") type QName(PackageNamespace(""), "int") value Integer(147) end
+ trait const QName(PackageNamespace(""), "SOR_STORAGE") type QName(PackageNamespace(""), "int") value Integer(148) end
+ trait const QName(PackageNamespace(""), "ELITE") type QName(PackageNamespace(""), "int") value Integer(150) end
+ trait const QName(PackageNamespace(""), "PVP") type QName(PackageNamespace(""), "int") value Integer(151) end
+ trait const QName(PackageNamespace(""), "STORED_POTIONS") type QName(PackageNamespace(""), "int") value Integer(152) end
+ trait const QName(PackageNamespace(""), "HEALBOOST") type QName(PackageNamespace(""), "int") value Integer(153) end
+ trait const QName(PackageNamespace(""), "MANAHEALBOOST") type QName(PackageNamespace(""), "int") value Integer(154) end
+ trait const QName(PackageNamespace(""), "TRIAL_TOKENS") type QName(PackageNamespace(""), "int") value Integer(155) end
+ trait const QName(PackageNamespace(""), "MYTH_QUEST") type QName(PackageNamespace(""), "int") value Integer(156) end
+ trait const QName(PackageNamespace(""), "MYTH_QUEST_TRACK") type QName(PackageNamespace(""), "int") value Integer(157) end
+ trait const QName(PackageNamespace(""), "ASPECT") type QName(PackageNamespace(""), "int") value Integer(204) end
+ trait const QName(PackageNamespace(""), "EFFECTS_3") type QName(PackageNamespace(""), "int") value Integer(205) end
+ trait const QName(PackageNamespace(""), "SPS_LIFE_COUNT") type QName(PackageNamespace(""), "int") value Integer(210) end
+ trait const QName(PackageNamespace(""), "SPS_LIFE_COUNT_MAX") type QName(PackageNamespace(""), "int") value Integer(211) end
+ trait const QName(PackageNamespace(""), "SPS_MANA_COUNT") type QName(PackageNamespace(""), "int") value Integer(212) end
+ trait const QName(PackageNamespace(""), "SPS_MANA_COUNT_MAX") type QName(PackageNamespace(""), "int") value Integer(213) end
+ trait const QName(PackageNamespace(""), "SPS_DEFENSE_COUNT") type QName(PackageNamespace(""), "int") value Integer(214) end
+ trait const QName(PackageNamespace(""), "SPS_DEFENSE_COUNT_MAX") type QName(PackageNamespace(""), "int") value Integer(215) end
+ trait const QName(PackageNamespace(""), "SPS_ATTACK_COUNT") type QName(PackageNamespace(""), "int") value Integer(216) end
+ trait const QName(PackageNamespace(""), "SPS_ATTACK_COUNT_MAX") type QName(PackageNamespace(""), "int") value Integer(217) end
+ trait const QName(PackageNamespace(""), "SPS_DEXTERITY_COUNT") type QName(PackageNamespace(""), "int") value Integer(218) end
+ trait const QName(PackageNamespace(""), "SPS_DEXTERITY_COUNT_MAX") type QName(PackageNamespace(""), "int") value Integer(219) end
+ trait const QName(PackageNamespace(""), "SPS_SPEED_COUNT") type QName(PackageNamespace(""), "int") value Integer(220) end
+ trait const QName(PackageNamespace(""), "SPS_SPEED_COUNT_MAX") type QName(PackageNamespace(""), "int") value Integer(221) end
+ trait const QName(PackageNamespace(""), "SPS_VITALITY_COUNT") type QName(PackageNamespace(""), "int") value Integer(222) end
+ trait const QName(PackageNamespace(""), "SPS_VITALITY_COUNT_MAX") type QName(PackageNamespace(""), "int") value Integer(223) end
+ trait const QName(PackageNamespace(""), "SPS_WISDOM_COUNT") type QName(PackageNamespace(""), "int") value Integer(224) end
+ trait const QName(PackageNamespace(""), "SPS_WISDOM_COUNT_MAX") type QName(PackageNamespace(""), "int") value Integer(225) end
+ trait const QName(PackageNamespace(""), "SPS_MIGHT_COUNT") type QName(PackageNamespace(""), "int") value Integer(226) end
+ trait const QName(PackageNamespace(""), "SPS_MIGHT_COUNT_MAX") type QName(PackageNamespace(""), "int") value Integer(227) end
+ trait const QName(PackageNamespace(""), "SPS_LUCK_COUNT") type QName(PackageNamespace(""), "int") value Integer(228) end
+ trait const QName(PackageNamespace(""), "SPS_LUCK_COUNT_MAX") type QName(PackageNamespace(""), "int") value Integer(229) end
+ trait const QName(PackageNamespace(""), "SPS_RESTORATION_COUNT") type QName(PackageNamespace(""), "int") value Integer(230) end
+ trait const QName(PackageNamespace(""), "SPS_RESTORATION_COUNT_MAX") type QName(PackageNamespace(""), "int") value Integer(231) end
+ trait const QName(PackageNamespace(""), "SPS_PROTECTION_COUNT") type QName(PackageNamespace(""), "int") value Integer(232) end
+ trait const QName(PackageNamespace(""), "SPS_PROTECTION_COUNT_MAX") type QName(PackageNamespace(""), "int") value Integer(233) end
+ trait const QName(PackageNamespace(""), "CHRISTMAS_PRESENTS") type QName(PackageNamespace(""), "int") value Integer(234) end
+ trait const QName(PackageNamespace(""), "TRIAL_LOOTBOX") type QName(PackageNamespace(""), "int") value Integer(235) end
+ trait const QName(PackageNamespace(""), "RAT_BAGS") type QName(PackageNamespace(""), "int") value Integer(86) end
+ trait const QName(PackageNamespace(""), "BP_LEVEL") type QName(PackageNamespace(""), "int") value Integer(23) end
+ trait const QName(PackageNamespace(""), "BP_CURR_EXP") type QName(PackageNamespace(""), "int") value Integer(24) end
+ trait const QName(PackageNamespace(""), "BP_CLAIMED") type QName(PackageNamespace(""), "int") value Integer(25) end
+ trait const QName(PackageNamespace(""), "BP_PREMIUM") type QName(PackageNamespace(""), "int") value Integer(64) end
+ trait const QName(PackageNamespace(""), "RESKIN") type QName(PackageNamespace(""), "int") value Integer(82) end
+ trait const QName(PackageNamespace(""), "STAR_ICON_TYPE") type QName(PackageNamespace(""), "int") value Integer(83) end
+ trait method QName(PackageNamespace(""), "statToName")
+  method
+   name "statToName"
+   refid "kabam.rotmg.messaging.impl.data:StatData/class/statToName"
+   param QName(PackageNamespace(""), "int")
+   returns QName(PackageNamespace(""), "String")
+   flag HAS_PARAM_NAMES
+   paramname "statId"
+   body
+    maxstack 2
+    localcount 3
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal1
+     setlocal2
+
+     jump                L65
+
+L5:
+     label
+     pushstring          "StatData.MaxHP"
+     returnvalue
+
+L8:
+     label
+     pushstring          "StatusBar.HealthPoints"
+     returnvalue
+
+L11:
+     label
+     pushstring          "StatData.Size"
+     returnvalue
+
+L14:
+     label
+     pushstring          "StatData.MaxMP"
+     returnvalue
+
+L17:
+     label
+     pushstring          "StatusBar.ManaPoints"
+     returnvalue
+
+L20:
+     label
+     pushstring          "StatData.XP"
+     returnvalue
+
+L23:
+     label
+     pushstring          "StatData.Level"
+     returnvalue
+
+L26:
+     label
+     pushstring          "StatModel.attack.long"
+     returnvalue
+
+L29:
+     label
+     pushstring          "StatModel.defense.long"
+     returnvalue
+
+L32:
+     label
+     pushstring          "StatModel.speed.long"
+     returnvalue
+
+L35:
+     label
+     pushstring          "StatModel.vitality.long"
+     returnvalue
+
+L38:
+     label
+     pushstring          "StatModel.wisdom.long"
+     returnvalue
+
+L41:
+     label
+     pushstring          "StatModel.dexterity.long"
+     returnvalue
+
+L44:
+     label
+     pushstring          "Luck"
+     returnvalue
+
+L47:
+     label
+     pushstring          "Might"
+     returnvalue
+
+L50:
+     label
+     pushstring          "Restoration"
+     returnvalue
+
+L53:
+     label
+     pushstring          "Protection"
+     returnvalue
+
+L56:
+     label
+     pushstring          "Fortune"
+     returnvalue
+
+L59:
+     label
+     pushstring          "Healing Boost"
+     returnvalue
+
+L62:
+     label
+     pushstring          "Mana Healing Boost"
+     returnvalue
+
+L65:
+     pushbyte            0
+     getlocal2
+     ifstricteq          L5
+
+     pushbyte            1
+     getlocal2
+     ifstricteq          L8
+
+     pushbyte            2
+     getlocal2
+     ifstricteq          L11
+
+     pushbyte            3
+     getlocal2
+     ifstricteq          L14
+
+     pushbyte            4
+     getlocal2
+     ifstricteq          L17
+
+     pushbyte            6
+     getlocal2
+     ifstricteq          L20
+
+     pushbyte            7
+     getlocal2
+     ifstricteq          L23
+
+     pushbyte            20
+     getlocal2
+     ifstricteq          L26
+
+     pushbyte            21
+     getlocal2
+     ifstricteq          L29
+
+     pushbyte            22
+     getlocal2
+     ifstricteq          L32
+
+     pushbyte            26
+     getlocal2
+     ifstricteq          L35
+
+     pushbyte            27
+     getlocal2
+     ifstricteq          L38
+
+     pushbyte            28
+     getlocal2
+     ifstricteq          L41
+
+     pushbyte            114
+     getlocal2
+     ifstricteq          L44
+
+     pushbyte            112
+     getlocal2
+     ifstricteq          L47
+
+     pushbyte            121
+     getlocal2
+     ifstricteq          L50
+
+     pushbyte            122
+     getlocal2
+     ifstricteq          L53
+
+     pushbyte            102
+     getlocal2
+     ifstricteq          L56
+
+     pushshort           153
+     getlocal2
+     ifstricteq          L59
+
+     pushshort           154
+     getlocal2
+     ifstricteq          L62
+
+     pushstring          "StatData.UnknownStat"
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "statToPlayerValues")
+  method
+   name "statToPlayerValues"
+   refid "kabam.rotmg.messaging.impl.data:StatData/class/statToPlayerValues"
+   param QName(PackageNamespace(""), "int")
+   param QName(PackageNamespace("com.company.assembleegameclient.objects"), "Player")
+   returns TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace(""), "int")>)
+   flag HAS_PARAM_NAMES
+   paramname "statId"
+   paramname "player"
+   body
+    maxstack 4
+    localcount 4
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal1
+     setlocal3
+
+     jump                L272
+
+L5:
+     label
+     getlex              QName(PackageNamespace("__AS3__.vec"), "Vector")
+     getlex              QName(PackageNamespace(""), "int")
+     applytype           1
+     pushbyte            3
+     construct           1
+     dup
+     pushbyte            0
+     getlocal2
+     getproperty         QName(PackageNamespace(""), "maxHP_")
+     setproperty         MultinameL([PrivateNamespace("kabam.rotmg.messaging.impl.data:StatData"), StaticProtectedNs("kabam.rotmg.messaging.impl.data:StatData"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.messaging.impl.data"), PackageInternalNs("kabam.rotmg.messaging.impl.data"), PrivateNamespace("FilePrivateNS:StatData"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     dup
+     pushbyte            1
+     getlocal2
+     getproperty         QName(PackageNamespace(""), "maxHPBoost_")
+     setproperty         MultinameL([PrivateNamespace("kabam.rotmg.messaging.impl.data:StatData"), StaticProtectedNs("kabam.rotmg.messaging.impl.data:StatData"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.messaging.impl.data"), PackageInternalNs("kabam.rotmg.messaging.impl.data"), PrivateNamespace("FilePrivateNS:StatData"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     dup
+     pushbyte            2
+     getlocal2
+     getproperty         QName(PackageNamespace(""), "maxHPMax_")
+     setproperty         MultinameL([PrivateNamespace("kabam.rotmg.messaging.impl.data:StatData"), StaticProtectedNs("kabam.rotmg.messaging.impl.data:StatData"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.messaging.impl.data"), PackageInternalNs("kabam.rotmg.messaging.impl.data"), PrivateNamespace("FilePrivateNS:StatData"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     returnvalue
+
+L27:
+     label
+     getlex              QName(PackageNamespace("__AS3__.vec"), "Vector")
+     getlex              QName(PackageNamespace(""), "int")
+     applytype           1
+     pushbyte            3
+     construct           1
+     dup
+     pushbyte            0
+     getlocal2
+     getproperty         QName(PackageNamespace(""), "maxMP_")
+     setproperty         MultinameL([PrivateNamespace("kabam.rotmg.messaging.impl.data:StatData"), StaticProtectedNs("kabam.rotmg.messaging.impl.data:StatData"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.messaging.impl.data"), PackageInternalNs("kabam.rotmg.messaging.impl.data"), PrivateNamespace("FilePrivateNS:StatData"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     dup
+     pushbyte            1
+     getlocal2
+     getproperty         QName(PackageNamespace(""), "maxMPBoost_")
+     setproperty         MultinameL([PrivateNamespace("kabam.rotmg.messaging.impl.data:StatData"), StaticProtectedNs("kabam.rotmg.messaging.impl.data:StatData"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.messaging.impl.data"), PackageInternalNs("kabam.rotmg.messaging.impl.data"), PrivateNamespace("FilePrivateNS:StatData"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     dup
+     pushbyte            2
+     getlocal2
+     getproperty         QName(PackageNamespace(""), "maxMPMax_")
+     setproperty         MultinameL([PrivateNamespace("kabam.rotmg.messaging.impl.data:StatData"), StaticProtectedNs("kabam.rotmg.messaging.impl.data:StatData"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.messaging.impl.data"), PackageInternalNs("kabam.rotmg.messaging.impl.data"), PrivateNamespace("FilePrivateNS:StatData"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     returnvalue
+
+L49:
+     label
+     getlex              QName(PackageNamespace("__AS3__.vec"), "Vector")
+     getlex              QName(PackageNamespace(""), "int")
+     applytype           1
+     pushbyte            3
+     construct           1
+     dup
+     pushbyte            0
+     getlocal2
+     getproperty         QName(PackageNamespace(""), "attack_")
+     setproperty         MultinameL([PrivateNamespace("kabam.rotmg.messaging.impl.data:StatData"), StaticProtectedNs("kabam.rotmg.messaging.impl.data:StatData"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.messaging.impl.data"), PackageInternalNs("kabam.rotmg.messaging.impl.data"), PrivateNamespace("FilePrivateNS:StatData"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     dup
+     pushbyte            1
+     getlocal2
+     getproperty         QName(PackageNamespace(""), "attackBoost_")
+     setproperty         MultinameL([PrivateNamespace("kabam.rotmg.messaging.impl.data:StatData"), StaticProtectedNs("kabam.rotmg.messaging.impl.data:StatData"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.messaging.impl.data"), PackageInternalNs("kabam.rotmg.messaging.impl.data"), PrivateNamespace("FilePrivateNS:StatData"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     dup
+     pushbyte            2
+     getlocal2
+     getproperty         QName(PackageNamespace(""), "attackMax_")
+     setproperty         MultinameL([PrivateNamespace("kabam.rotmg.messaging.impl.data:StatData"), StaticProtectedNs("kabam.rotmg.messaging.impl.data:StatData"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.messaging.impl.data"), PackageInternalNs("kabam.rotmg.messaging.impl.data"), PrivateNamespace("FilePrivateNS:StatData"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     returnvalue
+
+L71:
+     label
+     getlex              QName(PackageNamespace("__AS3__.vec"), "Vector")
+     getlex              QName(PackageNamespace(""), "int")
+     applytype           1
+     pushbyte            3
+     construct           1
+     dup
+     pushbyte            0
+     getlocal2
+     getproperty         QName(PackageNamespace(""), "defense_")
+     setproperty         MultinameL([PrivateNamespace("kabam.rotmg.messaging.impl.data:StatData"), StaticProtectedNs("kabam.rotmg.messaging.impl.data:StatData"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.messaging.impl.data"), PackageInternalNs("kabam.rotmg.messaging.impl.data"), PrivateNamespace("FilePrivateNS:StatData"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     dup
+     pushbyte            1
+     getlocal2
+     getproperty         QName(PackageNamespace(""), "defenseBoost_")
+     setproperty         MultinameL([PrivateNamespace("kabam.rotmg.messaging.impl.data:StatData"), StaticProtectedNs("kabam.rotmg.messaging.impl.data:StatData"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.messaging.impl.data"), PackageInternalNs("kabam.rotmg.messaging.impl.data"), PrivateNamespace("FilePrivateNS:StatData"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     dup
+     pushbyte            2
+     getlocal2
+     getproperty         QName(PackageNamespace(""), "defenseMax_")
+     setproperty         MultinameL([PrivateNamespace("kabam.rotmg.messaging.impl.data:StatData"), StaticProtectedNs("kabam.rotmg.messaging.impl.data:StatData"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.messaging.impl.data"), PackageInternalNs("kabam.rotmg.messaging.impl.data"), PrivateNamespace("FilePrivateNS:StatData"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     returnvalue
+
+L93:
+     label
+     getlex              QName(PackageNamespace("__AS3__.vec"), "Vector")
+     getlex              QName(PackageNamespace(""), "int")
+     applytype           1
+     pushbyte            3
+     construct           1
+     dup
+     pushbyte            0
+     getlocal2
+     getproperty         QName(PackageNamespace(""), "speed_")
+     setproperty         MultinameL([PrivateNamespace("kabam.rotmg.messaging.impl.data:StatData"), StaticProtectedNs("kabam.rotmg.messaging.impl.data:StatData"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.messaging.impl.data"), PackageInternalNs("kabam.rotmg.messaging.impl.data"), PrivateNamespace("FilePrivateNS:StatData"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     dup
+     pushbyte            1
+     getlocal2
+     getproperty         QName(PackageNamespace(""), "speedBoost_")
+     setproperty         MultinameL([PrivateNamespace("kabam.rotmg.messaging.impl.data:StatData"), StaticProtectedNs("kabam.rotmg.messaging.impl.data:StatData"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.messaging.impl.data"), PackageInternalNs("kabam.rotmg.messaging.impl.data"), PrivateNamespace("FilePrivateNS:StatData"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     dup
+     pushbyte            2
+     getlocal2
+     getproperty         QName(PackageNamespace(""), "speedMax_")
+     setproperty         MultinameL([PrivateNamespace("kabam.rotmg.messaging.impl.data:StatData"), StaticProtectedNs("kabam.rotmg.messaging.impl.data:StatData"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.messaging.impl.data"), PackageInternalNs("kabam.rotmg.messaging.impl.data"), PrivateNamespace("FilePrivateNS:StatData"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     returnvalue
+
+L115:
+     label
+     getlex              QName(PackageNamespace("__AS3__.vec"), "Vector")
+     getlex              QName(PackageNamespace(""), "int")
+     applytype           1
+     pushbyte            3
+     construct           1
+     dup
+     pushbyte            0
+     getlocal2
+     getproperty         QName(PackageNamespace(""), "vitality_")
+     setproperty         MultinameL([PrivateNamespace("kabam.rotmg.messaging.impl.data:StatData"), StaticProtectedNs("kabam.rotmg.messaging.impl.data:StatData"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.messaging.impl.data"), PackageInternalNs("kabam.rotmg.messaging.impl.data"), PrivateNamespace("FilePrivateNS:StatData"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     dup
+     pushbyte            1
+     getlocal2
+     getproperty         QName(PackageNamespace(""), "vitalityBoost_")
+     setproperty         MultinameL([PrivateNamespace("kabam.rotmg.messaging.impl.data:StatData"), StaticProtectedNs("kabam.rotmg.messaging.impl.data:StatData"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.messaging.impl.data"), PackageInternalNs("kabam.rotmg.messaging.impl.data"), PrivateNamespace("FilePrivateNS:StatData"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     dup
+     pushbyte            2
+     getlocal2
+     getproperty         QName(PackageNamespace(""), "vitalityMax_")
+     setproperty         MultinameL([PrivateNamespace("kabam.rotmg.messaging.impl.data:StatData"), StaticProtectedNs("kabam.rotmg.messaging.impl.data:StatData"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.messaging.impl.data"), PackageInternalNs("kabam.rotmg.messaging.impl.data"), PrivateNamespace("FilePrivateNS:StatData"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     returnvalue
+
+L137:
+     label
+     getlex              QName(PackageNamespace("__AS3__.vec"), "Vector")
+     getlex              QName(PackageNamespace(""), "int")
+     applytype           1
+     pushbyte            3
+     construct           1
+     dup
+     pushbyte            0
+     getlocal2
+     getproperty         QName(PackageNamespace(""), "wisdom_")
+     setproperty         MultinameL([PrivateNamespace("kabam.rotmg.messaging.impl.data:StatData"), StaticProtectedNs("kabam.rotmg.messaging.impl.data:StatData"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.messaging.impl.data"), PackageInternalNs("kabam.rotmg.messaging.impl.data"), PrivateNamespace("FilePrivateNS:StatData"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     dup
+     pushbyte            1
+     getlocal2
+     getproperty         QName(PackageNamespace(""), "wisdomBoost_")
+     setproperty         MultinameL([PrivateNamespace("kabam.rotmg.messaging.impl.data:StatData"), StaticProtectedNs("kabam.rotmg.messaging.impl.data:StatData"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.messaging.impl.data"), PackageInternalNs("kabam.rotmg.messaging.impl.data"), PrivateNamespace("FilePrivateNS:StatData"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     dup
+     pushbyte            2
+     getlocal2
+     getproperty         QName(PackageNamespace(""), "wisdomMax_")
+     setproperty         MultinameL([PrivateNamespace("kabam.rotmg.messaging.impl.data:StatData"), StaticProtectedNs("kabam.rotmg.messaging.impl.data:StatData"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.messaging.impl.data"), PackageInternalNs("kabam.rotmg.messaging.impl.data"), PrivateNamespace("FilePrivateNS:StatData"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     returnvalue
+
+L159:
+     label
+     getlex              QName(PackageNamespace("__AS3__.vec"), "Vector")
+     getlex              QName(PackageNamespace(""), "int")
+     applytype           1
+     pushbyte            3
+     construct           1
+     dup
+     pushbyte            0
+     getlocal2
+     getproperty         QName(PackageNamespace(""), "dexterity_")
+     setproperty         MultinameL([PrivateNamespace("kabam.rotmg.messaging.impl.data:StatData"), StaticProtectedNs("kabam.rotmg.messaging.impl.data:StatData"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.messaging.impl.data"), PackageInternalNs("kabam.rotmg.messaging.impl.data"), PrivateNamespace("FilePrivateNS:StatData"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     dup
+     pushbyte            1
+     getlocal2
+     getproperty         QName(PackageNamespace(""), "dexterityBoost_")
+     setproperty         MultinameL([PrivateNamespace("kabam.rotmg.messaging.impl.data:StatData"), StaticProtectedNs("kabam.rotmg.messaging.impl.data:StatData"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.messaging.impl.data"), PackageInternalNs("kabam.rotmg.messaging.impl.data"), PrivateNamespace("FilePrivateNS:StatData"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     dup
+     pushbyte            2
+     getlocal2
+     getproperty         QName(PackageNamespace(""), "dexterityMax_")
+     setproperty         MultinameL([PrivateNamespace("kabam.rotmg.messaging.impl.data:StatData"), StaticProtectedNs("kabam.rotmg.messaging.impl.data:StatData"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.messaging.impl.data"), PackageInternalNs("kabam.rotmg.messaging.impl.data"), PrivateNamespace("FilePrivateNS:StatData"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     returnvalue
+
+L181:
+     label
+     getlex              QName(PackageNamespace("__AS3__.vec"), "Vector")
+     getlex              QName(PackageNamespace(""), "int")
+     applytype           1
+     pushbyte            3
+     construct           1
+     dup
+     pushbyte            0
+     getlocal2
+     getproperty         QName(PackageNamespace(""), "luck_")
+     setproperty         MultinameL([PrivateNamespace("kabam.rotmg.messaging.impl.data:StatData"), StaticProtectedNs("kabam.rotmg.messaging.impl.data:StatData"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.messaging.impl.data"), PackageInternalNs("kabam.rotmg.messaging.impl.data"), PrivateNamespace("FilePrivateNS:StatData"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     dup
+     pushbyte            1
+     getlocal2
+     getproperty         QName(PackageNamespace(""), "luckBoost_")
+     setproperty         MultinameL([PrivateNamespace("kabam.rotmg.messaging.impl.data:StatData"), StaticProtectedNs("kabam.rotmg.messaging.impl.data:StatData"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.messaging.impl.data"), PackageInternalNs("kabam.rotmg.messaging.impl.data"), PrivateNamespace("FilePrivateNS:StatData"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     dup
+     pushbyte            2
+     getlocal2
+     getproperty         QName(PackageNamespace(""), "luckMax_")
+     setproperty         MultinameL([PrivateNamespace("kabam.rotmg.messaging.impl.data:StatData"), StaticProtectedNs("kabam.rotmg.messaging.impl.data:StatData"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.messaging.impl.data"), PackageInternalNs("kabam.rotmg.messaging.impl.data"), PrivateNamespace("FilePrivateNS:StatData"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     returnvalue
+
+L203:
+     label
+     getlex              QName(PackageNamespace("__AS3__.vec"), "Vector")
+     getlex              QName(PackageNamespace(""), "int")
+     applytype           1
+     pushbyte            3
+     construct           1
+     dup
+     pushbyte            0
+     getlocal2
+     getproperty         QName(PackageNamespace(""), "might_")
+     setproperty         MultinameL([PrivateNamespace("kabam.rotmg.messaging.impl.data:StatData"), StaticProtectedNs("kabam.rotmg.messaging.impl.data:StatData"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.messaging.impl.data"), PackageInternalNs("kabam.rotmg.messaging.impl.data"), PrivateNamespace("FilePrivateNS:StatData"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     dup
+     pushbyte            1
+     getlocal2
+     getproperty         QName(PackageNamespace(""), "mightBoost_")
+     setproperty         MultinameL([PrivateNamespace("kabam.rotmg.messaging.impl.data:StatData"), StaticProtectedNs("kabam.rotmg.messaging.impl.data:StatData"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.messaging.impl.data"), PackageInternalNs("kabam.rotmg.messaging.impl.data"), PrivateNamespace("FilePrivateNS:StatData"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     dup
+     pushbyte            2
+     getlocal2
+     getproperty         QName(PackageNamespace(""), "mightMax_")
+     setproperty         MultinameL([PrivateNamespace("kabam.rotmg.messaging.impl.data:StatData"), StaticProtectedNs("kabam.rotmg.messaging.impl.data:StatData"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.messaging.impl.data"), PackageInternalNs("kabam.rotmg.messaging.impl.data"), PrivateNamespace("FilePrivateNS:StatData"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     returnvalue
+
+L225:
+     label
+     getlex              QName(PackageNamespace("__AS3__.vec"), "Vector")
+     getlex              QName(PackageNamespace(""), "int")
+     applytype           1
+     pushbyte            3
+     construct           1
+     dup
+     pushbyte            0
+     getlocal2
+     getproperty         QName(PackageNamespace(""), "restoration_")
+     setproperty         MultinameL([PrivateNamespace("kabam.rotmg.messaging.impl.data:StatData"), StaticProtectedNs("kabam.rotmg.messaging.impl.data:StatData"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.messaging.impl.data"), PackageInternalNs("kabam.rotmg.messaging.impl.data"), PrivateNamespace("FilePrivateNS:StatData"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     dup
+     pushbyte            1
+     getlocal2
+     getproperty         QName(PackageNamespace(""), "restorationBoost_")
+     setproperty         MultinameL([PrivateNamespace("kabam.rotmg.messaging.impl.data:StatData"), StaticProtectedNs("kabam.rotmg.messaging.impl.data:StatData"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.messaging.impl.data"), PackageInternalNs("kabam.rotmg.messaging.impl.data"), PrivateNamespace("FilePrivateNS:StatData"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     dup
+     pushbyte            2
+     getlocal2
+     getproperty         QName(PackageNamespace(""), "restorationMax_")
+     setproperty         MultinameL([PrivateNamespace("kabam.rotmg.messaging.impl.data:StatData"), StaticProtectedNs("kabam.rotmg.messaging.impl.data:StatData"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.messaging.impl.data"), PackageInternalNs("kabam.rotmg.messaging.impl.data"), PrivateNamespace("FilePrivateNS:StatData"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     returnvalue
+
+L247:
+     label
+     getlex              QName(PackageNamespace("__AS3__.vec"), "Vector")
+     getlex              QName(PackageNamespace(""), "int")
+     applytype           1
+     pushbyte            3
+     construct           1
+     dup
+     pushbyte            0
+     getlocal2
+     getproperty         QName(PackageNamespace(""), "protection_")
+     setproperty         MultinameL([PrivateNamespace("kabam.rotmg.messaging.impl.data:StatData"), StaticProtectedNs("kabam.rotmg.messaging.impl.data:StatData"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.messaging.impl.data"), PackageInternalNs("kabam.rotmg.messaging.impl.data"), PrivateNamespace("FilePrivateNS:StatData"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     dup
+     pushbyte            1
+     getlocal2
+     getproperty         QName(PackageNamespace(""), "protectionBoost_")
+     setproperty         MultinameL([PrivateNamespace("kabam.rotmg.messaging.impl.data:StatData"), StaticProtectedNs("kabam.rotmg.messaging.impl.data:StatData"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.messaging.impl.data"), PackageInternalNs("kabam.rotmg.messaging.impl.data"), PrivateNamespace("FilePrivateNS:StatData"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     dup
+     pushbyte            2
+     getlocal2
+     getproperty         QName(PackageNamespace(""), "protectionMax_")
+     setproperty         MultinameL([PrivateNamespace("kabam.rotmg.messaging.impl.data:StatData"), StaticProtectedNs("kabam.rotmg.messaging.impl.data:StatData"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.messaging.impl.data"), PackageInternalNs("kabam.rotmg.messaging.impl.data"), PrivateNamespace("FilePrivateNS:StatData"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+     returnvalue
+
+L269:
+     label
+     pushnull
+     returnvalue
+
+L272:
+     pushbyte            0
+     getlocal3
+     ifstricteq          L5
+
+     pushbyte            3
+     getlocal3
+     ifstricteq          L27
+
+     pushbyte            20
+     getlocal3
+     ifstricteq          L49
+
+     pushbyte            21
+     getlocal3
+     ifstricteq          L71
+
+     pushbyte            22
+     getlocal3
+     ifstricteq          L93
+
+     pushbyte            26
+     getlocal3
+     ifstricteq          L115
+
+     pushbyte            27
+     getlocal3
+     ifstricteq          L137
+
+     pushbyte            28
+     getlocal3
+     ifstricteq          L159
+
+     pushbyte            114
+     getlocal3
+     ifstricteq          L181
+
+     pushbyte            112
+     getlocal3
+     ifstricteq          L203
+
+     pushbyte            121
+     getlocal3
+     ifstricteq          L225
+
+     pushbyte            122
+     getlocal3
+     ifstricteq          L247
+
+     jump                L269
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+end ; class

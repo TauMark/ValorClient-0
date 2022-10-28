@@ -1,0 +1,114 @@
+class
+ refid "com.company.assembleegameclient.objects:ClosedGiftChest"
+ instance QName(PackageNamespace("com.company.assembleegameclient.objects"), "ClosedGiftChest")
+  extends QName(PackageNamespace("com.company.assembleegameclient.objects"), "GameObject")
+  implements QName(PackageNamespace("com.company.assembleegameclient.objects"), "IInteractiveObject")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.company.assembleegameclient.objects:ClosedGiftChest")
+  iinit
+   name "ClosedGiftChest"
+   refid "com.company.assembleegameclient.objects:ClosedGiftChest/instance/init"
+   param QName(PackageNamespace(""), "XML")
+   flag HAS_PARAM_NAMES
+   paramname "_arg1"
+   body
+    maxstack 3
+    localcount 2
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     getlocal1
+     constructsuper      1
+
+     pushtrue
+     findproperty        QName(PackageNamespace(""), "isInteractive_")
+     swap
+     setproperty         QName(PackageNamespace(""), "isInteractive_")
+
+     getlocal0
+     getlex              QName(PackageNamespace("kabam.rotmg.core"), "StaticInjectorContext")
+     callproperty        QName(PackageNamespace(""), "getInjector"), 0
+     getlex              QName(PackageNamespace("kabam.rotmg.game.signals"), "TextPanelMessageUpdateSignal")
+     callproperty        QName(PackageNamespace(""), "getInstance"), 1
+     setproperty         QName(PrivateNamespace("com.company.assembleegameclient.objects:ClosedGiftChest"), "textPanelUpdateSignal")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace("com.company.assembleegameclient.objects:ClosedGiftChest"), "textPanelUpdateSignal") type QName(PackageNamespace("kabam.rotmg.game.signals"), "TextPanelMessageUpdateSignal") end
+  trait method QName(PackageNamespace(""), "getTooltip")
+   method
+    name "getTooltip"
+    refid "com.company.assembleegameclient.objects:ClosedGiftChest/instance/getTooltip"
+    returns QName(PackageNamespace("com.company.assembleegameclient.ui.tooltip"), "ToolTip")
+    body
+     maxstack 6
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.ui.tooltip"), "TextToolTip")
+      pushint             3552822
+      pushint             10197915
+      pushstring          "ClosedGiftChest.title"
+      pushstring          "TextPanel.giftChestIsEmpty"
+      pushshort           200
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.ui.tooltip"), "TextToolTip"), 5
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getPanel")
+   method
+    name "getPanel"
+    refid "com.company.assembleegameclient.objects:ClosedGiftChest/instance/getPanel"
+    param QName(PackageNamespace("com.company.assembleegameclient.game"), "GameSprite")
+    returns QName(PackageNamespace("com.company.assembleegameclient.ui.panels"), "Panel")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.company.assembleegameclient.objects:ClosedGiftChest"), "textPanelUpdateSignal")
+      pushstring          "TextPanel.giftChestIsEmpty"
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.game.view"), "TextPanel")
+      getlocal1
+      constructprop       QName(PackageNamespace("kabam.rotmg.game.view"), "TextPanel"), 1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.objects:ClosedGiftChest/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

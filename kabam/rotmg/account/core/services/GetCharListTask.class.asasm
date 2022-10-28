@@ -1,0 +1,720 @@
+class
+ refid "kabam.rotmg.account.core.services:GetCharListTask"
+ instance QName(PackageNamespace("kabam.rotmg.account.core.services"), "GetCharListTask")
+  extends QName(PackageNamespace("kabam.lib.tasks"), "BaseTask")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.account.core.services:GetCharListTask")
+  iinit
+   refid "kabam.rotmg.account.core.services:GetCharListTask/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "account") flag METADATA type QName(PackageNamespace("kabam.rotmg.account.core"), "Account")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "client") flag METADATA type QName(PackageNamespace("kabam.rotmg.appengine.api"), "AppEngineClient")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "model") flag METADATA type QName(PackageNamespace("kabam.rotmg.core.model"), "PlayerModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "setLoadingMessage") flag METADATA type QName(PackageNamespace("kabam.rotmg.core.signals"), "SetLoadingMessageSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "charListData") flag METADATA type QName(PackageNamespace("kabam.rotmg.account.core.signals"), "CharListDataSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "logger") flag METADATA type QName(PackageNamespace("robotlegs.bender.framework.api"), "ILogger")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "openDialog") flag METADATA type QName(PackageNamespace("kabam.rotmg.dialogs.control"), "OpenDialogSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "closeDialogs") flag METADATA type QName(PackageNamespace("kabam.rotmg.dialogs.control"), "CloseDialogsSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "securityQuestionsModel") flag METADATA type QName(PackageNamespace("kabam.rotmg.account.securityQuestions.data"), "SecurityQuestionsModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PrivateNamespace("kabam.rotmg.account.core.services:GetCharListTask"), "requestData") type QName(PackageNamespace(""), "Object") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.account.core.services:GetCharListTask"), "retryTimer") type QName(PackageNamespace("flash.utils"), "Timer") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.account.core.services:GetCharListTask"), "numRetries") type QName(PackageNamespace(""), "int") value Integer(0) end
+  trait slot QName(PrivateNamespace("kabam.rotmg.account.core.services:GetCharListTask"), "fromMigration") type QName(PackageNamespace(""), "Boolean") value False() end
+  trait method QName(ProtectedNamespace("kabam.rotmg.account.core.services:GetCharListTask"), "startTask") flag OVERRIDE
+   method
+    name "startTask"
+    refid "kabam.rotmg.account.core.services:GetCharListTask/instance/kabam.rotmg.account.core.services:GetCharListTask:startTask"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "logger")
+      pushstring          "GetUserDataTask start"
+      callpropvoid        QName(Namespace("robotlegs.bender.framework.api:ILogger"), "info"), 1
+
+      getlocal0
+      getlocal0
+      callproperty        QName(PackageNamespace(""), "makeRequestData"), 0
+      setproperty         QName(PrivateNamespace("kabam.rotmg.account.core.services:GetCharListTask"), "requestData")
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.account.core.services:GetCharListTask"), "sendRequest"), 0
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.parameters"), "Parameters")
+      pushfalse
+      setproperty         QName(PackageNamespace(""), "sendLogin_")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.account.core.services:GetCharListTask"), "sendRequest")
+   method
+    name "sendRequest"
+    refid "kabam.rotmg.account.core.services:GetCharListTask/instance/kabam.rotmg.account.core.services:GetCharListTask/instance/sendRequest"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "client")
+      getproperty         QName(Namespace("kabam.rotmg.appengine.api:AppEngineClient"), "complete")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.account.core.services:GetCharListTask"), "onComplete")
+      callpropvoid        QName(PackageNamespace(""), "addOnce"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "client")
+      pushstring          "/char/list"
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.account.core.services:GetCharListTask"), "requestData")
+      callpropvoid        QName(Namespace("kabam.rotmg.appengine.api:AppEngineClient"), "sendRequest"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.account.core.services:GetCharListTask"), "onComplete")
+   method
+    name "onComplete"
+    refid "kabam.rotmg.account.core.services:GetCharListTask/instance/kabam.rotmg.account.core.services:GetCharListTask/instance/onComplete"
+    param QName(PackageNamespace(""), "Boolean")
+    param null
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    paramname "_arg2"
+    body
+     maxstack 2
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      iffalse             L8
+
+      getlocal0
+      getlocal2
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.account.core.services:GetCharListTask"), "onListComplete"), 1
+
+      jump                L11
+
+L8:
+      getlocal0
+      getlocal2
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.account.core.services:GetCharListTask"), "onTextError"), 1
+
+L11:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "makeRequestData")
+   method
+    name "makeRequestData"
+    refid "kabam.rotmg.account.core.services:GetCharListTask/instance/makeRequestData"
+    returns QName(PackageNamespace(""), "Object")
+    body
+     maxstack 4
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      newobject           0
+      coerce              QName(PackageNamespace(""), "Object")
+      setlocal1
+
+      getlocal1
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.parameters"), "Parameters")
+      getproperty         QName(PackageNamespace(""), "sendLogin_")
+      setproperty         Multiname("do_login", [PrivateNamespace("kabam.rotmg.account.core.services:GetCharListTask"), ProtectedNamespace("kabam.rotmg.account.core.services:GetCharListTask"), StaticProtectedNs("kabam.rotmg.account.core.services:GetCharListTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.account.core.services"), PackageInternalNs("kabam.rotmg.account.core.services"), PrivateNamespace("FilePrivateNS:GetCharListTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      getlex              QName(PackageNamespace("com.company.util"), "MoreObjectUtil")
+      getlocal1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "account")
+      pushtrue
+      callproperty        QName(Namespace("kabam.rotmg.account.core:Account"), "getCredentials"), 1
+      callpropvoid        QName(PackageNamespace(""), "addToObject"), 2
+
+      getlocal1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.account.core.services:GetCharListTask"), "onListComplete")
+   method
+    name "onListComplete"
+    refid "kabam.rotmg.account.core.services:GetCharListTask/instance/kabam.rotmg.account.core.services:GetCharListTask/instance/onListComplete"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 4
+     localcount 8
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnan
+      setlocal3
+
+      pushnull
+      setlocal            4
+
+      pushnull
+      setlocal            5
+
+      findpropstrict      QName(PackageNamespace(""), "XML")
+      getlocal1
+      constructprop       QName(PackageNamespace(""), "XML"), 1
+      coerce              QName(PackageNamespace(""), "XML")
+      setlocal2
+
+      getlocal2
+      pushstring          "MigrateStatus"
+      callproperty        Multiname("hasOwnProperty", [PrivateNamespace("kabam.rotmg.account.core.services:GetCharListTask"), ProtectedNamespace("kabam.rotmg.account.core.services:GetCharListTask"), StaticProtectedNs("kabam.rotmg.account.core.services:GetCharListTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.account.core.services"), PackageInternalNs("kabam.rotmg.account.core.services"), PrivateNamespace("FilePrivateNS:GetCharListTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 1
+      iffalse             L51
+
+      getlocal2
+      getproperty         Multiname("MigrateStatus", [PrivateNamespace("kabam.rotmg.account.core.services:GetCharListTask"), ProtectedNamespace("kabam.rotmg.account.core.services:GetCharListTask"), StaticProtectedNs("kabam.rotmg.account.core.services:GetCharListTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.account.core.services"), PackageInternalNs("kabam.rotmg.account.core.services"), PrivateNamespace("FilePrivateNS:GetCharListTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      convert_d
+      setlocal3
+
+      getlocal3
+      pushbyte            5
+      ifne                L26
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.account.core.services:GetCharListTask"), "sendRequest"), 0
+
+L26:
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.account.web.view"), "MigrationDialog")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "account")
+      getlocal3
+      constructprop       QName(PackageNamespace("kabam.rotmg.account.web.view"), "MigrationDialog"), 2
+      coerce              QName(PackageNamespace("kabam.rotmg.account.web.view"), "MigrationDialog")
+      setlocal            4
+
+      getlocal0
+      pushtrue
+      setproperty         QName(PrivateNamespace("kabam.rotmg.account.core.services:GetCharListTask"), "fromMigration")
+
+      getlocal            4
+      getproperty         QName(PackageNamespace(""), "done")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.account.core.services:GetCharListTask"), "sendRequest")
+      callpropvoid        QName(PackageNamespace(""), "addOnce"), 1
+
+      getlocal            4
+      getproperty         QName(PackageNamespace(""), "cancel")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.account.core.services:GetCharListTask"), "clearAccountAndReloadCharacters")
+      callpropvoid        QName(PackageNamespace(""), "addOnce"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "openDialog")
+      getlocal            4
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      jump                L163
+
+L51:
+      getlocal2
+      pushstring          "Account"
+      callproperty        Multiname("hasOwnProperty", [PrivateNamespace("kabam.rotmg.account.core.services:GetCharListTask"), ProtectedNamespace("kabam.rotmg.account.core.services:GetCharListTask"), StaticProtectedNs("kabam.rotmg.account.core.services:GetCharListTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.account.core.services"), PackageInternalNs("kabam.rotmg.account.core.services"), PrivateNamespace("FilePrivateNS:GetCharListTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 1
+      iffalse             L153
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "account")
+      getlex              QName(PackageNamespace("kabam.rotmg.account.web"), "WebAccount")
+      istypelate
+      iffalse             L100
+
+      getlex              QName(PackageNamespace("kabam.rotmg.account.web"), "WebAccount")
+      getglobalscope
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "account")
+      call                1
+      getlocal2
+      getproperty         Multiname("Account", [PrivateNamespace("kabam.rotmg.account.core.services:GetCharListTask"), ProtectedNamespace("kabam.rotmg.account.core.services:GetCharListTask"), StaticProtectedNs("kabam.rotmg.account.core.services:GetCharListTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.account.core.services"), PackageInternalNs("kabam.rotmg.account.core.services"), PrivateNamespace("FilePrivateNS:GetCharListTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      pushbyte            0
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.account.core.services:GetCharListTask"), ProtectedNamespace("kabam.rotmg.account.core.services:GetCharListTask"), StaticProtectedNs("kabam.rotmg.account.core.services:GetCharListTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.account.core.services"), PackageInternalNs("kabam.rotmg.account.core.services"), PrivateNamespace("FilePrivateNS:GetCharListTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getproperty         Multiname("Name", [PrivateNamespace("kabam.rotmg.account.core.services:GetCharListTask"), ProtectedNamespace("kabam.rotmg.account.core.services:GetCharListTask"), StaticProtectedNs("kabam.rotmg.account.core.services:GetCharListTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.account.core.services"), PackageInternalNs("kabam.rotmg.account.core.services"), PrivateNamespace("FilePrivateNS:GetCharListTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      setproperty         QName(PackageNamespace(""), "userDisplayName")
+
+      getlex              QName(PackageNamespace("kabam.rotmg.account.web"), "WebAccount")
+      getglobalscope
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "account")
+      call                1
+      getlocal2
+      getproperty         Multiname("Account", [PrivateNamespace("kabam.rotmg.account.core.services:GetCharListTask"), ProtectedNamespace("kabam.rotmg.account.core.services:GetCharListTask"), StaticProtectedNs("kabam.rotmg.account.core.services:GetCharListTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.account.core.services"), PackageInternalNs("kabam.rotmg.account.core.services"), PrivateNamespace("FilePrivateNS:GetCharListTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      pushbyte            0
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.account.core.services:GetCharListTask"), ProtectedNamespace("kabam.rotmg.account.core.services:GetCharListTask"), StaticProtectedNs("kabam.rotmg.account.core.services:GetCharListTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.account.core.services"), PackageInternalNs("kabam.rotmg.account.core.services"), PrivateNamespace("FilePrivateNS:GetCharListTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getproperty         Multiname("PaymentProvider", [PrivateNamespace("kabam.rotmg.account.core.services:GetCharListTask"), ProtectedNamespace("kabam.rotmg.account.core.services:GetCharListTask"), StaticProtectedNs("kabam.rotmg.account.core.services:GetCharListTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.account.core.services"), PackageInternalNs("kabam.rotmg.account.core.services"), PrivateNamespace("FilePrivateNS:GetCharListTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      setproperty         QName(PackageNamespace(""), "paymentProvider")
+
+      getlocal2
+      getproperty         Multiname("Account", [PrivateNamespace("kabam.rotmg.account.core.services:GetCharListTask"), ProtectedNamespace("kabam.rotmg.account.core.services:GetCharListTask"), StaticProtectedNs("kabam.rotmg.account.core.services:GetCharListTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.account.core.services"), PackageInternalNs("kabam.rotmg.account.core.services"), PrivateNamespace("FilePrivateNS:GetCharListTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      pushbyte            0
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.account.core.services:GetCharListTask"), ProtectedNamespace("kabam.rotmg.account.core.services:GetCharListTask"), StaticProtectedNs("kabam.rotmg.account.core.services:GetCharListTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.account.core.services"), PackageInternalNs("kabam.rotmg.account.core.services"), PrivateNamespace("FilePrivateNS:GetCharListTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      pushstring          "PaymentData"
+      callproperty        Multiname("hasOwnProperty", [PrivateNamespace("kabam.rotmg.account.core.services:GetCharListTask"), ProtectedNamespace("kabam.rotmg.account.core.services:GetCharListTask"), StaticProtectedNs("kabam.rotmg.account.core.services:GetCharListTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.account.core.services"), PackageInternalNs("kabam.rotmg.account.core.services"), PrivateNamespace("FilePrivateNS:GetCharListTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 1
+      iffalse             L100
+
+      getlex              QName(PackageNamespace("kabam.rotmg.account.web"), "WebAccount")
+      getglobalscope
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "account")
+      call                1
+      getlocal2
+      getproperty         Multiname("Account", [PrivateNamespace("kabam.rotmg.account.core.services:GetCharListTask"), ProtectedNamespace("kabam.rotmg.account.core.services:GetCharListTask"), StaticProtectedNs("kabam.rotmg.account.core.services:GetCharListTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.account.core.services"), PackageInternalNs("kabam.rotmg.account.core.services"), PrivateNamespace("FilePrivateNS:GetCharListTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      pushbyte            0
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.account.core.services:GetCharListTask"), ProtectedNamespace("kabam.rotmg.account.core.services:GetCharListTask"), StaticProtectedNs("kabam.rotmg.account.core.services:GetCharListTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.account.core.services"), PackageInternalNs("kabam.rotmg.account.core.services"), PrivateNamespace("FilePrivateNS:GetCharListTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getproperty         Multiname("PaymentData", [PrivateNamespace("kabam.rotmg.account.core.services:GetCharListTask"), ProtectedNamespace("kabam.rotmg.account.core.services:GetCharListTask"), StaticProtectedNs("kabam.rotmg.account.core.services:GetCharListTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.account.core.services"), PackageInternalNs("kabam.rotmg.account.core.services"), PrivateNamespace("FilePrivateNS:GetCharListTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      setproperty         QName(PackageNamespace(""), "paymentData")
+
+L100:
+      getlocal2
+      getproperty         Multiname("Account", [PrivateNamespace("kabam.rotmg.account.core.services:GetCharListTask"), ProtectedNamespace("kabam.rotmg.account.core.services:GetCharListTask"), StaticProtectedNs("kabam.rotmg.account.core.services:GetCharListTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.account.core.services"), PackageInternalNs("kabam.rotmg.account.core.services"), PrivateNamespace("FilePrivateNS:GetCharListTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      pushbyte            0
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.account.core.services:GetCharListTask"), ProtectedNamespace("kabam.rotmg.account.core.services:GetCharListTask"), StaticProtectedNs("kabam.rotmg.account.core.services:GetCharListTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.account.core.services"), PackageInternalNs("kabam.rotmg.account.core.services"), PrivateNamespace("FilePrivateNS:GetCharListTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      pushstring          "SecurityQuestions"
+      callproperty        Multiname("hasOwnProperty", [PrivateNamespace("kabam.rotmg.account.core.services:GetCharListTask"), ProtectedNamespace("kabam.rotmg.account.core.services:GetCharListTask"), StaticProtectedNs("kabam.rotmg.account.core.services:GetCharListTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.account.core.services"), PackageInternalNs("kabam.rotmg.account.core.services"), PrivateNamespace("FilePrivateNS:GetCharListTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 1
+      iffalse             L153
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "securityQuestionsModel")
+      getlocal2
+      getproperty         Multiname("Account", [PrivateNamespace("kabam.rotmg.account.core.services:GetCharListTask"), ProtectedNamespace("kabam.rotmg.account.core.services:GetCharListTask"), StaticProtectedNs("kabam.rotmg.account.core.services:GetCharListTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.account.core.services"), PackageInternalNs("kabam.rotmg.account.core.services"), PrivateNamespace("FilePrivateNS:GetCharListTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      pushbyte            0
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.account.core.services:GetCharListTask"), ProtectedNamespace("kabam.rotmg.account.core.services:GetCharListTask"), StaticProtectedNs("kabam.rotmg.account.core.services:GetCharListTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.account.core.services"), PackageInternalNs("kabam.rotmg.account.core.services"), PrivateNamespace("FilePrivateNS:GetCharListTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getproperty         Multiname("SecurityQuestions", [PrivateNamespace("kabam.rotmg.account.core.services:GetCharListTask"), ProtectedNamespace("kabam.rotmg.account.core.services:GetCharListTask"), StaticProtectedNs("kabam.rotmg.account.core.services:GetCharListTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.account.core.services"), PackageInternalNs("kabam.rotmg.account.core.services"), PrivateNamespace("FilePrivateNS:GetCharListTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      pushbyte            0
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.account.core.services:GetCharListTask"), ProtectedNamespace("kabam.rotmg.account.core.services:GetCharListTask"), StaticProtectedNs("kabam.rotmg.account.core.services:GetCharListTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.account.core.services"), PackageInternalNs("kabam.rotmg.account.core.services"), PrivateNamespace("FilePrivateNS:GetCharListTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getproperty         Multiname("ShowSecurityQuestionsDialog", [PrivateNamespace("kabam.rotmg.account.core.services:GetCharListTask"), ProtectedNamespace("kabam.rotmg.account.core.services:GetCharListTask"), StaticProtectedNs("kabam.rotmg.account.core.services:GetCharListTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.account.core.services"), PackageInternalNs("kabam.rotmg.account.core.services"), PrivateNamespace("FilePrivateNS:GetCharListTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      pushbyte            0
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.account.core.services:GetCharListTask"), ProtectedNamespace("kabam.rotmg.account.core.services:GetCharListTask"), StaticProtectedNs("kabam.rotmg.account.core.services:GetCharListTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.account.core.services"), PackageInternalNs("kabam.rotmg.account.core.services"), PrivateNamespace("FilePrivateNS:GetCharListTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      pushstring          "1"
+      equals
+      setproperty         QName(PackageNamespace(""), "showSecurityQuestionsOnStartup")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "securityQuestionsModel")
+      callpropvoid        QName(PackageNamespace(""), "clearQuestionsList"), 0
+
+      pushbyte            0
+      setlocal            7
+
+      getlocal2
+      getproperty         Multiname("Account", [PrivateNamespace("kabam.rotmg.account.core.services:GetCharListTask"), ProtectedNamespace("kabam.rotmg.account.core.services:GetCharListTask"), StaticProtectedNs("kabam.rotmg.account.core.services:GetCharListTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.account.core.services"), PackageInternalNs("kabam.rotmg.account.core.services"), PrivateNamespace("FilePrivateNS:GetCharListTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      pushbyte            0
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.account.core.services:GetCharListTask"), ProtectedNamespace("kabam.rotmg.account.core.services:GetCharListTask"), StaticProtectedNs("kabam.rotmg.account.core.services:GetCharListTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.account.core.services"), PackageInternalNs("kabam.rotmg.account.core.services"), PrivateNamespace("FilePrivateNS:GetCharListTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getproperty         Multiname("SecurityQuestions", [PrivateNamespace("kabam.rotmg.account.core.services:GetCharListTask"), ProtectedNamespace("kabam.rotmg.account.core.services:GetCharListTask"), StaticProtectedNs("kabam.rotmg.account.core.services:GetCharListTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.account.core.services"), PackageInternalNs("kabam.rotmg.account.core.services"), PrivateNamespace("FilePrivateNS:GetCharListTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      pushbyte            0
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.account.core.services:GetCharListTask"), ProtectedNamespace("kabam.rotmg.account.core.services:GetCharListTask"), StaticProtectedNs("kabam.rotmg.account.core.services:GetCharListTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.account.core.services"), PackageInternalNs("kabam.rotmg.account.core.services"), PrivateNamespace("FilePrivateNS:GetCharListTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getproperty         Multiname("SecurityQuestionsKeys", [PrivateNamespace("kabam.rotmg.account.core.services:GetCharListTask"), ProtectedNamespace("kabam.rotmg.account.core.services:GetCharListTask"), StaticProtectedNs("kabam.rotmg.account.core.services:GetCharListTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.account.core.services"), PackageInternalNs("kabam.rotmg.account.core.services"), PrivateNamespace("FilePrivateNS:GetCharListTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      pushbyte            0
+      getproperty         MultinameL([PrivateNamespace("kabam.rotmg.account.core.services:GetCharListTask"), ProtectedNamespace("kabam.rotmg.account.core.services:GetCharListTask"), StaticProtectedNs("kabam.rotmg.account.core.services:GetCharListTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.account.core.services"), PackageInternalNs("kabam.rotmg.account.core.services"), PrivateNamespace("FilePrivateNS:GetCharListTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      getproperty         Multiname("SecurityQuestionsKey", [PrivateNamespace("kabam.rotmg.account.core.services:GetCharListTask"), ProtectedNamespace("kabam.rotmg.account.core.services:GetCharListTask"), StaticProtectedNs("kabam.rotmg.account.core.services:GetCharListTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.account.core.services"), PackageInternalNs("kabam.rotmg.account.core.services"), PrivateNamespace("FilePrivateNS:GetCharListTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      setlocal            6
+
+      jump                L151
+
+L140:
+      label
+      getlocal            6
+      getlocal            7
+      nextvalue
+      coerce              QName(PackageNamespace(""), "XML")
+      setlocal            5
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "securityQuestionsModel")
+      getlocal            5
+      callproperty        Multiname("toString", [PrivateNamespace("kabam.rotmg.account.core.services:GetCharListTask"), ProtectedNamespace("kabam.rotmg.account.core.services:GetCharListTask"), StaticProtectedNs("kabam.rotmg.account.core.services:GetCharListTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.account.core.services"), PackageInternalNs("kabam.rotmg.account.core.services"), PrivateNamespace("FilePrivateNS:GetCharListTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 0
+      callpropvoid        QName(PackageNamespace(""), "addSecurityQuestion"), 1
+
+L151:
+      hasnext2            6, 7
+      iftrue              L140
+
+L153:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "charListData")
+      getlex              QName(PackageNamespace(""), "XML")
+      getglobalscope
+      getlocal1
+      call                1
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      findpropstrict      QName(ProtectedNamespace("kabam.lib.tasks:BaseTask"), "completeTask")
+      pushtrue
+      callpropvoid        QName(ProtectedNamespace("kabam.lib.tasks:BaseTask"), "completeTask"), 1
+
+L163:
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.account.core.services:GetCharListTask"), "retryTimer")
+      pushnull
+      ifeq                L169
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.account.core.services:GetCharListTask"), "stopRetryTimer"), 0
+
+L169:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.account.core.services:GetCharListTask"), "onTextError")
+   method
+    name "onTextError"
+    refid "kabam.rotmg.account.core.services:GetCharListTask/instance/kabam.rotmg.account.core.services:GetCharListTask/instance/onTextError"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      setlocal2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "setLoadingMessage")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      getlocal1
+      pushstring          "Account credentials not valid"
+      ifne                L35
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.account.core.services:GetCharListTask"), "fromMigration")
+      iffalse             L32
+
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.account.web.view"), "WebLoginDialog")
+      constructprop       QName(PackageNamespace("kabam.rotmg.account.web.view"), "WebLoginDialog"), 0
+      coerce              QName(PackageNamespace("kabam.rotmg.account.web.view"), "WebLoginDialog")
+      setlocal2
+
+      getlocal2
+      pushstring          "Error.invalidPassword"
+      callpropvoid        QName(PackageNamespace(""), "setError"), 1
+
+      getlocal2
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "account")
+      callproperty        QName(Namespace("kabam.rotmg.account.core:Account"), "getUserId"), 0
+      callpropvoid        QName(PackageNamespace(""), "setEmail"), 1
+
+      getlex              QName(PackageNamespace("kabam.rotmg.core"), "StaticInjectorContext")
+      callproperty        QName(PackageNamespace(""), "getInjector"), 0
+      getlex              QName(PackageNamespace("kabam.rotmg.dialogs.control"), "OpenDialogSignal")
+      callproperty        QName(PackageNamespace(""), "getInstance"), 1
+      getlocal2
+      callpropvoid        Multiname("dispatch", [PrivateNamespace("kabam.rotmg.account.core.services:GetCharListTask"), ProtectedNamespace("kabam.rotmg.account.core.services:GetCharListTask"), StaticProtectedNs("kabam.rotmg.account.core.services:GetCharListTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), StaticProtectedNs("Object"), PackageNamespace("kabam.rotmg.account.core.services"), PackageInternalNs("kabam.rotmg.account.core.services"), PrivateNamespace("FilePrivateNS:GetCharListTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 1
+
+L32:
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.account.core.services:GetCharListTask"), "clearAccountAndReloadCharacters"), 0
+
+      jump                L51
+
+L35:
+      getlocal1
+      pushstring          "Account is under maintenance"
+      ifne                L49
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "setLoadingMessage")
+      pushstring          "This account has been banned"
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.fortune.components"), "TimerCallback")
+      pushbyte            5
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.account.core.services:GetCharListTask"), "clearAccountAndReloadCharacters")
+      constructprop       QName(PackageNamespace("kabam.rotmg.fortune.components"), "TimerCallback"), 2
+      pop
+      jump                L51
+
+L49:
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.account.core.services:GetCharListTask"), "waitForASecondThenRetryRequest"), 0
+
+L51:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.account.core.services:GetCharListTask"), "clearAccountAndReloadCharacters")
+   method
+    name "clearAccountAndReloadCharacters"
+    refid "kabam.rotmg.account.core.services:GetCharListTask/instance/kabam.rotmg.account.core.services:GetCharListTask/instance/clearAccountAndReloadCharacters"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "logger")
+      pushstring          "GetUserDataTask invalid credentials"
+      callpropvoid        QName(Namespace("robotlegs.bender.framework.api:ILogger"), "info"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "account")
+      callpropvoid        QName(Namespace("kabam.rotmg.account.core:Account"), "clear"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "client")
+      getproperty         QName(Namespace("kabam.rotmg.appengine.api:AppEngineClient"), "complete")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.account.core.services:GetCharListTask"), "onComplete")
+      callpropvoid        QName(PackageNamespace(""), "addOnce"), 1
+
+      getlocal0
+      getlocal0
+      callproperty        QName(PackageNamespace(""), "makeRequestData"), 0
+      setproperty         QName(PrivateNamespace("kabam.rotmg.account.core.services:GetCharListTask"), "requestData")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "client")
+      pushstring          "/char/list"
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.account.core.services:GetCharListTask"), "requestData")
+      callpropvoid        QName(Namespace("kabam.rotmg.appengine.api:AppEngineClient"), "sendRequest"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.account.core.services:GetCharListTask"), "waitForASecondThenRetryRequest")
+   method
+    name "waitForASecondThenRetryRequest"
+    refid "kabam.rotmg.account.core.services:GetCharListTask/instance/kabam.rotmg.account.core.services:GetCharListTask/instance/waitForASecondThenRetryRequest"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "logger")
+      pushstring          "GetUserDataTask error - retrying"
+      callpropvoid        QName(Namespace("robotlegs.bender.framework.api:ILogger"), "info"), 1
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("flash.utils"), "Timer")
+      pushshort           1000
+      pushbyte            1
+      constructprop       QName(PackageNamespace("flash.utils"), "Timer"), 2
+      setproperty         QName(PrivateNamespace("kabam.rotmg.account.core.services:GetCharListTask"), "retryTimer")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.account.core.services:GetCharListTask"), "retryTimer")
+      pushstring          "timerComplete"
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.account.core.services:GetCharListTask"), "onRetryTimer")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.account.core.services:GetCharListTask"), "retryTimer")
+      callpropvoid        QName(PackageNamespace(""), "start"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.account.core.services:GetCharListTask"), "stopRetryTimer")
+   method
+    name "stopRetryTimer"
+    refid "kabam.rotmg.account.core.services:GetCharListTask/instance/kabam.rotmg.account.core.services:GetCharListTask/instance/stopRetryTimer"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.account.core.services:GetCharListTask"), "retryTimer")
+      callpropvoid        QName(PackageNamespace(""), "stop"), 0
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.account.core.services:GetCharListTask"), "retryTimer")
+      pushstring          "timerComplete"
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.account.core.services:GetCharListTask"), "onRetryTimer")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      getlocal0
+      pushnull
+      setproperty         QName(PrivateNamespace("kabam.rotmg.account.core.services:GetCharListTask"), "retryTimer")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.account.core.services:GetCharListTask"), "onRetryTimer")
+   method
+    name "onRetryTimer"
+    refid "kabam.rotmg.account.core.services:GetCharListTask/instance/kabam.rotmg.account.core.services:GetCharListTask/instance/onRetryTimer"
+    param QName(PackageNamespace("flash.events"), "TimerEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.account.core.services:GetCharListTask"), "stopRetryTimer"), 0
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.account.core.services:GetCharListTask"), "numRetries")
+      pushbyte            7
+      ifnlt               L17
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.account.core.services:GetCharListTask"), "sendRequest"), 0
+
+      getlocal0
+      dup
+      getproperty         QName(PrivateNamespace("kabam.rotmg.account.core.services:GetCharListTask"), "numRetries")
+      convert_d
+      increment
+      setproperty         QName(PrivateNamespace("kabam.rotmg.account.core.services:GetCharListTask"), "numRetries")
+
+      jump                L23
+
+L17:
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("kabam.rotmg.account.core.services:GetCharListTask"), "clearAccountAndReloadCharacters"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "setLoadingMessage")
+      pushstring          "LoginError.tooManyFailsssssssssssssssadsuifhoasuifdhsaofuzhsafduzhasfduozisahgfdazsofgasziufdailsssssssssssssssadsuifhoasuifdhsaofuzhsafduzhasfduozisahgfdazsofgasziufdailsssssssssssssssadsuifhoasuifdhsaofuzhsafduzhasfduozisahgfdazsofgasziufdailsssssssssssssssadsuifhoasuifdhsaofuzhsafduzhasfduozisahgfdazsofgasziufdgasizufgasizfgasizdfgaszifdgasfd8izasgdf8zuhasuf8ashf8ouashfsa8uf"
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+L23:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.account.core.services:GetCharListTask/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PrivateNamespace("kabam.rotmg.account.core.services:GetCharListTask"), "ONE_SECOND_IN_MS") type QName(PackageNamespace(""), "int") value Integer(1000) end
+ trait const QName(PrivateNamespace("kabam.rotmg.account.core.services:GetCharListTask"), "MAX_RETRIES") type QName(PackageNamespace(""), "int") value Integer(7) end
+end ; class

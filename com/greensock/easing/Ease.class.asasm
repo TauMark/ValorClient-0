@@ -1,0 +1,290 @@
+class
+ refid "com.greensock.easing:Ease"
+ instance QName(PackageNamespace("com.greensock.easing"), "Ease")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.greensock.easing:Ease")
+  iinit
+   name "Ease"
+   refid "com.greensock.easing:Ease/instance/init"
+   param QName(PackageNamespace(""), "Function")
+   param QName(PackageNamespace(""), "Array")
+   param QName(PackageNamespace(""), "Number")
+   param QName(PackageNamespace(""), "Number")
+   flag HAS_OPTIONAL
+   flag HAS_PARAM_NAMES
+   optional Null()
+   optional Null()
+   optional Integer(0)
+   optional Integer(0)
+   paramname "func"
+   paramname "extraParams"
+   paramname "type"
+   paramname "power"
+   body
+    maxstack 2
+    localcount 5
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal1
+     findproperty        QName(ProtectedNamespace("com.greensock.easing:Ease"), "_func")
+     swap
+     setproperty         QName(ProtectedNamespace("com.greensock.easing:Ease"), "_func")
+
+     getlocal2
+     iffalse             L14
+
+     getlex              QName(StaticProtectedNs("com.greensock.easing:Ease"), "_baseParams")
+     getlocal2
+     callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "concat"), 1
+     jump                L16
+
+L14:
+     getlex              QName(StaticProtectedNs("com.greensock.easing:Ease"), "_baseParams")
+     coerce              QName(PackageNamespace(""), "Array")
+L16:
+     findproperty        QName(ProtectedNamespace("com.greensock.easing:Ease"), "_params")
+     swap
+     setproperty         QName(ProtectedNamespace("com.greensock.easing:Ease"), "_params")
+
+     getlocal3
+     findproperty        QName(PackageNamespace(""), "_type")
+     swap
+     setproperty         QName(PackageNamespace(""), "_type")
+
+     getlocal            4
+     findproperty        QName(PackageNamespace(""), "_power")
+     swap
+     setproperty         QName(PackageNamespace(""), "_power")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(ProtectedNamespace("com.greensock.easing:Ease"), "_func") type QName(PackageNamespace(""), "Function") end
+  trait slot QName(ProtectedNamespace("com.greensock.easing:Ease"), "_params") type QName(PackageNamespace(""), "Array") end
+  trait slot QName(ProtectedNamespace("com.greensock.easing:Ease"), "_p1") type QName(PackageNamespace(""), "Number") end
+  trait slot QName(ProtectedNamespace("com.greensock.easing:Ease"), "_p2") type QName(PackageNamespace(""), "Number") end
+  trait slot QName(ProtectedNamespace("com.greensock.easing:Ease"), "_p3") type QName(PackageNamespace(""), "Number") end
+  trait slot QName(PackageNamespace(""), "_type") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PackageNamespace(""), "_power") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PackageNamespace(""), "_calcEnd") type QName(PackageNamespace(""), "Boolean") end
+  trait method QName(PackageNamespace(""), "getRatio")
+   method
+    name "getRatio"
+    refid "com.greensock.easing:Ease/instance/getRatio"
+    param QName(PackageNamespace(""), "Number")
+    returns QName(PackageNamespace(""), "Number")
+    flag HAS_PARAM_NAMES
+    paramname "p"
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnan
+      setlocal2
+
+      getlex              QName(ProtectedNamespace("com.greensock.easing:Ease"), "_func")
+      pushnull
+      ifeq                L16
+
+      getlex              QName(ProtectedNamespace("com.greensock.easing:Ease"), "_params")
+      pushbyte            0
+      getlocal1
+      setproperty         MultinameL([PrivateNamespace("com.greensock.easing:Ease"), ProtectedNamespace("com.greensock.easing:Ease"), StaticProtectedNs("com.greensock.easing:Ease"), StaticProtectedNs("Object"), PackageNamespace("com.greensock.easing"), PackageInternalNs("com.greensock.easing"), PrivateNamespace("FilePrivateNS:Ease"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      getlex              QName(ProtectedNamespace("com.greensock.easing:Ease"), "_func")
+      pushnull
+      getlex              QName(ProtectedNamespace("com.greensock.easing:Ease"), "_params")
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "apply"), 2
+      returnvalue
+
+L16:
+      getlex              QName(PackageNamespace(""), "_type")
+      pushbyte            1
+      ifne                L23
+
+      pushbyte            1
+      getlocal1
+      subtract
+      jump                L43
+
+L23:
+      getlex              QName(PackageNamespace(""), "_type")
+      pushbyte            2
+      ifne                L28
+
+      getlocal1
+      jump                L42
+
+L28:
+      getlocal1
+      pushdouble          0.5
+      ifnlt               L35
+
+      getlocal1
+      pushbyte            2
+      multiply
+      jump                L41
+
+L35:
+      pushbyte            1
+      getlocal1
+      subtract
+      pushbyte            2
+      multiply
+      convert_d
+L41:
+      convert_d
+L42:
+      convert_d
+L43:
+      convert_d
+      setlocal2
+
+      getlex              QName(PackageNamespace(""), "_power")
+      pushbyte            1
+      ifne                L54
+
+      getlocal2
+      getlocal2
+      multiply
+      convert_d
+      setlocal2
+
+      jump                L92
+
+L54:
+      getlex              QName(PackageNamespace(""), "_power")
+      pushbyte            2
+      ifne                L65
+
+      getlocal2
+      getlocal2
+      getlocal2
+      multiply
+      multiply
+      convert_d
+      setlocal2
+
+      jump                L92
+
+L65:
+      getlex              QName(PackageNamespace(""), "_power")
+      pushbyte            3
+      ifne                L78
+
+      getlocal2
+      getlocal2
+      getlocal2
+      multiply
+      getlocal2
+      multiply
+      multiply
+      convert_d
+      setlocal2
+
+      jump                L92
+
+L78:
+      getlex              QName(PackageNamespace(""), "_power")
+      pushbyte            4
+      ifne                L92
+
+      getlocal2
+      getlocal2
+      getlocal2
+      multiply
+      getlocal2
+      multiply
+      getlocal2
+      multiply
+      multiply
+      convert_d
+      setlocal2
+
+L92:
+      getlex              QName(PackageNamespace(""), "_type")
+      pushbyte            1
+      ifne                L99
+
+      pushbyte            1
+      getlocal2
+      subtract
+      jump                L119
+
+L99:
+      getlex              QName(PackageNamespace(""), "_type")
+      pushbyte            2
+      ifne                L104
+
+      getlocal2
+      jump                L118
+
+L104:
+      getlocal1
+      pushdouble          0.5
+      ifnlt               L111
+
+      getlocal2
+      pushbyte            2
+      divide
+      jump                L117
+
+L111:
+      pushbyte            1
+      getlocal2
+      pushbyte            2
+      divide
+      subtract
+      convert_d
+L117:
+      convert_d
+L118:
+      convert_d
+L119:
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.greensock.easing:Ease/class/init"
+  body
+   maxstack 4
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 1
+   code
+    getlocal0
+    pushscope
+
+    pushbyte            0
+    pushbyte            0
+    pushbyte            1
+    pushbyte            1
+    newarray            4
+    findproperty        QName(StaticProtectedNs("com.greensock.easing:Ease"), "_baseParams")
+    swap
+    setproperty         QName(StaticProtectedNs("com.greensock.easing:Ease"), "_baseParams")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait slot QName(StaticProtectedNs("com.greensock.easing:Ease"), "_baseParams") type QName(PackageNamespace(""), "Array") end
+end ; class

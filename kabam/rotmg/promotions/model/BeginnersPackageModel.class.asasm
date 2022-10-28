@@ -1,0 +1,308 @@
+class
+ refid "kabam.rotmg.promotions.model:BeginnersPackageModel"
+ instance QName(PackageNamespace("kabam.rotmg.promotions.model"), "BeginnersPackageModel")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  iinit
+   name "BeginnersPackageModel"
+   refid "kabam.rotmg.promotions.model:BeginnersPackageModel/instance/init"
+   body
+    maxstack 2
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("org.osflash.signals"), "Signal")
+     constructprop       QName(PackageNamespace("org.osflash.signals"), "Signal"), 0
+     setproperty         QName(PackageNamespace(""), "markedAsPurchased")
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "account") flag METADATA type QName(PackageNamespace("kabam.rotmg.account.core"), "Account")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "model") flag METADATA type QName(PackageNamespace("kabam.rotmg.account.core.model"), "OfferModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "markedAsPurchased") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.promotions.model:BeginnersPackageModel"), "beginnersOfferSecondsLeft") type QName(PackageNamespace(""), "Number") end
+  trait slot QName(PrivateNamespace("kabam.rotmg.promotions.model:BeginnersPackageModel"), "beginnersOfferSetTimestamp") type QName(PackageNamespace(""), "Number") end
+  trait method QName(PackageNamespace(""), "isBeginnerAvailable")
+   method
+    name "isBeginnerAvailable"
+    refid "kabam.rotmg.promotions.model:BeginnersPackageModel/instance/isBeginnerAvailable"
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      callproperty        QName(PackageNamespace(""), "getBeginnersOfferSecondsLeft"), 0
+      pushbyte            0
+      greaterthan
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setBeginnersOfferSecondsLeft")
+   method
+    name "setBeginnersOfferSecondsLeft"
+    refid "kabam.rotmg.promotions.model:BeginnersPackageModel/instance/setBeginnersOfferSecondsLeft"
+    param QName(PackageNamespace(""), "Number")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      setproperty         QName(PrivateNamespace("kabam.rotmg.promotions.model:BeginnersPackageModel"), "beginnersOfferSecondsLeft")
+
+      getlocal0
+      getlocal0
+      callproperty        QName(PrivateNamespace("kabam.rotmg.promotions.model:BeginnersPackageModel"), "getNowTimeSeconds"), 0
+      setproperty         QName(PrivateNamespace("kabam.rotmg.promotions.model:BeginnersPackageModel"), "beginnersOfferSetTimestamp")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.rotmg.promotions.model:BeginnersPackageModel"), "getNowTimeSeconds")
+   method
+    name "getNowTimeSeconds"
+    refid "kabam.rotmg.promotions.model:BeginnersPackageModel/instance/kabam.rotmg.promotions.model:BeginnersPackageModel/instance/getNowTimeSeconds"
+    returns QName(PackageNamespace(""), "Number")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace(""), "Date")
+      constructprop       QName(PackageNamespace(""), "Date"), 0
+      coerce              QName(PackageNamespace(""), "Date")
+      setlocal1
+
+      getlex              QName(PackageNamespace(""), "Math")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "time")
+      pushdouble          0.001
+      multiply
+      callproperty        QName(PackageNamespace(""), "round"), 1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getBeginnersOfferSecondsLeft")
+   method
+    name "getBeginnersOfferSecondsLeft"
+    refid "kabam.rotmg.promotions.model:BeginnersPackageModel/instance/getBeginnersOfferSecondsLeft"
+    returns QName(PackageNamespace(""), "Number")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.promotions.model:BeginnersPackageModel"), "beginnersOfferSecondsLeft")
+      getlocal0
+      callproperty        QName(PrivateNamespace("kabam.rotmg.promotions.model:BeginnersPackageModel"), "getNowTimeSeconds"), 0
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.rotmg.promotions.model:BeginnersPackageModel"), "beginnersOfferSetTimestamp")
+      subtract
+      subtract
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getUserCreatedAt")
+   method
+    name "getUserCreatedAt"
+    refid "kabam.rotmg.promotions.model:BeginnersPackageModel/instance/getUserCreatedAt"
+    returns QName(PackageNamespace(""), "Number")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      callproperty        QName(PrivateNamespace("kabam.rotmg.promotions.model:BeginnersPackageModel"), "getNowTimeSeconds"), 0
+      getlocal0
+      callproperty        QName(PackageNamespace(""), "getBeginnersOfferSecondsLeft"), 0
+      add
+      pushint             604800
+      subtract
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getDaysRemaining")
+   method
+    name "getDaysRemaining"
+    refid "kabam.rotmg.promotions.model:BeginnersPackageModel/instance/getDaysRemaining"
+    returns QName(PackageNamespace(""), "Number")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace(""), "Math")
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "TimeUtil")
+      getlocal0
+      callproperty        QName(PackageNamespace(""), "getBeginnersOfferSecondsLeft"), 0
+      callproperty        QName(PackageNamespace(""), "secondsToDays"), 1
+      callproperty        QName(PackageNamespace(""), "ceil"), 1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getOffer")
+   method
+    name "getOffer"
+    refid "kabam.rotmg.promotions.model:BeginnersPackageModel/instance/getOffer"
+    returns QName(PackageNamespace("com.company.assembleegameclient.util.offer"), "Offer")
+    body
+     maxstack 2
+     localcount 4
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      setlocal1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "model")
+      getproperty         QName(PackageNamespace(""), "offers")
+      iftrue              L10
+
+      pushnull
+      returnvalue
+
+L10:
+      pushbyte            0
+      setlocal3
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "model")
+      getproperty         QName(PackageNamespace(""), "offers")
+      getproperty         QName(PackageNamespace(""), "offerList")
+      setlocal2
+
+      jump                L30
+
+L18:
+      label
+      getlocal2
+      getlocal3
+      nextvalue
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.util.offer"), "Offer")
+      setlocal1
+
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "realmGold_")
+      pushshort           2600
+      ifne                L30
+
+      getlocal1
+      returnvalue
+
+L30:
+      hasnext2            2, 3
+      iftrue              L18
+
+      pushnull
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "markAsPurchased")
+   method
+    name "markAsPurchased"
+    refid "kabam.rotmg.promotions.model:BeginnersPackageModel/instance/markAsPurchased"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      pushbyte            -1
+      callpropvoid        QName(PackageNamespace(""), "setBeginnersOfferSecondsLeft"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "markedAsPurchased")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.promotions.model:BeginnersPackageModel/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PrivateNamespace("kabam.rotmg.promotions.model:BeginnersPackageModel"), "REALM_GOLD_FOR_BEGINNERS_PKG") type QName(PackageNamespace(""), "int") value Integer(2600) end
+ trait const QName(PrivateNamespace("kabam.rotmg.promotions.model:BeginnersPackageModel"), "ONE_WEEK_IN_SECONDS") type QName(PackageNamespace(""), "int") value Integer(604800) end
+end ; class

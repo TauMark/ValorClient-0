@@ -1,0 +1,92 @@
+class
+ refid "com.greensock.plugins:BezierThroughPlugin"
+ instance QName(PackageNamespace("com.greensock.plugins"), "BezierThroughPlugin")
+  extends QName(PackageNamespace("com.greensock.plugins"), "BezierPlugin")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.greensock.plugins:BezierThroughPlugin")
+  iinit
+   name "BezierThroughPlugin"
+   refid "com.greensock.plugins:BezierThroughPlugin/instance/init"
+   body
+    maxstack 2
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     pushstring          "bezierThrough"
+     findproperty        QName(PackageNamespace(""), "_propName")
+     swap
+     setproperty         QName(PackageNamespace(""), "_propName")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait method QName(PackageNamespace(""), "_onInitTween") flag OVERRIDE
+   method
+    name "_onInitTween"
+    refid "com.greensock.plugins:BezierThroughPlugin/instance/_onInitTween"
+    param QName(PackageNamespace(""), "Object")
+    param null
+    param QName(PackageNamespace("com.greensock"), "TweenLite")
+    returns QName(PackageNamespace(""), "Boolean")
+    flag HAS_PARAM_NAMES
+    paramname "target"
+    paramname "value"
+    paramname "tween"
+    body
+     maxstack 4
+     localcount 4
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal2
+      getlex              QName(PackageNamespace(""), "Array")
+      istypelate
+      iffalse             L10
+
+      pushstring          "values"
+      getlocal2
+      newobject           1
+      setlocal2
+
+L10:
+      getlocal2
+      pushstring          "thru"
+      setproperty         Multiname("type", [PrivateNamespace("com.greensock.plugins:BezierThroughPlugin"), ProtectedNamespace("com.greensock.plugins:BezierThroughPlugin"), StaticProtectedNs("com.greensock.plugins:BezierThroughPlugin"), StaticProtectedNs("com.greensock.plugins:BezierPlugin"), StaticProtectedNs("com.greensock.plugins:TweenPlugin"), StaticProtectedNs("Object"), PackageNamespace("com.greensock.plugins"), PackageInternalNs("com.greensock.plugins"), PrivateNamespace("FilePrivateNS:BezierThroughPlugin"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+
+      getlocal0
+      getlocal1
+      getlocal2
+      getlocal3
+      callsuper           QName(PackageNamespace(""), "_onInitTween"), 3
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.greensock.plugins:BezierThroughPlugin/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PackageNamespace(""), "API") type QName(PackageNamespace(""), "Number") value Integer(2) end
+end ; class

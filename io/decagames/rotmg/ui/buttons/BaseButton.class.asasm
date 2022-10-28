@@ -1,0 +1,378 @@
+class
+ refid "io.decagames.rotmg.ui.buttons:BaseButton"
+ instance QName(PackageNamespace("io.decagames.rotmg.ui.buttons"), "BaseButton")
+  extends QName(PackageNamespace("flash.display"), "Sprite")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("io.decagames.rotmg.ui.buttons:BaseButton")
+  iinit
+   name "BaseButton"
+   refid "io.decagames.rotmg.ui.buttons:BaseButton/instance/init"
+   body
+    maxstack 3
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("org.osflash.signals"), "Signal")
+     constructprop       QName(PackageNamespace("org.osflash.signals"), "Signal"), 0
+     setproperty         QName(PackageNamespace(""), "clickSignal")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("org.osflash.signals"), "Signal")
+     constructprop       QName(PackageNamespace("org.osflash.signals"), "Signal"), 0
+     setproperty         QName(PackageNamespace(""), "rollOverSignal")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("org.osflash.signals"), "Signal")
+     constructprop       QName(PackageNamespace("org.osflash.signals"), "Signal"), 0
+     setproperty         QName(PackageNamespace(""), "rollOutSignal")
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     pushstring          "addedToStage"
+     getlocal0
+     getproperty         QName(ProtectedNamespace("io.decagames.rotmg.ui.buttons:BaseButton"), "onAddedToStage")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(ProtectedNamespace("io.decagames.rotmg.ui.buttons:BaseButton"), "_disabled") type QName(PackageNamespace(""), "Boolean") end
+  trait slot QName(PackageNamespace(""), "clickSignal") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait slot QName(PackageNamespace(""), "rollOverSignal") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait slot QName(PackageNamespace(""), "rollOutSignal") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait slot QName(PrivateNamespace("io.decagames.rotmg.ui.buttons:BaseButton"), "_instanceName") type QName(PackageNamespace(""), "String") end
+  trait method QName(ProtectedNamespace("io.decagames.rotmg.ui.buttons:BaseButton"), "onAddedToStage")
+   method
+    name "onAddedToStage"
+    refid "io.decagames.rotmg.ui.buttons:BaseButton/instance/io.decagames.rotmg.ui.buttons:BaseButton:onAddedToStage"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      pushstring          "addedToStage"
+      getlocal0
+      getproperty         QName(ProtectedNamespace("io.decagames.rotmg.ui.buttons:BaseButton"), "onAddedToStage")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      getlocal0
+      pushstring          "click"
+      getlocal0
+      getproperty         QName(ProtectedNamespace("io.decagames.rotmg.ui.buttons:BaseButton"), "onClickHandler")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      getlocal0
+      pushstring          "mouseOut"
+      getlocal0
+      getproperty         QName(ProtectedNamespace("io.decagames.rotmg.ui.buttons:BaseButton"), "onRollOutHandler")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      getlocal0
+      pushstring          "mouseOver"
+      getlocal0
+      getproperty         QName(ProtectedNamespace("io.decagames.rotmg.ui.buttons:BaseButton"), "onRollOverHandler")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      getlocal0
+      pushstring          "mouseDown"
+      getlocal0
+      getproperty         QName(ProtectedNamespace("io.decagames.rotmg.ui.buttons:BaseButton"), "onMouseDownHandler")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "dispose")
+   method
+    name "dispose"
+    refid "io.decagames.rotmg.ui.buttons:BaseButton/instance/dispose"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      pushstring          "addedToStage"
+      getlocal0
+      getproperty         QName(ProtectedNamespace("io.decagames.rotmg.ui.buttons:BaseButton"), "onAddedToStage")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      getlocal0
+      pushstring          "click"
+      getlocal0
+      getproperty         QName(ProtectedNamespace("io.decagames.rotmg.ui.buttons:BaseButton"), "onClickHandler")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      getlocal0
+      pushstring          "mouseOut"
+      getlocal0
+      getproperty         QName(ProtectedNamespace("io.decagames.rotmg.ui.buttons:BaseButton"), "onRollOutHandler")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      getlocal0
+      pushstring          "mouseOver"
+      getlocal0
+      getproperty         QName(ProtectedNamespace("io.decagames.rotmg.ui.buttons:BaseButton"), "onRollOverHandler")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      getlocal0
+      pushstring          "mouseDown"
+      getlocal0
+      getproperty         QName(ProtectedNamespace("io.decagames.rotmg.ui.buttons:BaseButton"), "onMouseDownHandler")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "clickSignal")
+      callpropvoid        QName(PackageNamespace(""), "removeAll"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "rollOverSignal")
+      callpropvoid        QName(PackageNamespace(""), "removeAll"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "rollOutSignal")
+      callpropvoid        QName(PackageNamespace(""), "removeAll"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(ProtectedNamespace("io.decagames.rotmg.ui.buttons:BaseButton"), "onClickHandler")
+   method
+    name "onClickHandler"
+    refid "io.decagames.rotmg.ui.buttons:BaseButton/instance/io.decagames.rotmg.ui.buttons:BaseButton:onClickHandler"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("io.decagames.rotmg.ui.buttons:BaseButton"), "_disabled")
+      iftrue              L9
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "clickSignal")
+      getlocal0
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+L9:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(ProtectedNamespace("io.decagames.rotmg.ui.buttons:BaseButton"), "onMouseDownHandler")
+   method
+    name "onMouseDownHandler"
+    refid "io.decagames.rotmg.ui.buttons:BaseButton/instance/io.decagames.rotmg.ui.buttons:BaseButton:onMouseDownHandler"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 1
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(ProtectedNamespace("io.decagames.rotmg.ui.buttons:BaseButton"), "onRollOutHandler")
+   method
+    name "onRollOutHandler"
+    refid "io.decagames.rotmg.ui.buttons:BaseButton/instance/io.decagames.rotmg.ui.buttons:BaseButton:onRollOutHandler"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "rollOutSignal")
+      getlocal0
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(ProtectedNamespace("io.decagames.rotmg.ui.buttons:BaseButton"), "onRollOverHandler")
+   method
+    name "onRollOverHandler"
+    refid "io.decagames.rotmg.ui.buttons:BaseButton/instance/io.decagames.rotmg.ui.buttons:BaseButton:onRollOverHandler"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "rollOverSignal")
+      getlocal0
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait setter QName(PackageNamespace(""), "disabled")
+   method
+    name "disabled"
+    refid "io.decagames.rotmg.ui.buttons:BaseButton/instance/disabled/setter"
+    param QName(PackageNamespace(""), "Boolean")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      setproperty         QName(ProtectedNamespace("io.decagames.rotmg.ui.buttons:BaseButton"), "_disabled")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait getter QName(PackageNamespace(""), "disabled")
+   method
+    name "disabled"
+    refid "io.decagames.rotmg.ui.buttons:BaseButton/instance/disabled/getter"
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("io.decagames.rotmg.ui.buttons:BaseButton"), "_disabled")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait getter QName(PackageNamespace(""), "instanceName")
+   method
+    name "instanceName"
+    refid "io.decagames.rotmg.ui.buttons:BaseButton/instance/instanceName/getter"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.buttons:BaseButton"), "_instanceName")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait setter QName(PackageNamespace(""), "instanceName")
+   method
+    name "instanceName"
+    refid "io.decagames.rotmg.ui.buttons:BaseButton/instance/instanceName/setter"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "_arg1"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      setproperty         QName(PrivateNamespace("io.decagames.rotmg.ui.buttons:BaseButton"), "_instanceName")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "io.decagames.rotmg.ui.buttons:BaseButton/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

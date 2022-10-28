@@ -1,0 +1,75 @@
+class
+ refid "valor.battlePass:BattlePassCharacter"
+ instance QName(PackageNamespace("valor.battlePass"), "BattlePassCharacter")
+  extends QName(PackageNamespace("com.company.assembleegameclient.objects"), "GameObject")
+  implements QName(PackageNamespace("com.company.assembleegameclient.objects"), "IInteractiveObject")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("valor.battlePass:BattlePassCharacter")
+  iinit
+   name "BattlePassCharacter"
+   refid "valor.battlePass:BattlePassCharacter/instance/init"
+   param QName(PackageNamespace(""), "XML")
+   flag HAS_PARAM_NAMES
+   paramname "xml"
+   body
+    maxstack 2
+    localcount 2
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     getlocal1
+     constructsuper      1
+
+     pushtrue
+     findproperty        QName(PackageNamespace(""), "isInteractive_")
+     swap
+     setproperty         QName(PackageNamespace(""), "isInteractive_")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait method QName(PackageNamespace(""), "getPanel")
+   method
+    name "getPanel"
+    refid "valor.battlePass:BattlePassCharacter/instance/getPanel"
+    param QName(PackageNamespace("com.company.assembleegameclient.game"), "GameSprite")
+    returns QName(PackageNamespace("com.company.assembleegameclient.ui.panels"), "Panel")
+    flag HAS_PARAM_NAMES
+    paramname "gameSprite"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("valor.battlePass"), "BattlePassCharacterPanel")
+      getlocal1
+      constructprop       QName(PackageNamespace("valor.battlePass"), "BattlePassCharacterPanel"), 1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "valor.battlePass:BattlePassCharacter/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

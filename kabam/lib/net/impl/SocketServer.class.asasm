@@ -1,0 +1,1000 @@
+class
+ refid "kabam.lib.net.impl:SocketServer"
+ instance QName(PackageNamespace("kabam.lib.net.impl"), "SocketServer")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  iinit
+   name "SocketServer"
+   refid "kabam.lib.net.impl:SocketServer/instance/init"
+   body
+    maxstack 2
+    localcount 1
+    initscopedepth 0
+    maxscopedepth 1
+    code
+     getlocal0
+     pushscope
+
+     findpropstrict      QName(PackageNamespace("org.osflash.signals"), "Signal")
+     constructprop       QName(PackageNamespace("org.osflash.signals"), "Signal"), 0
+     findproperty        QName(PackageNamespace(""), "connected")
+     swap
+     initproperty        QName(PackageNamespace(""), "connected")
+
+     findpropstrict      QName(PackageNamespace("org.osflash.signals"), "Signal")
+     constructprop       QName(PackageNamespace("org.osflash.signals"), "Signal"), 0
+     findproperty        QName(PackageNamespace(""), "closed")
+     swap
+     initproperty        QName(PackageNamespace(""), "closed")
+
+     findpropstrict      QName(PackageNamespace("org.osflash.signals"), "Signal")
+     getlex              QName(PackageNamespace(""), "String")
+     constructprop       QName(PackageNamespace("org.osflash.signals"), "Signal"), 1
+     findproperty        QName(PackageNamespace(""), "error")
+     swap
+     initproperty        QName(PackageNamespace(""), "error")
+
+     findpropstrict      QName(PackageNamespace("kabam.lib.net.impl"), "Message")
+     pushbyte            0
+     constructprop       QName(PackageNamespace("kabam.lib.net.impl"), "Message"), 1
+     findproperty        QName(PrivateNamespace("kabam.lib.net.impl:SocketServer"), "unsentPlaceholder")
+     swap
+     initproperty        QName(PrivateNamespace("kabam.lib.net.impl:SocketServer"), "unsentPlaceholder")
+
+     findpropstrict      QName(PackageNamespace("flash.utils"), "ByteArray")
+     constructprop       QName(PackageNamespace("flash.utils"), "ByteArray"), 0
+     findproperty        QName(PrivateNamespace("kabam.lib.net.impl:SocketServer"), "data")
+     swap
+     initproperty        QName(PrivateNamespace("kabam.lib.net.impl:SocketServer"), "data")
+
+     getlocal0
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.lib.net.impl:SocketServer"), "unsentPlaceholder")
+     setproperty         QName(PrivateNamespace("kabam.lib.net.impl:SocketServer"), "head")
+
+     getlocal0
+     getlocal0
+     getproperty         QName(PrivateNamespace("kabam.lib.net.impl:SocketServer"), "unsentPlaceholder")
+     setproperty         QName(PrivateNamespace("kabam.lib.net.impl:SocketServer"), "tail")
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait const QName(PackageNamespace(""), "connected") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait const QName(PackageNamespace(""), "closed") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait const QName(PackageNamespace(""), "error") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait const QName(PrivateNamespace("kabam.lib.net.impl:SocketServer"), "unsentPlaceholder") type QName(PackageNamespace("kabam.lib.net.impl"), "Message") end
+  trait const QName(PrivateNamespace("kabam.lib.net.impl:SocketServer"), "data") type QName(PackageNamespace("flash.utils"), "ByteArray") end
+  trait slot QName(PackageNamespace(""), "messages") flag METADATA type QName(PackageNamespace("kabam.lib.net.api"), "MessageProvider")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "socket") flag METADATA type QName(PackageNamespace("flash.net"), "Socket")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PrivateNamespace("kabam.lib.net.impl:SocketServer"), "head") type QName(PackageNamespace("kabam.lib.net.impl"), "Message") end
+  trait slot QName(PrivateNamespace("kabam.lib.net.impl:SocketServer"), "tail") type QName(PackageNamespace("kabam.lib.net.impl"), "Message") end
+  trait slot QName(PrivateNamespace("kabam.lib.net.impl:SocketServer"), "messageLen") type QName(PackageNamespace(""), "int") value Integer(-1) end
+  trait slot QName(PrivateNamespace("kabam.lib.net.impl:SocketServer"), "outgoingCipher") type QName(PackageNamespace("com.hurlant.crypto.symmetric"), "ICipher") end
+  trait slot QName(PrivateNamespace("kabam.lib.net.impl:SocketServer"), "incomingCipher") type QName(PackageNamespace("com.hurlant.crypto.symmetric"), "ICipher") end
+  trait slot QName(PrivateNamespace("kabam.lib.net.impl:SocketServer"), "server") type QName(PackageNamespace(""), "String") end
+  trait slot QName(PrivateNamespace("kabam.lib.net.impl:SocketServer"), "port") type QName(PackageNamespace(""), "int") end
+  trait method QName(PackageNamespace(""), "setOutgoingCipher")
+   method
+    name "setOutgoingCipher"
+    refid "kabam.lib.net.impl:SocketServer/instance/setOutgoingCipher"
+    param QName(PackageNamespace("com.hurlant.crypto.symmetric"), "ICipher")
+    returns QName(PackageNamespace("kabam.lib.net.impl"), "SocketServer")
+    flag HAS_PARAM_NAMES
+    paramname "cipher"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      setproperty         QName(PrivateNamespace("kabam.lib.net.impl:SocketServer"), "outgoingCipher")
+
+      getlocal0
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setIncomingCipher")
+   method
+    name "setIncomingCipher"
+    refid "kabam.lib.net.impl:SocketServer/instance/setIncomingCipher"
+    param QName(PackageNamespace("com.hurlant.crypto.symmetric"), "ICipher")
+    returns QName(PackageNamespace("kabam.lib.net.impl"), "SocketServer")
+    flag HAS_PARAM_NAMES
+    paramname "cipher"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      setproperty         QName(PrivateNamespace("kabam.lib.net.impl:SocketServer"), "incomingCipher")
+
+      getlocal0
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "connect")
+   method
+    name "connect"
+    refid "kabam.lib.net.impl:SocketServer/instance/connect"
+    param QName(PackageNamespace(""), "String")
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "address"
+    paramname "port"
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      setproperty         QName(PrivateNamespace("kabam.lib.net.impl:SocketServer"), "server")
+
+      getlocal0
+      getlocal2
+      setproperty         QName(PrivateNamespace("kabam.lib.net.impl:SocketServer"), "port")
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("kabam.lib.net.impl:SocketServer"), "addListeners"), 0
+
+      getlocal0
+      pushbyte            -1
+      setproperty         QName(PrivateNamespace("kabam.lib.net.impl:SocketServer"), "messageLen")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "socket")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.lib.net.impl:SocketServer"), "server")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.lib.net.impl:SocketServer"), "port")
+      callpropvoid        QName(PackageNamespace(""), "connect"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "disconnect")
+   method
+    name "disconnect"
+    refid "kabam.lib.net.impl:SocketServer/instance/disconnect"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      callproperty        QName(PackageNamespace(""), "isConnected"), 0
+      iffalse             L8
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "socket")
+      callpropvoid        QName(PackageNamespace(""), "close"), 0
+
+L8:
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("kabam.lib.net.impl:SocketServer"), "removeListeners"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "closed")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "sendMessage")
+   method
+    name "sendMessage"
+    refid "kabam.lib.net.impl:SocketServer/instance/sendMessage"
+    param QName(PackageNamespace("kabam.lib.net.impl"), "Message")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "msg"
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.lib.net.impl:SocketServer"), "tail")
+      getlocal1
+      setproperty         QName(PackageNamespace(""), "next")
+
+      getlocal0
+      getlocal1
+      setproperty         QName(PrivateNamespace("kabam.lib.net.impl:SocketServer"), "tail")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "socket")
+      getproperty         QName(PackageNamespace(""), "connected")
+      dup
+      iffalse             L18
+
+      pop
+      getlocal0
+      callproperty        QName(PrivateNamespace("kabam.lib.net.impl:SocketServer"), "sendPendingMessages"), 0
+      coerce_a
+L18:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "isConnected")
+   method
+    name "isConnected"
+    refid "kabam.lib.net.impl:SocketServer/instance/isConnected"
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "socket")
+      getproperty         QName(PackageNamespace(""), "connected")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.lib.net.impl:SocketServer"), "addListeners")
+   method
+    name "addListeners"
+    refid "kabam.lib.net.impl:SocketServer/instance/kabam.lib.net.impl:SocketServer/instance/addListeners"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "socket")
+      pushstring          "connect"
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.lib.net.impl:SocketServer"), "onConnect")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "socket")
+      pushstring          "close"
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.lib.net.impl:SocketServer"), "onClose")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "socket")
+      pushstring          "socketData"
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.lib.net.impl:SocketServer"), "onSocketData")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "socket")
+      pushstring          "ioError"
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.lib.net.impl:SocketServer"), "onIOError")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "socket")
+      pushstring          "securityError"
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.lib.net.impl:SocketServer"), "onSecurityError")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.lib.net.impl:SocketServer"), "removeListeners")
+   method
+    name "removeListeners"
+    refid "kabam.lib.net.impl:SocketServer/instance/kabam.lib.net.impl:SocketServer/instance/removeListeners"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "socket")
+      pushstring          "connect"
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.lib.net.impl:SocketServer"), "onConnect")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "socket")
+      pushstring          "close"
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.lib.net.impl:SocketServer"), "onClose")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "socket")
+      pushstring          "socketData"
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.lib.net.impl:SocketServer"), "onSocketData")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "socket")
+      pushstring          "ioError"
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.lib.net.impl:SocketServer"), "onIOError")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "socket")
+      pushstring          "securityError"
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.lib.net.impl:SocketServer"), "onSecurityError")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.lib.net.impl:SocketServer"), "sendPendingMessages")
+   method
+    name "sendPendingMessages"
+    refid "kabam.lib.net.impl:SocketServer/instance/kabam.lib.net.impl:SocketServer/instance/sendPendingMessages"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 4
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.lib.net.impl:SocketServer"), "head")
+      getproperty         QName(PackageNamespace(""), "next")
+      coerce              QName(PackageNamespace("kabam.lib.net.impl"), "Message")
+      setlocal2
+
+      getlocal2
+      setlocal1
+
+      jump                L59
+
+L10:
+      label
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.lib.net.impl:SocketServer"), "data")
+      callpropvoid        QName(PackageNamespace(""), "clear"), 0
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.lib.net.impl:SocketServer"), "data")
+      callpropvoid        QName(PackageNamespace(""), "writeToOutput"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.lib.net.impl:SocketServer"), "data")
+      pushbyte            0
+      setproperty         QName(PackageNamespace(""), "position")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.lib.net.impl:SocketServer"), "outgoingCipher")
+      pushnull
+      ifeq                L35
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.lib.net.impl:SocketServer"), "outgoingCipher")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.lib.net.impl:SocketServer"), "data")
+      callpropvoid        QName(Namespace("com.hurlant.crypto.symmetric:ICipher"), "encrypt"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.lib.net.impl:SocketServer"), "data")
+      pushbyte            0
+      setproperty         QName(PackageNamespace(""), "position")
+
+L35:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "socket")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.lib.net.impl:SocketServer"), "data")
+      getproperty         QName(PackageNamespace(""), "bytesAvailable")
+      pushbyte            5
+      add
+      callpropvoid        QName(PackageNamespace(""), "writeInt"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "socket")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "id")
+      callpropvoid        QName(PackageNamespace(""), "writeByte"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "socket")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.lib.net.impl:SocketServer"), "data")
+      callpropvoid        QName(PackageNamespace(""), "writeBytes"), 1
+
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "consume"), 0
+
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "next")
+      coerce              QName(PackageNamespace("kabam.lib.net.impl"), "Message")
+      setlocal1
+
+L59:
+      getlocal1
+      iftrue              L10
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "socket")
+      callpropvoid        QName(PackageNamespace(""), "flush"), 0
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.lib.net.impl:SocketServer"), "unsentPlaceholder")
+      pushnull
+      setproperty         QName(PackageNamespace(""), "next")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.lib.net.impl:SocketServer"), "unsentPlaceholder")
+      pushnull
+      setproperty         QName(PackageNamespace(""), "prev")
+
+      getlocal0
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.lib.net.impl:SocketServer"), "unsentPlaceholder")
+      dup
+      setlocal3
+
+      setproperty         QName(PrivateNamespace("kabam.lib.net.impl:SocketServer"), "tail")
+
+      getlocal3
+      setproperty         QName(PrivateNamespace("kabam.lib.net.impl:SocketServer"), "head")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.lib.net.impl:SocketServer"), "logErrorAndClose")
+   method
+    name "logErrorAndClose"
+    refid "kabam.lib.net.impl:SocketServer/instance/kabam.lib.net.impl:SocketServer/instance/logErrorAndClose"
+    param QName(PackageNamespace(""), "String")
+    param QName(PackageNamespace(""), "Array")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_OPTIONAL
+    flag HAS_PARAM_NAMES
+    optional Null()
+    paramname "errorPrefix"
+    paramname "errMsgs"
+    body
+     maxstack 4
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "error")
+      getlocal0
+      getlocal1
+      getlocal2
+      callproperty        QName(PrivateNamespace("kabam.lib.net.impl:SocketServer"), "parseString"), 2
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      getlocal0
+      callpropvoid        QName(PackageNamespace(""), "disconnect"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.lib.net.impl:SocketServer"), "parseString")
+   method
+    name "parseString"
+    refid "kabam.lib.net.impl:SocketServer/instance/kabam.lib.net.impl:SocketServer/instance/parseString"
+    param QName(PackageNamespace(""), "String")
+    param QName(PackageNamespace(""), "Array")
+    returns QName(PackageNamespace(""), "String")
+    flag HAS_PARAM_NAMES
+    paramname "msgTemplate"
+    paramname "msgs"
+    body
+     maxstack 4
+     localcount 5
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      pushbyte            0
+      setlocal            4
+
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "length")
+      convert_i
+      setlocal3
+
+      pushbyte            0
+      setlocal            4
+
+      jump                L26
+
+L11:
+      label
+      getlocal1
+      pushstring          "{"
+      getlocal            4
+      add
+      pushstring          "}"
+      add
+      getlocal2
+      getlocal            4
+      getproperty         MultinameL([PrivateNamespace("kabam.lib.net.impl:SocketServer"), ProtectedNamespace("kabam.lib.net.impl:SocketServer"), StaticProtectedNs("kabam.lib.net.impl:SocketServer"), StaticProtectedNs("Object"), PackageNamespace("kabam.lib.net.impl"), PackageInternalNs("kabam.lib.net.impl"), PrivateNamespace("FilePrivateNS:SocketServer"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")])
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "replace"), 2
+      coerce_s
+      setlocal1
+
+      inclocal_i          4
+      inclocal_i          4
+L26:
+      getlocal            4
+      getlocal3
+      iflt                L11
+
+      getlocal1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.lib.net.impl:SocketServer"), "onConnect")
+   method
+    name "onConnect"
+    refid "kabam.lib.net.impl:SocketServer/instance/kabam.lib.net.impl:SocketServer/instance/onConnect"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "evt"
+    body
+     maxstack 1
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace("kabam.lib.net.impl:SocketServer"), "sendPendingMessages"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "connected")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.lib.net.impl:SocketServer"), "onClose")
+   method
+    name "onClose"
+    refid "kabam.lib.net.impl:SocketServer/instance/kabam.lib.net.impl:SocketServer/instance/onClose"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "evt"
+    body
+     maxstack 1
+     localcount 2
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "closed")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.lib.net.impl:SocketServer"), "onIOError")
+   method
+    name "onIOError"
+    refid "kabam.lib.net.impl:SocketServer/instance/kabam.lib.net.impl:SocketServer/instance/onIOError"
+    param QName(PackageNamespace("flash.events"), "IOErrorEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "evt"
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      pushstring          "Socket-Server IO Error: {0}"
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "text")
+      newarray            1
+      callproperty        QName(PrivateNamespace("kabam.lib.net.impl:SocketServer"), "parseString"), 2
+      coerce_s
+      setlocal2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "error")
+      getlocal2
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "closed")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.lib.net.impl:SocketServer"), "onSecurityError")
+   method
+    name "onSecurityError"
+    refid "kabam.lib.net.impl:SocketServer/instance/kabam.lib.net.impl:SocketServer/instance/onSecurityError"
+    param QName(PackageNamespace("flash.events"), "SecurityErrorEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_PARAM_NAMES
+    paramname "evt"
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 0
+     maxscopedepth 1
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      pushstring          "Socket-Server Security: {0}. Please open port 2050 in your firewall and/or router settings and try again"
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "text")
+      newarray            1
+      callproperty        QName(PrivateNamespace("kabam.lib.net.impl:SocketServer"), "parseString"), 2
+      coerce_s
+      setlocal2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "error")
+      getlocal2
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "closed")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace("kabam.lib.net.impl:SocketServer"), "onSocketData")
+   method
+    name "onSocketData"
+    refid "kabam.lib.net.impl:SocketServer/instance/kabam.lib.net.impl:SocketServer/instance/onSocketData"
+    param QName(PackageNamespace("flash.events"), "ProgressEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_OPTIONAL
+    flag HAS_PARAM_NAMES
+    optional Null()
+    paramname "_"
+    body
+     maxstack 5
+     localcount 10
+     initscopedepth 0
+     maxscopedepth 2
+     code
+      getlocal0
+      pushscope
+
+      pushbyte            0
+      setlocal            4
+
+      pushnull
+      setlocal            5
+
+      pushnull
+      setlocal3
+
+      pushnull
+      coerce              QName(PackageNamespace("flash.utils"), "ByteArray")
+      setlocal2
+
+      jump                L145
+
+L12:
+      label
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.lib.net.impl:SocketServer"), "messageLen")
+      pushbyte            -1
+      ifne                L58
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "socket")
+      getproperty         QName(PackageNamespace(""), "bytesAvailable")
+      pushbyte            4
+      iflt                L157
+
+L22:
+      getlocal0
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "socket")
+      callproperty        QName(PackageNamespace(""), "readInt"), 0
+      setproperty         QName(PrivateNamespace("kabam.lib.net.impl:SocketServer"), "messageLen")
+
+L27:
+      jump                L58
+
+L28:
+      getlocal0
+      pushscope
+
+      newcatch            0
+      dup
+      setlocal            7
+
+      dup
+      pushscope
+
+      swap
+      setslot             1
+
+      findpropstrict      QName(PrivateNamespace("kabam.lib.net.impl:SocketServer"), "parseString")
+      pushstring          "Socket-Server Data Error: {0}: messageId: {1} message: {2}"
+      getlex              QName(PackageInternalNs("kabam.lib.net.impl"), "e")
+      getproperty         QName(PackageNamespace(""), "name")
+      getlocal            4
+      getlex              QName(PackageInternalNs("kabam.lib.net.impl"), "e")
+      getproperty         QName(PackageNamespace(""), "message")
+      newarray            3
+      callproperty        QName(PrivateNamespace("kabam.lib.net.impl:SocketServer"), "parseString"), 2
+      coerce_s
+      setlocal3
+
+      getlex              QName(PackageNamespace(""), "error")
+      getlocal3
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      pushbyte            -1
+      findproperty        QName(PrivateNamespace("kabam.lib.net.impl:SocketServer"), "messageLen")
+      swap
+      setproperty         QName(PrivateNamespace("kabam.lib.net.impl:SocketServer"), "messageLen")
+
+      popscope
+      kill                7
+      returnvoid
+
+L58:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "socket")
+      getproperty         QName(PackageNamespace(""), "bytesAvailable")
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.lib.net.impl:SocketServer"), "messageLen")
+      pushbyte            4
+      subtract
+      iflt                L157
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "socket")
+      callproperty        QName(PackageNamespace(""), "readUnsignedByte"), 0
+      convert_u
+      setlocal            4
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "messages")
+      getlocal            4
+      callproperty        QName(Namespace("kabam.lib.net.api:MessageProvider"), "require"), 1
+      coerce              QName(PackageNamespace("kabam.lib.net.impl"), "Message")
+      setlocal            5
+
+      findpropstrict      QName(PackageNamespace("flash.utils"), "ByteArray")
+      constructprop       QName(PackageNamespace("flash.utils"), "ByteArray"), 0
+      coerce              QName(PackageNamespace("flash.utils"), "ByteArray")
+      setlocal2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.lib.net.impl:SocketServer"), "messageLen")
+      pushbyte            5
+      subtract
+      pushbyte            0
+      ifngt               L96
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "socket")
+      getlocal2
+      pushbyte            0
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.lib.net.impl:SocketServer"), "messageLen")
+      pushbyte            5
+      subtract
+      callpropvoid        QName(PackageNamespace(""), "readBytes"), 3
+
+L96:
+      getlocal2
+      pushbyte            0
+      setproperty         QName(PackageNamespace(""), "position")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.lib.net.impl:SocketServer"), "incomingCipher")
+      pushnull
+      ifeq                L110
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("kabam.lib.net.impl:SocketServer"), "incomingCipher")
+      getlocal2
+      callpropvoid        QName(Namespace("com.hurlant.crypto.symmetric:ICipher"), "decrypt"), 1
+
+      getlocal2
+      pushbyte            0
+      setproperty         QName(PackageNamespace(""), "position")
+
+L110:
+      getlocal0
+      pushbyte            -1
+      setproperty         QName(PrivateNamespace("kabam.lib.net.impl:SocketServer"), "messageLen")
+
+      getlocal            5
+      pushnull
+      ifne                L120
+
+      getlocal0
+      pushstring          "Socket-Server Protocol Error: Unknown message"
+      callpropvoid        QName(PrivateNamespace("kabam.lib.net.impl:SocketServer"), "logErrorAndClose"), 1
+
+      returnvoid
+
+L120:
+      getlocal            5
+      getlocal2
+      callpropvoid        QName(PackageNamespace(""), "parseFromInput"), 1
+
+L123:
+      jump                L143
+
+L124:
+      getlocal0
+      pushscope
+
+      newcatch            1
+      dup
+      setlocal            9
+
+      dup
+      pushscope
+
+      swap
+      setslot             1
+
+      findpropstrict      QName(PrivateNamespace("kabam.lib.net.impl:SocketServer"), "logErrorAndClose")
+      pushstring          "Socket-Server Protocol Error: {0} message: {1}"
+      getlex              QName(PackageInternalNs("kabam.lib.net.impl"), "error")
+      callproperty        Multiname("toString", [PrivateNamespace("kabam.lib.net.impl:SocketServer"), ProtectedNamespace("kabam.lib.net.impl:SocketServer"), StaticProtectedNs("kabam.lib.net.impl:SocketServer"), StaticProtectedNs("Object"), PackageNamespace("kabam.lib.net.impl"), PackageInternalNs("kabam.lib.net.impl"), PrivateNamespace("FilePrivateNS:SocketServer"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin")]), 0
+      getlocal            5
+      newarray            2
+      callpropvoid        QName(PrivateNamespace("kabam.lib.net.impl:SocketServer"), "logErrorAndClose"), 2
+
+      popscope
+      kill                9
+      returnvoid
+
+L143:
+      getlocal            5
+      callpropvoid        QName(PackageNamespace(""), "consume"), 0
+
+L145:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "socket")
+      pushnull
+      equals
+      dup
+      iftrue              L156
+
+      pop
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "socket")
+      getproperty         QName(PackageNamespace(""), "connected")
+      not
+L156:
+      iffalse             L12
+
+L157:
+      returnvoid
+     end ; code
+     try from L22 to L27 target L28 type QName(PackageNamespace(""), "Error") name QName(PackageInternalNs("kabam.lib.net.impl"), "e") end
+     try from L120 to L123 target L124 type QName(PackageNamespace(""), "Error") name QName(PackageInternalNs("kabam.lib.net.impl"), "error") end
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.lib.net.impl:SocketServer/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 0
+   maxscopedepth 0
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PackageNamespace(""), "MESSAGE_LENGTH_SIZE_IN_BYTES") type QName(PackageNamespace(""), "int") value Integer(4) end
+end ; class
